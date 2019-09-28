@@ -1,5 +1,3 @@
 ﻿@inherits AlertBase
-@code {
-    string classSeparator = " ";
-}
-<div class="@string.Join(classSeparator, this.Classes)" @attributes="this.Attributes">@ChildContent</div>
+
+<div @attributes="this.Attributes" role="alert">@ChildContent</div>

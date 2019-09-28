@@ -23,6 +23,9 @@ namespace BlazorBootstrap.Components
         }
 
 
+        /// <summary>
+        /// Enables child content for the control.
+        /// </summary>
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
@@ -44,11 +47,6 @@ namespace BlazorBootstrap.Components
         protected IDictionary<string, object> Attributes { get; }
 
         /// <summary>
-        /// A collection of classes to apply to the component when rendering.
-        /// </summary>
-        protected IList<string> Classes { get; }
-
-        /// <summary>
         /// Adds the given class to the <see cref="Classes"/> collection if it does not already exist.
         /// </summary>
         /// <param name="className">The class to add.</param>
@@ -58,6 +56,7 @@ namespace BlazorBootstrap.Components
             if (!this.Classes.Contains(className))
             {
                 this.Classes.Add(className);
+                this.HandleClassName();
                 return true;
             }
 
@@ -74,6 +73,7 @@ namespace BlazorBootstrap.Components
             if(this.Classes.Contains(className))
             {
                 this.Classes.Remove(className);
+                this.HandleClassName();
                 return true;
             }
 
@@ -82,6 +82,8 @@ namespace BlazorBootstrap.Components
 
 
 
+
+        private IList<string> Classes { get; }
 
         private void HandleAttribute(string name, object value)
         {
@@ -92,6 +94,18 @@ namespace BlazorBootstrap.Components
             else if (this.Attributes.ContainsKey(name))
             {
                 this.Attributes.Remove(name);
+            }
+        }
+
+        private void HandleClassName()
+        {
+            if(this.Classes.Count > 0)
+            {
+                this.Attributes["class"] = string.Join(" ", this.Classes);
+            }
+            else if(this.Attributes.ContainsKey("class"))
+            {
+                this.Attributes.Remove("class");
             }
         }
 
@@ -106,10 +120,13 @@ namespace BlazorBootstrap.Components
         protected override void OnParametersSet()
         {
             var prefix = this.GetType().Name.ToLower();
-            var styleContext = $"{prefix}-{this.StyleContext.ToString().ToLower()}";
-
             this.AddClass(prefix);
-            this.AddClass(styleContext);
+
+            if(this.StyleContext != ComponentStyleContext.None)
+            {
+                var styleContext = $"{prefix}-{this.StyleContext.ToString().ToLower()}";
+                this.AddClass(styleContext);
+            }
 
             base.OnParametersSet();
         }
