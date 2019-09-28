@@ -2,15 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BlazorBootstrap.Components
 {
-
-    public interface IContextualComponent
-    {
-        ComponentStyleContext StyleContext { get; set; }
-    }
-
 
     /// <summary>
     /// Base implementation for all Blazor Boostrap components.
@@ -26,6 +21,10 @@ namespace BlazorBootstrap.Components
             this.Attributes = new Dictionary<string, object>();
             this.Classes = new List<string>();
         }
+
+
+        [Parameter]
+        public RenderFragment ChildContent { get; set; }
 
         private string _Id;
         /// <summary>
@@ -49,6 +48,40 @@ namespace BlazorBootstrap.Components
         /// </summary>
         protected IList<string> Classes { get; }
 
+        /// <summary>
+        /// Adds the given class to the <see cref="Classes"/> collection if it does not already exist.
+        /// </summary>
+        /// <param name="className">The class to add.</param>
+        /// <returns>Returns <c>true</c> if the class was added.</returns>
+        protected bool AddClass(string className)
+        {
+            if (!this.Classes.Contains(className))
+            {
+                this.Classes.Add(className);
+                return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Removes the given class from the collection if it exists.
+        /// </summary>
+        /// <param name="className"></param>
+        /// <returns>Returns <c>true</c> if the class was removed.</returns>
+        protected bool RemoveClass(string className)
+        {
+            if(this.Classes.Contains(className))
+            {
+                this.Classes.Remove(className);
+                return true;
+            }
+
+            return false;
+        }
+
+
+
 
         private void HandleAttribute(string name, object value)
         {
@@ -61,24 +94,35 @@ namespace BlazorBootstrap.Components
                 this.Attributes.Remove(name);
             }
         }
+
     }
 
-    public abstract class BootstrapContextualBase : BootstrapBase, IContextualComponent
+    public abstract class BootstrapContextualBase : BootstrapBase
     {
         [Parameter]
         public ComponentStyleContext StyleContext { get; set; }
-    }
 
 
-    public abstract class BootstrapContainerBase : BootstrapBase
-    {
-        [Parameter]
-        public RenderFragment ChildContent { get; set; }
-    }
+        protected override void OnParametersSet()
+        {
+            var prefix = this.GetType().Name.ToLower();
+            var styleContext = $"{prefix}-{this.StyleContext.ToString().ToLower()}";
 
-    public abstract class BootstrapContextualContainerBase : BootstrapContainerBase, IContextualComponent
-    {
-        [Parameter]
-        public ComponentStyleContext StyleContext { get; set; }
+            this.AddClass(prefix);
+            this.AddClass(styleContext);
+
+            base.OnParametersSet();
+        }
+
+        public override Task SetParametersAsync(ParameterView parameters)
+        {
+            var prefix = this.GetType().Name.ToLower();
+            var styleContext = $"{prefix}-{this.StyleContext.ToString().ToLower()}";
+
+            this.RemoveClass(prefix);
+            this.RemoveClass(styleContext);
+
+            return base.SetParametersAsync(parameters);
+        }
     }
 }
