@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class AlertBase : BootstrapContextualBase
+    public abstract class AlertBase : BootstrapStyledBase
     {
 
     }

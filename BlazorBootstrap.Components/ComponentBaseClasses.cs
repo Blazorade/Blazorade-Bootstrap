@@ -111,10 +111,10 @@ namespace BlazorBootstrap.Components
 
     }
 
-    public abstract class BootstrapContextualBase : BootstrapBase
+    public abstract class BootstrapStyledBase : BootstrapBase
     {
         [Parameter]
-        public ComponentStyleContext StyleContext { get; set; }
+        public ComponentStyle ComponentStyle { get; set; }
 
 
         protected override void OnParametersSet()
@@ -122,9 +122,9 @@ namespace BlazorBootstrap.Components
             var prefix = this.GetType().Name.ToLower();
             this.AddClass(prefix);
 
-            if(this.StyleContext != ComponentStyleContext.None)
+            if(this.ComponentStyle != ComponentStyle.None)
             {
-                var styleContext = $"{prefix}-{this.StyleContext.ToString().ToLower()}";
+                var styleContext = $"{prefix}-{this.ComponentStyle.ToString().ToLower()}";
                 this.AddClass(styleContext);
             }
 
@@ -134,7 +134,7 @@ namespace BlazorBootstrap.Components
         public override Task SetParametersAsync(ParameterView parameters)
         {
             var prefix = this.GetType().Name.ToLower();
-            var styleContext = $"{prefix}-{this.StyleContext.ToString().ToLower()}";
+            var styleContext = $"{prefix}-{this.ComponentStyle.ToString().ToLower()}";
 
             this.RemoveClass(prefix);
             this.RemoveClass(styleContext);

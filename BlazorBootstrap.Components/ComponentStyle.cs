@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public enum ComponentStyleContext
+    public enum ComponentStyle
     {
         None,
         Primary,
