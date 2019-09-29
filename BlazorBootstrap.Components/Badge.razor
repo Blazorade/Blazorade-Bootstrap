@@ -1,0 +1,11 @@
+﻿@inherits BadgeBase
+
+@if (string.IsNullOrEmpty(this.Link))
+{
+    <span @attributes="this.Attributes">@this.ChildContent</span>
+}
+else
+{
+    <a @attributes="this.Attributes">@this.ChildContent</a>
+}
+

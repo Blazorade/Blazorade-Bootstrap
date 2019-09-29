@@ -7,6 +7,11 @@ namespace BlazorBootstrap.Components
     public static class ClassNames
     {
 
+        /// <summary>
+        /// A generic active class name.
+        /// </summary>
+        public const string Active = "active";
+
         public static class Abbreviations
         {
             /// <summary>
@@ -47,6 +52,14 @@ namespace BlazorBootstrap.Components
             public const string TextRight = "text-right";
         }
 
+        public static class Badges
+        {
+            /// <summary>
+            /// Gives a badge a rounded look.
+            /// </summary>
+            public const string Pill = "badge-pill";
+        }
+
         public static class BlockQuotes
         {
             /// <summary>
@@ -58,6 +71,14 @@ namespace BlazorBootstrap.Components
             /// A footer element inside of a blockquote element.
             /// </summary>
             public const string Footer = "blockquote-footer";
+        }
+
+        public static class Breadcrumbs
+        {
+            /// <summary>
+            /// The class name for breadcrumb items.
+            /// </summary>
+            public const string Item = "breadcrumb-item";
         }
 
         public static class Buttons

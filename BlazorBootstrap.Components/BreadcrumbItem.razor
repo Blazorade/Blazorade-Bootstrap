@@ -1,0 +1,14 @@
+﻿@inherits BreadcrumbItemBase
+
+
+<li @attributes="this.Attributes">
+    @if(System.String.IsNullOrEmpty(this.Link))
+    {
+        @ChildContent
+    }
+    else
+    {
+        <a href="@this.Link">@ChildContent</a>
+    }
+    
+</li>

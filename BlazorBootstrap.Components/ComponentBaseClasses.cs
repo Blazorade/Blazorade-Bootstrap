@@ -46,6 +46,16 @@ namespace BlazorBootstrap.Components
         /// </summary>
         protected IDictionary<string, object> Attributes { get; }
 
+        protected bool AddAttribute(string name, object value)
+        {
+            if(!this.Attributes.ContainsKey(name))
+            {
+                this.Attributes.Add(name, value);
+                return true;
+            }
+            return false;
+        }
+
         /// <summary>
         /// Adds the given class to the <see cref="Classes"/> collection if it does not already exist.
         /// </summary>
@@ -53,13 +63,23 @@ namespace BlazorBootstrap.Components
         /// <returns>Returns <c>true</c> if the class was added.</returns>
         protected bool AddClass(string className)
         {
-            if (!this.Classes.Contains(className))
+            if (!string.IsNullOrEmpty(className) && !this.Classes.Contains(className))
             {
                 this.Classes.Add(className);
                 this.HandleClassName();
                 return true;
             }
 
+            return false;
+        }
+
+        protected bool RemoveAttribute(string name)
+        {
+            if(this.Attributes.ContainsKey(name))
+            {
+                this.Attributes.Remove(name);
+                return true;
+            }
             return false;
         }
 
@@ -70,7 +90,7 @@ namespace BlazorBootstrap.Components
         /// <returns>Returns <c>true</c> if the class was removed.</returns>
         protected bool RemoveClass(string className)
         {
-            if(this.Classes.Contains(className))
+            if(!string.IsNullOrEmpty(className) && this.Classes.Contains(className))
             {
                 this.Classes.Remove(className);
                 this.HandleClassName();
@@ -113,30 +133,39 @@ namespace BlazorBootstrap.Components
 
     public abstract class BootstrapStyledBase : BootstrapBase
     {
+
+        protected BootstrapStyledBase()
+        {
+            this.AddClass(this.GetType().Name.ToLower());
+        }
+
+
         [Parameter]
         public ComponentStyle ComponentStyle { get; set; }
 
 
-        protected override void OnParametersSet()
+        protected string GetStyleClassName()
         {
-            var prefix = this.GetType().Name.ToLower();
-            this.AddClass(prefix);
-
+            string name = null;
             if(this.ComponentStyle != ComponentStyle.None)
             {
-                var styleContext = $"{prefix}-{this.ComponentStyle.ToString().ToLower()}";
-                this.AddClass(styleContext);
+                name = $"{this.GetType().Name.ToLower()}-{this.ComponentStyle.ToString().ToLower()}";
             }
+
+            return name;
+        }
+
+        protected override void OnParametersSet()
+        {
+            var styleContext = this.GetStyleClassName();
+            this.AddClass(styleContext);
 
             base.OnParametersSet();
         }
 
         public override Task SetParametersAsync(ParameterView parameters)
         {
-            var prefix = this.GetType().Name.ToLower();
-            var styleContext = $"{prefix}-{this.ComponentStyle.ToString().ToLower()}";
-
-            this.RemoveClass(prefix);
+            var styleContext = this.GetStyleClassName();
             this.RemoveClass(styleContext);
 
             return base.SetParametersAsync(parameters);
