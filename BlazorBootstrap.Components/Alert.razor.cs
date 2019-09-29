@@ -9,5 +9,32 @@ namespace BlazorBootstrap.Components
     public abstract class AlertBase : BootstrapStyledBase
     {
 
+        [Parameter]
+        public bool IsDismissible { get; set; }
+
+
+        protected bool IsDismissed { get; private set; }
+
+        protected void CloseButtonOnClick()
+        {
+            this.IsDismissed = true;
+        }
+
+
+        protected override void OnParametersSet()
+        {
+            if (this.IsDismissible)
+            {
+                this.AddClass(ClassNames.Alerts.Dismissible);
+            }
+
+            base.OnParametersSet();
+        }
+
+        public override Task SetParametersAsync(ParameterView parameters)
+        {
+            this.RemoveClass(ClassNames.Alerts.Dismissible);
+            return base.SetParametersAsync(parameters);
+        }
     }
 }

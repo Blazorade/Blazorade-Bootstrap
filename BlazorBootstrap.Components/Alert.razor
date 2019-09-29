@@ -1,3 +1,15 @@
 ﻿@inherits AlertBase
 
-<div @attributes="this.Attributes" role="alert">@ChildContent</div>
+@if (!this.IsDismissed)
+{
+    <div @attributes="this.Attributes" role="alert">
+        @ChildContent
+
+        @if (this.IsDismissible)
+        {
+            <button type="button" class="@ClassNames.Buttons.Close" aria-label="Close" @onclick="this.CloseButtonOnClick">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        }
+    </div>
+}

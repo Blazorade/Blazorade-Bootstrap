@@ -16,6 +16,24 @@ namespace BlazorBootstrap.Components
 
         }
 
+        public static class Alerts
+        {
+            /// <summary>
+            /// Add this class to an alert along with the dismiss button.
+            /// </summary>
+            public const string Dismissible = "alert-dismissible";
+
+            /// <summary>
+            /// Use this class for headings inside of Alerts.
+            /// </summary>
+            public const string Heading = "alert-heading";
+
+            /// <summary>
+            /// Apply this class to links in Alerts.
+            /// </summary>
+            public const string Link = "alert-link";
+        }
+
         public static class Alignments
         {
             /// <summary>
@@ -29,7 +47,7 @@ namespace BlazorBootstrap.Components
             public const string TextRight = "text-right";
         }
 
-        public class BlockQuotes
+        public static class BlockQuotes
         {
             /// <summary>
             /// A blockquote element.
@@ -40,6 +58,14 @@ namespace BlazorBootstrap.Components
             /// A footer element inside of a blockquote element.
             /// </summary>
             public const string Footer = "blockquote-footer";
+        }
+
+        public static class Buttons
+        {
+            /// <summary>
+            /// The class for close buttons.
+            /// </summary>
+            public const string Close = "close";
         }
 
         public static class Headings
