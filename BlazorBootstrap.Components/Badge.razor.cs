@@ -18,16 +18,11 @@ namespace BlazorBootstrap.Components
 
         protected override void OnParametersSet()
         {
+            this.AddClass(ClassNames.Badges.Badge);
             if (this.IsPill) this.AddClass(ClassNames.Badges.Pill);
             if (!string.IsNullOrEmpty(this.Link)) this.AddAttribute("href", this.Link);
             base.OnParametersSet();
         }
 
-        public override Task SetParametersAsync(ParameterView parameters)
-        {
-            this.RemoveAttribute("href");
-            this.RemoveClass(ClassNames.Badges.Pill);
-            return base.SetParametersAsync(parameters);
-        }
     }
 }

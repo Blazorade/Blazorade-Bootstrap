@@ -24,6 +24,11 @@ namespace BlazorBootstrap.Components
         public static class Alerts
         {
             /// <summary>
+            /// The default class for alerts.
+            /// </summary>
+            public const string Alert = "alert";
+
+            /// <summary>
             /// Add this class to an alert along with the dismiss button.
             /// </summary>
             public const string Dismissible = "alert-dismissible";
@@ -55,6 +60,11 @@ namespace BlazorBootstrap.Components
         public static class Badges
         {
             /// <summary>
+            /// The default class for badges.
+            /// </summary>
+            public const string Badge = "badge";
+
+            /// <summary>
             /// Gives a badge a rounded look.
             /// </summary>
             public const string Pill = "badge-pill";
@@ -76,6 +86,11 @@ namespace BlazorBootstrap.Components
         public static class Breadcrumbs
         {
             /// <summary>
+            /// The default class for breadcrumbs.
+            /// </summary>
+            public const string Breadcrumb = "breadcrumb";
+
+            /// <summary>
             /// The class name for breadcrumb items.
             /// </summary>
             public const string Item = "breadcrumb-item";
@@ -83,6 +98,8 @@ namespace BlazorBootstrap.Components
 
         public static class Buttons
         {
+            public const string Button = "btn";
+
             /// <summary>
             /// The class for close buttons.
             /// </summary>

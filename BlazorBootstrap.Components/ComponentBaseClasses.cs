@@ -73,6 +73,16 @@ namespace BlazorBootstrap.Components
             return false;
         }
 
+        protected void ClearAttributes()
+        {
+            this.Attributes.Clear();
+        }
+
+        protected void ClearClasses()
+        {
+            this.Classes.Clear();
+        }
+
         protected bool RemoveAttribute(string name)
         {
             if(this.Attributes.ContainsKey(name))
@@ -129,6 +139,13 @@ namespace BlazorBootstrap.Components
             }
         }
 
+
+        public override Task SetParametersAsync(ParameterView parameters)
+        {
+            this.Attributes.Clear();
+            this.Classes.Clear();
+            return base.SetParametersAsync(parameters);
+        }
     }
 
     public abstract class BootstrapStyledBase : BootstrapBase
@@ -144,12 +161,13 @@ namespace BlazorBootstrap.Components
         public ComponentStyle ComponentStyle { get; set; }
 
 
-        protected string GetStyleClassName()
+        protected string GetStyleClassName(string prefix = null)
         {
+            prefix = prefix ?? this.GetType().Name.ToLower();
             string name = null;
             if(this.ComponentStyle != ComponentStyle.None)
             {
-                name = $"{this.GetType().Name.ToLower()}-{this.ComponentStyle.ToString().ToLower()}";
+                name = $"{prefix}-{this.ComponentStyle.ToString().ToLower()}";
             }
 
             return name;
@@ -163,12 +181,5 @@ namespace BlazorBootstrap.Components
             base.OnParametersSet();
         }
 
-        public override Task SetParametersAsync(ParameterView parameters)
-        {
-            var styleContext = this.GetStyleClassName();
-            this.RemoveClass(styleContext);
-
-            return base.SetParametersAsync(parameters);
-        }
     }
 }

@@ -23,6 +23,8 @@ namespace BlazorBootstrap.Components
 
         protected override void OnParametersSet()
         {
+            this.AddClass(ClassNames.Alerts.Alert);
+
             if (this.IsDismissible)
             {
                 this.AddClass(ClassNames.Alerts.Dismissible);
@@ -31,10 +33,5 @@ namespace BlazorBootstrap.Components
             base.OnParametersSet();
         }
 
-        public override Task SetParametersAsync(ParameterView parameters)
-        {
-            this.RemoveClass(ClassNames.Alerts.Dismissible);
-            return base.SetParametersAsync(parameters);
-        }
     }
 }

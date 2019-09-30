@@ -9,11 +9,6 @@ namespace BlazorBootstrap.Components
     public abstract class BreadcrumbItemBase : BootstrapBase
     {
 
-        protected BreadcrumbItemBase()
-        {
-            this.AddClass(ClassNames.Breadcrumbs.Item);
-        }
-
         [Parameter]
         public bool IsActive { get; set; }
 
@@ -23,14 +18,10 @@ namespace BlazorBootstrap.Components
 
         protected override void OnParametersSet()
         {
+            this.AddClass(ClassNames.Breadcrumbs.Item);
+
             if (this.IsActive) this.AddClass(ClassNames.Active);
             base.OnParametersSet();
-        }
-
-        public override Task SetParametersAsync(ParameterView parameters)
-        {
-            this.RemoveClass(ClassNames.Active);
-            return base.SetParametersAsync(parameters);
         }
 
     }

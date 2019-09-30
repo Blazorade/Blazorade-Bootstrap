@@ -8,7 +8,6 @@
 
 <h3>Alerts</h3>
 
-<Alert Id="alert-none">Alert (no context)</Alert>
 <Alert Id="alert-primary" ComponentStyle="ComponentStyle.Primary">Primary Alert</Alert>
 <Alert Id="alert-secondary" ComponentStyle="ComponentStyle.Secondary">Secondary Alert</Alert>
 <Alert Id="alert-success" ComponentStyle="ComponentStyle.Success">Success Alert</Alert>
@@ -38,9 +37,9 @@
 
 
 <p>You can use badges in buttons too, as counters for instance.</p>
-<button type="button" class="btn btn-primary" @onclick="IncrementBadgeCount">
+<Button ComponentStyle="ComponentStyle.Primary" OnClick="IncrementBadgeCount">
     Counter <Badge ComponentStyle="ComponentStyle.Light">@currentBadgeCount</Badge>
-</button>
+</Button>
 
 @code {
     int currentBadgeCount = 0;
@@ -93,3 +92,16 @@
     <BreadcrumbItem Link="#">Section 1</BreadcrumbItem>
     <BreadcrumbItem IsActive="true">Current Page</BreadcrumbItem>
 </Breadcrumb>
+
+
+<h3>Buttons</h3>
+
+<Button ComponentStyle="ComponentStyle.Primary">Primary</Button>
+<Button ComponentStyle="ComponentStyle.Secondary">Secondary</Button>
+<Button ComponentStyle="ComponentStyle.Success">Success</Button>
+<Button ComponentStyle="ComponentStyle.Danger">Danger</Button>
+<Button ComponentStyle="ComponentStyle.Warning">Warning</Button>
+<Button ComponentStyle="ComponentStyle.Info">Info</Button>
+<Button ComponentStyle="ComponentStyle.Light">Light</Button>
+<Button ComponentStyle="ComponentStyle.Dark">Dark</Button>
+<Button>Link</Button>

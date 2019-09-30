@@ -1,0 +1,12 @@
+﻿@inherits ButtonBase
+
+@if (string.IsNullOrEmpty(this.Link))
+{
+    <button @attributes="this.Attributes" @onclick="this.OnButtonClick">
+        @this.ChildContent
+    </button>
+}
+else
+{
+    <a @attributes="this.Attributes">@this.ChildContent</a>
+}
