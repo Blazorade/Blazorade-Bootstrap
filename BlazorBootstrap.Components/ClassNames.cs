@@ -134,6 +134,16 @@ namespace BlazorBootstrap.Components
             public const string BlockLevel = "btn-block";
         }
 
+        public static class ButtonGroups
+        {
+            public const string Group = "btn-group";
+        }
+
+        public static class ButtonToolbars
+        {
+            public const string Toolbar = "btn-toolbar";
+        }
+
         public static class Headings
         {
             /// <summary>
