@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorBootstrap.Components.Showroom\BlazorBootstrap.Components.Showroom.csproj" />
+    <ProjectReference Include="..\BlazorBootstrap.Components\BlazorBootstrap.Components.csproj" />
+  </ItemGroup>
+
+</Project>
