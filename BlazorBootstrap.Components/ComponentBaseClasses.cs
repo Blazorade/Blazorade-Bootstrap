@@ -158,16 +158,15 @@ namespace BlazorBootstrap.Components
 
 
         [Parameter]
-        public ComponentStyle ComponentStyle { get; set; }
-
+        public ComponentColor Color { get; set; }
 
         protected string GetStyleClassName(string prefix = null)
         {
             prefix = prefix ?? this.GetType().Name.ToLower();
             string name = null;
-            if(this.ComponentStyle != ComponentStyle.None)
+            if(this.Color != ComponentColor.None)
             {
-                name = $"{prefix}-{this.ComponentStyle.ToString().ToLower()}";
+                name = $"{prefix}-{this.Color.ToString().ToLower()}";
             }
 
             return name;
