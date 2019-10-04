@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class BreadcrumbBase : BootstrapBase
+    public abstract class BreadcrumbBase : BootstrapComponentBase
     {
 
         public override Task SetParametersAsync(ParameterView parameters)

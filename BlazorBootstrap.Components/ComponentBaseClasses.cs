@@ -10,13 +10,13 @@ namespace BlazorBootstrap.Components
     /// <summary>
     /// Base implementation for all Blazor Boostrap components.
     /// </summary>
-    public abstract class BootstrapBase : ComponentBase
+    public abstract class BootstrapComponentBase : ComponentBase
     {
 
         /// <summary>
         /// Creates an instance of the class.
         /// </summary>
-        protected BootstrapBase()
+        protected BootstrapComponentBase()
         {
             this.Attributes = new Dictionary<string, object>();
             this.Classes = new List<string>();
@@ -148,10 +148,10 @@ namespace BlazorBootstrap.Components
         }
     }
 
-    public abstract class BootstrapStyledBase : BootstrapBase
+    public abstract class BootstrapColoredComponentBase : BootstrapComponentBase
     {
 
-        protected BootstrapStyledBase()
+        protected BootstrapColoredComponentBase()
         {
             this.AddClass(this.GetType().Name.ToLower());
         }

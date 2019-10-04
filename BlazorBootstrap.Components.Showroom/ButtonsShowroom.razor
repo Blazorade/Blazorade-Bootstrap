@@ -1,46 +1,46 @@
 ﻿
 <h2>Buttons</h2>
 
-<Button ComponentStyle="ComponentStyle.Primary">Primary</Button>
-<Button ComponentStyle="ComponentStyle.Secondary">Secondary</Button>
-<Button ComponentStyle="ComponentStyle.Success">Success</Button>
-<Button ComponentStyle="ComponentStyle.Danger">Danger</Button>
-<Button ComponentStyle="ComponentStyle.Warning">Warning</Button>
-<Button ComponentStyle="ComponentStyle.Info">Info</Button>
-<Button ComponentStyle="ComponentStyle.Light">Light</Button>
-<Button ComponentStyle="ComponentStyle.Dark">Dark</Button>
+<Button Color="ComponentColor.Primary">Primary</Button>
+<Button Color="ComponentColor.Secondary">Secondary</Button>
+<Button Color="ComponentColor.Success">Success</Button>
+<Button Color="ComponentColor.Danger">Danger</Button>
+<Button Color="ComponentColor.Warning">Warning</Button>
+<Button Color="ComponentColor.Info">Info</Button>
+<Button Color="ComponentColor.Light">Light</Button>
+<Button Color="ComponentColor.Dark">Dark</Button>
 <Button IsLink="true" Link="http://github.com">Link</Button>
 
 
 <h2>Outline Buttons</h2>
 
-<Button ComponentStyle="ComponentStyle.Primary" IsOutline="true">Primary</Button>
-<Button ComponentStyle="ComponentStyle.Secondary" IsOutline="true">Secondary</Button>
-<Button ComponentStyle="ComponentStyle.Success" IsOutline="true">Success</Button>
-<Button ComponentStyle="ComponentStyle.Danger" IsOutline="true">Danger</Button>
-<Button ComponentStyle="ComponentStyle.Warning" IsOutline="true">Warning</Button>
-<Button ComponentStyle="ComponentStyle.Info" IsOutline="true">Info</Button>
-<Button ComponentStyle="ComponentStyle.Light" IsOutline="true">Light</Button>
-<Button ComponentStyle="ComponentStyle.Dark" IsOutline="true">Dark</Button>
+<Button Color="ComponentColor.Primary" IsOutline="true">Primary</Button>
+<Button Color="ComponentColor.Secondary" IsOutline="true">Secondary</Button>
+<Button Color="ComponentColor.Success" IsOutline="true">Success</Button>
+<Button Color="ComponentColor.Danger" IsOutline="true">Danger</Button>
+<Button Color="ComponentColor.Warning" IsOutline="true">Warning</Button>
+<Button Color="ComponentColor.Info" IsOutline="true">Info</Button>
+<Button Color="ComponentColor.Light" IsOutline="true">Light</Button>
+<Button Color="ComponentColor.Dark" IsOutline="true">Dark</Button>
 
 
 <h2>Sizes</h2>
 
 <h3>Large</h3>
-<Button ComponentStyle="ComponentStyle.Primary" Size="ButtonSize.Large">Large button</Button>
-<Button ComponentStyle="ComponentStyle.Secondary" Size="ButtonSize.Large">Large button</Button>
+<Button Color="ComponentColor.Primary" Size="ButtonSize.Large">Large button</Button>
+<Button Color="ComponentColor.Secondary" Size="ButtonSize.Large">Large button</Button>
 
 <h3>Small</h3>
-<Button ComponentStyle="ComponentStyle.Primary" Size="ButtonSize.Small">Small button</Button>
-<Button ComponentStyle="ComponentStyle.Secondary" Size="ButtonSize.Small">Small button</Button>
+<Button Color="ComponentColor.Primary" Size="ButtonSize.Small">Small button</Button>
+<Button Color="ComponentColor.Secondary" Size="ButtonSize.Small">Small button</Button>
 
 <h3>Block-Level</h3>
-<Button ComponentStyle="ComponentStyle.Primary" IsBlockLevel="true">Primary</Button>
-<Button ComponentStyle="ComponentStyle.Secondary" IsBlockLevel="true">Secondary</Button>
+<Button Color="ComponentColor.Primary" IsBlockLevel="true">Primary</Button>
+<Button Color="ComponentColor.Secondary" IsBlockLevel="true">Secondary</Button>
 
 
 <h2>Active State</h2>
-<Button ComponentStyle="ComponentStyle.Secondary" Size="ButtonSize.Large" IsActive="@isActive">Primary Button</Button>
+<Button Color="ComponentColor.Secondary" Size="ButtonSize.Large" IsActive="@isActive">Primary Button</Button>
 <Button IsLink="true" OnClick="ToggleIsActive">Toggle</Button>
 
 @code {
@@ -53,7 +53,7 @@
 
 
 <h2>Disabled State</h2>
-<Button ComponentStyle="ComponentStyle.Primary" Size="ButtonSize.Large" IsDisabled="@isDisabled">Primary Button</Button>
+<Button Color="ComponentColor.Primary" Size="ButtonSize.Large" IsDisabled="@isDisabled">Primary Button</Button>
 <Button IsLink="true" OnClick="ToggleIsDisabled">Toggle</Button>
 
 @code {
@@ -68,26 +68,26 @@
 <h2>Button Groups</h2>
 
 <ButtonGroup>
-    <Button ComponentStyle="ComponentStyle.Success">Left</Button>
-    <Button ComponentStyle="ComponentStyle.Info">Middle</Button>
-    <Button ComponentStyle="ComponentStyle.Warning">Right</Button>
+    <Button Color="ComponentColor.Success">Left</Button>
+    <Button Color="ComponentColor.Info">Middle</Button>
+    <Button Color="ComponentColor.Warning">Right</Button>
 </ButtonGroup>
 
 <h2>Button Toolbars</h2>
 
 <ButtonToolbar>
     <ButtonGroup>
-        <Button ComponentStyle="ComponentStyle.Secondary">1</Button>
-        <Button ComponentStyle="ComponentStyle.Secondary">2</Button>
-        <Button ComponentStyle="ComponentStyle.Secondary">3</Button>
-        <Button ComponentStyle="ComponentStyle.Secondary">4</Button>
+        <Button Color="ComponentColor.Secondary">1</Button>
+        <Button Color="ComponentColor.Secondary">2</Button>
+        <Button Color="ComponentColor.Secondary">3</Button>
+        <Button Color="ComponentColor.Secondary">4</Button>
     </ButtonGroup>
     <ButtonGroup>
-        <Button ComponentStyle="ComponentStyle.Secondary">5</Button>
-        <Button ComponentStyle="ComponentStyle.Secondary">6</Button>
-        <Button ComponentStyle="ComponentStyle.Secondary">7</Button>
+        <Button Color="ComponentColor.Secondary">5</Button>
+        <Button Color="ComponentColor.Secondary">6</Button>
+        <Button Color="ComponentColor.Secondary">7</Button>
     </ButtonGroup>
     <ButtonGroup>
-        <Button ComponentStyle="ComponentStyle.Secondary">8</Button>
+        <Button Color="ComponentColor.Secondary">8</Button>
     </ButtonGroup>
 </ButtonToolbar>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class BreadcrumbItemBase : BootstrapBase
+    public abstract class BreadcrumbItemBase : BootstrapComponentBase
     {
 
         [Parameter]
