@@ -1,0 +1,93 @@
+﻿
+<h3>Buttons</h3>
+
+<Button ComponentStyle="ComponentStyle.Primary">Primary</Button>
+<Button ComponentStyle="ComponentStyle.Secondary">Secondary</Button>
+<Button ComponentStyle="ComponentStyle.Success">Success</Button>
+<Button ComponentStyle="ComponentStyle.Danger">Danger</Button>
+<Button ComponentStyle="ComponentStyle.Warning">Warning</Button>
+<Button ComponentStyle="ComponentStyle.Info">Info</Button>
+<Button ComponentStyle="ComponentStyle.Light">Light</Button>
+<Button ComponentStyle="ComponentStyle.Dark">Dark</Button>
+<Button IsLink="true" Link="http://github.com">Link</Button>
+
+
+<h3>Outline Buttons</h3>
+
+<Button ComponentStyle="ComponentStyle.Primary" IsOutline="true">Primary</Button>
+<Button ComponentStyle="ComponentStyle.Secondary" IsOutline="true">Secondary</Button>
+<Button ComponentStyle="ComponentStyle.Success" IsOutline="true">Success</Button>
+<Button ComponentStyle="ComponentStyle.Danger" IsOutline="true">Danger</Button>
+<Button ComponentStyle="ComponentStyle.Warning" IsOutline="true">Warning</Button>
+<Button ComponentStyle="ComponentStyle.Info" IsOutline="true">Info</Button>
+<Button ComponentStyle="ComponentStyle.Light" IsOutline="true">Light</Button>
+<Button ComponentStyle="ComponentStyle.Dark" IsOutline="true">Dark</Button>
+
+
+<h3>Sizes</h3>
+
+<h4>Large</h4>
+<Button ComponentStyle="ComponentStyle.Primary" Size="ButtonSize.Large">Large button</Button>
+<Button ComponentStyle="ComponentStyle.Secondary" Size="ButtonSize.Large">Large button</Button>
+
+<h4>Small</h4>
+<Button ComponentStyle="ComponentStyle.Primary" Size="ButtonSize.Small">Small button</Button>
+<Button ComponentStyle="ComponentStyle.Secondary" Size="ButtonSize.Small">Small button</Button>
+
+<h4>Block-Level</h4>
+<Button ComponentStyle="ComponentStyle.Primary" IsBlockLevel="true">Primary</Button>
+<Button ComponentStyle="ComponentStyle.Secondary" IsBlockLevel="true">Secondary</Button>
+
+
+<h3>Active State</h3>
+<Button ComponentStyle="ComponentStyle.Secondary" Size="ButtonSize.Large" IsActive="@isActive">Primary Button</Button>
+<Button IsLink="true" OnClick="ToggleIsActive">Toggle</Button>
+
+@code {
+    bool isActive = true;
+    void ToggleIsActive()
+    {
+        isActive = !isActive;
+    }
+}
+
+
+<h3>Disabled State</h3>
+<Button ComponentStyle="ComponentStyle.Primary" Size="ButtonSize.Large" IsDisabled="@isDisabled">Primary Button</Button>
+<Button IsLink="true" OnClick="ToggleIsDisabled">Toggle</Button>
+
+@code {
+    bool isDisabled = false;
+    void ToggleIsDisabled()
+    {
+        isDisabled = !isDisabled;
+    }
+}
+
+
+<h3>Button Groups</h3>
+
+<ButtonGroup>
+    <Button ComponentStyle="ComponentStyle.Success">Left</Button>
+    <Button ComponentStyle="ComponentStyle.Info">Middle</Button>
+    <Button ComponentStyle="ComponentStyle.Warning">Right</Button>
+</ButtonGroup>
+
+<h3>Button Toolbars</h3>
+
+<ButtonToolbar>
+    <ButtonGroup>
+        <Button ComponentStyle="ComponentStyle.Secondary">1</Button>
+        <Button ComponentStyle="ComponentStyle.Secondary">2</Button>
+        <Button ComponentStyle="ComponentStyle.Secondary">3</Button>
+        <Button ComponentStyle="ComponentStyle.Secondary">4</Button>
+    </ButtonGroup>
+    <ButtonGroup>
+        <Button ComponentStyle="ComponentStyle.Secondary">5</Button>
+        <Button ComponentStyle="ComponentStyle.Secondary">6</Button>
+        <Button ComponentStyle="ComponentStyle.Secondary">7</Button>
+    </ButtonGroup>
+    <ButtonGroup>
+        <Button ComponentStyle="ComponentStyle.Secondary">8</Button>
+    </ButtonGroup>
+</ButtonToolbar>
