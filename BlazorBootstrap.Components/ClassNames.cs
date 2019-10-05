@@ -162,6 +162,17 @@ namespace BlazorBootstrap.Components
 
             public const string Image = "card-img-top";
 
+            /// <summary>
+            /// The class for an image in a card that is overlayed with the card body.
+            /// </summary>
+            public const string OverlayImage = "card-img";
+
+            public const string Footer = "card-footer";
+
+            /// <summary>
+            /// The class for the card body that will be overlayed on top of an image in the card.
+            /// </summary>
+            public const string ImageOverlay = "card-img-overlay";
         }
 
         public static class Headings

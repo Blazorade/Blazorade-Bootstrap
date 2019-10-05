@@ -18,22 +18,32 @@
 </div>
 <div class="row">
     <div class="@containerClasses">
-        <Card Title="Simple Card" Subtitle="Sample card usage" Text="This card demonstrates a simple use-case for the simplest way of using the Card component." Links="links">
+        <Card>
+            <CardBody Title="Simple Card" Subtitle="Sample card usage" Text="This card demonstrates a simple use-case for the simplest way of using the Card component." Links="links"></CardBody>
         </Card>
     </div>
     <div class="@containerClasses">
-        <Card Title="A card with an image" Text="This card shows how to use images with cards.">
-            <CardImage Src="https://devblogs.microsoft.com/aspnet/wp-content/uploads/sites/16/2019/04/BrandBlazor_nohalo_1000x.png" Alt="ASP.NET Blazor" Width="16rem" Margin="Spacing.Two" />
+        <Card>
+            <CardImage Src="https://devblogs.microsoft.com/aspnet/wp-content/uploads/sites/16/2019/04/BrandBlazor_nohalo_1000x.png" Alt="ASP.NET Blazor" Width="12rem" Margin="Spacing.Two" />
+            <CardBody Title="Card with Image" Text="This card shows how to use images with cards."></CardBody>
         </Card>
     </div>
     <div class="@containerClasses">
-        <Card Text="This card shows you how you can use headers with your cards.">
+        <Card>
+            <CardBody Title="Card with Image" Text="This card shows how to set the image at the bottom of the card."></CardBody>
+            <CardImage Src="https://devblogs.microsoft.com/aspnet/wp-content/uploads/sites/16/2019/04/BrandBlazor_nohalo_1000x.png" Alt="ASP.NET Blazor" Width="12rem" Margin="Spacing.Two" />
+        </Card>
+    </div>
+    <div class="@containerClasses">
+        <Card>
             <CardHeader>Featured Card</CardHeader>
+            <CardBody Text="This card shows you how you can use headers with your cards."></CardBody>
         </Card>
     </div>
     <div class="@containerClasses">
-        <Card Text="This card shows you how you can use Heading components as the header for your card.">
+        <Card>
             <CardHeader Level="HeadingLevel.H1">Another Card</CardHeader>
+            <CardBody Text="This card shows you how you can use Heading components as the header for your card."></CardBody>
         </Card>
     </div>
     <div class="@containerClasses">
@@ -48,14 +58,36 @@
         </Card>
     </div>
     <div class="@containerClasses">
-        <Card TextAlignment="TextAlignment.Left" Title="Text Alignment, Left" Text="This card demonstrates how to align text to the left."></Card>
+        <Card>
+            <CardHeader>Card Header</CardHeader>
+            <CardBody Text="This is a card demonstrating both header and footer">
+
+            </CardBody>
+            <CardFooter>Card Footer</CardFooter>
+        </Card>
     </div>
     <div class="@containerClasses">
-        <Card TextAlignment="TextAlignment.Center" Title="Text Alignment, Center" Text="This card demonstrates how to center align text."></Card>
+        <Card TextAlignment="TextAlignment.Left">
+            <CardBody Title="Text Alignment, Left" Text="This card demonstrates how to align text to the left."></CardBody>
+        </Card>
     </div>
     <div class="@containerClasses">
-        <Card TextAlignment="TextAlignment.Right" Title="Text Alignment, Right" Text="This card demonstrates how to align text to the right."></Card>
+        <Card TextAlignment="TextAlignment.Center">
+            <CardBody Title="Text Alignment, Center" Text="This card demonstrates how to center align text."></CardBody>
+        </Card>
     </div>
+    <div class="@containerClasses">
+        <Card TextAlignment="TextAlignment.Right">
+            <CardBody Title="Text Alignment, Right" Text="This card demonstrates how to align text to the right."></CardBody>
+        </Card>
+    </div>
+    <div class="@string.Join(" ", containerClasses, "text-white")">
+        <Card>
+            <CardImage IsOverlay="true" Src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=15"></CardImage>
+            <CardBody IsImageOverlay="true" Title="Image Overlay" Text="This card demonstrates how to use overlays on an image."></CardBody>
+        </Card>
+    </div>
+
 </div>
 
 

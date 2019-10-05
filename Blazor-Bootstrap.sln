@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29318.209
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorBootstrap.Components", "BlazorBootstrap.Components\BlazorBootstrap.Components.csproj", "{ED631264-757D-4588-A133-1F5225D8E9E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerTestHost", "ServerTestHost\ServerTestHost.csproj", "{BF4040C9-7505-4D5A-8993-10275EFB4C11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServerTestHost", "ServerTestHost\ServerTestHost.csproj", "{BF4040C9-7505-4D5A-8993-10275EFB4C11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorBootstrap.Components.Showroom", "BlazorBootstrap.Components.Showroom\BlazorBootstrap.Components.Showroom.csproj", "{E5E1D9E9-C269-420F-9534-11489BAB1750}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorBootstrap.Components.Showroom", "BlazorBootstrap.Components.Showroom\BlazorBootstrap.Components.Showroom.csproj", "{E5E1D9E9-C269-420F-9534-11489BAB1750}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

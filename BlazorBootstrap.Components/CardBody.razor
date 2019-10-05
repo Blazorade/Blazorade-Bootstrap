@@ -1,5 +1,25 @@
 ﻿@inherits CardBodyBase
 
-<div @attributes="this.Attributes">
-    @this.ChildContent
-</div>
+    <div @attributes="this.Attributes">
+        @if (!string.IsNullOrEmpty(this.Title))
+        {
+            <Heading Level="HeadingLevel.H5" class="@ClassNames.Cards.Title">@this.Title</Heading>
+        }
+        @if (!string.IsNullOrEmpty(this.Subtitle))
+        {
+            <Heading Level="HeadingLevel.H6" class="@string.Join(" ", ClassNames.Cards.Subtitle, ClassNames.InlineText.TextMuted)">@this.Subtitle</Heading>
+        }
+        @if (!string.IsNullOrEmpty(this.Text))
+        {
+            <p class="@ClassNames.Cards.Text mt-2">@this.Text</p>
+        }
+        @if (null != this.Links)
+        {
+            foreach (var link in this.Links)
+            {
+                <a href="@link.Item2" class="@ClassNames.Cards.Link">@link.Item1</a>
+            }
+        }
+
+        @this.ChildContent
+    </div>

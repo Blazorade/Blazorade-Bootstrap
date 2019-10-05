@@ -20,12 +20,21 @@ namespace BlazorBootstrap.Components
         [Parameter]
         public string Height { get; set; }
 
+        [Parameter]
+        public bool IsOverlay { get; set; }
 
 
 
         protected override void OnParametersSet()
         {
-            this.AddClass(ClassNames.Cards.Image);
+            if (!this.IsOverlay)
+            {
+                this.AddClass(ClassNames.Cards.Image);
+            }
+            else
+            {
+                this.AddClass(ClassNames.Cards.OverlayImage);
+            }
 
             var styles = new List<string>();
             if (!string.IsNullOrEmpty(this.Width)) styles.Add($"width:{this.Width}");
