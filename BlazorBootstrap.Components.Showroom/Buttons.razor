@@ -1,5 +1,5 @@
 ﻿
-<h2>Buttons</h2>
+<Heading Level="HeadingLevel.H2">Buttons</Heading>
 
 <Button Color="ComponentColor.Primary">Primary</Button>
 <Button Color="ComponentColor.Secondary">Secondary</Button>
@@ -12,7 +12,7 @@
 <Button IsLink="true" Link="http://github.com">Link</Button>
 
 
-<h2>Outline Buttons</h2>
+<Heading Level="HeadingLevel.H2" MarginTop="Spacing.Five">Outline Buttons</Heading>
 
 <Button Color="ComponentColor.Primary" IsOutline="true">Primary</Button>
 <Button Color="ComponentColor.Secondary" IsOutline="true">Secondary</Button>
@@ -24,22 +24,23 @@
 <Button Color="ComponentColor.Dark" IsOutline="true">Dark</Button>
 
 
-<h2>Sizes</h2>
+<Heading Level="HeadingLevel.H2" MarginTop="Spacing.Five">Sizes</Heading>
+<p>Buttons come in three different sizes.</p>
 
-<h3>Large</h3>
+<Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Large</Heading>
 <Button Color="ComponentColor.Primary" Size="ButtonSize.Large">Large button</Button>
 <Button Color="ComponentColor.Secondary" Size="ButtonSize.Large">Large button</Button>
 
-<h3>Small</h3>
+<Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Small</Heading>
 <Button Color="ComponentColor.Primary" Size="ButtonSize.Small">Small button</Button>
 <Button Color="ComponentColor.Secondary" Size="ButtonSize.Small">Small button</Button>
 
-<h3>Block-Level</h3>
+<Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Block-Level</Heading>
 <Button Color="ComponentColor.Primary" IsBlockLevel="true">Primary</Button>
 <Button Color="ComponentColor.Secondary" IsBlockLevel="true">Secondary</Button>
 
 
-<h2>Active State</h2>
+<Heading Level="HeadingLevel.H2" MarginTop="Spacing.Five">Active State</Heading>
 <Button Color="ComponentColor.Secondary" Size="ButtonSize.Large" IsActive="@isActive">Primary Button</Button>
 <Button IsLink="true" OnClick="ToggleIsActive">Toggle</Button>
 
@@ -52,7 +53,7 @@
 }
 
 
-<h2>Disabled State</h2>
+<Heading Level="HeadingLevel.H2" MarginTop="Spacing.Five">Disabled State</Heading>
 <Button Color="ComponentColor.Primary" Size="ButtonSize.Large" IsDisabled="@isDisabled">Primary Button</Button>
 <Button IsLink="true" OnClick="ToggleIsDisabled">Toggle</Button>
 
@@ -65,7 +66,7 @@
 }
 
 
-<h2>Button Groups</h2>
+<Heading Level="HeadingLevel.H2" MarginTop="Spacing.Five">Button Groups</Heading>
 
 <ButtonGroup>
     <Button Color="ComponentColor.Success">Left</Button>
@@ -73,21 +74,22 @@
     <Button Color="ComponentColor.Warning">Right</Button>
 </ButtonGroup>
 
-<h2>Button Toolbars</h2>
+<Heading Level="HeadingLevel.H2" MarginTop="Spacing.Five">Button Toolbars</Heading>
 
 <ButtonToolbar>
-    <ButtonGroup>
+    <ButtonGroup MarginRight="Spacing.Two">
         <Button Color="ComponentColor.Secondary">1</Button>
         <Button Color="ComponentColor.Secondary">2</Button>
         <Button Color="ComponentColor.Secondary">3</Button>
         <Button Color="ComponentColor.Secondary">4</Button>
     </ButtonGroup>
-    <ButtonGroup>
+    <ButtonGroup MarginRight="Spacing.Two">
         <Button Color="ComponentColor.Secondary">5</Button>
         <Button Color="ComponentColor.Secondary">6</Button>
         <Button Color="ComponentColor.Secondary">7</Button>
     </ButtonGroup>
-    <ButtonGroup>
+    <ButtonGroup MarginRight="Spacing.Two">
         <Button Color="ComponentColor.Secondary">8</Button>
     </ButtonGroup>
 </ButtonToolbar>
+
