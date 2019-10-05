@@ -175,6 +175,15 @@ namespace BlazorBootstrap.Components
             public const string ImageOverlay = "card-img-overlay";
         }
 
+        public static class CardGroups
+        {
+            public const string Group = "card-group";
+
+            public const string Deck = "card-deck";
+
+            public const string Columns = "card-columns";
+        }
+
         public static class Headings
         {
             /// <summary>

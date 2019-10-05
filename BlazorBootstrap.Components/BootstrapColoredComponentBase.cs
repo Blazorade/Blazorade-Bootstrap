@@ -14,7 +14,7 @@ namespace BlazorBootstrap.Components
 
 
         [Parameter]
-        public ComponentColor? Color { get; set; }
+        public NamedColor? Color { get; set; }
 
 
 

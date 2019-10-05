@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public enum ComponentColor
+    public enum NamedColor
     {
         Primary,
         Secondary,
@@ -13,6 +13,9 @@ namespace BlazorBootstrap.Components
         Warning,
         Info,
         Light,
-        Dark
+        Dark,
+        White,
+        White50,
+        Black50
     }
 }

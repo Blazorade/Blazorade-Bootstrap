@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System;
+using System.Linq;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace BlazorBootstrap.Components
@@ -121,6 +123,15 @@ namespace BlazorBootstrap.Components
         [Parameter]
         public TextAlignment? TextAlignment { get; set; }
 
+        [Parameter]
+        public NamedColor? BackgroundColor { get; set; }
+
+        [Parameter]
+        public NamedColor? BorderColor { get; set; }
+
+        [Parameter]
+        public NamedColor? TextColor { get; set; }
+
 
 
         protected bool AddAttribute(string name, object value)
@@ -160,13 +171,13 @@ namespace BlazorBootstrap.Components
             this.Classes.Clear();
         }
 
-        protected string GetColorClassName(string prefix = null, ComponentColor? color = null)
+        protected string GetColorClassName(string prefix = null, NamedColor? color = null)
         {
             prefix = prefix ?? this.GetType().Name.ToLower();
             string name = null;
             if (color.HasValue)
             {
-                name = $"{prefix}-{color.ToString().ToLower()}";
+                name = $"{prefix}-{this.BreakClassName(color.ToString())}";
             }
 
             return name;
@@ -216,6 +227,17 @@ namespace BlazorBootstrap.Components
             }
         }
 
+        private string BreakClassName(string input)
+        {
+            var list = new List<string>();
+            var rx = new Regex("[A-Z]+[a-z]*|[0-9]+");
+            foreach(var m in from Match x in rx.Matches(input) where x.Success && !string.IsNullOrEmpty(x.Value) select x)
+            {
+                list.Add(m.Value.ToLower());
+            }
+
+            return string.Join("-", list);
+        }
 
         protected override void OnParametersSet()
         {
@@ -258,6 +280,10 @@ namespace BlazorBootstrap.Components
             {
                 this.AddClass($"text-{this.TextAlignment.ToString().ToLower()}");
             }
+
+            if(this.BackgroundColor.HasValue) this.AddClass(this.GetColorClassName(prefix: "bg", color: this.BackgroundColor));
+            if(this.BorderColor.HasValue) this.AddClass(this.GetColorClassName(prefix: "border", color: this.BorderColor));
+            if(this.TextColor.HasValue) this.AddClass(this.GetColorClassName(prefix: "text", color: this.TextColor));
 
             base.OnParametersSet();
         }
