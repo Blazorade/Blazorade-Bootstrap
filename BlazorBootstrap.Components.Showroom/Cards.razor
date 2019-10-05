@@ -8,6 +8,8 @@
         new Tuple<string, string>("Badges", "/badges")
 
     };
+
+    string containerClasses = "col h-100";
 }
 
 
@@ -15,26 +17,26 @@
 
 </div>
 <div class="row">
-    <div class="col h-100">
+    <div class="@containerClasses">
         <Card Title="Simple Card" Subtitle="Sample card usage" Text="This card demonstrates a simple use-case for the simplest way of using the Card component." Links="links">
         </Card>
     </div>
-    <div class="col h-100">
+    <div class="@containerClasses">
         <Card Title="A card with an image" Text="This card shows how to use images with cards.">
             <CardImage Src="https://devblogs.microsoft.com/aspnet/wp-content/uploads/sites/16/2019/04/BrandBlazor_nohalo_1000x.png" Alt="ASP.NET Blazor" Width="16rem" Margin="Spacing.Two" />
         </Card>
     </div>
-    <div class="col h-100">
+    <div class="@containerClasses">
         <Card Text="This card shows you how you can use headers with your cards.">
             <CardHeader>Featured Card</CardHeader>
         </Card>
     </div>
-    <div class="col h-100">
+    <div class="@containerClasses">
         <Card Text="This card shows you how you can use Heading components as the header for your card.">
             <CardHeader Level="HeadingLevel.H1">Another Card</CardHeader>
         </Card>
     </div>
-    <div class="col h-100">
+    <div class="@containerClasses">
         <Card>
             <CardHeader>Quote of the Day</CardHeader>
             <CardBody>
@@ -45,8 +47,14 @@
             </CardBody>
         </Card>
     </div>
-    <div class="col h-100">
-
+    <div class="@containerClasses">
+        <Card TextAlignment="TextAlignment.Left" Title="Text Alignment, Left" Text="This card demonstrates how to align text to the left."></Card>
+    </div>
+    <div class="@containerClasses">
+        <Card TextAlignment="TextAlignment.Center" Title="Text Alignment, Center" Text="This card demonstrates how to center align text."></Card>
+    </div>
+    <div class="@containerClasses">
+        <Card TextAlignment="TextAlignment.Right" Title="Text Alignment, Right" Text="This card demonstrates how to align text to the right."></Card>
     </div>
 </div>
 

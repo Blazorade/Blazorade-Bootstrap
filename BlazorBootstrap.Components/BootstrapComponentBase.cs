@@ -118,6 +118,9 @@ namespace BlazorBootstrap.Components
         [Parameter(CaptureUnmatchedValues = true)]
         public IDictionary<string, object> Attributes { get; set; }
 
+        [Parameter]
+        public TextAlignment? TextAlignment { get; set; }
+
 
 
         protected bool AddAttribute(string name, object value)
@@ -250,6 +253,11 @@ namespace BlazorBootstrap.Components
             spacingAdder(this.PaddingY, "py");
 
             #endregion
+
+            if (this.TextAlignment.HasValue)
+            {
+                this.AddClass($"text-{this.TextAlignment.ToString().ToLower()}");
+            }
 
             base.OnParametersSet();
         }
