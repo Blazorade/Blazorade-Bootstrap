@@ -1,7 +1,6 @@
 ﻿@inherits AlertBase
 
-@if (!this.IsDismissed)
-{
+<div>
     <div @attributes="this.Attributes" role="alert">
         @ChildContent
 
@@ -12,4 +11,4 @@
             </button>
         }
     </div>
-}
+</div>

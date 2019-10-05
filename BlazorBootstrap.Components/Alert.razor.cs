@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 
 namespace BlazorBootstrap.Components
 {
@@ -12,12 +13,17 @@ namespace BlazorBootstrap.Components
         [Parameter]
         public bool IsDismissible { get; set; }
 
+        [Parameter]
+        public bool FadeOnDismiss { get; set; }
 
-        protected bool IsDismissed { get; private set; }
 
-        protected void CloseButtonOnClick()
+
+        [Inject]
+        protected IJSRuntime JsInterop { get; set; }
+
+        protected async void CloseButtonOnClick()
         {
-            this.IsDismissed = true;
+            await this.JsInterop.InvokeVoidAsync("blazorbs.closeAlert", $"#{this.Attributes["id"]}", this.FadeOnDismiss);
         }
 
 

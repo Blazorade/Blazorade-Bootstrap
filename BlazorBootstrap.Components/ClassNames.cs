@@ -12,6 +12,8 @@ namespace BlazorBootstrap.Components
         /// </summary>
         public const string Active = "active";
 
+        public const string Fade = "fade";
+
         public static class Abbreviations
         {
             /// <summary>
