@@ -159,6 +159,18 @@ namespace BlazorBootstrap.Components
             this.Classes.Clear();
         }
 
+        protected string GetColorClassName(string prefix = null, ComponentColor? color = null)
+        {
+            prefix = prefix ?? this.GetType().Name.ToLower();
+            string name = null;
+            if (color.HasValue)
+            {
+                name = $"{prefix}-{color.ToString().ToLower()}";
+            }
+
+            return name;
+        }
+
         protected bool RemoveAttribute(string name)
         {
             if(this.Attributes.ContainsKey(name))
@@ -263,23 +275,13 @@ namespace BlazorBootstrap.Components
 
 
         [Parameter]
-        public ComponentColor Color { get; set; }
+        public ComponentColor? Color { get; set; }
 
-        protected string GetStyleClassName(string prefix = null)
-        {
-            prefix = prefix ?? this.GetType().Name.ToLower();
-            string name = null;
-            if(this.Color != ComponentColor.None)
-            {
-                name = $"{prefix}-{this.Color.ToString().ToLower()}";
-            }
 
-            return name;
-        }
 
         protected override void OnParametersSet()
         {
-            var styleContext = this.GetStyleClassName();
+            var styleContext = this.GetColorClassName(color: this.Color);
             this.AddClass(styleContext);
 
             base.OnParametersSet();

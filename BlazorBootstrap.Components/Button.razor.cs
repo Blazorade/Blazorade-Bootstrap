@@ -62,9 +62,9 @@ namespace BlazorBootstrap.Components
         {
             this.AddClass(ClassNames.Buttons.Button);
 
-            if(this.Color != ComponentColor.None && !this.IsLink)
+            if(this.Color.HasValue && !this.IsLink)
             {
-                this.AddClass(this.GetStyleClassName(!this.IsOutline ? ClassNames.Buttons.Button : ClassNames.Buttons.OutlineButton));
+                this.AddClass(this.GetColorClassName(prefix: !this.IsOutline ? ClassNames.Buttons.Button : ClassNames.Buttons.OutlineButton, color: this.Color));
             }
             else if(this.IsLink)
             {

@@ -6,7 +6,6 @@ namespace BlazorBootstrap.Components
 {
     public enum ComponentColor
     {
-        None,
         Primary,
         Secondary,
         Success,

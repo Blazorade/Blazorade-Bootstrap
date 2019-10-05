@@ -1,2 +1,56 @@
-﻿<h2>Cards</h2>
+﻿<Heading Level="HeadingLevel.H2">Cards</Heading>
+
+@code {
+    IEnumerable<Tuple<string, string>> links = new List<Tuple<string, string>>()
+    {
+        new Tuple<string, string>("Cards", "/cards"),
+        new Tuple<string, string>("Alerts", "/alerts"),
+        new Tuple<string, string>("Badges", "/badges")
+
+    };
+}
+
+
+<div class="container">
+
+</div>
+<div class="row">
+    <div class="col h-100">
+        <Card Title="Simple Card" Subtitle="Sample card usage" Text="This card demonstrates a simple use-case for the simplest way of using the Card component." Links="links">
+        </Card>
+    </div>
+    <div class="col h-100">
+        <Card Title="A card with an image" Text="This card shows how to use images with cards.">
+            <CardImage Src="https://devblogs.microsoft.com/aspnet/wp-content/uploads/sites/16/2019/04/BrandBlazor_nohalo_1000x.png" Alt="ASP.NET Blazor" Width="16rem" Margin="Spacing.Two" />
+        </Card>
+    </div>
+    <div class="col h-100">
+        <Card Text="This card shows you how you can use headers with your cards.">
+            <CardHeader>Featured Card</CardHeader>
+        </Card>
+    </div>
+    <div class="col h-100">
+        <Card Text="This card shows you how you can use Heading components as the header for your card.">
+            <CardHeader Level="HeadingLevel.H1">Another Card</CardHeader>
+        </Card>
+    </div>
+    <div class="col h-100">
+        <Card>
+            <CardHeader>Quote of the Day</CardHeader>
+            <CardBody>
+                <Blockquote>
+                    <p>People often say that motivation doesn't last. Well, neither does bathing &mdash; that's why we recommend it daily.</p>
+                    <footer class="@ClassNames.BlockQuotes.Footer">Zig Ziglar</footer>
+                </Blockquote>
+            </CardBody>
+        </Card>
+    </div>
+    <div class="col h-100">
+
+    </div>
+</div>
+
+
+
+
 

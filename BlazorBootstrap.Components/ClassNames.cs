@@ -144,6 +144,26 @@ namespace BlazorBootstrap.Components
             public const string Toolbar = "btn-toolbar";
         }
 
+        public static class Cards
+        {
+            public const string Card = "card";
+
+            public const string Header = "card-header";
+
+            public const string Body = "card-body";
+
+            public const string Title = "card-title";
+
+            public const string Subtitle = "card-subtitle";
+
+            public const string Text = "card-text";
+
+            public const string Link = "card-link";
+
+            public const string Image = "card-img-top";
+
+        }
+
         public static class Headings
         {
             /// <summary>
