@@ -1,12 +1,10 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace BlazorBootstrap.Components
 {
-
     /// <summary>
     /// Base implementation for all Blazor Boostrap components.
     /// </summary>
@@ -263,29 +261,5 @@ namespace BlazorBootstrap.Components
 
             return base.SetParametersAsync(parameters);
         }
-    }
-
-    public abstract class BootstrapColoredComponentBase : BootstrapComponentBase
-    {
-
-        protected BootstrapColoredComponentBase()
-        {
-            this.AddClass(this.GetType().Name.ToLower());
-        }
-
-
-        [Parameter]
-        public ComponentColor? Color { get; set; }
-
-
-
-        protected override void OnParametersSet()
-        {
-            var styleContext = this.GetColorClassName(color: this.Color);
-            this.AddClass(styleContext);
-
-            base.OnParametersSet();
-        }
-
     }
 }
