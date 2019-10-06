@@ -1,3 +1,27 @@
 ﻿
-<h3>Carousels</h3>
+<Heading Level="HeadingLevel.H2">Carousels</Heading>
 
+@code {
+    string img1 = "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=1280";
+    string img2 = "https://images.unsplash.com/photo-1519861531473-9200262188bf?w=1280";
+    string img3 = "https://images.unsplash.com/photo-1516684378628-240d2c5237f5?w=1280";
+    string img4 = "https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=1280";
+}
+
+
+<Carousel id="carousel-1">
+    <CarouselInner>
+        <CarouselItem IsActive="true">
+            <CarouselImage Src="@img1"></CarouselImage>
+        </CarouselItem>
+        <CarouselItem>
+            <CarouselImage Src="@img2"></CarouselImage>
+        </CarouselItem>
+        <CarouselItem>
+            <CarouselImage Src="@img3"></CarouselImage>
+        </CarouselItem>
+        <CarouselItem>
+            <CarouselImage Src="@img4"></CarouselImage>
+        </CarouselItem>
+    </CarouselInner>
+</Carousel>

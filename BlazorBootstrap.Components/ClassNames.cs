@@ -186,6 +186,15 @@ namespace BlazorBootstrap.Components
             public const string Columns = "card-columns";
         }
 
+        public static class Carousels
+        {
+            public const string Carousel = "carousel slide";
+
+            public const string Inner = "carousel-inner";
+
+            public const string Item = "carousel-item";
+        }
+
         public static class Headings
         {
             /// <summary>

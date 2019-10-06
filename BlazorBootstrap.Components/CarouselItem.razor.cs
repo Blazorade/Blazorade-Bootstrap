@@ -5,28 +5,22 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class CardImageBase : ImageBase
+    public abstract class CarouselItemBase : BootstrapComponentBase
     {
 
-
         [Parameter]
-        public bool IsOverlay { get; set; }
-
-
+        public bool IsActive { get; set; }
 
         protected override void OnParametersSet()
         {
-            if (!this.IsOverlay)
+            this.AddClass(ClassNames.Carousels.Item);
+
+            if (this.IsActive)
             {
-                this.AddClass(ClassNames.Cards.Image);
-            }
-            else
-            {
-                this.AddClass(ClassNames.Cards.OverlayImage);
+                this.AddClass(ClassNames.Active);
             }
 
             base.OnParametersSet();
         }
-
     }
 }
