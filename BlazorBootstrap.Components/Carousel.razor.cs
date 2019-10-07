@@ -36,7 +36,7 @@ namespace BlazorBootstrap.Components
             {
                 if (this.AutoStart)
                 {
-                    await this.JsInterop.InvokeVoidAsync("blazorbs.carousel", $"#{this.Attributes["id"]}");
+                    await this.JsInterop.InvokeVoidAsync("blazorbs.carousels.carousel", $"#{this.Attributes["id"]}");
                 }
             }
 

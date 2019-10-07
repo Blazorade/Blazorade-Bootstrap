@@ -23,7 +23,7 @@ namespace BlazorBootstrap.Components
 
         protected async void CloseButtonOnClick()
         {
-            await this.JsInterop.InvokeVoidAsync("blazorbs.closeAlert", $"#{this.Attributes["id"]}", this.FadeOnDismiss);
+            await this.JsInterop.InvokeVoidAsync("blazorbs.alerts.dismiss", $"#{this.Attributes["id"]}", this.FadeOnDismiss);
         }
 
 
