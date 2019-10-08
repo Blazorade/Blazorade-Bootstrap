@@ -22,6 +22,8 @@ namespace BlazorBootstrap.Components
 
         protected override void OnParametersSet()
         {
+            this.AddClass(ClassNames.Carousels.Control);
+
             if(this.Direction == CarouselControlDirection.Next)
             {
                 this.AddClass(ClassNames.Carousels.ControlNext);

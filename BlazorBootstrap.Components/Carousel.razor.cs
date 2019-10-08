@@ -26,9 +26,10 @@ namespace BlazorBootstrap.Components
         protected IJSRuntime JsInterop { get; set; }
 
 
-        protected async override void OnParametersSet()
+        protected override void OnParametersSet()
         {
             this.AddClass(ClassNames.Carousels.Carousel);
+            this.AddAttribute("data-ride", "carousel");
 
             base.OnParametersSet();
         }

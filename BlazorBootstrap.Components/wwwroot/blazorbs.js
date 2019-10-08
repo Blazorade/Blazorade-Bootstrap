@@ -15,7 +15,11 @@ window.blazorbs = {
     carousels: {
         carousel: function(selector) {
             console.log("Initializing carousel.", selector);
-            var result = $(selector).carousel();
+            var c = $(selector);
+            var result = c.carousel();
+
+            var id = c.attr("id");
+            c.find(".carousel-control").attr("data-target", "#" + id);
         }
     }
 }
