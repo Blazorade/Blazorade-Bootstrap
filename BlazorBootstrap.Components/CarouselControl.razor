@@ -1,5 +1,6 @@
-﻿<h3>CarouselControl</h3>
+﻿@inherits CarouselControlBase
 
-@code {
 
-}
+<a @attributes="this.Attributes">
+    <span class="carousel-control-@(this.Direction == CarouselControlDirection.Next ? "next" : "prev")-icon" aria-hidden="true"></span>
+</a>

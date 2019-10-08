@@ -27,7 +27,7 @@ namespace BlazorBootstrap.Components
         /// Enables child content for the control.
         /// </summary>
         [Parameter]
-        public RenderFragment ChildContent { get; set; }
+        public virtual RenderFragment ChildContent { get; set; }
 
         #region Margin
 

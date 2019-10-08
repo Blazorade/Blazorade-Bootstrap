@@ -9,6 +9,7 @@
 }
 
 
+<Heading Level="HeadingLevel.H3">Basic Carousel</Heading>
 <Carousel id="carousel-1">
     <CarouselInner>
         <CarouselItem IsActive="true">
@@ -22,6 +23,22 @@
         </CarouselItem>
         <CarouselItem>
             <CarouselImage Src="@img4"></CarouselImage>
+        </CarouselItem>
+    </CarouselInner>
+</Carousel>
+
+
+<Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">With Controls</Heading>
+<Carousel id="carousel-1" ShowControls="true">
+    <CarouselInner>
+        <CarouselItem IsActive="true">
+            <CarouselImage Src="@img1"></CarouselImage>
+        </CarouselItem>
+        <CarouselItem>
+            <CarouselImage Src="@img2"></CarouselImage>
+        </CarouselItem>
+        <CarouselItem>
+            <CarouselImage Src="@img3"></CarouselImage>
         </CarouselItem>
     </CarouselInner>
 </Carousel>

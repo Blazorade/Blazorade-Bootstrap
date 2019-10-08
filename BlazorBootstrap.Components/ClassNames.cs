@@ -193,6 +193,11 @@ namespace BlazorBootstrap.Components
             public const string Inner = "carousel-inner";
 
             public const string Item = "carousel-item";
+
+            public const string ControlNext = "carousel-control-next";
+
+            public const string ControlPrevious = "carousel-control-prev";
+
         }
 
         public static class Headings

@@ -19,6 +19,9 @@ namespace BlazorBootstrap.Components
         [Parameter]
         public bool AutoStart { get; set; }
 
+        [Parameter]
+        public bool ShowControls { get; set; }
+
         [Inject]
         protected IJSRuntime JsInterop { get; set; }
 

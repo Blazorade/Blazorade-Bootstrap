@@ -2,4 +2,14 @@
 
 <div @attributes="this.Attributes">
     @this.ChildContent
+
+    @if (this.ShowControls)
+    {
+        <a class="carousel-control-prev" href="#@this.Attributes["id"]" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </a>
+        <a class="carousel-control-next" href="#@this.Attributes["id"]" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </a>
+    }
 </div>
