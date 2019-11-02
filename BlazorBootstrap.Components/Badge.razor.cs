@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class BadgeBase : BootstrapColoredComponentBase
+    public abstract class BadgeBase : ColoredBootstrapComponentBase
     {
 
         [Parameter]

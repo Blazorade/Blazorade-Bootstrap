@@ -4,10 +4,10 @@ using System.Text;
 namespace BlazorBootstrap.Components
 {
 
-    public abstract class BootstrapColoredComponentBase : BootstrapComponentBase
+    public abstract class ColoredBootstrapComponentBase : BootstrapComponentBase
     {
 
-        protected BootstrapColoredComponentBase()
+        protected ColoredBootstrapComponentBase()
         {
             this.AddClass(this.GetType().Name.ToLower());
         }

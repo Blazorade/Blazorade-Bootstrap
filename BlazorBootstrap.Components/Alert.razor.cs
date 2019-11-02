@@ -7,7 +7,7 @@ using Microsoft.JSInterop;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class AlertBase : BootstrapColoredComponentBase
+    public abstract class AlertBase : ColoredBootstrapComponentBase
     {
 
         [Parameter]
