@@ -80,36 +80,43 @@ namespace BlazorBootstrap.Components
         /// <summary>
         /// Defines the padding on all sides of the component.
         /// </summary>
+        [Parameter]
         public Spacing? Padding { get; set; }
 
         /// <summary>
         /// Defines the top padding for the component.
         /// </summary>
+        [Parameter]
         public Spacing? PaddingTop { get; set; }
 
         /// <summary>
         /// Defines the right padding for the component.
         /// </summary>
+        [Parameter]
         public Spacing? PaddingRight { get; set; }
 
         /// <summary>
         /// Defines the bottom padding for the component.
         /// </summary>
+        [Parameter]
         public Spacing? PaddingBottom { get; set; }
 
         /// <summary>
         /// Defines the left padding for the component.
         /// </summary>
+        [Parameter]
         public Spacing? PaddingLeft { get; set; }
 
         /// <summary>
         /// Defines the X-axis paddings for the component.
         /// </summary>
+        [Parameter]
         public Spacing? PaddingX { get; set; }
 
         /// <summary>
         /// Defines the Y-axis paddings for the component.
         /// </summary>
+        [Parameter]
         public Spacing? PaddingY { get; set; }
 
         #endregion
