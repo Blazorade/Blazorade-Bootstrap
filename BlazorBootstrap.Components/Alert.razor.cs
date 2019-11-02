@@ -37,6 +37,8 @@ namespace BlazorBootstrap.Components
             }
 
             base.OnParametersSet();
+
+            if(this.IsDismissible) this.SetIdIfEmpty();
         }
 
     }

@@ -210,6 +210,17 @@ namespace BlazorBootstrap.Components
             return false;
         }
 
+        /// <summary>
+        /// Sets the <c>id</c> attribute if it has not already been set.
+        /// </summary>
+        /// <param name="id">OPtional. The ID to set if it is empty. If not specified, an ID is automatically generated.</param>
+        protected void SetIdIfEmpty(string id = null)
+        {
+            if (!this.Attributes.ContainsKey("id"))
+            {
+                this.Attributes.Add("id", id ?? Guid.NewGuid().ToString());
+            }
+        }
 
 
 
