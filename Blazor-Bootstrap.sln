@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServerTestHost", "ServerTes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorBootstrap.Components.Showroom", "BlazorBootstrap.Components.Showroom\BlazorBootstrap.Components.Showroom.csproj", "{E5E1D9E9-C269-420F-9534-11489BAB1750}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerAppDemo", "ServerAppDemo\ServerAppDemo.csproj", "{94F63696-9B35-44DC-AA6F-74E000D62343}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{E5E1D9E9-C269-420F-9534-11489BAB1750}.Release|x64.Build.0 = Release|Any CPU
 		{E5E1D9E9-C269-420F-9534-11489BAB1750}.Release|x86.ActiveCfg = Release|Any CPU
 		{E5E1D9E9-C269-420F-9534-11489BAB1750}.Release|x86.Build.0 = Release|Any CPU
+		{94F63696-9B35-44DC-AA6F-74E000D62343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94F63696-9B35-44DC-AA6F-74E000D62343}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94F63696-9B35-44DC-AA6F-74E000D62343}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{94F63696-9B35-44DC-AA6F-74E000D62343}.Debug|x64.Build.0 = Debug|Any CPU
+		{94F63696-9B35-44DC-AA6F-74E000D62343}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{94F63696-9B35-44DC-AA6F-74E000D62343}.Debug|x86.Build.0 = Debug|Any CPU
+		{94F63696-9B35-44DC-AA6F-74E000D62343}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94F63696-9B35-44DC-AA6F-74E000D62343}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94F63696-9B35-44DC-AA6F-74E000D62343}.Release|x64.ActiveCfg = Release|Any CPU
+		{94F63696-9B35-44DC-AA6F-74E000D62343}.Release|x64.Build.0 = Release|Any CPU
+		{94F63696-9B35-44DC-AA6F-74E000D62343}.Release|x86.ActiveCfg = Release|Any CPU
+		{94F63696-9B35-44DC-AA6F-74E000D62343}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
