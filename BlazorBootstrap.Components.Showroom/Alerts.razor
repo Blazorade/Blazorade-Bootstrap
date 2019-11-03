@@ -1,5 +1,4 @@
-﻿
-<Heading Level="HeadingLevel.H2">Alerts</Heading>
+﻿<Heading Level="HeadingLevel.H2">Alerts</Heading>
 
 <Alert id="alert-primary" Color="NamedColor.Primary">Primary Alert</Alert>
 <Alert id="alert-secondary" Color="NamedColor.Secondary">Secondary Alert</Alert>
@@ -9,6 +8,7 @@
 <Alert id="alert-info" Color="NamedColor.Info">Info Alert</Alert>
 <Alert id="alert-light" Color="NamedColor.Light">Light Alert</Alert>
 <Alert id="alert-dark" Color="NamedColor.Dark">Dark Alert</Alert>
+
 
 
 <Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Dismissible Alerts</Heading>
@@ -23,6 +23,15 @@
     <Heading Level="HeadingLevel.H4">Woopsie!</Heading>
     This is a dismissible alert that you can dismiss by clicking the close button in the upper right corner.
 </Alert>
+
+@code { private Alert DismissibleAlert; }
+<Alert Color="NamedColor.Light" IsDismissible="true" FadeOnDismiss="true" @ref="this.DismissibleAlert" class="shadow">
+    <AlertHeading>Custom Dismissal</AlertHeading>
+    <ChildContent>
+        This alert can be dismissed from outside of the component, by clicking on the button below.
+    </ChildContent>
+</Alert>
+<Button Color="NamedColor.Primary" OnClick="async () => await this.DismissibleAlert.DismissAsync()">Dismiss</Button>
 
 
 <Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Alerts with Headings and Links</Heading>
