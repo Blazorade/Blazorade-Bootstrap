@@ -4,7 +4,14 @@
 <Heading Level="HeadingLevel.H1">Blazor Bootstrap</Heading>
 
 <Alert Color="NamedColor.Info" IsDismissible="true" FadeOnDismiss="true">
-    This application is just a simple demonstration of what you need to add to your Blazor application. For more information about Blazor Bootstrap, visit the <a href="https://github.com/MikaBerglund/Blazor-Bootstrap/wiki" target="_blank">Wiki on GitHub</a>.
+    <AlertHeading>Please note!</AlertHeading>
+
+    <ChildContent>
+        <div class="position-relative">
+            This application is just a simple demonstration of what you need to add to your Blazor application.
+            For more information about Blazor Bootstrap, visit the <AlertLink BackgroundColor="NamedColor.White" Padding="Spacing.One" IsStretched="true" href="https://github.com/MikaBerglund/Blazor-Bootstrap/wiki" target="_blank" class="shadow rounded">Wiki on GitHub</AlertLink>.
+        </div>
+    </ChildContent>
 </Alert>
 
 <p>

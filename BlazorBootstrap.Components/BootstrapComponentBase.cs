@@ -158,6 +158,12 @@ namespace BlazorBootstrap.Components
         /// <returns>Returns <c>true</c> if the class was added.</returns>
         protected bool AddClass(string className)
         {
+            if(this.Classes.Count == 0 && this.Attributes.TryGetValue("class", out object obj))
+            {
+                // If we don't have any classes defined yet, but we have a value in the class attribute, then we add those classes to the Classes collection.
+                ((List<string>)this.Classes).AddRange(from x in $"{obj}".Split(' ') select x);
+            }
+
             if (!string.IsNullOrEmpty(className) && !this.Classes.Contains(className))
             {
                 this.Classes.Add(className);

@@ -14,12 +14,22 @@
 <Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Dismissible Alerts</Heading>
 
 <Alert id="dismissible-alert-1" Color="NamedColor.Success" IsDismissible="true" FadeOnDismiss="true">
-    <Paragraph>Just an alert that you can fade out.</Paragraph>
+    Just an alert that you can fade out.
 </Alert>
 <Alert id="dismissible-alert-2" Color="NamedColor.Danger" IsDismissible="true" FadeOnDismiss="false">
-    <Paragraph>Another alert that has no other purpose then showing you how you dismiss it.</Paragraph>
+    Another alert that has no other purpose then showing you how you dismiss it.
 </Alert>
 <Alert id="dismissible-alert-3" Color="NamedColor.Warning" IsDismissible="true" FadeOnDismiss="true">
     <Heading Level="HeadingLevel.H4">Woopsie!</Heading>
-    <Paragraph>This is a dismissible alert that you can dismiss by clicking the close button in the upper right corner.</Paragraph>
+    This is a dismissible alert that you can dismiss by clicking the close button in the upper right corner.
+</Alert>
+
+
+<Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Alerts with Headings and Links</Heading>
+
+<Alert Color="NamedColor.Info">
+    <AlertHeading>This is the heading</AlertHeading>
+    <ChildContent>
+        This is an alert with a heading and a <AlertLink href="https://github.com/MikaBerglund/Blazor-Bootstrap" target="_blank">Link</AlertLink>.
+    </ChildContent>
 </Alert>

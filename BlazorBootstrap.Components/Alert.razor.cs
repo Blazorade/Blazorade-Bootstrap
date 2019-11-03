@@ -11,6 +11,9 @@ namespace BlazorBootstrap.Components
     {
 
         [Parameter]
+        public RenderFragment AlertHeading { get; set; }
+
+        [Parameter]
         public bool IsDismissible { get; set; }
 
         [Parameter]

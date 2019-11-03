@@ -2,13 +2,18 @@
 
 <div>
     <div @attributes="this.Attributes" role="alert">
-        @ChildContent
-
         @if (this.IsDismissible)
         {
             <button type="button" class="@ClassNames.Buttons.Close" aria-label="Close" @onclick="this.CloseButtonOnClick">
                 <span aria-hidden="true">&times;</span>
             </button>
         }
+
+        @if(null != this.AlertHeading)
+        {
+            <Heading Level="HeadingLevel.H4" class="alert-heading">@this.AlertHeading</Heading>
+        }
+
+        @ChildContent
     </div>
 </div>

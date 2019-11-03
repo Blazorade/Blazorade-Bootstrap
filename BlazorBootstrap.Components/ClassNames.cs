@@ -31,6 +31,11 @@ namespace BlazorBootstrap.Components
             public const string Alert = "alert";
 
             /// <summary>
+            /// Add this class to links inside of an Alert component.
+            /// </summary>
+            public const string AlertLink = "alert-link";
+
+            /// <summary>
             /// Add this class to an alert along with the dismiss button.
             /// </summary>
             public const string Dismissible = "alert-dismissible";
@@ -272,6 +277,14 @@ namespace BlazorBootstrap.Components
             /// Gives the text a faded look.
             /// </summary>
             public const string TextMuted = "text-muted";
+        }
+
+        public static class Links
+        {
+            /// <summary>
+            /// Defines the link as a stretched link.
+            /// </summary>
+            public const string Stretched = "stretched-link";
         }
 
         public static class Lists
