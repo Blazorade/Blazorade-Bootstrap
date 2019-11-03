@@ -139,6 +139,9 @@ namespace BlazorBootstrap.Components
         [Parameter]
         public NamedColor? TextColor { get; set; }
 
+        [Parameter]
+        public ShadowSize? Shadow { get; set; }
+
 
 
         protected bool AddAttribute(string name, object value)
@@ -299,6 +302,33 @@ namespace BlazorBootstrap.Components
             spacingAdder(this.PaddingY, "py");
 
             #endregion
+
+            #region Handle shadows
+
+            if (this.Shadow.HasValue)
+            {
+                switch(this.Shadow.Value)
+                {
+                    case ShadowSize.None:
+                        this.AddClass(ClassNames.Shadows.None);
+                        break;
+
+                    case ShadowSize.Small:
+                        this.AddClass(ClassNames.Shadows.Small);
+                        break;
+
+                    case ShadowSize.Regular:
+                        this.AddClass(ClassNames.Shadows.Regular);
+                        break;
+
+                    case ShadowSize.Large:
+                        this.AddClass(ClassNames.Shadows.Large);
+                        break;
+                }
+            }
+
+            #endregion
+
 
             if (this.TextAlignment.HasValue)
             {

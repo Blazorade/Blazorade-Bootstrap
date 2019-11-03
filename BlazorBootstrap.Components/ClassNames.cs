@@ -300,5 +300,16 @@ namespace BlazorBootstrap.Components
             public const string Lead = "lead";
         }
 
+        public static class Shadows
+        {
+            public const string None = "shadow-none";
+
+            public const string Small = "shadow-sm";
+
+            public const string Regular = "shadow";
+
+            public const string Large = "shadow-lg";
+        }
+
     }
 }

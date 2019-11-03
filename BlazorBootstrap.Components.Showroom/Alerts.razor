@@ -25,7 +25,7 @@
 </Alert>
 
 @code { private Alert DismissibleAlert; }
-<Alert Color="NamedColor.Light" IsDismissible="true" FadeOnDismiss="true" @ref="this.DismissibleAlert" class="shadow">
+<Alert Color="NamedColor.Light" IsDismissible="true" FadeOnDismiss="true" @ref="this.DismissibleAlert" Shadow="ShadowSize.Small">
     <AlertHeading>Custom Dismissal</AlertHeading>
     <ChildContent>
         This alert can be dismissed from outside of the component, by clicking on the button below.
