@@ -9,9 +9,13 @@
             </button>
         }
 
-        @if(null != this.AlertHeading)
+        @if (null != this.AlertHeading)
         {
             <Heading Level="HeadingLevel.H4" class="alert-heading">@this.AlertHeading</Heading>
+        }
+        else if (!string.IsNullOrEmpty(this.HeadingText))
+        {
+            <Heading Level="HeadingLevel.H4" class="alert-heading">@this.HeadingText</Heading>
         }
 
         @ChildContent

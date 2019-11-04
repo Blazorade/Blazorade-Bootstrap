@@ -10,8 +10,20 @@ namespace BlazorBootstrap.Components
     public abstract class AlertBase : ColoredBootstrapComponentBase
     {
 
+        /// <summary>
+        /// The template that is used to produce the heading of the alert.
+        /// </summary>
         [Parameter]
         public RenderFragment AlertHeading { get; set; }
+
+        /// <summary>
+        /// The text for your alert heading.
+        /// </summary>
+        /// <remarks>
+        /// This parameter is ignored if <see cref="AlertHeading"/> is specified.
+        /// </remarks>
+        [Parameter]
+        public string HeadingText { get; set; }
 
         [Parameter]
         public bool IsDismissible { get; set; }
