@@ -2,11 +2,11 @@
 
 @if (string.IsNullOrEmpty(this.Link))
 {
-    <button @attributes="this.Attributes" @onclick="this.OnButtonClick">
+    <button @attributes="this.Attributes" @onclick="this.OnClick">
         @this.ChildContent
     </button>
 }
 else
 {
-    <a @attributes="this.Attributes" @onclick="this.OnButtonClick">@this.ChildContent</a>
+    <a @attributes="this.Attributes" @onclick="this.OnClick">@this.ChildContent</a>
 }

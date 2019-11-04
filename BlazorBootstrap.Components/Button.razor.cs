@@ -115,10 +115,6 @@ namespace BlazorBootstrap.Components
             base.OnParametersSet();
         }
 
-        protected async Task OnButtonClick(MouseEventArgs args)
-        {
-            await this.OnClick.InvokeAsync(args);
-        }
     }
 
     public enum ButtonSize
