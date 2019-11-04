@@ -11,6 +11,12 @@ namespace BlazorBootstrap.Components
     {
 
         /// <summary>
+        /// Called when the alert has been dismissed.
+        /// </summary>
+        [Parameter]
+        public EventCallback<AlertBase> OnDismissed { get; set; }
+
+        /// <summary>
         /// The template that is used to produce the heading of the alert.
         /// </summary>
         [Parameter]
@@ -47,6 +53,8 @@ namespace BlazorBootstrap.Components
             }
 
             await this.JsInterop.InvokeVoidAsync("blazorbs.alerts.dismiss", $"#{this.Attributes["id"]}", this.FadeOnDismiss);
+
+            await this.OnDismissed.InvokeAsync(this);
         }
 
 

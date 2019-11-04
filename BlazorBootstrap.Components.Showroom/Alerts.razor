@@ -34,6 +34,24 @@
 <Button Color="NamedColor.Primary" OnClick="async () => await this.DismissibleAlert.DismissAsync()">Dismiss</Button>
 
 
+<Div MarginTop="Spacing.Three" />
+@code {
+    bool isDismissed = false;
+}
+
+<Alert Color="NamedColor.Info" IsDismissible="true" FadeOnDismiss="true" HeadingText="Handling Dismissal" OnDismissed="async () => isDismissed = true">
+    This alert is hooked up with an event handler that is fired when the alert is dismissed.
+</Alert>
+
+@if (isDismissed)
+{
+    <Alert Color="NamedColor.Success" IsDismissible="true" FadeOnDismiss="true">
+        The alert was successfully dismissed.
+    </Alert>
+}
+
+
+
 <Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Alerts with Headings and Links</Heading>
 
 <Alert Color="NamedColor.Info">
