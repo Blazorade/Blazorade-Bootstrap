@@ -69,6 +69,7 @@ namespace BlazorBootstrap.Components
             else if(this.IsLink)
             {
                 this.AddClass(ClassNames.Buttons.LinkButton);
+                this.AddAttribute("href", this.Link);
             }
 
             if (this.IsBlockLevel)
