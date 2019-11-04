@@ -3,7 +3,7 @@
 
 @code {
     List<BreadcrumbItem> items = new List<BreadcrumbItem>()
-{
+    {
         new BreadcrumbItem(){ Link="#", Text = "Home", Description="The front page of the site" },
         new BreadcrumbItem(){ Link="#", Text = "Section 1" },
         new BreadcrumbItem(){ Link="#", Text = "Section 1.1" },
@@ -19,7 +19,7 @@
     <ItemTemplate>
         @if (!string.IsNullOrEmpty(context.Link))
         {
-            <Span>#@context.Index</Span>@(":") <BlazorBootstrap.Components.Link href="@context.Link">@context.Text</BlazorBootstrap.Components.Link>
+            <Button Color="NamedColor.Light" Shadow="ShadowSize.Regular" Link="@context.Link" IsLink="true">@context.Text</Button>
         }
         else
         {
