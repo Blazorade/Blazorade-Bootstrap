@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ namespace BlazorBootstrap.Components
         /// Callback for when the button is clicked.
         /// </summary>
         [Parameter]
-        public EventCallback OnClick { get; set; }
+        public EventCallback<MouseEventArgs> OnClick { get; set; }
 
         /// <summary>
         /// Specifies whether the button appears active.
@@ -54,7 +55,7 @@ namespace BlazorBootstrap.Components
         public string Link { get; set; }
 
         [Parameter]
-        public ButtonSize Size { get; set; }
+        public ButtonSize? Size { get; set; }
 
 
 
@@ -82,7 +83,7 @@ namespace BlazorBootstrap.Components
                 this.AddClass(ClassNames.Active);
             }
 
-            switch (this.Size)
+            switch (this.Size.GetValueOrDefault())
             {
                 case ButtonSize.Large:
                     this.AddClass(ClassNames.Buttons.Large);
@@ -98,19 +99,23 @@ namespace BlazorBootstrap.Components
                 this.AddAttribute("disabled", "disabled");
             }
 
-            if(!this.IsSubmit)
+            if (!this.IsLink)
             {
-                this.AddAttribute("type", "button");
-            }
-            else
-            {
-                this.AddAttribute("type", "submit");
+                // We will not set the type attribute for links
+                if (!this.IsSubmit)
+                {
+                    this.AddAttribute("type", "button");
+                }
+                else
+                {
+                    this.AddAttribute("type", "submit");
+                }
             }
 
             base.OnParametersSet();
         }
 
-        protected async Task OnButtonClick(object args)
+        protected async Task OnButtonClick(MouseEventArgs args)
         {
             await this.OnClick.InvokeAsync(args);
         }
