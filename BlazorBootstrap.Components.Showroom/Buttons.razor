@@ -94,3 +94,15 @@
     </ButtonGroup>
 </ButtonToolbar>
 
+
+<Heading Level="HeadingLevel.H2" MarginTop="Spacing.Five">Handling Clicks</Heading>
+
+@code {
+    int count = 0;
+
+    private void OnCountClick(MouseEventArgs args)
+    {
+        count++;
+    }
+}
+<Button Color="NamedColor.Dark" IsOutline="true" @onclick="this.OnCountClick">Clicked: <Badge Color="NamedColor.Primary">@count</Badge></Button>
