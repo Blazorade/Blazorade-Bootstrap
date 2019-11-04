@@ -1,6 +1,12 @@
 ﻿@inherits AlertBase
 
 <div>
+    @* 
+        We must wrap the alert component with an additional div that represents the root of our component. This is because
+        Bootstrap removes the alert element from the DOM when it is dismissed. This is done by the Bootstrap JavaScript, which
+        will cause problems for the Blazor rendering.
+    *@
+
     <div @attributes="this.Attributes" role="alert">
         @if (this.IsDismissible)
         {
