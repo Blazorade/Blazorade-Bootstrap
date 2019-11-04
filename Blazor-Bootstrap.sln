@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServerTestHost", "ServerTes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorBootstrap.Components.Showroom", "BlazorBootstrap.Components.Showroom\BlazorBootstrap.Components.Showroom.csproj", "{E5E1D9E9-C269-420F-9534-11489BAB1750}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerAppDemo", "ServerAppDemo\ServerAppDemo.csproj", "{94F63696-9B35-44DC-AA6F-74E000D62343}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServerAppDemo", "ServerAppDemo\ServerAppDemo.csproj", "{94F63696-9B35-44DC-AA6F-74E000D62343}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

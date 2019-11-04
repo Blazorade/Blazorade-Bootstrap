@@ -300,6 +300,11 @@ namespace BlazorBootstrap.Components
             public const string Lead = "lead";
         }
 
+        public static class Position
+        {
+            public const string Relative = "position-relative";
+        }
+
         public static class Shadows
         {
             public const string None = "shadow-none";

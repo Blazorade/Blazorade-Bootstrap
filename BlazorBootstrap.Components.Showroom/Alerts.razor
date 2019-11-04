@@ -46,3 +46,9 @@
 <Alert Color="NamedColor.Secondary" HeadingText="Alert Heading!">
     This is a simple alert that defines the heading text as a parameter on the Alert component, and not as a template parameter as the alert above does.
 </Alert>
+
+<Alert Color="NamedColor.White" Shadow="ShadowSize.Regular" HeadingText="Alert with Stretched Link">
+    <Paragraph Margin="Spacing.Zero" IsStretchedLinkContainer="true">
+        This entire text will be clickable, because <AlertLink IsStretched="true" href="https://github.com/MikaBerglund/Blazor-Bootstrap" target="_blank">this link</AlertLink> is a stretched link. The heading will not be clickable, because this paragraph is set as container for the stretched link.
+    </Paragraph>
+</Alert>

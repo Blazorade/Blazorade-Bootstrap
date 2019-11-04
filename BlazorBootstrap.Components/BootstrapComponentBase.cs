@@ -142,6 +142,9 @@ namespace BlazorBootstrap.Components
         [Parameter]
         public ShadowSize? Shadow { get; set; }
 
+        [Parameter]
+        public bool IsStretchedLinkContainer { get; set; }
+
 
 
         protected bool AddAttribute(string name, object value)
@@ -338,6 +341,11 @@ namespace BlazorBootstrap.Components
             if(this.BackgroundColor.HasValue) this.AddClass(this.GetColorClassName(prefix: "bg", color: this.BackgroundColor));
             if(this.BorderColor.HasValue) this.AddClass(this.GetColorClassName(prefix: "border", color: this.BorderColor));
             if(this.TextColor.HasValue) this.AddClass(this.GetColorClassName(prefix: "text", color: this.TextColor));
+
+            if (this.IsStretchedLinkContainer)
+            {
+                this.AddClass(ClassNames.Position.Relative);
+            }
 
             base.OnParametersSet();
         }
