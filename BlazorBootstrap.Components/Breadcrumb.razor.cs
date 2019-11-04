@@ -9,9 +9,27 @@ namespace BlazorBootstrap.Components
     public abstract class BreadcrumbBase : BootstrapComponentBase
     {
 
+        protected BreadcrumbBase()
+        {
+            this.Items = new List<BreadcrumbItem>();
+        }
+
+        [Parameter]
+        public RenderFragment<BreadcrumbItem> ItemTemplate { get; set; }
+
+        [Parameter]
+        public IReadOnlyList<BreadcrumbItem> Items { get; set; }
+
+        public override RenderFragment ChildContent {
+            get => base.ChildContent;
+            set => throw new NotSupportedException($"The '{this.GetType().Name}' component does not support child content with the '{nameof(this.ChildContent)}' property.");
+        }
+
+
         public override Task SetParametersAsync(ParameterView parameters)
         {
-            this.AddClass(ClassNames.Breadcrumbs.Breadcrumb);
+            this.AddAttribute("aria-label", ClassNames.Breadcrumbs.Breadcrumb);
+
             return base.SetParametersAsync(parameters);
         }
     }

@@ -1,9 +1,29 @@
 ﻿
-<Heading Level="HeadingLevel.H2">Breadcrumb</Heading>
+<Heading Level="HeadingLevel.H2">Breadcrumbs</Heading>
 
-<Breadcrumb>
-    <BreadcrumbItem Link="#">Home</BreadcrumbItem>
-    <BreadcrumbItem Link="#">Section 1</BreadcrumbItem>
-    <BreadcrumbItem IsActive="true">Current Page</BreadcrumbItem>
+@code {
+    List<BreadcrumbItem> items = new List<BreadcrumbItem>()
+{
+        new BreadcrumbItem(){ Link="#", Text = "Home", Description="The front page of the site" },
+        new BreadcrumbItem(){ Link="#", Text = "Section 1" },
+        new BreadcrumbItem(){ Link="#", Text = "Section 1.1" },
+        new BreadcrumbItem(){ Text = "This page", IsActive = true, Description = "This is your current page. You are here now." }
+    };
+}
+
+<Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Simple</Heading>
+<Breadcrumb Items="this.items" />
+
+<Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Custom Item Template</Heading>
+<Breadcrumb Items="this.items">
+    <ItemTemplate>
+        @if (!string.IsNullOrEmpty(context.Link))
+        {
+            <Span>#@context.Index</Span>@(":") <BlazorBootstrap.Components.Link href="@context.Link">@context.Text</BlazorBootstrap.Components.Link>
+        }
+        else
+        {
+            <Span>@context.Text (@context.Description)</Span>
+        }
+    </ItemTemplate>
 </Breadcrumb>
-
