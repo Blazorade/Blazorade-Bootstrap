@@ -19,21 +19,6 @@ namespace BlazorBootstrap.Components
         public override RenderFragment ChildContent { get => base.ChildContent; set => base.ChildContent = value; }
 
         /// <summary>
-        /// The title for the card.
-        /// </summary>
-        [Parameter]
-        public string Title { get; set; }
-
-        /// <summary>
-        /// The template to use for the title.
-        /// </summary>
-        /// <remarks>
-        /// <see cref="Title"/> is ignored if a template is specified in this parameter.
-        /// </remarks>
-        [Parameter]
-        public RenderFragment TitleTemplate { get; set; }
-
-        /// <summary>
         /// The subtitle of the card.
         /// </summary>
         [Parameter]
@@ -47,6 +32,21 @@ namespace BlazorBootstrap.Components
         /// </remarks>
         [Parameter]
         public RenderFragment SubtitleTemplate { get; set; }
+
+        /// <summary>
+        /// The title for the card.
+        /// </summary>
+        [Parameter]
+        public string Title { get; set; }
+
+        /// <summary>
+        /// The template to use for the title.
+        /// </summary>
+        /// <remarks>
+        /// <see cref="Title"/> is ignored if a template is specified in this parameter.
+        /// </remarks>
+        [Parameter]
+        public RenderFragment TitleTemplate { get; set; }
 
 
         protected override void OnParametersSet()
