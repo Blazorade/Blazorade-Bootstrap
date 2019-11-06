@@ -26,6 +26,11 @@ namespace BlazorBootstrap.Components
         bool IsActive { get; set; }
 
         /// <summary>
+        /// Specifies whether the link is a stretched link.
+        /// </summary>
+        bool IsStretched { get; set; }
+
+        /// <summary>
         /// The URL to add to the link.
         /// </summary>
         string LinkUrl { get; set; }
@@ -44,6 +49,7 @@ namespace BlazorBootstrap.Components
         public string Description { get; set; }
         public int Index { get; set; }
         public bool IsActive { get; set; }
+        public bool IsStretched { get; set; }
         public string LinkUrl { get; set; }
         public string Text { get; set; }
     }
