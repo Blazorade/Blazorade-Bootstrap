@@ -20,16 +20,16 @@ namespace BlazorBootstrap.Components
         /// The template that is used to produce the heading of the alert.
         /// </summary>
         [Parameter]
-        public RenderFragment AlertHeading { get; set; }
+        public RenderFragment HeadingTemplate { get; set; }
 
         /// <summary>
         /// The text for your alert heading.
         /// </summary>
         /// <remarks>
-        /// This parameter is ignored if <see cref="AlertHeading"/> is specified.
+        /// This parameter is ignored if <see cref="HeadingTemplate"/> is specified.
         /// </remarks>
         [Parameter]
-        public string HeadingText { get; set; }
+        public string Heading { get; set; }
 
         [Parameter]
         public bool IsDismissible { get; set; }
