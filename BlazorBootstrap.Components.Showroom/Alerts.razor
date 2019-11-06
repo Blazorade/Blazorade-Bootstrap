@@ -26,7 +26,7 @@
 
 @code { private Alert DismissibleAlert; }
 <Alert Color="NamedColor.Light" IsDismissible="true" FadeOnDismiss="true" @ref="this.DismissibleAlert" Shadow="ShadowSize.Small">
-    <AlertHeading>Custom Dismissal</AlertHeading>
+    <HeadingTemplate>Custom Dismissal</HeadingTemplate>
     <ChildContent>
         This alert can be dismissed from outside of the component, by clicking on the button below.
     </ChildContent>
@@ -39,7 +39,7 @@
     bool isDismissed = false;
 }
 
-<Alert Color="NamedColor.Info" IsDismissible="true" FadeOnDismiss="true" HeadingText="Handling Dismissal" OnDismissed="async () => isDismissed = true">
+<Alert Color="NamedColor.Info" IsDismissible="true" FadeOnDismiss="true" Heading="Handling Dismissal" OnDismissed="async () => isDismissed = true">
     This alert is hooked up with an event handler that is fired when the alert is dismissed.
 </Alert>
 
@@ -55,17 +55,17 @@
 <Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Alerts with Headings and Links</Heading>
 
 <Alert Color="NamedColor.Info">
-    <AlertHeading>This is the heading</AlertHeading>
+    <HeadingTemplate>This is the heading</HeadingTemplate>
     <ChildContent>
         This is an alert with a heading and a <AlertLink href="https://github.com/MikaBerglund/Blazor-Bootstrap" target="_blank">Link</AlertLink>.
     </ChildContent>
 </Alert>
 
-<Alert Color="NamedColor.Secondary" HeadingText="Alert Heading!">
+<Alert Color="NamedColor.Secondary" Heading="Alert Heading!">
     This is a simple alert that defines the heading text as a parameter on the Alert component, and not as a template parameter as the alert above does.
 </Alert>
 
-<Alert Color="NamedColor.White" Shadow="ShadowSize.Regular" HeadingText="Alert with Stretched Link">
+<Alert Color="NamedColor.White" Shadow="ShadowSize.Regular" Heading="Alert with Stretched Link">
     <Paragraph Margin="Spacing.Zero" IsStretchedLinkContainer="true">
         This entire text will be clickable, because <AlertLink IsStretched="true" href="https://github.com/MikaBerglund/Blazor-Bootstrap" target="_blank">this link</AlertLink> is a stretched link. The heading will not be clickable, because this paragraph is set as container for the stretched link.
     </Paragraph>
