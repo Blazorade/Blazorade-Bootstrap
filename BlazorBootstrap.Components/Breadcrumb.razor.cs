@@ -11,14 +11,13 @@ namespace BlazorBootstrap.Components
 
         protected BreadcrumbBase()
         {
-            this.Items = new List<BreadcrumbItem>();
         }
 
         [Parameter]
-        public RenderFragment<BreadcrumbItem> ItemTemplate { get; set; }
+        public RenderFragment<ILink> ItemTemplate { get; set; }
 
         [Parameter]
-        public IReadOnlyList<BreadcrumbItem> Items { get; set; }
+        public IReadOnlyList<ILink> Items { get; set; }
 
         public override RenderFragment ChildContent {
             get => base.ChildContent;
