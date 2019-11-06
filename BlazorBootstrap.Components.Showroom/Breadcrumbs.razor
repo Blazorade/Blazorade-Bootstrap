@@ -2,12 +2,12 @@
 <Heading Level="HeadingLevel.H2">Breadcrumbs</Heading>
 
 @code {
-    List<BreadcrumbItem> items = new List<BreadcrumbItem>()
+    List<AnchorLink> items = new List<AnchorLink>()
     {
-        new BreadcrumbItem(){ Link="#", Text = "Home", Description="The front page of the site" },
-        new BreadcrumbItem(){ Link="#", Text = "Section 1" },
-        new BreadcrumbItem(){ Link="#", Text = "Section 1.1" },
-        new BreadcrumbItem(){ Text = "This page", IsActive = true, Description = "This is your current page. You are here now." }
+        new AnchorLink(){ LinkUrl="#", Text = "Home", Description="The front page of the site" },
+        new AnchorLink(){ LinkUrl="#", Text = "Section 1" },
+        new AnchorLink(){ LinkUrl="#", Text = "Section 1.1" },
+        new AnchorLink(){ Text = "This page", IsActive = true, Description = "This is your current page. You are here now." }
     };
 }
 
@@ -17,9 +17,9 @@
 <Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Custom Item Template</Heading>
 <Breadcrumb Items="this.items">
     <ItemTemplate>
-        @if (!string.IsNullOrEmpty(context.Link))
+        @if (!string.IsNullOrEmpty(context.LinkUrl))
         {
-            <Button Color="NamedColor.Light" Shadow="ShadowSize.Regular" Link="@context.Link" IsLink="true">@context.Text</Button>
+            <Button Color="NamedColor.Light" Shadow="ShadowSize.Regular" Link="@context.LinkUrl" IsLink="true">@context.Text</Button>
         }
         else
         {
