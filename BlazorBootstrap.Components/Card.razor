@@ -1,5 +1,36 @@
 ﻿@inherits CardBase
 
-<div @attributes="this.Attributes">
-    @this.ChildContent
-</div>
+@code {
+    string subtitleClasses = string.Join(" ", ClassNames.Cards.Subtitle, ClassNames.InlineText.TextMuted);
+
+}
+    <div @attributes="this.Attributes">
+        @if (null == this.ChildContent)
+        {
+            @*
+                If ChildContent is not specified, then we start examining the rest of the parameters and template parameters
+                and start building the component from those.
+            *@
+            <div class="@ClassNames.Cards.Body">
+                @if (null != this.TitleTemplate || !string.IsNullOrEmpty(this.Title))
+                {
+                    <Heading Level="HeadingLevel.H5" class="@ClassNames.Cards.Title">
+                        @(this.TitleTemplate ?? (object)this.Title)
+                    </Heading>
+                }
+                @if(null != this.SubtitleTemplate || !string.IsNullOrEmpty(this.Subtitle))
+                {
+                    <Heading Level="HeadingLevel.H6" class="@subtitleClasses" MarginBottom="Spacing.Two">
+                        @(this.SubtitleTemplate ?? (object)this.Subtitle)
+                    </Heading>
+                }
+            </div>
+        }
+        else
+        {
+            @*
+                If ChildContent is specified, then we use that as the only content for the component.
+            *@
+            @this.ChildContent
+        }
+    </div>
