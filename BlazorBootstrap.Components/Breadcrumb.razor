@@ -13,9 +13,9 @@
                 {
                     @this.ItemTemplate(item)
                 }
-                else if (!string.IsNullOrEmpty(item.Link))
+                else if (!string.IsNullOrEmpty(item.LinkUrl))
                 {
-                    <BlazorBootstrap.Components.Link href="@item.Link" title="@item.Description">@item.Text</BlazorBootstrap.Components.Link>
+                    <BlazorBootstrap.Components.Link href="@item.LinkUrl" title="@item.Description">@item.Text</BlazorBootstrap.Components.Link>
                 }
                 else
                 {
