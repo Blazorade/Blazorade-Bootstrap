@@ -3,14 +3,14 @@
 @code {
     IEnumerable<ILink> links = new[]
     {
-        new AnchorLink { Text = "Cards", LinkUrl = "/cards" },
-        new AnchorLink { Text = "Alerts", LinkUrl = "/alerts" },
-        new AnchorLink { Text = "Badges", LinkUrl = "/badges" }
+        new Link { Text = "Cards", Url = "/cards" },
+        new Link { Text = "Alerts", Url = "/alerts" },
+        new Link { Text = "Badges", Url = "/badges" }
     };
 
     IEnumerable<ILink> singleLink = new[]
     {
-        new AnchorLink{ Text = "Home", LinkUrl = "/", IsStretched = true }
+        new Link{ Text = "Home", Url = "/", IsStretched = true }
     };
 
     string containerClasses = "col-12 col-sm-6 col-lg-3 h-100 mb-3";
