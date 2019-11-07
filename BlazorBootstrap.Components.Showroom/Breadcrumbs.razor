@@ -1,13 +1,14 @@
-﻿
+﻿@using BlazorBootstrap.Components.Model
+
 <Heading Level="HeadingLevel.H2">Breadcrumbs</Heading>
 
 @code {
-    List<AnchorLink> items = new List<AnchorLink>()
+    List<ILink> items = new List<ILink>()
     {
-        new AnchorLink(){ LinkUrl="#", Text = "Home", Description="The front page of the site" },
-        new AnchorLink(){ LinkUrl="#", Text = "Section 1" },
-        new AnchorLink(){ LinkUrl="#", Text = "Section 1.1" },
-        new AnchorLink(){ Text = "This page", IsActive = true, Description = "This is your current page. You are here now." }
+        new Link(){ Url="#", Text = "Home", Description="The front page of the site" },
+        new Link(){ Url="#", Text = "Section 1" },
+        new Link(){ Url="#", Text = "Section 1.1" },
+        new Link(){ Text = "This page", IsActive = true, Description = "This is your current page. You are here now." }
     };
 }
 
@@ -17,9 +18,9 @@
 <Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Custom Item Template</Heading>
 <Breadcrumb Items="this.items">
     <ItemTemplate>
-        @if (!string.IsNullOrEmpty(context.LinkUrl))
+        @if (!string.IsNullOrEmpty(context.Url))
         {
-            <Button Color="NamedColor.Light" Shadow="ShadowSize.Regular" Link="@context.LinkUrl" IsLink="true">@context.Text</Button>
+            <Button Color="NamedColor.Light" Shadow="ShadowSize.Regular" Link="@context.Url" IsLink="true">@context.Text</Button>
         }
         else
         {
