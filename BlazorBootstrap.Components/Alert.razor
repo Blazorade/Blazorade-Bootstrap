@@ -15,9 +15,13 @@
             </button>
         }
 
-        @if (null != this.HeadingTemplate || !string.IsNullOrEmpty(this.Heading))
+        @if (null != this.HeadingTemplate)
         {
-            <Heading Level="HeadingLevel.H4" class="alert-heading">@(this.HeadingTemplate ?? (object)this.Heading)</Heading>
+            @this.HeadingTemplate
+        }
+        else if (!string.IsNullOrEmpty(this.Heading))
+        {
+            <Heading Level="HeadingLevel.H4" class="alert-heading">@this.Heading</Heading>
         }
 
         @ChildContent
