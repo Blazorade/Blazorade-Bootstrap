@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BlazorBootstrap.Components
+namespace BlazorBootstrap.Components.Model
 {
 
     /// <summary>
@@ -26,14 +26,19 @@ namespace BlazorBootstrap.Components
         bool IsActive { get; set; }
 
         /// <summary>
-        /// Specifies whether the link is a stretched link.
+        /// Specifies whether the link should be a stretched link.
         /// </summary>
         bool IsStretched { get; set; }
 
         /// <summary>
+        /// Specifies whether the link should open in a new tab.
+        /// </summary>
+        bool OpenInNewTab { get; set; }
+
+        /// <summary>
         /// The URL to add to the link.
         /// </summary>
-        string LinkUrl { get; set; }
+        string Url { get; set; }
 
         /// <summary>
         /// The link text.
@@ -44,13 +49,20 @@ namespace BlazorBootstrap.Components
     /// <summary>
     /// Represents a basic link that is used by several components.
     /// </summary>
-    public class AnchorLink : ILink
+    public class Link : ILink
     {
         public string Description { get; set; }
+
         public int Index { get; set; }
+
         public bool IsActive { get; set; }
+
         public bool IsStretched { get; set; }
-        public string LinkUrl { get; set; }
+
+        public bool OpenInNewTab { get; set; }
+
+        public string Url { get; set; }
+
         public string Text { get; set; }
     }
 }
