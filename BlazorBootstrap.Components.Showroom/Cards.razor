@@ -39,7 +39,7 @@
     </div>
     <div class="@containerClasses">
         <Card Header="Another Card" Text="This card shows you how you can use the HeaderTemplate to customize the header of your card.">
-            <HeaderTemplate><Heading Level="HeadingLevel.H1">@context</Heading></HeaderTemplate>
+            <HeaderTemplate><Heading Level="HeadingLevel.H1" class="@ClassNames.Cards.Header">@context</Heading></HeaderTemplate>
         </Card>
     </div>
     <div class="@containerClasses">
@@ -143,17 +143,11 @@
             </CardBody>
         </BodyTemplate>
     </Card>
-    <Card>
-        <CardBody Title="Card title that wraps to a new line" Text="This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."></CardBody>
+    <Card Title="Card title that wraps to a new line" Text="This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.">
     </Card>
-    <Card>
-        <CardBody Title="Card title" Text="This card has supporting text below as a natural lead-in to additional content."></CardBody>
-        <CardFooter>The footer</CardFooter>
+    <Card Title="Card title" Text="This card has supporting text below as a natural lead-in to additional content." Footer="The footer">
     </Card>
-    <Card BorderColor="NamedColor.Success">
-        <CardHeader>Header</CardHeader>
-        <CardBody Title="Success border" Text="Some quick example text to build on the card title and make up the bulk of the card's content."></CardBody>
-        <CardFooter>Footer</CardFooter>
+    <Card BorderColor="NamedColor.Success" Header="Header" Title="Success border" Text="Some quick example text to build on the card title and make up the bulk of the card's content." Footer="Footer">
     </Card>
 </CardGroup>
 
