@@ -28,6 +28,8 @@ namespace BlazorBootstrap.Components
 
         protected override void OnParametersSet()
         {
+            this.SetIdIfEmpty();
+
             this.AddClass(ClassNames.Carousels.Carousel);
             this.AddAttribute("data-ride", "carousel");
 
