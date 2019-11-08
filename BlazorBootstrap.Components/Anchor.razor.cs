@@ -65,6 +65,7 @@ namespace BlazorBootstrap.Components
                 this.Index = this.Link.Index;
                 this.IsActive = this.Link.IsActive;
                 this.IsStretched = this.Link.IsStretched;
+                this.OpenInNewTab = this.Link.OpenInNewTab;
                 this.Text = this.Link.Text;
                 this.Url = this.Link.Url;
             }
