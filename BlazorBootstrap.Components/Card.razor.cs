@@ -73,6 +73,15 @@ namespace BlazorBootstrap.Components
         public RenderFragment<ILink> LinkTemplate { get; set; }
 
         /// <summary>
+        /// A template that allows you to completely customize the links section of a card.
+        /// </summary>
+        /// <remarks>
+        /// If not specified, a default template is used.
+        /// </remarks>
+        [Parameter]
+        public RenderFragment LinkSectionTemplate { get; set; }
+
+        /// <summary>
         /// The subtitle of the card.
         /// </summary>
         [Parameter]
