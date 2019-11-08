@@ -4,13 +4,15 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class CardHeaderBase : BootstrapComponentBase
+    public abstract class CardSubtitleBase : BootstrapComponentBase
     {
 
         protected override void OnParametersSet()
         {
-            this.AddClass(ClassNames.Cards.Header);
+            this.AddClass(ClassNames.Cards.Subtitle);
+            this.AddClass(ClassNames.InlineText.TextMuted);
             base.OnParametersSet();
         }
+
     }
 }

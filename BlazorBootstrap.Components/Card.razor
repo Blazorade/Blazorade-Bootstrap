@@ -1,5 +1,54 @@
 ﻿@inherits CardBase
 
 <div @attributes="this.Attributes">
-    @this.ChildContent
+    @if (null != this.HeaderTemplate)
+    {
+        @this.HeaderTemplate(this.Header)
+    }
+    else if (!string.IsNullOrEmpty(this.Header))
+    {
+        <CardHeader>@this.Header</CardHeader>
+    }
+
+    @if (this.ImagePosition == CardImagePosition.Top || this.ImagePosition == CardImagePosition.Overlay)
+    {
+        @if (null != this.ImageTemplate)
+        {
+            @this.ImageTemplate
+        }
+        else if (!string.IsNullOrEmpty(this.ImageUrl))
+        {
+            <CardImage Src="@this.ImageUrl" IsOverlay="this.ImagePosition == CardImagePosition.Overlay" />
+        }
+    }
+
+    @if (null != this.BodyTemplate)
+    {
+        @this.BodyTemplate
+    }
+    else
+    {
+        <CardBody Parent="@this"></CardBody>
+    }
+
+    @if (this.ImagePosition == CardImagePosition.Bottom)
+    {
+        @if (null != this.ImageTemplate)
+        {
+            @this.ImageTemplate
+        }
+        else if (!string.IsNullOrEmpty(this.ImageUrl))
+        {
+            <CardImage Src="@this.ImageUrl" />
+        }
+    }
+
+    @if (null != this.FooterTemplate)
+    {
+        @this.FooterTemplate(this.Footer)
+    }
+    else if (!string.IsNullOrEmpty(this.Footer))
+    {
+        <CardFooter>@this.Footer</CardFooter>
+    }
 </div>

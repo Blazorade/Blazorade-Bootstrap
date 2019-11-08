@@ -1,12 +1,16 @@
 ﻿<Heading Level="HeadingLevel.H2">Cards</Heading>
 
 @code {
-    IEnumerable<Tuple<string, string>> links = new List<Tuple<string, string>>()
-{
-        new Tuple<string, string>("Cards", "/cards"),
-        new Tuple<string, string>("Alerts", "/alerts"),
-        new Tuple<string, string>("Badges", "/badges")
+    IEnumerable<ILink> links = new[]
+    {
+        new Link { Text = "Cards", Url = "/cards" },
+        new Link { Text = "Alerts", Url = "/alerts" },
+        new Link { Text = "Badges", Url = "/badges" }
+    };
 
+    IEnumerable<ILink> singleLink = new[]
+    {
+        new Link{ Text = "Home", Url = "/", IsStretched = true }
     };
 
     string containerClasses = "col-12 col-sm-6 col-lg-3 h-100 mb-3";
@@ -16,186 +20,100 @@
 
 <div class="row">
     <div class="@containerClasses">
-        <Card>
-            <CardBody Title="Simple Card" Subtitle="Sample card usage" Text="This card demonstrates a simple use-case for the simplest way of using the Card component." Links="links"></CardBody>
+        <Card Title="Simple Card" Subtitle="Sample card usage"></Card>
+    </div>
+    <div class="@containerClasses">
+        <Card Title="Simple Card" Subtitle="Sample card usage" Text="This card demonstrates a simple use-case for the simplest way of using the Card component." Links="this.links"></Card>
+    </div>
+    <div class="@containerClasses">
+        <Card Title="Card with link" Subtitle="Link sample" Text="This card shows you how you can use stretched links on a card." Links="this.singleLink"></Card>
+    </div>
+    <div class="@containerClasses">
+        <Card Text="Here is a card that shows how to customize titles with templates supported by the Card component.">
+            <TitleTemplate>
+                <Heading Level="HeadingLevel.H3" class="@ClassNames.Cards.Title" TextColor="NamedColor.Primary"><b>Custom Titles</b></Heading>
+            </TitleTemplate>
+            <SubtitleTemplate>
+                <Heading Level="HeadingLevel.H4" class="@ClassNames.Cards.Subtitle" TextColor="NamedColor.Secondary"><em>Custom subtitle</em></Heading>
+            </SubtitleTemplate>
         </Card>
     </div>
     <div class="@containerClasses">
-        <Card>
-            <CardImage Src="@imageUrl" Alt="Just an image" />
-            <CardBody Title="Card with Image" Text="This card shows how to use images with cards."></CardBody>
+        <Card Title="Card with Image" Text="This card shows how to use images with cards." ImageUrl="@imageUrl"></Card>
+    </div>
+    <div class="@containerClasses">
+        <Card Title="Card with Image" Text="This card shows how to set the image at the bottom of the card." ImageUrl="@imageUrl" ImagePosition="CardImagePosition.Bottom"></Card>
+    </div>
+    <div class="@containerClasses">
+        <Card Header="Featured Card" Text="This card shows you how you can use headers with your cards."></Card>
+    </div>
+    <div class="@containerClasses">
+        <Card Header="Another Card" Text="This card shows you how you can use the HeaderTemplate to customize the header of your card.">
+            <HeaderTemplate><Heading Level="HeadingLevel.H1" class="@ClassNames.Cards.Header">@context</Heading></HeaderTemplate>
         </Card>
     </div>
     <div class="@containerClasses">
-        <Card>
-            <CardBody Title="Card with Image" Text="This card shows how to set the image at the bottom of the card."></CardBody>
-            <CardImage Src="@imageUrl" Alt="An image at the bottom" />
-        </Card>
+        <Card Header="Card Header" Text="This is a card demonstrating both header and footer" Footer="Card Footer"></Card>
     </div>
     <div class="@containerClasses">
-        <Card>
-            <CardHeader>Featured Card</CardHeader>
-            <CardBody Text="This card shows you how you can use headers with your cards."></CardBody>
-        </Card>
+        <Card TextAlignment="TextAlignment.Left" Title="Text Alignment, Left" Text="This card demonstrates how to align text to the left."></Card>
     </div>
     <div class="@containerClasses">
-        <Card>
-            <CardHeader Level="HeadingLevel.H1">Another Card</CardHeader>
-            <CardBody Text="This card shows you how you can use Heading components as the header for your card."></CardBody>
-        </Card>
+        <Card TextAlignment="TextAlignment.Center" Title="Text Alignment, Center" Text="This card demonstrates how to center align text."></Card>
     </div>
     <div class="@containerClasses">
-        <Card>
-            <CardHeader>Quote of the Day</CardHeader>
-            <CardBody>
-                <Blockquote>
-                    <p>People often say that motivation doesn't last. Well, neither does bathing &mdash; that's why we recommend it daily.</p>
-                    <footer class="@ClassNames.BlockQuotes.Footer">Zig Ziglar</footer>
-                </Blockquote>
-            </CardBody>
-        </Card>
+        <Card TextAlignment="TextAlignment.Right" Title="Text Alignment, Right" Text="This card demonstrates how to align text to the right."></Card>
     </div>
     <div class="@containerClasses">
-        <Card>
-            <CardHeader>Card Header</CardHeader>
-            <CardBody Text="This is a card demonstrating both header and footer">
-
-            </CardBody>
-            <CardFooter>Card Footer</CardFooter>
-        </Card>
+        <Card TextColor="NamedColor.White" BackgroundColor="NamedColor.Dark" Title="Image Overlay" Text="This card demonstrates how to use overlays on an image." ImageUrl="@imageUrl" ImagePosition="CardImagePosition.Overlay"></Card>
     </div>
     <div class="@containerClasses">
-        <Card TextAlignment="TextAlignment.Left">
-            <CardBody Title="Text Alignment, Left" Text="This card demonstrates how to align text to the left."></CardBody>
-        </Card>
+        <Card BackgroundColor="NamedColor.Primary" TextColor="NamedColor.White" Header="Header" Title="Primary background" Text="Some quick example text to build on the card title and make up the bulk of the card's content." Footer="Footer"></Card>
     </div>
     <div class="@containerClasses">
-        <Card TextAlignment="TextAlignment.Center">
-            <CardBody Title="Text Alignment, Center" Text="This card demonstrates how to center align text."></CardBody>
-        </Card>
+        <Card BorderColor="NamedColor.Primary" Header="Header" Title="Primary border" Text="Some quick example text to build on the card title and make up the bulk of the card's content." Footer="Footer"></Card>
     </div>
     <div class="@containerClasses">
-        <Card TextAlignment="TextAlignment.Right">
-            <CardBody Title="Text Alignment, Right" Text="This card demonstrates how to align text to the right."></CardBody>
-        </Card>
+        <Card BackgroundColor="NamedColor.Secondary" TextColor="NamedColor.White" Header="Header" Title="Secondary background" Text="Some quick example text to build on the card title and make up the bulk of the card's content." Footer="Footer"></Card>
     </div>
     <div class="@containerClasses">
-        <Card TextColor="NamedColor.White" BackgroundColor="NamedColor.Dark">
-            <CardImage IsOverlay="true" Src="@imageUrl"></CardImage>
-            <CardBody IsImageOverlay="true" Title="Image Overlay" Text="This card demonstrates how to use overlays on an image."></CardBody>
-        </Card>
+        <Card BorderColor="NamedColor.Secondary" Header="Header" Title="Secondary background" Text="Some quick example text to build on the card title and make up the bulk of the card's content." Footer="Footer"></Card>
     </div>
     <div class="@containerClasses">
-        <Card BackgroundColor="NamedColor.Primary" TextColor="NamedColor.White">
-            <CardHeader>Header</CardHeader>
-            <CardBody Title="Primary background" Text="Some quick example text to build on the card title and make up the bulk of the card's content."></CardBody>
-            <CardFooter>Footer</CardFooter>
-        </Card>
+        <Card BackgroundColor="NamedColor.Success" TextColor="NamedColor.White" Header="Header" Title="Success background" Text="Some quick example text to build on the card title and make up the bulk of the card's content." Footer="Footer"></Card>
     </div>
     <div class="@containerClasses">
-        <Card BorderColor="NamedColor.Primary">
-            <CardHeader>Header</CardHeader>
-            <CardBody Title="Primary border" Text="Some quick example text to build on the card title and make up the bulk of the card's content."></CardBody>
-            <CardFooter>Footer</CardFooter>
-        </Card>
+        <Card BorderColor="NamedColor.Success" Header="Header" Title="Success border" Text="Some quick example text to build on the card title and make up the bulk of the card's content." Footer="Footer"></Card>
     </div>
     <div class="@containerClasses">
-        <Card BackgroundColor="NamedColor.Secondary" TextColor="NamedColor.White">
-            <CardHeader>Header</CardHeader>
-            <CardBody Title="Secondary background" Text="Some quick example text to build on the card title and make up the bulk of the card's content."></CardBody>
-            <CardFooter>Footer</CardFooter>
-        </Card>
+        <Card BackgroundColor="NamedColor.Danger" TextColor="NamedColor.White" Header="Header" Title="Danger background" Text="Some quick example text to build on the card title and make up the bulk of the card's content." Footer="Footer"></Card>
     </div>
     <div class="@containerClasses">
-        <Card BorderColor="NamedColor.Secondary">
-            <CardHeader>Header</CardHeader>
-            <CardBody Title="Secondary border" Text="Some quick example text to build on the card title and make up the bulk of the card's content."></CardBody>
-            <CardFooter>Footer</CardFooter>
-        </Card>
+        <Card BorderColor="NamedColor.Danger" Header="Header" Title="Danger border" Text="Some quick example text to build on the card title and make up the bulk of the card's content." Footer="Footer"></Card>
     </div>
     <div class="@containerClasses">
-        <Card BackgroundColor="NamedColor.Success" TextColor="NamedColor.White">
-            <CardHeader>Header</CardHeader>
-            <CardBody Title="Success background" Text="Some quick example text to build on the card title and make up the bulk of the card's content."></CardBody>
-            <CardFooter>Footer</CardFooter>
-        </Card>
+        <Card BackgroundColor="NamedColor.Warning" TextColor="NamedColor.White" Header="Header" Title="Warning background" Text="Some quick example text to build on the card title and make up the bulk of the card's content." Footer="Footer"></Card>
     </div>
     <div class="@containerClasses">
-        <Card BorderColor="NamedColor.Success">
-            <CardHeader>Header</CardHeader>
-            <CardBody Title="Success border" Text="Some quick example text to build on the card title and make up the bulk of the card's content."></CardBody>
-            <CardFooter>Footer</CardFooter>
-        </Card>
+        <Card BorderColor="NamedColor.Warning" Header="Header" Title="Warning border" Text="Some quick example text to build on the card title and make up the bulk of the card's content." Footer="Footer"></Card>
     </div>
     <div class="@containerClasses">
-        <Card BackgroundColor="NamedColor.Danger" TextColor="NamedColor.White">
-            <CardHeader>Header</CardHeader>
-            <CardBody Title="Danger background" Text="Some quick example text to build on the card title and make up the bulk of the card's content."></CardBody>
-            <CardFooter>Footer</CardFooter>
-        </Card>
+        <Card BackgroundColor="NamedColor.Info" TextColor="NamedColor.White" Header="Header" Title="Info background" Text="Some quick example text to build on the card title and make up the bulk of the card's content." Footer="Footer"></Card>
     </div>
     <div class="@containerClasses">
-        <Card BorderColor="NamedColor.Danger">
-            <CardHeader>Header</CardHeader>
-            <CardBody Title="Danger border" Text="Some quick example text to build on the card title and make up the bulk of the card's content."></CardBody>
-            <CardFooter>Footer</CardFooter>
-        </Card>
+        <Card BorderColor="NamedColor.Info" Header="Header" Title="Info border" Text="Some quick example text to build on the card title and make up the bulk of the card's content." Footer="Footer"></Card>
     </div>
     <div class="@containerClasses">
-        <Card BackgroundColor="NamedColor.Warning" TextColor="NamedColor.White">
-            <CardHeader>Header</CardHeader>
-            <CardBody Title="Warning background" Text="Some quick example text to build on the card title and make up the bulk of the card's content."></CardBody>
-            <CardFooter>Footer</CardFooter>
-        </Card>
+        <Card BackgroundColor="NamedColor.Light" TextColor="NamedColor.Dark" Header="Header" Title="Light background" Text="Some quick example text to build on the card title and make up the bulk of the card's content." Footer="Footer"></Card>
     </div>
     <div class="@containerClasses">
-        <Card BorderColor="NamedColor.Warning">
-            <CardHeader>Header</CardHeader>
-            <CardBody Title="Warning border" Text="Some quick example text to build on the card title and make up the bulk of the card's content."></CardBody>
-            <CardFooter>Footer</CardFooter>
-        </Card>
+        <Card BorderColor="NamedColor.Light" Header="Header" Title="Light border" Text="Some quick example text to build on the card title and make up the bulk of the card's content." Footer="Footer"></Card>
     </div>
     <div class="@containerClasses">
-        <Card BackgroundColor="NamedColor.Info" TextColor="NamedColor.White">
-            <CardHeader>Header</CardHeader>
-            <CardBody Title="Info background" Text="Some quick example text to build on the card title and make up the bulk of the card's content."></CardBody>
-            <CardFooter>Footer</CardFooter>
-        </Card>
+        <Card BackgroundColor="NamedColor.Dark" TextColor="NamedColor.White" Header="Header" Title="Dark background" Text="Some quick example text to build on the card title and make up the bulk of the card's content." Footer="Footer"></Card>
     </div>
     <div class="@containerClasses">
-        <Card BorderColor="NamedColor.Info">
-            <CardHeader>Header</CardHeader>
-            <CardBody Title="Info border" Text="Some quick example text to build on the card title and make up the bulk of the card's content."></CardBody>
-            <CardFooter>Footer</CardFooter>
-        </Card>
-    </div>
-    <div class="@containerClasses">
-        <Card BackgroundColor="NamedColor.Light" TextColor="NamedColor.Dark">
-            <CardHeader>Header</CardHeader>
-            <CardBody Title="Light background" Text="Some quick example text to build on the card title and make up the bulk of the card's content."></CardBody>
-            <CardFooter>Footer</CardFooter>
-        </Card>
-    </div>
-    <div class="@containerClasses">
-        <Card BorderColor="NamedColor.Light">
-            <CardHeader>Header</CardHeader>
-            <CardBody Title="Light border" Text="Some quick example text to build on the card title and make up the bulk of the card's content."></CardBody>
-            <CardFooter>Footer</CardFooter>
-        </Card>
-    </div>
-    <div class="@containerClasses">
-        <Card BackgroundColor="NamedColor.Dark" TextColor="NamedColor.White">
-            <CardHeader>Header</CardHeader>
-            <CardBody Title="Dark background" Text="Some quick example text to build on the card title and make up the bulk of the card's content."></CardBody>
-            <CardFooter>Footer</CardFooter>
-        </Card>
-    </div>
-    <div class="@containerClasses">
-        <Card BorderColor="NamedColor.Dark">
-            <CardHeader>Header</CardHeader>
-            <CardBody Title="Dark border" Text="Some quick example text to build on the card title and make up the bulk of the card's content."></CardBody>
-            <CardFooter>Footer</CardFooter>
-        </Card>
+        <Card BorderColor="NamedColor.Dark" Header="Header" Title="Dark border" Text="Some quick example text to build on the card title and make up the bulk of the card's content." Footer="Footer"></Card>
     </div>
 </div>
 
@@ -204,70 +122,38 @@
 <Heading Level="HeadingLevel.H2" MarginTop="Spacing.Five">Card Groups</Heading>
 
 <CardGroup>
-    <Card>
-        <CardBody Title="Card title" Text="Some meaningless text just for the sake of filling this space up with sample text."></CardBody>
-    </Card>
-    <Card>
-        <CardBody Title="Card title" Text="Some meaningless text just for the sake of filling this space up with sample text."></CardBody>
-    </Card>
-    <Card>
-        <CardBody Title="Card title" Text="Some meaningless text just for the sake of filling this space up with sample text."></CardBody>
-    </Card>
-    <Card>
-        <CardBody Title="Card title" Text="Some meaningless text just for the sake of filling this space up with sample text."></CardBody>
-    </Card>
-    <Card>
-        <CardBody Title="Card title" Text="Some meaningless text just for the sake of filling this space up with sample text."></CardBody>
-    </Card>
-    <Card>
-        <CardBody Title="Card title" Text="Some meaningless text just for the sake of filling this space up with sample text."></CardBody>
-    </Card>
+    <Card Title="Card title #1" Text="Some meaningless text just for the sake of filling this space up with sample text."></Card>
+    <Card Title="Card title #2" Text="Some meaningless text just for the sake of filling this space up with sample text."></Card>
+    <Card Title="Card title #3" Text="Some meaningless text just for the sake of filling this space up with sample text."></Card>
+    <Card Title="Card title #4" Text="Some meaningless text just for the sake of filling this space up with sample text."></Card>
+    <Card Title="Card title #5" Text="Some meaningless text just for the sake of filling this space up with sample text."></Card>
+    <Card Title="Card title #6" Text="Some meaningless text just for the sake of filling this space up with sample text."></Card>
 </CardGroup>
+
 
 <Heading Level="HeadingLevel.H2" MarginTop="Spacing.Five">Card Decks</Heading>
 <CardGroup Type="CardGroupType.Deck">
-    <Card>
-        <CardBody Title="Card title" Text="Some meaningless text just for the sake of filling this space up with sample text."></CardBody>
-    </Card>
-    <Card>
-        <CardBody Title="Card title" Text="Some meaningless text just for the sake of filling this space up with sample text."></CardBody>
-    </Card>
-    <Card>
-        <CardBody Title="Card title" Text="Some meaningless text just for the sake of filling this space up with sample text."></CardBody>
-    </Card>
+    <Card Title="Card title" Text="Some meaningless text just for the sake of filling this space up with sample text."></Card>
+    <Card Title="Card title" Text="Some meaningless text just for the sake of filling this space up with sample text."></Card>
+    <Card Title="Card title" Text="Some meaningless text just for the sake of filling this space up with sample text."></Card>
 </CardGroup>
 
 <Heading Level="HeadingLevel.H2" MarginTop="Spacing.Five">Card Columns</Heading>
 <CardGroup Type="CardGroupType.Columns">
-    <Card>
-        <CardBody Title="Card title that wraps to a new line" Text="This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."></CardBody>
-    </Card>
-    <Card>
-        <CardBody Title="Card title" Text="This card has supporting text below as a natural lead-in to additional content."></CardBody>
-        <CardFooter>The footer</CardFooter>
-    </Card>
-    <Card>
-        <CardImage Src="@imageUrl"></CardImage>
-    </Card>
+    <Card Title="Card title that wraps to a new line" Text="This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."></Card>
+    <Card Title="Card title" Text="This card has supporting text below as a natural lead-in to additional content." Footer="The footer"></Card>
+    <Card ImageUrl="@imageUrl"></Card>
     <Card BackgroundColor="NamedColor.Primary" TextColor="NamedColor.White">
-        <CardBody>
-            <Blockquote>
-                <p>People often say that motivation doesn't last. Well, neither does bathing &mdash; that's why we recommend it daily.</p>
-                <footer class="@ClassNames.BlockQuotes.Footer">Zig Ziglar</footer>
-            </Blockquote>
-        </CardBody>
+        <Blockquote>
+            <p>People often say that motivation doesn't last. Well, neither does bathing &mdash; that's why we recommend it daily.</p>
+            <footer class="@ClassNames.BlockQuotes.Footer">Zig Ziglar</footer>
+        </Blockquote>
     </Card>
-    <Card>
-        <CardBody Title="Card title that wraps to a new line" Text="This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."></CardBody>
+    <Card Title="Card title that wraps to a new line" Text="This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.">
     </Card>
-    <Card>
-        <CardBody Title="Card title" Text="This card has supporting text below as a natural lead-in to additional content."></CardBody>
-        <CardFooter>The footer</CardFooter>
+    <Card Title="Card title" Text="This card has supporting text below as a natural lead-in to additional content." Footer="The footer">
     </Card>
-    <Card BorderColor="NamedColor.Success">
-        <CardHeader>Header</CardHeader>
-        <CardBody Title="Success border" Text="Some quick example text to build on the card title and make up the bulk of the card's content."></CardBody>
-        <CardFooter>Footer</CardFooter>
+    <Card BorderColor="NamedColor.Success" Header="Header" Title="Success border" Text="Some quick example text to build on the card title and make up the bulk of the card's content." Footer="Footer">
     </Card>
 </CardGroup>
 

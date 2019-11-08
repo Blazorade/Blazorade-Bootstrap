@@ -10,7 +10,6 @@ namespace BlazorBootstrap.Components
         protected override void OnParametersSet()
         {
             this.AddClass(ClassNames.Cards.Title);
-
             base.OnParametersSet();
         }
     }
