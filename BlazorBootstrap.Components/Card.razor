@@ -1,121 +1,54 @@
 ﻿@inherits CardBase
 
-
-
 <div @attributes="this.Attributes">
-    @if (null == this.ChildContent)
+    @if (null != this.HeaderTemplate)
     {
-        @*
-        If ChildContent is not specified, then we start examining the rest of the parameters and template parameters
-        and start building the component from those.
-        *@
+        @this.HeaderTemplate(this.Header)
+    }
+    else if (!string.IsNullOrEmpty(this.Header))
+    {
+        <CardHeader>@this.Header</CardHeader>
+    }
 
-        @if (null != this.HeaderTemplate)
+    @if (this.ImagePosition == CardImagePosition.Top || this.ImagePosition == CardImagePosition.Overlay)
+    {
+        @if (null != this.ImageTemplate)
         {
-            @this.HeaderTemplate(this.Header)
+            @this.ImageTemplate
         }
-        else if (!string.IsNullOrEmpty(this.Header))
+        else if (!string.IsNullOrEmpty(this.ImageUrl))
         {
-            <div class="@ClassNames.Cards.Header">@this.Header</div>
+            <CardImage Src="@this.ImageUrl" IsOverlay="this.ImagePosition == CardImagePosition.Overlay" />
         }
+    }
 
-        @if (this.ImagePosition == CardImagePosition.Top || this.ImagePosition == CardImagePosition.Overlay)
-        {
-            @if (null != this.ImageTemplate)
-            {
-                @this.ImageTemplate
-            }
-            else if (!string.IsNullOrEmpty(this.ImageUrl))
-            {
-                <CardImage Src="@this.ImageUrl" IsOverlay="this.ImagePosition == CardImagePosition.Overlay" />
-            }
-        }
-
-        @if (null != this.BodyTemplate)
-        {
-            @this.BodyTemplate
-        }
-        else
-        {
-            <Div class="@(this.ImagePosition == CardImagePosition.Overlay ? ClassNames.Cards.ImageOverlay : ClassNames.Cards.Body)">
-                @if (null != this.TitleTemplate)
-                {
-                    @this.TitleTemplate(this.Title)
-                }
-                else if (!string.IsNullOrEmpty(this.Title))
-                {
-                    <Heading Level="HeadingLevel.H5" class="@ClassNames.Cards.Title">@this.Title</Heading>
-                }
-
-
-
-                @if (null != this.SubtitleTemplate)
-                {
-                    @this.SubtitleTemplate(this.Subtitle)
-                }
-                else if (!string.IsNullOrEmpty(this.Subtitle))
-                {
-                    <Heading Level="HeadingLevel.H6" class="@($"{ClassNames.Cards.Subtitle} {ClassNames.InlineText.TextMuted}")" MarginBottom="Spacing.Two">@this.Subtitle</Heading>
-                }
-
-
-
-                @if (null != this.TextTemplate)
-                {
-                    @this.TextTemplate(this.Text)
-                }
-                else if (!string.IsNullOrEmpty(this.Text))
-                {
-                    @foreach (var line in this.GetTextLines())
-                    {
-                        <Paragraph class="@ClassNames.Cards.Text">@line</Paragraph>
-                    }
-                }
-
-
-                @if (this.Links?.Count() > 0)
-                {
-                    @foreach (var link in this.Links)
-                    {
-                        @if (null != this.LinkTemplate)
-                        {
-                            @this.LinkTemplate(link)
-                        }
-                        else
-                        {
-                            <Anchor Link="@link" class="@ClassNames.Cards.Link"></Anchor>
-                        }
-                    }
-                }
-            </Div>
-        }
-
-        @if (this.ImagePosition == CardImagePosition.Bottom)
-        {
-            @if (null != this.ImageTemplate)
-            {
-                @this.ImageTemplate
-            }
-            else if (!string.IsNullOrEmpty(this.ImageUrl))
-            {
-                <CardImage Src="@this.ImageUrl" />
-            }
-        }
-
-        @if (null != this.FooterTemplate)
-        {
-            @this.FooterTemplate(this.Footer)
-        }
-        else if (!string.IsNullOrEmpty(this.Footer))
-        {
-            <div class="@ClassNames.Cards.Footer">@this.Footer</div>
-        }
+    @if (null != this.BodyTemplate)
+    {
+        @this.BodyTemplate
     }
     else
     {
-        @*
-        If ChildContent is specified, then we use that as the only content for the component.
-        *@
-        @this.ChildContent
+        <CardBody Parent="@this"></CardBody>
+    }
+
+    @if (this.ImagePosition == CardImagePosition.Bottom)
+    {
+        @if (null != this.ImageTemplate)
+        {
+            @this.ImageTemplate
+        }
+        else if (!string.IsNullOrEmpty(this.ImageUrl))
+        {
+            <CardImage Src="@this.ImageUrl" />
+        }
+    }
+
+    @if (null != this.FooterTemplate)
+    {
+        @this.FooterTemplate(this.Footer)
+    }
+    else if (!string.IsNullOrEmpty(this.Footer))
+    {
+        <CardFooter>@this.Footer</CardFooter>
     }
 </div>

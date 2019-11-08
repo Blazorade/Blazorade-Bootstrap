@@ -1,23 +1,51 @@
 ﻿@inherits CardBodyBase
 
     <div @attributes="this.Attributes">
-        @if (!string.IsNullOrEmpty(this.Title))
+        @if (null != this.TitleTemplate)
         {
-            <Heading Level="HeadingLevel.H5" class="@ClassNames.Cards.Title">@this.Title</Heading>
+            @this.TitleTemplate(this.Title)
         }
-        @if (!string.IsNullOrEmpty(this.Subtitle))
+        else if (!string.IsNullOrEmpty(this.Title))
         {
-            <Heading Level="HeadingLevel.H6" class="@string.Join(" ", ClassNames.Cards.Subtitle, ClassNames.InlineText.TextMuted)">@this.Subtitle</Heading>
+            <CardTitle>@this.Title</CardTitle>
         }
-        @if (!string.IsNullOrEmpty(this.Text))
+
+        @if (null != this.SubtitleTemplate)
         {
-            <p class="@ClassNames.Cards.Text mt-2">@this.Text</p>
+            @this.SubtitleTemplate(this.Subtitle)
         }
-        @if (null != this.Links)
+        else if (!string.IsNullOrEmpty(this.Subtitle))
         {
-            foreach (var link in this.Links)
+            <CardSubtitle>@this.Subtitle</CardSubtitle>
+        }
+
+
+
+        @if (null != this.TextTemplate)
+        {
+            @this.TextTemplate(this.Text)
+        }
+        else if (!string.IsNullOrEmpty(this.Text))
+        {
+            @foreach (var line in this.Text.Lines())
             {
-                <a href="@link.Item2" class="@ClassNames.Cards.Link">@link.Item1</a>
+                <Paragraph class="@ClassNames.Cards.Text">@line</Paragraph>
+            }
+        }
+
+
+        @if (this.Links?.Count() > 0)
+        {
+            @foreach (var link in this.Links)
+            {
+                @if (null != this.LinkTemplate)
+                {
+                    @this.LinkTemplate(link)
+                }
+                else
+                {
+                    <Anchor Link="@link" class="@ClassNames.Cards.Link"></Anchor>
+                }
             }
         }
 

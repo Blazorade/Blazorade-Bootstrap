@@ -52,7 +52,7 @@ namespace BlazorBootstrap.Components
         public string ImageUrl { get; set; }
 
         /// <summary>
-        /// The template to use
+        /// The template to use.
         /// </summary>
         [Parameter]
         public RenderFragment<string> ImageTemplate { get; set; }
@@ -108,14 +108,6 @@ namespace BlazorBootstrap.Components
         public RenderFragment<string> TitleTemplate { get; set; }
 
 
-        protected IEnumerable<string> GetTextLines()
-        {
-            foreach (var line in this.Text?.Split(new[] { Environment.NewLine }, StringSplitOptions.None))
-            {
-                yield return line;
-            }
-            yield break;
-        }
 
         protected override void OnParametersSet()
         {

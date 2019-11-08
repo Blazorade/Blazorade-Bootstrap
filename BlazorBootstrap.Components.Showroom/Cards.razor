@@ -29,6 +29,16 @@
         <Card Title="Card with link" Subtitle="Link sample" Text="This card shows you how you can use stretched links on a card." Links="this.singleLink"></Card>
     </div>
     <div class="@containerClasses">
+        <Card Text="Here is a card that shows how to customize titles with templates supported by the Card component.">
+            <TitleTemplate>
+                <Heading Level="HeadingLevel.H3" class="@ClassNames.Cards.Title" TextColor="NamedColor.Primary"><b>Custom Titles</b></Heading>
+            </TitleTemplate>
+            <SubtitleTemplate>
+                <Heading Level="HeadingLevel.H4" class="@ClassNames.Cards.Subtitle" TextColor="NamedColor.Secondary"><em>Custom subtitle</em></Heading>
+            </SubtitleTemplate>
+        </Card>
+    </div>
+    <div class="@containerClasses">
         <Card Title="Card with Image" Text="This card shows how to use images with cards." ImageUrl="@imageUrl"></Card>
     </div>
     <div class="@containerClasses">
@@ -134,14 +144,10 @@
     <Card Title="Card title" Text="This card has supporting text below as a natural lead-in to additional content." Footer="The footer"></Card>
     <Card ImageUrl="@imageUrl"></Card>
     <Card BackgroundColor="NamedColor.Primary" TextColor="NamedColor.White">
-        <BodyTemplate>
-            <CardBody>
-                <Blockquote>
-                    <p>People often say that motivation doesn't last. Well, neither does bathing &mdash; that's why we recommend it daily.</p>
-                    <footer class="@ClassNames.BlockQuotes.Footer">Zig Ziglar</footer>
-                </Blockquote>
-            </CardBody>
-        </BodyTemplate>
+        <Blockquote>
+            <p>People often say that motivation doesn't last. Well, neither does bathing &mdash; that's why we recommend it daily.</p>
+            <footer class="@ClassNames.BlockQuotes.Footer">Zig Ziglar</footer>
+        </Blockquote>
     </Card>
     <Card Title="Card title that wraps to a new line" Text="This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.">
     </Card>
