@@ -24,6 +24,15 @@ namespace BlazorBootstrap.Components
         [Parameter]
         public RenderFragment<ILink> LinkTemplate { get; set; }
 
+        /// <summary>
+        /// A template that allows you to completely customize the links section of a card.
+        /// </summary>
+        /// <remarks>
+        /// If not specified, a default template is used.
+        /// </remarks>
+        [Parameter]
+        public RenderFragment LinkSectionTemplate { get; set; }
+
         [Parameter]
         public string Title { get; set; }
 
@@ -64,6 +73,7 @@ namespace BlazorBootstrap.Components
                 this.TextTemplate = _Parent?.TextTemplate;
                 this.Links = _Parent?.Links;
                 this.LinkTemplate = _Parent?.LinkTemplate;
+                this.LinkSectionTemplate = _Parent?.LinkSectionTemplate;
 
                 this.IsImageOverlay = _Parent?.ImagePosition == CardImagePosition.Overlay;
 

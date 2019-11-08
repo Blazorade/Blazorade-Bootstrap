@@ -3,9 +3,9 @@
 @code {
     IEnumerable<ILink> links = new[]
     {
-        new Link { Text = "Cards", Url = "/cards" },
-        new Link { Text = "Alerts", Url = "/alerts" },
-        new Link { Text = "Badges", Url = "/badges" }
+        new Link { Text = "Cards", Url = "/cards", OpenInNewTab = true },
+        new Link { Text = "Alerts", Url = "/alerts", OpenInNewTab = true },
+        new Link { Text = "Badges", Url = "/badges", OpenInNewTab = true }
     };
 
     IEnumerable<ILink> singleLink = new[]
@@ -18,16 +18,42 @@
 }
 
 
+<Heading Level="HeadingLevel.H3">Simple Cards</Heading>
 <div class="row">
     <div class="@containerClasses">
-        <Card Title="Simple Card" Subtitle="Sample card usage"></Card>
+        <Card Title="Simple Card" Subtitle="How to use the Card component" Text="This is a sample of a very simple usage of the Card component."></Card>
     </div>
     <div class="@containerClasses">
-        <Card Title="Simple Card" Subtitle="Sample card usage" Text="This card demonstrates a simple use-case for the simplest way of using the Card component." Links="this.links"></Card>
+        <Card Title="Simple Card" Subtitle="Sample card usage" Text="This is a simple card with a few links added to the bottom of the card." Links="this.links"></Card>
     </div>
     <div class="@containerClasses">
-        <Card Title="Card with link" Subtitle="Link sample" Text="This card shows you how you can use stretched links on a card." Links="this.singleLink"></Card>
+        <Card Title="Card with link" Subtitle="Link sample" Text="This card shows you how you can use stretched links on a card. The entire card will be a link, since cards are by default stretched link containers.">
+            <LinkSectionTemplate>
+                <Anchor IsStretched="true" Url="/" OpenInNewTab="true">Click me!</Anchor>
+            </LinkSectionTemplate>
+        </Card>
     </div>
+    <div class="@containerClasses">
+        <Card Header="Card Header" Text="This is a card demonstrating both header and footer" Footer="Card Footer"></Card>
+    </div>
+</div>
+
+
+<Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Using Images</Heading>
+<div class="row">
+    <div class="@containerClasses">
+        <Card Title="Card with Image" Text="This card shows how to use images with cards." ImageUrl="@imageUrl"></Card>
+    </div>
+    <div class="@containerClasses">
+        <Card Title="Card with Image" Text="This card shows how to set the image at the bottom of the card." ImageUrl="@imageUrl" ImagePosition="CardImagePosition.Bottom"></Card>
+    </div>
+    <div class="@containerClasses">
+        <Card TextColor="NamedColor.White" BackgroundColor="NamedColor.Dark" Title="Image Overlay" Text="This card demonstrates how to use overlays on an image." ImageUrl="@imageUrl" ImagePosition="CardImagePosition.Overlay"></Card>
+    </div>
+</div>
+
+<Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Customizing with Templates</Heading>
+<div class="row">
     <div class="@containerClasses">
         <Card Text="Here is a card that shows how to customize titles with templates supported by the Card component.">
             <TitleTemplate>
@@ -39,22 +65,26 @@
         </Card>
     </div>
     <div class="@containerClasses">
-        <Card Title="Card with Image" Text="This card shows how to use images with cards." ImageUrl="@imageUrl"></Card>
-    </div>
-    <div class="@containerClasses">
-        <Card Title="Card with Image" Text="This card shows how to set the image at the bottom of the card." ImageUrl="@imageUrl" ImagePosition="CardImagePosition.Bottom"></Card>
-    </div>
-    <div class="@containerClasses">
-        <Card Header="Featured Card" Text="This card shows you how you can use headers with your cards."></Card>
-    </div>
-    <div class="@containerClasses">
         <Card Header="Another Card" Text="This card shows you how you can use the HeaderTemplate to customize the header of your card.">
-            <HeaderTemplate><Heading Level="HeadingLevel.H1" class="@ClassNames.Cards.Header">@context</Heading></HeaderTemplate>
+            <HeaderTemplate>
+                <CardHeader>
+                    <Heading TextColor="NamedColor.Success" Level="HeadingLevel.H1">@context</Heading>
+                </CardHeader>
+            </HeaderTemplate>
         </Card>
     </div>
     <div class="@containerClasses">
-        <Card Header="Card Header" Text="This is a card demonstrating both header and footer" Footer="Card Footer"></Card>
+        <Card Header="Custom Body">
+            <Blockquote>
+                <p>People often say that motivation doesn't last. Well, neither does bathing &mdash; that's why we recommend it daily.</p>
+                <footer class="@ClassNames.BlockQuotes.Footer">Zig Ziglar</footer>
+            </Blockquote>
+        </Card>
     </div>
+</div>
+
+<Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Text Alignment</Heading>
+<div class="row">
     <div class="@containerClasses">
         <Card TextAlignment="TextAlignment.Left" Title="Text Alignment, Left" Text="This card demonstrates how to align text to the left."></Card>
     </div>
@@ -64,9 +94,10 @@
     <div class="@containerClasses">
         <Card TextAlignment="TextAlignment.Right" Title="Text Alignment, Right" Text="This card demonstrates how to align text to the right."></Card>
     </div>
-    <div class="@containerClasses">
-        <Card TextColor="NamedColor.White" BackgroundColor="NamedColor.Dark" Title="Image Overlay" Text="This card demonstrates how to use overlays on an image." ImageUrl="@imageUrl" ImagePosition="CardImagePosition.Overlay"></Card>
-    </div>
+</div>
+
+<Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Coloring</Heading>
+<div class="row">
     <div class="@containerClasses">
         <Card BackgroundColor="NamedColor.Primary" TextColor="NamedColor.White" Header="Header" Title="Primary background" Text="Some quick example text to build on the card title and make up the bulk of the card's content." Footer="Footer"></Card>
     </div>
@@ -143,12 +174,6 @@
     <Card Title="Card title that wraps to a new line" Text="This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."></Card>
     <Card Title="Card title" Text="This card has supporting text below as a natural lead-in to additional content." Footer="The footer"></Card>
     <Card ImageUrl="@imageUrl"></Card>
-    <Card BackgroundColor="NamedColor.Primary" TextColor="NamedColor.White">
-        <Blockquote>
-            <p>People often say that motivation doesn't last. Well, neither does bathing &mdash; that's why we recommend it daily.</p>
-            <footer class="@ClassNames.BlockQuotes.Footer">Zig Ziglar</footer>
-        </Blockquote>
-    </Card>
     <Card Title="Card title that wraps to a new line" Text="This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.">
     </Card>
     <Card Title="Card title" Text="This card has supporting text below as a natural lead-in to additional content." Footer="The footer">
