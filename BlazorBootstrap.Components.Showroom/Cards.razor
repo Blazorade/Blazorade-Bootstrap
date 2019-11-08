@@ -3,9 +3,9 @@
 @code {
     IEnumerable<ILink> links = new[]
     {
-        new Link { Text = "Cards", Url = "/cards" },
-        new Link { Text = "Alerts", Url = "/alerts" },
-        new Link { Text = "Badges", Url = "/badges" }
+        new Link { Text = "Cards", Url = "/cards", OpenInNewTab = true },
+        new Link { Text = "Alerts", Url = "/alerts", OpenInNewTab = true },
+        new Link { Text = "Badges", Url = "/badges", OpenInNewTab = true }
     };
 
     IEnumerable<ILink> singleLink = new[]
@@ -20,10 +20,10 @@
 
 <div class="row">
     <div class="@containerClasses">
-        <Card Title="Simple Card" Subtitle="Sample card usage"></Card>
+        <Card Title="Simple Card" Subtitle="How to use the Card component" Text="This is a sample of a very simple usage of the Card component."></Card>
     </div>
     <div class="@containerClasses">
-        <Card Title="Simple Card" Subtitle="Sample card usage" Text="This card demonstrates a simple use-case for the simplest way of using the Card component." Links="this.links"></Card>
+        <Card Title="Simple Card" Subtitle="Sample card usage" Text="This is a simple card with a few links added to the bottom of the card." Links="this.links"></Card>
     </div>
     <div class="@containerClasses">
         <Card Title="Card with link" Subtitle="Link sample" Text="This card shows you how you can use stretched links on a card." Links="this.singleLink"></Card>
