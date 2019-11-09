@@ -15,15 +15,6 @@ namespace BlazorBootstrap.Components
         }
 
 
-        /// <summary>
-        /// Allows you to completely control the contents of the card.
-        /// </summary>
-        /// <remarks>
-        /// If you use this template, all other parameters will be ignored, and only the template you provide will be rendered.
-        /// </remarks>
-        [Parameter]
-        public override RenderFragment ChildContent { get => base.ChildContent; set => base.ChildContent = value; }
-
         [Parameter]
         public RenderFragment BodyTemplate { get; set; }
 
