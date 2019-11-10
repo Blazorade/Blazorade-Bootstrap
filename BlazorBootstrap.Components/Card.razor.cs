@@ -70,7 +70,7 @@ namespace BlazorBootstrap.Components
         /// If not specified, a default template is used.
         /// </remarks>
         [Parameter]
-        public RenderFragment LinkSectionTemplate { get; set; }
+        public RenderFragment<IEnumerable<ILink>> LinkSectionTemplate { get; set; }
 
         /// <summary>
         /// The subtitle of the card.
