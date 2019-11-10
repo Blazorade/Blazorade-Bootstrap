@@ -36,7 +36,7 @@
 
         @if (null != this.LinkSectionTemplate)
         {
-            @this.LinkSectionTemplate
+            @this.LinkSectionTemplate(this.Links)
         }
         else if (this.Links?.Count() > 0)
         {
