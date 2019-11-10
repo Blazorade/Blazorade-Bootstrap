@@ -2,42 +2,26 @@
 <Heading Level="HeadingLevel.H2">Carousels</Heading>
 
 @code {
-    string img1 = "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=1280";
-    string img2 = "https://images.unsplash.com/photo-1519861531473-9200262188bf?w=1280";
-    string img3 = "https://images.unsplash.com/photo-1516684378628-240d2c5237f5?w=1280";
-    string img4 = "https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=1280";
+    string img1 = "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=1024";
+    string img2 = "https://images.unsplash.com/photo-1519861531473-9200262188bf?w=1024";
+    string img3 = "https://images.unsplash.com/photo-1516684378628-240d2c5237f5?w=1024";
+    string img4 = "https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=1024";
+    string img5 = "https://images.unsplash.com/photo-1474224017046-182ece80b263?w=1024";
+    string img6 = "https://images.unsplash.com/photo-1538405505827-e519f0efb68e?w=1024";
 }
 
 <Heading Level="HeadingLevel.H3">Basic Carousel</Heading>
-<Carousel id="carousel-1">
-    <CarouselInner>
-        <CarouselItem IsActive="true">
-            <CarouselImage Src="@img1"></CarouselImage>
-        </CarouselItem>
-        <CarouselItem>
-            <CarouselImage Src="@img2"></CarouselImage>
-        </CarouselItem>
-        <CarouselItem>
-            <CarouselImage Src="@img3"></CarouselImage>
-        </CarouselItem>
-        <CarouselItem>
-            <CarouselImage Src="@img4"></CarouselImage>
-        </CarouselItem>
-    </CarouselInner>
+<Carousel id="carousel-1" Width="ComponentSize.p50" ImageUrls="@(new[] { img1, img2, img3, img4 })">
 </Carousel>
 
 
 <Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">With Controls</Heading>
-<Carousel id="carousel-2" ShowControls="true">
-    <CarouselInner>
-        <CarouselItem IsActive="true">
-            <CarouselImage Src="@img1"></CarouselImage>
-        </CarouselItem>
-        <CarouselItem>
-            <CarouselImage Src="@img2"></CarouselImage>
-        </CarouselItem>
-        <CarouselItem>
-            <CarouselImage Src="@img3"></CarouselImage>
-        </CarouselItem>
-    </CarouselInner>
+<Carousel id="carousel-2" ShowControls="true" Width="ComponentSize.p50" ImageUrls="@(new[] { img1, img2, img3 })">
 </Carousel>
+
+
+<Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">With Indicators</Heading>
+<Carousel id="carousel-3" ShowControls="true" ShowIndicators="true" Width="ComponentSize.p50" ImageUrls="@(new[] { img1, img2, img3, img4, img5, img6 })">
+</Carousel>
+
+<Div MarginBottom="Spacing.Five"></Div>
