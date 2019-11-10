@@ -128,6 +128,9 @@ namespace BlazorBootstrap.Components
         public IDictionary<string, object> Attributes { get; set; }
 
         [Parameter]
+        public ComponentSize? Height { get; set; }
+
+        [Parameter]
         public TextAlignment? TextAlignment { get; set; }
 
         [Parameter]
@@ -145,6 +148,8 @@ namespace BlazorBootstrap.Components
         [Parameter]
         public bool IsStretchedLinkContainer { get; set; }
 
+        [Parameter]
+        public ComponentSize? Width { get; set; }
 
 
         protected bool AddAttribute(string name, object value)
@@ -329,6 +334,21 @@ namespace BlazorBootstrap.Components
                         break;
                 }
             }
+
+            #endregion
+
+            #region Handle sizes
+
+            Action<ComponentSize?, string> sizeAdder = (size, prefix) => {
+                if (size.HasValue)
+                {
+                    string suffix = size.Value == ComponentSize.Auto ? "auto" : $"{(int)size.Value}";
+                    this.AddClass($"{prefix}-{suffix}");
+                }
+            };
+
+            sizeAdder(this.Height, "h");
+            sizeAdder(this.Width, "w");
 
             #endregion
 
