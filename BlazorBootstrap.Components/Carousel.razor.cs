@@ -2,6 +2,7 @@
 using Microsoft.JSInterop;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,9 +23,20 @@ namespace BlazorBootstrap.Components
         [Parameter]
         public bool ShowControls { get; set; }
 
+        [Parameter]
+        public bool ShowIndicators { get; set; }
+
         [Inject]
         protected IJSRuntime JsInterop { get; set; }
 
+        [Parameter]
+        public IEnumerable<string> ImageUrls { get; set; }
+
+
+        protected int GetSlideCount()
+        {
+            return this.ImageUrls?.Count() ?? 0;
+        }
 
         protected override void OnParametersSet()
         {
@@ -48,5 +60,6 @@ namespace BlazorBootstrap.Components
 
             await base.OnAfterRenderAsync(firstRender);
         }
+
     }
 }

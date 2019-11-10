@@ -1,7 +1,33 @@
 ﻿@inherits CarouselBase
 
     <div @attributes="this.Attributes">
-        @this.ChildContent
+        @if (this.ShowIndicators)
+        {
+            var slideCount = this.GetSlideCount();
+
+            <ol class="@ClassNames.Carousels.Indicators">
+                @for (int i = 0; i < slideCount; i++)
+                {
+                    <li data-target="#@this.Attributes["id"]" data-slide-to="@i" class="@(i == 0 ? "active" : "")"></li>
+                }
+            </ol>
+        }
+        <CarouselInner>
+            @if(this.ImageUrls?.Count() > 0)
+            {
+                var itemIndex = 0;
+
+                @foreach(var url in this.ImageUrls)
+                {
+                    var isActive = itemIndex == 0;
+                    <CarouselItem IsActive="@isActive">
+                        <CarouselImage Src="@url" />
+                    </CarouselItem>
+
+                    itemIndex++;
+                }
+            }
+        </CarouselInner>
 
         @if (this.ShowControls)
         {

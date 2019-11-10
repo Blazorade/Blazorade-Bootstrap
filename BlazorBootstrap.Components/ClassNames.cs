@@ -199,6 +199,8 @@ namespace BlazorBootstrap.Components
 
             public const string Item = "carousel-item";
 
+            public const string Indicators = "carousel-indicators";
+
             public const string Control = "carousel-control";
 
             public const string ControlNext = "carousel-control-next";

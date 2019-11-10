@@ -8,8 +8,8 @@ namespace BlazorBootstrap.Components
     {
         protected override void OnParametersSet()
         {
+            this.Width = ComponentSize.p100;
             this.AddClass("d-block");
-            this.AddClass("w-100");
 
             base.OnParametersSet();
         }
