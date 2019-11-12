@@ -1,15 +1,10 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="sidebar">
-    <NavMenu />
-</div>
 
-<div class="main">
-    <div class="top-row px-4">
-        <a href="https://docs.microsoft.com/en-us/aspnet/" target="_blank">About</a>
-    </div>
+<Div class="main">
+    <MainMenu />
 
-    <div class="content px-4">
+    <Div Container="ContainerType.FixedWidth" MarginTop="Spacing.Three">
         @Body
-    </div>
-</div>
+    </Div>
+</Div>

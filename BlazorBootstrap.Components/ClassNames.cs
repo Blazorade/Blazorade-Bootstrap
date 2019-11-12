@@ -12,6 +12,8 @@ namespace BlazorBootstrap.Components
         /// </summary>
         public const string Active = "active";
 
+        public const string Collapse = "collapse";
+
         public const string Fade = "fade";
 
         public static class Abbreviations
@@ -209,6 +211,13 @@ namespace BlazorBootstrap.Components
 
         }
 
+        public static class Containers
+        {
+            public const string FixedWidth = "container";
+
+            public const string Fluid = "container-fluid";
+        }
+
         public static class Headings
         {
             /// <summary>
@@ -292,6 +301,31 @@ namespace BlazorBootstrap.Components
         public static class Lists
         {
 
+        }
+
+        public static class Navbars
+        {
+            public const string Navbar = "navbar";
+
+            public const string Light = "navbar-light";
+
+            public const string Dark = "navbar-dark";
+
+            public const string Brand = "navbar-brand";
+
+            public const string FixedTop = "fixed-top";
+
+            public const string FixedBottom = "fixed-bottom";
+
+            public const string StickyTop = "sticky-top";
+
+            public const string Collapse = "navbar-collapse";
+
+            public const string Nav = "navbar-nav";
+
+            public const string NavItem = "nav-item";
+
+            public const string NavLink = "nav-link";
         }
 
         public static class Paragraphs

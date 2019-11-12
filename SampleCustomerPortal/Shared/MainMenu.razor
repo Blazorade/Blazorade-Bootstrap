@@ -1,0 +1,18 @@
+﻿
+@{ 
+    var items = new[]
+    {
+        new MenuItem { Text = "Link 1", Url = "#" },
+        new MenuItem {
+            Text = "Link 2",
+            Url = "#",
+            Children = new[] {
+                new MenuItem { Text = "Link 2.1", Url = "#" }
+            }
+        }
+    };
+}
+<Navbar Id="main-menu" ColorScheme="NavbarColor.Dark" BackgroundColor="NamedColor.Primary" BrandLink="/" BrandText="Customer Portal" Placement="NavbarPlacement.StickyTop" Expand="ResponsiveBreakpoint.MD">
+    <NavbarNav Items="@items">
+    </NavbarNav>
+</Navbar>

@@ -128,6 +128,9 @@ namespace BlazorBootstrap.Components
         public IDictionary<string, object> Attributes { get; set; }
 
         [Parameter]
+        public string Id { get; set; }
+
+        [Parameter]
         public ComponentSize? Height { get; set; }
 
         [Parameter]
@@ -152,11 +155,11 @@ namespace BlazorBootstrap.Components
         public ComponentSize? Width { get; set; }
 
 
-        protected bool AddAttribute(string name, object value)
+        protected bool AddAttribute(string name, object value, bool overwrite = false)
         {
-            if(!this.Attributes.ContainsKey(name))
+            if(!this.Attributes.ContainsKey(name) || overwrite)
             {
-                this.Attributes.Add(name, value);
+                this.Attributes[name] = value;
                 return true;
             }
             return false;
@@ -276,7 +279,7 @@ namespace BlazorBootstrap.Components
 
         protected override void OnParametersSet()
         {
-            #region Handle margins and paddings.
+            #region Handle margins and paddings
 
             Action<Spacing?, string> spacingAdder = (size, prefix) =>
             {
@@ -365,6 +368,12 @@ namespace BlazorBootstrap.Components
             if (this.IsStretchedLinkContainer)
             {
                 this.AddClass(ClassNames.Position.Relative);
+            }
+
+
+            if (!string.IsNullOrEmpty(this.Id))
+            {
+                this.AddAttribute("id", this.Id, true);
             }
 
             base.OnParametersSet();

@@ -90,6 +90,7 @@ namespace BlazorBootstrap.Components
         [Parameter]
         public string Text { get; set; }
 
+        [Parameter]
         public RenderFragment<string> TextTemplate { get; set; }
 
         /// <summary>
