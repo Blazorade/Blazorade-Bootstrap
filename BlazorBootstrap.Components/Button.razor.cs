@@ -70,6 +70,10 @@ namespace BlazorBootstrap.Components
             else if(this.IsLink)
             {
                 this.AddClass(ClassNames.Buttons.LinkButton);
+            }
+
+            if (!string.IsNullOrEmpty(this.Link))
+            {
                 this.AddAttribute("href", this.Link);
             }
 

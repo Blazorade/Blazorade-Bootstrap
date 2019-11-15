@@ -1,0 +1,40 @@
+﻿@inherits NavbarBase
+
+@{
+    string collapseId = $"{this.Attributes["id"]}-collapse";
+}
+<nav @attributes="this.Attributes">
+
+    @if (!this.CollapseBrand)
+    {
+        @if (null != this.BrandTemplate)
+        {
+            @this.BrandTemplate(new Link { Url = this.BrandLink, Text = this.BrandText })
+        }
+        else
+        {
+            <NavbarBrand Text="@this.BrandText" Link="@this.BrandLink" />
+        }
+    }
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#@collapseId">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <NavbarCollapse id="@collapseId">
+
+        @if (this.CollapseBrand)
+        {
+            @if (null != this.BrandTemplate)
+            {
+                @this.BrandTemplate(new Link { Url = this.BrandLink, Text = this.BrandText })
+            }
+            else
+            {
+                <NavbarBrand Text="@this.BrandText" Link="@this.BrandLink" />
+            }
+        }
+
+        @this.ChildContent
+    </NavbarCollapse>
+</nav>

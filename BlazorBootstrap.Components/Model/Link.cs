@@ -26,6 +26,11 @@ namespace BlazorBootstrap.Components.Model
         bool IsActive { get; set; }
 
         /// <summary>
+        /// Specifies whether the link is disabled. Disabled links must not be clickable.
+        /// </summary>
+        bool IsDisabled { get; set; }
+
+        /// <summary>
         /// Specifies whether the link should be a stretched link.
         /// </summary>
         bool IsStretched { get; set; }
@@ -56,6 +61,8 @@ namespace BlazorBootstrap.Components.Model
         public int Index { get; set; }
 
         public bool IsActive { get; set; }
+
+        public bool IsDisabled { get; set; }
 
         public bool IsStretched { get; set; }
 

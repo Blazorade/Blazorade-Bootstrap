@@ -1,0 +1,10 @@
+﻿@inherits NavbarNavBase
+
+<ul @attributes="this.Attributes">
+    @foreach (var item in this?.Items)
+    {
+        <NavItem Item="@item" />
+    }
+
+    @this.ChildContent
+</ul>

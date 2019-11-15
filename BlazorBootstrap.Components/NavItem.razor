@@ -1,0 +1,5 @@
+﻿@inherits NavItemBase
+
+<li @attributes="this.Attributes">
+    <Anchor Url="@this?.Item?.Url" Text="@this?.Item?.Text" class="@ClassNames.Navbars.NavLink" />
+</li>
