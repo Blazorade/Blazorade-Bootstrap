@@ -1,3 +1,13 @@
 ﻿@inherits NavbarBrandBase
 
-<Anchor Url="@this.Link" class="@ClassNames.Navbars.Brand">@this.Text</Anchor>
+
+<Anchor Url="@this.Link" @attributes="this.Attributes">
+    @if(null != this.ChildContent)
+    {
+        @this.ChildContent
+    }
+    else
+    {
+        @this.Text
+    }
+</Anchor>

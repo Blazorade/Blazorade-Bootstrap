@@ -1,5 +1,12 @@
 ﻿@inherits NavItemBase
 
 <li @attributes="this.Attributes">
-    <Anchor Url="@this?.Item?.Url" Text="@this?.Item?.Text" class="@ClassNames.Navbars.NavLink" />
+    @if (null != this.ChildContent)
+    {
+        @this.ChildContent
+    }
+    else
+    {
+        <Anchor Url="@this?.Item?.Url" Text="@this?.Item?.Text" class="@ClassNames.Navbars.NavLink" />
+    }
 </li>

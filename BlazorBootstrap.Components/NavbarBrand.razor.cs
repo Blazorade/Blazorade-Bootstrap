@@ -14,5 +14,12 @@ namespace BlazorBootstrap.Components
         [Parameter]
         public string Text { get; set; }
 
+
+        protected override void OnParametersSet()
+        {
+            this.AddClass(ClassNames.Navbars.Brand);
+
+            base.OnParametersSet();
+        }
     }
 }

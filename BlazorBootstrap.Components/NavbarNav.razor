@@ -1,10 +1,15 @@
 ﻿@inherits NavbarNavBase
 
 <ul @attributes="this.Attributes">
-    @foreach (var item in this?.Items)
+    @if (null != this.ChildContent)
     {
-        <NavItem Item="@item" />
+        @this.ChildContent
     }
-
-    @this.ChildContent
+    else if (null != this.Items)
+    {
+        @foreach (var item in this.Items)
+        {
+            <NavItem Item="@item" />
+        }
+    }
 </ul>
