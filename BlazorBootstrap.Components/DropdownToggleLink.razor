@@ -1,0 +1,13 @@
+﻿@inherits DropdownToggleLinkBase
+
+
+<Anchor @attributes="this.Attributes">
+    @if(null != this.ChildContent)
+    {
+        @this.ChildContent
+    }
+    else
+    {
+        @this.Text
+    }
+</Anchor>

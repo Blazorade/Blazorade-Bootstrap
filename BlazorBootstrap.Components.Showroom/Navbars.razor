@@ -1,2 +1,80 @@
-﻿<h3>Navbars</h3>
+﻿
+<Heading Level="HeadingLevel.H2">Navbars</Heading>
 
+
+<Heading Level="HeadingLevel.H3">Collapsing</Heading>
+<Paragraph>
+    The navbars below show different collapsing behaviour, and how you can specify the breakpoint at which a navbar collapses.
+    You can also specify whether you want the Brand section of your navbar to collapse or stay visible also on collapsed navbars.
+</Paragraph>
+
+@code {
+    NavbarExpandBreakpoint Breakpoint = NavbarExpandBreakpoint.XL;
+    string Brand;
+    public void SetBreakpoint(NavbarExpandBreakpoint breakpoint)
+    {
+        this.Breakpoint = breakpoint;
+
+        if (this.Breakpoint == NavbarExpandBreakpoint.Always || this.Breakpoint == NavbarExpandBreakpoint.Never)
+        {
+            this.Brand = $"{this.Breakpoint} Expand";
+        }
+        else
+        {
+            this.Brand = $"Expand at {this.Breakpoint}";
+        }
+    }
+}
+
+@{
+    this.SetBreakpoint(this.Breakpoint);
+}
+<Paragraph>
+    From the dropdown below, select the responsive breakpoint at which the menu will expand.
+</Paragraph>
+<Dropdown>
+    <DropdownToggleButton>Select Breakpoint</DropdownToggleButton>
+    <DropdownMenu>
+        <DropdownItem @onclick="(e) => { this.SetBreakpoint(NavbarExpandBreakpoint.XL); }" IsActive="this.Breakpoint == NavbarExpandBreakpoint.XL">XL</DropdownItem>
+        <DropdownItem @onclick="(e) => { this.SetBreakpoint(NavbarExpandBreakpoint.LG); }" IsActive="this.Breakpoint == NavbarExpandBreakpoint.LG">LG</DropdownItem>
+        <DropdownItem @onclick="(e) => { this.SetBreakpoint(NavbarExpandBreakpoint.MD); }" IsActive="this.Breakpoint == NavbarExpandBreakpoint.MD">MD</DropdownItem>
+        <DropdownItem @onclick="(e) => { this.SetBreakpoint(NavbarExpandBreakpoint.SM); }" IsActive="this.Breakpoint == NavbarExpandBreakpoint.SM">SM</DropdownItem>
+        <DropdownItem @onclick="(e) => { this.SetBreakpoint(NavbarExpandBreakpoint.Always); }" IsActive="this.Breakpoint == NavbarExpandBreakpoint.Always">Always Expand</DropdownItem>
+        <DropdownItem @onclick="(e) => { this.SetBreakpoint(NavbarExpandBreakpoint.Never); }" IsActive="this.Breakpoint == NavbarExpandBreakpoint.Never">Never Expand</DropdownItem>
+    </DropdownMenu>
+</Dropdown>
+
+
+
+<Heading Level="HeadingLevel.H3" MarginTop="Spacing.Three">Dark Navbar</Heading>
+
+<Navbar Id="nb-1" BrandText="@this.Brand" ColorScheme="NavbarColor.Dark" BackgroundColor="NamedColor.Dark" Expand="this.Breakpoint" MarginTop="Spacing.Two">
+    <NavbarNav>
+        <NavItem Text="Item 1" />
+        <NavItem Text="Item 2" />
+        <DropdownNavItem Text="Dropdown">
+            <DropdownItem Text="Link 1" />
+            <DropdownItem Text="Link 2" />
+        </DropdownNavItem>
+    </NavbarNav>
+    <NavbarNav MarginLeft="Spacing.Auto">
+        <NavItem Item="@(new MenuItem { Text = "About", Url = "https://github.com/MikaBerglund/Blazor-Bootstrap/wiki", OpenInNewTab = true })" />
+    </NavbarNav>
+</Navbar>
+
+
+<Heading Level="HeadingLevel.H3" MarginTop="Spacing.Three">Light Navbar</Heading>
+
+<Navbar Id="nb-2" BrandText="@this.Brand" ColorScheme="NavbarColor.Light" BackgroundColor="NamedColor.Light" Expand="this.Breakpoint" MarginTop="Spacing.Two" Shadow="ShadowSize.Regular">
+    <NavbarNav>
+        <NavItem Text="Item 1" />
+        <NavItem Text="Item 2" />
+        <DropdownNavItem Text="Dropdown">
+            <DropdownItem Text="Link 1" />
+            <DropdownItem Text="Link 2" />
+        </DropdownNavItem>
+    </NavbarNav>
+    <NavbarNav MarginLeft="Spacing.Auto">
+        <NavItem Item="@(new MenuItem { Text = "About", Url = "https://github.com/MikaBerglund/Blazor-Bootstrap/wiki", OpenInNewTab = true })" />
+    </NavbarNav>
+</Navbar>

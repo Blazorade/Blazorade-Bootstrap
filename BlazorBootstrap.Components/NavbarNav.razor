@@ -1,15 +1,23 @@
 ﻿@inherits NavbarNavBase
 
-<ul @attributes="this.Attributes">
-    @if (null != this.ChildContent)
-    {
-        @this.ChildContent
-    }
-    else if (null != this.Items)
-    {
-        @foreach (var item in this.Items)
+    <ul @attributes="this.Attributes">
+        @if (null != this.ChildContent)
         {
-            <NavItem Item="@item" />
+            @this.ChildContent
         }
-    }
-</ul>
+        else if (null != this.Items)
+        {
+            @foreach (var item in this.Items)
+            {
+                if (item?.Children?.Count() > 0)
+                {
+                    <DropdownNavItem Item="@item" />
+                }
+                else
+                {
+                    <NavItem Item="@item" />
+                }
+
+            }
+        }
+    </ul>

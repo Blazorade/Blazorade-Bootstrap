@@ -1,7 +1,7 @@
 ﻿@inherits AnchorBase
 
 <a @attributes="this.Attributes">
-    @if(null != this.ChildContent)
+    @if(string.IsNullOrEmpty(this.Text))
     {
         @this.ChildContent
     }

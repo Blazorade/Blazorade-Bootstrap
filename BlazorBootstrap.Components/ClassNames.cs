@@ -218,6 +218,15 @@ namespace BlazorBootstrap.Components
             public const string Fluid = "container-fluid";
         }
 
+        public static class Dropdowns
+        {
+            public const string Divider = "dropdown-divider";
+            public const string Dropdown = "dropdown";
+            public const string Item = "dropdown-item";
+            public const string Menu = "dropdown-menu";
+            public const string Toggle = "dropdown-toggle";
+        }
+
         public static class Headings
         {
             /// <summary>

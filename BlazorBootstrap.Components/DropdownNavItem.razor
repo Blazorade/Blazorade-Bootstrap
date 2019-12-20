@@ -1,0 +1,10 @@
+﻿@inherits DropdownNavItemBase
+
+
+<li @attributes="this.Attributes">
+    <Anchor Link="@this.Item" Url="#" class="@($"{ClassNames.Navbars.NavLink} {ClassNames.Dropdowns.Toggle}")" role="button" data-toggle="dropdown" />
+
+    <ul class="dropdown-menu">
+        @this.ChildContent
+    </ul>
+</li>

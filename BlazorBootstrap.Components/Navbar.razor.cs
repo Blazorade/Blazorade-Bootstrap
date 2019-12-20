@@ -8,6 +8,11 @@ namespace BlazorBootstrap.Components
 {
     public abstract class NavbarBase : BootstrapComponentBase
     {
+        protected NavbarBase()
+        {
+            this.Expand = NavbarExpandBreakpoint.Never;
+        }
+
 
         [Parameter]
         public string BrandLink { get; set; }
@@ -25,7 +30,7 @@ namespace BlazorBootstrap.Components
         public NavbarColor? ColorScheme { get; set; }
 
         [Parameter]
-        public ResponsiveBreakpoint? Expand { get; set; }
+        public NavbarExpandBreakpoint? Expand { get; set; }
 
         [Parameter]
         public NavbarPlacement? Placement { get; set; }
@@ -61,7 +66,14 @@ namespace BlazorBootstrap.Components
 
             if (this.Expand.HasValue)
             {
-                this.AddClass($"navbar-expand-{this.Expand.ToString().ToLower()}");
+                if(this.Expand == NavbarExpandBreakpoint.Always)
+                {
+                    this.AddClass("navbar-expand");
+                }
+                else if(this.Expand != NavbarExpandBreakpoint.Never)
+                {
+                    this.AddClass($"navbar-expand-{this.Expand.ToString().ToLower()}");
+                }
             }
 
             base.OnParametersSet();

@@ -9,11 +9,22 @@ namespace BlazorBootstrap.Components
     public abstract class AnchorBase : BootstrapComponentBase , ILink
     {
 
+        protected AnchorBase()
+        {
+            this.IgnoreEmptyUrl = true;
+        }
+
         /// <summary>
         /// The description of the link. This is typically used as tooltip for the link.
         /// </summary>
         [Parameter]
         public string Description { get; set; }
+
+        /// <summary>
+        /// Specifies that an empty or <c>null</c> value on <see cref="Url"/> is ignored, and the <c>href</c> attribute is always rendered regardless.
+        /// </summary>
+        [Parameter]
+        public bool IgnoreEmptyUrl { get; set; }
 
         /// <summary>
         /// Some components use the index to number multiple links in a collection.
@@ -97,10 +108,11 @@ namespace BlazorBootstrap.Components
             {
                 this.AddAttribute("target", "_blank");
             }
-            if(!string.IsNullOrEmpty(this.Url))
+            if(!string.IsNullOrEmpty(this.Url) || this.IgnoreEmptyUrl)
             {
-                this.AddAttribute("href", this.Url);
+                this.AddAttribute("href", $"{this.Url ?? "javascript:"}");
             }
+
 
             base.OnParametersSet();
         }
