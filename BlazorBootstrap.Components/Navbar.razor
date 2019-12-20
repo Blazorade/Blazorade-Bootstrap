@@ -9,11 +9,11 @@
     {
         @if (null != this.BrandTemplate)
         {
-            @this.BrandTemplate(new Link { Url = this.BrandLink, Text = this.BrandText })
+            @this.BrandTemplate(new Link { Url = this.BrandUrl, Text = this.BrandText })
         }
         else
         {
-            <NavbarBrand Text="@this.BrandText" Link="@this.BrandLink" />
+            <NavbarBrand Text="@this.BrandText" Url="@this.BrandUrl" />
         }
     }
 
@@ -27,11 +27,11 @@
         {
             @if (null != this.BrandTemplate)
             {
-                @this.BrandTemplate(new Link { Url = this.BrandLink, Text = this.BrandText })
+                @this.BrandTemplate(new Link { Url = this.BrandUrl, Text = this.BrandText })
             }
             else
             {
-                <NavbarBrand Text="@this.BrandText" Link="@this.BrandLink" />
+                <NavbarBrand Text="@this.BrandText" Url="@this.BrandUrl" />
             }
         }
 
