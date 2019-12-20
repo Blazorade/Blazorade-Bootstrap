@@ -10,15 +10,15 @@ namespace BlazorBootstrap.Components
     {
         protected NavbarBase()
         {
-            this.Expand = NavbarExpandBreakpoint.MD;
+            this.ExpandAt = NavbarExpandBreakpoint.MD;
         }
 
 
         [Parameter]
-        public string BrandLink { get; set; }
+        public string BrandText { get; set; }
 
         [Parameter]
-        public string BrandText { get; set; }
+        public string BrandUrl { get; set; }
 
         [Parameter]
         public RenderFragment<ILink> BrandTemplate { get; set; }
@@ -30,7 +30,7 @@ namespace BlazorBootstrap.Components
         public NavbarColor? ColorScheme { get; set; }
 
         [Parameter]
-        public NavbarExpandBreakpoint? Expand { get; set; }
+        public NavbarExpandBreakpoint? ExpandAt { get; set; }
 
         [Parameter]
         public NavbarPlacement? Placement { get; set; }
@@ -38,6 +38,7 @@ namespace BlazorBootstrap.Components
 
         protected override void OnParametersSet()
         {
+            this.SetIdIfEmpty();
 
             this.AddClass(ClassNames.Navbars.Navbar);
 
@@ -64,25 +65,19 @@ namespace BlazorBootstrap.Components
                 this.AddClass(ClassNames.Navbars.StickyTop);
             }
 
-            if (this.Expand.HasValue)
+            if (this.ExpandAt.HasValue)
             {
-                if(this.Expand == NavbarExpandBreakpoint.Always)
+                if(this.ExpandAt == NavbarExpandBreakpoint.Always)
                 {
                     this.AddClass("navbar-expand");
                 }
-                else if(this.Expand != NavbarExpandBreakpoint.Never)
+                else if(this.ExpandAt != NavbarExpandBreakpoint.Never)
                 {
-                    this.AddClass($"navbar-expand-{this.Expand.ToString().ToLower()}");
+                    this.AddClass($"navbar-expand-{this.ExpandAt.ToString().ToLower()}");
                 }
             }
 
             base.OnParametersSet();
-
-
-            if (!this.Attributes.ContainsKey("id"))
-            {
-                throw new InvalidOperationException($"The {this.GetType().FullName} requires that you set the ID of the component.");
-            }
 
         }
 

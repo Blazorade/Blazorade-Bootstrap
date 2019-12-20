@@ -6,7 +6,6 @@ namespace BlazorBootstrap.Components
 {
     public enum NavbarExpandBreakpoint
     {
-        XS,
         SM,
         MD,
         LG,

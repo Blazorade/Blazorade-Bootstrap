@@ -1,7 +1,7 @@
 ﻿@inherits NavbarBrandBase
 
 
-<Anchor Url="@this.Link" IgnoreEmptyUrl="true" @attributes="this.Attributes">
+<Anchor Url="@this.Url" IgnoreEmptyUrl="true" @attributes="this.Attributes">
     @if(null != this.ChildContent)
     {
         @this.ChildContent
