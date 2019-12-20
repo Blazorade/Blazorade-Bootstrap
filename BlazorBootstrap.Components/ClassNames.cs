@@ -14,6 +14,8 @@ namespace BlazorBootstrap.Components
 
         public const string Collapse = "collapse";
 
+        public const string Disabled = "disabled";
+
         public const string Fade = "fade";
 
         public static class Abbreviations

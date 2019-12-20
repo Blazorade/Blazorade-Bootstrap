@@ -99,6 +99,7 @@ namespace BlazorBootstrap.Components
             if(this.IsDisabled)
             {
                 this.AddAttribute("disabled", "disabled");
+                this.AddClass(ClassNames.Disabled);
             }
             if (this.IsStretched)
             {
