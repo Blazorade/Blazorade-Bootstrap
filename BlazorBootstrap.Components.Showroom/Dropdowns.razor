@@ -8,16 +8,19 @@
     <DropdownToggleLink Text="Text toggle" />
     <DropdownMenu>
         <DropdownItem Text="Active" IsActive="true" />
-        <DropdownItem Text="Normal" />
         <DropdownItem Text="Disabled" IsDisabled="true" />
+        <DropdownDivider />
+        <DropdownItem Text="Normal" />
     </DropdownMenu>
 </Dropdown>
 
+
 <Dropdown MarginTop="Spacing.Two">
-    <DropdownToggleButton Color="NamedColor.Primary">Button toggle</DropdownToggleButton>
+    <DropdownToggleButton Color="NamedColor.Primary" OnClick="(e) => { }">Button toggle</DropdownToggleButton>
     <DropdownMenu>
         <DropdownItem Text="Active" IsActive="true" />
-        <DropdownItem Text="Normal" />
         <DropdownItem Text="Disabled" IsDisabled="true" />
+        <DropdownDivider />
+        <DropdownItem Text="Normal" />
     </DropdownMenu>
 </Dropdown>

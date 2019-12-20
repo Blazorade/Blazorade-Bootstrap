@@ -1,6 +1,6 @@
 ﻿@inherits AnchorBase
 
-<a @attributes="this.Attributes">
+<a @attributes="this.Attributes" @onclick="this.OnClick">
     @if(string.IsNullOrEmpty(this.Text))
     {
         @this.ChildContent

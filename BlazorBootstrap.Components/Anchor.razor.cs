@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using BlazorBootstrap.Components.Model;
+using Microsoft.AspNetCore.Components.Web;
 
 namespace BlazorBootstrap.Components
 {
@@ -71,6 +72,14 @@ namespace BlazorBootstrap.Components
 
         [Parameter]
         public ILink Link { get; set; }
+
+
+
+        /// <summary>
+        /// Callback for when the anchor is clicked.
+        /// </summary>
+        [Parameter]
+        public EventCallback<MouseEventArgs> OnClick { get; set; }
 
 
 

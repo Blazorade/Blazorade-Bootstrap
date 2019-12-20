@@ -1,18 +1,17 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class DropdownItemBase : AnchorBase
+    public abstract class DropdownDividerBase : BootstrapComponentBase
     {
 
         protected override void OnParametersSet()
         {
-            this.AddClass(ClassNames.Dropdowns.Item);
+            this.AddClass(ClassNames.Dropdowns.Divider);
             base.OnParametersSet();
         }
+
     }
 }

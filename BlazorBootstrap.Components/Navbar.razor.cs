@@ -10,7 +10,7 @@ namespace BlazorBootstrap.Components
     {
         protected NavbarBase()
         {
-            this.Expand = NavbarExpandBreakpoint.Never;
+            this.Expand = NavbarExpandBreakpoint.MD;
         }
 
 

@@ -12,7 +12,12 @@
         }
     };
 }
-<Navbar Id="main-menu" ColorScheme="NavbarColor.Dark" BackgroundColor="NamedColor.Primary" BrandLink="/" BrandText="Customer Portal" Placement="NavbarPlacement.StickyTop" Expand="ResponsiveBreakpoint.MD">
-    <NavbarNav Items="@items">
+
+<Navbar Id="main-menu" ColorScheme="NavbarColor.Dark" BackgroundColor="NamedColor.Primary" BrandLink="/" BrandText="Customer Portal" Placement="NavbarPlacement.StickyTop" Expand="NavbarExpandBreakpoint.MD">
+    <NavbarNav>
+        <NavItem Text="Link 1" />
+        <DropdownNavItem Text="Link 2">
+            <DropdownItem Text="Link 2.1" />
+        </DropdownNavItem>
     </NavbarNav>
 </Navbar>

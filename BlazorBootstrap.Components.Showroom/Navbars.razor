@@ -33,7 +33,7 @@
     From the dropdown below, select the responsive breakpoint at which the menu will expand.
 </Paragraph>
 <Dropdown>
-    <DropdownToggleButton>Select Breakpoint</DropdownToggleButton>
+    <DropdownToggleButton Color="NamedColor.Info">Select Breakpoint</DropdownToggleButton>
     <DropdownMenu>
         <DropdownItem @onclick="(e) => { this.SetBreakpoint(NavbarExpandBreakpoint.XL); }" IsActive="this.Breakpoint == NavbarExpandBreakpoint.XL">XL</DropdownItem>
         <DropdownItem @onclick="(e) => { this.SetBreakpoint(NavbarExpandBreakpoint.LG); }" IsActive="this.Breakpoint == NavbarExpandBreakpoint.LG">LG</DropdownItem>
