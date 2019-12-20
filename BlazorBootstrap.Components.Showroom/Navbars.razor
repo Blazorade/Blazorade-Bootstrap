@@ -1,11 +1,21 @@
 ﻿
-<Heading Level="HeadingLevel.H2">Navbars</Heading>
+<Heading Level="HeadingLevel.H2">Navbar Component</Heading>
+<Paragraph>
+    The <code>Navbar</code> component is used to produce a responsive navigation header with built-in support for collapsing.
+</Paragraph>
+
+<Heading Level="HeadingLevel.H3">Documentation</Heading>
+<Paragraph IsStretchedLinkContainer="true">
+    The documentation for the <code>Navbar</code> component is avaible on the <Anchor Url="https://github.com/MikaBerglund/Blazor-Bootstrap/wiki/Navbar" IsStretched="true" OpenInNewTab="true">Blazor Bootstrap Wiki</Anchor>
+</Paragraph>
 
 
-<Heading Level="HeadingLevel.H3">Collapsing</Heading>
+<Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Collapsing</Heading>
 <Paragraph>
     The navbars below show different collapsing behaviour, and how you can specify the breakpoint at which a navbar collapses.
     You can also specify whether you want the Brand section of your navbar to collapse or stay visible also on collapsed navbars.
+
+    From the dropdown below, select the responsive breakpoint at which the menu will expand.
 </Paragraph>
 
 @code {
@@ -29,9 +39,6 @@
 @{
     this.SetBreakpoint(this.Breakpoint);
 }
-<Paragraph>
-    From the dropdown below, select the responsive breakpoint at which the menu will expand.
-</Paragraph>
 <Dropdown>
     <DropdownToggleButton Color="NamedColor.Info">Select Breakpoint</DropdownToggleButton>
     <DropdownMenu>
@@ -43,10 +50,6 @@
         <DropdownItem @onclick="(e) => { this.SetBreakpoint(NavbarExpandBreakpoint.Never); }" IsActive="this.Breakpoint == NavbarExpandBreakpoint.Never">Never Expand</DropdownItem>
     </DropdownMenu>
 </Dropdown>
-
-
-
-<Heading Level="HeadingLevel.H3" MarginTop="Spacing.Three">Dark Navbar</Heading>
 
 <Navbar Id="nb-1" BrandText="@this.Brand" ColorScheme="NavbarColor.Dark" BackgroundColor="NamedColor.Dark" Expand="this.Breakpoint" MarginTop="Spacing.Two">
     <NavbarNav>
@@ -62,10 +65,10 @@
     </NavbarNav>
 </Navbar>
 
-
-<Heading Level="HeadingLevel.H3" MarginTop="Spacing.Three">Light Navbar</Heading>
-
-<Navbar Id="nb-2" BrandText="@this.Brand" ColorScheme="NavbarColor.Light" BackgroundColor="NamedColor.Light" Expand="this.Breakpoint" MarginTop="Spacing.Two" Shadow="ShadowSize.Regular">
+<Paragraph MarginTop="Spacing.Two">
+    You can also have the brand section of the <code>Navbar</code> component collapse with the navbar itself.
+</Paragraph>
+<Navbar Id="nb-2" BrandText="@this.Brand" CollapseBrand="true" ColorScheme="NavbarColor.Light" BackgroundColor="NamedColor.Light" Expand="this.Breakpoint" Shadow="ShadowSize.Regular">
     <NavbarNav>
         <NavItem Text="Item 1" />
         <NavItem Text="Item 2" />
