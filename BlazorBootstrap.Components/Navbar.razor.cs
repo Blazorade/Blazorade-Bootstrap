@@ -21,6 +21,9 @@ namespace BlazorBootstrap.Components
         public string BrandUrl { get; set; }
 
         [Parameter]
+        public string BrandImageUrl { get; set; }
+
+        [Parameter]
         public RenderFragment<ILink> BrandTemplate { get; set; }
 
         [Parameter]

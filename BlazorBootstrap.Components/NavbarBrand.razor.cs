@@ -9,6 +9,9 @@ namespace BlazorBootstrap.Components
     {
 
         [Parameter]
+        public string ImageUrl { get; set; }
+
+        [Parameter]
         public string Text { get; set; }
 
         [Parameter]
