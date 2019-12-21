@@ -1,21 +1,34 @@
 ﻿
+@code {
+    List<MenuItem> items = new List<MenuItem>
+    {
+        new MenuItem
+        {
+            Text = "Components",
+            Children = new List<MenuItem>
+            {
+                new MenuItem { Text = "Alerts", Url = "/alerts", Description = "The Alert component is used to provide feedback messages, typically in response to user actions." },
+                new MenuItem { Text = "Badges", Url = "/badges", Description = "The Badge component is used to add counts and labels to other components." },
+                new MenuItem { Text = "Breadcrumbs", Url = "/breadcrumbs", Description = "The Breadcrumb component visualizes the current page in a navigational hierarchy." },
+                new MenuItem { Text = "Dropdowns", Url = "/dropdowns", Description = "The Dropdown component is a contextual overlay that displays a list of links and other elements. The Dropdown can be toggled." },
+                new MenuItem { Text = "Navbars", Url = "/navbars", Description = "The Navbar component is used to produce a responsive navigation header with built-in support for collapsing." },
+            }
+        },
+        new MenuItem
+        {
+            Text = "Work in Progress",
+            Children = new List<MenuItem>
+            {
+                new MenuItem { Text = "Buttons", Url = "/buttons" },
+                new MenuItem { Text = "Cards", Url = "/cards" },
+                new MenuItem { Text = "Carousels", Url = "/carousels" },
+                new MenuItem { Text = "Sizing", Url = "/sizing" },
+            }
+        }
+    };
+}
 <Navbar Id="MainMenu" BrandText="Blazor Bootstrap" BrandUrl="/" BackgroundColor="NamedColor.Primary" ColorScheme="NavbarColor.Dark" ExpandAt="NavbarExpandBreakpoint.MD">
-    <NavbarNav>
-        <DropdownNavItem Text="Components">
-            <DropdownItem Url="/alerts" Text="Alerts" />
-            <DropdownItem Url="/badges" Text="Badges" />
-            <DropdownItem Url="/breadcrumbs" Text="Breadcrumbs" />
-            <DropdownItem Url="/dropdowns" Text="Dropdowns" />
-            <DropdownItem Url="/navbars" Text="Navbars" />
-        </DropdownNavItem>
-
-        <DropdownNavItem Text="Work in Progress">
-            <DropdownItem Url="/buttons" Text="Buttons" />
-            <DropdownItem Url="/cards" Text="Cards" />
-            <DropdownItem Url="/carousels" Text="Carousels" />
-            <DropdownItem Url="/sizing" Text="Sizing" />
-        </DropdownNavItem>
-    </NavbarNav>
+    <NavbarNav Items="@this.items" />
     <NavbarNav MarginLeft="Spacing.Auto">
         <NavItem>
             <Anchor Url="https://github.com/MikaBerglund/Blazor-Bootstrap/wiki" Text="Docs" OpenInNewTab="true" class="@ClassNames.Navbars.NavLink" />

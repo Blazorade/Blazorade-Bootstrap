@@ -5,6 +5,16 @@
     <Anchor Link="@this.Item" Url="#" class="@($"{ClassNames.Navbars.NavLink} {ClassNames.Dropdowns.Toggle}")" role="button" data-toggle="dropdown" />
 
     <ul class="dropdown-menu">
-        @this.ChildContent
+        @if (this?.Item?.Children?.Count() > 0)
+        {
+            @foreach(var child in this.Item.Children)
+            {
+                <Anchor Link="@child" class="@ClassNames.Dropdowns.Item" />
+            }
+        }
+        else
+        {
+            @this.ChildContent
+        }
     </ul>
 </li>
