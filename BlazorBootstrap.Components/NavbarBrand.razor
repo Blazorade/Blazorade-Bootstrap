@@ -8,6 +8,11 @@
     }
     else
     {
+        @if (!string.IsNullOrEmpty(this.ImageUrl))
+        {
+            <img src="@this.ImageUrl" />
+        }
+
         @this.Text
     }
 </Anchor>
