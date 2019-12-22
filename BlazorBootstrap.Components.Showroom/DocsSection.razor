@@ -1,0 +1,18 @@
+﻿@code {
+
+    [Parameter]
+    public string ComponentName { get; set; }
+
+    private string DocsUrl;
+
+    protected override void OnParametersSet()
+    {
+        this.DocsUrl = $"https://github.com/MikaBerglund/Blazor-Bootstrap/wiki/{this.ComponentName}";
+        base.OnParametersSet();
+    }
+}
+
+<Heading Id="docs" IsAnchor="true" Level="HeadingLevel.H3">Documentation</Heading>
+<Paragraph IsStretchedLinkContainer="true">
+    The documentation for <code>@this.ComponentName</code> is avaible at <Anchor Url="@this.DocsUrl" IsStretched="true" OpenInNewTab="true">@this.DocsUrl</Anchor>.
+</Paragraph>
