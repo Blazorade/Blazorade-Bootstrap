@@ -3,26 +3,26 @@
 @switch (this.Level)
 {
     case HeadingLevel.H1:
-        <h1 @attributes="this.Attributes">@this.ChildContent</h1>
+        <h1 @attributes="this.Attributes"><HeadingContent HeadingId="@this.Id" IsAnchor="@this.IsAnchor">@this.ChildContent</HeadingContent></h1>
         break;
 
     case HeadingLevel.H2:
-        <h2 @attributes="this.Attributes">@this.ChildContent</h2>
+        <h2 @attributes="this.Attributes"><HeadingContent HeadingId="@this.Id" IsAnchor="@this.IsAnchor">@this.ChildContent</HeadingContent></h2>
         break;
 
     case HeadingLevel.H3:
-        <h3 @attributes="this.Attributes">@this.ChildContent</h3>
+        <h3 @attributes="this.Attributes"><HeadingContent HeadingId="@this.Id" IsAnchor="@this.IsAnchor">@this.ChildContent</HeadingContent></h3>
         break;
 
     case HeadingLevel.H4:
-        <h4 @attributes="this.Attributes">@this.ChildContent</h4>
+        <h4 @attributes="this.Attributes"><HeadingContent HeadingId="@this.Id" IsAnchor="@this.IsAnchor">@this.ChildContent</HeadingContent></h4>
         break;
 
     case HeadingLevel.H5:
-        <h5 @attributes="this.Attributes">@this.ChildContent</h5>
+        <h5 @attributes="this.Attributes"><HeadingContent HeadingId="@this.Id" IsAnchor="@this.IsAnchor">@this.ChildContent</HeadingContent></h5>
         break;
 
     case HeadingLevel.H6:
-        <h6 @attributes="this.Attributes">@this.ChildContent</h6>
+        <h6 @attributes="this.Attributes"><HeadingContent HeadingId="@this.Id" IsAnchor="@this.IsAnchor">@this.ChildContent</HeadingContent></h6>
         break;
 }

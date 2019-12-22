@@ -220,6 +220,11 @@ namespace BlazorBootstrap.Components
             public const string Fluid = "container-fluid";
         }
 
+        public static class Display
+        {
+            public const string Hidden = "d-none";
+        }
+
         public static class Dropdowns
         {
             public const string Divider = "dropdown-divider";

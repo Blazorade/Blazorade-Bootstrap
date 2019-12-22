@@ -1,0 +1,13 @@
+﻿@inherits HeadingContentBase
+
+@if (this.IsAnchor && !string.IsNullOrEmpty(this.HeadingId))
+{
+    <Div id="@this.Id" @onmouseover="this.ContentOnMouseOver" @onmouseout="this.ContentOnMouseOut">
+        @this.ChildContent
+        <Anchor Id="@this.AnchorId" Url="@($"#{this.HeadingId}")" TextColor="NamedColor.Primary" OnClick="this.AnchorOnClick" style="text-decoration: none;" class="@ClassNames.Display.Hidden"><em>#</em></Anchor>
+    </Div>
+}
+else
+{
+    @this.ChildContent
+}
