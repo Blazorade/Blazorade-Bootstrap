@@ -1,0 +1,36 @@
+﻿@inherits ModalBase
+
+<div @attributes="this.Attributes">
+    <div class="@ClassNames.Modals.Dialog" role="document">
+        <div class="@ClassNames.Modals.Content">
+            @if (null != this.HeaderTemplate)
+            {
+                @this.HeaderTemplate(this.Header)
+            }
+            else if(!string.IsNullOrEmpty(this.Header))
+            {
+                <ModalHeader>
+                    <Heading Level="HeadingLevel.H5" class="@ClassNames.Modals.Title">@this.Header</Heading>
+                    <CloseModalButton />
+                </ModalHeader>
+            }
+
+            @if (null != this.BodyTemplate)
+            {
+                @this.BodyTemplate(this.Body)
+            }
+            else if (!string.IsNullOrEmpty(this.Body))
+            {
+                <ModalBody>
+                    <Paragraph>
+                        @this.Body
+                    </Paragraph>
+                </ModalBody>
+            }
+            @if (null != this.FooterTemplate)
+            {
+                @this.FooterTemplate
+            }
+        </div>
+    </div>
+</div>

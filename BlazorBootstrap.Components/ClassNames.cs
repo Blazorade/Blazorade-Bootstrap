@@ -319,6 +319,17 @@ namespace BlazorBootstrap.Components
 
         }
 
+        public static class Modals
+        {
+            public const string Body = "modal-body";
+            public const string Content = "modal-content";
+            public const string Dialog = "modal-dialog";
+            public const string Footer = "modal-footer";
+            public const string Header = "modal-header";
+            public const string Modal = "modal";
+            public const string Title = "modal-title";
+        }
+
         public static class Navbars
         {
             public const string Navbar = "navbar";
