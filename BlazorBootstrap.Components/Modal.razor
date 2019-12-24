@@ -1,7 +1,7 @@
 ﻿@inherits BootstrapComponentBase
 
 <div @attributes="this.Attributes">
-    <div class="@ClassNames.Modals.Dialog" role="document">
+    <div class="@this.DialogClasses" role="document">
         <div class="@ClassNames.Modals.Content">
             @if (null != this.HeaderTemplate)
             {

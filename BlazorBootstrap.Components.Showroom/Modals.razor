@@ -13,6 +13,9 @@
     Modal modal3;
     Modal modal4;
     Modal modal5;
+    Modal modalSm;
+    Modal modalL;
+    Modal modalXl;
 
     string imageUrl = "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=640";
     Spacing headingMarginTop = Spacing.Five;
@@ -102,6 +105,22 @@
             <Button Color="NamedColor.Light" MarginLeft="Spacing.One">Cancel</Button>
         </ModalFooter>
     </FooterTemplate>
+</Modal>
+
+
+<Heading Id="modal-sizes" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Modal Sizes</Heading>
+<Paragraph>
+    The <code>Modal</code> component supports different sizes.
+</Paragraph>
+
+<Button Color="NamedColor.Primary" OnClick="async () => { await this.modalSm.ShowAsync(); }">Small</Button>
+<Button Color="NamedColor.Primary" OnClick="async () => { await this.modalL.ShowAsync(); }">Large</Button>
+<Button Color="NamedColor.Primary" OnClick="async () => { await this.modalXl.ShowAsync(); }">Extra Large</Button>
+<Modal @ref="this.modalSm" Id="modal-sm" Header="Small Dialog" Body="This is a small modal dialog." Size="ModalSize.SM">
+</Modal>
+<Modal @ref="this.modalL" Id="modal-lg" Header="Large Dialog" Body="This is a large modal dialog." Size="ModalSize.LG">
+</Modal>
+<Modal @ref="this.modalXl" Id="modal-xl" Header="Extra Large Dialog" Body="This is an extra large modal dialog." Size="ModalSize.XL">
 </Modal>
 
 
