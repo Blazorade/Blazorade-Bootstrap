@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class NavItemBase : BootstrapComponentBase, IMenuItem
+    public partial class NavItem
     {
 
         [Parameter]

@@ -5,9 +5,9 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class CardGroupBase : BootstrapComponentBase
+    public partial class CardGroup
     {
-        protected CardGroupBase()
+        public CardGroup()
         {
             this.Type = CardGroupType.Group;
         }

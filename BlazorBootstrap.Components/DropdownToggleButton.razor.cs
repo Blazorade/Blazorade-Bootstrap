@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class DropdownToggleButtonBase : ButtonBase
+    public partial class DropdownToggleButton
     {
 
         protected override void OnParametersSet()

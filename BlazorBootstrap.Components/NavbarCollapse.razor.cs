@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class NavbarCollapseBase : BootstrapComponentBase
+    public partial class NavbarCollapse
     {
 
         protected override void OnParametersSet()

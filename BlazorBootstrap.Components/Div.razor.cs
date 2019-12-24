@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class DivBase : BootstrapComponentBase
+    public partial class Div
     {
 
         [Parameter]

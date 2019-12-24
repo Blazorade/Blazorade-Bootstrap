@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class CardTextBase : BootstrapComponentBase
+    public partial class CardText
     {
 
         protected override void OnParametersSet()

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class ButtonBase : ColoredBootstrapComponentBase
+    public partial class Button
     {
 
         /// <summary>

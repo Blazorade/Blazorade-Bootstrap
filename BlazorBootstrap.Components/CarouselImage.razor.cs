@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class CarouselImageBase : ImageBase
+    public partial class CarouselImage
     {
         protected override void OnParametersSet()
         {

@@ -7,10 +7,10 @@ using Microsoft.AspNetCore.Components.Web;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class AnchorBase : BootstrapComponentBase , ILink
+    public partial class Anchor
     {
 
-        protected AnchorBase()
+        public Anchor()
         {
             this.IgnoreEmptyUrl = true;
         }

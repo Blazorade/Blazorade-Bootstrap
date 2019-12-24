@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class DropdownDividerBase : BootstrapComponentBase
+    public partial class DropdownDivider
     {
 
         protected override void OnParametersSet()

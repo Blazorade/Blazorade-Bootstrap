@@ -7,12 +7,8 @@ using BlazorBootstrap.Components.Model;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class BreadcrumbBase : BootstrapComponentBase
+    public partial class Breadcrumb
     {
-
-        protected BreadcrumbBase()
-        {
-        }
 
         [Parameter]
         public RenderFragment<ILink> ItemTemplate { get; set; }

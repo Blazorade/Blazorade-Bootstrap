@@ -7,14 +7,14 @@ using Microsoft.JSInterop;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class AlertBase : ColoredBootstrapComponentBase
+    public partial class Alert
     {
 
         /// <summary>
         /// Called when the alert has been dismissed.
         /// </summary>
         [Parameter]
-        public EventCallback<AlertBase> OnDismissed { get; set; }
+        public EventCallback<Alert> OnDismissed { get; set; }
 
         /// <summary>
         /// The template that is used to produce the heading of the alert.

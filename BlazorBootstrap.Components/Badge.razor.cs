@@ -12,7 +12,7 @@ namespace BlazorBootstrap.Components
     /// <remarks>
     /// For details see <see cref="https://github.com/MikaBerglund/Blazor-Bootstrap/wiki/Badge"/>
     /// </remarks>
-    public abstract class BadgeBase : ColoredBootstrapComponentBase
+    public partial class Badge
     {
 
         /// <summary>

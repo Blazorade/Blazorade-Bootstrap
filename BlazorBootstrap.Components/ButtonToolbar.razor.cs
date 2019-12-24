@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class ButtonToolbarBase : BootstrapComponentBase
+    public partial class ButtonToolbar
     {
 
         protected override void OnParametersSet()

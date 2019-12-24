@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class CarouselInnerBase : BootstrapComponentBase
+    public partial class CarouselInner
     {
 
         protected override void OnParametersSet()

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class NavbarBrandBase : BootstrapComponentBase
+    public partial class NavbarBrand
     {
 
         [Parameter]
