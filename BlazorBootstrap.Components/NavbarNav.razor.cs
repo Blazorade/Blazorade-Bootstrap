@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class NavbarNavBase : BootstrapComponentBase
+    public partial class NavbarNav
     {
 
         [Parameter]

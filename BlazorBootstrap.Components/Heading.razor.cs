@@ -5,10 +5,10 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class HeadingBase : BootstrapComponentBase
+    public partial class Heading
     {
 
-        protected HeadingBase()
+        public Heading()
         {
             this.Level = HeadingLevel.H1;
         }

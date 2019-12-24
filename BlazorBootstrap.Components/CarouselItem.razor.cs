@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class CarouselItemBase : BootstrapComponentBase
+    public partial class CarouselItem
     {
 
         [Parameter]

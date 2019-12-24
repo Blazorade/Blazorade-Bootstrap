@@ -1,4 +1,5 @@
-﻿@inherits AnchorBase
+﻿@inherits BootstrapComponentBase
+@implements ILink
 
 <a @attributes="this.Attributes" @onclick="this.OnClick">
     @if(string.IsNullOrEmpty(this.Text))

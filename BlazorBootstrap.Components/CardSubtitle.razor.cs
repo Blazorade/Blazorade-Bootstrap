@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class CardSubtitleBase : BootstrapComponentBase
+    public partial class CardSubtitle
     {
 
         protected override void OnParametersSet()

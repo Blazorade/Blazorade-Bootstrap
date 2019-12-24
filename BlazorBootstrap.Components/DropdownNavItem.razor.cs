@@ -4,9 +4,9 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class DropdownNavItemBase : NavItemBase
+    public partial class DropdownNavItem
     {
-        protected DropdownNavItemBase()
+        public DropdownNavItem()
         {
             this.Url = "#";
         }

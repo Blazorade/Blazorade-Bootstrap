@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class CarouselBase : BootstrapComponentBase
+    public partial class Carousel
     {
-        protected CarouselBase()
+        public Carousel()
         {
             this.AutoStart = true;
         }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class CardImageBase : ImageBase
+    public partial class CardImage
     {
 
 

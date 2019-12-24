@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class AlertLinkBase : AnchorBase
+    public partial class AlertLink
     {
         protected override void OnParametersSet()
         {

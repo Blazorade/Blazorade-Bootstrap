@@ -5,9 +5,9 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class CarouselControlBase : BootstrapComponentBase
+    public partial class CarouselControl
     {
-        protected CarouselControlBase()
+        public CarouselControl()
         {
             this.Direction = CarouselControlDirection.Next;
         }

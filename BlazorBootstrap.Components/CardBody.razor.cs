@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class CardBodyBase : BootstrapComponentBase
+    public partial class CardBody
     {
 
         /// <summary>
@@ -57,9 +57,9 @@ namespace BlazorBootstrap.Components
         [Parameter]
         public bool IsImageOverlay { get; set; }
 
-        private CardBase _Parent;
+        private Card _Parent;
         [Parameter]
-        public CardBase Parent
+        public Card Parent
         {
             get { return _Parent; }
             set

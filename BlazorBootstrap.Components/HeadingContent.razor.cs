@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class HeadingContentBase : BootstrapComponentBase
+    public partial class HeadingContent
     {
 
         [Parameter]

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class CardFooterBase : BootstrapComponentBase
+    public partial class CardFooter
     {
         protected override void OnParametersSet()
         {

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class DropdownItemBase : AnchorBase
+    public partial class DropdownItem
     {
 
         protected override void OnParametersSet()

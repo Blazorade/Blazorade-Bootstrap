@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class ModalFooterBase : BootstrapComponentBase
+    public partial class ModalFooter
     {
 
         protected override void OnParametersSet()

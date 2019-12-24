@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class DropdownMenuBase : BootstrapComponentBase
+    public partial class DropdownMenu
     {
 
         protected override void OnParametersSet()

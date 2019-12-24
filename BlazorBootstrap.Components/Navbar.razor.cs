@@ -6,9 +6,9 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class NavbarBase : BootstrapComponentBase
+    public partial class Navbar
     {
-        protected NavbarBase()
+        public Navbar()
         {
             this.ExpandAt = NavbarExpandBreakpoint.MD;
         }

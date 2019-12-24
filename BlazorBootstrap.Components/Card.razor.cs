@@ -7,9 +7,9 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class CardBase : BootstrapComponentBase
+    public partial class Card
     {
-        protected CardBase()
+        public Card()
         {
             this.ImagePosition = CardImagePosition.Top;
         }

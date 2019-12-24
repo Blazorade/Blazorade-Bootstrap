@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public abstract class BlockquoteBase : BootstrapComponentBase
+    public partial class Blockquote
     {
 
         protected override void OnParametersSet()
