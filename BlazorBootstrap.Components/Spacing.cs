@@ -4,7 +4,7 @@
     /// Defines different spacing values for components.
     /// </summary>
     /// <remarks>
-    /// The members of this enumeration correspond to one of the supported size values. <see cref="https://getbootstrap.com/docs/4.3/utilities/spacing/#notation"/>
+    /// The members of this enumeration correspond to one of the supported size values. <see cref="https://getbootstrap.com/docs/4.4/utilities/spacing/#notation"/>
     /// </remarks>
     public enum Spacing
     {
