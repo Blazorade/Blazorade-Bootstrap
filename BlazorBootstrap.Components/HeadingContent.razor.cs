@@ -28,22 +28,22 @@ namespace BlazorBootstrap.Components
 
         protected async Task AnchorOnClick(MouseEventArgs e)
         {
-            await this.JsInterop.InvokeVoidAsync("blazorbs.anchors.scrollIntoView", this.HeadingId);
+            await this.JsInterop.InvokeVoidAsync(JsNames.Anchor.ScrollIntoView, this.HeadingId);
         }
 
         protected async Task ContentOnMouseOver(MouseEventArgs e)
         {
-            await this.JsInterop.InvokeVoidAsync("blazorbs.show", this.AnchorId);
+            await this.JsInterop.InvokeVoidAsync(JsNames.Show, this.AnchorId);
         }
 
         protected async Task ContentOnMouseOut(MouseEventArgs e)
         {
-            await this.JsInterop.InvokeVoidAsync("blazorbs.hide", this.AnchorId);
+            await this.JsInterop.InvokeVoidAsync(JsNames.Hide, this.AnchorId);
         }
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
-            await this.JsInterop.InvokeVoidAsync("blazorbs.anchors.init", this.Id, this.AnchorId);
+            await this.JsInterop.InvokeVoidAsync(JsNames.Anchor.Init, this.Id, this.AnchorId);
             await base.OnAfterRenderAsync(firstRender);
         }
 
