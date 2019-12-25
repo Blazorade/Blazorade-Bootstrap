@@ -49,18 +49,27 @@ namespace BlazorBootstrap.Components
 
 
         /// <summary>
+        /// Hides the modal dialog.
+        /// </summary>
+        public async Task HideAsync()
+        {
+            await this.JsInterop.InvokeVoidAsync(JsNames.Modal.Hide, $"#{this.Id}");
+        }
+
+        /// <summary>
         /// Shows the modal dialog.
         /// </summary>
         public async Task ShowAsync()
         {
-            if (!string.IsNullOrEmpty(this.Id))
-            {
-                await this.JsInterop.InvokeVoidAsync("blazorbs.modals.show", $"#{this.Id}");
-            }
-            else
-            {
-                Console.Error.WriteLine("Id for current Modal is not set.");
-            }
+            await this.JsInterop.InvokeVoidAsync(JsNames.Modal.Show, $"#{this.Id}");
+        }
+
+        /// <summary>
+        /// Toggles the modal dialog.
+        /// </summary>
+        public async Task ToggleAsync()
+        {
+            await this.JsInterop.InvokeVoidAsync(JsNames.Modal.Toggle, $"#{this.Id}");
         }
 
 

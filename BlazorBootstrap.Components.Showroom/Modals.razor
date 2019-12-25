@@ -36,12 +36,12 @@
     You can customize the header of the dialog with the <code>HeaderTemplate</code> template property. See <Anchor Url="https://github.com/MikaBerglund/Blazor-Bootstrap/wiki/Modal#customizing-the-header" OpenInNewTab="true">the wiki</Anchor> for details.
 </Paragraph>
 
-<Button Color="NamedColor.Primary" OnClick="async () => { await this.modal2.ShowAsync(); }">Show Custom Header</Button>
+<ModalToggleButton Color="NamedColor.Primary" OnClick="async () => { await this.modal2.ShowAsync(); }">Show Custom Header</ModalToggleButton>
 <Modal @ref="this.modal2" Header="Custom Header" Body="A dialog with a customized header. You can use any component or HTML element in your custom header. Note that if customizing a header, you also need to add the close button for the dialog. You can use the CloseModalButton component for that.">
     <HeaderTemplate>
         <ModalHeader BackgroundColor="NamedColor.Dark" TextColor="NamedColor.Light">
             <Heading Level="HeadingLevel.H1" Display="HeadingDisplay.Display1">@context</Heading>
-            <CloseModalButton />
+            <CloseModalHeaderButton />
         </ModalHeader>
     </HeaderTemplate>
 </Modal>
@@ -93,7 +93,7 @@
     <HeaderTemplate>
         <ModalHeader BackgroundColor="NamedColor.Dark" TextColor="NamedColor.Light">
             <Heading Level="HeadingLevel.H1" Display="HeadingDisplay.Display1">@context</Heading>
-            <CloseModalButton />
+            <CloseModalHeaderButton />
         </ModalHeader>
     </HeaderTemplate>
     <BodyTemplate>
