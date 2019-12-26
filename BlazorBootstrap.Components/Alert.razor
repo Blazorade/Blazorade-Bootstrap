@@ -10,7 +10,7 @@
     <div @attributes="this.Attributes" role="alert">
         @if (this.IsDismissible)
         {
-            <button type="button" class="@ClassNames.Buttons.Close" aria-label="Close" @onclick="this.CloseButtonOnClick">
+            <button type="button" class="@ClassNames.Buttons.Close" aria-label="Close" @onclick="this.DismissAsync">
                 <span aria-hidden="true">&times;</span>
             </button>
         }

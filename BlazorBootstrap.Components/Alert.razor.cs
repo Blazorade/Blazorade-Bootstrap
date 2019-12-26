@@ -14,7 +14,7 @@ namespace BlazorBootstrap.Components
         /// Called when the alert has been dismissed.
         /// </summary>
         [Parameter]
-        public EventCallback<Alert> OnDismissed { get; set; }
+        public EventCallback<Alert> Dismissed { get; set; }
 
         /// <summary>
         /// The template that is used to produce the heading of the alert.
@@ -52,23 +52,35 @@ namespace BlazorBootstrap.Components
                 throw new InvalidOperationException("Cannot dismiss an Alert if the IsDismissible property is false.");
             }
 
-            await this.JsInterop.InvokeVoidAsync(JsNames.Alert.Dismiss, $"#{this.Attributes["id"]}", this.FadeOnDismiss);
-            await this.OnDismissed.InvokeAsync(this);
+            await this.JsInterop.InvokeVoidAsync(JsNames.Alert.Dismiss, $"#{this.Attributes["id"]}");
+            await this.OnDismissedAsync();
         }
 
 
         [Inject]
         protected IJSRuntime JsInterop { get; set; }
 
-        protected async Task CloseButtonOnClick()
+        /// <summary>
+        /// Fires the <see cref="Dismissed"/> event.
+        /// </summary>
+        protected virtual async Task OnDismissedAsync()
         {
-            await this.DismissAsync();
+            if (this.FadeOnDismiss)
+            {
+                // Wait for the fade-out to occur before firing the event.
+                await Task.Delay(250);
+            }
+            await this.Dismissed.InvokeAsync(this);
         }
-
 
         protected override void OnParametersSet()
         {
             this.AddClass(ClassNames.Alerts.Alert);
+            if (this.FadeOnDismiss)
+            {
+                this.AddClass(ClassNames.Fade);
+                this.AddClass(ClassNames.Show);
+            }
 
             if (this.IsDismissible)
             {

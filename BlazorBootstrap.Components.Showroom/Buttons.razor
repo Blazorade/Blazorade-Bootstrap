@@ -49,7 +49,7 @@
 
 <Heading Level="HeadingLevel.H2" MarginTop="Spacing.Five">Active State</Heading>
 <Button Color="NamedColor.Secondary" Size="ButtonSize.Large" IsActive="@isActive">Primary Button</Button>
-<Button IsLink="true" OnClick="ToggleIsActive">Toggle</Button>
+<Button IsLink="true" Clicked="ToggleIsActive">Toggle</Button>
 
 @code {
     bool isActive = true;
@@ -62,7 +62,7 @@
 
 <Heading Level="HeadingLevel.H2" MarginTop="Spacing.Five">Disabled State</Heading>
 <Button Color="NamedColor.Primary" Size="ButtonSize.Large" IsDisabled="@isDisabled">Primary Button</Button>
-<Button IsLink="true" OnClick="ToggleIsDisabled">Toggle</Button>
+<Button IsLink="true" Clicked="ToggleIsDisabled">Toggle</Button>
 
 @code {
     bool isDisabled = false;
@@ -106,9 +106,9 @@
 @code {
     int count = 0;
 
-    private void OnCountClick(MouseEventArgs args)
+    private void OnCountClick()
     {
         count++;
     }
 }
-<Button Color="NamedColor.Dark" IsOutline="true" @onclick="this.OnCountClick">Clicked: <Badge Color="NamedColor.Primary">@count</Badge></Button>
+<Button Color="NamedColor.Dark" IsOutline="true" Clicked="this.OnCountClick">Clicked: <Badge Color="NamedColor.Primary">@count</Badge></Button>
