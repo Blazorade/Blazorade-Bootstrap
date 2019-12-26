@@ -2,18 +2,13 @@
 
 window.blazorBootstrap = {
     hide: function (elementId) {
-        console.log("Hiding element", elementId);
         $("#" + elementId).addClass("d-none");
     },
     show: function (elementId) {
-        console.log("Showing element", elementId);
         $("#" + elementId).removeClass("d-none");
     },
     alerts: {
-        dismiss: function(selector, fadeOnDismiss) {
-            if (fadeOnDismiss) {
-                $(selector).addClass("fade");
-            }
+        dismiss: function(selector) {
             $(selector).alert("close");
         }
     },
@@ -46,15 +41,12 @@ window.blazorBootstrap = {
 
     modals: {
         hide: function (selector) {
-            console.log("Hiding modal.", selector);
             $(selector).modal("hide");
         },
         show: function (selector) {
-            console.log("Showing modal.", selector);
             $(selector).modal("show");
         },
         toggle: function (selector) {
-            console.log("Toggling modal.", selector);
             $(selector).modal("toggle");
         }
     }
