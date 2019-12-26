@@ -1,7 +1,7 @@
 ﻿@inherits BootstrapComponentBase
 @implements ILink
 
-<a @attributes="this.Attributes" @onclick="this.OnClick">
+<a @attributes="this.Attributes" @onclick="this.OnClickedAsync">
     @if(string.IsNullOrEmpty(this.Text))
     {
         @this.ChildContent

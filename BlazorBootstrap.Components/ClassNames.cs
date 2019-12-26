@@ -18,6 +18,9 @@ namespace BlazorBootstrap.Components
 
         public const string Fade = "fade";
 
+        public const string Show = "show";
+
+
         public static class Abbreviations
         {
             /// <summary>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using BlazorBootstrap.Components.Model;
 using Microsoft.AspNetCore.Components.Web;
+using System.Threading.Tasks;
 
 namespace BlazorBootstrap.Components
 {
@@ -14,6 +15,14 @@ namespace BlazorBootstrap.Components
         {
             this.IgnoreEmptyUrl = true;
         }
+
+        /// <summary>
+        /// Callback for when the anchor is clicked.
+        /// </summary>
+        [Parameter]
+        public EventCallback<Anchor> Clicked { get; set; }
+
+
 
         /// <summary>
         /// The description of the link. This is typically used as tooltip for the link.
@@ -75,13 +84,15 @@ namespace BlazorBootstrap.Components
 
 
 
+
         /// <summary>
-        /// Callback for when the anchor is clicked.
+        /// Fires the <see cref="Clicked"/> event.
         /// </summary>
-        [Parameter]
-        public EventCallback<MouseEventArgs> OnClick { get; set; }
-
-
+        /// <returns></returns>
+        protected virtual async Task OnClickedAsync()
+        {
+            await this.Clicked.InvokeAsync(this);
+        }
 
         protected override void OnParametersSet()
         {
@@ -126,5 +137,6 @@ namespace BlazorBootstrap.Components
 
             base.OnParametersSet();
         }
+
     }
 }

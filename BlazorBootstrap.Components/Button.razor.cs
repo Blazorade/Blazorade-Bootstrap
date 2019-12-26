@@ -14,7 +14,8 @@ namespace BlazorBootstrap.Components
         /// Callback for when the button is clicked.
         /// </summary>
         [Parameter]
-        public EventCallback<MouseEventArgs> OnClick { get; set; }
+        public EventCallback<Button> Clicked { get; set; }
+
 
         /// <summary>
         /// Specifies whether the button appears active.
@@ -58,6 +59,14 @@ namespace BlazorBootstrap.Components
         public ButtonSize? Size { get; set; }
 
 
+
+        /// <summary>
+        /// Fires the <see cref="Clicked"/> event.
+        /// </summary>
+        protected virtual async Task OnClickedAsync()
+        {
+            await this.Clicked.InvokeAsync(this);
+        }
 
         protected override void OnParametersSet()
         {
