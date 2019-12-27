@@ -16,6 +16,18 @@ namespace BlazorBootstrap.Components
             this.Size = ModalSize.Default;
         }
 
+
+        [Parameter]
+        public EventCallback<Modal> Hidden { get; set; }
+
+        [Parameter]
+        public EventCallback<Modal> Shown { get; set; }
+
+        [Parameter]
+        public EventCallback<Modal> Toggled { get; set; }
+
+
+
         [Parameter]
         public string Body { get; set; }
 
@@ -48,12 +60,26 @@ namespace BlazorBootstrap.Components
         private string DialogClasses { get; set; }
 
 
+        public void Hide()
+        {
+            this.HideAsync();
+        }
+
         /// <summary>
         /// Hides the modal dialog.
         /// </summary>
         public async Task HideAsync()
         {
             await this.JsInterop.InvokeVoidAsync(JsNames.Modal.Hide, $"#{this.Id}");
+            await this.OnHiddenAsync();
+        }
+
+        /// <summary>
+        /// Shows the modal dialog.
+        /// </summary>
+        public void Show()
+        {
+            this.ShowAsync();
         }
 
         /// <summary>
@@ -62,6 +88,15 @@ namespace BlazorBootstrap.Components
         public async Task ShowAsync()
         {
             await this.JsInterop.InvokeVoidAsync(JsNames.Modal.Show, $"#{this.Id}");
+            await this.OnShownAsync();
+        }
+
+        /// <summary>
+        /// Toggles the modal dialog.
+        /// </summary>
+        public void Toggle()
+        {
+            this.ToggleAsync();
         }
 
         /// <summary>
@@ -70,7 +105,65 @@ namespace BlazorBootstrap.Components
         public async Task ToggleAsync()
         {
             await this.JsInterop.InvokeVoidAsync(JsNames.Modal.Toggle, $"#{this.Id}");
+            await this.OnToggledAsync();
         }
+
+        /// <summary>
+        /// Performs the specified action on the modal.
+        /// </summary>
+        /// <param name="action">The action to perform on the modal.</param>
+        public void Toggle(ToggleAction action)
+        {
+            this.ToggleAsync(action);
+        }
+
+        /// <summary>
+        /// Performs the specified action on the modal.
+        /// </summary>
+        /// <param name="action">The action to perform on the modal.</param>
+        public async Task ToggleAsync(ToggleAction action)
+        {
+            switch(action)
+            {
+                case ToggleAction.Hide:
+                    await this.HideAsync();
+                    break;
+
+                case ToggleAction.Show:
+                    await this.ShowAsync();
+                    break;
+
+                case ToggleAction.Toggle:
+                    await this.ToggleAsync();
+                    break;
+            }
+        }
+
+
+        /// <summary>
+        /// Fires the <see cref="Hidden"/> event.
+        /// </summary>
+        protected virtual async Task OnHiddenAsync()
+        {
+            await this.Hidden.InvokeAsync(this);
+        }
+
+        /// <summary>
+        /// Fires the <see cref="Shown"/> event.
+        /// </summary>
+        protected virtual async Task OnShownAsync()
+        {
+            await this.Shown.InvokeAsync(this);
+        }
+
+        /// <summary>
+        /// Fires the <see cref="Toggled"/> event.
+        /// </summary>
+        protected virtual async Task OnToggledAsync()
+        {
+            await this.Toggled.InvokeAsync(this);
+        }
+
 
 
         protected override void OnParametersSet()
