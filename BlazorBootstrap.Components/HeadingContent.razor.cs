@@ -26,7 +26,7 @@ namespace BlazorBootstrap.Components
         protected IJSRuntime JsInterop { get; set; }
 
 
-        protected async Task AnchorOnClick(MouseEventArgs e)
+        protected async Task AnchorOnClick()
         {
             await this.JsInterop.InvokeVoidAsync(JsNames.Anchor.ScrollIntoView, this.HeadingId);
         }

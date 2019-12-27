@@ -38,6 +38,19 @@ namespace BlazorBootstrap.Components
         public bool FadeOnDismiss { get; set; }
 
 
+
+        /// <summary>
+        /// Dismisses the alert.
+        /// </summary>
+        /// <remarks>
+        /// The <see cref="IsDismissible"/> property must be set to <c>true</c> if you want to invoke this method.
+        /// </remarks>
+        /// <exception cref="InvalidOperationException">The exception that is thrown if the method is called when the <see cref="IsDismissible"/> property is set to <c>false</c>.</exception>
+        public void Dismiss()
+        {
+            this.DismissAsync();
+        }
+
         /// <summary>
         /// Dismisses the alert.
         /// </summary>
