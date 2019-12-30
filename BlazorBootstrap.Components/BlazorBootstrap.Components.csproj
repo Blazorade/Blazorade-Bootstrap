@@ -3,6 +3,18 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>0.8.0</Version>
+    <Authors>Mika Berglund</Authors>
+    <Company />
+    <Product>Blazor Bootstrap</Product>
+    <Description>Blazor Bootstrap is a Razor component library designed for Blazor applications that want to use Bootstrap as UI framework. The library makes using Bootstrap in your Blazor application much easier and simpler.</Description>
+    <PackageProjectUrl>https://github.com/MikaBerglund/Blazor-Bootstrap/wiki</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/MikaBerglund/Blazor-Bootstrap</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>Blazor, Bootstrap, Razor</PackageTags>
+    <PackageReleaseNotes>This is a preview release.</PackageReleaseNotes>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
 
 
