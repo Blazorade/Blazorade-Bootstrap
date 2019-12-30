@@ -17,4 +17,12 @@
     <ProjectReference Include="..\BlazorBootstrap.Components\BlazorBootstrap.Components.csproj" />
   </ItemGroup>
 
+  <Target Name="CustomActionsAfterPublish" AfterTargets="AfterPublish">
+    <Message Text="Copying published files to /docs folder." Importance="high" />
+
+    <Exec Command="rmdir $(SolutionDir)docs /S /Q" ContinueOnError="true" />
+    <Exec Command="mkdir $(SolutionDir)docs" />
+    <Exec Command="xcopy &quot;$(ProjectDir)$(OutDir)publish\$(ProjectName)\dist\*.*&quot; &quot;$(SolutionDir)docs\&quot; /Y /E" />
+  </Target>
+
 </Project>
