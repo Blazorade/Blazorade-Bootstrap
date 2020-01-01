@@ -14,7 +14,7 @@ window.blazorBootstrap = {
     },
 
     anchors: {
-        init: function (elementId, anchorId) {
+        init: function (anchorId) {
             $("#" + anchorId).attr("onclick", "return false;");
         },
         scrollIntoView: function (elementId) {
