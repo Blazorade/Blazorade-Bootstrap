@@ -5,6 +5,7 @@ using System.Text;
 using BlazorBootstrap.Components.Model;
 using Microsoft.AspNetCore.Components.Web;
 using System.Threading.Tasks;
+using Microsoft.JSInterop;
 
 namespace BlazorBootstrap.Components
 {
@@ -78,11 +79,23 @@ namespace BlazorBootstrap.Components
         [Parameter]
         public string Text { get; set; }
 
-
+        /// <summary>
+        /// Allows you to set the parameters of the Anchor by specifying an <see cref="ILink"/> object on this parameter.
+        /// </summary>
         [Parameter]
         public ILink Link { get; set; }
 
 
+
+        [Inject]
+        protected IJSRuntime JsInterop { get; set; }
+
+
+        protected bool IsAnchorLink { get; private set; }
+
+        protected bool OnClickPreventDefault { get; private set; }
+
+        protected string TargetId { get; private set; }
 
 
         /// <summary>
@@ -91,6 +104,11 @@ namespace BlazorBootstrap.Components
         /// <returns></returns>
         protected virtual async Task OnClickedAsync()
         {
+            if(this.IsAnchorLink && !string.IsNullOrEmpty(this.TargetId))
+            {
+                await this.JsInterop.InvokeVoidAsync(JsNames.Anchor.ScrollIntoView, this.TargetId);
+            }
+
             await this.Clicked.InvokeAsync(this);
         }
 
@@ -133,10 +151,26 @@ namespace BlazorBootstrap.Components
             {
                 this.AddAttribute("href", $"{this.Url ?? "javascript:"}");
             }
+            if(null != this?.Url && this.Url.StartsWith("#"))
+            {
+                this.IsAnchorLink = true;
+                this.OnClickPreventDefault = true;
+                this.TargetId = this.Url.Substring(1);
+            }
 
+            if (this.IsAnchorLink)
+            {
+                this.SetIdIfEmpty();
+            }
 
             base.OnParametersSet();
+
         }
 
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            await this.JsInterop.InvokeVoidAsync(JsNames.Anchor.Init, this.Id);
+            await base.OnAfterRenderAsync(firstRender);
+        }
     }
 }
