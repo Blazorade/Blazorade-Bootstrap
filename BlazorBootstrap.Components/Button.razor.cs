@@ -36,12 +36,6 @@ namespace BlazorBootstrap.Components
         public bool IsDisabled { get; set; }
 
         /// <summary>
-        /// Specifies whether the button is styled as a link.
-        /// </summary>
-        [Parameter]
-        public bool IsLink { get; set; }
-
-        /// <summary>
         /// Specifies whether the button is styled as an outline button.
         /// </summary>
         [Parameter]
@@ -52,9 +46,9 @@ namespace BlazorBootstrap.Components
         /// </summary>
         public bool IsSubmit { get; set; }
 
-        [Parameter]
-        public string Link { get; set; }
-
+        /// <summary>
+        /// Specifies the size for the button.
+        /// </summary>
         [Parameter]
         public ButtonSize? Size { get; set; }
 
@@ -72,18 +66,9 @@ namespace BlazorBootstrap.Components
         {
             this.AddClass(ClassNames.Buttons.Button);
 
-            if(this.Color.HasValue && !this.IsLink)
+            if(this.Color.HasValue)
             {
                 this.AddClass(this.GetColorClassName(prefix: !this.IsOutline ? ClassNames.Buttons.Button : ClassNames.Buttons.OutlineButton, color: this.Color));
-            }
-            else if(this.IsLink)
-            {
-                this.AddClass(ClassNames.Buttons.LinkButton);
-            }
-
-            if (!string.IsNullOrEmpty(this.Link))
-            {
-                this.AddAttribute("href", this.Link);
             }
 
             if (this.IsBlockLevel)
@@ -112,17 +97,13 @@ namespace BlazorBootstrap.Components
                 this.AddAttribute("disabled", "disabled");
             }
 
-            if (!this.IsLink)
+            if (!this.IsSubmit)
             {
-                // We will not set the type attribute for links
-                if (!this.IsSubmit)
-                {
-                    this.AddAttribute("type", "button");
-                }
-                else
-                {
-                    this.AddAttribute("type", "submit");
-                }
+                this.AddAttribute("type", "button");
+            }
+            else
+            {
+                this.AddAttribute("type", "submit");
             }
 
             base.OnParametersSet();

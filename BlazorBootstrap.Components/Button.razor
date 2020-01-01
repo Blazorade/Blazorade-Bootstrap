@@ -1,12 +1,5 @@
 ﻿@inherits ColoredBootstrapComponentBase
 
-@if (string.IsNullOrEmpty(this.Link))
-{
-    <button @attributes="this.Attributes" @onclick="this.OnClickedAsync">
-        @this.ChildContent
-    </button>
-}
-else
-{
-    <a @attributes="this.Attributes" @onclick="this.OnClickedAsync">@this.ChildContent</a>
-}
+<button @attributes="this.Attributes" @onclick="this.OnClickedAsync">
+    @this.ChildContent
+</button>

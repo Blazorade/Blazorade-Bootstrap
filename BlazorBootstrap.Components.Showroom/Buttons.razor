@@ -15,11 +15,10 @@
 <Button Color="NamedColor.Info">Info</Button>
 <Button Color="NamedColor.Light">Light</Button>
 <Button Color="NamedColor.Dark">Dark</Button>
-<Button IsLink="true" Link="http://github.com">Link</Button>
-<Button IsLink="true">Link w/o href</Button>
+<Anchor Url="https://github.com" OpenInNewTab="true" class="btn btn-primary">Link</Anchor>
 
 
-<Heading Level="HeadingLevel.H2" MarginTop="Spacing.Five">Outline Buttons</Heading>
+<Heading Id="outline-buttons" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Outline Buttons</Heading>
 
 <Button Color="NamedColor.Primary" IsOutline="true">Primary</Button>
 <Button Color="NamedColor.Secondary" IsOutline="true">Secondary</Button>
@@ -31,25 +30,25 @@
 <Button Color="NamedColor.Dark" IsOutline="true">Dark</Button>
 
 
-<Heading Level="HeadingLevel.H2" MarginTop="Spacing.Five">Sizes</Heading>
+<Heading Id="sizes" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Sizes</Heading>
 <p>Buttons come in three different sizes.</p>
 
-<Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Large</Heading>
+<Heading Id="sizes-large" IsAnchor="true" Level="HeadingLevel.H4" MarginTop="Spacing.Five">Large</Heading>
 <Button Color="NamedColor.Primary" Size="ButtonSize.Large">Large button</Button>
 <Button Color="NamedColor.Secondary" Size="ButtonSize.Large">Large button</Button>
 
-<Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Small</Heading>
+<Heading Id="sizes-small" IsAnchor="true" Level="HeadingLevel.H4" MarginTop="Spacing.Five">Small</Heading>
 <Button Color="NamedColor.Primary" Size="ButtonSize.Small">Small button</Button>
 <Button Color="NamedColor.Secondary" Size="ButtonSize.Small">Small button</Button>
 
-<Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Block-Level</Heading>
+<Heading Id="sizes-block-level" IsAnchor="true" Level="HeadingLevel.H4" MarginTop="Spacing.Five">Block-Level</Heading>
 <Button Color="NamedColor.Primary" IsBlockLevel="true">Primary</Button>
 <Button Color="NamedColor.Secondary" IsBlockLevel="true">Secondary</Button>
 
 
-<Heading Level="HeadingLevel.H2" MarginTop="Spacing.Five">Active State</Heading>
+<Heading Id="active-state" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Active State</Heading>
 <Button Color="NamedColor.Secondary" Size="ButtonSize.Large" IsActive="@isActive">Primary Button</Button>
-<Button IsLink="true" Clicked="ToggleIsActive">Toggle</Button>
+<Button Clicked="ToggleIsActive" class="btn-link">Toggle</Button>
 
 @code {
     bool isActive = true;
@@ -60,9 +59,9 @@
 }
 
 
-<Heading Level="HeadingLevel.H2" MarginTop="Spacing.Five">Disabled State</Heading>
+<Heading Id="disabled-state" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Disabled State</Heading>
 <Button Color="NamedColor.Primary" Size="ButtonSize.Large" IsDisabled="@isDisabled">Primary Button</Button>
-<Button IsLink="true" Clicked="ToggleIsDisabled">Toggle</Button>
+<Button Clicked="ToggleIsDisabled" class="btn-link">Toggle</Button>
 
 @code {
     bool isDisabled = false;
@@ -73,7 +72,7 @@
 }
 
 
-<Heading Level="HeadingLevel.H2" MarginTop="Spacing.Five">Button Groups</Heading>
+<Heading Id="button-groups" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Button Groups</Heading>
 
 <ButtonGroup>
     <Button Color="NamedColor.Success">Left</Button>
@@ -81,7 +80,7 @@
     <Button Color="NamedColor.Warning">Right</Button>
 </ButtonGroup>
 
-<Heading Level="HeadingLevel.H2" MarginTop="Spacing.Five">Button Toolbars</Heading>
+<Heading Id="button-toolbars" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Button Toolbars</Heading>
 
 <ButtonToolbar>
     <ButtonGroup MarginRight="Spacing.Two">
@@ -101,7 +100,7 @@
 </ButtonToolbar>
 
 
-<Heading Level="HeadingLevel.H2" MarginTop="Spacing.Five">Handling Clicks</Heading>
+<Heading Id="handling-clicks" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Handling Clicks</Heading>
 
 @code {
     int count = 0;
@@ -112,3 +111,5 @@
     }
 }
 <Button Color="NamedColor.Dark" IsOutline="true" Clicked="this.OnCountClick">Clicked: <Badge Color="NamedColor.Primary">@count</Badge></Button>
+
+<Paragraph></Paragraph>

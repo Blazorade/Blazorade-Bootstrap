@@ -4,7 +4,7 @@
 {
     <Div id="@this.Id" @onmouseover="this.ContentOnMouseOver" @onmouseout="this.ContentOnMouseOut">
         @this.ChildContent
-        <Anchor Id="@this.AnchorId" Url="@($"#{this.HeadingId}")" TextColor="NamedColor.Primary" Clicked="this.AnchorOnClick" style="text-decoration: none;" class="@ClassNames.Display.Hidden"><em>#</em></Anchor>
+        <Anchor Id="@this.AnchorId" Url="@($"#{this.HeadingId}")" TextColor="NamedColor.Primary" style="text-decoration: none;" class="@ClassNames.Display.Hidden"><em>#</em></Anchor>
     </Div>
 }
 else

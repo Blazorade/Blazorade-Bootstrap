@@ -26,11 +26,6 @@ namespace BlazorBootstrap.Components
         protected IJSRuntime JsInterop { get; set; }
 
 
-        protected async Task AnchorOnClick()
-        {
-            await this.JsInterop.InvokeVoidAsync(JsNames.Anchor.ScrollIntoView, this.HeadingId);
-        }
-
         protected async Task ContentOnMouseOver(MouseEventArgs e)
         {
             await this.JsInterop.InvokeVoidAsync(JsNames.Show, this.AnchorId);
@@ -39,12 +34,6 @@ namespace BlazorBootstrap.Components
         protected async Task ContentOnMouseOut(MouseEventArgs e)
         {
             await this.JsInterop.InvokeVoidAsync(JsNames.Hide, this.AnchorId);
-        }
-
-        protected override async Task OnAfterRenderAsync(bool firstRender)
-        {
-            await this.JsInterop.InvokeVoidAsync(JsNames.Anchor.Init, this.Id, this.AnchorId);
-            await base.OnAfterRenderAsync(firstRender);
         }
 
         protected override void OnParametersSet()
