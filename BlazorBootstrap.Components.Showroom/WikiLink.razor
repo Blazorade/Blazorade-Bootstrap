@@ -1,0 +1,12 @@
+﻿@inherits BootstrapComponentBase
+
+<Anchor Url="@this.Url" OpenInNewTab="@this.OpenInNewTab">
+    @if(null != this.ChildContent)
+    {
+        @this.ChildContent
+    }
+    else
+    {
+        <Span>See the Wiki for details</Span>
+    }
+</Anchor>

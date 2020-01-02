@@ -1,12 +1,4 @@
-﻿<Heading Level="HeadingLevel.H2">Cards</Heading>
-<Paragraph>
-    The <code>Card</code> component provides a flexible content container with various different variant options.
-</Paragraph>
-
-<DocsSection ComponentName="Card" />
-
-
-@code {
+﻿@code {
     IEnumerable<ILink> links = new[]
     {
         new Link { Text = "Cards", Url = "/cards", OpenInNewTab = true },
@@ -21,10 +13,23 @@
 
     string containerClasses = "col-12 col-sm-6 col-lg-3 h-100 mb-3";
     string imageUrl = "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=640";
+
+    Spacing headingTopMargin = Spacing.Five;
 }
 
 
-<Heading Level="HeadingLevel.H3">Simple Cards</Heading>
+<Heading Level="HeadingLevel.H2">Cards</Heading>
+<Paragraph>
+    The <code>Card</code> component provides a flexible content container with various different variant options.
+</Paragraph>
+
+<DocsSection ComponentName="Card" />
+
+
+<Heading Id="simple-cards" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingTopMargin">Simple Cards</Heading>
+<Paragraph IsStretchedLinkContainer="true">
+    With a few properties you can create versatile cards.
+</Paragraph>
 <div class="row">
     <div class="@containerClasses">
         <Card Title="Simple Card" Subtitle="How to use the Card component" Text="This is a sample of a very simple usage of the Card component."></Card>
@@ -45,7 +50,10 @@
 </div>
 
 
-<Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Using Images</Heading>
+<Heading Id="images" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingTopMargin">Using Images</Heading>
+<Paragraph IsStretchedLinkContainer="true">
+    You can create cards with images.
+</Paragraph>
 <div class="row">
     <div class="@containerClasses">
         <Card Title="Card with Image" Text="This card shows how to use images with cards." ImageUrl="@imageUrl"></Card>
@@ -58,7 +66,10 @@
     </div>
 </div>
 
-<Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Customizing with Templates</Heading>
+<Heading Id="customizing-with-templates" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingTopMargin">Customizing with Templates</Heading>
+<Paragraph IsStretchedLinkContainer="true">
+    If you need to have more control over the contents on a card, you can use the template parameters to provide your own content.
+</Paragraph>
 <div class="row">
     <div class="@containerClasses">
         <Card Text="Here is a card that shows how to customize titles with templates supported by the Card component.">
@@ -89,7 +100,10 @@
     </div>
 </div>
 
-<Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Text Alignment</Heading>
+<Heading Id="text-alignment" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingTopMargin">Text Alignment</Heading>
+<Paragraph IsStretchedLinkContainer="true">
+    The text in a card can be aligned.
+</Paragraph>
 <div class="row">
     <div class="@containerClasses">
         <Card TextAlignment="TextAlignment.Left" Title="Text Alignment, Left" Text="This card demonstrates how to align text to the left."></Card>
@@ -102,7 +116,10 @@
     </div>
 </div>
 
-<Heading Level="HeadingLevel.H3" MarginTop="Spacing.Five">Coloring</Heading>
+<Heading Id="coloring" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingTopMargin">Coloring</Heading>
+<Paragraph IsStretchedLinkContainer="true">
+    Cards can use the standard colouring, as both background and border colours.
+</Paragraph>
 <div class="row">
     <div class="@containerClasses">
         <Card BackgroundColor="NamedColor.Primary" TextColor="NamedColor.White" Header="Header" Title="Primary background" Text="Some quick example text to build on the card title and make up the bulk of the card's content." Footer="Footer"></Card>
@@ -156,8 +173,10 @@
 
 
 
-<Heading Level="HeadingLevel.H2" MarginTop="Spacing.Five">Card Groups</Heading>
-
+<Heading Id="card-groups" IsAnchor="true" Level="HeadingLevel.H2" MarginTop="@headingTopMargin">Card Groups</Heading>
+<Paragraph IsStretchedLinkContainer="true">
+    Group cards together with the <WikiLink Page="CardGroup"><code>CardGroup</code></WikiLink> component.
+</Paragraph>
 <CardGroup>
     <Card Title="Card title #1" Text="Some meaningless text just for the sake of filling this space up with sample text."></Card>
     <Card Title="Card title #2" Text="Some meaningless text just for the sake of filling this space up with sample text."></Card>
@@ -168,23 +187,29 @@
 </CardGroup>
 
 
-<Heading Level="HeadingLevel.H2" MarginTop="Spacing.Five">Card Decks</Heading>
+<Heading Id="card-decks" IsAnchor="true" Level="HeadingLevel.H2" MarginTop="@headingTopMargin">Card Decks</Heading>
+<Paragraph IsStretchedLinkContainer="true">
+    With card decks, a set of cards can share the same size, but they are not attached like in card groups.
+</Paragraph>
 <CardGroup Type="CardGroupType.Deck">
     <Card Title="Card title" Text="Some meaningless text just for the sake of filling this space up with sample text."></Card>
     <Card Title="Card title" Text="Some meaningless text just for the sake of filling this space up with sample text."></Card>
     <Card Title="Card title" Text="Some meaningless text just for the sake of filling this space up with sample text."></Card>
 </CardGroup>
 
-<Heading Level="HeadingLevel.H2" MarginTop="Spacing.Five">Card Columns</Heading>
+<Heading Id="card-columns" IsAnchor="true" Level="HeadingLevel.H2" MarginTop="@headingTopMargin">Card Columns</Heading>
+<Paragraph IsStretchedLinkContainer="true">
+    Arrange cards into columns that fill up from top to bottom, left to right.
+</Paragraph>
 <CardGroup Type="CardGroupType.Columns">
-    <Card Title="Card title that wraps to a new line" Text="This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."></Card>
-    <Card Title="Card title" Text="This card has supporting text below as a natural lead-in to additional content." Footer="The footer"></Card>
-    <Card ImageUrl="@imageUrl"></Card>
-    <Card Title="Card title that wraps to a new line" Text="This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.">
+    <Card Title="1# Card title that wraps to a new line" Text="This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."></Card>
+    <Card Title="2# Card title" Text="This card has supporting text below as a natural lead-in to additional content." Footer="The footer"></Card>
+    <Card Title="3#" ImageUrl="@imageUrl"></Card>
+    <Card Title="4# Card title that wraps to a new line" Text="This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.">
     </Card>
-    <Card Title="Card title" Text="This card has supporting text below as a natural lead-in to additional content." Footer="The footer">
+    <Card Title="5# Card title" Text="This card has supporting text below as a natural lead-in to additional content." Footer="The footer">
     </Card>
-    <Card BorderColor="NamedColor.Success" Header="Header" Title="Success border" Text="Some quick example text to build on the card title and make up the bulk of the card's content." Footer="Footer">
+    <Card BorderColor="NamedColor.Success" Header="Header" Title="6# Success border" Text="Some quick example text to build on the card title and make up the bulk of the card's content." Footer="Footer">
     </Card>
 </CardGroup>
 
