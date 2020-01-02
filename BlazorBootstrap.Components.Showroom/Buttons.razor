@@ -1,4 +1,8 @@
-﻿
+﻿@code {
+
+    Spacing headingMarginTop = Spacing.Five;
+}
+
 <Heading Level="HeadingLevel.H2">Buttons</Heading>
 <Paragraph>
     Easily create different kinds of buttons for a variety of purposes with the <code>Button</code> component.
@@ -6,6 +10,12 @@
 
 <DocsSection ComponentName="Button" />
 
+
+<Heading Id="standard-buttons" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Standard Buttons</Heading>
+<Paragraph>
+    Bootstrap buttons come in different styles for different semantic purposes.
+    See <Anchor Url="https://github.com/MikaBerglund/Blazor-Bootstrap/wiki/Button#basic-usage" OpenInNewTab="true">the wiki</Anchor> for sample code.
+</Paragraph>
 
 <Button Color="NamedColor.Primary">Primary</Button>
 <Button Color="NamedColor.Secondary">Secondary</Button>
@@ -18,7 +28,11 @@
 <Anchor Url="https://github.com" OpenInNewTab="true" class="btn btn-primary">Link</Anchor>
 
 
-<Heading Id="outline-buttons" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Outline Buttons</Heading>
+<Heading Id="outline-buttons" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Outline Buttons</Heading>
+<Paragraph>
+    Outline buttons offer a lightweight version of the different styles of buttons.
+    See <Anchor Url="https://github.com/MikaBerglund/Blazor-Bootstrap/wiki/Button#outline-buttons" OpenInNewTab="true">the wiki</Anchor> for sample code.
+</Paragraph>
 
 <Button Color="NamedColor.Primary" IsOutline="true">Primary</Button>
 <Button Color="NamedColor.Secondary" IsOutline="true">Secondary</Button>
@@ -30,23 +44,32 @@
 <Button Color="NamedColor.Dark" IsOutline="true">Dark</Button>
 
 
-<Heading Id="sizes" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Sizes</Heading>
-<p>Buttons come in three different sizes.</p>
+<Heading Id="sizes" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Sizes</Heading>
+<Paragraph>
+    Buttons come in different sizes too.
+    See <Anchor Url="https://github.com/MikaBerglund/Blazor-Bootstrap/wiki/Button#button-sizes" OpenInNewTab="true">the wiki</Anchor> for sample code.
+</Paragraph>
 
-<Heading Id="sizes-large" IsAnchor="true" Level="HeadingLevel.H4" MarginTop="Spacing.Five">Large</Heading>
+<Heading Id="sizes-large" IsAnchor="true" Level="HeadingLevel.H4" MarginTop="@headingMarginTop">Large</Heading>
 <Button Color="NamedColor.Primary" Size="ButtonSize.Large">Large button</Button>
 <Button Color="NamedColor.Secondary" Size="ButtonSize.Large">Large button</Button>
 
-<Heading Id="sizes-small" IsAnchor="true" Level="HeadingLevel.H4" MarginTop="Spacing.Five">Small</Heading>
+<Heading Id="sizes-small" IsAnchor="true" Level="HeadingLevel.H4" MarginTop="@headingMarginTop">Small</Heading>
 <Button Color="NamedColor.Primary" Size="ButtonSize.Small">Small button</Button>
 <Button Color="NamedColor.Secondary" Size="ButtonSize.Small">Small button</Button>
 
-<Heading Id="sizes-block-level" IsAnchor="true" Level="HeadingLevel.H4" MarginTop="Spacing.Five">Block-Level</Heading>
+<Heading Id="sizes-block-level" IsAnchor="true" Level="HeadingLevel.H4" MarginTop="@headingMarginTop">Block-Level</Heading>
 <Button Color="NamedColor.Primary" IsBlockLevel="true">Primary</Button>
 <Button Color="NamedColor.Secondary" IsBlockLevel="true">Secondary</Button>
 
 
-<Heading Id="active-state" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Active State</Heading>
+<Heading Id="button-states" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">States</Heading>
+<Paragraph>
+    Buttons have different states.
+    See <Anchor Url="https://github.com/MikaBerglund/Blazor-Bootstrap/wiki/Button#button-states" OpenInNewTab="true">the wiki</Anchor> for sample code.
+</Paragraph>
+
+<Heading Id="active-state" IsAnchor="true" Level="HeadingLevel.H4" MarginTop="@headingMarginTop">Active State</Heading>
 <Button Color="NamedColor.Secondary" Size="ButtonSize.Large" IsActive="@isActive">Primary Button</Button>
 <Button Clicked="ToggleIsActive" class="btn-link">Toggle</Button>
 
@@ -59,7 +82,7 @@
 }
 
 
-<Heading Id="disabled-state" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Disabled State</Heading>
+<Heading Id="disabled-state" IsAnchor="true" Level="HeadingLevel.H4" MarginTop="@headingMarginTop">Disabled State</Heading>
 <Button Color="NamedColor.Primary" Size="ButtonSize.Large" IsDisabled="@isDisabled">Primary Button</Button>
 <Button Clicked="ToggleIsDisabled" class="btn-link">Toggle</Button>
 
@@ -72,16 +95,47 @@
 }
 
 
-<Heading Id="button-groups" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Button Groups</Heading>
-
+<Heading Id="button-groups" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Button Groups</Heading>
+<Paragraph>
+    Buttons can be grouped together.
+    See <Anchor Url="https://github.com/MikaBerglund/Blazor-Bootstrap/wiki/Button#button-groups" OpenInNewTab="true">the wiki</Anchor> for sample code.
+</Paragraph>
 <ButtonGroup>
     <Button Color="NamedColor.Success">Left</Button>
     <Button Color="NamedColor.Info">Middle</Button>
     <Button Color="NamedColor.Warning">Right</Button>
 </ButtonGroup>
 
-<Heading Id="button-toolbars" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Button Toolbars</Heading>
+<Heading Id="button-group-sizes" IsAnchor="true" Level="HeadingLevel.H4" MarginTop="@headingMarginTop">Button Group Sizes</Heading>
+<Paragraph>
+    Button groups can be sized too. Each button in the group will inherit the size of the group.
+    See <Anchor Url="https://github.com/MikaBerglund/Blazor-Bootstrap/wiki/Button#button-group-sizes" OpenInNewTab="true">the wiki</Anchor> for sample code.
+</Paragraph>
 
+<Paragraph>
+    <ButtonGroup Size="ButtonSize.Large">
+        <Button Color="NamedColor.Light">Large</Button>
+        <Button Color="NamedColor.Dark">Buttons</Button>
+    </ButtonGroup>
+</Paragraph>
+<Paragraph>
+    <ButtonGroup Size="ButtonSize.Normal">
+        <Button Color="NamedColor.Light">Normal</Button>
+        <Button Color="NamedColor.Dark">Buttons</Button>
+    </ButtonGroup>
+</Paragraph>
+<Paragraph>
+    <ButtonGroup Size="ButtonSize.Small">
+        <Button Color="NamedColor.Light">Small</Button>
+        <Button Color="NamedColor.Dark">Buttons</Button>
+    </ButtonGroup>
+</Paragraph>
+
+<Heading Id="button-toolbars" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Button Toolbars</Heading>
+<Paragraph>
+    Wrap multiple <code>ButtonGroup</code> components with a <code>ButtonToolbar</code> component for more complex scenarios.
+    See <Anchor Url="https://github.com/MikaBerglund/Blazor-Bootstrap/wiki/Button#button-toolbars" OpenInNewTab="true">the wiki</Anchor> for sample code.
+</Paragraph>
 <ButtonToolbar>
     <ButtonGroup MarginRight="Spacing.Two">
         <Button Color="NamedColor.Secondary">1</Button>
@@ -100,7 +154,11 @@
 </ButtonToolbar>
 
 
-<Heading Id="handling-clicks" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Handling Clicks</Heading>
+<Heading Id="handling-clicks" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Handling Clicks</Heading>
+<Paragraph>
+    The <code>Button</code> component exposes the <code>Clicked</code> event that allows you to respond to user clicks.
+    See <Anchor Url="https://github.com/MikaBerglund/Blazor-Bootstrap/wiki/Button#handling-clicks" OpenInNewTab="true">the wiki</Anchor> for sample code.
+</Paragraph>
 
 @code {
     int count = 0;
