@@ -50,5 +50,16 @@ namespace BlazorBootstrap.Components
 
             public const string Toggle = ModalRoot + "toggle";
         }
+
+        public static class Toast
+        {
+            private const string ToastRoot = Root + "toasts.";
+
+            public const string Init = ToastRoot + "init";
+
+            public const string Show = ToastRoot + "show";
+
+            public const string Hide = ToastRoot + "hide";
+        }
     }
 }

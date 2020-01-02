@@ -49,5 +49,21 @@ window.blazorBootstrap = {
         toggle: function (selector) {
             $(selector).modal("toggle");
         }
+    },
+
+    toasts: {
+        init: function (selector) {
+            $(selector).toast({
+                animation: true,
+                autohide: true,
+                delay: 2000
+            });
+        },
+        hide: function (selector) {
+            $(selector).toast("hide");
+        },
+        show: function (selector) {
+            $(selector).toast("show");
+        }
     }
 }

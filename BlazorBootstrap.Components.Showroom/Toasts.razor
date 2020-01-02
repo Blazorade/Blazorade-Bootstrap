@@ -1,0 +1,16 @@
+﻿<Heading Level="HeadingLevel.H2">Toast Component</Heading>
+
+<Paragraph>
+    The <code>Toast</code> component creates lightweight, customizable alert notifications.
+</Paragraph>
+
+<DocsSection ComponentName="Toast" />
+
+
+@code {
+    Toast toast1;
+}
+
+<Toast @ref="this.toast1">Hello! This is a toast.</Toast>
+
+<Button Color="NamedColor.Primary" IsOutline="true" Clicked="async () => await this.toast1.ShowAsync()">Show toast</Button>
