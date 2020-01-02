@@ -151,6 +151,10 @@ namespace BlazorBootstrap.Components
         public static class ButtonGroups
         {
             public const string Group = "btn-group";
+
+            public const string Large = "btn-group-lg";
+
+            public const string Small = "btn-group-sm";
         }
 
         public static class ButtonToolbars
