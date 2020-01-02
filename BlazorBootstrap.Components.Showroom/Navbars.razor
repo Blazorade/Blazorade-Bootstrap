@@ -40,16 +40,16 @@
 <Dropdown>
     <DropdownToggleButton Color="NamedColor.Info">Select Breakpoint</DropdownToggleButton>
     <DropdownMenu>
-        <DropdownItem @onclick="(e) => { this.SetBreakpoint(NavbarExpandBreakpoint.XL); }" IsActive="this.Breakpoint == NavbarExpandBreakpoint.XL">XL</DropdownItem>
-        <DropdownItem @onclick="(e) => { this.SetBreakpoint(NavbarExpandBreakpoint.LG); }" IsActive="this.Breakpoint == NavbarExpandBreakpoint.LG">LG</DropdownItem>
-        <DropdownItem @onclick="(e) => { this.SetBreakpoint(NavbarExpandBreakpoint.MD); }" IsActive="this.Breakpoint == NavbarExpandBreakpoint.MD">MD</DropdownItem>
-        <DropdownItem @onclick="(e) => { this.SetBreakpoint(NavbarExpandBreakpoint.SM); }" IsActive="this.Breakpoint == NavbarExpandBreakpoint.SM">SM</DropdownItem>
-        <DropdownItem @onclick="(e) => { this.SetBreakpoint(NavbarExpandBreakpoint.Always); }" IsActive="this.Breakpoint == NavbarExpandBreakpoint.Always">Always Expand</DropdownItem>
-        <DropdownItem @onclick="(e) => { this.SetBreakpoint(NavbarExpandBreakpoint.Never); }" IsActive="this.Breakpoint == NavbarExpandBreakpoint.Never">Never Expand</DropdownItem>
+        <DropdownItem Clicked="(e) => { this.SetBreakpoint(NavbarExpandBreakpoint.XL); }" IsActive="this.Breakpoint == NavbarExpandBreakpoint.XL">XL</DropdownItem>
+        <DropdownItem Clicked="(e) => { this.SetBreakpoint(NavbarExpandBreakpoint.LG); }" IsActive="this.Breakpoint == NavbarExpandBreakpoint.LG">LG</DropdownItem>
+        <DropdownItem Clicked="(e) => { this.SetBreakpoint(NavbarExpandBreakpoint.MD); }" IsActive="this.Breakpoint == NavbarExpandBreakpoint.MD">MD</DropdownItem>
+        <DropdownItem Clicked="(e) => { this.SetBreakpoint(NavbarExpandBreakpoint.SM); }" IsActive="this.Breakpoint == NavbarExpandBreakpoint.SM">SM</DropdownItem>
+        <DropdownItem Clicked="(e) => { this.SetBreakpoint(NavbarExpandBreakpoint.Always); }" IsActive="this.Breakpoint == NavbarExpandBreakpoint.Always">Always Expand</DropdownItem>
+        <DropdownItem Clicked="(e) => { this.SetBreakpoint(NavbarExpandBreakpoint.Never); }" IsActive="this.Breakpoint == NavbarExpandBreakpoint.Never">Never Expand</DropdownItem>
     </DropdownMenu>
 </Dropdown>
 
-<Navbar BrandText="@this.Brand" ColorScheme="NavbarColor.Dark" BackgroundColor="NamedColor.Dark" ExpandAt="this.Breakpoint" MarginTop="Spacing.Two">
+<Navbar Id="nb1" BrandText="@this.Brand" ColorScheme="NavbarColor.Dark" BackgroundColor="NamedColor.Dark" ExpandAt="this.Breakpoint" MarginTop="Spacing.Two">
     <NavbarNav>
         <NavItem Text="Item 1" />
         <NavItem Text="Item 2" />
@@ -66,7 +66,7 @@
 <Paragraph MarginTop="Spacing.Two">
     You can also have the brand section of the <code>Navbar</code> component collapse with the navbar itself.
 </Paragraph>
-<Navbar BrandText="@this.Brand" CollapseBrand="true" ColorScheme="NavbarColor.Light" BackgroundColor="NamedColor.Light" ExpandAt="this.Breakpoint" Shadow="ShadowSize.Regular">
+<Navbar Id="nb2" BrandText="@this.Brand" CollapseBrand="true" ColorScheme="NavbarColor.Light" BackgroundColor="NamedColor.Light" ExpandAt="this.Breakpoint" Shadow="ShadowSize.Regular">
     <NavbarNav>
         <NavItem Text="Item 1" />
         <NavItem Text="Item 2" />

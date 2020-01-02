@@ -1,7 +1,7 @@
 ﻿@inherits BootstrapComponentBase
 
 @{
-    string collapseId = $"{this.Attributes["id"]}-collapse";
+    string collapseId = $"{this.Id}-collapse";
 }
 <nav @attributes="this.Attributes">
 
@@ -17,11 +17,11 @@
         }
     }
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#@collapseId">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#@collapseId" aria-controls="@collapseId" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <NavbarCollapse id="@collapseId">
+    <NavbarCollapse Id="@collapseId">
 
         @if (this.CollapseBrand)
         {
