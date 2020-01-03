@@ -1,0 +1,15 @@
+﻿@inherits BootstrapComponentBase
+
+<Div @attributes="this.Attributes">
+    <strong class="mr-auto">@this.Header</strong>
+    @if (!string.IsNullOrEmpty(this.Subheader))
+    {
+        <small>@this.Subheader</small>
+    }
+    @if (this.ShowClose)
+    {
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    }
+</Div>

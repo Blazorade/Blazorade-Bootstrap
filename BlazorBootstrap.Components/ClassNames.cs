@@ -22,6 +22,9 @@ namespace BlazorBootstrap.Components
 
         public const string Hide = "hide";
 
+        public const string DisplayNone = "d-none";
+
+
 
         public static class Abbreviations
         {

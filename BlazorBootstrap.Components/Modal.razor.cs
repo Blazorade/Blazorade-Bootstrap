@@ -70,7 +70,7 @@ namespace BlazorBootstrap.Components
         /// </summary>
         public async Task HideAsync()
         {
-            await this.JsInterop.InvokeVoidAsync(JsNames.Modal.Hide, $"#{this.Id}");
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Modal.Hide, $"#{this.Id}");
             await this.OnHiddenAsync();
         }
 
@@ -87,7 +87,7 @@ namespace BlazorBootstrap.Components
         /// </summary>
         public async Task ShowAsync()
         {
-            await this.JsInterop.InvokeVoidAsync(JsNames.Modal.Show, $"#{this.Id}");
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Modal.Show, $"#{this.Id}");
             await this.OnShownAsync();
         }
 
@@ -104,7 +104,7 @@ namespace BlazorBootstrap.Components
         /// </summary>
         public async Task ToggleAsync()
         {
-            await this.JsInterop.InvokeVoidAsync(JsNames.Modal.Toggle, $"#{this.Id}");
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Modal.Toggle, $"#{this.Id}");
             await this.OnToggledAsync();
         }
 

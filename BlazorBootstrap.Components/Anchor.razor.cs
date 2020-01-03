@@ -106,7 +106,7 @@ namespace BlazorBootstrap.Components
         {
             if(this.IsAnchorLink && !string.IsNullOrEmpty(this.TargetId))
             {
-                await this.JsInterop.InvokeVoidAsync(JsNames.Anchor.ScrollIntoView, this.TargetId);
+                await this.JsInterop.InvokeVoidAsync(JsFunctions.Anchor.ScrollIntoView, this.TargetId);
             }
 
             await this.Clicked.InvokeAsync(this);
@@ -169,7 +169,7 @@ namespace BlazorBootstrap.Components
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
-            await this.JsInterop.InvokeVoidAsync(JsNames.Anchor.Init, this.Id);
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Anchor.Init, this.Id);
             await base.OnAfterRenderAsync(firstRender);
         }
     }

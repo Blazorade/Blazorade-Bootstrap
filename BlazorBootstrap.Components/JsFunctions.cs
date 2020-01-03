@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public static class JsNames
+    public static class JsFunctions
     {
 
         private const string Root = "blazorBootstrap.";
@@ -12,6 +12,8 @@ namespace BlazorBootstrap.Components
         public const string Hide = Root + "hide";
 
         public const string Show = Root + "show";
+
+        public const string RegisterEventCallback = Root + "registerEventCallback";
 
 
         public static class Alert
