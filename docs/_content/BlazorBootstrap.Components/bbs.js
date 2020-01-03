@@ -7,6 +7,21 @@ window.blazorBootstrap = {
     show: function (elementId) {
         $("#" + elementId).removeClass("d-none");
     },
+    registerEventCallback: function (selector, eventName, callbackTarget, callbackMethodName, singleEvent) {
+        $(selector).on(eventName, function () {
+            if (singleEvent) {
+                $(selector).off(eventName);
+            }
+
+            if (callbackMethodName) {
+                callbackTarget.invokeMethodAsync(callbackMethodName);
+            }
+            else {
+                console.warn("No callback method was specified for event callback.", selector, eventName);
+            }
+        });
+    },
+
     alerts: {
         dismiss: function(selector) {
             $(selector).alert("close");
@@ -48,6 +63,22 @@ window.blazorBootstrap = {
         },
         toggle: function (selector) {
             $(selector).modal("toggle");
+        }
+    },
+
+    toasts: {
+        init: function (selector, autoHide, delay) {
+            $(selector).toast({
+                animation: true,
+                autohide: autoHide,
+                delay: delay
+            });
+        },
+        hide: function (selector) {
+            $(selector).toast("hide");
+        },
+        show: function (selector) {
+            $(selector).toast("show");
         }
     }
 }

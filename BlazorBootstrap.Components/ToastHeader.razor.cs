@@ -22,7 +22,7 @@ namespace BlazorBootstrap.Components
         {
             this.AddClass(ClassNames.Toasts.Header);
 
-            if(string.IsNullOrEmpty(this.Header) && string.IsNullOrEmpty(this.Subheader) && !this.ShowClose)
+            if(string.IsNullOrEmpty(this.Header) && string.IsNullOrEmpty(this.Subheader) && !this.ShowHide)
             {
                 this.AddClass(ClassNames.DisplayNone);
             }
