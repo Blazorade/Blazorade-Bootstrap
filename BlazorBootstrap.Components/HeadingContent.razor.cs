@@ -28,12 +28,12 @@ namespace BlazorBootstrap.Components
 
         protected async Task ContentOnMouseOver(MouseEventArgs e)
         {
-            await this.JsInterop.InvokeVoidAsync(JsNames.Show, this.AnchorId);
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Show, this.AnchorId);
         }
 
         protected async Task ContentOnMouseOut(MouseEventArgs e)
         {
-            await this.JsInterop.InvokeVoidAsync(JsNames.Hide, this.AnchorId);
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Hide, this.AnchorId);
         }
 
         protected override void OnParametersSet()

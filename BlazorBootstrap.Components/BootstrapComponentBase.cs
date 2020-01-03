@@ -245,7 +245,7 @@ namespace BlazorBootstrap.Components
         {
             if (!this.Attributes.ContainsKey("id"))
             {
-                id = this.Id ?? id ?? Guid.NewGuid().ToString();
+                id = this.Id ?? id ?? Guid.NewGuid().ToString().Replace("-", "");
                 this.Id = id;
                 this.Attributes.Add("id", id);
             }

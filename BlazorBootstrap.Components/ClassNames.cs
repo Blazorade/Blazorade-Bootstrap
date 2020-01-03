@@ -20,6 +20,11 @@ namespace BlazorBootstrap.Components
 
         public const string Show = "show";
 
+        public const string Hide = "hide";
+
+        public const string DisplayNone = "d-none";
+
+
 
         public static class Abbreviations
         {
@@ -386,5 +391,13 @@ namespace BlazorBootstrap.Components
             public const string Large = "shadow-lg";
         }
 
+        public static class Toasts
+        {
+            public const string Body = "toast-body";
+
+            public const string Header = "toast-header";
+
+            public const string Toast = "toast";
+        }
     }
 }

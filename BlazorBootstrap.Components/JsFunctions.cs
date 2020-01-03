@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public static class JsNames
+    public static class JsFunctions
     {
 
         private const string Root = "blazorBootstrap.";
@@ -12,6 +12,8 @@ namespace BlazorBootstrap.Components
         public const string Hide = Root + "hide";
 
         public const string Show = Root + "show";
+
+        public const string RegisterEventCallback = Root + "registerEventCallback";
 
 
         public static class Alert
@@ -49,6 +51,17 @@ namespace BlazorBootstrap.Components
             public const string Show = ModalRoot + "show";
 
             public const string Toggle = ModalRoot + "toggle";
+        }
+
+        public static class Toast
+        {
+            private const string ToastRoot = Root + "toasts.";
+
+            public const string Init = ToastRoot + "init";
+
+            public const string Show = ToastRoot + "show";
+
+            public const string Hide = ToastRoot + "hide";
         }
     }
 }

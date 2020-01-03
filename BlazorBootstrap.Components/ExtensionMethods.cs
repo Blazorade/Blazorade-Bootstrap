@@ -1,6 +1,9 @@
-﻿using System;
+﻿using BlazorBootstrap.Components.JSInterop;
+using Microsoft.JSInterop;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BlazorBootstrap.Components
 {
@@ -23,6 +26,16 @@ namespace BlazorBootstrap.Components
             }
 
             yield break;
+        }
+
+        public static ToastInterop Toast(this IJSRuntime jsInterop)
+        {
+            return new ToastInterop(jsInterop);
+        }
+
+        public static async Task RegisterEventCallbackAsync(this IJSRuntime jsInterop, string id, string eventName, BootstrapComponentBase callbackTarget, string callbackMethodName, bool singleEvent = true)
+        {
+            await jsInterop.InvokeVoidAsync(JsFunctions.RegisterEventCallback, $"#{id}", eventName, DotNetObjectReference.Create(callbackTarget), callbackMethodName, singleEvent);
         }
     }
 }

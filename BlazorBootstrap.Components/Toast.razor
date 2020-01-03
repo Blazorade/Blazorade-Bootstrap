@@ -1,0 +1,15 @@
+﻿@inherits BootstrapComponentBase
+
+<Div @attributes="this.Attributes">
+
+    @if(null != this.HeaderTemplate)
+    {
+        @this.HeaderTemplate
+    }
+    else
+    {
+        <ToastHeader Header="@this.Header" Subheader="@this.Subheader" ShowHide="@this.ShowHide"></ToastHeader>
+    }
+    <Div class="@ClassNames.Toasts.Body">@this.ChildContent</Div>
+
+</Div>
