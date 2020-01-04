@@ -10,6 +10,11 @@ namespace BlazorBootstrap.Components
     public static class ExtensionMethods
     {
 
+        public static AlertInterop Alert(this IJSRuntime jsInterop)
+        {
+            return new AlertInterop(jsInterop);
+        }
+
         /// <summary>
         /// Breaks the given input into lines.
         /// </summary>
@@ -28,14 +33,15 @@ namespace BlazorBootstrap.Components
             yield break;
         }
 
+        public static async Task RegisterEventCallbackAsync(this IJSRuntime jsInterop, string id, string eventName, BootstrapComponentBase callbackTarget, string callbackMethodName, bool singleEvent = true)
+        {
+            await jsInterop.InvokeVoidAsync(JsFunctions.RegisterEventCallback, $"#{id}", eventName, DotNetObjectReference.Create(callbackTarget), callbackMethodName, singleEvent);
+        }
+
         public static ToastInterop Toast(this IJSRuntime jsInterop)
         {
             return new ToastInterop(jsInterop);
         }
 
-        public static async Task RegisterEventCallbackAsync(this IJSRuntime jsInterop, string id, string eventName, BootstrapComponentBase callbackTarget, string callbackMethodName, bool singleEvent = true)
-        {
-            await jsInterop.InvokeVoidAsync(JsFunctions.RegisterEventCallback, $"#{id}", eventName, DotNetObjectReference.Create(callbackTarget), callbackMethodName, singleEvent);
-        }
     }
 }

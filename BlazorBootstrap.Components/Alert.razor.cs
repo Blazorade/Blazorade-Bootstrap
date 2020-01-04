@@ -11,10 +11,15 @@ namespace BlazorBootstrap.Components
     {
 
         /// <summary>
-        /// Called when the alert has been dismissed.
+        /// The callback that is called when the alert is being dismissed, but not fully dismissed yet.
+        /// </summary>
+        public EventCallback<Alert> OnDismiss { get; set; }
+
+        /// <summary>
+        /// The callback that is called when the alert has completely been dismissed.
         /// </summary>
         [Parameter]
-        public EventCallback<Alert> Dismissed { get; set; }
+        public EventCallback<Alert> OnDismissed { get; set; }
 
         /// <summary>
         /// The template that is used to produce the heading of the alert.
@@ -65,25 +70,29 @@ namespace BlazorBootstrap.Components
                 throw new InvalidOperationException("Cannot dismiss an Alert if the IsDismissible property is false.");
             }
 
-            await this.JsInterop.InvokeVoidAsync(JsFunctions.Alert.Dismiss, $"#{this.Attributes["id"]}");
-            await this.OnDismissedAsync();
+            await this.JsInterop.Alert().DismissAsync(this.Id);
         }
 
 
         [Inject]
         protected IJSRuntime JsInterop { get; set; }
 
+        [JSInvokable]
         /// <summary>
-        /// Fires the <see cref="Dismissed"/> event.
+        /// Triggers the <see cref="OnDismiss"/> callback.
         /// </summary>
-        protected virtual async Task OnDismissedAsync()
+        public virtual async Task OnDismissAsync()
         {
-            if (this.FadeOnDismiss)
-            {
-                // Wait for the fade-out to occur before firing the event.
-                await Task.Delay(250);
-            }
-            await this.Dismissed.InvokeAsync(this);
+            await this.OnDismiss.InvokeAsync(this);
+        }
+
+        /// <summary>
+        /// Triggers the <see cref="OnDismissed"/> callback.
+        /// </summary>
+        [JSInvokable]
+        public virtual async Task OnDismissedAsync()
+        {
+            await this.OnDismissed.InvokeAsync(this);
         }
 
         protected override void OnParametersSet()
@@ -105,5 +114,15 @@ namespace BlazorBootstrap.Components
             if(this.IsDismissible) this.SetIdIfEmpty();
         }
 
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            await base.OnAfterRenderAsync(firstRender);
+
+            if (firstRender && this.IsDismissible)
+            {
+                await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Alert.Close, this, nameof(this.OnDismissAsync), false);
+                await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Alert.Closed, this, nameof(this.OnDismissedAsync), false);
+            }
+        }
     }
 }

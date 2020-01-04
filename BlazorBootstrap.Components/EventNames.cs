@@ -7,6 +7,13 @@ namespace BlazorBootstrap.Components
     public static class EventNames
     {
 
+        public static class Alert
+        {
+            public const string Close = "close.bs.alert";
+
+            public const string Closed = "closed.bs.alert";
+        }
+
         public static class Toast
         {
             public const string Show = "show.bs.toast";
