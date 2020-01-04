@@ -1,0 +1,35 @@
+﻿@code {
+    Spacing marginTop = Spacing.Five;
+}
+
+
+<Heading Level="HeadingLevel.H2">Container Component</Heading>
+<Paragraph>
+    Containers are the most basic layout element in Bootstrap and are required when using our default grid system.
+    Containers are used to contain, pad, and (sometimes) center the content within them. While containers can be
+    nested, most layouts do not require a nested container.
+</Paragraph>
+
+<DocsSection ComponentName="Container"></DocsSection>
+
+
+<Heading Id="basic-containers" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@marginTop">Basic Containers</Heading>
+<Paragraph>
+    A container is either fixed-width with a maximum width set at each breakpoint. A container can also be fluid
+    to have 100% width at all breakpoints. <WikiLink Page="Container" Section="basic-containers"></WikiLink>
+</Paragraph>
+
+<Container Type="ContainerType.FixedWidth" Padding="Spacing.Three" MarginTop="Spacing.Three" BorderColor="NamedColor.Dark" BackgroundColor="NamedColor.Light">Fixed-Width Container</Container>
+<Container Type="ContainerType.Fluid" Padding="Spacing.Three" MarginTop="Spacing.Three" BorderColor="NamedColor.Dark" BackgroundColor="NamedColor.Light">Fluid Container</Container>
+
+
+<Heading Id="responsive-containers" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@marginTop">Responsive Containers</Heading>
+<Paragraph>
+    Containers can also be responsive. A responsive container is 100% wide at or below the specified breakpoint, and turns to a fixed-width container above.
+    <WikiLink Page="Container" Section="responsive-containers"></WikiLink>
+</Paragraph>
+
+<Container Type="ContainerType.SM" Padding="Spacing.Three" MarginTop="Spacing.Three" BorderColor="NamedColor.Dark" BackgroundColor="NamedColor.Light">SM Container</Container>
+<Container Type="ContainerType.MD" Padding="Spacing.Three" MarginTop="Spacing.Three" BorderColor="NamedColor.Dark" BackgroundColor="NamedColor.Light">MD Container</Container>
+<Container Type="ContainerType.LG" Padding="Spacing.Three" MarginTop="Spacing.Three" BorderColor="NamedColor.Dark" BackgroundColor="NamedColor.Light">LG Container</Container>
+<Container Type="ContainerType.XL" Padding="Spacing.Three" MarginTop="Spacing.Three" BorderColor="NamedColor.Dark" BackgroundColor="NamedColor.Light">XL Container</Container>
