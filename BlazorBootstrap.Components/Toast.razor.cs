@@ -14,7 +14,7 @@ namespace BlazorBootstrap.Components
         {
             this.AutoHide = true;
             this.Delay = 5000;
-            this.ShowHide = true;
+            this.ShowHideButton = true;
 
         }
 
@@ -64,8 +64,17 @@ namespace BlazorBootstrap.Components
         [Parameter]
         public RenderFragment HeaderTemplate { get; set; }
 
+        /// <summary>
+        /// Specifies whether the hide button is shown in the header of the toast.
+        /// </summary>
         [Parameter]
-        public bool ShowHide { get; set; }
+        public bool ShowHideButton { get; set; }
+
+        /// <summary>
+        /// Specifies whether to show the toast immediately when rendered without having to separately invoke the <see cref="ShowAsync"/> method.
+        /// </summary>
+        [Parameter]
+        public bool ShowOnRender { get; set; }
 
         [Parameter]
         public string Subheader { get; set; }
@@ -123,6 +132,10 @@ namespace BlazorBootstrap.Components
             if (firstRender)
             {
                 await this.JsInterop.Toast().InitAsync(this.Id, this.AutoHide, this.Delay);
+                if (this.ShowOnRender)
+                {
+                    await this.JsInterop.Toast().ShowAsync(this.Id);
+                }
             }
 
             await base.OnAfterRenderAsync(firstRender);

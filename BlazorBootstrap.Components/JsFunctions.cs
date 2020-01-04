@@ -42,6 +42,17 @@ namespace BlazorBootstrap.Components
             public const string Init = CarouselRoot + "carousel";
         }
 
+        public static class Collapse
+        {
+            private const string CollapseRoot = Root + "collapses.";
+
+            public const string Hide = CollapseRoot + "hide";
+
+            public const string Show = CollapseRoot + "show";
+
+            public const string Toggle = CollapseRoot + "toggle";
+        }
+
         public static class Modal
         {
             private const string ModalRoot = Root + "modals.";

@@ -1,4 +1,7 @@
-﻿<Heading Level="HeadingLevel.H2">Alert Component</Heading>
+﻿@code {
+    Spacing headingMarginTop = Spacing.Five;
+}
+<Heading Level="HeadingLevel.H2">Alert Component</Heading>
 
 <Paragraph>
     The <code>Alert</code> component is used to provide feedback messages, typically in response to user actions.
@@ -8,7 +11,7 @@
 <DocsSection ComponentName="Alert" />
 
 
-<Heading Id="standard-colours" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Standard Colours</Heading>
+<Heading Id="standard-colours" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Standard Colours</Heading>
 <Paragraph>
     Alerts can be coloured with the named colours in Bootstrap.
 </Paragraph>
@@ -23,7 +26,7 @@
 
 
 
-<Heading Id="dismissible-alerts" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Dismissible Alerts</Heading>
+<Heading Id="dismissible-alerts" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Dismissible Alerts</Heading>
 <Paragraph>
     Alerts can be configured as dismissible, which allows the user to dismiss an alert when it has been read.
 </Paragraph>
@@ -46,28 +49,23 @@
         This alert can be dismissed from outside of the component, by clicking on the button below.
     </ChildContent>
 </Alert>
-<Button Color="NamedColor.Primary" Clicked="() => this.DismissibleAlert.Dismiss()">Dismiss</Button>
+<Button Color="NamedColor.Primary" OnClicked="() => this.DismissibleAlert.Dismiss()">Dismiss</Button>
 
 
 <Div MarginTop="Spacing.Three" />
 @code {
-    bool isDismissed = false;
+    Toast dismissToast;
 }
 
-<Alert Color="NamedColor.Info" IsDismissible="true" FadeOnDismiss="true" Heading="Handling Dismissal" Dismissed="async () => isDismissed = true">
+<Alert Color="NamedColor.Info" IsDismissible="true" FadeOnDismiss="true" Heading="Handling Dismissal" OnDismissed="() => this.dismissToast.Show()">
     This alert is hooked up with an event handler that is fired when the alert is dismissed.
 </Alert>
 
-@if (isDismissed)
-{
-    <Alert Color="NamedColor.Success" IsDismissible="true" FadeOnDismiss="true">
-        The alert was successfully dismissed.
-    </Alert>
-}
+<Toast @ref="this.dismissToast" Header="Alert Dismissed" Delay="3000">The alert was dismissed.</Toast>
 
 
 
-<Heading Id="headings-and-links" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Alerts with Headings and Links</Heading>
+<Heading Id="headings-and-links" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Alerts with Headings and Links</Heading>
 
 <Alert Color="NamedColor.Info">
     <HeadingTemplate>This is the heading</HeadingTemplate>

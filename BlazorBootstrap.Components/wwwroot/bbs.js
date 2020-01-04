@@ -54,6 +54,18 @@ window.blazorBootstrap = {
         }
     },
 
+    collapses: {
+        hide: function (selector) {
+            $(selector).collapse("hide");
+        },
+        show: function (selector) {
+            $(selector).collapse("show");
+        },
+        toggle: function (selector) {
+            $(selector).collapse("toggle");
+        }
+    },
+
     modals: {
         hide: function (selector) {
             $(selector).modal("hide");

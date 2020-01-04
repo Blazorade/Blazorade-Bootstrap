@@ -1,0 +1,70 @@
+﻿@code {
+    Spacing marginTop = Spacing.Five;
+
+    Collapse collapse1;
+    Collapse collapse2;
+
+    List<string> toastMessages = new List<string>();
+
+    private void AddToast(string message)
+    {
+        toastMessages.Add(message);
+        this.StateHasChanged();
+    }
+}
+
+
+<Heading Level="HeadingLevel.H2">Collapse Component</Heading>
+
+<Paragraph>
+    The <code>Collapse</code> component is used to toggle the visibility of content.
+</Paragraph>
+
+<DocsSection ComponentName="Collapse" />
+
+
+<Heading Id="controlling-visibility" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@marginTop">Controlling Visibility</Heading>
+<Paragraph>
+    The <code>Collapse</code> component exposes three methods that you can use to control how its content is shown.
+    <WikiLink Page="Collapse" Section="controlling-visibility" />
+</Paragraph>
+
+<ButtonGroup>
+    <Button Color="NamedColor.Primary" IsOutline="true" OnClicked="() => this.collapse1.Show()">Show</Button>
+    <Button Color="NamedColor.Primary" IsOutline="true" OnClicked="() => this.collapse1.Hide()">Hide</Button>
+    <Button Color="NamedColor.Primary" IsOutline="true" OnClicked="() => this.collapse1.Toggle()">Toggle</Button>
+</ButtonGroup>
+<Collapse @ref="this.collapse1">
+    <Paragraph>
+        This is the content inside the <code>Collapse</code> component that you can control with the buttons above.
+    </Paragraph>
+</Collapse>
+
+
+<Heading Id="handling-events" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@marginTop">Handling Events</Heading>
+<Paragraph>
+    The <code>Collapse</code> component exposes event callbacks that you can use to hook up to the triggered events.
+    Use the button to toggle the content and observe the events that are shown as toasts.
+    <WikiLink Page="Collapse" Section="handling-events" />
+</Paragraph>
+
+<div class="row">
+    <div class="col">
+        <Button Color="NamedColor.Primary" IsOutline="true" OnClicked="() => this.collapse2.Toggle()">Toggle</Button>
+        <Collapse @ref="this.collapse2" OnShow='() => this.AddToast("Collapse.Show")' OnShown='() => this.AddToast("Collapse.Shown")' OnHide='() => this.AddToast("Collapse.Hide")' OnHidden='() => this.AddToast("Collapse.Hidden")'>
+            This is the content that you toggle with the button above, and will trigger the events that you see as toasts.
+        </Collapse>
+    </div>
+    <div class="col">
+        @code {
+            int i = 0;
+        }
+
+        @foreach (string msg in this.toastMessages)
+        {
+            i++;
+
+            <Toast Id="@($"toast-{i}")" Delay="3000" ShowOnRender="true" Header="@msg"></Toast>
+        }
+    </div>
+</div>

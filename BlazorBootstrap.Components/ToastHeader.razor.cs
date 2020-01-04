@@ -12,7 +12,7 @@ namespace BlazorBootstrap.Components
         public string Header { get; set; }
 
         [Parameter]
-        public bool ShowHide { get; set; }
+        public bool ShowHideButton { get; set; }
 
         [Parameter]
         public string Subheader { get; set; }
@@ -22,7 +22,7 @@ namespace BlazorBootstrap.Components
         {
             this.AddClass(ClassNames.Toasts.Header);
 
-            if(string.IsNullOrEmpty(this.Header) && string.IsNullOrEmpty(this.Subheader) && !this.ShowHide)
+            if(string.IsNullOrEmpty(this.Header) && string.IsNullOrEmpty(this.Subheader) && !this.ShowHideButton)
             {
                 this.AddClass(ClassNames.DisplayNone);
             }

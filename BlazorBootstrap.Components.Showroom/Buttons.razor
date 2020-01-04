@@ -71,7 +71,7 @@
 
 <Heading Id="active-state" IsAnchor="true" Level="HeadingLevel.H4" MarginTop="@headingMarginTop">Active State</Heading>
 <Button Color="NamedColor.Secondary" Size="ButtonSize.Large" IsActive="@isActive">Primary Button</Button>
-<Button Clicked="ToggleIsActive" class="btn-link">Toggle</Button>
+<Button OnClicked="ToggleIsActive" class="btn-link">Toggle</Button>
 
 @code {
     bool isActive = true;
@@ -84,7 +84,7 @@
 
 <Heading Id="disabled-state" IsAnchor="true" Level="HeadingLevel.H4" MarginTop="@headingMarginTop">Disabled State</Heading>
 <Button Color="NamedColor.Primary" Size="ButtonSize.Large" IsDisabled="@isDisabled">Primary Button</Button>
-<Button Clicked="ToggleIsDisabled" class="btn-link">Toggle</Button>
+<Button OnClicked="ToggleIsDisabled" class="btn-link">Toggle</Button>
 
 @code {
     bool isDisabled = false;
@@ -168,6 +168,6 @@
         count++;
     }
 }
-<Button Color="NamedColor.Dark" IsOutline="true" Clicked="this.OnCountClick">Clicked: <Badge Color="NamedColor.Primary">@count</Badge></Button>
+<Button Color="NamedColor.Dark" IsOutline="true" OnClicked="this.OnCountClick">Clicked: <Badge Color="NamedColor.Primary">@count</Badge></Button>
 
 <Paragraph></Paragraph>

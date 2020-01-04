@@ -28,7 +28,7 @@
     With Blazor Bootstrap you can show simple dialogs with just a single line of markup. See <Anchor Url="https://github.com/MikaBerglund/Blazor-Bootstrap/wiki/Modal#simple-modal" OpenInNewTab="true">the wiki</Anchor> for details.
 </Paragraph>
 
-<Button Color="NamedColor.Primary" Clicked="() => this.modal1.Show()">Show Simple Dialog</Button>
+<Button Color="NamedColor.Primary" OnClicked="() => this.modal1.Show()">Show Simple Dialog</Button>
 <Modal @ref="this.modal1" Body="This is the body text of a simple modal dialog. It does not contain a header or footer, but you can close it by clicking outside of the dialog." />
 
 
@@ -37,7 +37,7 @@
     You can customize the header of the dialog with the <code>HeaderTemplate</code> template property. See <Anchor Url="https://github.com/MikaBerglund/Blazor-Bootstrap/wiki/Modal#customizing-the-header" OpenInNewTab="true">the wiki</Anchor> for details.
 </Paragraph>
 
-<Button Color="NamedColor.Primary" Clicked="() => this.modal2.Show()">Show Custom Header</Button>
+<Button Color="NamedColor.Primary" OnClicked="() => this.modal2.Show()">Show Custom Header</Button>
 <Modal @ref="this.modal2" Header="Custom Header" Body="A dialog with a customized header. You can use any component or HTML element in your custom header. Note that if customizing a header, you also need to add the close button for the dialog. You can use the CloseModalButton component for that.">
     <HeaderTemplate>
         <ModalHeader BackgroundColor="NamedColor.Dark" TextColor="NamedColor.Light">
@@ -53,7 +53,7 @@
     You can provide custom body content for your dialog using the <code>BodyTemplate</code> template property. See <Anchor Url="https://github.com/MikaBerglund/Blazor-Bootstrap/wiki/Modal#customizing-the-body" OpenInNewTab="true">the wiki</Anchor> for details.
 </Paragraph>
 
-<Button Color="NamedColor.Primary" Clicked="() => this.modal3.Show()">Show Custom Body</Button>
+<Button Color="NamedColor.Primary" OnClicked="() => this.modal3.Show()">Show Custom Body</Button>
 <Modal @ref="this.modal3" Header="Custom Body Content">
     <BodyTemplate>
         <ModalBody>
@@ -68,12 +68,12 @@
     With the help of the <code>FooterTemplate</code> you can specify content for the footer of your dialog. See <Anchor Url="https://github.com/MikaBerglund/Blazor-Bootstrap/wiki/Modal#customizing-the-footer" OpenInNewTab="true">the wiki</Anchor> for details.
 </Paragraph>
 
-<Button Color="NamedColor.Primary" Clicked="() => this.modal4.Show()">Show Custom Footer</Button>
+<Button Color="NamedColor.Primary" OnClicked="() => this.modal4.Show()">Show Custom Footer</Button>
 <Modal @ref="this.modal4" Header="Custom Footer Content">
     <FooterTemplate>
         <ModalFooter>
-            <Button Color="NamedColor.Primary" Clicked="() => this.modal4.Hide()">OK</Button>
-            <Button Color="NamedColor.Light" MarginLeft="Spacing.One" Clicked="() => this.modal4.Hide()">Cancel</Button>
+            <Button Color="NamedColor.Primary" OnClicked="() => this.modal4.Hide()">OK</Button>
+            <Button Color="NamedColor.Light" MarginLeft="Spacing.One" OnClicked="() => this.modal4.Hide()">Cancel</Button>
         </ModalFooter>
     </FooterTemplate>
 </Modal>
@@ -89,7 +89,7 @@
     wrapper component that would add the padding around the content, as it did in the body example above.
 </Paragraph>
 
-<Button Color="NamedColor.Primary" Clicked="() => this.modal5.Show()">Show Dialog</Button>
+<Button Color="NamedColor.Primary" OnClicked="() => this.modal5.Show()">Show Dialog</Button>
 <Modal @ref="this.modal5" Header="Custom Header">
     <HeaderTemplate>
         <ModalHeader BackgroundColor="NamedColor.Dark" TextColor="NamedColor.Light">
@@ -102,8 +102,8 @@
     </BodyTemplate>
     <FooterTemplate>
         <ModalFooter>
-            <Button Color="NamedColor.Primary" Clicked="() => this.modal5.Hide()">OK</Button>
-            <Button Color="NamedColor.Light" MarginLeft="Spacing.One" Clicked="() => this.modal5.Hide()">Cancel</Button>
+            <Button Color="NamedColor.Primary" OnClicked="() => this.modal5.Hide()">OK</Button>
+            <Button Color="NamedColor.Light" MarginLeft="Spacing.One" OnClicked="() => this.modal5.Hide()">Cancel</Button>
         </ModalFooter>
     </FooterTemplate>
 </Modal>
@@ -114,9 +114,9 @@
     The <code>Modal</code> component supports different sizes.
 </Paragraph>
 
-<Button Color="NamedColor.Primary" Clicked="() => this.modalSm.Show()">Small</Button>
-<Button Color="NamedColor.Primary" Clicked="() => this.modalLg.Show()">Large</Button>
-<Button Color="NamedColor.Primary" Clicked="() => this.modalXl.Show()">Extra Large</Button>
+<Button Color="NamedColor.Primary" OnClicked="() => this.modalSm.Show()">Small</Button>
+<Button Color="NamedColor.Primary" OnClicked="() => this.modalLg.Show()">Large</Button>
+<Button Color="NamedColor.Primary" OnClicked="() => this.modalXl.Show()">Extra Large</Button>
 <Modal @ref="this.modalSm" Id="modal-sm" Header="Small Dialog" Body="This is a small modal dialog." Size="ModalSize.SM">
 </Modal>
 <Modal @ref="this.modalLg" Id="modal-lg" Header="Large Dialog" Body="This is a large modal dialog." Size="ModalSize.LG">

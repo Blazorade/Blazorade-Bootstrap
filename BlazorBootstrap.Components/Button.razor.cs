@@ -11,10 +11,10 @@ namespace BlazorBootstrap.Components
     {
 
         /// <summary>
-        /// Callback for when the button is clicked.
+        /// The callback that is called when the button is clicked.
         /// </summary>
         [Parameter]
-        public EventCallback<Button> Clicked { get; set; }
+        public EventCallback<Button> OnClicked { get; set; }
 
 
         /// <summary>
@@ -55,11 +55,11 @@ namespace BlazorBootstrap.Components
 
 
         /// <summary>
-        /// Fires the <see cref="Clicked"/> event.
+        /// Fires the <see cref="OnClicked"/> event.
         /// </summary>
         protected virtual async Task OnClickedAsync()
         {
-            await this.Clicked.InvokeAsync(this);
+            await this.OnClicked.InvokeAsync(this);
         }
 
         protected override void OnParametersSet()
