@@ -364,7 +364,11 @@ namespace BlazorBootstrap.Components
             }
 
             if(this.BackgroundColor.HasValue) this.AddClass(this.GetColorClassName(prefix: "bg", color: this.BackgroundColor));
-            if(this.BorderColor.HasValue) this.AddClass(this.GetColorClassName(prefix: "border", color: this.BorderColor));
+            if (this.BorderColor.HasValue)
+            {
+                this.AddClass("border");
+                this.AddClass(this.GetColorClassName(prefix: "border", color: this.BorderColor));
+            }
             if(this.TextColor.HasValue) this.AddClass(this.GetColorClassName(prefix: "text", color: this.TextColor));
 
             if (this.IsStretchedLinkContainer)

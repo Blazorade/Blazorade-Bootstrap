@@ -231,8 +231,6 @@ namespace BlazorBootstrap.Components
         public static class Containers
         {
             public const string FixedWidth = "container";
-
-            public const string Fluid = "container-fluid";
         }
 
         public static class Display
