@@ -8,6 +8,8 @@ namespace BlazorBootstrap.Components
     {
         Top,
         Bottom,
+        Left,
+        Right,
         Overlay
     }
 }

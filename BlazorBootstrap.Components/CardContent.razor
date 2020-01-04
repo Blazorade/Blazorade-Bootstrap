@@ -1,0 +1,33 @@
+﻿@inherits BootstrapComponentBase
+
+@if (!string.IsNullOrEmpty(this.ImageUrl))
+{
+    if (this.ImagePosition == CardImagePosition.Top || this.ImagePosition == CardImagePosition.Overlay)
+    {
+        @this.ImageTemplate(this.ImageUrl)
+        @this.BodyTemplate
+    }
+    else if (this.ImagePosition == CardImagePosition.Bottom)
+    {
+        @this.BodyTemplate
+        @this.ImageTemplate(this.ImageUrl)
+    }
+    else if (this.ImagePosition == CardImagePosition.Left)
+    {
+        <div class="row no-gutters h-100">
+            <div class="col-md-4 my-auto">@this.ImageTemplate(this.ImageUrl)</div>
+            <div class="col-md-8">@this.BodyTemplate</div>
+        </div>
+    }
+    else if (this.ImagePosition == CardImagePosition.Right)
+    {
+    <div class="row no-gutters h-100">
+        <div class="col-md-8">@this.BodyTemplate</div>
+        <div class="col-md-4 my-auto">@this.ImageTemplate(this.ImageUrl)</div>
+    </div>
+    }
+}
+else
+{
+    @this.BodyTemplate
+}
