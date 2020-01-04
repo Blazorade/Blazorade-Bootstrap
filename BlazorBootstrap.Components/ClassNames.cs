@@ -12,8 +12,6 @@ namespace BlazorBootstrap.Components
         /// </summary>
         public const string Active = "active";
 
-        public const string Collapse = "collapse";
-
         public const string Disabled = "disabled";
 
         public const string Fade = "fade";
@@ -223,6 +221,11 @@ namespace BlazorBootstrap.Components
 
             public const string ControlPrevious = "carousel-control-prev";
 
+        }
+
+        public static class Collapses
+        {
+            public const string Collapse = "collapse";
         }
 
         public static class Containers

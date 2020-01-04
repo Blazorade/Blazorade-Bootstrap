@@ -15,6 +15,11 @@ namespace BlazorBootstrap.Components
             return new AlertInterop(jsInterop);
         }
 
+        public static CollapseInterop Collapse(this IJSRuntime jsInterop)
+        {
+            return new CollapseInterop(jsInterop);
+        }
+
         /// <summary>
         /// Breaks the given input into lines.
         /// </summary>

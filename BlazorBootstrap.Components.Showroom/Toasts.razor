@@ -23,16 +23,16 @@
 
 <Heading Id="auto-hide" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingTopMargin">Automatic Hiding</Heading>
 <Paragraph>
-    By default, toasts hide automatically after 5 seconds.
+    By default, toasts hide automatically after 5 seconds. <WikiLink Page="Toast" Section="auto-hide"></WikiLink>
 </Paragraph>
 
 <Button Color="NamedColor.Primary" IsOutline="true" OnClicked="async () => await this.toast1.ShowAsync()">Show toast</Button>
-<Toast @ref="this.toast1" Header="Auto-Hiding Toast" Subheader="in 5 seconds..." ShowHide="false">This toast will self-destruct in 5 seconds...</Toast>
+<Toast @ref="this.toast1" Header="Auto-Hiding Toast" Subheader="in 5 seconds..." ShowHideButton="false">This toast will self-destruct in 5 seconds...</Toast>
 
 
 <Heading Id="manual-hide" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingTopMargin">Manual Hiding</Heading>
 <Paragraph>
-    Toasts can also be configured to require that the user manually dismisses the toast.
+    Toasts can also be configured to require that the user manually dismisses the toast.<WikiLink Page="Toast" Section="manual-hiding"></WikiLink>
 </Paragraph>
 
 <Button Color="NamedColor.Primary" IsOutline="true" OnClicked="async () => await this.toast2.ShowAsync()">Show toast</Button>
@@ -41,28 +41,28 @@
 
 <Heading Id="custom-hide" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingTopMargin">Custom Hiding</Heading>
 <Paragraph>
-    You can also hide a toast in response to an external event, for instance the click of a button.
+    You can also hide a toast in response to an external event, for instance the click of a button.<WikiLink Page="Toast" Section="custom-hiding"></WikiLink>
 </Paragraph>
 
 <Button Color="NamedColor.Primary" IsOutline="true" OnClicked="async () => await this.toast3.ShowAsync()">Show toast</Button>
 <Button Color="NamedColor.Secondary" IsOutline="true" OnClicked="async () => await this.toast3.HideAsync()">Hide toast</Button>
-<Toast @ref="this.toast3" Header="Custom Hiding" AutoHide="false" ShowHide="false">This toast will hide when you click the hide button above.</Toast>
+<Toast @ref="this.toast3" Header="Custom Hiding" AutoHide="false" ShowHideButton="false">This toast will hide when you click the hide button above.</Toast>
 
 
 <Heading Id="handling-events" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingTopMargin">Handling Events</Heading>
 <Paragraph>
     The <code>Toast</code> component supports the <code>OnShow</code>, <code>OnShown</code>, <code>OnHide</code> and <code>OnHidden</code> events.
-    Click the button below to to show a toast and view all its associated events as toasts.
+    Click the button below to to show a toast and view all its associated events as toasts. <WikiLink Page="Toast" Section="handling-events"></WikiLink>
 </Paragraph>
 
 <Heading Level="HeadingLevel.H4">Events</Heading>
-<Toast @ref="this.toastShow" ShowHide="false" Delay="2000"><code>Toast.OnShow</code></Toast>
-<Toast @ref="this.toastShown" ShowHide="false" Delay="2000"><code>Toast.OnShown</code></Toast>
-<Toast @ref="this.toastHide" ShowHide="false" Delay="2000"><code>Toast.OnHide</code></Toast>
-<Toast @ref="this.toastHidden" ShowHide="false" Delay="2000"><code>Toast.OnHidden</code></Toast>
+<Toast @ref="this.toastShow" ShowHideButton="false" Delay="2000"><code>Toast.OnShow</code></Toast>
+<Toast @ref="this.toastShown" ShowHideButton="false" Delay="2000"><code>Toast.OnShown</code></Toast>
+<Toast @ref="this.toastHide" ShowHideButton="false" Delay="2000"><code>Toast.OnHide</code></Toast>
+<Toast @ref="this.toastHidden" ShowHideButton="false" Delay="2000"><code>Toast.OnHidden</code></Toast>
 
 <Button Color="NamedColor.Primary" IsOutline="true" OnClicked="async () => await this.toast4.ShowAsync()">Show toast</Button>
-<Toast @ref="this.toast4" Header="Sample Toast" ShowHide="false" AutoHide="true" Delay="5000" OnShow="() => this.toastShow.Show()" OnShown="() => this.toastShown.Show()" OnHide="() => this.toastHide.Show()" OnHidden="() => this.toastHidden.Show()">
+<Toast @ref="this.toast4" Header="Sample Toast" ShowHideButton="false" AutoHide="true" Delay="5000" OnShow="() => this.toastShow.Show()" OnShown="() => this.toastShown.Show()" OnHide="() => this.toastHide.Show()" OnHidden="() => this.toastHidden.Show()">
     This toast will trigger all associated events during its lifetime.
 </Toast>
 

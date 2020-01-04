@@ -4,15 +4,14 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public partial class NavbarCollapse
+    public class NavbarCollapse : Collapse
     {
 
         protected override void OnParametersSet()
         {
-            this.AddClass(ClassNames.Collapse);
-            this.AddClass(ClassNames.Navbars.Collapse);
-
             base.OnParametersSet();
+
+            this.AddClass(ClassNames.Navbars.Collapse);
         }
     }
 }
