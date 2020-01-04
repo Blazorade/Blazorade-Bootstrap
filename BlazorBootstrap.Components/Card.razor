@@ -10,38 +10,28 @@
         <CardHeader>@this.Header</CardHeader>
     }
 
-    @if (this.ImagePosition == CardImagePosition.Top || this.ImagePosition == CardImagePosition.Overlay)
-    {
-        @if (null != this.ImageTemplate)
-        {
-            @this.ImageTemplate
-        }
-        else if (!string.IsNullOrEmpty(this.ImageUrl))
-        {
-            <CardImage Src="@this.ImageUrl" IsOverlay="this.ImagePosition == CardImagePosition.Overlay" />
-        }
-    }
-
-    @if (null != this.BodyTemplate)
-    {
-        @this.BodyTemplate
-    }
-    else
-    {
-        <CardBody Parent="@this"></CardBody>
-    }
-
-    @if (this.ImagePosition == CardImagePosition.Bottom)
-    {
-        @if (null != this.ImageTemplate)
-        {
-            @this.ImageTemplate
-        }
-        else if (!string.IsNullOrEmpty(this.ImageUrl))
-        {
-            <CardImage Src="@this.ImageUrl" />
-        }
-    }
+    <CardContent ImagePosition="@this.ImagePosition" ImageUrl="@this.ImageUrl">
+        <BodyTemplate>
+            @if (null != this.BodyTemplate)
+            {
+                @this.BodyTemplate
+            }
+            else
+            {
+                <CardBody Parent="@this"></CardBody>
+            }
+        </BodyTemplate>
+        <ImageTemplate>
+            @if (null != this.ImageTemplate)
+            {
+                @this.ImageTemplate(context)
+            }
+            else
+            {
+                <CardImage Src="@context" IsOverlay="this.ImagePosition == CardImagePosition.Overlay" MarginY="Spacing.Auto" />
+            }
+        </ImageTemplate>
+    </CardContent>
 
     @if (null != this.FooterTemplate)
     {
