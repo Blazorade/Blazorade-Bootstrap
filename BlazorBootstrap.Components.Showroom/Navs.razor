@@ -1,2 +1,37 @@
-﻿<h3>Navs</h3>
+﻿@code {
+    Spacing marginTop = Spacing.Five;
+}
 
+
+<Heading Level="HeadingLevel.H2">Nav Component</Heading>
+<Paragraph>
+    The <code>Nav</code> component provides a simple way to build navigation elements.
+</Paragraph>
+
+<DocsSection ComponentName="Nav" />
+
+
+<Heading Id="alignment" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@marginTop">Alignment</Heading>
+<Paragraph>
+    The contents of a <code>Nav</code> component can be aligned. The default is left aligned, but you can also
+    set it to center or right.
+</Paragraph>
+
+<Nav>
+    <NavLink IsActive="true">Active</NavLink>
+    <NavLink>Link</NavLink>
+    <NavLink>Link</NavLink>
+    <NavLink IsDisabled="true">Disabled</NavLink>
+</Nav>
+<Nav ContentAlignment="NavContentAlignment.Center">
+    <NavLink IsActive="true">Active</NavLink>
+    <NavLink>Link</NavLink>
+    <NavLink>Link</NavLink>
+    <NavLink IsDisabled="true">Disabled</NavLink>
+</Nav>
+<Nav ContentAlignment="NavContentAlignment.Right">
+    <NavLink IsActive="true">Active</NavLink>
+    <NavLink>Link</NavLink>
+    <NavLink>Link</NavLink>
+    <NavLink IsDisabled="true">Disabled</NavLink>
+</Nav>

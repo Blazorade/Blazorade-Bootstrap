@@ -368,6 +368,17 @@ namespace BlazorBootstrap.Components
             public const string NavLink = "nav-link";
         }
 
+        public static class Navs
+        {
+            public const string AlignContentCenter = "justify-content-center";
+
+            public const string AlignContentRight = "justify-content-end";
+
+            public const string Link = "nav-link";
+
+            public const string Nav = "nav";
+        }
+
         public static class Paragraphs
         {
             /// <summary>
