@@ -155,6 +155,21 @@ namespace BlazorBootstrap.Components
         public ComponentSize? Width { get; set; }
 
 
+
+        private IList<string> Classes { get; }
+
+
+
+        public override Task SetParametersAsync(ParameterView parameters)
+        {
+            this.Attributes.Clear();
+            this.Classes.Clear();
+
+            return base.SetParametersAsync(parameters);
+        }
+
+
+
         protected bool AddAttribute(string name, object value, bool overwrite = false)
         {
             if(!this.Attributes.ContainsKey(name) || overwrite)
@@ -210,75 +225,6 @@ namespace BlazorBootstrap.Components
             return name;
         }
 
-        protected bool RemoveAttribute(string name)
-        {
-            if(this.Attributes.ContainsKey(name))
-            {
-                this.Attributes.Remove(name);
-                return true;
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// Removes the given class from the collection if it exists.
-        /// </summary>
-        /// <param name="className"></param>
-        /// <returns>Returns <c>true</c> if the class was removed.</returns>
-        protected bool RemoveClass(string className)
-        {
-            if(!string.IsNullOrEmpty(className) && this.Classes.Contains(className))
-            {
-                this.Classes.Remove(className);
-                this.HandleClassName();
-                return true;
-            }
-
-            return false;
-        }
-
-        /// <summary>
-        /// Sets the <c>id</c> attribute if it has not already been set.
-        /// </summary>
-        /// <param name="id">OPtional. The ID to set if it is empty. If not specified, an ID is automatically generated.</param>
-        protected void SetIdIfEmpty(string id = null)
-        {
-            if (!this.Attributes.ContainsKey("id"))
-            {
-                id = this.Id ?? id ?? Guid.NewGuid().ToString().Replace("-", "");
-                this.Id = id;
-                this.Attributes.Add("id", id);
-            }
-        }
-
-
-
-        private IList<string> Classes { get; }
-
-        private void HandleClassName()
-        {
-            if(this.Classes.Count > 0)
-            {
-                this.Attributes["class"] = string.Join(" ", this.Classes);
-            }
-            else if(this.Attributes.ContainsKey("class"))
-            {
-                this.Attributes.Remove("class");
-            }
-        }
-
-        private string BreakClassName(string input)
-        {
-            var list = new List<string>();
-            var rx = new Regex("[A-Z]+[a-z]*|[0-9]+");
-            foreach(var m in from Match x in rx.Matches(input) where x.Success && !string.IsNullOrEmpty(x.Value) select x)
-            {
-                list.Add(m.Value.ToLower());
-            }
-
-            return string.Join("-", list);
-        }
-
         protected override void OnParametersSet()
         {
             #region Handle margins and paddings
@@ -320,7 +266,7 @@ namespace BlazorBootstrap.Components
 
             if (this.Shadow.HasValue)
             {
-                switch(this.Shadow.Value)
+                switch (this.Shadow.Value)
                 {
                     case ShadowSize.None:
                         this.AddClass(ClassNames.Shadows.None);
@@ -363,13 +309,13 @@ namespace BlazorBootstrap.Components
                 this.AddClass($"text-{this.TextAlignment.ToString().ToLower()}");
             }
 
-            if(this.BackgroundColor.HasValue) this.AddClass(this.GetColorClassName(prefix: "bg", color: this.BackgroundColor));
+            if (this.BackgroundColor.HasValue) this.AddClass(this.GetColorClassName(prefix: "bg", color: this.BackgroundColor));
             if (this.BorderColor.HasValue)
             {
                 this.AddClass("border");
                 this.AddClass(this.GetColorClassName(prefix: "border", color: this.BorderColor));
             }
-            if(this.TextColor.HasValue) this.AddClass(this.GetColorClassName(prefix: "text", color: this.TextColor));
+            if (this.TextColor.HasValue) this.AddClass(this.GetColorClassName(prefix: "text", color: this.TextColor));
 
             if (this.IsStretchedLinkContainer)
             {
@@ -385,12 +331,80 @@ namespace BlazorBootstrap.Components
             base.OnParametersSet();
         }
 
-        public override Task SetParametersAsync(ParameterView parameters)
+        protected bool RemoveAttribute(string name)
         {
-            this.Attributes.Clear();
-            this.Classes.Clear();
-
-            return base.SetParametersAsync(parameters);
+            if(this.Attributes.ContainsKey(name))
+            {
+                this.Attributes.Remove(name);
+                return true;
+            }
+            return false;
         }
+
+        /// <summary>
+        /// Removes the given class from the collection if it exists.
+        /// </summary>
+        /// <param name="className"></param>
+        /// <returns>Returns <c>true</c> if the class was removed.</returns>
+        protected bool RemoveClass(string className)
+        {
+            if(!string.IsNullOrEmpty(className) && this.Classes.Contains(className))
+            {
+                this.Classes.Remove(className);
+                this.HandleClassName();
+                return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Sets the <c>id</c> attribute if it has not already been set.
+        /// </summary>
+        /// <param name="id">OPtional. The ID to set if it is empty. If not specified, an ID is automatically generated.</param>
+        protected void SetIdIfEmpty(string id = null)
+        {
+            if (!this.Attributes.ContainsKey("id"))
+            {
+                id = this.Id ?? id ?? this.GenerateNewId();
+                this.Id = id;
+                this.Attributes.Add("id", id);
+            }
+        }
+
+
+
+        private string BreakClassName(string input)
+        {
+            var list = new List<string>();
+            var rx = new Regex("[A-Z]+[a-z]*|[0-9]+");
+            foreach(var m in from Match x in rx.Matches(input) where x.Success && !string.IsNullOrEmpty(x.Value) select x)
+            {
+                list.Add(m.Value.ToLower());
+            }
+
+            return string.Join("-", list);
+        }
+
+        private string GenerateNewId()
+        {
+            // Assume that the 8 first chars will be unique enough on one page. A long ID, i.e. a full Guid, seems to
+            // cause problems with for instance the Navbar component, which does not work properly when collapsed, if
+            // the ID is long.
+            return "e" + Guid.NewGuid().ToString().Replace("-", "").Substring(0, 8);
+        }
+
+        private void HandleClassName()
+        {
+            if (this.Classes.Count > 0)
+            {
+                this.Attributes["class"] = string.Join(" ", this.Classes);
+            }
+            else if (this.Attributes.ContainsKey("class"))
+            {
+                this.Attributes.Remove("class");
+            }
+        }
+
     }
 }
