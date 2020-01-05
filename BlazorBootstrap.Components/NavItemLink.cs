@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BlazorBootstrap.Components
 {
-    public class NavLink : Anchor
+    public class NavItemLink : Anchor
     {
         protected override void OnParametersSet()
         {
