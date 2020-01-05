@@ -36,8 +36,6 @@
 <Navbar Id="MainMenu" BrandText="Blazor Bootstrap" BrandUrl="./" BackgroundColor="NamedColor.Primary" ColorScheme="NavbarColor.Dark" ExpandAt="NavbarExpandBreakpoint.MD">
     <NavbarNav Items="@this.items" />
     <NavbarNav MarginLeft="Spacing.Auto">
-        <NavItem>
-            <Anchor Url="https://github.com/MikaBerglund/Blazor-Bootstrap/wiki" Text="Docs" OpenInNewTab="true" class="@ClassNames.Navbars.NavLink" />
-        </NavItem>
+        <NavItem Url="https://github.com/MikaBerglund/Blazor-Bootstrap/wiki" OpenInNewTab="true">Docs</NavItem>
     </NavbarNav>
 </Navbar>

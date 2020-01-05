@@ -4,10 +4,10 @@
 <li @attributes="this.Attributes">
     @if (null != this.ChildContent)
     {
-        @this.ChildContent
+        <Anchor Link="@this.Item" class="@ClassNames.Navs.Link">@this.ChildContent</Anchor>
     }
     else
     {
-        <NavItemLink Link="@this.Item" />
+        <Anchor Link="@this.Item" class="@ClassNames.Navs.Link" />
     }
 </li>
