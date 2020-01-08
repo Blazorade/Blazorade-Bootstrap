@@ -247,6 +247,22 @@ namespace BlazorBootstrap.Components
             public const string Toggle = "dropdown-toggle";
         }
 
+        public static class Embeds
+        {
+            public const string Embed = "embed-responsive";
+
+            public const string Item = "embed-responsive-item";
+
+            public const string Ratio21by9 = "embed-responsive-21by9";
+
+            public const string Ratio16by9 = "embed-responsive-16by9";
+
+            public const string Ratio4by3 = "embed-responsive-4by3";
+
+            public const string Ratio1by1 = "embed-responsive-1by1";
+
+        }
+
         public static class Headings
         {
             /// <summary>
