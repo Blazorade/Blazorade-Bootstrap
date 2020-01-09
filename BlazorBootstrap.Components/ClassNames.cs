@@ -343,9 +343,15 @@ namespace BlazorBootstrap.Components
             public const string Stretched = "stretched-link";
         }
 
+        public static class ListGroups
+        {
+            public const string ListGroup = "list-group";
+            public const string Item = "list-group-item";
+            public const string Action = "list-group-item-action";
+        }
+
         public static class Lists
         {
-
         }
 
         public static class Modals
