@@ -431,6 +431,11 @@ namespace BlazorBootstrap.Components
             public const string Large = "shadow-lg";
         }
 
+        public static class Spinners
+        {
+            public const string Spinner = "spinner";
+        }
+
         public static class Toasts
         {
             public const string Body = "toast-body";
