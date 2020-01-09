@@ -7,3 +7,43 @@
 
 <DocsSection ComponentName="Embed"></DocsSection>
 
+
+<Heading Id="basic" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Basic Embed</Heading>
+<Paragraph>
+    A basic <code>Embed</code> with a Youtube video with the default 16 to 9 aspect ratio.
+</Paragraph>
+<Embed Source="https://www.youtube.com/embed/MetcuX1OHD0" />
+
+
+<Heading Id="aspect-ratios" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Aspect Ratios</Heading>
+<Paragraph>
+    The <code>Embed</code> component also supports other aspect ratios than the default 16 to 9 which is shown above.
+</Paragraph>
+
+<CardGroup Type="CardGroupType.Deck">
+    <Card Header="21 to 9">
+        <Embed Source="https://www.youtube.com/embed/MetcuX1OHD0" AspectRatio="EmbedAspectRatio.Ratio21by9" />
+    </Card>
+    <Card Header="4 to 3">
+        <Embed Source="https://www.youtube.com/embed/MetcuX1OHD0" AspectRatio="EmbedAspectRatio.Ratio4by3" />
+    </Card>
+    <Card Header="1 to 1">
+        <Embed Source="https://www.youtube.com/embed/MetcuX1OHD0" AspectRatio="EmbedAspectRatio.Ratio1by1" />
+    </Card>
+</CardGroup>
+
+
+<Heading Id="allow-fullscreen" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Allow Fullscreen</Heading>
+<Paragraph>
+    You can also specify whether you want to allow fullscreen or not.
+</Paragraph>
+
+<CardGroup Type="CardGroupType.Deck">
+    <Card Header="Allow Fullscreen">
+        <Embed Source="https://www.youtube.com/embed/MetcuX1OHD0" AllowFullscreen="true" />
+    </Card>
+    <Card Header="Prevent Fullscreen (default)">
+        <Embed Source="https://www.youtube.com/embed/MetcuX1OHD0" />
+    </Card>
+
+</CardGroup>
