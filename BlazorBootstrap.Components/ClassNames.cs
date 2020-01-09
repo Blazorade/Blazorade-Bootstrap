@@ -335,6 +335,12 @@ namespace BlazorBootstrap.Components
             public const string TextMuted = "text-muted";
         }
 
+        public static class Jumbotrons
+        {
+            public const string Jumbotron = "jumbotron";
+            public const string Lead = "lead";
+        }
+
         public static class Links
         {
             /// <summary>
