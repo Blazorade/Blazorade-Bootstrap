@@ -247,6 +247,22 @@ namespace BlazorBootstrap.Components
             public const string Toggle = "dropdown-toggle";
         }
 
+        public static class Embeds
+        {
+            public const string Embed = "embed-responsive";
+
+            public const string Item = "embed-responsive-item";
+
+            public const string Ratio21by9 = "embed-responsive-21by9";
+
+            public const string Ratio16by9 = "embed-responsive-16by9";
+
+            public const string Ratio4by3 = "embed-responsive-4by3";
+
+            public const string Ratio1by1 = "embed-responsive-1by1";
+
+        }
+
         public static class Headings
         {
             /// <summary>
@@ -319,6 +335,12 @@ namespace BlazorBootstrap.Components
             public const string TextMuted = "text-muted";
         }
 
+        public static class Jumbotrons
+        {
+            public const string Jumbotron = "jumbotron";
+            public const string Lead = "lead";
+        }
+
         public static class Links
         {
             /// <summary>
@@ -327,9 +349,15 @@ namespace BlazorBootstrap.Components
             public const string Stretched = "stretched-link";
         }
 
+        public static class ListGroups
+        {
+            public const string ListGroup = "list-group";
+            public const string Item = "list-group-item";
+            public const string Action = "list-group-item-action";
+        }
+
         public static class Lists
         {
-
         }
 
         public static class Modals
@@ -401,6 +429,11 @@ namespace BlazorBootstrap.Components
             public const string Regular = "shadow";
 
             public const string Large = "shadow-lg";
+        }
+
+        public static class Spinners
+        {
+            public const string Spinner = "spinner";
         }
 
         public static class Toasts

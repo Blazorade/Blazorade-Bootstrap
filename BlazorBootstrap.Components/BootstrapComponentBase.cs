@@ -213,6 +213,18 @@ namespace BlazorBootstrap.Components
             this.Classes.Clear();
         }
 
+        /// <summary>
+        /// Generates a new ID that can be used on elements.
+        /// </summary>
+        /// <returns></returns>
+        protected string GenerateNewId()
+        {
+            // Assume that the 8 first chars will be unique enough on one page. A long ID, i.e. a full Guid, seems to
+            // cause problems with for instance the Navbar component, which does not work properly when collapsed, if
+            // the ID is long.
+            return "e" + Guid.NewGuid().ToString().Replace("-", "").Substring(0, 8);
+        }
+
         protected string GetColorClassName(string prefix = null, NamedColor? color = null)
         {
             prefix = prefix ?? this.GetType().Name.ToLower();
@@ -386,13 +398,6 @@ namespace BlazorBootstrap.Components
             return string.Join("-", list);
         }
 
-        private string GenerateNewId()
-        {
-            // Assume that the 8 first chars will be unique enough on one page. A long ID, i.e. a full Guid, seems to
-            // cause problems with for instance the Navbar component, which does not work properly when collapsed, if
-            // the ID is long.
-            return "e" + Guid.NewGuid().ToString().Replace("-", "").Substring(0, 8);
-        }
 
         private void HandleClassName()
         {

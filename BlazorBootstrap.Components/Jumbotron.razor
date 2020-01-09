@@ -1,0 +1,23 @@
+﻿@inherits BootstrapComponentBase
+
+<Div @attributes="this.Attributes">
+    @if(null != this.HeadingTemplate)
+    {
+        @this.HeadingTemplate(this.Heading)
+    }
+    else
+    {
+        <Heading Level="HeadingLevel.H1" Display="HeadingDisplay.Display4">@this.Heading</Heading>
+    }
+
+    @if(null != this.LeadTemplate)
+    {
+        @this.LeadTemplate(this.Lead);
+    }
+    else
+    {
+        <Paragraph class="@ClassNames.Jumbotrons.Lead">@this.Lead</Paragraph>
+    }
+
+    @this.ChildContent
+</Div>
