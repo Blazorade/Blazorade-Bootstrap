@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorBootstrap.Components.Showroom\BlazorBootstrap.Components.Showroom.csproj" />
-    <ProjectReference Include="..\BlazorBootstrap.Components\BlazorBootstrap.Components.csproj" />
+    <ProjectReference Include="..\Blazorade.Bootstrap.Components.Showroom\Blazorade.Bootstrap.Components.Showroom.csproj" />
+    <ProjectReference Include="..\Blazorade.Bootstrap.Components\Blazorade.Bootstrap.Components.csproj" />
   </ItemGroup>
 
 </Project>
