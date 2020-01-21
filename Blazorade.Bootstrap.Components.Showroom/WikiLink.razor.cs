@@ -27,7 +27,7 @@ namespace Blazorade.Bootstrap.Components.Showroom
 
         protected override void OnParametersSet()
         {
-            this.Url = "https://github.com/MikaBerglund/Blazor-Bootstrap/wiki";
+            this.Url = "https://github.com/Blazorade/Blazorade-Bootstrap/wiki";
             if (!string.IsNullOrEmpty(this.Page))
             {
                 this.Url = $"{this.Url}/{this.Page}";
