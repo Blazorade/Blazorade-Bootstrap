@@ -1,3 +1,0 @@
-﻿BlazorBootstrap.Components.Showroom
-===================================
-
