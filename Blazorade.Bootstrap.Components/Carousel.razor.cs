@@ -16,6 +16,11 @@ namespace Blazorade.Bootstrap.Components
         }
 
 
+        public EventCallback<Carousel> OnSlide { get; set; }
+
+        public EventCallback<Carousel> OnSlid { get; set; }
+
+
 
         [Parameter]
         public bool AutoStart { get; set; }
@@ -33,9 +38,42 @@ namespace Blazorade.Bootstrap.Components
         public IEnumerable<string> ImageUrls { get; set; }
 
 
-        protected int GetSlideCount()
+        public async Task CycleAsync()
         {
-            return this.ImageUrls?.Count() ?? 0;
+
+        }
+
+        public async Task PauseAsync()
+        {
+
+        }
+
+        public async Task CycleToAsync(int slideNumber)
+        {
+
+        }
+
+        public async Task PreviousAsync()
+        {
+
+        }
+
+        public async Task NextAsync()
+        {
+
+        }
+
+        [JSInvokable]
+        public async Task OnSlideAsync()
+        {
+            await this.OnSlide.InvokeAsync(this);
+        }
+
+        [JSInvokable]
+        public async Task OnSlidAsync()
+        {
+            System.Diagnostics.Debug.WriteLine($"Slid: {this.Id}");
+            await this.OnSlid.InvokeAsync(this);
         }
 
         protected override void OnParametersSet()
@@ -46,6 +84,8 @@ namespace Blazorade.Bootstrap.Components
             this.AddAttribute("data-ride", "carousel");
 
             base.OnParametersSet();
+
+            this.SetIdIfEmpty();
         }
 
         protected async override Task OnAfterRenderAsync(bool firstRender)
@@ -56,9 +96,18 @@ namespace Blazorade.Bootstrap.Components
                 {
                     await this.JsInterop.InvokeVoidAsync(JsFunctions.Carousel.Init, $"#{this.Attributes["id"]}");
                 }
+
+                await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Carousel.Slide, this, nameof(this.OnSlideAsync), false);
+                await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Carousel.Slid, this, nameof(this.OnSlidAsync), false);
             }
 
             await base.OnAfterRenderAsync(firstRender);
+        }
+
+
+        private int GetSlideCount()
+        {
+            return this.ImageUrls?.Count() ?? 0;
         }
 
     }
