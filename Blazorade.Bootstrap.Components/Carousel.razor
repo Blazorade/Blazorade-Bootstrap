@@ -8,7 +8,7 @@
             <ol class="@ClassNames.Carousels.Indicators">
                 @for (int i = 0; i < slideCount; i++)
                 {
-                    <li data-target="#@this.Id" data-slide-to="@i"></li>
+                    <li data-target="#@this.Id" data-slide-to="@i" class="@(this.CurrentSlideIndex == i ? "active": "")"></li>
                 }
             </ol>
         }

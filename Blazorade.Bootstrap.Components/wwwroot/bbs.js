@@ -7,14 +7,21 @@ window.blazoradeBootstrap = {
     show: function (elementId) {
         $("#" + elementId).removeClass("d-none");
     },
-    registerEventCallback: function (selector, eventName, callbackTarget, callbackMethodName, singleEvent) {
-        $(selector).on(eventName, function () {
+    registerEventCallback: function (selector, eventName, callbackTarget, callbackMethodName, singleEvent, callbackParameters) {
+        $(selector).on(eventName, function (params) {
             if (singleEvent) {
                 $(selector).off(eventName);
             }
 
             if (callbackMethodName) {
-                callbackTarget.invokeMethodAsync(callbackMethodName);
+                let args = {};
+                if (callbackParameters && callbackParameters.length) {
+                    for (var i = 0; i < callbackParameters.length; i++) {
+                        args[callbackParameters[i]] = params[callbackParameters[i]];
+                    }
+                }
+
+                callbackTarget.invokeMethodAsync(callbackMethodName, args);
             }
             else {
                 console.warn("No callback method was specified for event callback.", selector, eventName);
@@ -50,6 +57,7 @@ window.blazoradeBootstrap = {
             var result = c.carousel();
         },
         command: function (selector, command) {
+            console.log("carousel.command", selector, command);
             $(selector).carousel(command);
         }
     },

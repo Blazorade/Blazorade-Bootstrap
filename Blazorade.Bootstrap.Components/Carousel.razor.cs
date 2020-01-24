@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Blazorade.Bootstrap.Components
@@ -16,10 +17,13 @@ namespace Blazorade.Bootstrap.Components
         }
 
 
-        public EventCallback<Carousel> OnSlide { get; set; }
+        public EventCallback<CarouselSlideEventArgs> OnSlide { get; set; }
 
-        public EventCallback<Carousel> OnSlid { get; set; }
+        public EventCallback<CarouselSlideEventArgs> OnSlid { get; set; }
 
+
+
+        private int CurrentSlideIndex = 0;
 
 
         [Parameter]
@@ -40,40 +44,44 @@ namespace Blazorade.Bootstrap.Components
 
         public async Task CycleAsync()
         {
-            await this.JsInterop.InvokeVoidAsync(JsFunctions.Carousel.Command, "cycle");
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Carousel.Command, $"#{this.Id}", "cycle");
         }
 
         public async Task PauseAsync()
         {
-            await this.JsInterop.InvokeVoidAsync(JsFunctions.Carousel.Command, "pause");
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Carousel.Command, $"#{this.Id}", "pause");
         }
 
-        public async Task CycleToAsync(int slideNumber)
+        public async Task GoToSlideAsync(int slideNumber)
         {
-            await this.JsInterop.InvokeVoidAsync(JsFunctions.Carousel.Command, slideNumber);
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Carousel.Command, $"#{this.Id}", slideNumber);
         }
 
         public async Task PreviousAsync()
         {
-            await this.JsInterop.InvokeVoidAsync(JsFunctions.Carousel.Command, "prev");
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Carousel.Command, $"#{this.Id}", "prev");
         }
 
         public async Task NextAsync()
         {
-            await this.JsInterop.InvokeVoidAsync(JsFunctions.Carousel.Command, "next");
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Carousel.Command, $"#{this.Id}", "next");
         }
 
         [JSInvokable]
-        public async Task OnSlideAsync()
+        public async Task OnSlideAsync(JsonElement args)
         {
-            await this.OnSlide.InvokeAsync(this);
+            var eargs = this.CreateSlideEventArgs(args);
+            this.CurrentSlideIndex = eargs.To;
+            this.StateHasChanged();
+
+            await this.OnSlide.InvokeAsync(eargs);
         }
 
         [JSInvokable]
-        public async Task OnSlidAsync()
+        public async Task OnSlidAsync(JsonElement args)
         {
-            System.Diagnostics.Debug.WriteLine($"Slid: {this.Id}");
-            await this.OnSlid.InvokeAsync(this);
+            var eargs = this.CreateSlideEventArgs(args);
+            await this.OnSlid.InvokeAsync(eargs);
         }
 
         protected override void OnParametersSet()
@@ -97,13 +105,18 @@ namespace Blazorade.Bootstrap.Components
                     await this.JsInterop.InvokeVoidAsync(JsFunctions.Carousel.Init, $"#{this.Attributes["id"]}");
                 }
 
-                await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Carousel.Slide, this, nameof(this.OnSlideAsync), false, new [] { "from", "to" });
-                await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Carousel.Slid, this, nameof(this.OnSlidAsync), false, new[] { "from", "to" });
+                await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Carousel.Slide, this, nameof(this.OnSlideAsync), false, new [] { "from", "to", "direction" });
+                await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Carousel.Slid, this, nameof(this.OnSlidAsync), false, new[] { "from", "to", "direction" });
             }
 
             await base.OnAfterRenderAsync(firstRender);
         }
 
+
+        private CarouselSlideEventArgs CreateSlideEventArgs(JsonElement args)
+        {
+            return new CarouselSlideEventArgs(this, args.GetProperty("from").GetInt32(), args.GetProperty("to").GetInt32(), args.GetProperty("direction").GetString());
+        }
 
         private int GetSlideCount()
         {

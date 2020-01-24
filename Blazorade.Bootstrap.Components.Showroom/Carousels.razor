@@ -9,12 +9,17 @@
 
 
 @code {
-    string img1 = "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=1024";
-    string img2 = "https://images.unsplash.com/photo-1519861531473-9200262188bf?w=1024";
-    string img3 = "https://images.unsplash.com/photo-1516684378628-240d2c5237f5?w=1024";
-    string img4 = "https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=1024";
-    string img5 = "https://images.unsplash.com/photo-1474224017046-182ece80b263?w=1024";
-    string img6 = "https://images.unsplash.com/photo-1538405505827-e519f0efb68e?w=1024";
+    Carousel c1;
+
+    string[] imgArr = new string[]
+    {
+        "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=1024",
+        "https://images.unsplash.com/photo-1519861531473-9200262188bf?w=1024",
+        "https://images.unsplash.com/photo-1516684378628-240d2c5237f5?w=1024",
+        "https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=1024",
+        "https://images.unsplash.com/photo-1474224017046-182ece80b263?w=1024",
+        "https://images.unsplash.com/photo-1538405505827-e519f0efb68e?w=1024"
+    };
 
     bool showControls = true;
     bool showIndicators = true;
@@ -26,10 +31,33 @@
 </p>
 
 
-<Carousel id="carousel-1" Width="ComponentSize.p50" ShowControls="@showControls" ShowIndicators="@showIndicators" ImageUrls="@(new[] { img1, img2, img3, img4, img5, img6 })" MarginBottom="Spacing.Four">
+<Carousel id="carousel-1" @ref="this.c1" Width="ComponentSize.p50" ShowControls="@showControls" ShowIndicators="@showIndicators" ImageUrls="@imgArr" MarginBottom="Spacing.Four">
 </Carousel>
 
-<ButtonGroup>
-    <Button IsActive="@showControls" Color="NamedColor.Primary" IsOutline="@(!showControls)" OnClicked="() => showControls = !showControls">Controls</Button>
-    <Button IsActive="@showIndicators" Color="NamedColor.Primary" IsOutline="@(!showIndicators)" OnClicked="() => showIndicators = !showIndicators">Indicators</Button>
-</ButtonGroup>
+<ButtonToolbar>
+    <ButtonGroup>
+        <Button IsActive="@showControls" Color="NamedColor.Primary" IsOutline="@(!showControls)" OnClicked="() => showControls = !showControls">Controls</Button>
+        <Button IsActive="@showIndicators" Color="NamedColor.Primary" IsOutline="@(!showIndicators)" OnClicked="() => showIndicators = !showIndicators">Indicators</Button>
+    </ButtonGroup>
+    <ButtonGroup MarginLeft="Spacing.Three">
+        <Button Color="NamedColor.Success" IsOutline="true" OnClicked="() => this.c1.CycleAsync()">Cycle</Button>
+        <Button Color="NamedColor.Warning" IsOutline="true" OnClicked="() => this.c1.PauseAsync()">Pause</Button>
+    </ButtonGroup>
+    <ButtonGroup MarginLeft="Spacing.Three">
+        <Button Color="NamedColor.Secondary" IsOutline="true" OnClicked="() => this.c1.PreviousAsync()">&lt;- Prev</Button>
+        <Button Color="NamedColor.Secondary" IsOutline="true" OnClicked="() => this.c1.NextAsync()">Next -&gt;</Button>
+    </ButtonGroup>
+    <ButtonGroup MarginLeft="Spacing.Three">
+        <Dropdown>
+            <DropdownToggleButton Color="NamedColor.Primary" IsOutline="true">Go to</DropdownToggleButton>
+            <DropdownMenu>
+                <DropdownItem Clicked="() => this.c1.GoToSlideAsync(0)">Slide #1</DropdownItem>
+                <DropdownItem Clicked="() => this.c1.GoToSlideAsync(1)">Slide #2</DropdownItem>
+                <DropdownItem Clicked="() => this.c1.GoToSlideAsync(2)">Slide #3</DropdownItem>
+                <DropdownItem Clicked="() => this.c1.GoToSlideAsync(3)">Slide #4</DropdownItem>
+                <DropdownItem Clicked="() => this.c1.GoToSlideAsync(4)">Slide #5</DropdownItem>
+                <DropdownItem Clicked="() => this.c1.GoToSlideAsync(5)">Slide #6</DropdownItem>
+            </DropdownMenu>
+        </Dropdown>
+    </ButtonGroup>
+</ButtonToolbar>
