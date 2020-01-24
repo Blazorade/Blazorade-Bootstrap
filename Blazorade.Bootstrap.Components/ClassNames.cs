@@ -215,8 +215,6 @@ namespace Blazorade.Bootstrap.Components
 
             public const string Indicators = "carousel-indicators";
 
-            public const string Control = "carousel-control";
-
             public const string ControlNext = "carousel-control-next";
 
             public const string ControlPrevious = "carousel-control-prev";

@@ -8,7 +8,7 @@
             <ol class="@ClassNames.Carousels.Indicators">
                 @for (int i = 0; i < slideCount; i++)
                 {
-                    <li data-target="#@this.Attributes["id"]" data-slide-to="@i" class="@(i == 0 ? "active" : "")"></li>
+                    <li data-target="#@this.Id" data-slide-to="@i"></li>
                 }
             </ol>
         }
@@ -31,7 +31,7 @@
 
         @if (this.ShowControls)
         {
-            <CarouselControl Direction="CarouselControlDirection.Previous"></CarouselControl>
-            <CarouselControl Direction="CarouselControlDirection.Next"></CarouselControl>
+            <CarouselControl Direction="CarouselControlDirection.Previous" Carousel="@this"></CarouselControl>
+            <CarouselControl Direction="CarouselControlDirection.Next" Carousel="@this"></CarouselControl>
         }
     </div>

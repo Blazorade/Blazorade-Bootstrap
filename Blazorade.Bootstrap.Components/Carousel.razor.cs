@@ -40,27 +40,27 @@ namespace Blazorade.Bootstrap.Components
 
         public async Task CycleAsync()
         {
-
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Carousel.Command, "cycle");
         }
 
         public async Task PauseAsync()
         {
-
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Carousel.Command, "pause");
         }
 
         public async Task CycleToAsync(int slideNumber)
         {
-
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Carousel.Command, slideNumber);
         }
 
         public async Task PreviousAsync()
         {
-
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Carousel.Command, "prev");
         }
 
         public async Task NextAsync()
         {
-
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Carousel.Command, "next");
         }
 
         [JSInvokable]
@@ -97,8 +97,8 @@ namespace Blazorade.Bootstrap.Components
                     await this.JsInterop.InvokeVoidAsync(JsFunctions.Carousel.Init, $"#{this.Attributes["id"]}");
                 }
 
-                await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Carousel.Slide, this, nameof(this.OnSlideAsync), false);
-                await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Carousel.Slid, this, nameof(this.OnSlidAsync), false);
+                await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Carousel.Slide, this, nameof(this.OnSlideAsync), false, new [] { "from", "to" });
+                await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Carousel.Slid, this, nameof(this.OnSlidAsync), false, new[] { "from", "to" });
             }
 
             await base.OnAfterRenderAsync(firstRender);

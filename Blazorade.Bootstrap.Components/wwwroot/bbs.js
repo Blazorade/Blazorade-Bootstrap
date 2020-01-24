@@ -48,9 +48,9 @@ window.blazoradeBootstrap = {
         carousel: function(selector) {
             var c = $(selector);
             var result = c.carousel();
-
-            var id = c.attr("id");
-            c.find(".carousel-control").attr("data-target", "#" + id);
+        },
+        command: function (selector, command) {
+            $(selector).carousel(command);
         }
     },
 
