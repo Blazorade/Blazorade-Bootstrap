@@ -9,6 +9,9 @@ namespace Blazorade.Bootstrap.Components
     {
 
         [Parameter]
+        public string ImageUrl { get; set; }
+
+        [Parameter]
         public bool IsActive { get; set; }
 
         protected override void OnParametersSet()

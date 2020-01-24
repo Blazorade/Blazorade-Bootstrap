@@ -1,5 +1,12 @@
 ﻿@inherits BootstrapComponentBase
 
-<div @attributes="this.Attributes">
-    @this.ChildContent
-</div>
+    <div @attributes="this.Attributes">
+        @if (!string.IsNullOrEmpty(this.ImageUrl))
+        {
+            <CarouselImage Src="@this.ImageUrl" />
+        }
+        else
+        {
+            @this.ChildContent
+        }
+    </div>

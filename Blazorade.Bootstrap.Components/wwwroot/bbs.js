@@ -52,12 +52,24 @@ window.blazoradeBootstrap = {
     },
 
     carousels: {
-        carousel: function(selector) {
+        carousel: function(selector, autoStart, interval) {
             var c = $(selector);
-            var result = c.carousel();
+
+
+            let activeItem = c.find(".carousel-item.active");
+            console.log("active-item", activeItem);
+            if (!activeItem.length) {
+                c.find(".carousel-item").first().addClass("active");
+            }
+
+            let options = {
+                "interval": interval,
+                "ride": autoStart ? "carousel" : false
+            };
+            c.carousel("dispose");
+            c.carousel(options);
         },
         command: function (selector, command) {
-            console.log("carousel.command", selector, command);
             $(selector).carousel(command);
         }
     },

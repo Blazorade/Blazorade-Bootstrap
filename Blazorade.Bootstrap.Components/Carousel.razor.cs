@@ -14,20 +14,53 @@ namespace Blazorade.Bootstrap.Components
         public Carousel()
         {
             this.AutoStart = true;
+            this.Interval = 5000;
+            this.TransitionType = CarouselTransitionType.Slide;
         }
 
 
+        [Parameter]
         public EventCallback<CarouselSlideEventArgs> OnSlide { get; set; }
 
+        [Parameter]
         public EventCallback<CarouselSlideEventArgs> OnSlid { get; set; }
 
 
 
         private int CurrentSlideIndex = 0;
+        private bool RequiresInit = true;
 
+
+        private bool _AutoStart = true;
+        [Parameter]
+        public bool AutoStart
+        {
+            get { return _AutoStart; }
+            set
+            {
+                this.RequiresInit = _AutoStart != value || this.RequiresInit;
+                _AutoStart = value;
+            }
+        }
 
         [Parameter]
-        public bool AutoStart { get; set; }
+        public IEnumerable<string> ImageUrls { get; set; }
+
+        private int _Interval = 5000;
+
+        [Parameter]
+        public int Interval
+        {
+            get { return _Interval; }
+            set
+            {
+                this.RequiresInit = _Interval != value || this.RequiresInit;
+                _Interval = value;
+            }
+        }
+
+        [Parameter]
+        public RenderFragment ItemsTemplate { get; set; }
 
         [Parameter]
         public bool ShowControls { get; set; }
@@ -35,11 +68,12 @@ namespace Blazorade.Bootstrap.Components
         [Parameter]
         public bool ShowIndicators { get; set; }
 
+        [Parameter]
+        public CarouselTransitionType TransitionType { get; set; }
+
         [Inject]
         protected IJSRuntime JsInterop { get; set; }
 
-        [Parameter]
-        public IEnumerable<string> ImageUrls { get; set; }
 
 
         public async Task CycleAsync()
@@ -84,28 +118,34 @@ namespace Blazorade.Bootstrap.Components
             await this.OnSlid.InvokeAsync(eargs);
         }
 
+
+
         protected override void OnParametersSet()
         {
             this.SetIdIfEmpty();
 
             this.AddClass(ClassNames.Carousels.Carousel);
+            if(this.TransitionType == CarouselTransitionType.Fade)
+            {
+                this.AddClass(ClassNames.Carousels.Fade);
+            }
+
             this.AddAttribute("data-ride", "carousel");
 
             base.OnParametersSet();
-
-            this.SetIdIfEmpty();
         }
 
         protected async override Task OnAfterRenderAsync(bool firstRender)
         {
-            if (firstRender)
+            if (this.RequiresInit)
             {
-                if (this.AutoStart)
-                {
-                    await this.JsInterop.InvokeVoidAsync(JsFunctions.Carousel.Init, $"#{this.Attributes["id"]}");
-                }
+                this.RequiresInit = false;
 
-                await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Carousel.Slide, this, nameof(this.OnSlideAsync), false, new [] { "from", "to", "direction" });
+
+                await this.JsInterop.InvokeVoidAsync(JsFunctions.Carousel.Init, $"#{this.Attributes["id"]}", this.AutoStart, this.Interval);
+
+                // The initialization process will dispose the carousel, so we need to register for the callback events after initializing.
+                await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Carousel.Slide, this, nameof(this.OnSlideAsync), false, new[] { "from", "to", "direction" });
                 await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Carousel.Slid, this, nameof(this.OnSlidAsync), false, new[] { "from", "to", "direction" });
             }
 
