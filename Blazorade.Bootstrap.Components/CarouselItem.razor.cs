@@ -7,22 +7,11 @@ namespace Blazorade.Bootstrap.Components
 {
     public partial class CarouselItem
     {
-
-        [Parameter]
-        public string ImageUrl { get; set; }
-
-        [Parameter]
-        public bool IsActive { get; set; }
-
         protected override void OnParametersSet()
         {
+            this.Height = this.Height ?? ComponentSize.p100;
+
             this.AddClass(ClassNames.Carousels.Item);
-
-            if (this.IsActive)
-            {
-                this.AddClass(ClassNames.Active);
-            }
-
             base.OnParametersSet();
         }
     }

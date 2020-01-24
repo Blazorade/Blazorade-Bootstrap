@@ -1,5 +1,9 @@
 ﻿@inherits BootstrapComponentBase
 
+@{
+    string innerClasses = $"{ClassNames.Carousels.Inner} h-100";
+}
+
 <div @attributes="this.Attributes">
     @if (this.ShowIndicators)
     {
@@ -12,7 +16,7 @@
             }
         </ol>
     }
-    <CarouselInner>
+    <Div class="@innerClasses">
         @if (null != this.ItemsTemplate)
         {
             @this.ItemsTemplate
@@ -28,7 +32,7 @@
         {
             <Span>No content</Span>
         }
-    </CarouselInner>
+    </Div>
 
     @if (this.ShowControls)
     {

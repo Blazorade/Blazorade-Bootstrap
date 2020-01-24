@@ -54,7 +54,7 @@
           OnSlide='(e) => this.latestEvent = $"Slide - From: {e.From}, To: {e.To}, Direction: {e.Direction}"'
           OnSlid='(e) => this.latestEvent = $"Slid - From: {e.From}, To: {e.To}, Direction: {e.Direction}"'
 
-          Height="ComponentSize.p100"
+          style="height: 320px"
 >
     <ItemsTemplate>
         <CarouselItem>
@@ -63,12 +63,12 @@
                 <Paragraph>Here are some basketball pictures to show how the <WikiLink Page="Carousel">Carousel</WikiLink> component works.</Paragraph>
             </div>
         </CarouselItem>
-        <CarouselItem ImageUrl="@imgArr[0]" />
-        <CarouselItem ImageUrl="@imgArr[1]" />
-        <CarouselItem ImageUrl="@imgArr[2]" />
-        <CarouselItem ImageUrl="@imgArr[3]" />
-        <CarouselItem ImageUrl="@imgArr[4]" />
-        <CarouselItem ImageUrl="@imgArr[5]" />
+        <ImageCarouselItem ImageUrl="@imgArr[0]" CaptionTitle="Swissshhh!" CaptionBody="The ball has just gone through the sock." />
+        <ImageCarouselItem ImageUrl="@imgArr[1]" />
+        <ImageCarouselItem ImageUrl="@imgArr[2]" />
+        <ImageCarouselItem ImageUrl="@imgArr[3]" />
+        <ImageCarouselItem ImageUrl="@imgArr[4]" />
+        <ImageCarouselItem ImageUrl="@imgArr[5]" />
     </ItemsTemplate>
 </Carousel>
 
