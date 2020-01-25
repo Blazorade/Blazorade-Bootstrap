@@ -20,6 +20,7 @@ namespace Blazorade.Bootstrap.Components
         {
             this.Attributes = new Dictionary<string, object>();
             this.Classes = new List<string>();
+            this.Styles = new Dictionary<string, string>();
         }
 
 
@@ -158,12 +159,14 @@ namespace Blazorade.Bootstrap.Components
 
         private IList<string> Classes { get; }
 
+        private IDictionary<string, string> Styles { get; }
 
 
         public override Task SetParametersAsync(ParameterView parameters)
         {
             this.Attributes.Clear();
             this.Classes.Clear();
+            this.Styles.Clear();
 
             return base.SetParametersAsync(parameters);
         }
@@ -200,6 +203,24 @@ namespace Blazorade.Bootstrap.Components
                 return true;
             }
 
+            return false;
+        }
+
+        /// <summary>
+        /// Adds the given style to the styles dictionary, which then will be rendered on the style attribute.
+        /// </summary>
+        /// <param name="name">The name of the style to add.</param>
+        /// <param name="value">The value of the style.</param>
+        /// <param name="overwrite">Overwrite an existing value.</param>
+        /// <returns>Returns <c>true</c> if the style was added. False if the given style already existed and <paramref name="overwrite"/> was not specified.</returns>
+        protected bool AddStyle(string name, string value, bool overwrite = false)
+        {
+            if(!this.Styles.ContainsKey(name) || overwrite)
+            {
+                this.Styles[name] = value;
+                this.HandleStyles();
+                return true;
+            }
             return false;
         }
 
@@ -370,6 +391,17 @@ namespace Blazorade.Bootstrap.Components
             return false;
         }
 
+        protected bool RemoveStyle(string name)
+        {
+            if(this.Styles.ContainsKey(name))
+            {
+                this.Styles.Remove(name);
+                this.HandleStyles();
+                return true;
+            }
+            return false;
+        }
+
         /// <summary>
         /// Sets the <c>id</c> attribute if it has not already been set.
         /// </summary>
@@ -411,5 +443,16 @@ namespace Blazorade.Bootstrap.Components
             }
         }
 
+        private void HandleStyles()
+        {
+            if(this.Styles.Count > 0)
+            {
+                this.Attributes["style"] = string.Join("; ", from x in this.Styles select $"{x.Key}: {x.Value}");
+            }
+            else if(this.Attributes.ContainsKey("style"))
+            {
+                this.Attributes.Remove("style");
+            }
+        }
     }
 }

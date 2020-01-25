@@ -209,13 +209,13 @@ namespace Blazorade.Bootstrap.Components
         {
             public const string Carousel = "carousel slide";
 
+            public const string Fade = "carousel-fade";
+
             public const string Inner = "carousel-inner";
 
             public const string Item = "carousel-item";
 
             public const string Indicators = "carousel-indicators";
-
-            public const string Control = "carousel-control";
 
             public const string ControlNext = "carousel-control-next";
 
