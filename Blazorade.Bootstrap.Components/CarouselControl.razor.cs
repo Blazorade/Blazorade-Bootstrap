@@ -15,6 +15,12 @@ namespace Blazorade.Bootstrap.Components
         [Parameter]
         public override RenderFragment ChildContent { get => base.ChildContent; set => throw new NotSupportedException("This control does not support child content."); }
 
+        /// <summary>
+        /// A reference to the carousel the control belongs to.
+        /// </summary>
+        [Parameter]
+        public Carousel Carousel { get; set; }
+
 
         [Parameter]
         public CarouselControlDirection Direction { get; set; }
@@ -22,7 +28,7 @@ namespace Blazorade.Bootstrap.Components
 
         protected override void OnParametersSet()
         {
-            this.AddClass(ClassNames.Carousels.Control);
+            this.AddAttribute("href", $"#{this.Carousel.Id}");
 
             if(this.Direction == CarouselControlDirection.Next)
             {

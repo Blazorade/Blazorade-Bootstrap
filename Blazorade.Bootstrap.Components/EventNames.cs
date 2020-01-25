@@ -14,6 +14,13 @@ namespace Blazorade.Bootstrap.Components
             public const string Closed = "closed.bs.alert";
         }
 
+        public static class Carousel
+        {
+            public const string Slide = "slide.bs.carousel";
+
+            public const string Slid = "slid.bs.carousel";
+        }
+
         public static class Collapse
         {
             public const string Hide = "hide.bs.collapse";

@@ -40,6 +40,10 @@ namespace Blazorade.Bootstrap.Components
             private const string CarouselRoot = Root + "carousels.";
 
             public const string Init = CarouselRoot + "carousel";
+
+            public const string Command = CarouselRoot + "command";
+
+            public const string SlideCount = CarouselRoot + "slideCount";
         }
 
         public static class Collapse

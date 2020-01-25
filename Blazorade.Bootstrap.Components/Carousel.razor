@@ -1,37 +1,36 @@
 ﻿@inherits BootstrapComponentBase
 
-    <div @attributes="this.Attributes">
-        @if (this.ShowIndicators)
-        {
-            var slideCount = this.GetSlideCount();
+@{
+    string innerClasses = $"{ClassNames.Carousels.Inner} h-100";
+}
 
-            <ol class="@ClassNames.Carousels.Indicators">
-                @for (int i = 0; i < slideCount; i++)
-                {
-                    <li data-target="#@this.Attributes["id"]" data-slide-to="@i" class="@(i == 0 ? "active" : "")"></li>
-                }
-            </ol>
-        }
-        <CarouselInner>
-            @if(this.ImageUrls?.Count() > 0)
+<div @attributes="this.Attributes">
+    @if (this.ShowIndicators)
+    {
+        <ol class="@ClassNames.Carousels.Indicators">
+            @for (int i = 0; i < this.SlideCount; i++)
             {
-                var itemIndex = 0;
-
-                @foreach(var url in this.ImageUrls)
-                {
-                    var isActive = itemIndex == 0;
-                    <CarouselItem IsActive="@isActive">
-                        <CarouselImage Src="@url" />
-                    </CarouselItem>
-
-                    itemIndex++;
-                }
+                <li data-target="#@this.Id" data-slide-to="@i" class="@(this.CurrentSlideIndex == i ? "active": "")"></li>
             }
-        </CarouselInner>
-
-        @if (this.ShowControls)
+        </ol>
+    }
+    <Div class="@innerClasses">
+        @if (null != this.ImageUrls)
         {
-            <CarouselControl Direction="CarouselControlDirection.Previous"></CarouselControl>
-            <CarouselControl Direction="CarouselControlDirection.Next"></CarouselControl>
+            @for (var i = 0; i < this.ImageUrls.Count(); i++)
+            {
+                <CarouselItem ImageUrl="@this.ImageUrls.ElementAt(i)" />
+            }
         }
-    </div>
+        else
+        {
+            @this.ChildContent
+        }
+    </Div>
+
+    @if (this.ShowControls)
+    {
+        <CarouselControl Direction="CarouselControlDirection.Previous" Carousel="@this"></CarouselControl>
+        <CarouselControl Direction="CarouselControlDirection.Next" Carousel="@this"></CarouselControl>
+    }
+</div>

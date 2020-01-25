@@ -7,14 +7,21 @@ window.blazoradeBootstrap = {
     show: function (elementId) {
         $("#" + elementId).removeClass("d-none");
     },
-    registerEventCallback: function (selector, eventName, callbackTarget, callbackMethodName, singleEvent) {
-        $(selector).on(eventName, function () {
+    registerEventCallback: function (selector, eventName, callbackTarget, callbackMethodName, singleEvent, callbackParameters) {
+        $(selector).on(eventName, function (params) {
             if (singleEvent) {
                 $(selector).off(eventName);
             }
 
             if (callbackMethodName) {
-                callbackTarget.invokeMethodAsync(callbackMethodName);
+                let args = {};
+                if (callbackParameters && callbackParameters.length) {
+                    for (var i = 0; i < callbackParameters.length; i++) {
+                        args[callbackParameters[i]] = params[callbackParameters[i]];
+                    }
+                }
+
+                callbackTarget.invokeMethodAsync(callbackMethodName, args);
             }
             else {
                 console.warn("No callback method was specified for event callback.", selector, eventName);
@@ -45,12 +52,29 @@ window.blazoradeBootstrap = {
     },
 
     carousels: {
-        carousel: function(selector) {
+        carousel: function(selector, autoStart, interval) {
             var c = $(selector);
-            var result = c.carousel();
 
-            var id = c.attr("id");
-            c.find(".carousel-control").attr("data-target", "#" + id);
+
+            let activeItem = c.find(".carousel-item.active");
+            if (!activeItem.length) {
+                c.find(".carousel-item").first().addClass("active");
+            }
+
+            let options = {
+                "interval": interval,
+                "ride": autoStart ? "carousel" : false
+            };
+            c.carousel("dispose");
+            c.carousel(options);
+        },
+        command: function (selector, command) {
+            $(selector).carousel(command);
+        },
+        slideCount: function (selector) {
+            var c = $(selector);
+            var items = c.find(".carousel-item");
+            return items.length;
         }
     },
 
