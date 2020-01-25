@@ -17,11 +17,7 @@
         </ol>
     }
     <Div class="@innerClasses">
-        @if (null != this.ItemsTemplate)
-        {
-            @this.ItemsTemplate
-        }
-        else if (null != this.ImageUrls)
+        @if (null != this.ImageUrls)
         {
             @for (var i = 0; i < this.ImageUrls.Count(); i++)
             {
@@ -30,7 +26,7 @@
         }
         else
         {
-            <Span>No content</Span>
+            @this.ChildContent
         }
     </Div>
 

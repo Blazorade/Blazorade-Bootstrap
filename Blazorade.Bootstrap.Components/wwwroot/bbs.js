@@ -57,7 +57,6 @@ window.blazoradeBootstrap = {
 
 
             let activeItem = c.find(".carousel-item.active");
-            console.log("active-item", activeItem);
             if (!activeItem.length) {
                 c.find(".carousel-item").first().addClass("active");
             }

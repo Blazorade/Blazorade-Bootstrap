@@ -1,0 +1,16 @@
+﻿@page "/"
+
+<h1>Hello, world!</h1>
+
+@*<div id="carousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=1024" class="d-block w-100" />
+        </div>
+    </div>
+</div>*@
+
+<Carousel Interval="2000" AutoStart="false" ShowControls="true" ShowIndicators="true">
+    <CarouselItem CaptionHeading="Hello World!" BackgroundColor="NamedColor.Dark" CaptionBody="This is the body text of the caption" ImageUrl="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=1024"></CarouselItem>
+    <CarouselItem CaptionHeading="Slide #2" CaptionBody="This is the second, and last, slide in the slide show" BackgroundColor="NamedColor.Dark" />
+</Carousel>

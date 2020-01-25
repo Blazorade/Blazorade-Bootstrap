@@ -60,9 +60,6 @@ namespace Blazorade.Bootstrap.Components
         }
 
         [Parameter]
-        public RenderFragment ItemsTemplate { get; set; }
-
-        [Parameter]
         public bool ShowControls { get; set; }
 
         [Parameter]

@@ -31,45 +31,39 @@
     CarouselTransitionType transitionType = CarouselTransitionType.Slide;
 }
 
-<Heading Level="HeadingLevel.H3">Setting Options</Heading>
-<p>
+<Heading Id="customizing" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Customizing the Carousel</Heading>
+<Paragraph>
     Use the options below to modify the carousel.
-</p>
+</Paragraph>
 
-
-<Carousel 
-          @ref="this.c1" 
-          Id="carousel-1" 
-          
-          Width="ComponentSize.p50" 
-          
-          ShowControls="@showControls" 
-          ShowIndicators="@showIndicators" 
-          AutoStart="@autoStart" 
+<Carousel @ref="this.c1"
+          Id="carousel-1"
+          Width="ComponentSize.p50"
+          ShowControls="@showControls"
+          ShowIndicators="@showIndicators"
+          AutoStart="@autoStart"
           Interval="@interval"
           TransitionType="@transitionType"
-          
           ImageUrls="@imgArr"
-
           OnSlide='(e) => this.latestEvent = $"Slide - From: {e.From}, To: {e.To}, Direction: {e.Direction}"'
           OnSlid='(e) => this.latestEvent = $"Slid - From: {e.From}, To: {e.To}, Direction: {e.Direction}"'
+          style="height: 320px">
 
-          style="height: 320px"
->
-    <ItemsTemplate>
-        <CarouselItem>
-            <div class="carousel-caption d-md-block">
-                <Heading Level="HeadingLevel.H5">Image Carousel</Heading>
-                <Paragraph>Here are some basketball pictures to show how the <WikiLink Page="Carousel">Carousel</WikiLink> component works.</Paragraph>
-            </div>
-        </CarouselItem>
-        <ImageCarouselItem ImageUrl="@imgArr[0]" CaptionTitle="Swissshhh!" CaptionBody="The ball has just gone through the sock." />
-        <ImageCarouselItem ImageUrl="@imgArr[1]" />
-        <ImageCarouselItem ImageUrl="@imgArr[2]" />
-        <ImageCarouselItem ImageUrl="@imgArr[3]" />
-        <ImageCarouselItem ImageUrl="@imgArr[4]" />
-        <ImageCarouselItem ImageUrl="@imgArr[5]" />
-    </ItemsTemplate>
+    <CarouselItem BackgroundColor="NamedColor.Dark" CaptionHeading="Image Carousel" CaptionBody="Here are some basketball picture to show how the Carousel component works." />
+    <CarouselItem Id="lead-slide" BackgroundColor="NamedColor.Dark" CaptionHeading="Image Carousel">
+        <CaptionHeadingTemplate>
+            <Heading Level="HeadingLevel.H5">@context</Heading>
+        </CaptionHeadingTemplate>
+        <CaptionBodyTemplate>
+            <Paragraph>Here are some basketball pictures to show how the <WikiLink Page="Carousel">Carousel</WikiLink> component works.</Paragraph>
+        </CaptionBodyTemplate>
+    </CarouselItem>
+    <CarouselItem Id="img-slide-0" ImageUrl="@imgArr[0]" ImageScaling="ImageScaleMode.Fill" CaptionHeading="Swissshhh!" CaptionBody="The ball has just gone through the sock." BackgroundColor="NamedColor.Dark" />
+    <CarouselItem Id="img-slide-1" ImageUrl="@imgArr[1]" ImageScaling="ImageScaleMode.Fill" CaptionHeading="Here we go!" CaptionBody="The rain has gone, and now we can start playing." />
+    <CarouselItem Id="img-slide-2" ImageUrl="@imgArr[2]" ImageScaling="ImageScaleMode.Fill" />
+    <CarouselItem Id="img-slide-3" ImageUrl="@imgArr[3]" ImageScaling="ImageScaleMode.Fit" BackgroundColor="NamedColor.Warning" CaptionHeading="Arena" CaptionBody="This slide uses ImageScaleMode.Fit to show the entire picture. The background can show on the sides when you resize the page." />
+    <CarouselItem Id="img-slide-4" ImageUrl="@imgArr[4]" ImageScaling="ImageScaleMode.Fill" CaptionHeading="Sunset" CaptionBody="Playing basketball at sunset can be refreshing." CustomCaptionBackgroundColor="#ffffffbb" CaptionTextColor="NamedColor.Dark" />
+    <CarouselItem Id="img-slide-5" ImageUrl="@imgArr[5]" ImageScaling="ImageScaleMode.Fill" CaptionHeading="Slam dunk!" CaptionBody="This guy just flying through the air all the way from the 3-point line towards the basket." CustomCaptionBackgroundColor="#00000099" />
 </Carousel>
 
 
@@ -98,6 +92,7 @@
                 <DropdownItem Clicked="() => this.c1.GoToSlideAsync(3)">Slide #4</DropdownItem>
                 <DropdownItem Clicked="() => this.c1.GoToSlideAsync(4)">Slide #5</DropdownItem>
                 <DropdownItem Clicked="() => this.c1.GoToSlideAsync(5)">Slide #6</DropdownItem>
+                <DropdownItem Clicked="() => this.c1.GoToSlideAsync(6)">Slide #7</DropdownItem>
             </DropdownMenu>
         </Dropdown>
     </ButtonGroup>
@@ -119,3 +114,28 @@
         </Dropdown>
     </ButtonGroup>
 </ButtonToolbar>
+
+
+<Heading Id="images-only" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Images Only</Heading>
+<Paragraph>
+    The carousel below shows just a deck of images.
+</Paragraph>
+
+<Carousel ImageUrls="@this.imgArr" Interval="2000" ShowControls="true" ShowIndicators="true" Width="ComponentSize.p50" />
+
+
+<Heading Id="custom-content" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Custom Content</Heading>
+<Paragraph>
+    This sample shows you how you can use just about any content in your carousel. Here, we use both a <WikiLink Page="Jumbotron">Jumbotron</WikiLink>
+    and a <WikiLink Page="Card">Card</WikiLink> component.
+</Paragraph>
+
+<Carousel Interval="2000" Width="ComponentSize.p50" ShowControls="true" ShowIndicators="true">
+
+    <CarouselItem>
+        <Jumbotron Heading="Custom Carousel Slide" Lead="How to use a Jumbotron inside of a Carousel component." />
+    </CarouselItem>
+    <CarouselItem>
+        <Card Header="Card Slide Item" Title="Card in a Carousel" Text="Here we have a card inside of a Carousel component." />
+    </CarouselItem>
+</Carousel>
