@@ -65,6 +65,8 @@ namespace Blazorade.Bootstrap.Components
         [Parameter]
         public bool ShowIndicators { get; set; }
 
+        public int SlideCount { get; private set; }
+
         [Parameter]
         public CarouselTransitionType TransitionType { get; set; }
 
@@ -76,6 +78,11 @@ namespace Blazorade.Bootstrap.Components
         public async Task CycleAsync()
         {
             await this.JsInterop.InvokeVoidAsync(JsFunctions.Carousel.Command, $"#{this.Id}", "cycle");
+        }
+
+        public async Task<int?> GetSlideCountAsync()
+        {
+            return await this.JsInterop.InvokeAsync<int?>(JsFunctions.Carousel.SlideCount, $"#{this.Id}");
         }
 
         public async Task PauseAsync()
@@ -146,18 +153,21 @@ namespace Blazorade.Bootstrap.Components
                 await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Carousel.Slid, this, nameof(this.OnSlidAsync), false, new[] { "from", "to", "direction" });
             }
 
+            var count = await this.GetSlideCountAsync();
+            if(this.SlideCount != count)
+            {
+                this.SlideCount = count.GetValueOrDefault();
+                this.StateHasChanged();
+            }
+
             await base.OnAfterRenderAsync(firstRender);
         }
+
 
 
         private CarouselSlideEventArgs CreateSlideEventArgs(JsonElement args)
         {
             return new CarouselSlideEventArgs(this, args.GetProperty("from").GetInt32(), args.GetProperty("to").GetInt32(), args.GetProperty("direction").GetString());
-        }
-
-        private int GetSlideCount()
-        {
-            return this.ImageUrls?.Count() ?? 0;
         }
 
     }

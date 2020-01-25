@@ -70,6 +70,11 @@ window.blazoradeBootstrap = {
         },
         command: function (selector, command) {
             $(selector).carousel(command);
+        },
+        slideCount: function (selector) {
+            var c = $(selector);
+            var items = c.find(".carousel-item");
+            return items.length;
         }
     },
 

@@ -7,10 +7,8 @@
 <div @attributes="this.Attributes">
     @if (this.ShowIndicators)
     {
-        var slideCount = this.GetSlideCount();
-
         <ol class="@ClassNames.Carousels.Indicators">
-            @for (int i = 0; i < slideCount; i++)
+            @for (int i = 0; i < this.SlideCount; i++)
             {
                 <li data-target="#@this.Id" data-slide-to="@i" class="@(this.CurrentSlideIndex == i ? "active": "")"></li>
             }

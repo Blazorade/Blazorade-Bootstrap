@@ -44,12 +44,10 @@
           AutoStart="@autoStart"
           Interval="@interval"
           TransitionType="@transitionType"
-          ImageUrls="@imgArr"
           OnSlide='(e) => this.latestEvent = $"Slide - From: {e.From}, To: {e.To}, Direction: {e.Direction}"'
           OnSlid='(e) => this.latestEvent = $"Slid - From: {e.From}, To: {e.To}, Direction: {e.Direction}"'
           style="height: 320px">
 
-    <CarouselItem BackgroundColor="NamedColor.Dark" CaptionHeading="Image Carousel" CaptionBody="Here are some basketball picture to show how the Carousel component works." />
     <CarouselItem Id="lead-slide" BackgroundColor="NamedColor.Dark" CaptionHeading="Image Carousel">
         <CaptionHeadingTemplate>
             <Heading Level="HeadingLevel.H5">@context</Heading>
