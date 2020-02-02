@@ -129,7 +129,7 @@ namespace Blazorade.Bootstrap.Components
 
         protected override void OnParametersSet()
         {
-            this.AddClass(ClassNames.Collapses.Collapse);
+            this.AddClasses(ClassNames.Collapses.Collapse);
             base.OnParametersSet();
 
             this.SetIdIfEmpty();

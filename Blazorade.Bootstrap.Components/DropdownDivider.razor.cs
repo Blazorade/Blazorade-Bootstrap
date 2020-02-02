@@ -9,7 +9,7 @@ namespace Blazorade.Bootstrap.Components
 
         protected override void OnParametersSet()
         {
-            this.AddClass(ClassNames.Dropdowns.Divider);
+            this.AddClasses(ClassNames.Dropdowns.Divider);
             base.OnParametersSet();
         }
 

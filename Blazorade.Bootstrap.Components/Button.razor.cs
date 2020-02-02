@@ -64,31 +64,31 @@ namespace Blazorade.Bootstrap.Components
 
         protected override void OnParametersSet()
         {
-            this.AddClass(ClassNames.Buttons.Button);
+            this.AddClasses(ClassNames.Buttons.Button);
 
             if(this.Color.HasValue)
             {
-                this.AddClass(this.GetColorClassName(prefix: !this.IsOutline ? ClassNames.Buttons.Button : ClassNames.Buttons.OutlineButton, color: this.Color));
+                this.AddClasses(this.GetColorClassName(prefix: !this.IsOutline ? ClassNames.Buttons.Button : ClassNames.Buttons.OutlineButton, color: this.Color));
             }
 
             if (this.IsBlockLevel)
             {
-                this.AddClass(ClassNames.Buttons.BlockLevel);
+                this.AddClasses(ClassNames.Buttons.BlockLevel);
             }
 
             if (this.IsActive)
             {
-                this.AddClass(ClassNames.Active);
+                this.AddClasses(ClassNames.Active);
             }
 
             switch (this.Size.GetValueOrDefault())
             {
                 case ButtonSize.Large:
-                    this.AddClass(ClassNames.Buttons.Large);
+                    this.AddClasses(ClassNames.Buttons.Large);
                     break;
 
                 case ButtonSize.Small:
-                    this.AddClass(ClassNames.Buttons.Small);
+                    this.AddClasses(ClassNames.Buttons.Small);
                     break;
             }
 

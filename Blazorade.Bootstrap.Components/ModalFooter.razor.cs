@@ -9,7 +9,7 @@ namespace Blazorade.Bootstrap.Components
 
         protected override void OnParametersSet()
         {
-            this.AddClass(ClassNames.Modals.Footer);
+            this.AddClasses(ClassNames.Modals.Footer);
             base.OnParametersSet();
         }
     }

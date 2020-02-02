@@ -9,7 +9,7 @@ namespace Blazorade.Bootstrap.Components
 
         protected override void OnParametersSet()
         {
-            this.AddClass(ClassNames.BlockQuotes.Blockquote);
+            this.AddClasses(ClassNames.BlockQuotes.Blockquote);
             base.OnParametersSet();
         }
     }

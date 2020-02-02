@@ -16,15 +16,15 @@ namespace Blazorade.Bootstrap.Components
             switch(this.ContentAlignment.GetValueOrDefault())
             {
                 case NavContentAlignment.Center:
-                    this.AddClass(ClassNames.Navs.AlignContentCenter);
+                    this.AddClasses(ClassNames.Navs.AlignContentCenter);
                     break;
 
                 case NavContentAlignment.Right:
-                    this.AddClass(ClassNames.Navs.AlignContentRight);
+                    this.AddClasses(ClassNames.Navs.AlignContentRight);
                     break;
             }
 
-            this.AddClass(ClassNames.Navs.Nav);
+            this.AddClasses(ClassNames.Navs.Nav);
             base.OnParametersSet();
         }
     }

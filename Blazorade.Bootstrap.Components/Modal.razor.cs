@@ -170,10 +170,10 @@ namespace Blazorade.Bootstrap.Components
         {
             this.SetIdIfEmpty();
 
-            this.AddClass(ClassNames.Modals.Modal);
+            this.AddClasses(ClassNames.Modals.Modal);
             if (this.Fade)
             {
-                this.AddClass(ClassNames.Fade);
+                this.AddClasses(ClassNames.Fade);
             }
 
             this.AddAttribute("role", "dialog");

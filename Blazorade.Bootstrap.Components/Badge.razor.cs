@@ -36,8 +36,8 @@ namespace Blazorade.Bootstrap.Components
 
         protected override void OnParametersSet()
         {
-            this.AddClass(ClassNames.Badges.Badge);
-            if (this.IsPill) this.AddClass(ClassNames.Badges.Pill);
+            this.AddClasses(ClassNames.Badges.Badge);
+            if (this.IsPill) this.AddClasses(ClassNames.Badges.Pill);
             if (!string.IsNullOrEmpty(this.Link)) this.AddAttribute("href", this.Link);
             if (this.OpenLinkInNewTab) this.AddAttribute("target", "_blank");
             base.OnParametersSet();

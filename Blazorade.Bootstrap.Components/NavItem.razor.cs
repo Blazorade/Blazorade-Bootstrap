@@ -57,7 +57,7 @@ namespace Blazorade.Bootstrap.Components
                 this.Item.Url = this.Url;
             }
 
-            this.AddClass(ClassNames.Navbars.NavItem);
+            this.AddClasses(ClassNames.Navbars.NavItem);
             base.OnParametersSet();
         }
 

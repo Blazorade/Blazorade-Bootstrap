@@ -23,7 +23,7 @@ namespace Blazorade.Bootstrap.Components
 
         protected override void OnParametersSet()
         {
-            this.AddClass(ClassNames.Jumbotrons.Jumbotron);
+            this.AddClasses(ClassNames.Jumbotrons.Jumbotron);
 
             base.OnParametersSet();
         }

@@ -9,7 +9,7 @@ namespace Blazorade.Bootstrap.Components
 
         protected override void OnParametersSet()
         {
-            this.AddClass(ClassNames.ButtonToolbars.Toolbar);
+            this.AddClasses(ClassNames.ButtonToolbars.Toolbar);
 
             base.OnParametersSet();
         }

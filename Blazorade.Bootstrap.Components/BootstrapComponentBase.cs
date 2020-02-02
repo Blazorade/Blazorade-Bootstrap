@@ -10,7 +10,7 @@ namespace Blazorade.Bootstrap.Components
     /// <summary>
     /// Base implementation for all Blazor Boostrap components.
     /// </summary>
-    public abstract class BootstrapComponentBase : ComponentBase
+    public abstract class BootstrapComponentBase : Blazorade.Core.Components.BlazoradeComponentBase
     {
 
         /// <summary>
@@ -18,9 +18,6 @@ namespace Blazorade.Bootstrap.Components
         /// </summary>
         protected BootstrapComponentBase()
         {
-            this.Attributes = new Dictionary<string, object>();
-            this.Classes = new List<string>();
-            this.Styles = new Dictionary<string, string>();
         }
 
 
@@ -122,12 +119,6 @@ namespace Blazorade.Bootstrap.Components
 
         #endregion
 
-        /// <summary>
-        /// A collection of attributes that will be merged onto the component when rendered.
-        /// </summary>
-        [Parameter(CaptureUnmatchedValues = true)]
-        public IDictionary<string, object> Attributes { get; set; }
-
         [Parameter]
         public string Id { get; set; }
 
@@ -157,82 +148,6 @@ namespace Blazorade.Bootstrap.Components
 
 
 
-        private IList<string> Classes { get; }
-
-        private IDictionary<string, string> Styles { get; }
-
-
-        public override Task SetParametersAsync(ParameterView parameters)
-        {
-            this.Attributes.Clear();
-            this.Classes.Clear();
-            this.Styles.Clear();
-
-            return base.SetParametersAsync(parameters);
-        }
-
-
-
-        protected bool AddAttribute(string name, object value, bool overwrite = false)
-        {
-            if(!this.Attributes.ContainsKey(name) || overwrite)
-            {
-                this.Attributes[name] = value;
-                return true;
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// Adds the given class to the <see cref="Classes"/> collection if it does not already exist.
-        /// </summary>
-        /// <param name="className">The class to add.</param>
-        /// <returns>Returns <c>true</c> if the class was added.</returns>
-        protected bool AddClass(string className)
-        {
-            if(this.Classes.Count == 0 && this.Attributes.TryGetValue("class", out object obj))
-            {
-                // If we don't have any classes defined yet, but we have a value in the class attribute, then we add those classes to the Classes collection.
-                ((List<string>)this.Classes).AddRange(from x in $"{obj}".Split(' ') select x);
-            }
-
-            if (!string.IsNullOrEmpty(className) && !this.Classes.Contains(className))
-            {
-                this.Classes.Add(className);
-                this.HandleClassName();
-                return true;
-            }
-
-            return false;
-        }
-
-        /// <summary>
-        /// Adds the given style to the styles dictionary, which then will be rendered on the style attribute.
-        /// </summary>
-        /// <param name="name">The name of the style to add.</param>
-        /// <param name="value">The value of the style.</param>
-        /// <param name="overwrite">Overwrite an existing value.</param>
-        /// <returns>Returns <c>true</c> if the style was added. False if the given style already existed and <paramref name="overwrite"/> was not specified.</returns>
-        protected bool AddStyle(string name, string value, bool overwrite = false)
-        {
-            if(!this.Styles.ContainsKey(name) || overwrite)
-            {
-                this.Styles[name] = value;
-                this.HandleStyles();
-                return true;
-            }
-            return false;
-        }
-
-        protected void ClearAttributes()
-        {
-            this.Attributes.Clear();
-        }
-
-        protected void ClearClasses()
-        {
-            this.Classes.Clear();
-        }
 
         /// <summary>
         /// Generates a new ID that can be used on elements.
@@ -268,11 +183,11 @@ namespace Blazorade.Bootstrap.Components
                 {
                     if (size != Spacing.Auto)
                     {
-                        this.AddClass($"{prefix}-{(int)size}");
+                        this.AddClasses($"{prefix}-{(int)size}");
                     }
                     else
                     {
-                        this.AddClass($"{prefix}-auto");
+                        this.AddClasses($"{prefix}-auto");
                     }
                 }
             };
@@ -302,19 +217,19 @@ namespace Blazorade.Bootstrap.Components
                 switch (this.Shadow.Value)
                 {
                     case ShadowSize.None:
-                        this.AddClass(ClassNames.Shadows.None);
+                        this.AddClasses(ClassNames.Shadows.None);
                         break;
 
                     case ShadowSize.Small:
-                        this.AddClass(ClassNames.Shadows.Small);
+                        this.AddClasses(ClassNames.Shadows.Small);
                         break;
 
                     case ShadowSize.Regular:
-                        this.AddClass(ClassNames.Shadows.Regular);
+                        this.AddClasses(ClassNames.Shadows.Regular);
                         break;
 
                     case ShadowSize.Large:
-                        this.AddClass(ClassNames.Shadows.Large);
+                        this.AddClasses(ClassNames.Shadows.Large);
                         break;
                 }
             }
@@ -327,7 +242,7 @@ namespace Blazorade.Bootstrap.Components
                 if (size.HasValue)
                 {
                     string suffix = size.Value == ComponentSize.Auto ? "auto" : $"{(int)size.Value}";
-                    this.AddClass($"{prefix}-{suffix}");
+                    this.AddClasses($"{prefix}-{suffix}");
                 }
             };
 
@@ -339,67 +254,29 @@ namespace Blazorade.Bootstrap.Components
 
             if (this.TextAlignment.HasValue)
             {
-                this.AddClass($"text-{this.TextAlignment.ToString().ToLower()}");
+                this.AddClasses($"text-{this.TextAlignment.ToString().ToLower()}");
             }
 
-            if (this.BackgroundColor.HasValue) this.AddClass(this.GetColorClassName(prefix: "bg", color: this.BackgroundColor));
+            if (this.BackgroundColor.HasValue) this.AddClasses(this.GetColorClassName(prefix: "bg", color: this.BackgroundColor));
             if (this.BorderColor.HasValue)
             {
-                this.AddClass("border");
-                this.AddClass(this.GetColorClassName(prefix: "border", color: this.BorderColor));
+                this.AddClasses("border");
+                this.AddClasses(this.GetColorClassName(prefix: "border", color: this.BorderColor));
             }
-            if (this.TextColor.HasValue) this.AddClass(this.GetColorClassName(prefix: "text", color: this.TextColor));
+            if (this.TextColor.HasValue) this.AddClasses(this.GetColorClassName(prefix: "text", color: this.TextColor));
 
             if (this.IsStretchedLinkContainer)
             {
-                this.AddClass(ClassNames.Position.Relative);
+                this.AddClasses(ClassNames.Position.Relative);
             }
 
 
             if (!string.IsNullOrEmpty(this.Id))
             {
-                this.AddAttribute("id", this.Id, true);
+                this.AddAttribute("id", this.Id);
             }
 
             base.OnParametersSet();
-        }
-
-        protected bool RemoveAttribute(string name)
-        {
-            if(this.Attributes.ContainsKey(name))
-            {
-                this.Attributes.Remove(name);
-                return true;
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// Removes the given class from the collection if it exists.
-        /// </summary>
-        /// <param name="className"></param>
-        /// <returns>Returns <c>true</c> if the class was removed.</returns>
-        protected bool RemoveClass(string className)
-        {
-            if(!string.IsNullOrEmpty(className) && this.Classes.Contains(className))
-            {
-                this.Classes.Remove(className);
-                this.HandleClassName();
-                return true;
-            }
-
-            return false;
-        }
-
-        protected bool RemoveStyle(string name)
-        {
-            if(this.Styles.ContainsKey(name))
-            {
-                this.Styles.Remove(name);
-                this.HandleStyles();
-                return true;
-            }
-            return false;
         }
 
         /// <summary>
@@ -430,29 +307,5 @@ namespace Blazorade.Bootstrap.Components
             return string.Join("-", list);
         }
 
-
-        private void HandleClassName()
-        {
-            if (this.Classes.Count > 0)
-            {
-                this.Attributes["class"] = string.Join(" ", this.Classes);
-            }
-            else if (this.Attributes.ContainsKey("class"))
-            {
-                this.Attributes.Remove("class");
-            }
-        }
-
-        private void HandleStyles()
-        {
-            if(this.Styles.Count > 0)
-            {
-                this.Attributes["style"] = string.Join("; ", from x in this.Styles select $"{x.Key}: {x.Value}");
-            }
-            else if(this.Attributes.ContainsKey("style"))
-            {
-                this.Attributes.Remove("style");
-            }
-        }
     }
 }

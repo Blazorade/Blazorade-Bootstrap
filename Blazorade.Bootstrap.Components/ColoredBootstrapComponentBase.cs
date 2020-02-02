@@ -9,7 +9,7 @@ namespace Blazorade.Bootstrap.Components
 
         protected ColoredBootstrapComponentBase()
         {
-            this.AddClass(this.GetType().Name.ToLower());
+            this.AddClasses(this.GetType().Name.ToLower());
         }
 
 
@@ -21,7 +21,7 @@ namespace Blazorade.Bootstrap.Components
         protected override void OnParametersSet()
         {
             var styleContext = this.GetColorClassName(color: this.Color);
-            this.AddClass(styleContext);
+            this.AddClasses(styleContext);
 
             base.OnParametersSet();
         }

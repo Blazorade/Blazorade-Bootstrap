@@ -20,11 +20,11 @@ namespace Blazorade.Bootstrap.Components
 
         protected override void OnParametersSet()
         {
-            this.AddClass(ClassNames.Toasts.Header);
+            this.AddClasses(ClassNames.Toasts.Header);
 
             if(string.IsNullOrEmpty(this.Header) && string.IsNullOrEmpty(this.Subheader) && !this.ShowHideButton)
             {
-                this.AddClass(ClassNames.DisplayNone);
+                this.AddClasses(ClassNames.DisplayNone);
             }
 
 

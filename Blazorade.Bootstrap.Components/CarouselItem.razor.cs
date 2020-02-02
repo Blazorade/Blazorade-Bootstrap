@@ -69,7 +69,7 @@ namespace Blazorade.Bootstrap.Components
             
 
 
-            this.AddClass(ClassNames.Carousels.Item);
+            this.AddClasses(ClassNames.Carousels.Item);
 
             if (!string.IsNullOrEmpty(this.MinHeight))
             {

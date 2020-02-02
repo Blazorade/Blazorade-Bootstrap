@@ -14,7 +14,7 @@ namespace Blazorade.Bootstrap.Components
 
         protected override void OnParametersSet()
         {
-            this.AddClass(ClassNames.Dropdowns.Dropdown);
+            this.AddClasses(ClassNames.Dropdowns.Dropdown);
             base.OnParametersSet();
         }
     }

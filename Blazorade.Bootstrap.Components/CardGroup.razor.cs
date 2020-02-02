@@ -22,15 +22,15 @@ namespace Blazorade.Bootstrap.Components
             switch (this.Type)
             {
                 case CardGroupType.Group:
-                    this.AddClass(ClassNames.CardGroups.Group);
+                    this.AddClasses(ClassNames.CardGroups.Group);
                     break;
 
                 case CardGroupType.Deck:
-                    this.AddClass(ClassNames.CardGroups.Deck);
+                    this.AddClasses(ClassNames.CardGroups.Deck);
                     break;
 
                 case CardGroupType.Columns:
-                    this.AddClass(ClassNames.CardGroups.Columns);
+                    this.AddClasses(ClassNames.CardGroups.Columns);
                     break;
             }
             base.OnParametersSet();
