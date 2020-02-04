@@ -9,7 +9,7 @@ namespace Blazorade.Bootstrap.Components
 
         protected override void OnParametersSet()
         {
-            this.AddClass(ClassNames.Dropdowns.Toggle);
+            this.AddClasses(ClassNames.Dropdowns.Toggle);
             this.AddAttribute("role", "button");
             this.AddAttribute("data-toggle", "dropdown");
             this.AddAttribute("aria-haspopup", "true");

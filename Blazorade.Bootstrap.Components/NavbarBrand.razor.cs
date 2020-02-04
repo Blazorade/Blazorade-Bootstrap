@@ -21,7 +21,7 @@ namespace Blazorade.Bootstrap.Components
 
         protected override void OnParametersSet()
         {
-            this.AddClass(ClassNames.Navbars.Brand);
+            this.AddClasses(ClassNames.Navbars.Brand);
 
             base.OnParametersSet();
         }

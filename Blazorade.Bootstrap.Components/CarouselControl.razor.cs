@@ -32,12 +32,12 @@ namespace Blazorade.Bootstrap.Components
 
             if(this.Direction == CarouselControlDirection.Next)
             {
-                this.AddClass(ClassNames.Carousels.ControlNext);
+                this.AddClasses(ClassNames.Carousels.ControlNext);
                 this.AddAttribute("data-slide", "next");
             }
             else
             {
-                this.AddClass(ClassNames.Carousels.ControlPrevious);
+                this.AddClasses(ClassNames.Carousels.ControlPrevious);
                 this.AddAttribute("data-slide", "prev");
             }
 

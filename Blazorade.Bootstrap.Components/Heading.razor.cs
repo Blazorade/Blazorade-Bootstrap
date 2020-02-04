@@ -38,7 +38,7 @@ namespace Blazorade.Bootstrap.Components
         {
             if (this.Display.HasValue)
             {
-                this.AddClass($"display-{(int)this.Display}");
+                this.AddClasses($"display-{(int)this.Display}");
             }
 
 

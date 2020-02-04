@@ -9,7 +9,7 @@ namespace Blazorade.Bootstrap.Components
 
         protected override void OnParametersSet()
         {
-            this.AddClass(ClassNames.ListGroups.ListGroup);
+            this.AddClasses(ClassNames.ListGroups.ListGroup);
 
             this.AddAttribute("role", "list");
             base.OnParametersSet();

@@ -11,7 +11,7 @@ namespace Blazorade.Bootstrap.Components
         {
             base.OnParametersSet();
 
-            this.AddClass(ClassNames.Navbars.Collapse);
+            this.AddClasses(ClassNames.Navbars.Collapse);
         }
     }
 }

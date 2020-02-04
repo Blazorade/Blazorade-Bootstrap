@@ -38,7 +38,7 @@ namespace Blazorade.Bootstrap.Components
         public string ImageUrl { get; set; }
 
         [Parameter]
-        public ImageScaleMode ImageScaling { get; set; }
+        public ImageScaleMode? ImageScaling { get; set; }
 
         /// <summary>
         /// Minimum height for the slide. Can be any value that can be specified for the <c>height</c> CSS style.
@@ -49,7 +49,7 @@ namespace Blazorade.Bootstrap.Components
 
         protected IDictionary<string, object> CaptionAttributes;
 
-        private string ImageFitMode;
+        private string ImageFitMode; // Used from the Razor file.
 
 
         protected override void OnParametersSet()
@@ -69,7 +69,7 @@ namespace Blazorade.Bootstrap.Components
             
 
 
-            this.AddClass(ClassNames.Carousels.Item);
+            this.AddClasses(ClassNames.Carousels.Item);
 
             if (!string.IsNullOrEmpty(this.MinHeight))
             {

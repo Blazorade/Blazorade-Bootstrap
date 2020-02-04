@@ -115,8 +115,8 @@ namespace Blazorade.Bootstrap.Components
 
         protected override void OnParametersSet()
         {
-            this.AddClass(ClassNames.Toasts.Toast);
-            this.AddClass(ClassNames.Hide);
+            this.AddClasses(ClassNames.Toasts.Toast);
+            this.AddClasses(ClassNames.Hide);
 
             this.AddAttribute("role", "alert");
             this.AddAttribute("aria-live", "assertive");

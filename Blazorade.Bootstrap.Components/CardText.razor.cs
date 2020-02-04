@@ -10,7 +10,7 @@ namespace Blazorade.Bootstrap.Components
 
         protected override void OnParametersSet()
         {
-            this.AddClass(ClassNames.Cards.Text);
+            this.AddClasses(ClassNames.Cards.Text);
             base.OnParametersSet();
         }
     }

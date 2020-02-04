@@ -33,24 +33,24 @@ namespace Blazorade.Bootstrap.Components
 
         protected override void OnParametersSet()
         {
-            this.AddClass(ClassNames.Embeds.Embed);
+            this.AddClasses(ClassNames.Embeds.Embed);
 
             switch (this.AspectRatio)
             {
                 case EmbedAspectRatio.Ratio21by9:
-                    this.AddClass(ClassNames.Embeds.Ratio21by9);
+                    this.AddClasses(ClassNames.Embeds.Ratio21by9);
                     break;
 
                 case EmbedAspectRatio.Ratio16by9:
-                    this.AddClass(ClassNames.Embeds.Ratio16by9);
+                    this.AddClasses(ClassNames.Embeds.Ratio16by9);
                     break;
 
                 case EmbedAspectRatio.Ratio4by3:
-                    this.AddClass(ClassNames.Embeds.Ratio4by3);
+                    this.AddClasses(ClassNames.Embeds.Ratio4by3);
                     break;
 
                 case EmbedAspectRatio.Ratio1by1:
-                    this.AddClass(ClassNames.Embeds.Ratio1by1);
+                    this.AddClasses(ClassNames.Embeds.Ratio1by1);
                     break;
             }
 

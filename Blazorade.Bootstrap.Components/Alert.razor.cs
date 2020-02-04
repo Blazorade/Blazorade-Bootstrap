@@ -97,16 +97,16 @@ namespace Blazorade.Bootstrap.Components
 
         protected override void OnParametersSet()
         {
-            this.AddClass(ClassNames.Alerts.Alert);
+            this.AddClasses(ClassNames.Alerts.Alert);
             if (this.FadeOnDismiss)
             {
-                this.AddClass(ClassNames.Fade);
-                this.AddClass(ClassNames.Show);
+                this.AddClasses(ClassNames.Fade);
+                this.AddClasses(ClassNames.Show);
             }
 
             if (this.IsDismissible)
             {
-                this.AddClass(ClassNames.Alerts.Dismissible);
+                this.AddClasses(ClassNames.Alerts.Dismissible);
             }
 
             base.OnParametersSet();

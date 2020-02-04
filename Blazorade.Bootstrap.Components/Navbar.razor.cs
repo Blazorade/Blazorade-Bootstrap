@@ -43,40 +43,40 @@ namespace Blazorade.Bootstrap.Components
         {
             this.SetIdIfEmpty();
 
-            this.AddClass(ClassNames.Navbars.Navbar);
+            this.AddClasses(ClassNames.Navbars.Navbar);
 
             if(this.ColorScheme == NavbarColor.Light)
             {
-                this.AddClass(ClassNames.Navbars.Light);
+                this.AddClasses(ClassNames.Navbars.Light);
             }
             else if(this.ColorScheme == NavbarColor.Dark)
             {
-                this.AddClass(ClassNames.Navbars.Dark);
+                this.AddClasses(ClassNames.Navbars.Dark);
             }
 
 
             if(this.Placement == NavbarPlacement.FixedBottom)
             {
-                this.AddClass(ClassNames.Navbars.FixedBottom);
+                this.AddClasses(ClassNames.Navbars.FixedBottom);
             }
             else if(this.Placement == NavbarPlacement.FixedTop)
             {
-                this.AddClass(ClassNames.Navbars.FixedTop);
+                this.AddClasses(ClassNames.Navbars.FixedTop);
             }
             else if(this.Placement == NavbarPlacement.StickyTop)
             {
-                this.AddClass(ClassNames.Navbars.StickyTop);
+                this.AddClasses(ClassNames.Navbars.StickyTop);
             }
 
             if (this.ExpandAt.HasValue)
             {
                 if(this.ExpandAt == NavbarExpandBreakpoint.Always)
                 {
-                    this.AddClass("navbar-expand");
+                    this.AddClasses("navbar-expand");
                 }
                 else if(this.ExpandAt != NavbarExpandBreakpoint.Never)
                 {
-                    this.AddClass($"navbar-expand-{this.ExpandAt.ToString().ToLower()}");
+                    this.AddClasses($"navbar-expand-{this.ExpandAt.ToString().ToLower()}");
                 }
             }
 

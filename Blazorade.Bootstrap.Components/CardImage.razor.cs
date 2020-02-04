@@ -18,11 +18,11 @@ namespace Blazorade.Bootstrap.Components
         {
             if (!this.IsOverlay)
             {
-                this.AddClass(ClassNames.Cards.Image);
+                this.AddClasses(ClassNames.Cards.Image);
             }
             else
             {
-                this.AddClass(ClassNames.Cards.OverlayImage);
+                this.AddClasses(ClassNames.Cards.OverlayImage);
             }
 
             base.OnParametersSet();

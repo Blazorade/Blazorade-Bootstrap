@@ -13,15 +13,15 @@ namespace Blazorade.Bootstrap.Components
 
         protected override void OnParametersSet()
         {
-            this.AddClass(ClassNames.ButtonGroups.Group);
+            this.AddClasses(ClassNames.ButtonGroups.Group);
             switch (this.Size.GetValueOrDefault())
             {
                 case ButtonSize.Large:
-                    this.AddClass(ClassNames.ButtonGroups.Large);
+                    this.AddClasses(ClassNames.ButtonGroups.Large);
                     break;
 
                 case ButtonSize.Small:
-                    this.AddClass(ClassNames.ButtonGroups.Small);
+                    this.AddClasses(ClassNames.ButtonGroups.Small);
                     break;
             }
 

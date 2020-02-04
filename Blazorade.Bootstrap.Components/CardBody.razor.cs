@@ -86,11 +86,11 @@ namespace Blazorade.Bootstrap.Components
         {
             if (!this.IsImageOverlay)
             {
-                this.AddClass(ClassNames.Cards.Body);
+                this.AddClasses(ClassNames.Cards.Body);
             }
             else
             {
-                this.AddClass(ClassNames.Cards.ImageOverlay);
+                this.AddClasses(ClassNames.Cards.ImageOverlay);
             }
 
             base.OnParametersSet();

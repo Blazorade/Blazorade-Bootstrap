@@ -9,8 +9,7 @@ namespace Blazorade.Bootstrap.Components
 
         protected override void OnParametersSet()
         {
-            this.AddClass(ClassNames.Cards.Subtitle);
-            this.AddClass(ClassNames.InlineText.TextMuted);
+            this.AddClasses(ClassNames.Cards.Subtitle, ClassNames.InlineText.TextMuted);
             base.OnParametersSet();
         }
 

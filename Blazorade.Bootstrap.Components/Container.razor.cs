@@ -20,11 +20,11 @@ namespace Blazorade.Bootstrap.Components
         {
             if(this.Type == ContainerType.FixedWidth)
             {
-                this.AddClass(ClassNames.Containers.FixedWidth);
+                this.AddClasses(ClassNames.Containers.FixedWidth);
             }
             else
             {
-                this.AddClass($"{ClassNames.Containers.FixedWidth}-{this.Type.ToString().ToLower()}");
+                this.AddClasses($"{ClassNames.Containers.FixedWidth}-{this.Type.ToString().ToLower()}");
             }
 
             base.OnParametersSet();

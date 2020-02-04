@@ -128,10 +128,10 @@ namespace Blazorade.Bootstrap.Components
         {
             this.SetIdIfEmpty();
 
-            this.AddClass(ClassNames.Carousels.Carousel);
+            this.AddClasses(ClassNames.Carousels.Carousel);
             if(this.TransitionType == CarouselTransitionType.Fade)
             {
-                this.AddClass(ClassNames.Carousels.Fade);
+                this.AddClasses(ClassNames.Carousels.Fade);
             }
 
             this.AddAttribute("data-ride", "carousel");

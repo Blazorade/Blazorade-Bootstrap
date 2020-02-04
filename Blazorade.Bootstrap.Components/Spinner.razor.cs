@@ -25,15 +25,15 @@ namespace Blazorade.Bootstrap.Components
         protected override void OnParametersSet()
         {
             var className = $"{ClassNames.Spinners.Spinner}-{this.Type.ToString().ToLower()}";
-            this.AddClass(className);
+            this.AddClasses(className);
             if (this.Color.HasValue)
             {
-                this.AddClass(this.GetColorClassName("text", this.Color));
+                this.AddClasses(this.GetColorClassName("text", this.Color));
             }
 
             if(this.Size == SpinnerSize.Small)
             {
-                this.AddClass($"{className}-sm");
+                this.AddClasses($"{className}-sm");
             }
 
             this.AddAttribute("role", "status");

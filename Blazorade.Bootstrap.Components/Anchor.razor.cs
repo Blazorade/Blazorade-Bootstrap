@@ -9,7 +9,7 @@ using Microsoft.JSInterop;
 
 namespace Blazorade.Bootstrap.Components
 {
-    public partial class Anchor
+    public partial class Anchor : ILink
     {
 
         public Anchor()
@@ -132,16 +132,16 @@ namespace Blazorade.Bootstrap.Components
             }
             if (this.IsActive)
             {
-                this.AddClass(ClassNames.Active);
+                this.AddClasses(ClassNames.Active);
             }
             if(this.IsDisabled)
             {
                 this.AddAttribute("disabled", "disabled");
-                this.AddClass(ClassNames.Disabled);
+                this.AddClasses(ClassNames.Disabled);
             }
             if (this.IsStretched)
             {
-                this.AddClass(ClassNames.Links.Stretched);
+                this.AddClasses(ClassNames.Links.Stretched);
             }
             if(this.OpenInNewTab)
             {
