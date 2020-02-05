@@ -15,7 +15,6 @@ namespace Blazorade.Bootstrap.Components
 
         public const string RegisterEventCallback = Root + "registerEventCallback";
 
-
         public static class Alert
         {
 
