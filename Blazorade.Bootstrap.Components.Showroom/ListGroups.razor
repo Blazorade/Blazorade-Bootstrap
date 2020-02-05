@@ -1,8 +1,155 @@
 ﻿
+@code {
+    Spacing headingMarginTop = Spacing.Five;
+}
+
 <Heading Level="HeadingLevel.H2">ListGroup Component</Heading>
 <Paragraph>
     The <Anchor Url="https://getbootstrap.com/docs/4.4/components/list-group/" OpenInNewTab="true">ListGroup component</Anchor> is used to display a series of content in a powerful and flexible way.
 </Paragraph>
 
 <DocsSection ComponentName="ListGroup" />
+
+<Heading Id="basic-list-group" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Basic List Groups</Heading>
+<Paragraph>
+    A basic ListGroup example.
+</Paragraph>
+
+<ListGroup>
+    <ListGroupItem>List Item One</ListGroupItem>
+    <ListGroupItem>List Item Two</ListGroupItem>
+    <ListGroupItem>List Item Three</ListGroupItem>
+</ListGroup>
+
+<Heading Id="combined-list-group" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Combined List Groups</Heading>
+<Paragraph>
+    In the ListGroup component, you can use any combination of ListGroupItems, ListGroupAnchors, ListGroupButtons or custom content that you need.
+</Paragraph>
+
+<ListGroup>
+    <ListGroupItem>List Item</ListGroupItem>
+    <ListGroupAnchor Url="#">Linked Item</ListGroupAnchor>
+    <ListGroupButton Color="@NamedColor.Primary">Button Item</ListGroupButton>
+    <h4 class="@ClassNames.ListGroups.Item">H3 Header Item</h4>
+</ListGroup>
+
+<Heading Id="active-list-group" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Active List Group Items</Heading>
+<Paragraph>
+    Child elements of the ListGroup can be marked active, either by using the IsActive property, or by adding the ClassNames.Active class to the element.
+</Paragraph>
+
+<ListGroup>
+    <ListGroupItem>List Item</ListGroupItem>
+    <ListGroupItem IsActive="true">Active List Item</ListGroupItem>
+    <ListGroupAnchor Url="#">Linked Item</ListGroupAnchor>
+    <ListGroupAnchor Url="#" IsActive="true">Active Linked Item</ListGroupAnchor>
+    <ListGroupButton Color="@NamedColor.Primary">Button Item</ListGroupButton>
+    <ListGroupButton Color="@NamedColor.Primary" IsActive="true">Active Button Item</ListGroupButton>
+    <h4 class="@ClassNames.ListGroups.Item">H4 Header Item</h4>
+    <h4 class="@ClassNames.ListGroups.Item @ClassNames.Active">Active H4 Header Item</h4>
+</ListGroup>
+
+<Heading Id="disabled-list-group" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Disabled List Group Items</Heading>
+<Paragraph>
+    Child elements of the ListGroup can be marked disabled, either by using the IsDisabled property, or by adding the ClassNames.Disabled class to the element. This shades the item a lighter color and removes hover effects on links or "action" items.
+</Paragraph>
+
+<ListGroup>
+    <ListGroupItem>List Item</ListGroupItem>
+    <ListGroupItem IsDisabled="true">Disabled List Item</ListGroupItem>
+    <ListGroupAnchor Url="#">Linked Item</ListGroupAnchor>
+    <ListGroupAnchor Url="#" IsDisabled="true">Disabled Linked Item</ListGroupAnchor>
+    <ListGroupButton Color="@NamedColor.Primary">Button Item</ListGroupButton>
+    <ListGroupButton Color="@NamedColor.Primary" IsDisabled="true">Disabled Button Item</ListGroupButton>
+    <h4 class="@ClassNames.ListGroups.Item">H4 Header Item</h4>
+    <h4 class="@ClassNames.ListGroups.Item @ClassNames.Disabled">Disabled H4 Header Item</h4>
+</ListGroup>
+
+<Heading Id="flush-list-group" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Flush List Groups</Heading>
+<Paragraph>
+    ListGroups can be marked as "Flush," which will remove some borders and rounded corners.
+</Paragraph>
+
+<ListGroup IsFlush="true">
+    <ListGroupItem>List Item One</ListGroupItem>
+    <ListGroupItem>List Item Two</ListGroupItem>
+    <ListGroupItem>List Item Three</ListGroupItem>
+</ListGroup>
+
+<Heading Id="horizontal-list-group" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Horizontal List Groups</Heading>
+<Paragraph>
+    ListGroups can be marked as "Horizontal," which will cause them to be rendered horizontally instead of vertically.
+</Paragraph>
+
+<ListGroup IsHorizontal="true">
+    <ListGroupItem>List Item One</ListGroupItem>
+    <ListGroupItem>List Item Two</ListGroupItem>
+    <ListGroupItem>List Item Three</ListGroupItem>
+</ListGroup>
+
+<Heading Id="contextual-list-group" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Contextual List Group Items</Heading>
+<Paragraph>
+    ListGroupItems (and Anchors or Buttons) can have contextual colors assigned to them.
+</Paragraph>
+
+<ListGroup>
+    <ListGroupItem Color="NamedColor.Success">Success Item</ListGroupItem>
+    <ListGroupItem Color="NamedColor.Info">Info Item</ListGroupItem>
+    <ListGroupItem Color="NamedColor.Warning">Warning Item</ListGroupItem>
+    <ListGroupItem Color="NamedColor.Danger">Danger Item</ListGroupItem>
+    <ListGroupAnchor Url="#" Color="NamedColor.Primary">Primary Anchor</ListGroupAnchor>
+    <ListGroupAnchor Url="#" Color="NamedColor.Secondary">Secondary Anchor</ListGroupAnchor>
+    <ListGroupButton Color="NamedColor.Dark">Dark Button</ListGroupButton>
+    <ListGroupButton Color="NamedColor.Light">Light Button</ListGroupButton>
+</ListGroup>
+
+<Heading Id="badge-list-group" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">List Group with Badges</Heading>
+<Paragraph>
+    Combine Badges with ListGroupItems
+</Paragraph>
+
+<ListGroup>
+    <ListGroupButton class="d-flex justify-content-between align-items-center">
+        Inbox
+        <Badge IsPill="true" Color="NamedColor.Primary">24</Badge>
+    </ListGroupButton>
+    <ListGroupButton class="d-flex justify-content-between align-items-center">
+        Ads
+        <Badge IsPill="true" Color="NamedColor.Primary">57</Badge>
+    </ListGroupButton>
+    <ListGroupButton class="d-flex justify-content-between align-items-center">
+        Junk
+        <Badge IsPill="true" Color="NamedColor.Primary">374</Badge>
+    </ListGroupButton>
+</ListGroup>
+
+<Heading Id="accordion-list-group" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">List Groups as Accordion</Heading>
+<Paragraph>
+    Using the List Group and Collapsible, you can create an accordion.
+</Paragraph>
+
+@code{
+    Collapse collapse1,collapse2,collapse3;
+}
+
+<ListGroup>
+    <ListGroupAnchor Clicked="() => this.collapse1.Toggle()">Toggle Group One</ListGroupAnchor>
+    <Collapse @ref="this.collapse1" class="@ClassNames.ListGroups.Item">
+        <Paragraph>
+            Collapsable Group One!
+        </Paragraph>
+    </Collapse>
+    <ListGroupAnchor Clicked="() => this.collapse2.Toggle()">Toggle Group Two</ListGroupAnchor>
+    <Collapse @ref="this.collapse2"  class="@ClassNames.ListGroups.Item">
+        <Paragraph>
+            Collapsable Group Two!!
+        </Paragraph>
+    </Collapse>
+    <ListGroupAnchor Clicked="() => this.collapse3.Toggle()">Toggle Group Three</ListGroupAnchor>
+    <Collapse @ref="this.collapse3"  class="@ClassNames.ListGroups.Item">
+        <Paragraph>
+            Collapsable Group Three!!
+        </Paragraph>
+    </Collapse>
+</ListGroup>
 
