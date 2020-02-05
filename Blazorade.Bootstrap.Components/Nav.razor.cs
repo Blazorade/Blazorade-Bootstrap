@@ -9,17 +9,17 @@ namespace Blazorade.Bootstrap.Components
     {
 
         [Parameter]
-        public NavContentAlignment? ContentAlignment { get; set; }
+        public ContentAlignment? ContentAlignment { get; set; }
 
         protected override void OnParametersSet()
         {
             switch(this.ContentAlignment.GetValueOrDefault())
             {
-                case NavContentAlignment.Center:
+                case Components.ContentAlignment.Center:
                     this.AddClasses(ClassNames.Navs.AlignContentCenter);
                     break;
 
-                case NavContentAlignment.Right:
+                case Components.ContentAlignment.Right:
                     this.AddClasses(ClassNames.Navs.AlignContentRight);
                     break;
             }

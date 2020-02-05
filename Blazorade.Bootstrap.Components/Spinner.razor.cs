@@ -16,6 +16,9 @@ namespace Blazorade.Bootstrap.Components
 
 
         [Parameter]
+        public ContentAlignment? ContentAlignment { get; set; }
+
+        [Parameter]
         public SpinnerSize Size { get; set; }
 
         [Parameter]
