@@ -21,12 +21,6 @@ namespace Blazorade.Bootstrap.Components
         }
 
 
-        /// <summary>
-        /// Enables child content for the control.
-        /// </summary>
-        [Parameter]
-        public virtual RenderFragment ChildContent { get; set; }
-
         #region Margin
 
         /// <summary>
