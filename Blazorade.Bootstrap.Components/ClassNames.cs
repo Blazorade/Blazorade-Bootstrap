@@ -415,6 +415,30 @@ namespace Blazorade.Bootstrap.Components
             public const string Lead = "lead";
         }
 
+        public static class ProgressBars
+        {
+            /// <summary>
+            /// Add this class mark an element as the outer "shell" of a progress bar.
+            /// </summary>
+            public const string Progress = "progress";
+
+            /// <summary>
+            /// Add this class to turn an element into a progress bar. Must be inside of a "progress" element.
+            /// </summary>
+            public const string ProgressBar = "progress-bar";
+
+            /// <summary>
+            /// Add this class to make a progress bar striped.
+            /// </summary>
+            public const string Striped = "progress-bar-striped";
+
+
+            /// <summary>
+            /// Add this class to animate the stripes (don't forget to add the "Striped" class!) from right to left.
+            /// </summary>
+            public const string Animated = "progress-bar-animated";
+        }
+
         public static class Position
         {
             public const string Relative = "position-relative";
