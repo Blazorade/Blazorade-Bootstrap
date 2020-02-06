@@ -16,9 +16,6 @@ namespace Blazorade.Bootstrap.Components
         }
 
         [Parameter]
-        public bool AllowFullscreen { get; set; }
-
-        [Parameter]
         public EmbedAspectRatio AspectRatio { get; set; }
 
         [Parameter]
@@ -29,7 +26,6 @@ namespace Blazorade.Bootstrap.Components
         protected IJSRuntime JsInterop { get; set; }
 
         protected IDictionary<string, object> IFrameAttributes { get; private set; }
-
 
         protected override void OnParametersSet()
         {
@@ -57,12 +53,8 @@ namespace Blazorade.Bootstrap.Components
             this.IFrameAttributes.Add("class", ClassNames.Embeds.Item);
             this.IFrameAttributes.Add("src", this.Source);
 
-            if (this.AllowFullscreen)
-            {
-                this.IFrameAttributes.Add("allowfullscreen", "allowfullscreen");
-            }
-
             base.OnParametersSet();
+
         }
 
     }
