@@ -352,6 +352,8 @@ namespace Blazorade.Bootstrap.Components
         public static class ListGroups
         {
             public const string ListGroup = "list-group";
+            public const string Horizontal = "list-group-horizontal";
+            public const string Flush = "list-group-flush";
             public const string Item = "list-group-item";
             public const string Action = "list-group-item-action";
         }
