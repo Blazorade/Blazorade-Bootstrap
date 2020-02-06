@@ -1,38 +1,38 @@
 ﻿@inherits BootstrapComponentBase
 
     <Div @attributes="this.Attributes">
-        @if (null != this.ChildContent)
-        {
-            @this.ChildContent
-        }
-        else
-        {
-            @if (!string.IsNullOrEmpty(this.ImageUrl))
-            {
-                <img src="@this.ImageUrl" class="d-block h-100 w-100" style="object-fit: @this.ImageFitMode" />
-            }
+        @this.ChildContent
 
-            @if (!string.IsNullOrEmpty(this.CaptionHeading) || !string.IsNullOrEmpty(this.CaptionBody) || null != this.CaptionHeadingTemplate || null != this.CaptionBodyTemplate)
-            {
-                <Div @attributes="@this.CaptionAttributes">
-                    @if (null != this.CaptionHeadingTemplate)
-                    {
-                        @this.CaptionHeadingTemplate(this.CaptionHeading)
-                    }
-                    else if (!string.IsNullOrEmpty(this.CaptionHeading))
-                    {
-                        <Heading Level="HeadingLevel.H5">@this.CaptionHeading</Heading>
-                    }
-
-                    @if (null != this.CaptionBodyTemplate)
-                    {
-                        @this.CaptionBodyTemplate(this.CaptionBody)
-                    }
-                    else if (!string.IsNullOrEmpty(this.CaptionBody))
-                    {
-                        <Paragraph>@this.CaptionBody</Paragraph>
-                    }
-                </Div>
-            }
+        @if (!string.IsNullOrEmpty(this.ImageUrl))
+        {
+            <img src="@this.ImageUrl" class="d-block h-100 w-100" style="object-fit: @this.ImageFitMode" />
         }
+        else if(null == this.ChildContent && !string.IsNullOrEmpty(this.MinHeight))
+        {
+            <div style="@($"height:{this.MinHeight}")"></div>
+        }
+
+        @if (!string.IsNullOrEmpty(this.CaptionHeading) || !string.IsNullOrEmpty(this.CaptionBody) || null != this.CaptionHeadingTemplate || null != this.CaptionBodyTemplate)
+        {
+            <Div @attributes="@this.CaptionAttributes">
+                @if (null != this.CaptionHeadingTemplate)
+                {
+                    @this.CaptionHeadingTemplate(this.CaptionHeading)
+                }
+                else if (!string.IsNullOrEmpty(this.CaptionHeading))
+                {
+                    <Heading Level="HeadingLevel.H5">@this.CaptionHeading</Heading>
+                }
+
+                @if (null != this.CaptionBodyTemplate)
+                {
+                    @this.CaptionBodyTemplate(this.CaptionBody)
+                }
+                else if (!string.IsNullOrEmpty(this.CaptionBody))
+                {
+                    <Paragraph>@this.CaptionBody</Paragraph>
+                }
+            </Div>
+        }
+
     </Div>
