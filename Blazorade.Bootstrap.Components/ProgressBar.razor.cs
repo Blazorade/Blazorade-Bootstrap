@@ -20,19 +20,19 @@ namespace Blazorade.Bootstrap.Components
         public bool IsAnimated { get; set; }
 
         /// <summary>
-        /// The minimum value represented by the progress bar. This must be less than both Value and ValueMax.
+        /// The minimum value represented by the progress bar. This must be less than both <see cref="Value"/> and <see cref="MaxValue"/>.
         /// </summary>
         [Parameter]
-        public double ValueMin { get; set; }
+        public double MinValue { get; set; }
 
         /// <summary>
-        /// The maximum value represented by the progress bar. This must be greater than both ValueMin and Value.
+        /// The maximum value represented by the progress bar. This must be greater than both <see cref="MinValue"/> and <see cref="Value"/>.
         /// </summary>
         [Parameter]
-        public double ValueMax { get; set; }
+        public double MaxValue { get; set; }
 
         /// <summary>
-        /// The current value represented by the progress bar. This must fall between ValueMin and ValueMax.
+        /// The current value represented by the progress bar. This must fall between <see cref="MinValue"/> and <see cref="MaxValue"/>.
         /// </summary>
         [Parameter]
         public double Value { get; set; }
@@ -40,7 +40,7 @@ namespace Blazorade.Bootstrap.Components
         protected string CalculatedWidth {
             get
             {
-                return $"{Math.Round(Value / ValueMax, 2) * 100}%;";
+                return $"{Math.Round(Value / MaxValue, 2) * 100}%;";
             }
         }
 
@@ -65,11 +65,11 @@ namespace Blazorade.Bootstrap.Components
             }
 
             // check and throw if contraints are busted
-            if (ValueMax < ValueMin)
+            if (MaxValue < MinValue)
             {
                 throw new ArgumentOutOfRangeException("ValueMax must be greater than ValueMin");
             }
-            else if (Value > ValueMax || Value < ValueMin)
+            else if (Value > MaxValue || Value < MinValue)
             {
                 throw new ArgumentOutOfRangeException("Value must be greater than ValueMin and less than ValueMax");
             }

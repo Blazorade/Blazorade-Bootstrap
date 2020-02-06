@@ -2,13 +2,13 @@
     Spacing headingMarginTop = Spacing.Five;
 }
 
-<Heading Level="HeadingLevel.H2">ListGroup Component</Heading>
+<Heading Level="HeadingLevel.H2">Progress/ProgressBar Component</Heading>
 <Paragraph>
     The <Anchor Url="https://getbootstrap.com/docs/4.4/components/progress/" OpenInNewTab="true">Progress component</Anchor>
     is used to display progress bars, including stacked bars, animated backgrounds, and text labels.
 </Paragraph>
 
-<DocsSection ComponentName="ListGroup" />
+<DocsSection ComponentName="ProgressBar" />
 
 <Heading Id="basic-progress-bar" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Basic Progress Bars</Heading>
 <Paragraph>
@@ -16,19 +16,19 @@
 </Paragraph>
 
 <Progress>
-    <ProgressBar ValueMax="100" ValueMin="0" Value="0"></ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="0"></ProgressBar>
 </Progress>
 &nbsp;
 <Progress>
-    <ProgressBar ValueMax="100" ValueMin="0" Value="25"></ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="25"></ProgressBar>
 </Progress>
 &nbsp;
 <Progress>
-    <ProgressBar ValueMax="100" ValueMin="0" Value="50"></ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="50"></ProgressBar>
 </Progress>
 &nbsp;
 <Progress>
-    <ProgressBar ValueMax="100" ValueMin="0" Value="75"></ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="75"></ProgressBar>
 </Progress>
 
 
@@ -38,7 +38,7 @@
 </Paragraph>
 
 <Progress>
-    <ProgressBar ValueMax="100" ValueMin="0" Value="25">25%</ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="25">25%</ProgressBar>
 </Progress>
 
 
@@ -48,11 +48,11 @@
 </Paragraph>
 
 <Progress style="height: 5px;">
-    <ProgressBar ValueMax="100" ValueMin="0" Value="25"></ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="25"></ProgressBar>
 </Progress>
 &nbsp;
 <Progress style="height: 30px;">
-    <ProgressBar ValueMax="100" ValueMin="0" Value="25"></ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="25"></ProgressBar>
 </Progress>
 
 
@@ -62,19 +62,19 @@
 </Paragraph>
 
 <Progress>
-    <ProgressBar ValueMax="100" ValueMin="0" Value="0" Color="NamedColor.Success"></ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="0" Color="NamedColor.Success"></ProgressBar>
 </Progress>
 &nbsp;
 <Progress>
-    <ProgressBar ValueMax="100" ValueMin="0" Value="25" Color="NamedColor.Primary"></ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="25" Color="NamedColor.Primary"></ProgressBar>
 </Progress>
 &nbsp;
 <Progress>
-    <ProgressBar ValueMax="100" ValueMin="0" Value="50" Color="NamedColor.Warning"></ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="50" Color="NamedColor.Warning"></ProgressBar>
 </Progress>
 &nbsp;
 <Progress>
-    <ProgressBar ValueMax="100" ValueMin="0" Value="75" Color="NamedColor.Danger"></ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="75" Color="NamedColor.Danger"></ProgressBar>
 </Progress>
 
 
@@ -84,10 +84,10 @@
 </Paragraph>
 
 <Progress>
-    <ProgressBar ValueMax="100" ValueMin="0" Value="10" Color="NamedColor.Success"></ProgressBar>
-    <ProgressBar ValueMax="100" ValueMin="0" Value="15" Color="NamedColor.Primary"></ProgressBar>
-    <ProgressBar ValueMax="100" ValueMin="0" Value="25" Color="NamedColor.Warning"></ProgressBar>
-    <ProgressBar ValueMax="100" ValueMin="0" Value="30" Color="NamedColor.Danger"></ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="10" Color="NamedColor.Success"></ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="15" Color="NamedColor.Primary"></ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="25" Color="NamedColor.Warning"></ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="30" Color="NamedColor.Danger"></ProgressBar>
 </Progress>
 
 
@@ -97,19 +97,19 @@
 </Paragraph>
 
 <Progress>
-    <ProgressBar ValueMax="100" ValueMin="0" Value="10" Color="NamedColor.Success" IsStriped="true"></ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="10" Color="NamedColor.Success" IsStriped="true"></ProgressBar>
 </Progress>
 &nbsp;
 <Progress>
-    <ProgressBar ValueMax="100" ValueMin="0" Value="25" Color="NamedColor.Primary" IsStriped="true"></ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="25" Color="NamedColor.Primary" IsStriped="true"></ProgressBar>
 </Progress>
 &nbsp;
 <Progress>
-    <ProgressBar ValueMax="100" ValueMin="0" Value="50" Color="NamedColor.Warning" IsStriped="true"></ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="50" Color="NamedColor.Warning" IsStriped="true"></ProgressBar>
 </Progress>
 &nbsp;
 <Progress>
-    <ProgressBar ValueMax="100" ValueMin="0" Value="75" Color="NamedColor.Danger" IsStriped="true"></ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="75" Color="NamedColor.Danger" IsStriped="true"></ProgressBar>
 </Progress>
 
 
@@ -119,5 +119,5 @@
 </Paragraph>
 
 <Progress>
-    <ProgressBar ValueMax="100" ValueMin="0" Value="35" Color="NamedColor.Success" IsStriped="true" IsAnimated="true">35%</ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="35" Color="NamedColor.Success" IsStriped="true" IsAnimated="true">35%</ProgressBar>
 </Progress>
