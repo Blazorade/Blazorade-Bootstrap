@@ -121,3 +121,14 @@
 <Progress>
     <ProgressBar MaxValue="100" MinValue="0" Value="35" Color="NamedColor.Success" IsStriped="true" IsAnimated="true">35%</ProgressBar>
 </Progress>
+
+
+<Heading Id="progress-bar-warnings" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Warnings for values out of range.</Heading>
+<Paragraph>
+    If Value is greater than max or less than min, the component uses an ILogger instance to warn. Similarly if Min is greater than Max.
+    In this case, the application has a browser console logger enabled, so check your dev tools.
+</Paragraph>
+
+<Progress>
+    <ProgressBar MaxValue="100" MinValue="1000" Value="350" Color="NamedColor.Danger" IsStriped="true" IsAnimated="true">350%</ProgressBar>
+</Progress>

@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Logging;
+using Microsoft.JSInterop;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -37,12 +39,16 @@ namespace Blazorade.Bootstrap.Components
         [Parameter]
         public double Value { get; set; }
 
+
         protected string CalculatedWidth {
             get
             {
                 return $"{Math.Round(Value / MaxValue, 2) * 100}%;";
             }
         }
+
+        [Inject]
+        protected ILogger<ProgressBar> Logger { get; set; }
 
         protected override void OnParametersSet()
         {
@@ -64,14 +70,15 @@ namespace Blazorade.Bootstrap.Components
                 this.AddClasses(this.GetColorClassName("bg", this.Color));
             }
 
-            // check and throw if contraints are busted
+            // check and warn if contraints are busted
             if (MaxValue < MinValue)
             {
-                throw new ArgumentOutOfRangeException("ValueMax must be greater than ValueMin");
+                Logger.LogWarning("MaxValue ({MaxValue}) must be greater than MinValue ({MinValue})", MaxValue, MinValue);
             }
-            else if (Value > MaxValue || Value < MinValue)
+            
+            if (Value > MaxValue || Value < MinValue)
             {
-                throw new ArgumentOutOfRangeException("Value must be greater than ValueMin and less than ValueMax");
+                Logger.LogWarning("Value ({Value}) must be greater than MinValue ({MinValue}) and less than MaxValue ({MaxValue})", Value, MinValue, MaxValue);
             }
 
             base.OnParametersSet();
