@@ -8,9 +8,6 @@ namespace Blazorade.Bootstrap.Components
     public partial class ListGroupItem
     {
         [Parameter]
-        public bool IsAction { get; set; }
-
-        [Parameter]
         public bool IsActive { get; set; }
 
         [Parameter]
@@ -19,11 +16,6 @@ namespace Blazorade.Bootstrap.Components
         protected override void OnParametersSet()
         {
             this.AddClasses(ClassNames.ListGroups.Item);
-
-            if(this.IsAction)
-            {
-                this.AddClasses(ClassNames.ListGroups.Action);
-            }
 
             if(this.IsActive)
             {
