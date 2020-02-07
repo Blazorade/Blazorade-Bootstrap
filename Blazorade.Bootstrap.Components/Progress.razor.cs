@@ -4,6 +4,10 @@ using System.Text;
 
 namespace Blazorade.Bootstrap.Components
 {
+    /// <summary>
+    /// Wrapper component for ProgressBar components.
+    /// Use one or more ProgressBar components inside of a Progress component to create a bootstrap progress bar.
+    /// </summary>
     public partial class Progress
     {
         protected override void OnParametersSet()

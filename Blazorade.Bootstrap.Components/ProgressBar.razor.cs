@@ -7,6 +7,10 @@ using System.Text;
 
 namespace Blazorade.Bootstrap.Components
 {
+    /// <summary>
+    /// The ProgressBar component, when placed inside of a Progress component, defines a bootstrap progress bar 
+    /// or a section of a progress bar if multiple ProgressBar elements are used.
+    /// </summary>
     public partial class ProgressBar
     {
         /// <summary>
