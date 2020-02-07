@@ -1,5 +1,20 @@
 ﻿@inherits ColoredBootstrapComponentBase
 
-<Div @attributes="this.Attributes">
-
+@if(null == this.ChildContent)
+{
+    <Div @attributes="this.Attributes"></Div>
+}
+else
+{
+<Div class="d-flex align-items-center">
+    @if (null == this.ContentAlignment || this.ContentAlignment == Components.ContentAlignment.Left)
+    {
+        @this.ChildContent
+    }
+    <Div @attributes="this.Attributes"></Div>
+    @if (null != this.ContentAlignment && this.ContentAlignment == Components.ContentAlignment.Right)
+    {
+        @this.ChildContent
+    }
 </Div>
+}

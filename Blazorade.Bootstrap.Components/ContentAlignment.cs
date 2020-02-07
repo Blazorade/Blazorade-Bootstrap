@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Blazorade.Bootstrap.Components
 {
-    public enum NavContentAlignment
+    public enum ContentAlignment
     {
         Left,
         Center,

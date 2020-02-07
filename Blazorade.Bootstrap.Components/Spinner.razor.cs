@@ -16,6 +16,9 @@ namespace Blazorade.Bootstrap.Components
 
 
         [Parameter]
+        public ContentAlignment? ContentAlignment { get; set; }
+
+        [Parameter]
         public SpinnerSize Size { get; set; }
 
         [Parameter]
@@ -38,6 +41,17 @@ namespace Blazorade.Bootstrap.Components
 
             this.AddAttribute("role", "status");
 
+            if(null != this.ChildContent)
+            {
+                if(null == this.ContentAlignment || this.ContentAlignment == Components.ContentAlignment.Left)
+                {
+                    this.MarginLeft = Spacing.Auto;
+                }
+                else if(this.ContentAlignment == Components.ContentAlignment.Right)
+                {
+                    this.MarginRight = Spacing.Auto;
+                }
+            }
 
             base.OnParametersSet();
         }
