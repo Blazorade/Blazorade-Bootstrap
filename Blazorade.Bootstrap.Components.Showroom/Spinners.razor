@@ -77,3 +77,40 @@
 </CardGroup>
 
 
+<Heading Id="content" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Spinner content</Heading>
+<Paragraph>
+    You can specify child content with the <code>Spinner</code> component.
+</Paragraph>
+
+<CardGroup Type="CardGroupType.Deck">
+    <Card Title="Left-aligned content">
+        <Spinner ContentAlignment="ContentAlignment.Left">
+            Loading...
+        </Spinner>
+    </Card>
+    <Card Title="Right-aligned content">
+        <Spinner ContentAlignment="ContentAlignment.Right">
+            Loading...
+        </Spinner>
+    </Card>
+</CardGroup>
+
+
+<Heading Id="with-buttons" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Spinner and Button</Heading>
+<Paragraph>
+    You can use the <code>Spinner</code> component with a <code>Button</code> component.
+</Paragraph>
+
+@code {
+    bool saving = false;
+}
+<Button Color="NamedColor.Primary" IsDisabled="@this.saving" OnClicked="() => this.saving = !this.saving">
+    @if (this.saving)
+    {
+        <Spinner Size="SpinnerSize.Small" MarginRight="Spacing.One" />
+    }
+    <span>Save</span>
+</Button>
+<Button Color="NamedColor.Secondary" IsOutline="true" OnClicked="() => this.saving = !this.saving">
+    Toggle
+</Button>
