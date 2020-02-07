@@ -10,6 +10,7 @@
 
 @code {
     Carousel c1;
+    Carousel c2;
 
     string[] imgArr = new string[]
     {
@@ -131,7 +132,8 @@
 </Paragraph>
 
 <Div class="col-md-6">
-    <Carousel Interval="2000" ShowControls="true" ShowIndicators="true">
+    <Carousel Interval="2000" ShowControls="true" ShowIndicators="true" AutoStart="false" @ref="this.c2">
+        <CarouselItem BackgroundColor="NamedColor.Dark" CaptionHeading="Custom Content" CaptionBody="This carousel demonstrates how you can use basically any content as content for the slides." />
         <CarouselItem>
             <Jumbotron Heading="Custom Carousel Slide" Lead="How to use a Jumbotron inside of a Carousel component." />
         </CarouselItem>
