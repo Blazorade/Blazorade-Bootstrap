@@ -122,19 +122,19 @@
     {
         if (link.Index == int.MinValue)
         {
-            <PaginationLink Url="@link.Url" Clicked="this.Previous">
+            <PaginationLink Link="@link" Clicked="this.Previous">
                 <Span aria-hidden="true">&laquo;</Span>
             </PaginationLink>
         }
         else if (link.Index == int.MaxValue)
         {
-            <PaginationLink Url="@link.Url" Clicked="this.Next">
+            <PaginationLink Link="@link" Clicked="this.Next">
                 <Span aria-hidden="true">&raquo;</Span>
             </PaginationLink>
         }
         else
         {
-            <PaginationLink Url="@link.Url" IsActive="link.IsActive" Clicked="@(() => MakePageActive(link))">
+            <PaginationLink Link="@link" Clicked="@(() => MakePageActive(link))">
                 <span style="color: @(link.IsActive ? "#F00" : "cornflowerblue")">@link.Index.ToString()</span>
             </PaginationLink>
         }
