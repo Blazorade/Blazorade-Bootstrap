@@ -134,7 +134,7 @@
         }
         else
         {
-            <PaginationLink Link="@link" Clicked="@(() => MakePageActive(link))">
+            <PaginationLink Link="@link" Clicked="@(() => this.MakePageActive(link))">
                 <span style="color: @(link.IsActive ? "#F00" : "cornflowerblue")">@link.Index.ToString()</span>
             </PaginationLink>
         }
