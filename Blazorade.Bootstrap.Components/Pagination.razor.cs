@@ -20,12 +20,6 @@ namespace Blazorade.Bootstrap.Components
         public PaginationSize Size { get; set; } = PaginationSize.Normal;
 
         /// <summary>
-        /// Create your own template using the <see cref="ILink"/> interface.
-        /// </summary>
-        [Parameter]
-        public RenderFragment<ILink> ItemTemplate { get; set; }
-
-        /// <summary>
         /// A list of <see cref="ILink"/> objects to use as page links.
         /// These MUST have the Url field populated to show up in the pagination!
         /// </summary>

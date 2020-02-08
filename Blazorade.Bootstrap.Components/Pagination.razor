@@ -1,18 +1,18 @@
 ﻿@inherits BootstrapComponentBase
 <nav>
     <ul @attributes="this.Attributes">
-        @foreach(var item in this.Items)
+        @if (this.Items?.Count() > 0)
         {
-        <li class="page-item @( item.IsActive ? "active" : "") @( item.IsDisabled ? "disabled" : "")">
-            @if (null != this.ItemTemplate)
+            foreach (var item in this.Items)
             {
-                this.ItemTemplate(item);
+            <li class="page-item @( item.IsActive ? "active" : "") @( item.IsDisabled ? "disabled" : "")">
+                <Anchor Link="@item" class="page-link"></Anchor>
+            </li>
             }
-            else if (!string.IsNullOrEmpty(item.Url))
-            {
-                <Anchor Link="@item"></Anchor>
-            }
-        </li>
+        }
+        else
+        {
+            @this.ChildContent
         }
     </ul>
 </nav>
