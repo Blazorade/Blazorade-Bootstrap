@@ -67,16 +67,17 @@
 
 
 @code{
+    // Note: If you set the "Text" property, then any child content will be overwritten!
     List<ILink> customLinks = new List<ILink>
-{
-        new Link {Text = "Previous", Index = int.MinValue, Url = "#" },
-        new Link {Text = "1", Index = 1, Url = "#", IsActive = true },
-        new Link {Text = "2", Index = 2, Url = "#" },
-        new Link {Text = "3", Index = 3, Url = "#" },
-        new Link {Text = "4", Index = 4, Url = "#" },
-        new Link {Text = "5", Index = 5, Url = "#" },
-        new Link {Text = "6", Index = 6, Url = "#" },
-        new Link {Text = "Next", Index = int.MaxValue, Url = "#" }
+    {
+        new Link {Index = int.MinValue, Url = "#" },
+        new Link {Index = 1, Url = "#", IsActive = true },
+        new Link {Index = 2, Url = "#" },
+        new Link {Index = 3, Url = "#" },
+        new Link {Index = 4, Url = "#" },
+        new Link {Index = 5, Url = "#" },
+        new Link {Index = 6, Url = "#" },
+        new Link {Index = int.MaxValue, Url = "#" }
     };
 
     private void Previous()
@@ -112,7 +113,8 @@
 <Heading Id="advanced-pagination" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Pagination with PaginationLink components</Heading>
 <Paragraph>
     This Pagination example makes use of child PaginationLink elements instead of simply a list of links, as well as some logic for handling moving the IsActive property. 
-    This includes use of the Clicked property to bind to methods, as well as the Index property, to order the links and mark the Previous and Next buttons.
+    This includes use of the Clicked property to bind to methods, as well as the Index property, to order the links and mark the Previous and Next buttons, 
+    and child content inside of the PaginationLink component to further customize the page buttons.
 </Paragraph>
 
 <Pagination>
@@ -120,15 +122,21 @@
     {
         if (link.Index == int.MinValue)
         {
-            <PaginationLink Url="@link.Url" Clicked="this.Previous">@link.Text</PaginationLink>
+            <PaginationLink Url="@link.Url" Clicked="this.Previous">
+                <Span aria-hidden="true">&laquo;</Span>
+            </PaginationLink>
         }
         else if (link.Index == int.MaxValue)
         {
-            <PaginationLink Url="@link.Url" Clicked="this.Next">@link.Text</PaginationLink>
+            <PaginationLink Url="@link.Url" Clicked="this.Next">
+                <Span aria-hidden="true">&raquo;</Span>
+            </PaginationLink>
         }
         else
         {
-            <PaginationLink Url="@link.Url" IsActive="link.IsActive" Clicked="@(() => MakePageActive(link))">@link.Text</PaginationLink>
+            <PaginationLink Url="@link.Url" IsActive="link.IsActive" Clicked="@(() => MakePageActive(link))">
+                <span style="color: @(link.IsActive ? "#F00" : "cornflowerblue")">@link.Index.ToString()</span>
+            </PaginationLink>
         }
     }
 </Pagination>
