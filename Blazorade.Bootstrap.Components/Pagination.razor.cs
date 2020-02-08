@@ -47,10 +47,24 @@ namespace Blazorade.Bootstrap.Components
         
     }
 
+    /// <summary>
+    /// Bootstrap Pagination sizes
+    /// </summary>
     public enum PaginationSize
     {
+        /// <summary>
+        /// The "normal" size for a bootstrap Pagination element. This is the default.
+        /// </summary>
         Normal,
+
+        /// <summary>
+        /// The "large" size for a bootstrap Pagination element.
+        /// </summary>
         Large,
+
+        /// <summary>
+        /// The "small" size for a bootstrap Pagination element.
+        /// </summary>
         Small
     }
 }
