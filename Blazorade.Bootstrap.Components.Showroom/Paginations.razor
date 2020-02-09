@@ -1,7 +1,142 @@
 ﻿
+@code {
+    Spacing headingMarginTop = Spacing.Five;
+}
+
 <Heading Level="HeadingLevel.H2">Pagination Component</Heading>
 <Paragraph>
     The <Anchor Url="https://getbootstrap.com/docs/4.4/components/pagination/" OpenInNewTab="true">Pagination component</Anchor> is used to create pagination to indicate that a series of related content exists across multiple pages.
 </Paragraph>
 
 <DocsSection ComponentName="Pagination" />
+
+@code{
+    List<ILink> basicLinks = new List<ILink>
+{
+        new Link { Text = "Previous", Url = "#" },
+        new Link { Text = "1", Url = "#" },
+        new Link { Text = "2", Url = "#" },
+        new Link { Text = "3", Url = "#" },
+        new Link { Text = "Next", Url = "#" },
+    };
+}
+
+<Heading Id="basic-pagination" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Basic Pagination</Heading>
+<Paragraph>
+    A basic Pagination example.
+</Paragraph>
+
+<Pagination Items="@basicLinks" />
+
+
+
+@code{
+    List<ILink> disabledAndActiveLinks = new List<ILink>
+{
+        new Link { Text = "Previous", Url = "#" },
+        new Link { Text = "1", Url = "#", IsActive = true},
+        new Link { Text = "2", Url = "#" },
+        new Link { Text = "3", Url = "#", IsDisabled = true},
+        new Link { Text = "Next", Url = "#" },
+    };
+}
+
+<Heading Id="active-disabled-pagination" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Pagination with Active and Disabled links</Heading>
+<Paragraph>
+    A Pagination example with active and disabled links.
+</Paragraph>
+
+<Pagination Items="@disabledAndActiveLinks" />
+
+
+<Heading Id="small-pagination" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Small Pagination</Heading>
+<Paragraph>
+    A Pagination example with the Size property set to PaginationSize.Small.
+</Paragraph>
+
+<Pagination Items="@basicLinks" Size="PaginationSize.Small" />
+
+
+<Heading Id="large-pagination" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Large Pagination</Heading>
+<Paragraph>
+    A Pagination example with the Size property set to PaginationSize.Large.
+</Paragraph>
+
+<Pagination Items="@basicLinks" Size="PaginationSize.Large" />
+
+
+
+@code{
+    // Note: If you set the "Text" property, then any child content will be overwritten!
+    List<ILink> customLinks = new List<ILink>
+    {
+        new Link {Index = int.MinValue, Url = "#" },
+        new Link {Index = 1, Url = "#", IsActive = true },
+        new Link {Index = 2, Url = "#" },
+        new Link {Index = 3, Url = "#" },
+        new Link {Index = 4, Url = "#" },
+        new Link {Index = 5, Url = "#" },
+        new Link {Index = 6, Url = "#" },
+        new Link {Index = int.MaxValue, Url = "#" }
+    };
+
+    private void Previous()
+    {
+        var currentActive = customLinks.Where(l => l.IsActive).First();
+        if (currentActive.Index != 1)
+        {
+            customLinks.Where(l => currentActive.Index - 1 == l.Index).First().IsActive = true;
+            currentActive.IsActive = false;
+        }
+        this.StateHasChanged();
+    }
+
+    private void Next()
+    {
+        var currentActive = customLinks.Where(l => l.IsActive).First();
+        if (currentActive.Index != 6)
+        {
+            customLinks.Where(l => currentActive.Index + 1 == l.Index).First().IsActive = true;
+            currentActive.IsActive = false;
+        }
+        this.StateHasChanged();
+    }
+
+    private void MakePageActive(ILink item)
+    {
+        customLinks.Where(l => l.IsActive).First().IsActive = false;
+        item.IsActive = true;
+        this.StateHasChanged();
+    }
+}
+
+<Heading Id="advanced-pagination" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Pagination with PaginationLink components</Heading>
+<Paragraph>
+    This Pagination example makes use of child PaginationLink elements instead of simply a list of links, as well as some logic for handling moving the IsActive property. 
+    This includes use of the Clicked property to bind to methods, as well as the Index property, to order the links and mark the Previous and Next buttons, 
+    and child content inside of the PaginationLink component to further customize the page buttons.
+</Paragraph>
+
+<Pagination>
+    @foreach (var link in customLinks.OrderBy(l => l.Index))
+    {
+        if (link.Index == int.MinValue)
+        {
+            <PaginationLink Link="@link" Clicked="this.Previous">
+                <Span aria-hidden="true">&laquo;</Span>
+            </PaginationLink>
+        }
+        else if (link.Index == int.MaxValue)
+        {
+            <PaginationLink Link="@link" Clicked="this.Next">
+                <Span aria-hidden="true">&raquo;</Span>
+            </PaginationLink>
+        }
+        else
+        {
+            <PaginationLink Link="@link" Clicked="@(() => this.MakePageActive(link))">
+                <span style="color: @(link.IsActive ? "#F00" : "cornflowerblue")">@link.Index.ToString()</span>
+            </PaginationLink>
+        }
+    }
+</Pagination>
