@@ -51,12 +51,6 @@ namespace Blazorade.Bootstrap.Components
 
 
 
-        [Inject]
-        protected IJSRuntime JsInterop { get; set; }
-
-
-
-
         private string DialogClasses { get; set; }
 
 

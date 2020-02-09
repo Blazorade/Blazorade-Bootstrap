@@ -81,12 +81,6 @@ namespace Blazorade.Bootstrap.Components
 
 
 
-
-        [Inject]
-        protected IJSRuntime JsInterop { get; set; }
-
-
-
         public void Hide()
         {
             this.HideAsync();
