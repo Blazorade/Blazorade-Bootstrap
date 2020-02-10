@@ -15,6 +15,8 @@ namespace Blazorade.Bootstrap.Components
     {
         public Pagination()
         {
+            this.HighlightCurrent = true;
+
             this.ShowNavigation = true;
 
             this.NextPageLinkText = ">>";
@@ -44,6 +46,12 @@ namespace Blazorade.Bootstrap.Components
         /// </summary>
         [Parameter]
         public int PageCount { get; set; }
+
+        /// <summary>
+        /// Specifies whether to highlight the currently selected page.
+        /// </summary>
+        [Parameter]
+        public bool HighlightCurrent { get; set; }
 
         /// <summary>
         /// Specifies whether to show the Next and Previous navigation controls.

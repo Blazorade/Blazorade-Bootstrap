@@ -35,6 +35,13 @@
 <Pagination PageCount="5" Size="PaginationSize.Large" />
 
 
+<Heading Id="no-highlight" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">No highlighting</Heading>
+<Paragraph>
+    The <code>Pagination</code> component supports disabling the highlighting of the currently selected page.
+</Paragraph>
+<Pagination PageCount="5" HighlightCurrent="false" />
+
+
 <Heading Id="customizing-with-templates" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Customize the rendering</Heading>
 <Paragraph>
     Shows you how you can customize how the <code>Pagination</code> control is rendered using the template parameters.
@@ -54,3 +61,25 @@
         <Button Color="NamedColor.Success" OnClicked="async () => await this.pg1.NextAsync()" IsDisabled="this.pg1.CurrentPage >= this.pg1.PageCount - 1">Go forward</Button>
     </NextPageLinkTemplate>
 </Pagination>
+
+
+<Heading Id="handling-events" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Handling events</Heading>
+<Paragraph>
+    The <code>Pagination</code> component publishes events when the selected page is changed.
+</Paragraph>
+
+@code {
+    Pagination pg2;
+
+    List<int> pageIndexes = new List<int>();
+    private void HandlePageEvent()
+    {
+        pageIndexes.Add(this.pg2.CurrentPage);
+    }
+}
+<Pagination @ref="this.pg2" PageCount="5" OnCurrentPageChanged="this.HandlePageEvent" />
+
+@foreach(var ix in this.pageIndexes)
+{
+    <Toast Header="Page Event" ShowOnRender="true" Delay="1000">Current Page: @(ix + 1)</Toast>
+}
