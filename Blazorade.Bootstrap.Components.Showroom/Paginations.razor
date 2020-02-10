@@ -39,7 +39,14 @@
 <Paragraph>
     The <code>Pagination</code> component supports disabling the highlighting of the currently selected page.
 </Paragraph>
-<Pagination PageCount="5" HighlightCurrent="false" />
+@code {
+    Pagination pg3;
+    int pgNum3 = 0;
+}
+<Card Header="@($"Current Page: {this.pgNum3 + 1}")">
+    <Pagination @ref="this.pg3" PageCount="5" HighlightCurrent="false" OnCurrentPageChanged="() => this.pgNum3 = this.pg3.CurrentPage" />
+</Card>
+
 
 
 <Heading Id="customizing-with-templates" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Customize the rendering</Heading>
