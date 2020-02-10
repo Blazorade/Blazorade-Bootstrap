@@ -81,12 +81,12 @@ namespace Blazorade.Bootstrap.Components
             // check and warn if contraints are busted
             if (MaxValue < MinValue)
             {
-                this.LogWarningAsync("MaxValue must be greater than MinValue", this.MaxValue, this.MinValue);
+                this.LogWarningAsync($"MaxValue ({this.MaxValue}) must be greater than MinValue ({this.MinValue})", this);
             }
             
             if (Value > MaxValue || Value < MinValue)
             {
-                this.LogWarningAsync($"Value must be greater than MinValue and less than MaxValue", this.Value, this.MinValue, this.MaxValue);
+                this.LogWarningAsync($"Value ({this.Value}) must be greater than MinValue ({this.MinValue}) and less than MaxValue ({this.MaxValue})", this);
             }
 
             base.OnParametersSet();
