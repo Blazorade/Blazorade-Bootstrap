@@ -1,0 +1,134 @@
+﻿@code {
+    Spacing headingMarginTop = Spacing.Five;
+}
+
+<Heading Level="HeadingLevel.H2">Progress/ProgressBar Component</Heading>
+<Paragraph>
+    The <Anchor Url="https://getbootstrap.com/docs/4.4/components/progress/" OpenInNewTab="true">Progress component</Anchor>
+    is used to display progress bars, including stacked bars, animated backgrounds, and text labels.
+</Paragraph>
+
+<DocsSection ComponentName="ProgressBar" />
+
+<Heading Id="basic-progress-bar" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Basic Progress Bars</Heading>
+<Paragraph>
+    A basic progress bar example.
+</Paragraph>
+
+<Progress>
+    <ProgressBar MaxValue="100" MinValue="0" Value="10"></ProgressBar>
+</Progress>
+&nbsp;
+<Progress>
+    <ProgressBar MaxValue="100" MinValue="0" Value="25"></ProgressBar>
+</Progress>
+&nbsp;
+<Progress>
+    <ProgressBar MaxValue="100" MinValue="0" Value="50"></ProgressBar>
+</Progress>
+&nbsp;
+<Progress>
+    <ProgressBar MaxValue="100" MinValue="0" Value="75"></ProgressBar>
+</Progress>
+
+
+<Heading Id="progress-bar-percentage" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Labels</Heading>
+<Paragraph>
+    Set the ShowPercentage property of the ProgressBar component to true to add percentage labels to a progress bar.
+</Paragraph>
+
+<Progress>
+    <ProgressBar MaxValue="100" MinValue="0" Value="25" ShowPercentage="true"></ProgressBar>
+</Progress>
+
+
+<Heading Id="progress-bar-height" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Height</Heading>
+<Paragraph>
+    Setting a height value on the Progress element sets the height on the bar.
+</Paragraph>
+
+<Progress style="height: 5px;">
+    <ProgressBar MaxValue="100" MinValue="0" Value="25"></ProgressBar>
+</Progress>
+&nbsp;
+<Progress style="height: 30px;">
+    <ProgressBar MaxValue="100" MinValue="0" Value="25"></ProgressBar>
+</Progress>
+
+
+<Heading Id="progress-bar-colors" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Backgrounds</Heading>
+<Paragraph>
+    Setting the Color property will allow you to give a progress bar a contextual color.
+</Paragraph>
+
+<Progress>
+    <ProgressBar MaxValue="100" MinValue="0" Value="10" Color="NamedColor.Success"></ProgressBar>
+</Progress>
+&nbsp;
+<Progress>
+    <ProgressBar MaxValue="100" MinValue="0" Value="25" Color="NamedColor.Primary"></ProgressBar>
+</Progress>
+&nbsp;
+<Progress>
+    <ProgressBar MaxValue="100" MinValue="0" Value="50" Color="NamedColor.Warning"></ProgressBar>
+</Progress>
+&nbsp;
+<Progress>
+    <ProgressBar MaxValue="100" MinValue="0" Value="75" Color="NamedColor.Danger"></ProgressBar>
+</Progress>
+
+
+<Heading Id="progress-bar-stacked" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Stacked bars</Heading>
+<Paragraph>
+    Adding multiple ProgressBar elements to a Progress element lets you stack those bars on the same line.
+</Paragraph>
+
+<Progress>
+    <ProgressBar MaxValue="100" MinValue="0" Value="10" Color="NamedColor.Success"></ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="15" Color="NamedColor.Primary"></ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="25" Color="NamedColor.Warning"></ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="30" Color="NamedColor.Danger"></ProgressBar>
+</Progress>
+
+
+<Heading Id="progress-bar-striped" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Striped</Heading>
+<Paragraph>
+    Setting the IsStriped property to true will give a progress bar a striped texture.
+</Paragraph>
+
+<Progress>
+    <ProgressBar MaxValue="100" MinValue="0" Value="10" Color="NamedColor.Success" IsStriped="true"></ProgressBar>
+</Progress>
+&nbsp;
+<Progress>
+    <ProgressBar MaxValue="100" MinValue="0" Value="25" Color="NamedColor.Primary" IsStriped="true"></ProgressBar>
+</Progress>
+&nbsp;
+<Progress>
+    <ProgressBar MaxValue="100" MinValue="0" Value="50" Color="NamedColor.Warning" IsStriped="true"></ProgressBar>
+</Progress>
+&nbsp;
+<Progress>
+    <ProgressBar MaxValue="100" MinValue="0" Value="75" Color="NamedColor.Danger" IsStriped="true"></ProgressBar>
+</Progress>
+
+
+<Heading Id="progress-bar-animated" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Animated stripes</Heading>
+<Paragraph>
+    Adding the IsAnimated property and setting it to true will animate the stripes on a progress bar (be sure to set IsStriped to true!)
+</Paragraph>
+
+<Progress>
+    <ProgressBar MaxValue="100" MinValue="0" Value="35" Color="NamedColor.Success" IsStriped="true" IsAnimated="true" ShowPercentage="true"></ProgressBar>
+</Progress>
+
+
+<Heading Id="progress-bar-warnings" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Warnings for values out of range.</Heading>
+<Paragraph>
+    If Value is greater than max or less than min, the component uses an ILogger instance to warn. Similarly if Min is greater than Max.
+    In this case, the application has a browser console logger enabled, so check your dev tools.
+</Paragraph>
+
+<Progress>
+    <ProgressBar MaxValue="100" MinValue="1000" Value="350" Color="NamedColor.Danger" IsStriped="true" IsAnimated="true" ShowPercentage="true"></ProgressBar>
+</Progress>
