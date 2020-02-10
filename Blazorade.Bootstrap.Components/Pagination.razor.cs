@@ -36,10 +36,10 @@ namespace Blazorade.Bootstrap.Components
         public int CurrentPage { get; set; }
 
         /// <summary>
-        /// Set the size of the pagination component. Defaults to "Normal"
+        /// Set the size of the pagination component. Defaults to <see cref="PaginationSize.Normal"/>.
         /// </summary>
         [Parameter]
-        public PaginationSize Size { get; set; } = PaginationSize.Normal;
+        public PaginationSize? Size { get; set; }
 
         /// <summary>
         /// The number of pages to show.
@@ -89,6 +89,7 @@ namespace Blazorade.Bootstrap.Components
         /// </summary>
         [Parameter]
         public string PreviousPageLinkText { get; set; }
+
 
 
         /// <summary>
@@ -176,15 +177,13 @@ namespace Blazorade.Bootstrap.Components
             {
                 this.AddClasses(ClassNames.Paginations.Large);
             }
-
-            if (this.Size == PaginationSize.Small)
+            else if (this.Size == PaginationSize.Small)
             {
                 this.AddClasses(ClassNames.Paginations.Small);
             }
 
             base.OnParametersSet();
         }
-
         
     }
 
