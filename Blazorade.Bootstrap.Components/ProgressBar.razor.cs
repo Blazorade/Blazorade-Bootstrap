@@ -51,9 +51,6 @@ namespace Blazorade.Bootstrap.Components
             }
         }
 
-        [Inject]
-        protected ILogger<ProgressBar> Logger { get; set; }
-
         protected override void OnParametersSet()
         {
             this.AddClasses(ClassNames.ProgressBars.ProgressBar);
@@ -77,12 +74,12 @@ namespace Blazorade.Bootstrap.Components
             // check and warn if contraints are busted
             if (MaxValue < MinValue)
             {
-                Logger.LogWarning("MaxValue ({MaxValue}) must be greater than MinValue ({MinValue})", MaxValue, MinValue);
+                this.JsInterop.InvokeVoidAsync(JsFunctions.Console.Warn, $"MaxValue({MaxValue}) must be greater than MinValue({MinValue})");
             }
             
             if (Value > MaxValue || Value < MinValue)
             {
-                Logger.LogWarning("Value ({Value}) must be greater than MinValue ({MinValue}) and less than MaxValue ({MaxValue})", Value, MinValue, MaxValue);
+                this.JsInterop.InvokeVoidAsync(JsFunctions.Console.Warn, $"Value ({Value}) must be greater than MinValue ({MinValue}) and less than MaxValue ({MaxValue})");
             }
 
             base.OnParametersSet();
