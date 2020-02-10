@@ -32,13 +32,13 @@
 </Progress>
 
 
-<Heading Id="progress-bar-labels" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Labels</Heading>
+<Heading Id="progress-bar-percentage" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Labels</Heading>
 <Paragraph>
-    Add text inside of the ProgressBar component to add labels to a progress bar.
+    Set the ShowPercentage property of the ProgressBar component to true to add percentage labels to a progress bar.
 </Paragraph>
 
 <Progress>
-    <ProgressBar MaxValue="100" MinValue="0" Value="25">25%</ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="25" ShowPercentage="true"></ProgressBar>
 </Progress>
 
 
@@ -119,7 +119,7 @@
 </Paragraph>
 
 <Progress>
-    <ProgressBar MaxValue="100" MinValue="0" Value="35" Color="NamedColor.Success" IsStriped="true" IsAnimated="true">35%</ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="0" Value="35" Color="NamedColor.Success" IsStriped="true" IsAnimated="true" ShowPercentage="true"></ProgressBar>
 </Progress>
 
 
@@ -130,5 +130,5 @@
 </Paragraph>
 
 <Progress>
-    <ProgressBar MaxValue="100" MinValue="1000" Value="350" Color="NamedColor.Danger" IsStriped="true" IsAnimated="true">350%</ProgressBar>
+    <ProgressBar MaxValue="100" MinValue="1000" Value="350" Color="NamedColor.Danger" IsStriped="true" IsAnimated="true" ShowPercentage="true"></ProgressBar>
 </Progress>

@@ -4,6 +4,7 @@ using Microsoft.JSInterop;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Blazorade.Bootstrap.Components
 {
@@ -43,6 +44,12 @@ namespace Blazorade.Bootstrap.Components
         [Parameter]
         public double Value { get; set; }
 
+        /// <summary>
+        /// Set this to true if you want to show the percentage as text inside the bar.
+        /// </summary>
+        [Parameter]
+        public bool ShowPercentage { get; set; }
+
 
         protected string CalculatedWidth {
             get
@@ -74,12 +81,12 @@ namespace Blazorade.Bootstrap.Components
             // check and warn if contraints are busted
             if (MaxValue < MinValue)
             {
-                this.JsInterop.InvokeVoidAsync(JsFunctions.Console.Warn, $"MaxValue({MaxValue}) must be greater than MinValue({MinValue})");
+                this.LogWarningAsync("MaxValue must be greater than MinValue", this.MaxValue, this.MinValue);
             }
             
             if (Value > MaxValue || Value < MinValue)
             {
-                this.JsInterop.InvokeVoidAsync(JsFunctions.Console.Warn, $"Value ({Value}) must be greater than MinValue ({MinValue}) and less than MaxValue ({MaxValue})");
+                this.LogWarningAsync($"Value must be greater than MinValue and less than MaxValue", this.Value, this.MinValue, this.MaxValue);
             }
 
             base.OnParametersSet();

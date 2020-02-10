@@ -1,3 +1,12 @@
 ﻿@inherits ColoredBootstrapComponentBase
 
-<div @attributes="this.Attributes" style="width: @CalculatedWidth" aria-valuemax="@this.MaxValue" aria-valuemin="@this.MinValue" aria-valuenow="@this.Value">@this.ChildContent</div>
+<div @attributes="this.Attributes" style="width: @CalculatedWidth" aria-valuemax="@this.MaxValue" aria-valuemin="@this.MinValue" aria-valuenow="@this.Value">
+    @if (null != this.ChildContent)
+    {
+        @this.ChildContent
+    }
+    else if(ShowPercentage)
+    {
+        @CalculatedWidth
+    }
+</div>
