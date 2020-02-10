@@ -74,9 +74,6 @@ namespace Blazorade.Bootstrap.Components
         }
 
 
-        [Inject]
-        protected IJSRuntime JsInterop { get; set; }
-
         [JSInvokable]
         /// <summary>
         /// Triggers the <see cref="OnDismiss"/> callback.
