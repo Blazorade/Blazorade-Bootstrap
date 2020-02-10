@@ -1,18 +1,50 @@
 ﻿@inherits BootstrapComponentBase
+
+@code {
+
+}
 <nav>
     <ul @attributes="this.Attributes">
-        @if (this.Items?.Count() > 0)
+        @if (this.ShowNavigation)
         {
-            foreach (var item in this.Items)
-            {
-            <li class="page-item @( item.IsActive ? "active" : "") @( item.IsDisabled ? "disabled" : "")">
-                <Anchor Link="@item" class="page-link"></Anchor>
+            <li class="page-item">
+                @if (null != this.PreviousPageLinkTemplate)
+                {
+                    @this.PreviousPageLinkTemplate
+                }
+                else
+                {
+                    <Anchor class="page-link" @onclick="this.PreviousAsync" IsDisabled="@(this.CurrentPage == 0)">@this.PreviousPageLinkText</Anchor>
+                }
             </li>
-            }
         }
-        else
+
+        @foreach (var ix in this.CreatePageIndexArray())
         {
-            @this.ChildContent
+            <li class="page-item@(this.CurrentPage == ix ? " active" : "")">
+                @if (null != this.PageItemLinkTemplate)
+                {
+                    @this.PageItemLinkTemplate(ix)
+                }
+                else
+                {
+                    <Anchor class="page-link" @onclick="async () => await this.NavigateToAsync(ix)">@(ix + 1)</Anchor>
+                }
+            </li>
+        }
+
+        @if (this.ShowNavigation)
+        {
+            <li class="page-item">
+                @if (null != this.NextPageLinkTemplate)
+                {
+                    @this.NextPageLinkTemplate
+                }
+                else
+                {
+                    <Anchor class="page-link" @onclick="this.NextAsync" IsDisabled="@(this.CurrentPage >= this.PageCount - 1)">@this.NextPageLinkText</Anchor>
+                }
+            </li>
         }
     </ul>
 </nav>
