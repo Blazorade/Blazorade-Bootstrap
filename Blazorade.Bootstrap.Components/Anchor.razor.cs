@@ -87,10 +87,6 @@ namespace Blazorade.Bootstrap.Components
 
 
 
-        [Inject]
-        protected IJSRuntime JsInterop { get; set; }
-
-
         protected bool IsAnchorLink { get; private set; }
 
         protected bool OnClickPreventDefault { get; private set; }

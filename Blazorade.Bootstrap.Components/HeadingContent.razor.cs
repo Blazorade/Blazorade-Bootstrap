@@ -21,11 +21,6 @@ namespace Blazorade.Bootstrap.Components
         public bool IsAnchor { get; set; }
 
 
-
-        [Inject]
-        protected IJSRuntime JsInterop { get; set; }
-
-
         protected async Task ContentOnMouseOver(MouseEventArgs e)
         {
             await this.JsInterop.InvokeVoidAsync(JsFunctions.Show, this.AnchorId);
