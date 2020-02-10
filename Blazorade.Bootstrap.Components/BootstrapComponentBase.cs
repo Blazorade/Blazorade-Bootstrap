@@ -4,6 +4,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Microsoft.JSInterop;
 
 namespace Blazorade.Bootstrap.Components
 {
@@ -142,6 +143,10 @@ namespace Blazorade.Bootstrap.Components
 
 
 
+        [Inject]
+        protected IJSRuntime JsInterop { get; set; }
+
+
 
         /// <summary>
         /// Generates a new ID that can be used on elements.
@@ -165,6 +170,21 @@ namespace Blazorade.Bootstrap.Components
             }
 
             return name;
+        }
+
+        protected async Task LogErrorAsync(string message, params object[] args)
+        {
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Console.Error, message, args);
+        }
+
+        protected async Task LogInfoAsync(string message, params object[] args)
+        {
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Console.Log, message, args);
+        }
+
+        protected async Task LogWarningAsync(string message, params object[] args)
+        {
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Console.Warn, message, args);
         }
 
         protected override void OnParametersSet()

@@ -70,9 +70,6 @@ namespace Blazorade.Bootstrap.Components
         [Parameter]
         public CarouselTransitionType TransitionType { get; set; }
 
-        [Inject]
-        protected IJSRuntime JsInterop { get; set; }
-
 
 
         public async Task CycleAsync()

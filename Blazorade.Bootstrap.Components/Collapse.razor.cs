@@ -36,9 +36,6 @@ namespace Blazorade.Bootstrap.Components
         public EventCallback<Collapse> OnHidden { get; set; }
 
 
-        [Inject]
-        protected IJSRuntime JsInterop { get; set; }
-
 
         /// <summary>
         /// Hides the component.
