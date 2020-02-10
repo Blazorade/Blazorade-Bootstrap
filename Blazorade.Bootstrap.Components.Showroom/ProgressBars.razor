@@ -123,6 +123,24 @@
 </Progress>
 
 
+<Heading Id="updating-value" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Updating the progress bar value</Heading>
+<Paragraph>
+    Shows how you can increase or decrase the value of a <code>ProgressBar</code>.
+</Paragraph>
+@code {
+    ProgressBar pb1;
+    double pb1Value = 0;
+
+}
+<Progress>
+    <ProgressBar @ref="this.pb1" MinValue="0" MaxValue="100" Value="@this.pb1Value" ShowPercentage="true" />
+</Progress>
+<ButtonGroup>
+    <Button Color="NamedColor.Secondary" IsOutline="true" IsDisabled="this.pb1Value <= this.pb1?.MinValue" OnClicked="() => this.pb1Value--">Less</Button>
+    <Button Color="NamedColor.Secondary" IsOutline="true" IsDisabled="this.pb1Value >= this.pb1?.MaxValue" OnClicked="() => this.pb1Value++">More</Button>
+</ButtonGroup>
+
+
 <Heading Id="progress-bar-warnings" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Warnings for values out of range.</Heading>
 <Paragraph>
     If Value is greater than max or less than min, the component will log warnings to the browser console. Similarly if Min is greater than Max.
