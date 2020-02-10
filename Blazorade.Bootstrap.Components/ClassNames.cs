@@ -409,6 +409,34 @@ namespace Blazorade.Bootstrap.Components
             public const string Nav = "nav";
         }
 
+        public static class Paginations
+        {
+            /// <summary>
+            /// Add this class to mark an element as the container of page items
+            /// </summary>
+            public const string Pagination = "pagination";
+
+            /// <summary>
+            /// Add this class to mark an element as a page item, for use inside of a pagination element.
+            /// </summary>
+            public const string Item = "page-item";
+
+            /// <summary>
+            /// Add this class to an element inside of a page item to mark it as a link to another page in the pagination.
+            /// </summary>
+            public const string Link = "page-link";
+
+            /// <summary>
+            /// Add this class to a pagination element to make it large.
+            /// </summary>
+            public const string Large = "pagination-lg";
+
+            /// <summary>
+            /// Add this class to a pagination element to make it small.
+            /// </summary>
+            public const string Small = "pagination-sm";
+        }
+
         public static class Paragraphs
         {
             /// <summary>
