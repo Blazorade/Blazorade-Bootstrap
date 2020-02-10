@@ -1,0 +1,50 @@
+﻿@inherits BootstrapComponentBase
+
+@code {
+
+}
+<nav>
+    <ul @attributes="this.Attributes">
+        @if (this.ShowNavigation)
+        {
+            <li class="page-item@(this.CurrentPage == 0 ? " disabled": "")">
+                @if (null != this.PreviousPageLinkTemplate)
+                {
+                    @this.PreviousPageLinkTemplate
+                }
+                else
+                {
+                    <a href="js:" class="page-link" @onclick="this.PreviousAsync">@this.PreviousPageLinkText</a>
+                }
+            </li>
+        }
+
+        @foreach (var ix in this.CreatePageIndexArray())
+        {
+            <li class="page-item@(this.CurrentPage == ix && this.HighlightCurrent ? " active" : "")">
+                @if (null != this.PageItemLinkTemplate)
+                {
+                    @this.PageItemLinkTemplate(ix)
+                }
+                else
+                {
+                    <a href="js:" class="page-link" @onclick="async () => await this.NavigateToAsync(ix)">@(ix + 1)</a>
+                }
+            </li>
+        }
+
+        @if (this.ShowNavigation)
+        {
+            <li class="page-item@(this.CurrentPage >= this.PageCount - 1 ? " disabled": "")">
+                @if (null != this.NextPageLinkTemplate)
+                {
+                    @this.NextPageLinkTemplate
+                }
+                else
+                {
+                    <a href="js:" class="page-link" @onclick="this.NextAsync">@this.NextPageLinkText</a>
+                }
+            </li>
+        }
+    </ul>
+</nav>
