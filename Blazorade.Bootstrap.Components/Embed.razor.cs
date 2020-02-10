@@ -22,9 +22,6 @@ namespace Blazorade.Bootstrap.Components
         public string Source { get; set; }
 
 
-        [Inject]
-        protected IJSRuntime JsInterop { get; set; }
-
         protected IDictionary<string, object> IFrameAttributes { get; private set; }
 
         protected override void OnParametersSet()

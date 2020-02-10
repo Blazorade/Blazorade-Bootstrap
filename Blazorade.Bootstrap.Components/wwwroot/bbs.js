@@ -30,7 +30,7 @@ window.blazoradeBootstrap = {
     },
 
     alerts: {
-        dismiss: function(selector) {
+        dismiss: function (selector) {
             $(selector).alert("close");
         }
     },
@@ -52,7 +52,7 @@ window.blazoradeBootstrap = {
     },
 
     carousels: {
-        carousel: function(selector, autoStart, interval) {
+        carousel: function (selector, autoStart, interval) {
             var c = $(selector);
 
 
@@ -116,5 +116,7 @@ window.blazoradeBootstrap = {
         show: function (selector) {
             $(selector).toast("show");
         }
-    }
-}
+    },
+
+    console: console
+};

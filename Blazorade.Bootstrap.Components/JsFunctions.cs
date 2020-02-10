@@ -56,6 +56,17 @@ namespace Blazorade.Bootstrap.Components
             public const string Toggle = CollapseRoot + "toggle";
         }
 
+        public static class Console
+        {
+            private const string ConsoleRoot = Root + "console.";
+
+            public const string Error = ConsoleRoot + "error";
+
+            public const string Log = ConsoleRoot + "log";
+
+            public const string Warn = ConsoleRoot + "warn";
+        }
+
         public static class Modal
         {
             private const string ModalRoot = Root + "modals.";
