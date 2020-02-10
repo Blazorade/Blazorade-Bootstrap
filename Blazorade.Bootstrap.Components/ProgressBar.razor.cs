@@ -54,7 +54,7 @@ namespace Blazorade.Bootstrap.Components
         protected string CalculatedWidth {
             get
             {
-                return $"{Math.Round(Value / MaxValue, 2) * 100}%;";
+                return $"{Math.Round(Value / MaxValue, 2) * 100}%";
             }
         }
 
