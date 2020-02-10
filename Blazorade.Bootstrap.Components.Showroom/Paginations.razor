@@ -1,7 +1,98 @@
 ﻿
+@code {
+    Spacing headingMarginTop = Spacing.Five;
+}
+
 <Heading Level="HeadingLevel.H2">Pagination Component</Heading>
 <Paragraph>
     The <Anchor Url="https://getbootstrap.com/docs/4.4/components/pagination/" OpenInNewTab="true">Pagination component</Anchor> is used to create pagination to indicate that a series of related content exists across multiple pages.
 </Paragraph>
 
 <DocsSection ComponentName="Pagination" />
+
+
+<Heading Id="basic-pagination" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Basic Pagination</Heading>
+<Paragraph>
+    A basic Pagination example.
+</Paragraph>
+
+<Pagination PageCount="5" />
+
+
+<Heading Id="small-pagination" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Small Pagination</Heading>
+<Paragraph>
+    A Pagination example with the Size property set to PaginationSize.Small.
+</Paragraph>
+
+<Pagination PageCount="5" Size="PaginationSize.Small" />
+
+
+<Heading Id="large-pagination" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Large Pagination</Heading>
+<Paragraph>
+    A Pagination example with the Size property set to PaginationSize.Large.
+</Paragraph>
+
+<Pagination PageCount="5" Size="PaginationSize.Large" />
+
+
+<Heading Id="no-highlight" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">No highlighting</Heading>
+<Paragraph>
+    The <code>Pagination</code> component supports disabling the highlighting of the currently selected page.
+</Paragraph>
+@code {
+    Pagination pg3;
+    int pgNum3 = 0;
+}
+<Card Header="@($"Current Page: {this.pgNum3 + 1}")">
+    <Pagination @ref="this.pg3" PageCount="5" HighlightCurrent="false" OnCurrentPageChanged="() => this.pgNum3 = this.pg3.CurrentPage" />
+</Card>
+
+
+<Heading Id="hide-navigation" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Hide navigation</Heading>
+<Paragraph>
+    Shows you how to use the <code>Pagination</code> component and hide the Previous and Next links.
+</Paragraph>
+<Pagination PageCount="5" ShowNavigation="false" />
+
+
+<Heading Id="customizing-with-templates" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Customize the rendering</Heading>
+<Paragraph>
+    Shows you how you can customize how the <code>Pagination</code> control is rendered using the template parameters.
+</Paragraph>
+
+@code {
+    Pagination pg1;
+}
+<Pagination @ref="this.pg1" PageCount="5">
+    <PreviousPageLinkTemplate>
+        <Button Color="NamedColor.Warning" OnClicked="async () => await this.pg1.PreviousAsync()" IsDisabled="this.pg1.CurrentPage == 0">Go Back</Button>
+    </PreviousPageLinkTemplate>
+    <PageItemLinkTemplate>
+        <Button Color="NamedColor.Primary" IsOutline="@(this.pg1.CurrentPage != context)" IsActive="@(this.pg1.CurrentPage == context)" IsDisabled="@(this.pg1.CurrentPage == context)" OnClicked="async () => await this.pg1.NavigateToAsync(context)">Page #@(context + 1)</Button>
+    </PageItemLinkTemplate>
+    <NextPageLinkTemplate>
+        <Button Color="NamedColor.Success" OnClicked="async () => await this.pg1.NextAsync()" IsDisabled="this.pg1.CurrentPage >= this.pg1.PageCount - 1">Go forward</Button>
+    </NextPageLinkTemplate>
+</Pagination>
+
+
+<Heading Id="handling-events" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Handling events</Heading>
+<Paragraph>
+    The <code>Pagination</code> component publishes events when the selected page is changed.
+</Paragraph>
+
+@code {
+    Pagination pg2;
+
+    List<int> pageIndexes = new List<int>();
+    private void HandlePageEvent()
+    {
+        pageIndexes.Add(this.pg2.CurrentPage);
+    }
+}
+<Pagination @ref="this.pg2" PageCount="5" OnCurrentPageChanged="this.HandlePageEvent" />
+
+@foreach(var ix in this.pageIndexes)
+{
+    <Toast Header="Page Event" ShowOnRender="true" Delay="1000">Current Page: @(ix + 1)</Toast>
+}
