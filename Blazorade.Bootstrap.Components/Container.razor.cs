@@ -12,6 +12,9 @@ namespace Blazorade.Bootstrap.Components
             this.Type = ContainerType.FixedWidth;
         }
 
+        /// <summary>
+        /// Defines the type for the container. The default is <see cref="ContainerType.FixedWidth"/>.
+        /// </summary>
         [Parameter]
         public ContainerType Type { get; set; }
 
