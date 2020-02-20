@@ -42,5 +42,16 @@ namespace Blazorade.Bootstrap.Components
 
             public const string Hidden = "hidden.bs.toast";
         }
+
+        public static class Popover
+        {
+            public const string Show = "show.bs.popover";
+
+            public const string Shown = "shown.bs.popover";
+
+            public const string Hide = "hide.bs.popover";
+
+            public const string Hidden = "hidden.bs.popover";
+        }
     }
 }
