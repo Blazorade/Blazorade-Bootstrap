@@ -118,5 +118,27 @@ window.blazoradeBootstrap = {
         }
     },
 
+    popovers: {
+        init: function (selector, title, content, html, delay, placement, trigger, offset) {
+           
+            $(selector).popover({
+                title: title,
+                content: content,
+                html:html,
+                delay: delay,
+                placement:placement,
+                trigger:trigger,
+                offset: offset
+
+            });
+        },
+        hide: function (selector) {
+            $(selector).popover("hide");
+        },
+        show: function (selector) {            
+            $(selector).popover("show");
+        }
+    },
+
     console: console
 };

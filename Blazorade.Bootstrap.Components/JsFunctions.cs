@@ -78,6 +78,17 @@ namespace Blazorade.Bootstrap.Components
             public const string Toggle = ModalRoot + "toggle";
         }
 
+        public static class Popover
+        {
+            private const string ToastRoot = Root + "popovers.";
+
+            public const string Init = ToastRoot + "init";
+
+            public const string Show = ToastRoot + "show";
+
+            public const string Hide = ToastRoot + "hide";
+        }
+
         public static class Toast
         {
             private const string ToastRoot = Root + "toasts.";

@@ -498,5 +498,14 @@ namespace Blazorade.Bootstrap.Components
 
             public const string Toast = "toast";
         }
+
+        public static class Popovers
+        {
+            public const string Body = "popover-body";
+
+            public const string Header = "popover-header";
+
+            public const string Popover = "popover";
+        }
     }
 }

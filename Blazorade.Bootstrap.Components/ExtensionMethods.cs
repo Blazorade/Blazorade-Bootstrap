@@ -48,5 +48,10 @@ namespace Blazorade.Bootstrap.Components
             return new ToastInterop(jsInterop);
         }
 
+
+        public static PopoverInterop Popover(this IJSRuntime jsInterop)
+        {
+            return new PopoverInterop(jsInterop);
+        }
     }
 }
