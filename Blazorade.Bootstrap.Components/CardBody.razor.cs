@@ -106,6 +106,9 @@ namespace Blazorade.Bootstrap.Components
         }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
         protected override void OnParametersSet()
         {
             if (!this.IsImageOverlay)
