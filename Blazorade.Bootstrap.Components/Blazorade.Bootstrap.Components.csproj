@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.9.6-preview</Version>
+    <Version>0.9.7-preview</Version>
     <Authors>Mika Berglund</Authors>
     <Company>Blazorade</Company>
     <Product>Blazorade Bootstrap</Product>
@@ -15,6 +15,14 @@
     <PackageTags>Blazor, Bootstrap, Razor</PackageTags>
     <PackageReleaseNotes>This is a preview release.</PackageReleaseNotes>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>Blazorade.Bootstrap.Components.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>Blazorade.Bootstrap.Components.xml</DocumentationFile>
   </PropertyGroup>
 
 
