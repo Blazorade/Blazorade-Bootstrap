@@ -8,29 +8,47 @@ using System.Threading.Tasks;
 
 namespace Blazorade.Bootstrap.Components
 {
+    /// <summary>
+    /// Represents the content in a <see cref="Heading"/> component.
+    /// </summary>
     public partial class HeadingContent
     {
 
+        /// <summary>
+        /// The ID of the <see cref="Anchor"/> element that is shown when hovering over the content.
+        /// </summary>
         [Parameter]
         public string AnchorId { get; set; }
 
+        /// <summary>
+        /// The element ID of the parent <see cref="Heading"/> component.
+        /// </summary>
         [Parameter]
         public string HeadingId { get; set; }
 
+        /// <summary>
+        /// Specifies whether the heading is an automatic anchor.
+        /// </summary>
         [Parameter]
         public bool IsAnchor { get; set; }
 
 
+        /// <summary>
+        /// </summary>
         protected async Task ContentOnMouseOver(MouseEventArgs e)
         {
             await this.JsInterop.InvokeVoidAsync(JsFunctions.Show, this.AnchorId);
         }
 
+        /// <summary>
+        /// </summary>
         protected async Task ContentOnMouseOut(MouseEventArgs e)
         {
             await this.JsInterop.InvokeVoidAsync(JsFunctions.Hide, this.AnchorId);
         }
 
+        /// <summary>
+        /// </summary>
         protected override void OnParametersSet()
         {
             this.Id = $"{this.HeadingId}-content";

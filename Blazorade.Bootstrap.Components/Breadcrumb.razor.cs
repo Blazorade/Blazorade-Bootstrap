@@ -7,21 +7,35 @@ using Blazorade.Bootstrap.Components.Model;
 
 namespace Blazorade.Bootstrap.Components
 {
+
+    /// <summary>
+    /// The Breadcrumb component visualizes the current page in a navigational hierarchy.
+    /// </summary>
     public partial class Breadcrumb
     {
 
+        /// <summary>
+        /// The template to use to display each link with. If not specified, a default template is used.
+        /// </summary>
         [Parameter]
         public RenderFragment<ILink> ItemTemplate { get; set; }
 
+        /// <summary>
+        /// A collection of the items to show in the Breadcrumb component.
+        /// </summary>
         [Parameter]
         public IReadOnlyList<ILink> Items { get; set; }
 
+        /// <summary>
+        /// </summary>
         public override RenderFragment ChildContent {
             get => base.ChildContent;
             set => throw new NotSupportedException($"The '{this.GetType().Name}' component does not support child content with the '{nameof(this.ChildContent)}' property.");
         }
 
 
+        /// <summary>
+        /// </summary>
         public override Task SetParametersAsync(ParameterView parameters)
         {
             this.AddAttribute("aria-label", ClassNames.Breadcrumbs.Breadcrumb);

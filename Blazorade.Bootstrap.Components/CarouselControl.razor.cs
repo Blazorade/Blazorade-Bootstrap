@@ -5,13 +5,21 @@ using System.Text;
 
 namespace Blazorade.Bootstrap.Components
 {
+    /// <summary>
+    /// Supports the <see cref="Carousel"/> component and displays controls to move back and forward through slides.
+    /// </summary>
     public partial class CarouselControl
     {
+        /// <summary>
+        /// </summary>
         public CarouselControl()
         {
             this.Direction = CarouselControlDirection.Next;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         [Parameter]
         public override RenderFragment ChildContent { get => base.ChildContent; set => throw new NotSupportedException("This control does not support child content."); }
 
@@ -21,11 +29,15 @@ namespace Blazorade.Bootstrap.Components
         [Parameter]
         public Carousel Carousel { get; set; }
 
-
+        /// <summary>
+        /// Specifies the direction in which the control moves the slides.
+        /// </summary>
         [Parameter]
         public CarouselControlDirection Direction { get; set; }
 
 
+        /// <summary>
+        /// </summary>
         protected override void OnParametersSet()
         {
             this.AddAttribute("href", $"#{this.Carousel.Id}");

@@ -7,26 +7,47 @@ using System.Text;
 
 namespace Blazorade.Bootstrap.Components
 {
+    /// <summary>
+    /// A flexible container with different variants.
+    /// </summary>
     public partial class Card
     {
+        /// <summary>
+        /// Creates an instance of the Card component.
+        /// </summary>
         public Card()
         {
             this.ImagePosition = CardImagePosition.Top;
         }
 
 
+        /// <summary>
+        /// Allows you to customize how the body of the card is rendered.
+        /// </summary>
         [Parameter]
         public RenderFragment BodyTemplate { get; set; }
 
+        /// <summary>
+        /// The text to display in the footer of the Card.
+        /// </summary>
         [Parameter]
         public string Footer { get; set; }
 
+        /// <summary>
+        /// Allows you to customize how the footer is rendered. The context parameter contains the text specified on <see cref="Footer"/>
+        /// </summary>
         [Parameter]
         public RenderFragment<string> FooterTemplate { get; set; }
 
+        /// <summary>
+        /// The text to display in the header of the Card.
+        /// </summary>
         [Parameter]
         public string Header { get; set; }
 
+        /// <summary>
+        /// Allows you to customize how the header is rendered. The context paramterer contains the text specified in <see cref="Header"/>.
+        /// </summary>
         [Parameter]
         public RenderFragment<string> HeaderTemplate { get; set; }
 
@@ -87,9 +108,15 @@ namespace Blazorade.Bootstrap.Components
         [Parameter]
         public RenderFragment<string> SubtitleTemplate { get; set; }
 
+        /// <summary>
+        /// The text to display in the body of the card.
+        /// </summary>
         [Parameter]
         public string Text { get; set; }
 
+        /// <summary>
+        /// Allows you to customize how the text is rendered. The context parameter is the text specified in <see cref="Text"/>.
+        /// </summary>
         [Parameter]
         public RenderFragment<string> TextTemplate { get; set; }
 
@@ -110,13 +137,14 @@ namespace Blazorade.Bootstrap.Components
 
 
 
+        /// <summary>
+        /// </summary>
         protected override void OnParametersSet()
         {
             this.AddClasses(ClassNames.Cards.Card);
 
             base.OnParametersSet();
         }
-
 
     }
 }

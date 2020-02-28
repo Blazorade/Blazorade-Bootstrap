@@ -8,12 +8,39 @@
     /// </remarks>
     public enum Spacing
     {
+        /// <summary>
+        /// Automatic spacing.
+        /// </summary>
         Auto = -1,
+
+        /// <summary>
+        /// No spacing.
+        /// </summary>
         Zero = 0,
+
+        /// <summary>
+        /// $spacer * 0.25
+        /// </summary>
         One = 1,
+
+        /// <summary>
+        /// $spacer * 0.5
+        /// </summary>
         Two = 2,
+
+        /// <summary>
+        /// $spacer
+        /// </summary>
         Three = 3,
+
+        /// <summary>
+        /// $spacer * 1.5
+        /// </summary>
         Four = 4,
+
+        /// <summary>
+        /// $spacer * 3
+        /// </summary>
         Five = 5
     }
 }

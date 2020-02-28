@@ -7,9 +7,15 @@ using System.Threading.Tasks;
 
 namespace Blazorade.Bootstrap.Components
 {
+    /// <summary>
+    /// The Modal component enables you to add dialogs to your site or application for lightboxes, user notification, 
+    /// or virtually any kind of custom content that you want to have the user focus on.
+    /// </summary>
     public partial class Modal
     {
 
+        /// <summary>
+        /// </summary>
         public Modal()
         {
             this.Fade = true;
@@ -17,35 +23,66 @@ namespace Blazorade.Bootstrap.Components
         }
 
 
+        /// <summary>
+        /// Fires when the modal has been hidden.
+        /// </summary>
         [Parameter]
         public EventCallback<Modal> Hidden { get; set; }
 
+        /// <summary>
+        /// Fires when the modal has been shown.
+        /// </summary>
         [Parameter]
         public EventCallback<Modal> Shown { get; set; }
 
+        /// <summary>
+        /// Fires when the modal has been toggled.
+        /// </summary>
         [Parameter]
         public EventCallback<Modal> Toggled { get; set; }
 
 
 
+        /// <summary>
+        /// The body text to show in the body area of the dialog.
+        /// </summary>
         [Parameter]
         public string Body { get; set; }
 
+        /// <summary>
+        /// Allows you to fully customize the body of the dialog. Consider using <see cref="ModalBody"/> as a wrapper for your custom content.
+        /// </summary>
         [Parameter]
         public RenderFragment<string> BodyTemplate { get; set; }
 
+        /// <summary>
+        /// Specifies whether the Modal will fade when shown or hidden.
+        /// </summary>
         [Parameter]
         public bool Fade { get; set; }
 
+        /// <summary>
+        /// Allows you to specify content for the footer of your dialog. Consider using <see cref="ModalFooter"/> as wrapper for your footer content.
+        /// </summary>
         [Parameter]
         public RenderFragment FooterTemplate { get; set; }
 
+        /// <summary>
+        /// The header text to show in the header section of the dialog.
+        /// </summary>
         [Parameter]
         public string Header { get; set; }
 
+        /// <summary>
+        /// Allows you to customize the header of your dialog. Consider using the <see cref="ModalHeader"/> and <see cref="CloseModalButton"/>
+        /// components when customizing the header.
+        /// </summary>
         [Parameter]
         public RenderFragment<string> HeaderTemplate { get; set; }
 
+        /// <summary>
+        /// Defines the size of the Modal.
+        /// </summary>
         [Parameter]
         public ModalSize Size { get; set; }
 
@@ -54,6 +91,9 @@ namespace Blazorade.Bootstrap.Components
         private string DialogClasses { get; set; }
 
 
+        /// <summary>
+        /// Hides the modal dialog.
+        /// </summary>
         public void Hide()
         {
             this.HideAsync();
@@ -159,6 +199,8 @@ namespace Blazorade.Bootstrap.Components
         }
 
 
+        /// <summary>
+        /// </summary>
 
         protected override void OnParametersSet()
         {
