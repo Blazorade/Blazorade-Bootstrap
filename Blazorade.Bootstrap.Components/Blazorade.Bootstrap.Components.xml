@@ -338,6 +338,11 @@
             <summary>
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.Button">
+            <summary>
+            The Button component allows you to render various types of buttons.
+            </summary>
+        </member>
         <member name="P:Blazorade.Bootstrap.Components.Button.OnClicked">
             <summary>
             The callback that is called when the button is clicked.
@@ -1371,6 +1376,48 @@
             <summary>
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.EmbedAspectRatio">
+            <summary>
+            Defines aspect ratios for <see cref="T:Blazorade.Bootstrap.Components.Embed"/>.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.EmbedAspectRatio.Ratio21by9">
+            <summary>
+            21 by 9
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.EmbedAspectRatio.Ratio16by9">
+            <summary>
+            16 by 9
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.EmbedAspectRatio.Ratio4by3">
+            <summary>
+            4 by 3
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.EmbedAspectRatio.Ratio1by1">
+            <summary>
+            1 by 1
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.ExtensionMethods">
+            <summary>
+            Defines extension methods for components.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.ExtensionMethods.Alert(Microsoft.JSInterop.IJSRuntime)">
+            <summary>
+            Returns the interop implementation for <see cref="T:Blazorade.Bootstrap.Components.Alert"/>.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.ExtensionMethods.Collapse(Microsoft.JSInterop.IJSRuntime)">
+            <summary>
+            Returns the interop implementation for <see cref="T:Blazorade.Bootstrap.Components.Collapse"/>.
+            </summary>
+            <param name="jsInterop"></param>
+            <returns></returns>
+        </member>
         <member name="M:Blazorade.Bootstrap.Components.ExtensionMethods.Lines(System.String)">
             <summary>
             Breaks the given input into lines.
@@ -1380,6 +1427,26 @@
             <remarks>
             If <paramref name="input"/> is <c>null</c>, an empty collection is returned.
             </remarks>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.ExtensionMethods.RegisterEventCallbackAsync(Microsoft.JSInterop.IJSRuntime,System.String,System.String,Blazorade.Bootstrap.Components.BootstrapComponentBase,System.String,System.Boolean,System.String[])">
+            <summary>
+            Registers an event callback.
+            </summary>
+            <param name="jsInterop"></param>
+            <param name="id">The ID of the element whose event to register for.</param>
+            <param name="eventName">The name of the event to register for.</param>
+            <param name="callbackTarget">The component that will receive the callback.</param>
+            <param name="callbackMethodName">The name of the callback method on the <paramref name="callbackTarget"/>.</param>
+            <param name="singleEvent">If set to <c>true</c> will automatically deregister after first event.</param>
+            <param name="callbackParameters">Parameters to send to the callback method.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.ExtensionMethods.Toast(Microsoft.JSInterop.IJSRuntime)">
+            <summary>
+            Returns the interop implementation for <see cref="T:Blazorade.Bootstrap.Components.Toast"/>.
+            </summary>
+            <param name="jsInterop"></param>
+            <returns></returns>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.Heading.Display">
             <summary>
@@ -1397,6 +1464,116 @@
             The heading level.
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.HeadingContent">
+            <summary>
+            Represents the content in a <see cref="T:Blazorade.Bootstrap.Components.Heading"/> component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.HeadingContent.AnchorId">
+            <summary>
+            The ID of the <see cref="T:Blazorade.Bootstrap.Components.Anchor"/> element that is shown when hovering over the content.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.HeadingContent.HeadingId">
+            <summary>
+            The element ID of the parent <see cref="T:Blazorade.Bootstrap.Components.Heading"/> component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.HeadingContent.IsAnchor">
+            <summary>
+            Specifies whether the heading is an automatic anchor.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.HeadingContent.ContentOnMouseOver(Microsoft.AspNetCore.Components.Web.MouseEventArgs)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.HeadingContent.ContentOnMouseOut(Microsoft.AspNetCore.Components.Web.MouseEventArgs)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.HeadingContent.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.HeadingDisplay">
+            <summary>
+            Allows you to make a Heading stand out as a larger than normal heading.
+            </summary>
+            <remarks>
+            For details see <c>https://getbootstrap.com/docs/4.4/content/typography/#display-headings</c>.
+            </remarks>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.HeadingDisplay.Display1">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.HeadingDisplay.Display2">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.HeadingDisplay.Display3">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.HeadingDisplay.Display4">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.HeadingLevel">
+            <summary>
+            Defines different levels for headings.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.HeadingLevel.H1">
+            <summary>
+            First level.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.HeadingLevel.H2">
+            <summary>
+            Second level.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.HeadingLevel.H3">
+            <summary>
+            Third level.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.HeadingLevel.H4">
+            <summary>
+            Fourth level.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.HeadingLevel.H5">
+            <summary>
+            Fifth level.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.HeadingLevel.H6">
+            <summary>
+            Sixth level.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.ImageBase">
+            <summary>
+            Base class for images.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.ImageBase.Src">
+            <summary>
+            The absolute or relative URL of the image.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.ImageBase.Alt">
+            <summary>
+            The alt text to use for the image.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.ImageBase.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
         <member name="T:Blazorade.Bootstrap.Components.ImageScaleMode">
             <summary>
             Defines different modes for scaling images.
@@ -1412,9 +1589,113 @@
             The image will be resized so that it completely fills the area specified for the image. Some cropping may occur.
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.ListGroup">
+            <summary>
+            The ListGroup component is used to display a series of content in a powerful and flexible way.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.ListGroup.IsFlush">
+            <summary>
+            Removes some borders and rounder corners to render list group items edge-to-edge in a parent container.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.ListGroup.IsHorizontal">
+            <summary>
+            Changes the layout of list group items from vertical to horizontal across all breakpoints.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.ListGroup.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
         <member name="P:Blazorade.Bootstrap.Components.ListGroupAnchor.Color">
             <summary>
             Setting a color for a ListGroupAnchor will apply a contextual color to the list group item.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.ListGroupItem">
+            <summary>
+            Represents an item in a <see cref="T:Blazorade.Bootstrap.Components.ListGroup"/> component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.ListGroupItem.IsActive">
+            <summary>
+            Indicates that the item is the current or active selection.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.ListGroupItem.IsDisabled">
+            <summary>
+            Makes an item appear as disabled.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.ListGroupItem.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Modal">
+            <summary>
+            The Modal component enables you to add dialogs to your site or application for lightboxes, user notification, 
+            or virtually any kind of custom content that you want to have the user focus on.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Modal.#ctor">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Modal.Hidden">
+            <summary>
+            Fires when the modal has been hidden.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Modal.Shown">
+            <summary>
+            Fires when the modal has been shown.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Modal.Toggled">
+            <summary>
+            Fires when the modal has been toggled.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Modal.Body">
+            <summary>
+            The body text to show in the body area of the dialog.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Modal.BodyTemplate">
+            <summary>
+            Allows you to fully customize the body of the dialog. Consider using <see cref="T:Blazorade.Bootstrap.Components.ModalBody"/> as a wrapper for your custom content.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Modal.Fade">
+            <summary>
+            Specifies whether the Modal will fade when shown or hidden.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Modal.FooterTemplate">
+            <summary>
+            Allows you to specify content for the footer of your dialog. Consider using <see cref="T:Blazorade.Bootstrap.Components.ModalFooter"/> as wrapper for your footer content.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Modal.Header">
+            <summary>
+            The header text to show in the header section of the dialog.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Modal.HeaderTemplate">
+            <summary>
+            Allows you to customize the header of your dialog. Consider using the <see cref="T:Blazorade.Bootstrap.Components.ModalHeader"/> and <see cref="T:Blazorade.Bootstrap.Components.CloseModalButton"/>
+            components when customizing the header.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Modal.Size">
+            <summary>
+            Defines the size of the Modal.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Modal.Hide">
+            <summary>
+            Hides the modal dialog.
             </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Modal.HideAsync">
@@ -1467,6 +1748,20 @@
         <member name="M:Blazorade.Bootstrap.Components.Modal.OnToggledAsync">
             <summary>
             Fires the <see cref="P:Blazorade.Bootstrap.Components.Modal.Toggled"/> event.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Modal.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.ModalSize">
+            <summary>
+            Defines different sizes for <see cref="T:Blazorade.Bootstrap.Components.Modal"/> components.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ModalSize.Default">
+            <summary>
+            The default size.
             </summary>
         </member>
         <member name="F:Blazorade.Bootstrap.Components.ModalSize.SM">
@@ -1731,22 +2026,22 @@
         </member>
         <member name="F:Blazorade.Bootstrap.Components.NavbarExpandBreakpoint.SM">
             <summary>
-            Expands by default at >= 576 px.
+            Expands by default at &gt;= 576 px.
             </summary>
         </member>
         <member name="F:Blazorade.Bootstrap.Components.NavbarExpandBreakpoint.MD">
             <summary>
-            Expands by default at >= 768 px.
+            Expands by default at &gt;= 768 px.
             </summary>
         </member>
         <member name="F:Blazorade.Bootstrap.Components.NavbarExpandBreakpoint.LG">
             <summary>
-            Expands by default at >= 992 px.
+            Expands by default at &gt;= 992 px.
             </summary>
         </member>
         <member name="F:Blazorade.Bootstrap.Components.NavbarExpandBreakpoint.XL">
             <summary>
-            Expands by default at >= 1200 px.
+            Expands by default at &gt;= 1200 px.
             </summary>
         </member>
         <member name="F:Blazorade.Bootstrap.Components.NavbarExpandBreakpoint.Never">
@@ -1975,9 +2270,59 @@
             Set this to true if you want to show the percentage as text inside the bar.
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.ResponsiveBreakpoint">
+            <summary>
+            Defines the different responsive breakpoints supported by Bootstrap.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ResponsiveBreakpoint.XS">
+            <summary>
+            Extra small. &lt; 576 px.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ResponsiveBreakpoint.SM">
+            <summary>
+            Small. &gt;= 576 px
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ResponsiveBreakpoint.MD">
+            <summary>
+            Medium. &gt;= 768 px.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ResponsiveBreakpoint.LG">
+            <summary>
+            Large. &gt;= 992 px.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ResponsiveBreakpoint.XL">
+            <summary>
+            Extra large. &gt;= 1200 px.
+            </summary>
+        </member>
         <member name="T:Blazorade.Bootstrap.Components.ShadowSize">
             <summary>
             Defines different shadow sizes for components.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ShadowSize.None">
+            <summary>
+            No shadow. Default.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ShadowSize.Small">
+            <summary>
+            A small shadow.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ShadowSize.Regular">
+            <summary>
+            Regular shadow.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ShadowSize.Large">
+            <summary>
+            Large shadow.
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Spacing">
@@ -1987,6 +2332,128 @@
             <remarks>
             The members of this enumeration correspond to one of the supported size values. <see cref="!:https://getbootstrap.com/docs/4.4/utilities/spacing/#notation"/>
             </remarks>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Spacing.Auto">
+            <summary>
+            Automatic spacing.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Spacing.Zero">
+            <summary>
+            No spacing.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Spacing.One">
+            <summary>
+            $spacer * 0.25
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Spacing.Two">
+            <summary>
+            $spacer * 0.5
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Spacing.Three">
+            <summary>
+            $spacer
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Spacing.Four">
+            <summary>
+            $spacer * 1.5
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Spacing.Five">
+            <summary>
+            $spacer * 3
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Spinner">
+            <summary>
+            The Spinner component is used to indicate a loading state of a UI element or page.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Spinner.#ctor">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Spinner.ContentAlignment">
+            <summary>
+            Specifies how to align child content in your spinner.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Spinner.Size">
+            <summary>
+            The size of the spinner. Defaults to <see cref="F:Blazorade.Bootstrap.Components.SpinnerSize.Normal"/>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Spinner.Type">
+            <summary>
+            The type of spinner. Defaults to <see cref="F:Blazorade.Bootstrap.Components.SpinnerType.Border"/>.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Spinner.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.SpinnerSize">
+            <summary>
+            Defines different sizes for <see cref="T:Blazorade.Bootstrap.Components.Spinner"/> components.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.SpinnerSize.Normal">
+            <summary>
+            Normal size.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.SpinnerSize.Small">
+            <summary>
+            Small size. Useful for instance on buttons and links.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.SpinnerType">
+            <summary>
+            Defines different types to be used in <see cref="T:Blazorade.Bootstrap.Components.Spinner"/> components
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.SpinnerType.Border">
+            <summary>
+            Default. The spinner has a spinning border.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.SpinnerType.Grow">
+            <summary>
+            The spinner is a growing circle.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.TextAlignment">
+            <summary>
+            Defines text alignment variations.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.TextAlignment.Left">
+            <summary>
+            Text is aligned left.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.TextAlignment.Center">
+            <summary>
+            Text is centered.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.TextAlignment.Right">
+            <summary>
+            Text is aligned right.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Toast">
+            <summary>
+            The Toast component is used to push notifications to your visitor as a lighweight and customizable alert message.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Toast.#ctor">
+            <summary>
+            </summary>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.Toast.OnHide">
             <summary>
@@ -2013,6 +2480,26 @@
             Specifies whether the toast should automatically hide after the number of milliseconds specified in <see cref="P:Blazorade.Bootstrap.Components.Toast.Delay"/>.
             </summary>
         </member>
+        <member name="P:Blazorade.Bootstrap.Components.Toast.BodyTemplate">
+            <summary>
+            Allows you to completely customize the body of the toast. You can also specify any child content for the toast to specify the body.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Toast.Delay">
+            <summary>
+            The number of millseconds to show the toast before automatically hiding. Ignored if <see cref="P:Blazorade.Bootstrap.Components.Toast.AutoHide"/> is set to <c>false</c>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Toast.Header">
+            <summary>
+            The header text of the toast.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Toast.HeaderTemplate">
+            <summary>
+            Allows you to completely customize the header.
+            </summary>
+        </member>
         <member name="P:Blazorade.Bootstrap.Components.Toast.ShowHideButton">
             <summary>
             Specifies whether the hide button is shown in the header of the toast.
@@ -2021,6 +2508,41 @@
         <member name="P:Blazorade.Bootstrap.Components.Toast.ShowOnRender">
             <summary>
             Specifies whether to show the toast immediately when rendered without having to separately invoke the <see cref="M:Blazorade.Bootstrap.Components.Toast.ShowAsync"/> method.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Toast.Subheader">
+            <summary>
+            The subheader of the toast.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Toast.Hide">
+            <summary>
+            Hides the toast.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Toast.HideAsync">
+            <summary>
+            Hides the toast.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Toast.Show">
+            <summary>
+            Shows the toast.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Toast.ShowAsync">
+            <summary>
+            Shows the toast.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Toast.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Toast.OnAfterRenderAsync(System.Boolean)">
+            <summary>
             </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Toast.OnHideAsync">
@@ -2046,6 +2568,26 @@
             Triggers the <see cref="P:Blazorade.Bootstrap.Components.Toast.OnShown"/> callback.
             </summary>
             <remarks>Invoked by JS Interop. Not to be called directly.</remarks>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.ToggleAction">
+            <summary>
+            Defines toggle actions for the <see cref="T:Blazorade.Bootstrap.Components.Modal"/> component.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ToggleAction.Show">
+            <summary>
+            Show the component.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ToggleAction.Hide">
+            <summary>
+            Hide the component.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ToggleAction.Toggle">
+            <summary>
+            Toggle the visibility of the component.
+            </summary>
         </member>
     </members>
 </doc>
