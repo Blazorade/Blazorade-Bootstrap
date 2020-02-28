@@ -7,9 +7,14 @@ using System.Threading.Tasks;
 
 namespace Blazorade.Bootstrap.Components
 {
+    /// <summary>
+    /// The Toast component is used to push notifications to your visitor as a lighweight and customizable alert message.
+    /// </summary>
     partial class Toast
     {
 
+        /// <summary>
+        /// </summary>
         public Toast()
         {
             this.AutoHide = true;
@@ -52,15 +57,27 @@ namespace Blazorade.Bootstrap.Components
         [Parameter]
         public bool AutoHide { get; set; }
 
+        /// <summary>
+        /// Allows you to completely customize the body of the toast. You can also specify any child content for the toast to specify the body.
+        /// </summary>
         [Parameter]
         public RenderFragment BodyTemplate { get; set; }
 
+        /// <summary>
+        /// The number of millseconds to show the toast before automatically hiding. Ignored if <see cref="AutoHide"/> is set to <c>false</c>.
+        /// </summary>
         [Parameter]
         public int Delay { get; set; }
 
+        /// <summary>
+        /// The header text of the toast.
+        /// </summary>
         [Parameter]
         public string Header { get; set; }
 
+        /// <summary>
+        /// Allows you to completely customize the header.
+        /// </summary>
         [Parameter]
         public RenderFragment HeaderTemplate { get; set; }
 
@@ -76,26 +93,43 @@ namespace Blazorade.Bootstrap.Components
         [Parameter]
         public bool ShowOnRender { get; set; }
 
+        /// <summary>
+        /// The subheader of the toast.
+        /// </summary>
         [Parameter]
         public string Subheader { get; set; }
 
 
 
+        /// <summary>
+        /// Hides the toast.
+        /// </summary>
         public void Hide()
         {
             this.HideAsync();
         }
 
+        /// <summary>
+        /// Hides the toast.
+        /// </summary>
+        /// <returns></returns>
         public async Task HideAsync()
         {
             await this.JsInterop.Toast().HideAsync(this.Id);
         }
 
+        /// <summary>
+        /// Shows the toast.
+        /// </summary>
         public void Show()
         {
             this.ShowAsync();
         }
 
+        /// <summary>
+        /// Shows the toast.
+        /// </summary>
+        /// <returns></returns>
         public async Task ShowAsync()
         {
             await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Toast.Show, this, nameof(this.OnShowAsync));
@@ -107,6 +141,8 @@ namespace Blazorade.Bootstrap.Components
         }
 
 
+        /// <summary>
+        /// </summary>
         protected override void OnParametersSet()
         {
             this.AddClasses(ClassNames.Toasts.Toast);
@@ -121,6 +157,8 @@ namespace Blazorade.Bootstrap.Components
             this.SetIdIfEmpty();
         }
 
+        /// <summary>
+        /// </summary>
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             if (firstRender)
@@ -174,5 +212,6 @@ namespace Blazorade.Bootstrap.Components
         {
             await this.OnShown.InvokeAsync(this);
         }
+
     }
 }
