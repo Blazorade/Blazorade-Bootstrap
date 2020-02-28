@@ -1,3 +1,13 @@
-﻿@inherits BootstrapComponentBase
+﻿@inherits Anchor
 
-<Anchor @attributes="this.Attributes">@this.ChildContent</Anchor>
+<Anchor @attributes="this.Attributes"
+        Description="@this.Description"
+        IgnoreEmptyUrl="@this.IgnoreEmptyUrl"
+        Index="@this.Index"
+        IsActive="@this.IsActive"
+        IsDisabled="this.IsDisabled"
+        IsStretched="@this.IsStretched"
+        OpenInNewTab="this.OpenInNewTab"
+        Url="@this.Url"
+        Text="@this.Text"
+        Link="@this.Link">@this.ChildContent</Anchor>
