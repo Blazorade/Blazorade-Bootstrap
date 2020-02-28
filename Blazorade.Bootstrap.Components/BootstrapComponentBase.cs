@@ -114,35 +114,66 @@ namespace Blazorade.Bootstrap.Components
 
         #endregion
 
+        /// <summary>
+        /// The ID of the element rendered by the component.
+        /// </summary>
         [Parameter]
         public string Id { get; set; }
 
+        /// <summary>
+        /// Specifies the height for the component.
+        /// </summary>
         [Parameter]
         public ComponentSize? Height { get; set; }
 
+        /// <summary>
+        /// Specifies how text should be aligned in the component.
+        /// </summary>
         [Parameter]
         public TextAlignment? TextAlignment { get; set; }
 
+        /// <summary>
+        /// Specifies the background colour.
+        /// </summary>
         [Parameter]
         public NamedColor? BackgroundColor { get; set; }
 
+        /// <summary>
+        /// Specifies the border colour.
+        /// </summary>
         [Parameter]
         public NamedColor? BorderColor { get; set; }
 
+        /// <summary>
+        /// Specifies the colour of the text contained in the component.
+        /// </summary>
         [Parameter]
         public NamedColor? TextColor { get; set; }
 
+        /// <summary>
+        /// Specifies a shadow for the component. Shadows are used to make certain elements stand out.
+        /// </summary>
         [Parameter]
         public ShadowSize? Shadow { get; set; }
 
+        /// <summary>
+        /// Specifies whether the component is a container for streteched links. If the component contains
+        /// an <see cref="Anchor"/> where <see cref="Anchor.IsStretched"/> is set to <c>true</c>, then the
+        /// entire component will act as that link.
+        /// </summary>
         [Parameter]
         public bool IsStretchedLinkContainer { get; set; }
 
+        /// <summary>
+        /// Specifies the width for the component.
+        /// </summary>
         [Parameter]
         public ComponentSize? Width { get; set; }
 
 
 
+        /// <summary>
+        /// </summary>
         [Inject]
         protected IJSRuntime JsInterop { get; set; }
 
@@ -160,6 +191,17 @@ namespace Blazorade.Bootstrap.Components
             return "e" + Guid.NewGuid().ToString().Replace("-", "").Substring(0, 8);
         }
 
+        /// <summary>
+        /// Generates the class name from the given prefix and colour. The method returns <c>{prefix}-{colour}</c>.
+        /// </summary>
+        /// <param name="prefix">
+        /// The prefix (without a dash) for the class name, for instance <c>btn</c>. If the prefix is not specified,
+        /// the lower case version of the current class name is used.
+        /// </param>
+        /// <param name="color">The colour to create the clas name from.</param>
+        /// <returns>
+        /// Returns the class name as <c>{prefix}-{color}</c> or <c>null</c> if <paramref name="color"/> is <c>null</c>.
+        /// </returns>
         protected string GetColorClassName(string prefix = null, NamedColor? color = null)
         {
             prefix = prefix ?? this.GetType().Name.ToLower();
@@ -172,21 +214,38 @@ namespace Blazorade.Bootstrap.Components
             return name;
         }
 
+        /// <summary>
+        /// Logs an error to the browser's console.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="args">Arguments to log with the message.</param>
         protected async Task LogErrorAsync(string message, params object[] args)
         {
             await this.JsInterop.InvokeVoidAsync(JsFunctions.Console.Error, message, args);
         }
 
+        /// <summary>
+        /// Logs an info message to the browser's console.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="args">Arguments to log with the message.</param>
         protected async Task LogInfoAsync(string message, params object[] args)
         {
             await this.JsInterop.InvokeVoidAsync(JsFunctions.Console.Log, message, args);
         }
 
+        /// <summary>
+        /// Logs a warning to the browser's console.
+        /// </summary>
+        /// <param name="message">The message to log.</param>
+        /// <param name="args">Arguments to log with the message.</param>
         protected async Task LogWarningAsync(string message, params object[] args)
         {
             await this.JsInterop.InvokeVoidAsync(JsFunctions.Console.Warn, message, args);
         }
 
+        /// <summary>
+        /// </summary>
         protected override void OnParametersSet()
         {
             #region Handle margins and paddings
