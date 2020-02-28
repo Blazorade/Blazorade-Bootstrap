@@ -5,38 +5,70 @@ using System.Text;
 
 namespace Blazorade.Bootstrap.Components
 {
+    /// <summary>
+    /// Represents a slide in a <see cref="Carousel"/> component.
+    /// </summary>
     public partial class CarouselItem
     {
+        /// <summary>
+        /// </summary>
         public CarouselItem()
         {
             this.MinHeight = "200px";
         }
 
 
+        /// <summary>
+        /// The background colour for the caption of the slide.
+        /// </summary>
         [Parameter]
         public NamedColor? CaptionBackgroundColor { get; set; }
 
+        /// <summary>
+        /// The text colour for the caption.
+        /// </summary>
         [Parameter]
         public NamedColor? CaptionTextColor { get; set; }
 
+        /// <summary>
+        /// The heading text of the caption.
+        /// </summary>
         [Parameter]
         public string CaptionHeading { get; set; }
 
+        /// <summary>
+        /// The template that allows you to completely customize the caption heading. The context variable contains the value specified in <see cref="CaptionHeading"/>.
+        /// </summary>
         [Parameter]
         public RenderFragment<string> CaptionHeadingTemplate { get; set; }
 
+        /// <summary>
+        /// The body text of the caption.
+        /// </summary>
         [Parameter]
         public string CaptionBody { get; set; }
 
+        /// <summary>
+        /// Allows you to fully customize the caption body. The context variable contains the value specified in <see cref="CaptionBody"/>.
+        /// </summary>
         [Parameter]
         public RenderFragment<string> CaptionBodyTemplate { get; set; }
 
+        /// <summary>
+        /// The custom background colour to use on the caption. Can be any value that can be specified on the <c>background-color</c> CSS style.
+        /// </summary>
         [Parameter]
         public string CustomCaptionBackgroundColor { get; set; }
 
+        /// <summary>
+        /// The URL to the image to show in the slide, if you want to show an image.
+        /// </summary>
         [Parameter]
         public string ImageUrl { get; set; }
 
+        /// <summary>
+        /// Defines how you want the image to be scaled within the slide.
+        /// </summary>
         [Parameter]
         public ImageScaleMode? ImageScaling { get; set; }
 
@@ -47,11 +79,13 @@ namespace Blazorade.Bootstrap.Components
         public string MinHeight { get; set; }
 
 
-        protected IDictionary<string, object> CaptionAttributes;
+        private IDictionary<string, object> CaptionAttributes;
 
         private string ImageFitMode; // Used from the Razor file.
 
 
+        /// <summary>
+        /// </summary>
         protected override void OnParametersSet()
         {
             this.CaptionAttributes = new Dictionary<string, object>();
@@ -93,5 +127,6 @@ namespace Blazorade.Bootstrap.Components
 
             base.OnParametersSet();
         }
+
     }
 }

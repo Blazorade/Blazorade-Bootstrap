@@ -214,11 +214,100 @@
             Defines the Y-axis paddings for the component.
             </summary>
         </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.Id">
+            <summary>
+            The ID of the element rendered by the component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.Height">
+            <summary>
+            Specifies the height for the component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.TextAlignment">
+            <summary>
+            Specifies how text should be aligned in the component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.BackgroundColor">
+            <summary>
+            Specifies the background colour.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.BorderColor">
+            <summary>
+            Specifies the border colour.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.TextColor">
+            <summary>
+            Specifies the colour of the text contained in the component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.Shadow">
+            <summary>
+            Specifies a shadow for the component. Shadows are used to make certain elements stand out.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.IsStretchedLinkContainer">
+            <summary>
+            Specifies whether the component is a container for streteched links. If the component contains
+            an <see cref="T:Blazorade.Bootstrap.Components.Anchor"/> where <see cref="P:Blazorade.Bootstrap.Components.Anchor.IsStretched"/> is set to <c>true</c>, then the
+            entire component will act as that link.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.Width">
+            <summary>
+            Specifies the width for the component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.JsInterop">
+            <summary>
+            </summary>
+        </member>
         <member name="M:Blazorade.Bootstrap.Components.BootstrapComponentBase.GenerateNewId">
             <summary>
             Generates a new ID that can be used on elements.
             </summary>
             <returns></returns>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.BootstrapComponentBase.GetColorClassName(System.String,System.Nullable{Blazorade.Bootstrap.Components.NamedColor})">
+            <summary>
+            Generates the class name from the given prefix and colour. The method returns <c>{prefix}-{colour}</c>.
+            </summary>
+            <param name="prefix">
+            The prefix (without a dash) for the class name, for instance <c>btn</c>. If the prefix is not specified,
+            the lower case version of the current class name is used.
+            </param>
+            <param name="color">The colour to create the clas name from.</param>
+            <returns>
+            Returns the class name as <c>{prefix}-{color}</c> or <c>null</c> if <paramref name="color"/> is <c>null</c>.
+            </returns>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.BootstrapComponentBase.LogErrorAsync(System.String,System.Object[])">
+            <summary>
+            Logs an error to the browser's console.
+            </summary>
+            <param name="message">The message to log.</param>
+            <param name="args">Arguments to log with the message.</param>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.BootstrapComponentBase.LogInfoAsync(System.String,System.Object[])">
+            <summary>
+            Logs an info message to the browser's console.
+            </summary>
+            <param name="message">The message to log.</param>
+            <param name="args">Arguments to log with the message.</param>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.BootstrapComponentBase.LogWarningAsync(System.String,System.Object[])">
+            <summary>
+            Logs a warning to the browser's console.
+            </summary>
+            <param name="message">The message to log.</param>
+            <param name="args">Arguments to log with the message.</param>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.BootstrapComponentBase.OnParametersSet">
+            <summary>
+            </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.BootstrapComponentBase.SetIdIfEmpty(System.String)">
             <summary>
@@ -264,6 +353,41 @@
         <member name="M:Blazorade.Bootstrap.Components.Button.OnClickedAsync">
             <summary>
             Fires the <see cref="P:Blazorade.Bootstrap.Components.Button.OnClicked"/> event.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Card">
+            <summary>
+            A flexible container with different variants.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Card.#ctor">
+            <summary>
+            Creates an instance of the Card component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Card.BodyTemplate">
+            <summary>
+            Allows you to customize how the body of the card is rendered.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Card.Footer">
+            <summary>
+            The text to display in the footer of the Card.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Card.FooterTemplate">
+            <summary>
+            Allows you to customize how the footer is rendered. The context parameter contains the text specified on <see cref="P:Blazorade.Bootstrap.Components.Card.Footer"/>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Card.Header">
+            <summary>
+            The text to display in the header of the Card.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Card.HeaderTemplate">
+            <summary>
+            Allows you to customize how the header is rendered. The context paramterer contains the text specified in <see cref="P:Blazorade.Bootstrap.Components.Card.Header"/>.
             </summary>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.Card.ImagePosition">
@@ -315,6 +439,16 @@
             This will override <see cref="P:Blazorade.Bootstrap.Components.Card.Subtitle"/>
             </remarks>
         </member>
+        <member name="P:Blazorade.Bootstrap.Components.Card.Text">
+            <summary>
+            The text to display in the body of the card.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Card.TextTemplate">
+            <summary>
+            Allows you to customize how the text is rendered. The context parameter is the text specified in <see cref="P:Blazorade.Bootstrap.Components.Card.Text"/>.
+            </summary>
+        </member>
         <member name="P:Blazorade.Bootstrap.Components.Card.Title">
             <summary>
             The title for the card.
@@ -327,6 +461,15 @@
             <remarks>
             <see cref="P:Blazorade.Bootstrap.Components.Card.Title"/> is ignored if a template is specified in this parameter.
             </remarks>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Card.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.CardBody">
+            <summary>
+            Represents the body of a <see cref="T:Blazorade.Bootstrap.Components.Card"/> component.
+            </summary>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.CardBody.Links">
             <summary>
@@ -349,9 +492,49 @@
             If not specified, a default template is used.
             </remarks>
         </member>
+        <member name="P:Blazorade.Bootstrap.Components.CardBody.Title">
+            <summary>
+            The title to show in the body of the Card.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CardBody.TitleTemplate">
+            <summary>
+            Allows you to customize how the title is rendered. The context parameter is the text specified in <see cref="P:Blazorade.Bootstrap.Components.CardBody.Title"/>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CardBody.Subtitle">
+            <summary>
+            A subtitle to render with the <see cref="P:Blazorade.Bootstrap.Components.CardBody.Title"/>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CardBody.SubtitleTemplate">
+            <summary>
+            Allows you to customize how the subtitle is rendered. The context parameter is the text specified in <see cref="P:Blazorade.Bootstrap.Components.CardBody.Subtitle"/>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CardBody.Text">
+            <summary>
+            The text to display in the body of the Card.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CardBody.TextTemplate">
+            <summary>
+            Allows you to customize how the text is displayed. The context parameter is the text specified in <see cref="P:Blazorade.Bootstrap.Components.CardBody.Text"/>.
+            </summary>
+        </member>
         <member name="P:Blazorade.Bootstrap.Components.CardBody.IsImageOverlay">
             <summary>
             Specifies whether the card body will be overlayed over the image in the card.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CardBody.Parent">
+            <summary>
+            The parent <see cref="T:Blazorade.Bootstrap.Components.Card"/> for the CardBody component.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.CardBody.OnParametersSet">
+            <summary>
+            
             </summary>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.CardContent.BodyTemplate">
@@ -374,14 +557,297 @@
             The URL, either absolute or relative, to the image to show in the card.
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.CardGroup">
+            <summary>
+            Represents a group of <see cref="T:Blazorade.Bootstrap.Components.Card"/> components.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.CardGroup.#ctor">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CardGroup.Type">
+            <summary>
+            Specifies the type for the group.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.CardGroup.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.CardGroupType">
+            <summary>
+            Defines different types for <see cref="T:Blazorade.Bootstrap.Components.CardGroup"/> components.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.CardGroupType.Group">
+            <summary>
+            The default type. Cards in a group of this type have equal width and equal height with no specing in between the cards.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.CardGroupType.Deck">
+            <summary>
+            Cards in a group of this type have equal width and equal height with a little bit of spacing in between.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.CardGroupType.Columns">
+            <summary>
+            Cards in a group of this type have equal width, but the height is whatever height each card has. Cards are arranged
+            top to bottom, left to right.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.CardImage">
+            <summary>
+            Renders an image in a <see cref="T:Blazorade.Bootstrap.Components.Card"/> component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CardImage.IsOverlay">
+            <summary>
+            Specifies whether the card is an overlay image, i.e. the contents of the card are
+            overlaid ver the image.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.CardImage.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.CardImagePosition">
+            <summary>
+            Defines different positions for images contained in <see cref="T:Blazorade.Bootstrap.Components.Card"/> components.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.CardImagePosition.Top">
+            <summary>
+            Default. The image is positioned at the top of the card.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.CardImagePosition.Bottom">
+            <summary>
+            The image is positioned at the bottom of the card.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.CardImagePosition.Left">
+            <summary>
+            The image is positioned to the left of the card.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.CardImagePosition.Right">
+            <summary>
+            The image is positioned to the right of the card.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.CardImagePosition.Overlay">
+            <summary>
+            The contents of the card are overlaid over the image.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Carousel">
+            <summary>
+            A slideshow component for cycling through elements with virtually any kind of content.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Carousel.#ctor">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Carousel.OnSlide">
+            <summary>
+            Fired when the transition from one slide to another has started, but before it is completed.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Carousel.OnSlid">
+            <summary>
+            Fired when the transition from one slide to another has completed.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Carousel.AutoStart">
+            <summary>
+            Specifies whether the carousel should start automatically when loaded.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Carousel.ImageUrls">
+            <summary>
+            An array of URLs pointing to images to show in the carousel.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Carousel.Interval">
+            <summary>
+            The number of milliseconds each slide should be shown. The default is 5000ms.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Carousel.ShowControls">
+            <summary>
+            Specifies whether to show to controls on the carousel that allows the user to navigate to the next or previous slide.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Carousel.ShowIndicators">
+            <summary>
+            Specifies whether to show an indicator for each slide.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Carousel.SlideCount">
+            <summary>
+            Returns the number of slides currenty loaded into the carousel.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Carousel.TransitionType">
+            <summary>
+            Specifies how to transition from one slide to the other. The default is <see cref="F:Blazorade.Bootstrap.Components.CarouselTransitionType.Slide"/>.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Carousel.CycleAsync">
+            <summary>
+            Starts cycling through the slides in the carousel.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Carousel.GetSlideCountAsync">
+            <summary>
+            Returns the number of slides currently loaded into the carousel.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Carousel.PauseAsync">
+            <summary>
+            Pauses the cycling of slides. The cycling can still be controlled with the other methods. Start auto cycling again with the <see cref="M:Blazorade.Bootstrap.Components.Carousel.CycleAsync"/> method.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Carousel.GoToSlideAsync(System.Int32)">
+            <summary>
+            Moves the carousel to the given slide.
+            </summary>
+            <param name="slideNumber">The zero-based index of the slide to move to.</param>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Carousel.PreviousAsync">
+            <summary>
+            Moves the carousel to the previous slide. If the carousel is on the first slide, it will move to the last.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Carousel.NextAsync">
+            <summary>
+            Moves the carousel to the next slide. If the carousel is on the last slide, it will move to the first.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Carousel.OnSlideAsync(System.Text.Json.JsonElement)">
+            <summary>
+            Used internally by JS interop.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Carousel.OnSlidAsync(System.Text.Json.JsonElement)">
+            <summary>
+            Used internally by JS interop.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Carousel.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Carousel.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.CarouselControl">
+            <summary>
+            Supports the <see cref="P:Blazorade.Bootstrap.Components.CarouselControl.Carousel"/> component and displays controls to move back and forward through slides.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.CarouselControl.#ctor">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CarouselControl.ChildContent">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="P:Blazorade.Bootstrap.Components.CarouselControl.Carousel">
             <summary>
             A reference to the carousel the control belongs to.
             </summary>
         </member>
+        <member name="P:Blazorade.Bootstrap.Components.CarouselControl.Direction">
+            <summary>
+            Specifies the direction in which the control moves the slides.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.CarouselControl.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.CarouselControlDirection">
+            <summary>
+            Defines directions for a <see cref="T:Blazorade.Bootstrap.Components.CarouselControl"/> component.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.CarouselControlDirection.Next">
+            <summary>
+            Moves the carousel to the next slide.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.CarouselControlDirection.Previous">
+            <summary>
+            Moves the carousel to the previous slide.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.CarouselItem">
+            <summary>
+            Represents a slide in a <see cref="T:Blazorade.Bootstrap.Components.Carousel"/> component.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.CarouselItem.#ctor">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CarouselItem.CaptionBackgroundColor">
+            <summary>
+            The background colour for the caption of the slide.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CarouselItem.CaptionTextColor">
+            <summary>
+            The text colour for the caption.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CarouselItem.CaptionHeading">
+            <summary>
+            The heading text of the caption.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CarouselItem.CaptionHeadingTemplate">
+            <summary>
+            The template that allows you to completely customize the caption heading. The context variable contains the value specified in <see cref="P:Blazorade.Bootstrap.Components.CarouselItem.CaptionHeading"/>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CarouselItem.CaptionBody">
+            <summary>
+            The body text of the caption.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CarouselItem.CaptionBodyTemplate">
+            <summary>
+            Allows you to fully customize the caption body. The context variable contains the value specified in <see cref="P:Blazorade.Bootstrap.Components.CarouselItem.CaptionBody"/>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CarouselItem.CustomCaptionBackgroundColor">
+            <summary>
+            The custom background colour to use on the caption. Can be any value that can be specified on the background-color CSS style.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CarouselItem.ImageUrl">
+            <summary>
+            The URL to the image to show in the slide, if you want to show an image.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CarouselItem.ImageScaling">
+            <summary>
+            Defines how you want the image to be scaled within the slide.
+            </summary>
+        </member>
         <member name="P:Blazorade.Bootstrap.Components.CarouselItem.MinHeight">
             <summary>
             Minimum height for the slide. Can be any value that can be specified for the <c>height</c> CSS style.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.CarouselItem.OnParametersSet">
+            <summary>
             </summary>
         </member>
         <member name="F:Blazorade.Bootstrap.Components.ClassNames.Active">
@@ -690,6 +1156,24 @@
             Triggers the <see cref="P:Blazorade.Bootstrap.Components.Collapse.OnShown"/> callback.
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.ColoredBootstrapComponentBase">
+            <summary>
+            The base class for all Bootstrap components that support colour theming with the colours specified in <see cref="T:Blazorade.Bootstrap.Components.NamedColor"/>.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.ColoredBootstrapComponentBase.#ctor">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.ColoredBootstrapComponentBase.Color">
+            <summary>
+            Specifies the colour to use in the component.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.ColoredBootstrapComponentBase.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
         <member name="F:Blazorade.Bootstrap.Components.ComponentSize.p25">
             <summary>
             25%
@@ -769,6 +1253,11 @@
         <member name="P:Blazorade.Bootstrap.Components.Heading.Level">
             <summary>
             The heading level.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.ImageScaleMode">
+            <summary>
+            Defines different modes for scaling images.
             </summary>
         </member>
         <member name="F:Blazorade.Bootstrap.Components.ImageScaleMode.Fit">
@@ -901,6 +1390,66 @@
         <member name="T:Blazorade.Bootstrap.Components.Model.Link">
             <summary>
             Represents a basic link that is used by several components.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.NamedColor">
+            <summary>
+            Defines different named colours supported by Bootstrap.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.NamedColor.Primary">
+            <summary>
+            The primary colour. This is typically modified to be your brand colour or the main colour you use to make items stand out.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.NamedColor.Secondary">
+            <summary>
+            The secondary colour is typically used to support the primary colour, like a secondary brand colour or something like that.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.NamedColor.Success">
+            <summary>
+            The colour that is used to signal that a task has succeeded or to emphasize something positive, like the colour of a Save button.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.NamedColor.Danger">
+            <summary>
+            The danger colour is used to signal dangerous actions, such as deleting something permanently. The danger colour is also used to bring focus to error messages etc.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.NamedColor.Warning">
+            <summary>
+            The warning colour is typically used to warn the user about something possibly dangerous.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.NamedColor.Info">
+            <summary>
+            The colour used for generic informational data.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.NamedColor.Light">
+            <summary>
+            A generic light colour. The default is a grayscale colour, but can be modified to be a very light version of the <see cref="F:Blazorade.Bootstrap.Components.NamedColor.Primary"/> colour.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.NamedColor.Dark">
+            <summary>
+            A generic dark colour. The default is a grayscale colour, but can be modified, for instance to a dark version of the brand colour.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.NamedColor.White">
+            <summary>
+            White.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.NamedColor.White50">
+            <summary>
+            50% white. Not supported by all components.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.NamedColor.Black50">
+            <summary>
+            50% black. Not supported by all components.
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Pagination">
