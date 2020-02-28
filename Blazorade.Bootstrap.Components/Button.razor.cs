@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Blazorade.Bootstrap.Components
 {
+    /// <summary>
+    /// The Button component allows you to render various types of buttons.
+    /// </summary>
     public partial class Button
     {
 

@@ -7,14 +7,25 @@ using System.Threading.Tasks;
 
 namespace Blazorade.Bootstrap.Components
 {
+    /// <summary>
+    /// Defines extension methods for components.
+    /// </summary>
     public static class ExtensionMethods
     {
 
+        /// <summary>
+        /// Returns the interop implementation for <see cref="Components.Alert"/>.
+        /// </summary>
         public static AlertInterop Alert(this IJSRuntime jsInterop)
         {
             return new AlertInterop(jsInterop);
         }
 
+        /// <summary>
+        /// Returns the interop implementation for <see cref="Components.Collapse"/>.
+        /// </summary>
+        /// <param name="jsInterop"></param>
+        /// <returns></returns>
         public static CollapseInterop Collapse(this IJSRuntime jsInterop)
         {
             return new CollapseInterop(jsInterop);
@@ -38,11 +49,27 @@ namespace Blazorade.Bootstrap.Components
             yield break;
         }
 
+        /// <summary>
+        /// Registers an event callback.
+        /// </summary>
+        /// <param name="jsInterop"></param>
+        /// <param name="id">The ID of the element whose event to register for.</param>
+        /// <param name="eventName">The name of the event to register for.</param>
+        /// <param name="callbackTarget">The component that will receive the callback.</param>
+        /// <param name="callbackMethodName">The name of the callback method on the <paramref name="callbackTarget"/>.</param>
+        /// <param name="singleEvent">If set to <c>true</c> will automatically deregister after first event.</param>
+        /// <param name="callbackParameters">Parameters to send to the callback method.</param>
+        /// <returns></returns>
         public static async Task RegisterEventCallbackAsync(this IJSRuntime jsInterop, string id, string eventName, BootstrapComponentBase callbackTarget, string callbackMethodName, bool singleEvent = true, string[] callbackParameters = null)
         {
             await jsInterop.InvokeVoidAsync(JsFunctions.RegisterEventCallback, $"#{id}", eventName, DotNetObjectReference.Create(callbackTarget), callbackMethodName, singleEvent, callbackParameters);
         }
 
+        /// <summary>
+        /// Returns the interop implementation for <see cref="Components.Toast"/>.
+        /// </summary>
+        /// <param name="jsInterop"></param>
+        /// <returns></returns>
         public static ToastInterop Toast(this IJSRuntime jsInterop)
         {
             return new ToastInterop(jsInterop);

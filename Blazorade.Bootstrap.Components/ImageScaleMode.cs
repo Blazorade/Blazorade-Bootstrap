@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Blazorade.Bootstrap.Components
 {
+    /// <summary>
+    /// Defines different modes for scaling images.
+    /// </summary>
     public enum ImageScaleMode
     {
         /// <summary>
