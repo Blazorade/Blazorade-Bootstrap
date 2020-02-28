@@ -87,11 +87,9 @@ namespace Blazorade.Bootstrap.Components
 
 
 
-        protected bool IsAnchorLink { get; private set; }
+        private bool IsAnchorLink { get; set; }
 
-        protected bool OnClickPreventDefault { get; private set; }
-
-        protected string TargetId { get; private set; }
+        private string TargetId { get; set; }
 
 
         /// <summary>
@@ -150,7 +148,6 @@ namespace Blazorade.Bootstrap.Components
             if(null != this?.Url && this.Url.StartsWith("#"))
             {
                 this.IsAnchorLink = true;
-                this.OnClickPreventDefault = true;
                 this.TargetId = this.Url.Substring(1);
             }
 
