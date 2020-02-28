@@ -315,6 +315,29 @@
             </summary>
             <param name="id">OPtional. The ID to set if it is empty. If not specified, an ID is automatically generated.</param>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.Breadcrumb">
+            <summary>
+            The Breadcrumb component visualizes the current page in a navigational hierarchy.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Breadcrumb.ItemTemplate">
+            <summary>
+            The template to use to display each link with. If not specified, a default template is used.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Breadcrumb.Items">
+            <summary>
+            A collection of the items to show in the Breadcrumb component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Breadcrumb.ChildContent">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Breadcrumb.SetParametersAsync(Microsoft.AspNetCore.Components.ParameterView)">
+            <summary>
+            </summary>
+        </member>
         <member name="P:Blazorade.Bootstrap.Components.Button.OnClicked">
             <summary>
             The callback that is called when the button is clicked.
@@ -353,6 +376,20 @@
         <member name="M:Blazorade.Bootstrap.Components.Button.OnClickedAsync">
             <summary>
             Fires the <see cref="P:Blazorade.Bootstrap.Components.Button.OnClicked"/> event.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.ButtonGroup">
+            <summary>
+            The ButtonGroup component is used to group buttons together. Buttons in the same group are joined together.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.ButtonGroup.Size">
+            <summary>
+            Specifies the default size for buttons in the group.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.ButtonGroup.OnParametersSet">
+            <summary>
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Card">
@@ -828,7 +865,7 @@
         </member>
         <member name="P:Blazorade.Bootstrap.Components.CarouselItem.CustomCaptionBackgroundColor">
             <summary>
-            The custom background colour to use on the caption. Can be any value that can be specified on the background-color CSS style.
+            The custom background colour to use on the caption. Can be any value that can be specified on the <c>background-color</c> CSS style.
             </summary>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.CarouselItem.ImageUrl">
@@ -848,6 +885,50 @@
         </member>
         <member name="M:Blazorade.Bootstrap.Components.CarouselItem.OnParametersSet">
             <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.CarouselSlideEventArgs">
+            <summary>
+            The event args class for <see cref="P:Blazorade.Bootstrap.Components.Carousel.OnSlide"/> and <see cref="P:Blazorade.Bootstrap.Components.Carousel.OnSlid"/>.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.CarouselSlideEventArgs.#ctor(Blazorade.Bootstrap.Components.Carousel,System.Int32,System.Int32,System.String)">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CarouselSlideEventArgs.Carousel">
+            <summary>
+            The source <see cref="P:Blazorade.Bootstrap.Components.CarouselSlideEventArgs.Carousel"/> component instance for the event.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CarouselSlideEventArgs.From">
+            <summary>
+            The zero-based index of the slide the carousel is moving from.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CarouselSlideEventArgs.To">
+            <summary>
+            The zero-based index of the slide the carousel is moving to.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CarouselSlideEventArgs.Direction">
+            <summary>
+            A textual representation of the direction.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.CarouselTransitionType">
+            <summary>
+            Defines different types for transitions between slides in a <see cref="T:Blazorade.Bootstrap.Components.Carousel"/> component.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.CarouselTransitionType.Slide">
+            <summary>
+            The slide are changed by sliding left or right.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.CarouselTransitionType.Fade">
+            <summary>
+            The slides are changed by fading from one to the other.
             </summary>
         </member>
         <member name="F:Blazorade.Bootstrap.Components.ClassNames.Active">
@@ -1199,6 +1280,24 @@
             Automatic size.
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.Container">
+            <summary>
+            The Container component is the foundation for many layout configurations in Bootstrap.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Container.#ctor">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Container.Type">
+            <summary>
+            The type of container. The default is <see cref="F:Blazorade.Bootstrap.Components.ContainerType.FixedWidth"/>.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Container.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
         <member name="F:Blazorade.Bootstrap.Components.ContainerType.FixedWidth">
             <summary>
             The container has a fixed max width at each breakpoint. The default type of container.
@@ -1227,6 +1326,49 @@
         <member name="F:Blazorade.Bootstrap.Components.ContainerType.XL">
             <summary>
             100% wide on on XL screen sizes. Fixed width above this breakpoint.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.ContentAlignment">
+            <summary>
+            Defines different alignments for component content.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ContentAlignment.Left">
+            <summary>
+            Content is aligned to the left.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ContentAlignment.Center">
+            <summary>
+            Content is centered.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ContentAlignment.Right">
+            <summary>
+            Content is aligned to the right.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Embed">
+            <summary>
+            The Embed component is used to create responsive video or slideshow embeds.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Embed.#ctor">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Embed.AspectRatio">
+            <summary>
+            Specifies different aspect ratios for the embedded content. The default is 16 by 9.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Embed.Source">
+            <summary>
+            The source URL of the content to embed.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Embed.OnParametersSet">
+            <summary>
             </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.ExtensionMethods.Lines(System.String)">
@@ -1450,6 +1592,243 @@
         <member name="F:Blazorade.Bootstrap.Components.NamedColor.Black50">
             <summary>
             50% black. Not supported by all components.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Nav">
+            <summary>
+            The Nav component provides a simple way to build navigation elements.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Nav.ContentAlignment">
+            <summary>
+            Allows you to specify how the content of the Nav is aligned. The default is <c>null</c>, which results in left alignment.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Nav.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Navbar">
+            <summary>
+            The Navbar component is used to produce a responsive navigation header with built-in support for collapsing.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Navbar.#ctor">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Navbar.BrandText">
+            <summary>
+            The text to use as the Brand text on the Navbar. The brand is the top-left element on the Navbar,
+            which typically displays the name of the site or application.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Navbar.BrandUrl">
+            <summary>
+            The link URL to use for the Brand text.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Navbar.BrandImageUrl">
+            <summary>
+            The URL, either relative or absolute, to an image that will be used with the brand. <c>.svg</c> images work best,
+            since they scale much better than bitmap based images such as <c>.png</c> or <c>.jpg</c>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Navbar.BrandTemplate">
+            <summary>
+            Allows you to freely customize the Brand element on the Navbar.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Navbar.CollapseBrand">
+            <summary>
+            Specifies whether the Brand is included in the collapsing part of the Navbar. The default, <c>false</c>, leaves the Brand element outside of the collapsing part of the Navbar.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Navbar.ColorScheme">
+            <summary>
+            Defines the colour scheme for your Navbar. Controls the colour of the text used in the Navbar. You also have to specify the background colour for the Navbar.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Navbar.ExpandAt">
+            <summary>
+            Specifies the responsive breakpoint at which the Navbar will expand from a collapsed state.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Navbar.Placement">
+            <summary>
+            Specifies the placement for the Navbar.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Navbar.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.NavbarColor">
+            <summary>
+            Defines colour darkness for a <see cref="T:Blazorade.Bootstrap.Components.Navbar"/> component.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.NavbarColor.Dark">
+            <summary>
+            The <see cref="T:Blazorade.Bootstrap.Components.Navbar"/> background colour is a dark colour.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.NavbarColor.Light">
+            <summary>
+            The <see cref="T:Blazorade.Bootstrap.Components.Navbar"/> background colour is a light colour.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.NavbarPlacement">
+            <summary>
+            Defines different placements for a <see cref="T:Blazorade.Bootstrap.Components.Navbar"/> component.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.NavbarPlacement.FixedTop">
+            <summary>
+            The navbar is fixed to the top.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.NavbarPlacement.FixedBottom">
+            <summary>
+            The navbar is fixed to the bottom.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.NavbarPlacement.StickyTop">
+            <summary>
+            The navbar sticks to the top. Uses <c>position: sticky</c>, which may not be supported on all browsers.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.NavbarBrand">
+            <summary>
+            This component is used to create the brand section of a <see cref="T:Blazorade.Bootstrap.Components.Navbar"/> component. This section usually displays
+            the name of the application or site, with an additional logo. The brand also normally works as a link to the front
+            page of the site or application.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.NavbarBrand.ImageUrl">
+            <summary>
+            The URL, either relative or absolute, to an image to use as logo in the brand section. This works best with SVG images, since they scale much better than bitmap based images.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.NavbarBrand.Text">
+            <summary>
+            The text to show in the brand section. Typically the name or title of your site or application.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.NavbarBrand.Url">
+            <summary>
+            The URL that the brand link will point to. Very often this is the link to the front page of your site or application.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.NavbarBrand.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.NavbarExpandBreakpoint">
+            <summary>
+            Defines different breakpoints at which a <see cref="T:Blazorade.Bootstrap.Components.Navbar"/> will expand.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.NavbarExpandBreakpoint.SM">
+            <summary>
+            Expands by default at >= 576 px.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.NavbarExpandBreakpoint.MD">
+            <summary>
+            Expands by default at >= 768 px.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.NavbarExpandBreakpoint.LG">
+            <summary>
+            Expands by default at >= 992 px.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.NavbarExpandBreakpoint.XL">
+            <summary>
+            Expands by default at >= 1200 px.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.NavbarExpandBreakpoint.Never">
+            <summary>
+            The <see cref="T:Blazorade.Bootstrap.Components.Navbar"/> will never expand.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.NavbarExpandBreakpoint.Always">
+            <summary>
+            The <see cref="T:Blazorade.Bootstrap.Components.Navbar"/> is always expanded.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.NavbarNav">
+            <summary>
+            Groups navigation items inside of a <see cref="T:Blazorade.Bootstrap.Components.Navbar"/> component. Use margins to align.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.NavbarNav.Items">
+            <summary>
+            The items to show in the component.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.NavbarNav.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.NavItem">
+            <summary>
+            A navigation item used inside a <see cref="T:Blazorade.Bootstrap.Components.NavbarNav"/> component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.NavItem.Children">
+            <summary>
+            A collection of child items.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.NavItem.Description">
+            <summary>
+            The description for the item.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.NavItem.Index">
+            <summary>
+            The zero-based index of the item.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.NavItem.IsActive">
+            <summary>
+            Specifies whether the item should be marked as active.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.NavItem.IsDisabled">
+            <summary>
+            Specifies whether the item is disabled.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.NavItem.IsStretched">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.NavItem.Item">
+            <summary>
+            The contents of the navigation item can be specified as a <see cref="T:Blazorade.Bootstrap.Components.Model.IMenuItem"/> implementation generated from an external source.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.NavItem.OpenInNewTab">
+            <summary>
+            Specifies whether the link should be opened in a new tab.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.NavItem.Url">
+            <summary>
+            The URL of the item.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.NavItem.Text">
+            <summary>
+            The text to display in the item.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.NavItem.OnParametersSet">
+            <summary>
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Pagination">

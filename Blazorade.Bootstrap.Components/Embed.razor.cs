@@ -7,23 +7,38 @@ using System.Threading.Tasks;
 
 namespace Blazorade.Bootstrap.Components
 {
+    /// <summary>
+    /// The Embed component is used to create responsive video or slideshow embeds.
+    /// </summary>
     partial class Embed
     {
+        /// <summary>
+        /// </summary>
         public Embed()
         {
             this.AspectRatio = EmbedAspectRatio.Ratio16by9;
             this.IFrameAttributes = new Dictionary<string, object>();
         }
 
+        /// <summary>
+        /// Specifies different aspect ratios for the embedded content. The default is 16 by 9.
+        /// </summary>
         [Parameter]
         public EmbedAspectRatio AspectRatio { get; set; }
 
+        /// <summary>
+        /// The source URL of the content to embed.
+        /// </summary>
         [Parameter]
         public string Source { get; set; }
 
 
-        protected IDictionary<string, object> IFrameAttributes { get; private set; }
+        private IDictionary<string, object> IFrameAttributes { get; set; }
 
+
+
+        /// <summary>
+        /// </summary>
         protected override void OnParametersSet()
         {
             this.AddClasses(ClassNames.Embeds.Embed);
