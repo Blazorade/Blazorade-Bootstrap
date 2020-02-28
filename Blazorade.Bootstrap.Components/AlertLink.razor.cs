@@ -9,6 +9,7 @@ namespace Blazorade.Bootstrap.Components
         protected override void OnParametersSet()
         {
             this.AddClasses(ClassNames.Alerts.AlertLink);
+
             base.OnParametersSet();
         }
     }
