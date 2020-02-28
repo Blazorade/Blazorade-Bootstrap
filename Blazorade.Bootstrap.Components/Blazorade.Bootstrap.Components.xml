@@ -1,0 +1,1123 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Blazorade.Bootstrap.Components</name>
+    </assembly>
+    <members>
+        <member name="P:Blazorade.Bootstrap.Components.Alert.OnDismiss">
+            <summary>
+            The callback that is called when the alert is being dismissed, but not fully dismissed yet.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Alert.OnDismissed">
+            <summary>
+            The callback that is called when the alert has completely been dismissed.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Alert.HeadingTemplate">
+            <summary>
+            The template that is used to produce the heading of the alert.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Alert.Heading">
+            <summary>
+            The text for your alert heading.
+            </summary>
+            <remarks>
+            This parameter is ignored if <see cref="P:Blazorade.Bootstrap.Components.Alert.HeadingTemplate"/> is specified.
+            </remarks>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Alert.Dismiss">
+            <summary>
+            Dismisses the alert.
+            </summary>
+            <remarks>
+            The <see cref="P:Blazorade.Bootstrap.Components.Alert.IsDismissible"/> property must be set to <c>true</c> if you want to invoke this method.
+            </remarks>
+            <exception cref="T:System.InvalidOperationException">The exception that is thrown if the method is called when the <see cref="P:Blazorade.Bootstrap.Components.Alert.IsDismissible"/> property is set to <c>false</c>.</exception>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Alert.DismissAsync">
+            <summary>
+            Dismisses the alert.
+            </summary>
+            <remarks>
+            The <see cref="P:Blazorade.Bootstrap.Components.Alert.IsDismissible"/> property must be set to <c>true</c> if you want to invoke this method.
+            </remarks>
+            <exception cref="T:System.InvalidOperationException">The exception that is thrown if the method is called when the <see cref="P:Blazorade.Bootstrap.Components.Alert.IsDismissible"/> property is set to <c>false</c>.</exception>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Alert.OnDismissedAsync">
+            <summary>
+            Triggers the <see cref="P:Blazorade.Bootstrap.Components.Alert.OnDismissed"/> callback.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Anchor.Clicked">
+            <summary>
+            Callback for when the anchor is clicked.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Anchor.Description">
+            <summary>
+            The description of the link. This is typically used as tooltip for the link.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Anchor.IgnoreEmptyUrl">
+            <summary>
+            Specifies that an empty or <c>null</c> value on <see cref="P:Blazorade.Bootstrap.Components.Anchor.Url"/> is ignored, and the <c>href</c> attribute is always rendered regardless.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Anchor.Index">
+            <summary>
+            Some components use the index to number multiple links in a collection.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Anchor.IsActive">
+            <summary>
+            Specifies whether the link should be marked as active.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Anchor.IsDisabled">
+            <summary>
+            Specifies whether the link is disabled. Disabled links must not be clickable.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Anchor.IsStretched">
+            <summary>
+            Defines whether the links is a stretched link.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Anchor.OpenInNewTab">
+            <summary>
+            Specifies whether the link should open in a new tab.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Anchor.Url">
+            <summary>
+            The URL to add to the link.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Anchor.Text">
+            <summary>
+            The link text.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Anchor.Link">
+            <summary>
+            Allows you to set the parameters of the Anchor by specifying an <see cref="T:Blazorade.Bootstrap.Components.Model.ILink"/> object on this parameter.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Anchor.OnClickedAsync">
+            <summary>
+            Fires the <see cref="P:Blazorade.Bootstrap.Components.Anchor.Clicked"/> event.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Badge">
+            <summary>
+            The base class for the <see cref="T:Blazorade.Bootstrap.Components.Badge"/> component.
+            </summary>
+            <remarks>
+            For details see <see cref="!:https://github.com/MikaBerglund/Blazor-Bootstrap/wiki/Badge"/>
+            </remarks>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Badge.IsPill">
+            <summary>
+            Specifies whether the badge is a pill, i.e. with rounded corners.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Badge.Link">
+            <summary>
+            Make the badge into a link by specifying a relative or absolute URL.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Badge.OpenLinkInNewTab">
+            <summary>
+            Defines whether to open the link in a new tab.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.BootstrapComponentBase">
+            <summary>
+            Base implementation for all Blazor Boostrap components.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.BootstrapComponentBase.#ctor">
+            <summary>
+            Creates an instance of the class.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.Margin">
+            <summary>
+            Defines the margins on all sides of the component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.MarginTop">
+            <summary>
+            Defines the top margin for the component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.MarginRight">
+            <summary>
+            Defines the right margin for the component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.MarginBottom">
+            <summary>
+            Defines the bottom margin for the component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.MarginLeft">
+            <summary>
+            Defines the left margin for the component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.MarginX">
+            <summary>
+            Defines the X-axis margins for the component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.MarginY">
+            <summary>
+            Defines the Y-axis margins for the component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.Padding">
+            <summary>
+            Defines the padding on all sides of the component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.PaddingTop">
+            <summary>
+            Defines the top padding for the component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.PaddingRight">
+            <summary>
+            Defines the right padding for the component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.PaddingBottom">
+            <summary>
+            Defines the bottom padding for the component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.PaddingLeft">
+            <summary>
+            Defines the left padding for the component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.PaddingX">
+            <summary>
+            Defines the X-axis paddings for the component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.PaddingY">
+            <summary>
+            Defines the Y-axis paddings for the component.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.BootstrapComponentBase.GenerateNewId">
+            <summary>
+            Generates a new ID that can be used on elements.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.BootstrapComponentBase.SetIdIfEmpty(System.String)">
+            <summary>
+            Sets the <c>id</c> attribute if it has not already been set.
+            </summary>
+            <param name="id">OPtional. The ID to set if it is empty. If not specified, an ID is automatically generated.</param>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Button.OnClicked">
+            <summary>
+            The callback that is called when the button is clicked.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Button.IsActive">
+            <summary>
+            Specifies whether the button appears active.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Button.IsBlockLevel">
+            <summary>
+            Specifies whether the button is a block-level button.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Button.IsDisabled">
+            <summary>
+            Specifies whether the button is disabled.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Button.IsOutline">
+            <summary>
+            Specifies whether the button is styled as an outline button.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Button.IsSubmit">
+            <summary>
+            Specifies whether the button is a submit button. The default type is <c>button</c>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Button.Size">
+            <summary>
+            Specifies the size for the button.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Button.OnClickedAsync">
+            <summary>
+            Fires the <see cref="P:Blazorade.Bootstrap.Components.Button.OnClicked"/> event.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Card.ImagePosition">
+            <summary>
+            Specifies the position for the image specified in <see cref="P:Blazorade.Bootstrap.Components.Card.ImageUrl"/>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Card.ImageUrl">
+            <summary>
+            The URL, either absolute or relative, to the image to show in the card.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Card.ImageTemplate">
+            <summary>
+            The template to use.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Card.Links">
+            <summary>
+            A collection of links to show in the card.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Card.LinkTemplate">
+            <summary>
+            The template to use for each link.
+            </summary>
+            <remarks>
+            If not specified, a default template is used.
+            </remarks>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Card.LinkSectionTemplate">
+            <summary>
+            A template that allows you to completely customize the links section of a card.
+            </summary>
+            <remarks>
+            If not specified, a default template is used.
+            </remarks>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Card.Subtitle">
+            <summary>
+            The subtitle of the card.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Card.SubtitleTemplate">
+            <summary>
+            The template to use for the subtitle.
+            </summary>
+            <remarks>
+            This will override <see cref="P:Blazorade.Bootstrap.Components.Card.Subtitle"/>
+            </remarks>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Card.Title">
+            <summary>
+            The title for the card.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Card.TitleTemplate">
+            <summary>
+            The template to use for the title.
+            </summary>
+            <remarks>
+            <see cref="P:Blazorade.Bootstrap.Components.Card.Title"/> is ignored if a template is specified in this parameter.
+            </remarks>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CardBody.Links">
+            <summary>
+            A collection of links to show in the card.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CardBody.LinkTemplate">
+            <summary>
+            The template to use for each link.
+            </summary>
+            <remarks>
+            If not specified, a default template is used.
+            </remarks>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CardBody.LinkSectionTemplate">
+            <summary>
+            A template that allows you to completely customize the links section of a card.
+            </summary>
+            <remarks>
+            If not specified, a default template is used.
+            </remarks>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CardBody.IsImageOverlay">
+            <summary>
+            Specifies whether the card body will be overlayed over the image in the card.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CardContent.BodyTemplate">
+            <summary>
+            The template to use for the card body.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CardContent.ImagePosition">
+            <summary>
+            Specifies the position for the image specified in <see cref="P:Blazorade.Bootstrap.Components.CardContent.ImageUrl"/>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CardContent.ImageTemplate">
+            <summary>
+            The template to use for the card image.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CardContent.ImageUrl">
+            <summary>
+            The URL, either absolute or relative, to the image to show in the card.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CarouselControl.Carousel">
+            <summary>
+            A reference to the carousel the control belongs to.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.CarouselItem.MinHeight">
+            <summary>
+            Minimum height for the slide. Can be any value that can be specified for the <c>height</c> CSS style.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Active">
+            <summary>
+            A generic active class name.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Abbreviations.Initialism">
+            <summary>
+            Gives a slightly smaller font size to an abbreviation.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Alerts.Alert">
+            <summary>
+            The default class for alerts.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Alerts.AlertLink">
+            <summary>
+            Add this class to links inside of an Alert component.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Alerts.Dismissible">
+            <summary>
+            Add this class to an alert along with the dismiss button.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Alerts.Heading">
+            <summary>
+            Use this class for headings inside of Alerts.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Alerts.Link">
+            <summary>
+            Apply this class to links in Alerts.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Alignments.TextCenter">
+            <summary>
+            Centers the text.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Alignments.TextRight">
+            <summary>
+            Aligns text to the right.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Badges.Badge">
+            <summary>
+            The default class for badges.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Badges.Pill">
+            <summary>
+            Gives a badge a rounded look.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.BlockQuotes.Blockquote">
+            <summary>
+            A blockquote element.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.BlockQuotes.Footer">
+            <summary>
+            A footer element inside of a blockquote element.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Breadcrumbs.Breadcrumb">
+            <summary>
+            The default class for breadcrumbs.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Breadcrumbs.Item">
+            <summary>
+            The class name for breadcrumb items.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Buttons.Button">
+            <summary>
+            The default class for buttons.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Buttons.OutlineButton">
+            <summary>
+            The class for outline buttons.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Buttons.LinkButton">
+            <summary>
+            The class that styles the button as a link.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Buttons.Close">
+            <summary>
+            The class for close buttons.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Buttons.Large">
+            <summary>
+            The class for large buttons.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Buttons.Small">
+            <summary>
+            The class for small buttons.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Buttons.BlockLevel">
+            <summary>
+            The class for block-level buttons.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Cards.OverlayImage">
+            <summary>
+            The class for an image in a card that is overlayed with the card body.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Cards.ImageOverlay">
+            <summary>
+            The class for the card body that will be overlayed on top of an image in the card.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Headings.Display1">
+            <summary>
+            Use on header to make it bigger than the default size. Display 1 is the biggest size.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Headings.Display2">
+            <summary>
+            Use on header to make it bigger than the default size. Display 2 is the second biggest size.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Headings.Display3">
+            <summary>
+            Use on header to make it bigger than the default size. Display 3 is the third biggest size.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Headings.Display4">
+            <summary>
+            Use on header to make it bigger than the default size. Display 4 is the fourth biggest size.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Headings.H1">
+            <summary>
+            Heading 1
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Headings.H2">
+            <summary>
+            Heading 2
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Headings.H3">
+            <summary>
+            Heading 3
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Headings.H4">
+            <summary>
+            Heading 4
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Headings.H5">
+            <summary>
+            Heading 5
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Headings.H6">
+            <summary>
+            Heading 6
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.InlineText.Mark">
+            <summary>
+            Applies the same styling as <c>&lt;mark /&gt;</c>.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.InlineText.Small">
+            <summary>
+            Applies the same styling as <c>&lt;small /&gt;</c>.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.InlineText.TextMuted">
+            <summary>
+            Gives the text a faded look.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Links.Stretched">
+            <summary>
+            Defines the link as a stretched link.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Paginations.Pagination">
+            <summary>
+            Add this class to mark an element as the container of page items
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Paginations.Item">
+            <summary>
+            Add this class to mark an element as a page item, for use inside of a pagination element.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Paginations.Link">
+            <summary>
+            Add this class to an element inside of a page item to mark it as a link to another page in the pagination.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Paginations.Large">
+            <summary>
+            Add this class to a pagination element to make it large.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.Paginations.Small">
+            <summary>
+            Add this class to a pagination element to make it small.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:Blazorade.Bootstrap.Components.ClassNames.Paragraphs.Lead" -->
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.ProgressBars.Progress">
+            <summary>
+            Add this class mark an element as the outer "shell" of a progress bar.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.ProgressBars.ProgressBar">
+            <summary>
+            Add this class to turn an element into a progress bar. Must be inside of a "progress" element.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.ProgressBars.Striped">
+            <summary>
+            Add this class to make a progress bar striped.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ClassNames.ProgressBars.Animated">
+            <summary>
+            Add this class to animate the stripes (don't forget to add the "Striped" class!) from right to left.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Collapse.OnShow">
+            <summary>
+            The callback that is triggered when the collapse is starting to show.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Collapse.OnShown">
+            <summary>
+            The callback that is triggered when the collapse is completely shown.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Collapse.OnHide">
+            <summary>
+            The callback that is triggered when the collapse is starting to hide.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Collapse.OnHidden">
+            <summary>
+            The callback that is triggered when the collapse is completely hidden.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Collapse.Hide">
+            <summary>
+            Hides the component.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Collapse.HideAsync">
+            <summary>
+            Hides the component.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Collapse.Show">
+            <summary>
+            Shows the component.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Collapse.ShowAsync">
+            <summary>
+            Shows the component.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Collapse.Toggle">
+            <summary>
+            Toggles the component.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Collapse.ToggleAsync">
+            <summary>
+            Toggles the component.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Collapse.OnHideAsync">
+            <summary>
+            Triggers the <see cref="P:Blazorade.Bootstrap.Components.Collapse.OnHide"/> callback.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Collapse.OnHiddenAsync">
+            <summary>
+            Triggers the <see cref="P:Blazorade.Bootstrap.Components.Collapse.OnHidden"/> callback.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Collapse.OnShowAsync">
+            <summary>
+            Triggers the <see cref="P:Blazorade.Bootstrap.Components.Collapse.OnShow"/> callback.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Collapse.OnShownAsync">
+            <summary>
+            Triggers the <see cref="P:Blazorade.Bootstrap.Components.Collapse.OnShown"/> callback.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ComponentSize.p25">
+            <summary>
+            25%
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ComponentSize.p50">
+            <summary>
+            50%
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ComponentSize.p75">
+            <summary>
+            75%
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ComponentSize.p100">
+            <summary>
+            100%
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ComponentSize.Auto">
+            <summary>
+            Automatic size.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ContainerType.FixedWidth">
+            <summary>
+            The container has a fixed max width at each breakpoint. The default type of container.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ContainerType.Fluid">
+            <summary>
+            The container is fluid with a max width of 100%.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ContainerType.SM">
+            <summary>
+            100% wide on on SM screen sizes. Fixed width above this breakpoint.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ContainerType.MD">
+            <summary>
+            100% wide on on MD screen sizes. Fixed width above this breakpoint.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ContainerType.LG">
+            <summary>
+            100% wide on on LG screen sizes. Fixed width above this breakpoint.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ContainerType.XL">
+            <summary>
+            100% wide on on XL screen sizes. Fixed width above this breakpoint.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.ExtensionMethods.Lines(System.String)">
+            <summary>
+            Breaks the given input into lines.
+            </summary>
+            <param name="input">The input string to split up into lines.</param>
+            <returns>Returns a collection where each line of text is a separate item.</returns>
+            <remarks>
+            If <paramref name="input"/> is <c>null</c>, an empty collection is returned.
+            </remarks>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Heading.Display">
+            <summary>
+            Use this property to specify a different display size for your heading to better visually fit into the overall look and feel.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Heading.IsAnchor">
+            <summary>
+            Specifies that the heading is also an anchor that you can link to. This requires that the <c>Id</c> property is also set on the
+            heading. An anchor heading will display a link icon when hovered over to indicate that the heading is an anchor.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Heading.Level">
+            <summary>
+            The heading level.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ImageScaleMode.Fit">
+            <summary>
+            The image will be resized so that it completely fits within the area specified for the image.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ImageScaleMode.Fill">
+            <summary>
+            The image will be resized so that it completely fills the area specified for the image. Some cropping may occur.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.ListGroupAnchor.Color">
+            <summary>
+            Setting a color for a ListGroupAnchor will apply a contextual color to the list group item.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Modal.HideAsync">
+            <summary>
+            Hides the modal dialog.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Modal.Show">
+            <summary>
+            Shows the modal dialog.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Modal.ShowAsync">
+            <summary>
+            Shows the modal dialog.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Modal.Toggle">
+            <summary>
+            Toggles the modal dialog.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Modal.ToggleAsync">
+            <summary>
+            Toggles the modal dialog.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Modal.Toggle(Blazorade.Bootstrap.Components.ToggleAction)">
+            <summary>
+            Performs the specified action on the modal.
+            </summary>
+            <param name="action">The action to perform on the modal.</param>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Modal.ToggleAsync(Blazorade.Bootstrap.Components.ToggleAction)">
+            <summary>
+            Performs the specified action on the modal.
+            </summary>
+            <param name="action">The action to perform on the modal.</param>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Modal.OnHiddenAsync">
+            <summary>
+            Fires the <see cref="P:Blazorade.Bootstrap.Components.Modal.Hidden"/> event.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Modal.OnShownAsync">
+            <summary>
+            Fires the <see cref="P:Blazorade.Bootstrap.Components.Modal.Shown"/> event.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Modal.OnToggledAsync">
+            <summary>
+            Fires the <see cref="P:Blazorade.Bootstrap.Components.Modal.Toggled"/> event.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ModalSize.SM">
+            <summary>
+            Small.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ModalSize.LG">
+            <summary>
+            Large.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ModalSize.XL">
+            <summary>
+            Extra large.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Model.ILink">
+            <summary>
+            Defines the interface to be implemented by link types.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Model.ILink.Description">
+            <summary>
+            The description of the link. This is typically used as tooltip for the link.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Model.ILink.Index">
+            <summary>
+            Some components use the index to number multiple links in a collection.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Model.ILink.IsActive">
+            <summary>
+            Specifies whether the link should be marked as active.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Model.ILink.IsDisabled">
+            <summary>
+            Specifies whether the link is disabled. Disabled links must not be clickable.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Model.ILink.IsStretched">
+            <summary>
+            Specifies whether the link should be a stretched link.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Model.ILink.OpenInNewTab">
+            <summary>
+            Specifies whether the link should open in a new tab.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Model.ILink.Url">
+            <summary>
+            The URL to add to the link.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Model.ILink.Text">
+            <summary>
+            The link text.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Model.Link">
+            <summary>
+            Represents a basic link that is used by several components.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Pagination">
+            <summary>
+            The Pagination component allows you to supply a set of links and display a bootstrap pagination bar on the screen.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Pagination.OnCurrentPageChanged">
+            <summary>
+            Fired when the <see cref="P:Blazorade.Bootstrap.Components.Pagination.CurrentPage"/> parameter has changed.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Pagination.CurrentPage">
+            <summary>
+            The zero-based index of the currently selected page.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Pagination.Size">
+            <summary>
+            Set the size of the pagination component. Defaults to <see cref="F:Blazorade.Bootstrap.Components.PaginationSize.Normal"/>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Pagination.PageCount">
+            <summary>
+            The number of pages to show.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Pagination.HighlightCurrent">
+            <summary>
+            Specifies whether to highlight the currently selected page.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Pagination.ShowNavigation">
+            <summary>
+            Specifies whether to show the Next and Previous navigation controls.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Pagination.NextPageLinkTemplate">
+            <summary>
+            The template that allows you to customize how the next page link is rendered.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Pagination.NextPageLinkText">
+            <summary>
+            The text to show in the next page link.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Pagination.PageItemLinkTemplate">
+            <summary>
+            The template that allows you to customize how a page item link is rendered. The context parameter passed to
+            the template is the zero-based index of the page item to render.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Pagination.PreviousPageLinkTemplate">
+            <summary>
+            The template that allows you to customize how the previous page link is rendered.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Pagination.PreviousPageLinkText">
+            <summary>
+            The text to show in the previous page link.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Pagination.NavigateToAsync(System.Int32)">
+            <summary>
+            Navigates to the given page.
+            </summary>
+            <param name="pageIndex">The zero-based index of the page to navigate to.</param>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Pagination.NextAsync">
+            <summary>
+            Navigates to the next page.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Pagination.PreviousAsync">
+            <summary>
+            Navigates to the previous page.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Pagination.OnCurrentPageChangedAsync">
+            <summary>
+            Fires the <see cref="P:Blazorade.Bootstrap.Components.Pagination.OnCurrentPageChanged"/> event.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.PaginationSize">
+            <summary>
+            Bootstrap Pagination sizes
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.PaginationSize.Normal">
+            <summary>
+            The "normal" size for a bootstrap Pagination element. This is the default.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.PaginationSize.Large">
+            <summary>
+            The "large" size for a bootstrap Pagination element.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.PaginationSize.Small">
+            <summary>
+            The "small" size for a bootstrap Pagination element.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Progress">
+            <summary>
+            Wrapper component for ProgressBar components.
+            Use one or more ProgressBar components inside of a Progress component to create a bootstrap progress bar.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.ProgressBar">
+            <summary>
+            The ProgressBar component, when placed inside of a Progress component, defines a bootstrap progress bar 
+            or a section of a progress bar if multiple ProgressBar elements are used.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.ProgressBar.IsStriped">
+            <summary>
+            If set to true, this progress bar will have a striped texture.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.ProgressBar.IsAnimated">
+            <summary>
+            If set to true, any stripe will be animated.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.ProgressBar.MinValue">
+            <summary>
+            The minimum value represented by the progress bar. This must be less than both <see cref="P:Blazorade.Bootstrap.Components.ProgressBar.Value"/> and <see cref="P:Blazorade.Bootstrap.Components.ProgressBar.MaxValue"/>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.ProgressBar.MaxValue">
+            <summary>
+            The maximum value represented by the progress bar. This must be greater than both <see cref="P:Blazorade.Bootstrap.Components.ProgressBar.MinValue"/> and <see cref="P:Blazorade.Bootstrap.Components.ProgressBar.Value"/>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.ProgressBar.Value">
+            <summary>
+            The current value represented by the progress bar. This must fall between <see cref="P:Blazorade.Bootstrap.Components.ProgressBar.MinValue"/> and <see cref="P:Blazorade.Bootstrap.Components.ProgressBar.MaxValue"/>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.ProgressBar.ShowPercentage">
+            <summary>
+            Set this to true if you want to show the percentage as text inside the bar.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.ShadowSize">
+            <summary>
+            Defines different shadow sizes for components.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Spacing">
+            <summary>
+            Defines different spacing values for components.
+            </summary>
+            <remarks>
+            The members of this enumeration correspond to one of the supported size values. <see cref="!:https://getbootstrap.com/docs/4.4/utilities/spacing/#notation"/>
+            </remarks>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Toast.OnHide">
+            <summary>
+            The callback that is triggered when the toast is about to hide.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Toast.OnHidden">
+            <summary>
+            The callback that is triggered when the toast has been completely hidden.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Toast.OnShow">
+            <summary>
+            The callback that is triggered when the toast is about to be shown.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Toast.OnShown">
+            <summary>
+            The callback that is called when the toast as been completely shown.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Toast.AutoHide">
+            <summary>
+            Specifies whether the toast should automatically hide after the number of milliseconds specified in <see cref="P:Blazorade.Bootstrap.Components.Toast.Delay"/>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Toast.ShowHideButton">
+            <summary>
+            Specifies whether the hide button is shown in the header of the toast.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Toast.ShowOnRender">
+            <summary>
+            Specifies whether to show the toast immediately when rendered without having to separately invoke the <see cref="M:Blazorade.Bootstrap.Components.Toast.ShowAsync"/> method.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Toast.OnHideAsync">
+            <summary>
+            Triggers the <see cref="P:Blazorade.Bootstrap.Components.Toast.OnHide"/> callback.
+            </summary>
+            <remarks>Invoked by JS Interop. Not to be called directly.</remarks>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Toast.OnHiddenAsync">
+            <summary>
+            Triggers the <see cref="P:Blazorade.Bootstrap.Components.Toast.OnHidden"/> callback.
+            </summary>
+            <remarks>Invoked by JS Interop. Not to be called directly.</remarks>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Toast.OnShowAsync">
+            <summary>
+            Triggers the <see cref="P:Blazorade.Bootstrap.Components.Toast.OnShow"/> callback.
+            </summary>
+            <remarks>Invoked by JS Interop. Not to be called directly.</remarks>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Toast.OnShownAsync">
+            <summary>
+            Triggers the <see cref="P:Blazorade.Bootstrap.Components.Toast.OnShown"/> callback.
+            </summary>
+            <remarks>Invoked by JS Interop. Not to be called directly.</remarks>
+        </member>
+    </members>
+</doc>
