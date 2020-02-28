@@ -4,8 +4,14 @@ using System.Text;
 
 namespace Blazorade.Bootstrap.Components
 {
+    /// <summary>
+    /// Defines different sizes for <see cref="Modal"/> components.
+    /// </summary>
     public enum ModalSize
     {
+        /// <summary>
+        /// The default size.
+        /// </summary>
         Default,
 
         /// <summary>
