@@ -6,6 +6,9 @@ using System.Text;
 
 namespace Blazorade.Bootstrap.Components
 {
+    /// <summary>
+    /// Represents the body of a <see cref="Card"/> component.
+    /// </summary>
     public partial class CardBody
     {
 
@@ -33,21 +36,39 @@ namespace Blazorade.Bootstrap.Components
         [Parameter]
         public RenderFragment<IEnumerable<ILink>> LinkSectionTemplate { get; set; }
 
+        /// <summary>
+        /// The title to show in the body of the Card.
+        /// </summary>
         [Parameter]
         public string Title { get; set; }
 
+        /// <summary>
+        /// Allows you to customize how the title is rendered. The context parameter is the text specified in <see cref="Title"/>.
+        /// </summary>
         [Parameter]
         public RenderFragment<string> TitleTemplate { get; set; }
 
+        /// <summary>
+        /// A subtitle to render with the <see cref="Title"/>.
+        /// </summary>
         [Parameter]
         public string Subtitle { get; set; }
 
+        /// <summary>
+        /// Allows you to customize how the subtitle is rendered. The context parameter is the text specified in <see cref="Subtitle"/>.
+        /// </summary>
         [Parameter]
         public RenderFragment<string> SubtitleTemplate { get; set; }
 
+        /// <summary>
+        /// The text to display in the body of the Card.
+        /// </summary>
         [Parameter]
         public string Text { get; set; }
 
+        /// <summary>
+        /// Allows you to customize how the text is displayed. The context parameter is the text specified in <see cref="Text"/>.
+        /// </summary>
         [Parameter]
         public RenderFragment<string> TextTemplate { get; set; }
 
@@ -58,6 +79,9 @@ namespace Blazorade.Bootstrap.Components
         public bool IsImageOverlay { get; set; }
 
         private Card _Parent;
+        /// <summary>
+        /// The parent <see cref="Card"/> for the CardBody component.
+        /// </summary>
         [Parameter]
         public Card Parent
         {
