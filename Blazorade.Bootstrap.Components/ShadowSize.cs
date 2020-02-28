@@ -9,9 +9,24 @@ namespace Blazorade.Bootstrap.Components
     /// </summary>
     public enum ShadowSize
     {
+        /// <summary>
+        /// No shadow. Default.
+        /// </summary>
         None,
+
+        /// <summary>
+        /// A small shadow.
+        /// </summary>
         Small,
+
+        /// <summary>
+        /// Regular shadow.
+        /// </summary>
         Regular,
+
+        /// <summary>
+        /// Large shadow.
+        /// </summary>
         Large
     }
 }
