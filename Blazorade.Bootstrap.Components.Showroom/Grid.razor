@@ -143,3 +143,18 @@
         <Column ClassBuilder="this.endAlignedColumn">Col #3</Column>
     </Row>
 </Container>
+
+
+<Heading Id="ordering" IsAnchor="true" Level="HeadingLevel.H3" ClassBuilder="this.marginTop">Column Ordering</Heading>
+<Paragraph>
+    Columns can also be reordered in another order than the order they are in the DOM. The order can also be specified for each responsive breakpoint separately.
+</Paragraph>
+<Container Type="ContainerType.Fluid">
+    <Row>
+        <Column ClassBuilder="@(new ColumnClassBuilder(colShared).Order(1).OnAll().OrderLast().OnSm())">1st on XS</Column>
+        <Column ClassBuilder="@(new ColumnClassBuilder(colShared).OrderLast().OnAll().Order(1).OnSm().OrderLast().OnMd())">1st on SM</Column>
+        <Column ClassBuilder="@(new ColumnClassBuilder(colShared).OrderLast().OnAll().Order(1).OnMd().OrderLast().OnLg())">1st on MD</Column>
+        <Column ClassBuilder="@(new ColumnClassBuilder(colShared).OrderLast().OnAll().Order(1).OnLg().OrderLast().OnXl())">1st on LG</Column>
+        <Column ClassBuilder="@(new ColumnClassBuilder(colShared).OrderLast().OnAll().Order(1).OnXl())">1st on XL</Column>
+    </Row>
+</Container>

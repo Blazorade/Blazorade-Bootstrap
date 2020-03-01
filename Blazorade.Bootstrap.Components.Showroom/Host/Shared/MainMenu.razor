@@ -40,9 +40,21 @@
         }
     };
 }
-<Navbar Id="MainMenu" BrandText="Blazorade Bootstrap" BrandUrl="./" BackgroundColor="NamedColor.Primary" ColorScheme="NavbarColor.Dark" ExpandAt="NavbarExpandBreakpoint.MD">
-    <NavbarNav Items="@this.items" />
-    <NavbarNav MarginLeft="Spacing.Auto">
-        <NavItem Url="https://github.com/Blazorade/Blazorade-Bootstrap/wiki" OpenInNewTab="true">Docs</NavItem>
-    </NavbarNav>
+<Navbar Id="MainMenu" BrandText="Blazorade Bootstrap" BrandUrl="./" BackgroundColor="NamedColor.Primary" ColorScheme="NavbarColor.Dark" ExpandAt="NavbarExpandBreakpoint.MD" Placement="NavbarPlacement.StickyTop">
+    <BrandTemplate>
+        <NavbarBrand Url="@context.Url">
+            <Span>@context.Text</Span>
+            <Span class="d-inline d-sm-none">(XS)</Span>
+            <Span class="d-none d-sm-inline d-md-none">(SM)</Span>
+            <Span class="d-none d-md-inline d-lg-none">(MD)</Span>
+            <Span class="d-none d-lg-inline d-xl-none">(LG)</Span>
+            <Span class="d-none d-xl-inline">(XL)</Span>
+        </NavbarBrand>
+    </BrandTemplate>
+    <ChildContent>
+        <NavbarNav Items="@this.items" />
+        <NavbarNav MarginLeft="Spacing.Auto">
+            <NavItem Url="https://github.com/Blazorade/Blazorade-Bootstrap/wiki" OpenInNewTab="true">Docs</NavItem>
+        </NavbarNav>
+    </ChildContent>
 </Navbar>
