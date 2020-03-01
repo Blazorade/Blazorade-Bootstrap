@@ -17,6 +17,7 @@
                 new MenuItem { Text = "Containers", Url = "containers", Description = "The Container component is the foundation for many layout configurations in Bootstrap." },
                 new MenuItem { Text = "Dropdowns", Url = "dropdowns", Description = "The Dropdown component is a contextual overlay that displays a list of links and other elements. The Dropdown can be toggled." },
                 new MenuItem { Text = "Embeds", Url = "embeds", Description = "The Embed component is used to create responsive video or slideshow embeds." },
+                new MenuItem { Text = "Grid", Url = "grid", Description = "Use the powerful grid system to build mobile-first layouts of all shapes and sizes." },
                 new MenuItem { Text = "List Groups", Url = "listgroups", Description = "The ListGroup component is used to display a series of content in a powerful and flexible way." },
                 new MenuItem { Text = "Modals", Url = "modals", Description = "Use the Modal component to add dialogs to your site or application for lightboxes, user notifications or other kinds of custom content." },
                 new MenuItem { Text = "Navbars", Url = "navbars", Description = "The Navbar component is used to produce a responsive navigation header with built-in support for collapsing." },
@@ -35,15 +36,26 @@
                 new MenuItem { Text = "Jumbotrons", Url = "jumbotrons", Description = "The Jumbotron component is a lightweight and flexible component for showcasing content." },
                 new MenuItem { Text = "Media", Url = "media", Description = "The Media component is used to build complex and repetitive content where media is positioned alongside content." },
                 new MenuItem { Text = "Sizing", Url = "sizing" },
-                new MenuItem { Text = "Grid", Url = "grids", Description = "Use the powerful grid system to build mobile-first layouts of all shapes and sizes." },
                 new MenuItem { Text = "Popovers", Url = "popovers", Description = "The popover component is used to push notifications to your visitor as a lighweight and customizable alert message." },
             }
         }
     };
 }
-<Navbar Id="MainMenu" BrandText="Blazorade Bootstrap" BrandUrl="./" BackgroundColor="NamedColor.Primary" ColorScheme="NavbarColor.Dark" ExpandAt="NavbarExpandBreakpoint.MD">
-    <NavbarNav Items="@this.items" />
-    <NavbarNav MarginLeft="Spacing.Auto">
-        <NavItem Url="https://github.com/Blazorade/Blazorade-Bootstrap/wiki" OpenInNewTab="true">Docs</NavItem>
-    </NavbarNav>
+<Navbar Id="MainMenu" BrandText="Blazorade Bootstrap" BrandUrl="./" BackgroundColor="NamedColor.Primary" ColorScheme="NavbarColor.Dark" ExpandAt="NavbarExpandBreakpoint.MD" Placement="NavbarPlacement.StickyTop">
+    <BrandTemplate>
+        <NavbarBrand Url="@context.Url">
+            <Span>@context.Text</Span>
+            <Span class="d-inline d-sm-none">(XS)</Span>
+            <Span class="d-none d-sm-inline d-md-none">(SM)</Span>
+            <Span class="d-none d-md-inline d-lg-none">(MD)</Span>
+            <Span class="d-none d-lg-inline d-xl-none">(LG)</Span>
+            <Span class="d-none d-xl-inline">(XL)</Span>
+        </NavbarBrand>
+    </BrandTemplate>
+    <ChildContent>
+        <NavbarNav Items="@this.items" />
+        <NavbarNav MarginLeft="Spacing.Auto">
+            <NavItem Url="https://github.com/Blazorade/Blazorade-Bootstrap/wiki" OpenInNewTab="true">Docs</NavItem>
+        </NavbarNav>
+    </ChildContent>
 </Navbar>

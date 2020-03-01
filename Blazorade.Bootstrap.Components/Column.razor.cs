@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Blazorade.Bootstrap.Components
 {
-    partial class Col
+    partial class Column
     {
     }
 }

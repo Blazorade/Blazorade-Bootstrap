@@ -228,6 +228,11 @@ namespace Blazorade.Bootstrap.Components
             public const string Collapse = "collapse";
         }
 
+        public static class Cols
+        {
+            public const string Col = "col";
+        }
+
         public static class Containers
         {
             public const string FixedWidth = "container";
@@ -472,6 +477,12 @@ namespace Blazorade.Bootstrap.Components
         public static class Position
         {
             public const string Relative = "position-relative";
+        }
+
+        public static class Rows
+        {
+            public const string Row = "row";
+            public const string NoGutters = "no-gutters";
         }
 
         public static class Shadows
