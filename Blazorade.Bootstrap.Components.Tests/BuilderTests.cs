@@ -9,7 +9,7 @@ namespace Blazorade.Bootstrap.Components.Tests
     public class BuilderTests
     {
         [TestMethod]
-        public void Grid01()
+        public void Column01()
         {
             var classes = new ColumnBuilder()
                 .Col().OnAll()
@@ -19,7 +19,7 @@ namespace Blazorade.Bootstrap.Components.Tests
         }
 
         [TestMethod]
-        public void Grid02()
+        public void Column02()
         {
             var classes = new ColumnBuilder()
                 .Col(12).OnSm()
@@ -30,7 +30,7 @@ namespace Blazorade.Bootstrap.Components.Tests
         }
 
         [TestMethod]
-        public void Grid03()
+        public void Column03()
         {
             var classes = new ColumnBuilder()
                 .Col(8).OnMd()
@@ -40,7 +40,7 @@ namespace Blazorade.Bootstrap.Components.Tests
         }
 
         [TestMethod]
-        public void Grid04()
+        public void Column04()
         {
             var classes = new ColumnBuilder()
                 .Col().OnAll()
@@ -53,7 +53,7 @@ namespace Blazorade.Bootstrap.Components.Tests
         }
 
         [TestMethod]
-        public void Grid05()
+        public void Column05()
         {
             var classes = new ColumnBuilder()
                 .Col(6).OrderFirst()
@@ -64,7 +64,7 @@ namespace Blazorade.Bootstrap.Components.Tests
         }
 
         [TestMethod]
-        public void Grid06()
+        public void Column06()
         {
             var classes = new ColumnBuilder()
                 .Col(8).Order(3).OnAll()
@@ -75,7 +75,7 @@ namespace Blazorade.Bootstrap.Components.Tests
         }
 
         [TestMethod]
-        public void Grid07()
+        public void Column07()
         {
             var classes = new ColumnBuilder()
                 .Col().AlignStart().OnSm()
@@ -87,7 +87,7 @@ namespace Blazorade.Bootstrap.Components.Tests
         }
 
         [TestMethod]
-        public void Grid08()
+        public void Column08()
         {
             var classes = new ColumnBuilder()
                 .Col().Offset(4).OnAll()
@@ -96,6 +96,33 @@ namespace Blazorade.Bootstrap.Components.Tests
 
             this.AssertClasses(classes, 4, "col", "offset-4", "col-xl", "offset-xl-8");
         }
+
+
+
+        [TestMethod]
+        public void Row01()
+        {
+            var builder = new RowBuilder()
+                .Row()
+                .RowCols(3)
+                .Builder();
+
+            this.AssertClasses(builder.BuildClasses(), 2, "row", "row-cols-3");
+        }
+
+        [TestMethod]
+        public void Row02()
+        {
+            var builder = new RowBuilder()
+                .Row()
+                .RowCols(2).OnAll()
+                .RowCols(3).OnSm()
+                .RowCols(6).OnXl()
+                .Builder();
+
+            this.AssertClasses(builder.BuildClasses(), 4, "row", "row-cols-2", "row-cols-sm-3", "row-cols-xl-6");
+        }
+
 
 
 

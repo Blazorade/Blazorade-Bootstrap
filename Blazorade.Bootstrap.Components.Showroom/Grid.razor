@@ -1,65 +1,21 @@
 ﻿@code {
-    IComponentBuilder marginTop = new BootstrapComponentBuilder()
-        .MarginTop(5)
-        ;
+    IComponentBuilder marginTop = new BootstrapComponentBuilder().MarginTop(5);
 
-    static IComponentBuilder colShared = new ColumnBuilder()
-        .Background(NamedColor.Light)
-        .Border().Border(NamedColor.Dark)
-        .Padding(3)
-        ;
+    static IComponentBuilder colShared = new ColumnBuilder().Background(NamedColor.Light).Border().Border(NamedColor.Dark).Padding(3);
 
-    IComponentBuilder col = new ColumnBuilder(colShared)
-        .Col()
-        ;
+    IComponentBuilder col = new ColumnBuilder(colShared).Col();
 
-    IComponentBuilder responsiveCol = new ColumnBuilder(colShared)
-        .Col(12).OnAll()
-        .Col(6).OnSm()
-        .Col(4).OnMd()
-        .Col(3).OnLg()
-        .Col(2).OnXl()
-        ;
+    IComponentBuilder responsiveCol = new ColumnBuilder(colShared).Col(12).OnAll().Col(6).OnSm().Col(4).OnMd().Col(3).OnLg().Col(2).OnXl();
 
-    IComponentBuilder startAlignedColumn = new ColumnBuilder(colShared)
-        .Col()
-        .AlignStart()
-        ;
+    IComponentBuilder colAuto = new ColumnBuilder(colShared).ColAuto();
 
-    IComponentBuilder centerAlignedColumn = new ColumnBuilder(colShared)
-        .Col()
-        .AlignCenter()
-        ;
+    IComponentBuilder col2 = new ColumnBuilder(colShared).Col(2);
 
-    IComponentBuilder endAlignedColumn = new ColumnBuilder(colShared)
-        .Col()
-        .AlignEnd()
-        ;
+    IComponentBuilder colBreakSm = new BootstrapComponentBuilder().Width100().DisplayBlock().OnAll().MarginTop(1).OnAll().DisplayNone().OnMd().MarginTop(0).OnMd();
 
-    IComponentBuilder colAuto = new ColumnBuilder(colShared)
-        .ColAuto()
-        ;
+    IComponentBuilder colBreakAll = new BootstrapComponentBuilder().Width100().DisplayBlock().OnAll();
 
-    IComponentBuilder col2 = new ColumnBuilder(colShared)
-        .Col(2)
-        ;
-
-    IComponentBuilder colBreakSm = new BootstrapComponentBuilder()
-        .Width100().DisplayBlock().OnAll()
-        .MarginTop(1).OnAll()
-        .DisplayNone().OnMd()
-        .MarginTop(0).OnMd()
-        ;
-
-    IComponentBuilder colBreakAll = new BootstrapComponentBuilder()
-        .Width100().DisplayBlock().OnAll()
-        ;
-
-    IComponentBuilder zeroOffset = new ColumnBuilder(colShared)
-        .Col()
-        .Offset(0)
-        .OnAll()
-        ;
+    IComponentBuilder zeroOffset = new ColumnBuilder(colShared).Col().Offset(0).OnAll();
 }
 
 <Heading Level="HeadingLevel.H2">The Bootstrap Grid System</Heading>
@@ -75,7 +31,6 @@
     Here we use automatic column layout where the first row will break up into two rows on <code>XS</code> and <code>SM</code> breakpoints. When the row breaks,
     it also adds a margin between the cells to match the spacing betwen the first and the second row. The second row stays as is on all screen sizes.
 </Paragraph>
-
 <Container Type="ContainerType.Fluid">
     <Row>
         <Column Builder="this.col">1 of 4</Column>
@@ -96,7 +51,6 @@
 <Paragraph>
     This section demonstrates how to specify the width of one or more columns in the grid.
 </Paragraph>
-
 <Container Type="ContainerType.Fluid">
     <Row>
         <Column Builder="this.col">1 of 3. Fill up</Column>
@@ -109,7 +63,6 @@
 <Paragraph Builder="this.marginTop">
     The following grid contains a row where all columns are automatically adjusted to the contents of each column.
 </Paragraph>
-
 <Container Type="ContainerType.Fluid">
     <Row>
         <Column Builder="this.colAuto">1 of 3.</Column>
@@ -124,7 +77,6 @@
     Different column settings can be specified for each of the supported responsive breakpoints in Bootstrap. The columns below will
     automatically arrange into 6, 4, 3, 2 and 1 columns as the screen width changes.
 </Paragraph>
-
 <Container Type="ContainerType.Fluid">
     <Row>
         <Column Builder="this.responsiveCol">Col #1</Column>
@@ -149,9 +101,9 @@
 </Paragraph>
 <Container Type="ContainerType.Fluid">
     <Row BackgroundColor="NamedColor.Info" style="height: 180px">
-        <Column Builder="this.startAlignedColumn">Col #1</Column>
-        <Column Builder="this.centerAlignedColumn">Col #2</Column>
-        <Column Builder="this.endAlignedColumn">Col #3</Column>
+        <Column Builder="@(new ColumnBuilder(colShared).Col().AlignStart())">Col #1</Column>
+        <Column Builder="@(new ColumnBuilder(colShared).Col().AlignCenter())">Col #2</Column>
+        <Column Builder="@(new ColumnBuilder(colShared).Col().AlignEnd())">Col #3</Column>
     </Row>
 </Container>
 
@@ -184,5 +136,46 @@
         <Column Builder="@(new ColumnBuilder(zeroOffset).Offset(4).OnMd().Offset(2).OnSm())">3 of 4</Column>
         <Div Builder="this.colBreakAll"></Div>
         <Column Builder="@(new ColumnBuilder(zeroOffset).Offset(2).OnSm())">4 of 4</Column>
+    </Row>
+</Container>
+
+
+<Heading Id="row-columns" IsAnchor="true" Level="HeadingLevel.H3" Builder="this.marginTop">Row Columns</Heading>
+<Paragraph>
+    With row columns you can specify how many columns on each responsive breakpoint you want your rows to fit.
+</Paragraph>
+<Container Type="ContainerType.Fluid">
+    <Row Builder="@(new RowBuilder().Row().RowCols(4).OnXl().RowCols(3).OnLg().RowCols(2).OnMd().RowCols(1).OnAll())">
+        <Column Builder="this.col">1 of 4</Column>
+        <Column Builder="this.col">2 of 4</Column>
+        <Column Builder="this.col">3 of 4</Column>
+        <Column Builder="this.col">4 of 4</Column>
+    </Row>
+</Container>
+
+
+<Heading Id="vertical-alignment" IsAnchor="true" Level="HeadingLevel.H3" Builder="this.marginTop">Vertical Alignment</Heading>
+<Paragraph>
+    You can specify how items on a row are verically aligned. This can also be modified for each responsive breakpoint separately.
+    See how the vertical alignment changes when you narrow down your browser.
+</Paragraph>
+<Container Type="ContainerType.Fluid">
+    <Row Builder="@(new RowBuilder().Row().AlignItemsStart().OnAll().AlignItemsCenter().OnMd().AlignItemsEnd().OnXl().Background(NamedColor.Light).Border().Border(NamedColor.Success))" style="height: 180px">
+        <Column Builder="this.col">1 of 3</Column>
+        <Column Builder="this.col">2 of 3</Column>
+        <Column Builder="this.col">3 of 3</Column>
+    </Row>
+</Container>
+
+
+<Heading Id="horizontal-alignment" IsAnchor="true" Level="HeadingLevel.H3" Builder="this.marginTop">Horizontal Alignment</Heading>
+<Paragraph>
+    Content on a row can also be horizontally aligned in a variety of ways for every responsive breakpoint separately.
+</Paragraph>
+<Container Type="ContainerType.Fluid">
+    <Row Builder="@(new RowBuilder().Row().JustifyContentStart().OnAll().JustifyContentEnd().OnMd().JustifyContentAround().OnLg().JustifyContentBetween().OnXl())">
+        <Column Builder="this.colAuto">1 of 3</Column>
+        <Column Builder="this.colAuto">2 of 3</Column>
+        <Column Builder="this.colAuto">3 of 3</Column>
     </Row>
 </Container>

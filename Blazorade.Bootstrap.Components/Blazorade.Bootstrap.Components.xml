@@ -365,11 +365,10 @@
             Sets the background of the element to transparent.
             </summary>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.Border(System.String)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.Border">
             <summary>
-            Specifies a border with the given value.
+            Sets a default border on all sides of the component.
             </summary>
-            <param name="value">The border value. If not specified, adds a border on all sides.</param>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.BorderTop">
             <summary>
@@ -421,11 +420,6 @@
             Specifies the colour of the border.
             </summary>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.Display(System.String)">
-            <summary>
-            Sets the display to the given value.
-            </summary>
-        </member>
         <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.DisplayNone">
             <summary>
             Display: none
@@ -469,11 +463,6 @@
         <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.DisplayInlineFlex">
             <summary>
             Display: inline-flex
-            </summary>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.Height(System.String)">
-            <summary>
-            Sets the height of the component to the specified value with the <c>h-</c> prefix.
             </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.HeightAuto">
@@ -668,11 +657,10 @@
             Sets the background of the element to transparent.
             </summary>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.Border(System.String)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.Border">
             <summary>
-            Specifies a border with the given value.
+            Sets a default border on all sides of the component.
             </summary>
-            <param name="value">The border value. If not specified, adds a border on all sides.</param>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.BorderTop">
             <summary>
@@ -724,11 +712,6 @@
             Specifies the colour of the border.
             </summary>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.Display(System.String)">
-            <summary>
-            Sets the display to the given value.
-            </summary>
-        </member>
         <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.DisplayNone">
             <summary>
             Display: none
@@ -772,11 +755,6 @@
         <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.DisplayInlineFlex">
             <summary>
             Display: inline-flex
-            </summary>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.Height(System.String)">
-            <summary>
-            Sets the height of the component to the specified value with the <c>h-</c> prefix.
             </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.HeightAuto">
@@ -1112,6 +1090,145 @@
         <member name="M:Blazorade.Bootstrap.Components.Builder.IResponsiveBreakpointModifiers`1.OnXl">
             <summary>
             Configures the preceeding features to be applied to the XL responsive breakpoint and above.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Builder.RowBuilder">
+            <summary>
+            A component builder that is desined for the <see cref="M:Blazorade.Bootstrap.Components.Builder.RowBuilder.Row"/> component to support the Bootstrap grid.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.RowBuilder.#ctor">
+            <summary>
+            Creates an instance of the builder.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.RowBuilder.#ctor(Blazorade.Core.Components.Builder.IComponentBuilder)">
+            <summary>
+            Creates an instance of the builder from the given builder.
+            </summary>
+            <param name="builder">The builder to start the new instance from.</param>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.RowBuilder.AlignItemsStart">
+            <summary>
+            Aligns items on the row at the top of the row.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.RowBuilder.AlignItemsCenter">
+            <summary>
+            Aligns items on the row in the middle of the row, horizontally.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.RowBuilder.AlignItemsEnd">
+            <summary>
+            Aligns items on the row at the bottom of the row.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.RowBuilder.JustifyContentStart">
+            <summary>
+            Aligns row content to the left of the row.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.RowBuilder.JustifyContentCenter">
+            <summary>
+            Centers row content.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.RowBuilder.JustifyContentEnd">
+            <summary>
+            Aligns content to the right of the row.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.RowBuilder.JustifyContentAround">
+            <summary>
+            Justifies content on the row by adding space around all content as needed.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.RowBuilder.JustifyContentBetween">
+            <summary>
+            Justifies content on the row by adding space between content, but not before and after, as needed.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.RowBuilder.NoGutters">
+            <summary>
+            Removes gutters between columns on the row.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.RowBuilder.Row">
+            <summary>
+            Specifies the component as a row.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.RowBuilder.RowCols(System.Int32)">
+            <summary>
+            Specifies the number of columsn to allow on each row at each breakpoing.
+            </summary>
+            <param name="cols">The number of columns on each row.</param>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Builder.IRowFeatures">
+            <summary>
+            Features for <see cref="M:Blazorade.Bootstrap.Components.Builder.IRowFeatures.Row"/>.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IRowFeatures.AlignItemsStart">
+            <summary>
+            Aligns items on the row at the top of the row.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IRowFeatures.AlignItemsCenter">
+            <summary>
+            Aligns items on the row in the middle of the row, horizontally.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IRowFeatures.AlignItemsEnd">
+            <summary>
+            Aligns items on the row at the bottom of the row.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IRowFeatures.JustifyContentStart">
+            <summary>
+            Aligns row content to the left of the row.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IRowFeatures.JustifyContentCenter">
+            <summary>
+            Centers row content.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IRowFeatures.JustifyContentEnd">
+            <summary>
+            Aligns content to the right of the row.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IRowFeatures.JustifyContentAround">
+            <summary>
+            Justifies content on the row by adding space around all content as needed.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IRowFeatures.JustifyContentBetween">
+            <summary>
+            Justifies content on the row by adding space between content, but not before and after, as needed.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IRowFeatures.NoGutters">
+            <summary>
+            Removes gutters between columns on the row.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IRowFeatures.Row">
+            <summary>
+            Specifies the component as a row.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IRowFeatures.RowCols(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="cols">The number of columns on each row.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Builder.IRowBreakpointModifiers">
+            <summary>
+            Breakpoint modifiers for <see cref="T:Blazorade.Bootstrap.Components.Row"/>.
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Button">

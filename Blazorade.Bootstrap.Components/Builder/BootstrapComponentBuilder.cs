@@ -41,10 +41,9 @@ namespace Blazorade.Bootstrap.Components.Builder
         #region Border
 
         /// <summary>
-        /// Specifies a border with the given value.
+        /// Sets a default border on all sides of the component.
         /// </summary>
-        /// <param name="value">The border value. If not specified, adds a border on all sides.</param>
-        IComponentFeatures Border(string value = null);
+        IComponentFeatures Border();
 
         /// <summary>
         /// Adds a border to the top.
@@ -101,11 +100,6 @@ namespace Blazorade.Bootstrap.Components.Builder
         #region Display
 
         /// <summary>
-        /// Sets the display to the given value.
-        /// </summary>
-        IComponentBreakpointModifiers Display(string value);
-
-        /// <summary>
         /// Display: none
         /// </summary>
         IComponentBreakpointModifiers DisplayNone();
@@ -153,11 +147,6 @@ namespace Blazorade.Bootstrap.Components.Builder
         #endregion
 
         #region Height
-
-        /// <summary>
-        /// Sets the height of the component to the specified value with the <c>h-</c> prefix.
-        /// </summary>
-        IComponentFeatures Height(string value);
 
         /// <summary>
         /// Sets the height of the component to auto.
@@ -399,12 +388,11 @@ namespace Blazorade.Bootstrap.Components.Builder
         #region Border
 
         /// <summary>
-        /// Specifies a border with the given value.
+        /// Sets a default border on all sides of the component.
         /// </summary>
-        /// <param name="value">The border value. If not specified, adds a border on all sides.</param>
-        public IComponentFeatures Border(string value = null)
+        public IComponentFeatures Border()
         {
-            this.AddPendingClass($"border-{value?.Hyphenate()?.ToLower()}");
+            this.AddPendingClass("border");
             return this;
         }
 
@@ -413,7 +401,7 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// </summary>
         public IComponentFeatures BorderTop()
         {
-            this.Border("top");
+            this.AddPendingClass("border-top");
             return this;
         }
 
@@ -422,7 +410,7 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// </summary>
         public IComponentFeatures BorderRight()
         {
-            this.Border("right");
+            this.AddPendingClass("border-right");
             return this;
         }
 
@@ -431,7 +419,7 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// </summary>
         public IComponentFeatures BorderBottom()
         {
-            this.Border("bottom");
+            this.AddPendingClass("border-bottom");
             return this;
         }
 
@@ -440,7 +428,7 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// </summary>
         public IComponentFeatures BorderLeft()
         {
-            this.Border("left");
+            this.AddPendingClass("border-left");
             return this;
         }
 
@@ -449,7 +437,7 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// </summary>
         public IComponentFeatures Border0()
         {
-            this.Border("0");
+            this.AddPendingClass("border-0");
             return this;
         }
 
@@ -458,7 +446,7 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// </summary>
         public IComponentFeatures Border0Top()
         {
-            this.Border("top-0");
+            this.AddPendingClass("border-top-0");
             return this;
         }
 
@@ -467,7 +455,7 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// </summary>
         public IComponentFeatures Border0Right()
         {
-            this.Border("right-0");
+            this.AddPendingClass("border-right-0");
             return this;
         }
 
@@ -476,7 +464,7 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// </summary>
         public IComponentFeatures Border0Bottom()
         {
-            this.Border("bottom-0");
+            this.AddPendingClass("border-bottom-0");
             return this;
         }
 
@@ -485,7 +473,7 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// </summary>
         public IComponentFeatures Border0Left()
         {
-            this.Border("left-0");
+            this.AddPendingClass("border-left-0");
             return this;
         }
 
@@ -494,7 +482,7 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// </summary>
         public IComponentFeatures Border(NamedColor color)
         {
-            this.Border(color.ToString());
+            this.AddPendingClass($"border-{color.ToString().Hyphenate().ToLower()}");
             return this;
         }
 
@@ -503,20 +491,11 @@ namespace Blazorade.Bootstrap.Components.Builder
         #region Display
 
         /// <summary>
-        /// Sets the display to the given value.
-        /// </summary>
-        public IComponentBreakpointModifiers Display(string value)
-        {
-            this.AddPendingClass($"d-{{0}}-{value}");
-            return this;
-        }
-
-        /// <summary>
         /// Display: none
         /// </summary>
         public IComponentBreakpointModifiers DisplayNone()
         {
-            this.Display("none");
+            this.AddPendingClass("d-{0}-none");
             return this;
         }
 
@@ -525,7 +504,7 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// </summary>
         public IComponentBreakpointModifiers DisplayInline()
         {
-            this.Display("inline");
+            this.AddPendingClass("d-{0}-inline");
             return this;
         }
 
@@ -534,7 +513,7 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// </summary>
         public IComponentBreakpointModifiers DisplayInlineBlock()
         {
-            this.Display("inline-block");
+            this.AddPendingClass("d-{0}-inline-block");
             return this;
         }
 
@@ -543,7 +522,7 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// </summary>
         public IComponentBreakpointModifiers DisplayBlock()
         {
-            this.Display("block");
+            this.AddPendingClass("d-{0}-block");
             return this;
         }
 
@@ -552,7 +531,7 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// </summary>
         public IComponentBreakpointModifiers DisplayTable()
         {
-            this.Display("table");
+            this.AddPendingClass("d-{0}-table");
             return this;
         }
 
@@ -561,7 +540,7 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// </summary>
         public IComponentBreakpointModifiers DisplayTableCell()
         {
-            this.Display("table-cell");
+            this.AddPendingClass("d-{0}-table-cell");
             return this;
         }
 
@@ -570,7 +549,7 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// </summary>
         public IComponentBreakpointModifiers DisplayTableRow()
         {
-            this.Display("table-row");
+            this.AddPendingClass("d-{0}-table-row");
             return this;
         }
 
@@ -579,7 +558,7 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// </summary>
         public IComponentBreakpointModifiers DisplayFlex()
         {
-            this.Display("flex");
+            this.AddPendingClass("d-{0}-flex");
             return this;
         }
 
@@ -588,7 +567,7 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// </summary>
         public IComponentBreakpointModifiers DisplayInlineFlex()
         {
-            this.Display("inline-flex");
+            this.AddPendingClass("d-{0}-inline-flex");
             return this;
         }
 
@@ -597,20 +576,11 @@ namespace Blazorade.Bootstrap.Components.Builder
         #region Height
 
         /// <summary>
-        /// Sets the height of the component to the specified value with the <c>h-</c> prefix.
-        /// </summary>
-        public IComponentFeatures Height(string value)
-        {
-            this.AddPendingClass($"h-{value}");
-            return this;
-        }
-
-        /// <summary>
         /// Sets the height of the component to auto.
         /// </summary>
         public IComponentFeatures HeightAuto()
         {
-            this.Height("auto");
+            this.AddPendingClass("h-auto");
             return this;
         }
 
@@ -619,7 +589,7 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// </summary>
         public IComponentFeatures Height25()
         {
-            this.Height("25");
+            this.AddPendingClass("h-25");
             return this;
         }
 
@@ -628,7 +598,7 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// </summary>
         public IComponentFeatures Height50()
         {
-            this.Height("50");
+            this.AddPendingClass("h-50");
             return this;
         }
 
@@ -637,7 +607,7 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// </summary>
         public IComponentFeatures Height75()
         {
-            this.Height("75");
+            this.AddPendingClass("h-75");
             return this;
         }
 
@@ -646,7 +616,7 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// </summary>
         public IComponentFeatures Height100()
         {
-            this.Height("100");
+            this.AddPendingClass("h-100");
             return this;
         }
 
