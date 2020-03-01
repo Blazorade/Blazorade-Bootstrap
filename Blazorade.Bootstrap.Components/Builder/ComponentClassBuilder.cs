@@ -1,6 +1,7 @@
 ﻿using Blazorade.Core.Components.Builder;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Blazorade.Bootstrap.Components.Builder
@@ -11,6 +12,26 @@ namespace Blazorade.Bootstrap.Components.Builder
     /// </summary>
     public class ComponentClassBuilder : ClassBuilder, IComponentFeatureBuilder, IComponentBreakpointBuilder, IClassBuilder
     {
+        /// <summary>
+        /// Creates an instance of the builder.
+        /// </summary>
+        public ComponentClassBuilder()
+        {
+
+        }
+
+        /// <summary>
+        /// Creates an instance of the builder, and loads it with classes from another builder.
+        /// </summary>
+        /// <param name="builder">The builder to load classes from into this new instance.</param>
+        public ComponentClassBuilder(IClassBuilder builder)
+        {
+            if(null != builder)
+            {
+                this.Add(builder.Build().ToArray());
+            }
+        }
+
 
         private List<string> PendingFeatures = new List<string>();
 
@@ -242,6 +263,197 @@ namespace Blazorade.Bootstrap.Components.Builder
 
 
         /// <summary>
+        /// Sets the height of the component to auto.
+        /// </summary>
+        public IComponentFeatureBuilder HeightAuto()
+        {
+            this.AddPendingFeature("h-auto");
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the height of the component to 25%.
+        /// </summary>
+        public IComponentFeatureBuilder Height25()
+        {
+            this.AddPendingFeature("h-25");
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the height of the component to 50%.
+        /// </summary>
+        public IComponentFeatureBuilder Height50()
+        {
+            this.AddPendingFeature("h-50");
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the height of the component to 75%.
+        /// </summary>
+        public IComponentFeatureBuilder Height75()
+        {
+            this.AddPendingFeature("h-75");
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the height of the component to 100%.
+        /// </summary>
+        public IComponentFeatureBuilder Height100()
+        {
+            this.AddPendingFeature("h-100");
+            return this;
+        }
+
+
+
+        /// <summary>
+        /// Sets the margin on all sizes of the component.
+        /// </summary>
+        /// <param name="size">The size of the margin.</param>
+        public IComponentBreakpointBuilder Margin(int size)
+        {
+            this.AddPendingFeature($"m-{{0}}-{size}");
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the top margin of the component.
+        /// </summary>
+        /// <param name="size">The size of the margin.</param>
+        public IComponentBreakpointBuilder MarginTop(int size)
+        {
+            this.AddPendingFeature($"mt-{{0}}-{size}");
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the right margin of the component.
+        /// </summary>
+        /// <param name="size">The size of the margin.</param>
+        public IComponentBreakpointBuilder MarginRight(int size)
+        {
+            this.AddPendingFeature($"mr-{{0}}-{size}");
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the bottom margin of the component.
+        /// </summary>
+        /// <param name="size">The size of the margin.</param>
+        public IComponentBreakpointBuilder MarginBottom(int size)
+        {
+            this.AddPendingFeature($"mb-{{0}}-{size}");
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the left margin of the component.
+        /// </summary>
+        /// <param name="size">The size of the margin.</param>
+        public IComponentBreakpointBuilder MarginLeft(int size)
+        {
+            this.AddPendingFeature($"ml-{{0}}-{size}");
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the left and right margin of the component.
+        /// </summary>
+        /// <param name="size">The size of the margin.</param>
+        public IComponentBreakpointBuilder MarginX(int size)
+        {
+            this.AddPendingFeature($"mx-{{0}}-{size}");
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the top and bottom margin of the component.
+        /// </summary>
+        /// <param name="size">The size of the margin.</param>
+        public IComponentBreakpointBuilder MarginY(int size)
+        {
+            this.AddPendingFeature($"my-{{0}}-{size}");
+            return this;
+        }
+
+
+
+        /// <summary>
+        /// Sets the padding on all sides of the component.
+        /// </summary>
+        /// <param name="size">The size of padding.</param>
+        public IComponentBreakpointBuilder Padding(int size)
+        {
+            this.AddPendingFeature($"p-{{0}}-{size}");
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the top padding of the component.
+        /// </summary>
+        /// <param name="size">The size of padding.</param>
+        public IComponentBreakpointBuilder PaddingTop(int size)
+        {
+            this.AddPendingFeature($"pp-{{0}}-{size}");
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the right padding of the component.
+        /// </summary>
+        /// <param name="size">The size of padding.</param>
+        public IComponentBreakpointBuilder PaddingRight(int size)
+        {
+            this.AddPendingFeature($"pr-{{0}}-{size}");
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the bottom padding of the component.
+        /// </summary>
+        /// <param name="size">The size of padding.</param>
+        public IComponentBreakpointBuilder PaddingBottom(int size)
+        {
+            this.AddPendingFeature($"pb-{{0}}-{size}");
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the left padding of the component.
+        /// </summary>
+        /// <param name="size">The size of padding.</param>
+        public IComponentBreakpointBuilder PaddingLeft(int size)
+        {
+            this.AddPendingFeature($"pl-{{0}}-{size}");
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the left and right padding of the component.
+        /// </summary>
+        /// <param name="size">The size of padding.</param>
+        public IComponentBreakpointBuilder PaddingX(int size)
+        {
+            this.AddPendingFeature($"px-{{0}}-{size}");
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the top and bottom padding of the component.
+        /// </summary>
+        /// <param name="size">The size of padding.</param>
+        public IComponentBreakpointBuilder PaddingY(int size)
+        {
+            this.AddPendingFeature($"py-{{0}}-{size}");
+            return this;
+        }
+
+
+
+        /// <summary>
         /// Sets the text colour to the given colour.
         /// </summary>
         public IComponentFeatureBuilder Text(NamedColor color)
@@ -265,6 +477,54 @@ namespace Blazorade.Bootstrap.Components.Builder
         public IComponentFeatureBuilder TextMuted()
         {
             this.Add("text-muted");
+            return this;
+        }
+
+
+
+
+        /// <summary>
+        /// Sets the width of the component to auto.
+        /// </summary>
+        public IComponentFeatureBuilder WidthAuto()
+        {
+            this.AddPendingFeature("w-auto");
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the width of the component to 25%.
+        /// </summary>
+        public IComponentFeatureBuilder Width25()
+        {
+            this.AddPendingFeature("w-25");
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the width of the component to 50%.
+        /// </summary>
+        public IComponentFeatureBuilder Width50()
+        {
+            this.AddPendingFeature("w-50");
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the width of the component to 75%.
+        /// </summary>
+        public IComponentFeatureBuilder Width75()
+        {
+            this.AddPendingFeature("w-75");
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the width of the component to 100%.
+        /// </summary>
+        public IComponentFeatureBuilder Width100()
+        {
+            this.AddPendingFeature("w-100");
             return this;
         }
 

@@ -11,7 +11,7 @@ namespace Blazorade.Bootstrap.Components.Tests
         [TestMethod]
         public void Grid01()
         {
-            var classes = new ColClassBuilder()
+            var classes = new ColumnClassBuilder()
                 .Col().OnAll()
                 .Build().ToList();
 
@@ -21,7 +21,7 @@ namespace Blazorade.Bootstrap.Components.Tests
         [TestMethod]
         public void Grid02()
         {
-            var classes = new ColClassBuilder()
+            var classes = new ColumnClassBuilder()
                 .Col(12).OnSm()
                 .Col().OnSm()
                 .Build().ToList();
@@ -32,7 +32,7 @@ namespace Blazorade.Bootstrap.Components.Tests
         [TestMethod]
         public void Grid03()
         {
-            var classes = new ColClassBuilder()
+            var classes = new ColumnClassBuilder()
                 .Col(8).OnMd()
                 .Build().ToList();
 
@@ -42,7 +42,7 @@ namespace Blazorade.Bootstrap.Components.Tests
         [TestMethod]
         public void Grid04()
         {
-            var classes = new ColClassBuilder()
+            var classes = new ColumnClassBuilder()
                 .Col().OnAll()
                 .OrderFirst().OnSm()
                 .OrderLast().OnXl()
@@ -55,7 +55,7 @@ namespace Blazorade.Bootstrap.Components.Tests
         [TestMethod]
         public void Grid05()
         {
-            var classes = new ColClassBuilder()
+            var classes = new ColumnClassBuilder()
                 .Col(6).OrderFirst()
                 .OnSm()
                 .Build().ToList();
@@ -66,7 +66,7 @@ namespace Blazorade.Bootstrap.Components.Tests
         [TestMethod]
         public void Grid06()
         {
-            var classes = new ColClassBuilder()
+            var classes = new ColumnClassBuilder()
                 .Col(8).Order(3).OnAll()
                 .ColAuto().OnMd()
                 .ToList();
@@ -77,7 +77,7 @@ namespace Blazorade.Bootstrap.Components.Tests
         [TestMethod]
         public void Grid07()
         {
-            var classes = new ColClassBuilder()
+            var classes = new ColumnClassBuilder()
                 .Col().AlignStart().OnSm()
                 .Col().AlignCenter().OnMd()
                 .Col().AlignEnd().OnLg()
@@ -89,7 +89,7 @@ namespace Blazorade.Bootstrap.Components.Tests
         [TestMethod]
         public void Grid08()
         {
-            var classes = new ColClassBuilder()
+            var classes = new ColumnClassBuilder()
                 .Col().Offset(4).OnAll()
                 .Col().Offset(8).OnXl()
                 .ToList();

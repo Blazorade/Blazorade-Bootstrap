@@ -9,7 +9,7 @@ namespace Blazorade.Bootstrap.Components.Builder
     /// <summary>
     /// The interface for a builder implementation that is use to build classes to support generic Bootstrap features that apply to all elements.
     /// </summary>
-    public interface IComponentFeatureBuilder : IBuilder<string>
+    public interface IComponentFeatureBuilder : IClassBuilder
     {
 
 
@@ -136,6 +136,121 @@ namespace Blazorade.Bootstrap.Components.Builder
 
 
         /// <summary>
+        /// Sets the height of the component to auto.
+        /// </summary>
+        IComponentFeatureBuilder HeightAuto();
+
+        /// <summary>
+        /// Sets the height of the component to 25%.
+        /// </summary>
+        IComponentFeatureBuilder Height25();
+
+        /// <summary>
+        /// Sets the height of the component to 50%.
+        /// </summary>
+        IComponentFeatureBuilder Height50();
+
+        /// <summary>
+        /// Sets the height of the component to 75%.
+        /// </summary>
+        IComponentFeatureBuilder Height75();
+
+        /// <summary>
+        /// Sets the height of the component to 100%.
+        /// </summary>
+        IComponentFeatureBuilder Height100();
+
+
+
+        /// <summary>
+        /// Sets the margin on all sizes of the component.
+        /// </summary>
+        /// <param name="size">The size of the margin.</param>
+        IComponentBreakpointBuilder Margin(int size);
+
+        /// <summary>
+        /// Sets the top margin of the component.
+        /// </summary>
+        /// <param name="size">The size of the margin.</param>
+        IComponentBreakpointBuilder MarginTop(int size);
+
+        /// <summary>
+        /// Sets the right margin of the component.
+        /// </summary>
+        /// <param name="size">The size of the margin.</param>
+        IComponentBreakpointBuilder MarginRight(int size);
+
+        /// <summary>
+        /// Sets the bottom margin of the component.
+        /// </summary>
+        /// <param name="size">The size of the margin.</param>
+        IComponentBreakpointBuilder MarginBottom(int size);
+
+        /// <summary>
+        /// Sets the left margin of the component.
+        /// </summary>
+        /// <param name="size">The size of the margin.</param>
+        IComponentBreakpointBuilder MarginLeft(int size);
+
+        /// <summary>
+        /// Sets the left and right margin of the component.
+        /// </summary>
+        /// <param name="size">The size of the margin.</param>
+        IComponentBreakpointBuilder MarginX(int size);
+
+        /// <summary>
+        /// Sets the top and bottom margin of the component.
+        /// </summary>
+        /// <param name="size">The size of the margin.</param>
+        IComponentBreakpointBuilder MarginY(int size);
+
+
+
+        /// <summary>
+        /// Sets the padding on all sides of the component.
+        /// </summary>
+        /// <param name="size">The size of padding.</param>
+        IComponentBreakpointBuilder Padding(int size);
+
+        /// <summary>
+        /// Sets the top padding of the component.
+        /// </summary>
+        /// <param name="size">The size of padding.</param>
+        IComponentBreakpointBuilder PaddingTop(int size);
+
+        /// <summary>
+        /// Sets the right padding of the component.
+        /// </summary>
+        /// <param name="size">The size of padding.</param>
+        IComponentBreakpointBuilder PaddingRight(int size);
+
+        /// <summary>
+        /// Sets the bottom padding of the component.
+        /// </summary>
+        /// <param name="size">The size of padding.</param>
+        IComponentBreakpointBuilder PaddingBottom(int size);
+
+        /// <summary>
+        /// Sets the left padding of the component.
+        /// </summary>
+        /// <param name="size">The size of padding.</param>
+        IComponentBreakpointBuilder PaddingLeft(int size);
+
+        /// <summary>
+        /// Sets the left and right padding of the component.
+        /// </summary>
+        /// <param name="size">The size of padding.</param>
+        IComponentBreakpointBuilder PaddingX(int size);
+
+        /// <summary>
+        /// Sets the top and bottom padding of the component.
+        /// </summary>
+        /// <param name="size">The size of padding.</param>
+        IComponentBreakpointBuilder PaddingY(int size);
+
+
+
+        /// <summary>
         /// Sets the text colour to the given colour.
         /// </summary>
         IComponentFeatureBuilder Text(NamedColor color);
@@ -150,6 +265,33 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// </summary>
         IComponentFeatureBuilder TextMuted();
 
+
+
+        /// <summary>
+        /// Sets the width of the component to auto.
+        /// </summary>
+        IComponentFeatureBuilder WidthAuto();
+
+        /// <summary>
+        /// Sets the width of the component to 25%.
+        /// </summary>
+        IComponentFeatureBuilder Width25();
+
+        /// <summary>
+        /// Sets the width of the component to 50%.
+        /// </summary>
+        IComponentFeatureBuilder Width50();
+
+        /// <summary>
+        /// Sets the width of the component to 75%.
+        /// </summary>
+        IComponentFeatureBuilder Width75();
+
+        /// <summary>
+        /// Sets the width of the component to 100%.
+        /// </summary>
+        IComponentFeatureBuilder Width100();
+
     }
 
     /// <summary>
@@ -161,7 +303,7 @@ namespace Blazorade.Bootstrap.Components.Builder
 
     /// <summary>
     /// </summary>
-    public interface IGridColFeatureBuilder : IComponentFeatureBuilder, IBuilder<string>
+    public interface IGridColFeatureBuilder : IComponentFeatureBuilder, IClassBuilder
     {
 
         /// <summary>

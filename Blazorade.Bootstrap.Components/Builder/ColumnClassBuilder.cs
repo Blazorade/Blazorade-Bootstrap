@@ -6,10 +6,23 @@ using System.Text;
 namespace Blazorade.Bootstrap.Components.Builder
 {
     /// <summary>
-    /// A class builder that is used to build classes for the <see cref="Col"/> component to support the Bootstrap grid system.
+    /// A class builder that is used to build classes for the <see cref="Column"/> component to support the Bootstrap grid system.
     /// </summary>
-    public class ColClassBuilder : ComponentClassBuilder, IGridColFeatureBuilder, IGridColBreakpointBuilder, IResponsiveBreakpointBuilder<IGridColFeatureBuilder>, IClassBuilder
+    public class ColumnClassBuilder : ComponentClassBuilder, IGridColFeatureBuilder, IGridColBreakpointBuilder, IResponsiveBreakpointBuilder<IGridColFeatureBuilder>, IClassBuilder
     {
+
+        /// <summary>
+        /// Creates an instance of the builder.
+        /// </summary>
+        public ColumnClassBuilder() : base() { }
+
+        /// <summary>
+        /// Creates an instance of the builder, and loads it with classes from another builder.
+        /// </summary>
+        /// <param name="builder">The builder to load classes from into this new instance.</param>
+        public ColumnClassBuilder(IClassBuilder builder) : base(builder) { }
+
+
 
         /// <summary>
         /// Vertically aligns the column at the beginning (top).

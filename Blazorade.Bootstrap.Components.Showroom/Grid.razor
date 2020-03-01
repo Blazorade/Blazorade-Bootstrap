@@ -1,0 +1,145 @@
+﻿@code {
+    IClassBuilder marginTop = new ComponentClassBuilder()
+        .MarginTop(5)
+        ;
+
+    static IClassBuilder colShared = new ColumnClassBuilder()
+        .Background(NamedColor.Light)
+        .Border().Border(NamedColor.Dark)
+        .Padding(3)
+        ;
+
+    IClassBuilder col = new ColumnClassBuilder(colShared)
+        .Col()
+        ;
+
+    IClassBuilder responsiveCol = new ColumnClassBuilder(colShared)
+        .Col(12).OnAll()
+        .Col(6).OnSm()
+        .Col(4).OnMd()
+        .Col(3).OnLg()
+        .Col(2).OnXl()
+        ;
+
+    IClassBuilder startAlignedColumn = new ColumnClassBuilder(colShared)
+        .Col()
+        .AlignStart()
+        ;
+
+    IClassBuilder centerAlignedColumn = new ColumnClassBuilder(colShared)
+        .Col()
+        .AlignCenter()
+        ;
+
+    IClassBuilder endAlignedColumn = new ColumnClassBuilder(colShared)
+        .Col()
+        .AlignEnd()
+        ;
+
+    IClassBuilder colAuto = new ColumnClassBuilder(colShared)
+        .ColAuto()
+        ;
+
+    IClassBuilder col2 = new ColumnClassBuilder(colShared)
+        .Col(2)
+        ;
+
+    IClassBuilder colBreak = new ComponentClassBuilder()
+        .Width100().DisplayBlock().OnAll()
+        .DisplayNone().OnMd()
+        .MarginTop(1).OnAll()
+        .MarginTop(0).OnMd()
+        ;
+}
+
+<Heading Level="HeadingLevel.H2">The Bootstrap Grid System</Heading>
+<Paragraph>
+    The Bootstrap Grid system is a powerful tool that gives you very flexible tools to work in a 12-column grid. Blazorade Bootstrap also supports the grid with the following samples.
+</Paragraph>
+<DocsSection ComponentName="Grid"></DocsSection>
+
+
+
+<Heading Id="auto-layout" IsAnchor="true" Level="HeadingLevel.H3" ClassBuilder="this.marginTop">Automatic layout</Heading>
+<Paragraph>
+    Here we use automatic column layout where the first row will break up into two rows on <code>XS</code> and <code>SM</code> breakpoints. When the row breaks,
+    it also adds a margin between the cells to match the spacing betwen the first and the second row. The second row stays as is on all screen sizes.
+</Paragraph>
+
+<Container Type="ContainerType.Fluid">
+    <Row>
+        <Column ClassBuilder="this.col">1 of 4</Column>
+        <Column ClassBuilder="this.col">2 of 4</Column>
+        <Div ClassBuilder="this.colBreak"></Div>
+        <Column ClassBuilder="this.col">3 of 4</Column>
+        <Column ClassBuilder="this.col">4 of 4</Column>
+    </Row>
+    <Row MarginTop="Spacing.One">
+        <Column ClassBuilder="this.col">1 of 3</Column>
+        <Column ClassBuilder="this.col">2 of 3</Column>
+        <Column ClassBuilder="this.col">3 of 3</Column>
+    </Row>
+</Container>
+
+
+<Heading Id="column-width" IsAnchor="true" Level="HeadingLevel.H3" ClassBuilder="this.marginTop">Setting Column Width</Heading>
+<Paragraph>
+    This section demonstrates how to specify the width of one or more columns in the grid.
+</Paragraph>
+
+<Container Type="ContainerType.Fluid">
+    <Row>
+        <Column ClassBuilder="this.col">1 of 3. Fill up</Column>
+        <Column ClassBuilder="this.colAuto">2 of 3. Adjusts size after content</Column>
+        <Column ClassBuilder="this.col2">3 of 3</Column>
+    </Row>
+</Container>
+
+
+<Paragraph ClassBuilder="this.marginTop">
+    The following grid contains a row where all columns are automatically adjusted to the contents of each column.
+</Paragraph>
+
+<Container Type="ContainerType.Fluid">
+    <Row>
+        <Column ClassBuilder="this.colAuto">1 of 3.</Column>
+        <Column ClassBuilder="this.colAuto">2 of 3. Width is automatically adjusted.</Column>
+        <Column ClassBuilder="this.colAuto">3 of 3. Last column.</Column>
+    </Row>
+</Container>
+
+
+<Heading Id="responsive-columns" IsAnchor="true" Level="HeadingLevel.H3" ClassBuilder="this.marginTop">Responsive Columns</Heading>
+<Paragraph>
+    Different column settings can be specified for each of the supported responsive breakpoints in Bootstrap.
+</Paragraph>
+
+<Container Type="ContainerType.Fluid">
+    <Row>
+        <Column ClassBuilder="this.responsiveCol">Col #1</Column>
+        <Column ClassBuilder="this.responsiveCol">Col #2</Column>
+        <Column ClassBuilder="this.responsiveCol">Col #3</Column>
+        <Column ClassBuilder="this.responsiveCol">Col #4</Column>
+        <Column ClassBuilder="this.responsiveCol">Col #5</Column>
+        <Column ClassBuilder="this.responsiveCol">Col #6</Column>
+        <Column ClassBuilder="this.responsiveCol">Col #7</Column>
+        <Column ClassBuilder="this.responsiveCol">Col #8</Column>
+        <Column ClassBuilder="this.responsiveCol">Col #9</Column>
+        <Column ClassBuilder="this.responsiveCol">Col #10</Column>
+        <Column ClassBuilder="this.responsiveCol">Col #11</Column>
+        <Column ClassBuilder="this.responsiveCol">Col #12</Column>
+    </Row>
+</Container>
+
+
+<Heading Id="vertical-alignment" IsAnchor="true" Level="HeadingLevel.H3" ClassBuilder="this.marginTop">Verical Alignment</Heading>
+<Paragraph>
+    Vertically align columns in a row.
+</Paragraph>
+<Container Type="ContainerType.Fluid">
+    <Row BackgroundColor="NamedColor.Info" style="height: 180px">
+        <Column ClassBuilder="this.startAlignedColumn">Col #1</Column>
+        <Column ClassBuilder="this.centerAlignedColumn">Col #2</Column>
+        <Column ClassBuilder="this.endAlignedColumn">Col #3</Column>
+    </Row>
+</Container>
