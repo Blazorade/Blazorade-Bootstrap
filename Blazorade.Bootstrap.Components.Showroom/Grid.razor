@@ -1,0 +1,181 @@
+﻿@code {
+    IComponentBuilder marginTop = new BootstrapComponentBuilder().MarginTop(5);
+
+    static IComponentBuilder colShared = new ColumnBuilder().Background(NamedColor.Light).Border().Border(NamedColor.Dark).Padding(3);
+
+    IComponentBuilder col = new ColumnBuilder(colShared).Col();
+
+    IComponentBuilder responsiveCol = new ColumnBuilder(colShared).Col(12).OnAll().Col(6).OnSm().Col(4).OnMd().Col(3).OnLg().Col(2).OnXl();
+
+    IComponentBuilder colAuto = new ColumnBuilder(colShared).ColAuto();
+
+    IComponentBuilder col2 = new ColumnBuilder(colShared).Col(2);
+
+    IComponentBuilder colBreakSm = new BootstrapComponentBuilder().Width100().DisplayBlock().OnAll().MarginTop(1).OnAll().DisplayNone().OnMd().MarginTop(0).OnMd();
+
+    IComponentBuilder colBreakAll = new BootstrapComponentBuilder().Width100().DisplayBlock().OnAll();
+
+    IComponentBuilder zeroOffset = new ColumnBuilder(colShared).Col().Offset(0).OnAll();
+}
+
+<Heading Level="HeadingLevel.H2">The Bootstrap Grid System</Heading>
+<Paragraph>
+    The Bootstrap Grid system is a powerful tool that gives you very flexible tools to work in a 12-column grid. Blazorade Bootstrap also supports the grid with the following samples.
+</Paragraph>
+<DocsSection ComponentName="Grid"></DocsSection>
+
+
+
+<Heading Id="auto-layout" IsAnchor="true" Level="HeadingLevel.H3" Builder="this.marginTop">Automatic layout</Heading>
+<Paragraph>
+    Here we use automatic column layout where the first row will break up into two rows on <code>XS</code> and <code>SM</code> breakpoints. When the row breaks,
+    it also adds a margin between the cells to match the spacing betwen the first and the second row. The second row stays as is on all screen sizes.
+</Paragraph>
+<Container Type="ContainerType.Fluid">
+    <Row>
+        <Column Builder="this.col">1 of 4</Column>
+        <Column Builder="this.col">2 of 4</Column>
+        <Div Builder="this.colBreakSm"></Div>
+        <Column Builder="this.col">3 of 4</Column>
+        <Column Builder="this.col">4 of 4</Column>
+    </Row>
+    <Row MarginTop="Spacing.One">
+        <Column Builder="this.col">1 of 3</Column>
+        <Column Builder="this.col">2 of 3</Column>
+        <Column Builder="this.col">3 of 3</Column>
+    </Row>
+</Container>
+
+
+<Heading Id="column-width" IsAnchor="true" Level="HeadingLevel.H3" Builder="this.marginTop">Setting Column Width</Heading>
+<Paragraph>
+    This section demonstrates how to specify the width of one or more columns in the grid.
+</Paragraph>
+<Container Type="ContainerType.Fluid">
+    <Row>
+        <Column Builder="this.col">1 of 3. Fill up</Column>
+        <Column Builder="this.colAuto">2 of 3. Adjusts size after content</Column>
+        <Column Builder="this.col2">3 of 3</Column>
+    </Row>
+</Container>
+
+
+<Paragraph Builder="this.marginTop">
+    The following grid contains a row where all columns are automatically adjusted to the contents of each column.
+</Paragraph>
+<Container Type="ContainerType.Fluid">
+    <Row>
+        <Column Builder="this.colAuto">1 of 3.</Column>
+        <Column Builder="this.colAuto">2 of 3. Width is automatically adjusted.</Column>
+        <Column Builder="this.colAuto">3 of 3. Last column.</Column>
+    </Row>
+</Container>
+
+
+<Heading Id="responsive-columns" IsAnchor="true" Level="HeadingLevel.H3" Builder="this.marginTop">Responsive Columns</Heading>
+<Paragraph>
+    Different column settings can be specified for each of the supported responsive breakpoints in Bootstrap. The columns below will
+    automatically arrange into 6, 4, 3, 2 and 1 columns as the screen width changes.
+</Paragraph>
+<Container Type="ContainerType.Fluid">
+    <Row>
+        <Column Builder="this.responsiveCol">Col #1</Column>
+        <Column Builder="this.responsiveCol">Col #2</Column>
+        <Column Builder="this.responsiveCol">Col #3</Column>
+        <Column Builder="this.responsiveCol">Col #4</Column>
+        <Column Builder="this.responsiveCol">Col #5</Column>
+        <Column Builder="this.responsiveCol">Col #6</Column>
+        <Column Builder="this.responsiveCol">Col #7</Column>
+        <Column Builder="this.responsiveCol">Col #8</Column>
+        <Column Builder="this.responsiveCol">Col #9</Column>
+        <Column Builder="this.responsiveCol">Col #10</Column>
+        <Column Builder="this.responsiveCol">Col #11</Column>
+        <Column Builder="this.responsiveCol">Col #12</Column>
+    </Row>
+</Container>
+
+
+<Heading Id="vertical-alignment" IsAnchor="true" Level="HeadingLevel.H3" Builder="this.marginTop">Verical Alignment</Heading>
+<Paragraph>
+    Vertically align columns in a row.
+</Paragraph>
+<Container Type="ContainerType.Fluid">
+    <Row BackgroundColor="NamedColor.Info" style="height: 180px">
+        <Column Builder="@(new ColumnBuilder(colShared).Col().AlignStart())">Col #1</Column>
+        <Column Builder="@(new ColumnBuilder(colShared).Col().AlignCenter())">Col #2</Column>
+        <Column Builder="@(new ColumnBuilder(colShared).Col().AlignEnd())">Col #3</Column>
+    </Row>
+</Container>
+
+
+<Heading Id="ordering" IsAnchor="true" Level="HeadingLevel.H3" Builder="this.marginTop">Column Ordering</Heading>
+<Paragraph>
+    Columns can also be reordered in another order than the order they are in the DOM. The order can also be specified for each responsive breakpoint separately.
+</Paragraph>
+<Container Type="ContainerType.Fluid">
+    <Row>
+        <Column Builder="@(new ColumnBuilder(colShared).Order(1).OnAll().OrderLast().OnSm())">1st on XS</Column>
+        <Column Builder="@(new ColumnBuilder(colShared).OrderLast().OnAll().Order(1).OnSm().OrderLast().OnMd())">1st on SM</Column>
+        <Column Builder="@(new ColumnBuilder(colShared).OrderLast().OnAll().Order(1).OnMd().OrderLast().OnLg())">1st on MD</Column>
+        <Column Builder="@(new ColumnBuilder(colShared).OrderLast().OnAll().Order(1).OnLg().OrderLast().OnXl())">1st on LG</Column>
+        <Column Builder="@(new ColumnBuilder(colShared).OrderLast().OnAll().Order(1).OnXl())">1st on XL</Column>
+    </Row>
+</Container>
+
+
+<Heading Id="offset" IsAnchor="true" Level="HeadingLevel.H3" Builder="this.marginTop">Column Offsets</Heading>
+<Paragraph>
+    Setting an offset to a column will push the column to the right the specified amount of columns. Offsets can be specified for each responsive breakpoint separately.
+</Paragraph>
+<Container Type="ContainerType.Fluid">
+    <Row>
+        <Column Builder="@(new ColumnBuilder(zeroOffset).Offset(8).OnXl().Offset(6).OnLg().Offset(4).OnMd().Offset(2).OnSm())">1 of 4</Column>
+        <Div Builder="this.colBreakAll"></Div>
+        <Column Builder="@(new ColumnBuilder(zeroOffset).Offset(6).OnLg().Offset(4).OnMd().Offset(2).OnSm())">2 of 4</Column>
+        <Div Builder="this.colBreakAll"></Div>
+        <Column Builder="@(new ColumnBuilder(zeroOffset).Offset(4).OnMd().Offset(2).OnSm())">3 of 4</Column>
+        <Div Builder="this.colBreakAll"></Div>
+        <Column Builder="@(new ColumnBuilder(zeroOffset).Offset(2).OnSm())">4 of 4</Column>
+    </Row>
+</Container>
+
+
+<Heading Id="row-columns" IsAnchor="true" Level="HeadingLevel.H3" Builder="this.marginTop">Row Columns</Heading>
+<Paragraph>
+    With row columns you can specify how many columns on each responsive breakpoint you want your rows to fit.
+</Paragraph>
+<Container Type="ContainerType.Fluid">
+    <Row Builder="@(new RowBuilder().Row().RowCols(4).OnXl().RowCols(3).OnLg().RowCols(2).OnMd().RowCols(1).OnAll())">
+        <Column Builder="this.col">1 of 4</Column>
+        <Column Builder="this.col">2 of 4</Column>
+        <Column Builder="this.col">3 of 4</Column>
+        <Column Builder="this.col">4 of 4</Column>
+    </Row>
+</Container>
+
+
+<Heading Id="vertical-alignment" IsAnchor="true" Level="HeadingLevel.H3" Builder="this.marginTop">Vertical Alignment</Heading>
+<Paragraph>
+    You can specify how items on a row are verically aligned. This can also be modified for each responsive breakpoint separately.
+    See how the vertical alignment changes when you narrow down your browser.
+</Paragraph>
+<Container Type="ContainerType.Fluid">
+    <Row Builder="@(new RowBuilder().Row().AlignItemsStart().OnAll().AlignItemsCenter().OnMd().AlignItemsEnd().OnXl().Background(NamedColor.Light).Border().Border(NamedColor.Success))" style="height: 180px">
+        <Column Builder="this.col">1 of 3</Column>
+        <Column Builder="this.col">2 of 3</Column>
+        <Column Builder="this.col">3 of 3</Column>
+    </Row>
+</Container>
+
+
+<Heading Id="horizontal-alignment" IsAnchor="true" Level="HeadingLevel.H3" Builder="this.marginTop">Horizontal Alignment</Heading>
+<Paragraph>
+    Content on a row can also be horizontally aligned in a variety of ways for every responsive breakpoint separately.
+</Paragraph>
+<Container Type="ContainerType.Fluid">
+    <Row Builder="@(new RowBuilder().Row().JustifyContentStart().OnAll().JustifyContentEnd().OnMd().JustifyContentAround().OnLg().JustifyContentBetween().OnXl())">
+        <Column Builder="this.colAuto">1 of 3</Column>
+        <Column Builder="this.colAuto">2 of 3</Column>
+        <Column Builder="this.colAuto">3 of 3</Column>
+    </Row>
+</Container>
