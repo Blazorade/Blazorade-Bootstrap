@@ -371,10 +371,9 @@ namespace Blazorade.Bootstrap.Components
         private string BreakClassName(string input)
         {
             var list = new List<string>();
-            var rx = new Regex("[A-Z]+[a-z]*|[0-9]+");
-            foreach(var m in from Match x in rx.Matches(input) where x.Success && !string.IsNullOrEmpty(x.Value) select x)
+            foreach (var w in input.FindWords())
             {
-                list.Add(m.Value.ToLower());
+                list.Add(w.ToLower());
             }
 
             return string.Join("-", list);

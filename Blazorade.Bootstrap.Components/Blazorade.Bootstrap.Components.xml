@@ -338,6 +338,479 @@
             <summary>
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder">
+            <summary>
+            The interface for a builder implementation that is use to build classes to support generic Bootstrap features that apply to all elements.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.Background(Blazorade.Bootstrap.Components.NamedColor)">
+            <summary>
+            Sets the background color of the element to the given colour.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.BackgroundTransparent">
+            <summary>
+            Sets the background of the element to transparent.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.Border(System.String)">
+            <summary>
+            Specifies a border with the given value.
+            </summary>
+            <param name="value">The border value. If not specified, adds a border on all sides.</param>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.BorderTop">
+            <summary>
+            Adds a border to the top.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.BorderRight">
+            <summary>
+            Adds a border to the right.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.BorderBottom">
+            <summary>
+            Adds a border at the bottom.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.BorderLeft">
+            <summary>
+            Adds a border to the left.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.Border0">
+            <summary>
+            Removes all borders.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.Border0Top">
+            <summary>
+            Removes the top border.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.Border0Right">
+            <summary>
+            Removes the right border.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.Border0Bottom">
+            <summary>
+            Removes the bottom border.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.Border0Left">
+            <summary>
+            Removes the left border.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.Border(Blazorade.Bootstrap.Components.NamedColor)">
+            <summary>
+            Specifies the colour of the border.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.Display(System.String)">
+            <summary>
+            Sets the display to the given value.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.DisplayNone">
+            <summary>
+            Display: none
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.DisplayInline">
+            <summary>
+            Display: inline
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.DisplayInlineBlock">
+            <summary>
+            Display: inline-block
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.DisplayBlock">
+            <summary>
+            Display: block
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.DisplayTable">
+            <summary>
+            Display: table
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.DisplayTableCell">
+            <summary>
+            Display: table-cell
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.DisplayTableRow">
+            <summary>
+            Display: table-row
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.DisplayFlex">
+            <summary>
+            Display: flex
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.DisplayInlineFlex">
+            <summary>
+            Display: inline-flex
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.Text(Blazorade.Bootstrap.Components.NamedColor)">
+            <summary>
+            Sets the text colour to the given colour.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.TextBody">
+            <summary>
+            Sets the text colour to the body text colour.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatureBuilder.TextMuted">
+            <summary>
+            Sets the text colour to a muted colour.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Builder.IComponentBreakpointBuilder">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Builder.IGridColFeatureBuilder">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IGridColFeatureBuilder.AlignStart">
+            <summary>
+            Vertically aligns the column at the beginning (top).
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IGridColFeatureBuilder.AlignCenter">
+            <summary>
+            Vertically aligns the column at the center.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IGridColFeatureBuilder.AlignEnd">
+            <summary>
+            Vertically aligns the column at the end (bottom).
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IGridColFeatureBuilder.Col">
+            <summary>
+            Creates an equal width, auto-layout column.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IGridColFeatureBuilder.Col(System.Int32)">
+            <summary>
+            Creates a column spanning the given amount of columns.
+            </summary>
+            <param name="cols">The number of columns to span.</param>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IGridColFeatureBuilder.ColAuto">
+            <summary>
+            Defines that the column is automatically sized based on its contents.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IGridColFeatureBuilder.Offset(System.Int32)">
+            <summary>
+            Moves a column to the right by the specified amount of columns.
+            </summary>
+            <param name="cols">The number of columns to move to the right.</param>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IGridColFeatureBuilder.Order(System.Int32)">
+            <summary>
+            Visually orders the column using the given order.
+            </summary>
+            <param name="order">The numeric order to give the column.</param>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IGridColFeatureBuilder.OrderFirst">
+            <summary>
+            Visually orders the column as the first.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IGridColFeatureBuilder.OrderLast">
+            <summary>
+            Visually orders the column as the last column.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Builder.IGridColBreakpointBuilder">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Builder.IResponsiveBreakpointBuilder`1">
+            <summary>
+            Defines the interface for a builder that supports responsive breakpoints.
+            </summary>
+            <typeparam name="TReturn">The type returned by the methods defined on the interface.</typeparam>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IResponsiveBreakpointBuilder`1.OnAll">
+            <summary>
+            Configures an item to be applied on all responsive breakpoints.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IResponsiveBreakpointBuilder`1.OnSm">
+            <summary>
+            Configures an item to be applied to the SM responsive breakpoint and above.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IResponsiveBreakpointBuilder`1.OnMd">
+            <summary>
+            Configures an item to be applied to the MD responsive breakpoint and above.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IResponsiveBreakpointBuilder`1.OnLg">
+            <summary>
+            Configures an item to be applied to the LG responsive breakpoint and above.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IResponsiveBreakpointBuilder`1.OnXl">
+            <summary>
+            Configures an item to be applied to the XL responsive breakpoint and above.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Builder.ColClassBuilder">
+            <summary>
+            A class builder that is used to build classes for the <see cref="M:Blazorade.Bootstrap.Components.Builder.ColClassBuilder.Col"/> component to support the Bootstrap grid system.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ColClassBuilder.AlignStart">
+            <summary>
+            Vertically aligns the column at the beginning (top).
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ColClassBuilder.AlignCenter">
+            <summary>
+            Vertically aligns the column at the center.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ColClassBuilder.AlignEnd">
+            <summary>
+            Vertically aligns the column at the end (bottom).
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ColClassBuilder.Col">
+            <summary>
+            Creates an equal width, auto-layout column.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ColClassBuilder.Col(System.Int32)">
+            <summary>
+            Creates a column spanning the given amount of columns.
+            </summary>
+            <param name="cols">The number of columns to span.</param>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ColClassBuilder.ColAuto">
+            <summary>
+            Defines that the column is automatically sized based on its contents.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ColClassBuilder.Offset(System.Int32)">
+            <summary>
+            Moves a column to the right by the specified amount of columns.
+            </summary>
+            <param name="cols">The number of columns to move to the right.</param>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ColClassBuilder.Order(System.Int32)">
+            <summary>
+            Visually orders the column using the given order.
+            </summary>
+            <param name="order">The numeric order to give the column.</param>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ColClassBuilder.OrderFirst">
+            <summary>
+            Visually orders the column as the first.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ColClassBuilder.OrderLast">
+            <summary>
+            Visually orders the column as the last column.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ColClassBuilder.Blazorade#Bootstrap#Components#Builder#IResponsiveBreakpointBuilder{Blazorade#Bootstrap#Components#Builder#IGridColFeatureBuilder}#OnAll">
+            <summary>
+            Configures the preceeding column features to be applied on all responsive breakpoints.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ColClassBuilder.Blazorade#Bootstrap#Components#Builder#IResponsiveBreakpointBuilder{Blazorade#Bootstrap#Components#Builder#IGridColFeatureBuilder}#OnLg">
+            <summary>
+            Configures the preceeding column features to be applied on the LG breakpoint and up.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ColClassBuilder.Blazorade#Bootstrap#Components#Builder#IResponsiveBreakpointBuilder{Blazorade#Bootstrap#Components#Builder#IGridColFeatureBuilder}#OnMd">
+            <summary>
+            Configures the preceeding column features to be applied on the MF breakpoint and up.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ColClassBuilder.Blazorade#Bootstrap#Components#Builder#IResponsiveBreakpointBuilder{Blazorade#Bootstrap#Components#Builder#IGridColFeatureBuilder}#OnSm">
+            <summary>
+            Configures the preceeding column features to be applied on the SM breakpoint and up.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ColClassBuilder.Blazorade#Bootstrap#Components#Builder#IResponsiveBreakpointBuilder{Blazorade#Bootstrap#Components#Builder#IGridColFeatureBuilder}#OnXl">
+            <summary>
+            Configures the preceeding column features to be applied on the XL breakpoint only.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder">
+            <summary>
+            A class builder that supports generic Bootstrap classes that can be applied to more or less any element.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.Build">
+            <summary>
+            Builds the classes and returns them as a string collection.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.Background(Blazorade.Bootstrap.Components.NamedColor)">
+            <summary>
+            Sets the background color of the element to the given colour.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.BackgroundTransparent">
+            <summary>
+            Sets the background of the element to transparent.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.Border(System.String)">
+            <summary>
+            Specifies a border with the given value.
+            </summary>
+            <param name="value">The border value. If not specified, adds a border on all sides.</param>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.BorderTop">
+            <summary>
+            Adds a border to the top.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.BorderRight">
+            <summary>
+            Adds a border to the right.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.BorderBottom">
+            <summary>
+            Adds a border at the bottom.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.BorderLeft">
+            <summary>
+            Adds a border to the left.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.Border0">
+            <summary>
+            Removes all borders.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.Border0Top">
+            <summary>
+            Removes the top border.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.Border0Right">
+            <summary>
+            Removes the right border.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.Border0Bottom">
+            <summary>
+            Removes the bottom border.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.Border0Left">
+            <summary>
+            Removes the left border.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.Border(Blazorade.Bootstrap.Components.NamedColor)">
+            <summary>
+            Specifies the colour of the border.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.Display(System.String)">
+            <summary>
+            Sets the display to the given value.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.DisplayNone">
+            <summary>
+            Display: none
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.DisplayInline">
+            <summary>
+            Display: inline
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.DisplayInlineBlock">
+            <summary>
+            Display: inline-block
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.DisplayBlock">
+            <summary>
+            Display: block
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.DisplayTable">
+            <summary>
+            Display: table
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.DisplayTableCell">
+            <summary>
+            Display: table-cell
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.DisplayTableRow">
+            <summary>
+            Display: table-row
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.DisplayFlex">
+            <summary>
+            Display: flex
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.DisplayInlineFlex">
+            <summary>
+            Display: inline-flex
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.Text(Blazorade.Bootstrap.Components.NamedColor)">
+            <summary>
+            Sets the text colour to the given colour.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.TextBody">
+            <summary>
+            Sets the text colour to the body text colour.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.TextMuted">
+            <summary>
+            Sets the text colour to a muted colour.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.AddPendingFeature(System.String)">
+            <summary>
+            Adds a feature class to the builder as a pending feature class.
+            </summary>
+            <param name="featureClass">The feature class to add.</param>
+            <remarks>
+            A pending feature class is a class that contains a placeholder for a responsive breakpoint, such as <c>col-{0}-6</c>.
+            The placeholder must always be <c>{0}</c>.
+            </remarks>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.FlushPendingFeatures(System.Nullable{Blazorade.Bootstrap.Components.ResponsiveBreakpoint})">
+            <summary>
+            Processes the pending features added in <see cref="M:Blazorade.Bootstrap.Components.Builder.ComponentClassBuilder.AddPendingFeature(System.String)"/> using the given responsive breakpoint,
+            and stores them as classes in the current builder.
+            </summary>
+            <param name="breakpoint">The breakpoint to use when processing features. If not specified, the features will apply to all breakpoints.</param>
+        </member>
         <member name="T:Blazorade.Bootstrap.Components.Button">
             <summary>
             The Button component allows you to render various types of buttons.
@@ -1418,6 +1891,17 @@
             <param name="jsInterop"></param>
             <returns></returns>
         </member>
+        <member name="M:Blazorade.Bootstrap.Components.ExtensionMethods.FindWords(System.String)">
+            <summary>
+            Assumes the input is a string where each word starts with a capital letter. Breaks up the string into the separate words.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.ExtensionMethods.Hyphenate(System.String)">
+            <summary>
+            Assumes the given string contains multiple words that are not separated by spaces, but where each word starts with 
+            a capital letter or a number. The result is returned as a string where a hyphen is inserted between each word.
+            </summary>
+        </member>
         <member name="M:Blazorade.Bootstrap.Components.ExtensionMethods.Lines(System.String)">
             <summary>
             Breaks the given input into lines.
@@ -2298,6 +2782,11 @@
         <member name="F:Blazorade.Bootstrap.Components.ResponsiveBreakpoint.XL">
             <summary>
             Extra large. &gt;= 1200 px.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Row.NoGutters">
+            <summary>
+            If set to <c>true</c>, all columns in the current row will be rendered without gutters (i.e. space between columns).
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.ShadowSize">
