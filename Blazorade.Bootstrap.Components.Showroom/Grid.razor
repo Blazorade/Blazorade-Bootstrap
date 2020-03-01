@@ -1,19 +1,19 @@
 ﻿@code {
-    IClassBuilder marginTop = new ComponentClassBuilder()
+    IComponentBuilder marginTop = new BootstrapComponentBuilder()
         .MarginTop(5)
         ;
 
-    static IClassBuilder colShared = new ColumnClassBuilder()
+    static IComponentBuilder colShared = new ColumnBuilder()
         .Background(NamedColor.Light)
         .Border().Border(NamedColor.Dark)
         .Padding(3)
         ;
 
-    IClassBuilder col = new ColumnClassBuilder(colShared)
+    IComponentBuilder col = new ColumnBuilder(colShared)
         .Col()
         ;
 
-    IClassBuilder responsiveCol = new ColumnClassBuilder(colShared)
+    IComponentBuilder responsiveCol = new ColumnBuilder(colShared)
         .Col(12).OnAll()
         .Col(6).OnSm()
         .Col(4).OnMd()
@@ -21,34 +21,44 @@
         .Col(2).OnXl()
         ;
 
-    IClassBuilder startAlignedColumn = new ColumnClassBuilder(colShared)
+    IComponentBuilder startAlignedColumn = new ColumnBuilder(colShared)
         .Col()
         .AlignStart()
         ;
 
-    IClassBuilder centerAlignedColumn = new ColumnClassBuilder(colShared)
+    IComponentBuilder centerAlignedColumn = new ColumnBuilder(colShared)
         .Col()
         .AlignCenter()
         ;
 
-    IClassBuilder endAlignedColumn = new ColumnClassBuilder(colShared)
+    IComponentBuilder endAlignedColumn = new ColumnBuilder(colShared)
         .Col()
         .AlignEnd()
         ;
 
-    IClassBuilder colAuto = new ColumnClassBuilder(colShared)
+    IComponentBuilder colAuto = new ColumnBuilder(colShared)
         .ColAuto()
         ;
 
-    IClassBuilder col2 = new ColumnClassBuilder(colShared)
+    IComponentBuilder col2 = new ColumnBuilder(colShared)
         .Col(2)
         ;
 
-    IClassBuilder colBreak = new ComponentClassBuilder()
+    IComponentBuilder colBreakSm = new BootstrapComponentBuilder()
         .Width100().DisplayBlock().OnAll()
-        .DisplayNone().OnMd()
         .MarginTop(1).OnAll()
+        .DisplayNone().OnMd()
         .MarginTop(0).OnMd()
+        ;
+
+    IComponentBuilder colBreakAll = new BootstrapComponentBuilder()
+        .Width100().DisplayBlock().OnAll()
+        ;
+
+    IComponentBuilder zeroOffset = new ColumnBuilder(colShared)
+        .Col()
+        .Offset(0)
+        .OnAll()
         ;
 }
 
@@ -60,7 +70,7 @@
 
 
 
-<Heading Id="auto-layout" IsAnchor="true" Level="HeadingLevel.H3" ClassBuilder="this.marginTop">Automatic layout</Heading>
+<Heading Id="auto-layout" IsAnchor="true" Level="HeadingLevel.H3" Builder="this.marginTop">Automatic layout</Heading>
 <Paragraph>
     Here we use automatic column layout where the first row will break up into two rows on <code>XS</code> and <code>SM</code> breakpoints. When the row breaks,
     it also adds a margin between the cells to match the spacing betwen the first and the second row. The second row stays as is on all screen sizes.
@@ -68,93 +78,111 @@
 
 <Container Type="ContainerType.Fluid">
     <Row>
-        <Column ClassBuilder="this.col">1 of 4</Column>
-        <Column ClassBuilder="this.col">2 of 4</Column>
-        <Div ClassBuilder="this.colBreak"></Div>
-        <Column ClassBuilder="this.col">3 of 4</Column>
-        <Column ClassBuilder="this.col">4 of 4</Column>
+        <Column Builder="this.col">1 of 4</Column>
+        <Column Builder="this.col">2 of 4</Column>
+        <Div Builder="this.colBreakSm"></Div>
+        <Column Builder="this.col">3 of 4</Column>
+        <Column Builder="this.col">4 of 4</Column>
     </Row>
     <Row MarginTop="Spacing.One">
-        <Column ClassBuilder="this.col">1 of 3</Column>
-        <Column ClassBuilder="this.col">2 of 3</Column>
-        <Column ClassBuilder="this.col">3 of 3</Column>
+        <Column Builder="this.col">1 of 3</Column>
+        <Column Builder="this.col">2 of 3</Column>
+        <Column Builder="this.col">3 of 3</Column>
     </Row>
 </Container>
 
 
-<Heading Id="column-width" IsAnchor="true" Level="HeadingLevel.H3" ClassBuilder="this.marginTop">Setting Column Width</Heading>
+<Heading Id="column-width" IsAnchor="true" Level="HeadingLevel.H3" Builder="this.marginTop">Setting Column Width</Heading>
 <Paragraph>
     This section demonstrates how to specify the width of one or more columns in the grid.
 </Paragraph>
 
 <Container Type="ContainerType.Fluid">
     <Row>
-        <Column ClassBuilder="this.col">1 of 3. Fill up</Column>
-        <Column ClassBuilder="this.colAuto">2 of 3. Adjusts size after content</Column>
-        <Column ClassBuilder="this.col2">3 of 3</Column>
+        <Column Builder="this.col">1 of 3. Fill up</Column>
+        <Column Builder="this.colAuto">2 of 3. Adjusts size after content</Column>
+        <Column Builder="this.col2">3 of 3</Column>
     </Row>
 </Container>
 
 
-<Paragraph ClassBuilder="this.marginTop">
+<Paragraph Builder="this.marginTop">
     The following grid contains a row where all columns are automatically adjusted to the contents of each column.
 </Paragraph>
 
 <Container Type="ContainerType.Fluid">
     <Row>
-        <Column ClassBuilder="this.colAuto">1 of 3.</Column>
-        <Column ClassBuilder="this.colAuto">2 of 3. Width is automatically adjusted.</Column>
-        <Column ClassBuilder="this.colAuto">3 of 3. Last column.</Column>
+        <Column Builder="this.colAuto">1 of 3.</Column>
+        <Column Builder="this.colAuto">2 of 3. Width is automatically adjusted.</Column>
+        <Column Builder="this.colAuto">3 of 3. Last column.</Column>
     </Row>
 </Container>
 
 
-<Heading Id="responsive-columns" IsAnchor="true" Level="HeadingLevel.H3" ClassBuilder="this.marginTop">Responsive Columns</Heading>
+<Heading Id="responsive-columns" IsAnchor="true" Level="HeadingLevel.H3" Builder="this.marginTop">Responsive Columns</Heading>
 <Paragraph>
-    Different column settings can be specified for each of the supported responsive breakpoints in Bootstrap.
+    Different column settings can be specified for each of the supported responsive breakpoints in Bootstrap. The columns below will
+    automatically arrange into 6, 4, 3, 2 and 1 columns as the screen width changes.
 </Paragraph>
 
 <Container Type="ContainerType.Fluid">
     <Row>
-        <Column ClassBuilder="this.responsiveCol">Col #1</Column>
-        <Column ClassBuilder="this.responsiveCol">Col #2</Column>
-        <Column ClassBuilder="this.responsiveCol">Col #3</Column>
-        <Column ClassBuilder="this.responsiveCol">Col #4</Column>
-        <Column ClassBuilder="this.responsiveCol">Col #5</Column>
-        <Column ClassBuilder="this.responsiveCol">Col #6</Column>
-        <Column ClassBuilder="this.responsiveCol">Col #7</Column>
-        <Column ClassBuilder="this.responsiveCol">Col #8</Column>
-        <Column ClassBuilder="this.responsiveCol">Col #9</Column>
-        <Column ClassBuilder="this.responsiveCol">Col #10</Column>
-        <Column ClassBuilder="this.responsiveCol">Col #11</Column>
-        <Column ClassBuilder="this.responsiveCol">Col #12</Column>
+        <Column Builder="this.responsiveCol">Col #1</Column>
+        <Column Builder="this.responsiveCol">Col #2</Column>
+        <Column Builder="this.responsiveCol">Col #3</Column>
+        <Column Builder="this.responsiveCol">Col #4</Column>
+        <Column Builder="this.responsiveCol">Col #5</Column>
+        <Column Builder="this.responsiveCol">Col #6</Column>
+        <Column Builder="this.responsiveCol">Col #7</Column>
+        <Column Builder="this.responsiveCol">Col #8</Column>
+        <Column Builder="this.responsiveCol">Col #9</Column>
+        <Column Builder="this.responsiveCol">Col #10</Column>
+        <Column Builder="this.responsiveCol">Col #11</Column>
+        <Column Builder="this.responsiveCol">Col #12</Column>
     </Row>
 </Container>
 
 
-<Heading Id="vertical-alignment" IsAnchor="true" Level="HeadingLevel.H3" ClassBuilder="this.marginTop">Verical Alignment</Heading>
+<Heading Id="vertical-alignment" IsAnchor="true" Level="HeadingLevel.H3" Builder="this.marginTop">Verical Alignment</Heading>
 <Paragraph>
     Vertically align columns in a row.
 </Paragraph>
 <Container Type="ContainerType.Fluid">
     <Row BackgroundColor="NamedColor.Info" style="height: 180px">
-        <Column ClassBuilder="this.startAlignedColumn">Col #1</Column>
-        <Column ClassBuilder="this.centerAlignedColumn">Col #2</Column>
-        <Column ClassBuilder="this.endAlignedColumn">Col #3</Column>
+        <Column Builder="this.startAlignedColumn">Col #1</Column>
+        <Column Builder="this.centerAlignedColumn">Col #2</Column>
+        <Column Builder="this.endAlignedColumn">Col #3</Column>
     </Row>
 </Container>
 
 
-<Heading Id="ordering" IsAnchor="true" Level="HeadingLevel.H3" ClassBuilder="this.marginTop">Column Ordering</Heading>
+<Heading Id="ordering" IsAnchor="true" Level="HeadingLevel.H3" Builder="this.marginTop">Column Ordering</Heading>
 <Paragraph>
     Columns can also be reordered in another order than the order they are in the DOM. The order can also be specified for each responsive breakpoint separately.
 </Paragraph>
 <Container Type="ContainerType.Fluid">
     <Row>
-        <Column ClassBuilder="@(new ColumnClassBuilder(colShared).Order(1).OnAll().OrderLast().OnSm())">1st on XS</Column>
-        <Column ClassBuilder="@(new ColumnClassBuilder(colShared).OrderLast().OnAll().Order(1).OnSm().OrderLast().OnMd())">1st on SM</Column>
-        <Column ClassBuilder="@(new ColumnClassBuilder(colShared).OrderLast().OnAll().Order(1).OnMd().OrderLast().OnLg())">1st on MD</Column>
-        <Column ClassBuilder="@(new ColumnClassBuilder(colShared).OrderLast().OnAll().Order(1).OnLg().OrderLast().OnXl())">1st on LG</Column>
-        <Column ClassBuilder="@(new ColumnClassBuilder(colShared).OrderLast().OnAll().Order(1).OnXl())">1st on XL</Column>
+        <Column Builder="@(new ColumnBuilder(colShared).Order(1).OnAll().OrderLast().OnSm())">1st on XS</Column>
+        <Column Builder="@(new ColumnBuilder(colShared).OrderLast().OnAll().Order(1).OnSm().OrderLast().OnMd())">1st on SM</Column>
+        <Column Builder="@(new ColumnBuilder(colShared).OrderLast().OnAll().Order(1).OnMd().OrderLast().OnLg())">1st on MD</Column>
+        <Column Builder="@(new ColumnBuilder(colShared).OrderLast().OnAll().Order(1).OnLg().OrderLast().OnXl())">1st on LG</Column>
+        <Column Builder="@(new ColumnBuilder(colShared).OrderLast().OnAll().Order(1).OnXl())">1st on XL</Column>
+    </Row>
+</Container>
+
+
+<Heading Id="offset" IsAnchor="true" Level="HeadingLevel.H3" Builder="this.marginTop">Column Offsets</Heading>
+<Paragraph>
+    Setting an offset to a column will push the column to the right the specified amount of columns. Offsets can be specified for each responsive breakpoint separately.
+</Paragraph>
+<Container Type="ContainerType.Fluid">
+    <Row>
+        <Column Builder="@(new ColumnBuilder(zeroOffset).Offset(8).OnXl().Offset(6).OnLg().Offset(4).OnMd().Offset(2).OnSm())">1 of 4</Column>
+        <Div Builder="this.colBreakAll"></Div>
+        <Column Builder="@(new ColumnBuilder(zeroOffset).Offset(6).OnLg().Offset(4).OnMd().Offset(2).OnSm())">2 of 4</Column>
+        <Div Builder="this.colBreakAll"></Div>
+        <Column Builder="@(new ColumnBuilder(zeroOffset).Offset(4).OnMd().Offset(2).OnSm())">3 of 4</Column>
+        <Div Builder="this.colBreakAll"></Div>
+        <Column Builder="@(new ColumnBuilder(zeroOffset).Offset(2).OnSm())">4 of 4</Column>
     </Row>
 </Container>

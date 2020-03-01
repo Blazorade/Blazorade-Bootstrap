@@ -11,9 +11,9 @@ namespace Blazorade.Bootstrap.Components.Tests
         [TestMethod]
         public void Grid01()
         {
-            var classes = new ColumnClassBuilder()
+            var classes = new ColumnBuilder()
                 .Col().OnAll()
-                .Build().ToList();
+                .Builder().BuildClasses().ToList();
 
             this.AssertClasses(classes, 1, "col");
         }
@@ -21,10 +21,10 @@ namespace Blazorade.Bootstrap.Components.Tests
         [TestMethod]
         public void Grid02()
         {
-            var classes = new ColumnClassBuilder()
+            var classes = new ColumnBuilder()
                 .Col(12).OnSm()
                 .Col().OnSm()
-                .Build().ToList();
+                .Builder().BuildClasses();
 
             this.AssertClasses(classes, 2, "col-sm-12", "col-sm");
         }
@@ -32,9 +32,9 @@ namespace Blazorade.Bootstrap.Components.Tests
         [TestMethod]
         public void Grid03()
         {
-            var classes = new ColumnClassBuilder()
+            var classes = new ColumnBuilder()
                 .Col(8).OnMd()
-                .Build().ToList();
+                .Builder().BuildClasses().ToList();
 
             this.AssertClasses(classes, 1, "col-md-8");
         }
@@ -42,12 +42,12 @@ namespace Blazorade.Bootstrap.Components.Tests
         [TestMethod]
         public void Grid04()
         {
-            var classes = new ColumnClassBuilder()
+            var classes = new ColumnBuilder()
                 .Col().OnAll()
                 .OrderFirst().OnSm()
                 .OrderLast().OnXl()
 
-                .Build().ToList();
+                .Builder().BuildClasses();
 
             this.AssertClasses(classes, 3, "col", "order-sm-first", "order-xl-last");
         }
@@ -55,10 +55,10 @@ namespace Blazorade.Bootstrap.Components.Tests
         [TestMethod]
         public void Grid05()
         {
-            var classes = new ColumnClassBuilder()
+            var classes = new ColumnBuilder()
                 .Col(6).OrderFirst()
                 .OnSm()
-                .Build().ToList();
+                .Builder().BuildClasses();
 
             this.AssertClasses(classes, 2, "col-sm-6", "order-sm-first");
         }
@@ -66,10 +66,10 @@ namespace Blazorade.Bootstrap.Components.Tests
         [TestMethod]
         public void Grid06()
         {
-            var classes = new ColumnClassBuilder()
+            var classes = new ColumnBuilder()
                 .Col(8).Order(3).OnAll()
                 .ColAuto().OnMd()
-                .ToList();
+                .Builder().BuildClasses();
 
             this.AssertClasses(classes, 3, "col-8", "order-3", "col-md-auto");
         }
@@ -77,11 +77,11 @@ namespace Blazorade.Bootstrap.Components.Tests
         [TestMethod]
         public void Grid07()
         {
-            var classes = new ColumnClassBuilder()
+            var classes = new ColumnBuilder()
                 .Col().AlignStart().OnSm()
                 .Col().AlignCenter().OnMd()
                 .Col().AlignEnd().OnLg()
-                .ToList();
+                .Builder().BuildClasses();
 
             this.AssertClasses(classes, 6, "col-sm", "align-self-sm-start", "col-md", "align-self-md-center", "col-lg", "align-self-lg-end");
         }
@@ -89,10 +89,10 @@ namespace Blazorade.Bootstrap.Components.Tests
         [TestMethod]
         public void Grid08()
         {
-            var classes = new ColumnClassBuilder()
+            var classes = new ColumnBuilder()
                 .Col().Offset(4).OnAll()
                 .Col().Offset(8).OnXl()
-                .ToList();
+                .Builder().BuildClasses();
 
             this.AssertClasses(classes, 4, "col", "offset-4", "col-xl", "offset-xl-8");
         }
@@ -102,10 +102,10 @@ namespace Blazorade.Bootstrap.Components.Tests
         [TestMethod]
         public void Display01()
         {
-            var classes = new ComponentClassBuilder()
+            var classes = new ColumnBuilder()
                 .DisplayBlock().OnAll()
                 .DisplayInline().OnSm()
-                .ToList();
+                .Builder().BuildClasses();
 
             this.AssertClasses(classes, 2, "d-block", "d-sm-inline");
         }
@@ -115,13 +115,13 @@ namespace Blazorade.Bootstrap.Components.Tests
         [TestMethod]
         public void Border01()
         {
-            var classes = new ComponentClassBuilder()
+            var builder = new ColumnBuilder()
                 .Border()
                 .Border0Top()
                 .Border(NamedColor.Primary)
-                .ToList();
+                .Builder();
 
-            this.AssertClasses(classes, 3, "border", "border-top-0", "border-primary");
+            this.AssertClasses(builder.BuildClasses(), 3, "border", "border-top-0", "border-primary");
         }
 
 
@@ -129,11 +129,11 @@ namespace Blazorade.Bootstrap.Components.Tests
         [TestMethod]
         public void Text01()
         {
-            var classes = new ComponentClassBuilder()
+            var builder = new ColumnBuilder()
                 .Text(NamedColor.White50)
-                .Build();
+                .Builder();
 
-            this.AssertClasses(classes, 1, "text-white-50");
+            this.AssertClasses(builder.BuildClasses(), 1, "text-white-50");
         }
 
 
