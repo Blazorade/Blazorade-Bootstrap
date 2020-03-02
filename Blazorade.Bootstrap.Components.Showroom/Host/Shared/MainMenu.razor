@@ -54,7 +54,10 @@
     <ChildContent>
         <NavbarNav Items="@this.items" />
         <NavbarNav MarginLeft="Spacing.Auto">
-            <NavItem Url="https://github.com/Blazorade/Blazorade-Bootstrap/wiki" OpenInNewTab="true">Docs</NavItem>
+            <DropdownNavItem Text="Resources">
+                <DropdownItem Url="https://github.com/Blazorade/Blazorade-Bootstrap/wiki" OpenInNewTab="true">Wiki</DropdownItem>
+                <DropdownItem Url="https://www.nuget.org/packages/Blazorade.Bootstrap.Components/" OpenInNewTab="true">Nuget</DropdownItem>
+            </DropdownNavItem>
         </NavbarNav>
     </ChildContent>
 </Navbar>
