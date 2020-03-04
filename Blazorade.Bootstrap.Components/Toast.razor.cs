@@ -79,7 +79,7 @@ namespace Blazorade.Bootstrap.Components
         /// Allows you to completely customize the header.
         /// </summary>
         [Parameter]
-        public RenderFragment HeaderTemplate { get; set; }
+        public RenderFragment<string> HeaderTemplate { get; set; }
 
         /// <summary>
         /// Specifies whether the hide button is shown in the header of the toast.
