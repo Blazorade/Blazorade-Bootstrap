@@ -1,27 +1,64 @@
 ﻿namespace Blazorade.Bootstrap.Components
 {
+
     /// <summary>
     /// Allows you to make a Heading stand out as a larger than normal heading.
     /// </summary>
     /// <remarks>
     /// For details see <c>https://getbootstrap.com/docs/4.4/content/typography/#display-headings</c>.
     /// </remarks>
-    public enum HeadingDisplay
+    public struct HeadingDisplay
     {
+
+        internal const int D1Value = 1;
+        internal const int D2Value = 2;
+        internal const int D3Value = 3;
+        internal const int D4Value = 4;
+
+
         /// <summary>
+        /// Converts the given integer to a <see cref="HeadingDisplay"/> value.
         /// </summary>
-        Display1 = 1,
+        public static implicit operator HeadingDisplay(int i)
+        {
+            if(i >= D1Value && i <= D4Value)
+            {
+                return new HeadingDisplay { Value = i };
+            }
+            return new HeadingDisplay { Value = D1Value };
+        }
+
+        /// <summary>
+        /// Convert the given string to a <see cref="HeadingDisplay"/> value.
+        /// </summary>
+        public static implicit operator HeadingDisplay(string s)
+        {
+            if(int.TryParse(s, out int i))
+            {
+                return i;
+            }
+            return new HeadingDisplay { Value = 1 };
+        }
 
         /// <summary>
         /// </summary>
-        Display2 = 2,
+        public static HeadingDisplay D1 { get { return new HeadingDisplay { Value = D1Value }; } }
 
         /// <summary>
         /// </summary>
-        Display3 = 3,
+        public static HeadingDisplay D2 { get { return new HeadingDisplay { Value = D2Value }; } }
 
         /// <summary>
         /// </summary>
-        Display4 = 4
+        public static HeadingDisplay D3 { get { return new HeadingDisplay { Value = D3Value }; } }
+
+        /// <summary>
+        /// </summary>
+        public static HeadingDisplay D4 { get { return new HeadingDisplay { Value = D4Value }; } }
+
+        /// <summary>
+        /// Actual value.
+        /// </summary>
+        public int Value { get; private set; }
     }
 }

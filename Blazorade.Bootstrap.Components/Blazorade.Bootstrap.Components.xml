@@ -2408,20 +2408,35 @@
             For details see <c>https://getbootstrap.com/docs/4.4/content/typography/#display-headings</c>.
             </remarks>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.HeadingDisplay.Display1">
+        <member name="M:Blazorade.Bootstrap.Components.HeadingDisplay.op_Implicit(System.Int32)~Blazorade.Bootstrap.Components.HeadingDisplay">
+            <summary>
+            Converts the given integer to a <see cref="T:Blazorade.Bootstrap.Components.HeadingDisplay"/> value.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.HeadingDisplay.op_Implicit(System.String)~Blazorade.Bootstrap.Components.HeadingDisplay">
+            <summary>
+            Convert the given string to a <see cref="T:Blazorade.Bootstrap.Components.HeadingDisplay"/> value.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.HeadingDisplay.D1">
             <summary>
             </summary>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.HeadingDisplay.Display2">
+        <member name="P:Blazorade.Bootstrap.Components.HeadingDisplay.D2">
             <summary>
             </summary>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.HeadingDisplay.Display3">
+        <member name="P:Blazorade.Bootstrap.Components.HeadingDisplay.D3">
             <summary>
             </summary>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.HeadingDisplay.Display4">
+        <member name="P:Blazorade.Bootstrap.Components.HeadingDisplay.D4">
             <summary>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.HeadingDisplay.Value">
+            <summary>
+            Actual value.
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.HeadingLevel">
