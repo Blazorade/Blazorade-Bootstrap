@@ -1,11 +1,10 @@
 ﻿@inherits ColoredBootstrapComponentBase
 
-@if (string.IsNullOrEmpty(this.Link))
+@if (string.IsNullOrEmpty(this.Url))
 {
     <span @attributes="this.Attributes">@this.ChildContent</span>
 }
 else
 {
-    <a @attributes="this.Attributes">@this.ChildContent</a>
+    <Anchor @attributes="@this.Attributes" OpenInNewTab="@this.OpenInNewTab" Url="@this.Url">@this.ChildContent</Anchor>
 }
-
