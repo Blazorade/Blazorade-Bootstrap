@@ -124,14 +124,14 @@
             Specifies whether the badge is a pill, i.e. with rounded corners.
             </summary>
         </member>
-        <member name="P:Blazorade.Bootstrap.Components.Badge.Link">
-            <summary>
-            Make the badge into a link by specifying a relative or absolute URL.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.Badge.OpenLinkInNewTab">
+        <member name="P:Blazorade.Bootstrap.Components.Badge.OpenInNewTab">
             <summary>
             Defines whether to open the link in a new tab.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Badge.Url">
+            <summary>
+            The URL to use as link for the batch.
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.BootstrapComponentBase">
