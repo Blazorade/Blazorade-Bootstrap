@@ -2429,34 +2429,39 @@
             Defines different levels for headings.
             </summary>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.HeadingLevel.H1">
+        <member name="P:Blazorade.Bootstrap.Components.HeadingLevel.H1">
             <summary>
             First level.
             </summary>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.HeadingLevel.H2">
+        <member name="P:Blazorade.Bootstrap.Components.HeadingLevel.H2">
             <summary>
             Second level.
             </summary>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.HeadingLevel.H3">
+        <member name="P:Blazorade.Bootstrap.Components.HeadingLevel.H3">
             <summary>
             Third level.
             </summary>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.HeadingLevel.H4">
+        <member name="P:Blazorade.Bootstrap.Components.HeadingLevel.H4">
             <summary>
             Fourth level.
             </summary>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.HeadingLevel.H5">
+        <member name="P:Blazorade.Bootstrap.Components.HeadingLevel.H5">
             <summary>
             Fifth level.
             </summary>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.HeadingLevel.H6">
+        <member name="P:Blazorade.Bootstrap.Components.HeadingLevel.H6">
             <summary>
             Sixth level.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.HeadingLevel.Value">
+            <summary>
+            The actual value of the 
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.ImageBase">
