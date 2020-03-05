@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Blazorade.Bootstrap.Components.Model;
+using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -22,24 +23,24 @@ namespace Blazorade.Bootstrap.Components
         public bool IsPill { get; set; }
 
         /// <summary>
-        /// Make the badge into a link by specifying a relative or absolute URL.
-        /// </summary>
-        [Parameter]
-        public string Link { get; set; }
-
-        /// <summary>
         /// Defines whether to open the link in a new tab.
         /// </summary>
         [Parameter]
-        public bool OpenLinkInNewTab { get; set; }
+        public bool OpenInNewTab { get; set; }
+
+        /// <summary>
+        /// The URL to use as link for the batch.
+        /// </summary>
+        [Parameter]
+        public string Url { get; set; }
+
 
 
         protected override void OnParametersSet()
         {
             this.AddClasses(ClassNames.Badges.Badge);
             if (this.IsPill) this.AddClasses(ClassNames.Badges.Pill);
-            if (!string.IsNullOrEmpty(this.Link)) this.AddAttribute("href", this.Link);
-            if (this.OpenLinkInNewTab) this.AddAttribute("target", "_blank");
+
             base.OnParametersSet();
         }
 
