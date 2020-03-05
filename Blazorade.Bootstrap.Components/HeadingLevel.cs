@@ -1,4 +1,6 @@
-﻿namespace Blazorade.Bootstrap.Components
+﻿using System.Text.RegularExpressions;
+
+namespace Blazorade.Bootstrap.Components
 {
     /// <summary>
     /// Defines different levels for headings.
@@ -19,7 +21,31 @@
         internal const int H6Value = 6;
 
 
+        /// <summary>
+        /// Converts the given integer to <see cref="HeadingLevel"/>.
+        /// </summary>
+        public static implicit operator HeadingLevel(int i)
+        {
+            return new HeadingLevel { Value = i };
+        }
 
+        /// <summary>
+        /// Converts the given string to <see cref="HeadingLevel"/>.
+        /// </summary>
+        public static implicit operator HeadingLevel(string s)
+        {
+            if (int.TryParse(s, out int i))
+            {
+                return new HeadingLevel { Value = i };
+            }
+
+            var m = Regex.Match(s, "[Hh]\\d");
+            if (m.Success)
+            {
+                return m.Value.Substring(1);
+            }
+            return H1;
+        }
 
         /// <summary>
         /// First level.

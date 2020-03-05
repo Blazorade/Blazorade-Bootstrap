@@ -2429,6 +2429,16 @@
             Defines different levels for headings.
             </summary>
         </member>
+        <member name="M:Blazorade.Bootstrap.Components.HeadingLevel.op_Implicit(System.Int32)~Blazorade.Bootstrap.Components.HeadingLevel">
+            <summary>
+            Converts the given integer to <see cref="T:Blazorade.Bootstrap.Components.HeadingLevel"/>.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.HeadingLevel.op_Implicit(System.String)~Blazorade.Bootstrap.Components.HeadingLevel">
+            <summary>
+            Converts the given string to <see cref="T:Blazorade.Bootstrap.Components.HeadingLevel"/>.
+            </summary>
+        </member>
         <member name="P:Blazorade.Bootstrap.Components.HeadingLevel.H1">
             <summary>
             First level.
