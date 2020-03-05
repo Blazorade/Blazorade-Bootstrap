@@ -99,7 +99,7 @@ namespace Blazorade.Bootstrap.Components
 
         private int _Value;
         /// <summary>
-        /// The actual value of the 
+        /// The actual value of the heading.
         /// </summary>
         public int Value { get { return _Value; } private set { _Value = value; } }
 
