@@ -1,28 +1,28 @@
 ﻿@inherits BootstrapComponentBase
 
-@switch (this.Level)
+@switch (this.Level.Value)
 {
-    case HeadingLevel.H1:
+    case HeadingLevel.H1Value:
         <h1 @attributes="this.Attributes"><HeadingContent HeadingId="@this.Id" IsAnchor="@this.IsAnchor">@this.ChildContent</HeadingContent></h1>
         break;
 
-    case HeadingLevel.H2:
+    case HeadingLevel.H2Value:
         <h2 @attributes="this.Attributes"><HeadingContent HeadingId="@this.Id" IsAnchor="@this.IsAnchor">@this.ChildContent</HeadingContent></h2>
         break;
 
-    case HeadingLevel.H3:
+    case HeadingLevel.H3Value:
         <h3 @attributes="this.Attributes"><HeadingContent HeadingId="@this.Id" IsAnchor="@this.IsAnchor">@this.ChildContent</HeadingContent></h3>
         break;
 
-    case HeadingLevel.H4:
+    case HeadingLevel.H4Value:
         <h4 @attributes="this.Attributes"><HeadingContent HeadingId="@this.Id" IsAnchor="@this.IsAnchor">@this.ChildContent</HeadingContent></h4>
         break;
 
-    case HeadingLevel.H5:
+    case HeadingLevel.H5Value:
         <h5 @attributes="this.Attributes"><HeadingContent HeadingId="@this.Id" IsAnchor="@this.IsAnchor">@this.ChildContent</HeadingContent></h5>
         break;
 
-    case HeadingLevel.H6:
+    case HeadingLevel.H6Value:
         <h6 @attributes="this.Attributes"><HeadingContent HeadingId="@this.Id" IsAnchor="@this.IsAnchor">@this.ChildContent</HeadingContent></h6>
         break;
 }
