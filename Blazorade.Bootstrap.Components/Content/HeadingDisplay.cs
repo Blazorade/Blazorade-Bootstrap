@@ -1,4 +1,4 @@
-﻿namespace Blazorade.Bootstrap.Components
+﻿namespace Blazorade.Bootstrap.Components.Content
 {
 
     /// <summary>

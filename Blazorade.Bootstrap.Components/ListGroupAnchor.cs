@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Blazorade.Bootstrap.Components.Content;
 using Microsoft.AspNetCore.Components;
 
 namespace Blazorade.Bootstrap.Components

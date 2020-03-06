@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Blazorade.Bootstrap.Components
+namespace Blazorade.Bootstrap.Components.Content
 {
     /// <summary>
     /// Represents the content in a <see cref="Heading"/> component.

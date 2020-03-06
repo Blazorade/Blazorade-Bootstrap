@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Blazorade.Bootstrap.Components
+namespace Blazorade.Bootstrap.Components.Layout
 {
     /// <summary>
     /// The Container component is the foundation for many layout configurations in Bootstrap.
