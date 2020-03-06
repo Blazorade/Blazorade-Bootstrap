@@ -32,7 +32,7 @@
     CarouselTransitionType transitionType = CarouselTransitionType.Slide;
 }
 
-<Heading Id="customizing" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Customizing the Carousel</Heading>
+<Heading Id="customizing" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.S5">Customizing the Carousel</Heading>
 <Paragraph>
     Use the options below to modify the carousel.
 </Paragraph>
@@ -65,21 +65,21 @@
         <CarouselItem Id="img-slide-5" ImageUrl="@imgArr[5]" ImageScaling="ImageScaleMode.Fill" CaptionHeading="Slam dunk!" CaptionBody="This guy just flying through the air all the way from the 3-point line towards the basket." CustomCaptionBackgroundColor="#00000099" />
     </Carousel>
 
-    <Alert Heading="Latest Event" Color="NamedColor.Info" MarginTop="Spacing.Four">
+    <Alert Heading="Latest Event" Color="NamedColor.Info" MarginTop="4">
         @latestEvent
     </Alert>
 </Div>
 
-<ButtonToolbar MarginTop="Spacing.Four">
+<ButtonToolbar MarginTop="4">
     <ButtonGroup>
         <Button IsActive="@showControls" Color="NamedColor.Primary" IsOutline="@(!showControls)" OnClicked="() => showControls = !showControls">Controls</Button>
         <Button IsActive="@showIndicators" Color="NamedColor.Primary" IsOutline="@(!showIndicators)" OnClicked="() => showIndicators = !showIndicators">Indicators</Button>
     </ButtonGroup>
-    <ButtonGroup MarginLeft="Spacing.Three">
+    <ButtonGroup MarginLeft="3">
         <Button Color="NamedColor.Success" IsOutline="true" OnClicked="() => this.c1.CycleAsync()">Cycle</Button>
         <Button Color="NamedColor.Warning" IsOutline="true" OnClicked="() => this.c1.PauseAsync()">Pause</Button>
     </ButtonGroup>
-    <ButtonGroup MarginLeft="Spacing.Three">
+    <ButtonGroup MarginLeft="3">
         <Button Color="NamedColor.Secondary" IsOutline="true" OnClicked="() => this.c1.PreviousAsync()">&lt;- Prev</Button>
         <Button Color="NamedColor.Secondary" IsOutline="true" OnClicked="() => this.c1.NextAsync()">Next -&gt;</Button>
         <Dropdown>
@@ -95,7 +95,7 @@
             </DropdownMenu>
         </Dropdown>
     </ButtonGroup>
-    <ButtonGroup MarginLeft="Spacing.Three">
+    <ButtonGroup MarginLeft="3">
         <Button Color="NamedColor.Primary" IsOutline="@(!this.autoStart)" OnClicked="() => this.autoStart = !this.autoStart">Auto-start</Button>
         <Dropdown>
             <DropdownToggleButton Color="NamedColor.Info" IsOutline="true">Interval</DropdownToggleButton>
@@ -115,7 +115,7 @@
 </ButtonToolbar>
 
 
-<Heading Id="images-only" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Images Only</Heading>
+<Heading Id="images-only" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.S5">Images Only</Heading>
 <Paragraph>
     The carousel below shows just a deck of images.
 </Paragraph>
@@ -125,7 +125,7 @@
 </Div>
 
 
-<Heading Id="custom-content" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.Five">Custom Content</Heading>
+<Heading Id="custom-content" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.S5">Custom Content</Heading>
 <Paragraph>
     This sample shows you how you can use just about any content in your carousel. Here, we use both a <WikiLink Page="Jumbotron">Jumbotron</WikiLink>
     and a <WikiLink Page="Card">Card</WikiLink> component.
