@@ -50,67 +50,6 @@
             Triggers the <see cref="P:Blazorade.Bootstrap.Components.Alert.OnDismissed"/> callback.
             </summary>
         </member>
-        <member name="P:Blazorade.Bootstrap.Components.Anchor.Clicked">
-            <summary>
-            Callback for when the anchor is clicked.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.Anchor.Description">
-            <summary>
-            The description of the link. This is typically used as tooltip for the link.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.Anchor.IgnoreEmptyUrl">
-            <summary>
-            Specifies that an empty or <c>null</c> value on <see cref="P:Blazorade.Bootstrap.Components.Anchor.Url"/> is ignored, and the <c>href</c> attribute is always rendered regardless.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.Anchor.Index">
-            <summary>
-            Some components use the index to number multiple links in a collection.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.Anchor.IsActive">
-            <summary>
-            Specifies whether the link should be marked as active.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.Anchor.IsDisabled">
-            <summary>
-            Specifies whether the link is disabled. Disabled links must not be clickable.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.Anchor.IsStretched">
-            <summary>
-            Defines whether the links is a stretched link.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.Anchor.OpenInNewTab">
-            <summary>
-            Specifies whether the link should open in a new tab.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.Anchor.Url">
-            <summary>
-            The URL to add to the link.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.Anchor.Text">
-            <summary>
-            The link text.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.Anchor.Link">
-            <summary>
-            Allows you to set the parameters of the Anchor by specifying an <see cref="T:Blazorade.Bootstrap.Components.Model.ILink"/> object on this parameter.
-            </summary>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.Anchor.OnClickedAsync">
-            <summary>
-            Fires the <see cref="P:Blazorade.Bootstrap.Components.Anchor.Clicked"/> event.
-            </summary>
-            <returns></returns>
-        </member>
         <member name="T:Blazorade.Bootstrap.Components.Badge">
             <summary>
             The base class for the <see cref="T:Blazorade.Bootstrap.Components.Badge"/> component.
@@ -252,7 +191,7 @@
         <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.IsStretchedLinkContainer">
             <summary>
             Specifies whether the component is a container for streteched links. If the component contains
-            an <see cref="T:Blazorade.Bootstrap.Components.Anchor"/> where <see cref="P:Blazorade.Bootstrap.Components.Anchor.IsStretched"/> is set to <c>true</c>, then the
+            an <see cref="!:Anchor"/> where <see cref="!:Anchor.IsStretched"/> is set to <c>true</c>, then the
             entire component will act as that link.
             </summary>
         </member>
@@ -990,7 +929,7 @@
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Builder.ColumnBuilder">
             <summary>
-            A builder implementation that is used to build features for the <see cref="T:Blazorade.Bootstrap.Components.Column"/> component.
+            A builder implementation that is used to build features for the <see cref="!:Column"/> component.
             </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Builder.ColumnBuilder.#ctor">
@@ -1228,7 +1167,7 @@
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Builder.IRowBreakpointModifiers">
             <summary>
-            Breakpoint modifiers for <see cref="T:Blazorade.Bootstrap.Components.Row"/>.
+            Breakpoint modifiers for <see cref="!:Row"/>.
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Button">
@@ -2153,79 +2092,6 @@
             <summary>
             </summary>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.ComponentSize.p25">
-            <summary>
-            25%
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.ComponentSize.p50">
-            <summary>
-            50%
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.ComponentSize.p75">
-            <summary>
-            75%
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.ComponentSize.p100">
-            <summary>
-            100%
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.ComponentSize.Auto">
-            <summary>
-            Automatic size.
-            </summary>
-        </member>
-        <member name="T:Blazorade.Bootstrap.Components.Container">
-            <summary>
-            The Container component is the foundation for many layout configurations in Bootstrap.
-            </summary>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.Container.#ctor">
-            <summary>
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.Container.Type">
-            <summary>
-            The type of container. The default is <see cref="F:Blazorade.Bootstrap.Components.ContainerType.FixedWidth"/>.
-            </summary>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.Container.OnParametersSet">
-            <summary>
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.ContainerType.FixedWidth">
-            <summary>
-            The container has a fixed max width at each breakpoint. The default type of container.
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.ContainerType.Fluid">
-            <summary>
-            The container is fluid with a max width of 100%.
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.ContainerType.SM">
-            <summary>
-            100% wide on on SM screen sizes. Fixed width above this breakpoint.
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.ContainerType.MD">
-            <summary>
-            100% wide on on MD screen sizes. Fixed width above this breakpoint.
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.ContainerType.LG">
-            <summary>
-            100% wide on on LG screen sizes. Fixed width above this breakpoint.
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.ContainerType.XL">
-            <summary>
-            100% wide on on XL screen sizes. Fixed width above this breakpoint.
-            </summary>
-        </member>
         <member name="T:Blazorade.Bootstrap.Components.ContentAlignment">
             <summary>
             Defines different alignments for component content.
@@ -2244,6 +2110,204 @@
         <member name="F:Blazorade.Bootstrap.Components.ContentAlignment.Right">
             <summary>
             Content is aligned to the right.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.Anchor.Clicked">
+            <summary>
+            Callback for when the anchor is clicked.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.Anchor.Description">
+            <summary>
+            The description of the link. This is typically used as tooltip for the link.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.Anchor.IgnoreEmptyUrl">
+            <summary>
+            Specifies that an empty or <c>null</c> value on <see cref="P:Blazorade.Bootstrap.Components.Content.Anchor.Url"/> is ignored, and the <c>href</c> attribute is always rendered regardless.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.Anchor.Index">
+            <summary>
+            Some components use the index to number multiple links in a collection.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.Anchor.IsActive">
+            <summary>
+            Specifies whether the link should be marked as active.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.Anchor.IsDisabled">
+            <summary>
+            Specifies whether the link is disabled. Disabled links must not be clickable.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.Anchor.IsStretched">
+            <summary>
+            Defines whether the links is a stretched link.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.Anchor.OpenInNewTab">
+            <summary>
+            Specifies whether the link should open in a new tab.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.Anchor.Url">
+            <summary>
+            The URL to add to the link.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.Anchor.Text">
+            <summary>
+            The link text.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.Anchor.Link">
+            <summary>
+            Allows you to set the parameters of the Anchor by specifying an <see cref="T:Blazorade.Bootstrap.Components.Model.ILink"/> object on this parameter.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Content.Anchor.OnClickedAsync">
+            <summary>
+            Fires the <see cref="P:Blazorade.Bootstrap.Components.Content.Anchor.Clicked"/> event.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.Heading.Display">
+            <summary>
+            Use this property to specify a different display size for your heading to better visually fit into the overall look and feel.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.Heading.IsAnchor">
+            <summary>
+            Specifies that the heading is also an anchor that you can link to. This requires that the <c>Id</c> property is also set on the
+            heading. An anchor heading will display a link icon when hovered over to indicate that the heading is an anchor.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.Heading.Level">
+            <summary>
+            The heading level.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Content.HeadingContent">
+            <summary>
+            Represents the content in a <see cref="T:Blazorade.Bootstrap.Components.Content.Heading"/> component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.HeadingContent.AnchorId">
+            <summary>
+            The ID of the <see cref="T:Blazorade.Bootstrap.Components.Content.Anchor"/> element that is shown when hovering over the content.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.HeadingContent.HeadingId">
+            <summary>
+            The element ID of the parent <see cref="T:Blazorade.Bootstrap.Components.Content.Heading"/> component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.HeadingContent.IsAnchor">
+            <summary>
+            Specifies whether the heading is an automatic anchor.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Content.HeadingContent.ContentOnMouseOver(Microsoft.AspNetCore.Components.Web.MouseEventArgs)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Content.HeadingContent.ContentOnMouseOut(Microsoft.AspNetCore.Components.Web.MouseEventArgs)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Content.HeadingContent.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Content.HeadingDisplay">
+            <summary>
+            Allows you to make a Heading stand out as a larger than normal heading.
+            </summary>
+            <remarks>
+            For details see <c>https://getbootstrap.com/docs/4.4/content/typography/#display-headings</c>.
+            </remarks>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Content.HeadingDisplay.op_Implicit(System.Int32)~Blazorade.Bootstrap.Components.Content.HeadingDisplay">
+            <summary>
+            Converts the given integer to a <see cref="T:Blazorade.Bootstrap.Components.Content.HeadingDisplay"/> value.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Content.HeadingDisplay.op_Implicit(System.String)~Blazorade.Bootstrap.Components.Content.HeadingDisplay">
+            <summary>
+            Convert the given string to a <see cref="T:Blazorade.Bootstrap.Components.Content.HeadingDisplay"/> value.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.HeadingDisplay.D1">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.HeadingDisplay.D2">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.HeadingDisplay.D3">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.HeadingDisplay.D4">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.HeadingDisplay.Value">
+            <summary>
+            Actual value.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Content.HeadingLevel">
+            <summary>
+            Defines different levels for headings.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Content.HeadingLevel.op_Implicit(System.Int32)~Blazorade.Bootstrap.Components.Content.HeadingLevel">
+            <summary>
+            Converts the given integer to <see cref="T:Blazorade.Bootstrap.Components.Content.HeadingLevel"/>.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Content.HeadingLevel.op_Implicit(System.String)~Blazorade.Bootstrap.Components.Content.HeadingLevel">
+            <summary>
+            Converts the given string to <see cref="T:Blazorade.Bootstrap.Components.Content.HeadingLevel"/>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.HeadingLevel.H1">
+            <summary>
+            First level.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.HeadingLevel.H2">
+            <summary>
+            Second level.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.HeadingLevel.H3">
+            <summary>
+            Third level.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.HeadingLevel.H4">
+            <summary>
+            Fourth level.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.HeadingLevel.H5">
+            <summary>
+            Fifth level.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.HeadingLevel.H6">
+            <summary>
+            Sixth level.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.HeadingLevel.Value">
+            <summary>
+            The actual value of the heading.
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Embed">
@@ -2352,143 +2416,6 @@
             <param name="jsInterop"></param>
             <returns></returns>
         </member>
-        <member name="P:Blazorade.Bootstrap.Components.Heading.Display">
-            <summary>
-            Use this property to specify a different display size for your heading to better visually fit into the overall look and feel.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.Heading.IsAnchor">
-            <summary>
-            Specifies that the heading is also an anchor that you can link to. This requires that the <c>Id</c> property is also set on the
-            heading. An anchor heading will display a link icon when hovered over to indicate that the heading is an anchor.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.Heading.Level">
-            <summary>
-            The heading level.
-            </summary>
-        </member>
-        <member name="T:Blazorade.Bootstrap.Components.HeadingContent">
-            <summary>
-            Represents the content in a <see cref="T:Blazorade.Bootstrap.Components.Heading"/> component.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.HeadingContent.AnchorId">
-            <summary>
-            The ID of the <see cref="T:Blazorade.Bootstrap.Components.Anchor"/> element that is shown when hovering over the content.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.HeadingContent.HeadingId">
-            <summary>
-            The element ID of the parent <see cref="T:Blazorade.Bootstrap.Components.Heading"/> component.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.HeadingContent.IsAnchor">
-            <summary>
-            Specifies whether the heading is an automatic anchor.
-            </summary>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.HeadingContent.ContentOnMouseOver(Microsoft.AspNetCore.Components.Web.MouseEventArgs)">
-            <summary>
-            </summary>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.HeadingContent.ContentOnMouseOut(Microsoft.AspNetCore.Components.Web.MouseEventArgs)">
-            <summary>
-            </summary>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.HeadingContent.OnParametersSet">
-            <summary>
-            </summary>
-        </member>
-        <member name="T:Blazorade.Bootstrap.Components.HeadingDisplay">
-            <summary>
-            Allows you to make a Heading stand out as a larger than normal heading.
-            </summary>
-            <remarks>
-            For details see <c>https://getbootstrap.com/docs/4.4/content/typography/#display-headings</c>.
-            </remarks>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.HeadingDisplay.op_Implicit(System.Int32)~Blazorade.Bootstrap.Components.HeadingDisplay">
-            <summary>
-            Converts the given integer to a <see cref="T:Blazorade.Bootstrap.Components.HeadingDisplay"/> value.
-            </summary>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.HeadingDisplay.op_Implicit(System.String)~Blazorade.Bootstrap.Components.HeadingDisplay">
-            <summary>
-            Convert the given string to a <see cref="T:Blazorade.Bootstrap.Components.HeadingDisplay"/> value.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.HeadingDisplay.D1">
-            <summary>
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.HeadingDisplay.D2">
-            <summary>
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.HeadingDisplay.D3">
-            <summary>
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.HeadingDisplay.D4">
-            <summary>
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.HeadingDisplay.Value">
-            <summary>
-            Actual value.
-            </summary>
-        </member>
-        <member name="T:Blazorade.Bootstrap.Components.HeadingLevel">
-            <summary>
-            Defines different levels for headings.
-            </summary>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.HeadingLevel.op_Implicit(System.Int32)~Blazorade.Bootstrap.Components.HeadingLevel">
-            <summary>
-            Converts the given integer to <see cref="T:Blazorade.Bootstrap.Components.HeadingLevel"/>.
-            </summary>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.HeadingLevel.op_Implicit(System.String)~Blazorade.Bootstrap.Components.HeadingLevel">
-            <summary>
-            Converts the given string to <see cref="T:Blazorade.Bootstrap.Components.HeadingLevel"/>.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.HeadingLevel.H1">
-            <summary>
-            First level.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.HeadingLevel.H2">
-            <summary>
-            Second level.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.HeadingLevel.H3">
-            <summary>
-            Third level.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.HeadingLevel.H4">
-            <summary>
-            Fourth level.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.HeadingLevel.H5">
-            <summary>
-            Fifth level.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.HeadingLevel.H6">
-            <summary>
-            Sixth level.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.HeadingLevel.Value">
-            <summary>
-            The actual value of the 
-            </summary>
-        </member>
         <member name="T:Blazorade.Bootstrap.Components.ImageBase">
             <summary>
             Base class for images.
@@ -2521,6 +2448,59 @@
         <member name="F:Blazorade.Bootstrap.Components.ImageScaleMode.Fill">
             <summary>
             The image will be resized so that it completely fills the area specified for the image. Some cropping may occur.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Layout.Container">
+            <summary>
+            The Container component is the foundation for many layout configurations in Bootstrap.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Layout.Container.#ctor">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Layout.Container.Type">
+            <summary>
+            The type of container. The default is <see cref="F:Blazorade.Bootstrap.Components.Layout.ContainerType.FixedWidth"/>.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Layout.Container.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Layout.ContainerType.FixedWidth">
+            <summary>
+            The container has a fixed max width at each breakpoint. The default type of container.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Layout.ContainerType.Fluid">
+            <summary>
+            The container is fluid with a max width of 100%.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Layout.ContainerType.SM">
+            <summary>
+            100% wide on on SM screen sizes. Fixed width above this breakpoint.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Layout.ContainerType.MD">
+            <summary>
+            100% wide on on MD screen sizes. Fixed width above this breakpoint.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Layout.ContainerType.LG">
+            <summary>
+            100% wide on on LG screen sizes. Fixed width above this breakpoint.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Layout.ContainerType.XL">
+            <summary>
+            100% wide on on XL screen sizes. Fixed width above this breakpoint.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Layout.Row.NoGutters">
+            <summary>
+            If set to <c>true</c>, all columns in the current row will be rendered without gutters (i.e. space between columns).
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.ListGroup">
@@ -2618,7 +2598,7 @@
         </member>
         <member name="P:Blazorade.Bootstrap.Components.Modal.HeaderTemplate">
             <summary>
-            Allows you to customize the header of your dialog. Consider using the <see cref="T:Blazorade.Bootstrap.Components.ModalHeader"/> and <see cref="T:Blazorade.Bootstrap.Components.CloseModalButton"/>
+            Allows you to customize the header of your dialog. Consider using the <see cref="T:Blazorade.Bootstrap.Components.ModalHeader"/> and <see cref="!:CloseModalButton"/>
             components when customizing the header.
             </summary>
         </member>
@@ -3234,79 +3214,6 @@
             Extra large. &gt;= 1200 px.
             </summary>
         </member>
-        <member name="P:Blazorade.Bootstrap.Components.Row.NoGutters">
-            <summary>
-            If set to <c>true</c>, all columns in the current row will be rendered without gutters (i.e. space between columns).
-            </summary>
-        </member>
-        <member name="T:Blazorade.Bootstrap.Components.ShadowSize">
-            <summary>
-            Defines different shadow sizes for components.
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.ShadowSize.None">
-            <summary>
-            No shadow. Default.
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.ShadowSize.Small">
-            <summary>
-            A small shadow.
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.ShadowSize.Regular">
-            <summary>
-            Regular shadow.
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.ShadowSize.Large">
-            <summary>
-            Large shadow.
-            </summary>
-        </member>
-        <member name="T:Blazorade.Bootstrap.Components.Spacing">
-            <summary>
-            Defines different spacing values for components.
-            </summary>
-            <remarks>
-            The members of this enumeration correspond to one of the supported size values. <see cref="!:https://getbootstrap.com/docs/4.4/utilities/spacing/#notation"/>
-            </remarks>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.Spacing.Auto">
-            <summary>
-            Automatic spacing.
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.Spacing.Zero">
-            <summary>
-            No spacing.
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.Spacing.One">
-            <summary>
-            $spacer * 0.25
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.Spacing.Two">
-            <summary>
-            $spacer * 0.5
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.Spacing.Three">
-            <summary>
-            $spacer
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.Spacing.Four">
-            <summary>
-            $spacer * 1.5
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.Spacing.Five">
-            <summary>
-            $spacer * 3
-            </summary>
-        </member>
         <member name="T:Blazorade.Bootstrap.Components.Spinner">
             <summary>
             The Spinner component is used to indicate a loading state of a UI element or page.
@@ -3526,6 +3433,99 @@
         <member name="F:Blazorade.Bootstrap.Components.ToggleAction.Toggle">
             <summary>
             Toggle the visibility of the component.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ComponentSize.p25">
+            <summary>
+            25%
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ComponentSize.p50">
+            <summary>
+            50%
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ComponentSize.p75">
+            <summary>
+            75%
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ComponentSize.p100">
+            <summary>
+            100%
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ComponentSize.Auto">
+            <summary>
+            Automatic size.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Utilities.ShadowSize">
+            <summary>
+            Defines different shadow sizes for components.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Utilities.ShadowSize.None">
+            <summary>
+            No shadow. Default.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Utilities.ShadowSize.Small">
+            <summary>
+            A small shadow.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Utilities.ShadowSize.Regular">
+            <summary>
+            Regular shadow.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Utilities.ShadowSize.Large">
+            <summary>
+            Large shadow.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Utilities.Spacing">
+            <summary>
+            Defines different spacing values for components.
+            </summary>
+            <remarks>
+            The members of this enumeration correspond to one of the supported size values. <see cref="!:https://getbootstrap.com/docs/4.4/utilities/spacing/#notation"/>
+            </remarks>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Utilities.Spacing.Auto">
+            <summary>
+            Automatic spacing.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Utilities.Spacing.Zero">
+            <summary>
+            No spacing.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Utilities.Spacing.One">
+            <summary>
+            $spacer * 0.25
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Utilities.Spacing.Two">
+            <summary>
+            $spacer * 0.5
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Utilities.Spacing.Three">
+            <summary>
+            $spacer
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Utilities.Spacing.Four">
+            <summary>
+            $spacer * 1.5
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Utilities.Spacing.Five">
+            <summary>
+            $spacer * 3
             </summary>
         </member>
     </members>
