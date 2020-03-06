@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Blazorade.Bootstrap.Components
+namespace Blazorade.Bootstrap.Components.Content
 {
     public partial class Blockquote
     {

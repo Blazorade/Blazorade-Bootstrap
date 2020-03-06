@@ -1,4 +1,4 @@
-﻿namespace Blazorade.Bootstrap.Components
+﻿namespace Blazorade.Bootstrap.Components.Utilities
 {
     /// <summary>
     /// Defines different spacing values for components.

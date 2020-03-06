@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace Blazorade.Bootstrap.Components
+namespace Blazorade.Bootstrap.Components.Content
 {
     /// <summary>
     /// Defines different levels for headings.

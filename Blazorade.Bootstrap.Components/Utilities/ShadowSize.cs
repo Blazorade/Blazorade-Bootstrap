@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Blazorade.Bootstrap.Components
+namespace Blazorade.Bootstrap.Components.Utilities
 {
     /// <summary>
     /// Defines different shadow sizes for components.

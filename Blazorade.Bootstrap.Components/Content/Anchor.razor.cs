@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Components.Web;
 using System.Threading.Tasks;
 using Microsoft.JSInterop;
 
-namespace Blazorade.Bootstrap.Components
+namespace Blazorade.Bootstrap.Components.Content
 {
     public partial class Anchor : ILink
     {
