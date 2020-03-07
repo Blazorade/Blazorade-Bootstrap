@@ -244,7 +244,7 @@
             <param name="message">The message to log.</param>
             <param name="args">Arguments to log with the message.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.BootstrapComponentBase.OnParametersSet">
+        <member name="M:Blazorade.Bootstrap.Components.BootstrapComponentBase.OnParametersSetAsync">
             <summary>
             </summary>
         </member>
@@ -429,89 +429,89 @@
             Sets the height of the component to 100%.
             </summary>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.Margin(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.Margin(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the margin on all sizes of the component.
             </summary>
-            <param name="size">The size of the margin.</param>
+            <param name="margin">The size of the margin.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.MarginTop(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.MarginTop(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the top margin of the component.
             </summary>
-            <param name="size">The size of the margin.</param>
+            <param name="margin">The size of the margin.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.MarginRight(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.MarginRight(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the right margin of the component.
             </summary>
-            <param name="size">The size of the margin.</param>
+            <param name="margin">The size of the margin.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.MarginBottom(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.MarginBottom(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the bottom margin of the component.
             </summary>
-            <param name="size">The size of the margin.</param>
+            <param name="margin">The size of the margin.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.MarginLeft(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.MarginLeft(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the left margin of the component.
             </summary>
-            <param name="size">The size of the margin.</param>
+            <param name="margin">The size of the margin.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.MarginX(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.MarginX(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the left and right margin of the component.
             </summary>
-            <param name="size">The size of the margin.</param>
+            <param name="margin">The size of the margin.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.MarginY(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.MarginY(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the top and bottom margin of the component.
             </summary>
-            <param name="size">The size of the margin.</param>
+            <param name="margin">The size of the margin.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.Padding(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.Padding(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the padding on all sides of the component.
             </summary>
-            <param name="size">The size of padding.</param>
+            <param name="padding">The size of padding.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.PaddingTop(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.PaddingTop(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the top padding of the component.
             </summary>
-            <param name="size">The size of padding.</param>
+            <param name="padding">The size of padding.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.PaddingRight(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.PaddingRight(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the right padding of the component.
             </summary>
-            <param name="size">The size of padding.</param>
+            <param name="padding">The size of padding.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.PaddingBottom(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.PaddingBottom(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the bottom padding of the component.
             </summary>
-            <param name="size">The size of padding.</param>
+            <param name="padding">The size of padding.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.PaddingLeft(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.PaddingLeft(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the left padding of the component.
             </summary>
-            <param name="size">The size of padding.</param>
+            <param name="padding">The size of padding.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.PaddingX(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.PaddingX(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the left and right padding of the component.
             </summary>
-            <param name="size">The size of padding.</param>
+            <param name="padding">The size of padding.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.PaddingY(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.PaddingY(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the top and bottom padding of the component.
             </summary>
-            <param name="size">The size of padding.</param>
+            <param name="padding">The size of padding.</param>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Builder.IComponentFeatures.Text(Blazorade.Bootstrap.Components.NamedColor)">
             <summary>
@@ -721,89 +721,89 @@
             Sets the height of the component to 100%.
             </summary>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.Margin(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.Margin(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the margin on all sizes of the component.
             </summary>
-            <param name="size">The size of the margin.</param>
+            <param name="margin">The size of the margin.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.MarginTop(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.MarginTop(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the top margin of the component.
             </summary>
-            <param name="size">The size of the margin.</param>
+            <param name="margin">The size of the margin.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.MarginRight(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.MarginRight(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the right margin of the component.
             </summary>
-            <param name="size">The size of the margin.</param>
+            <param name="margin">The size of the margin.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.MarginBottom(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.MarginBottom(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the bottom margin of the component.
             </summary>
-            <param name="size">The size of the margin.</param>
+            <param name="margin">The size of the margin.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.MarginLeft(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.MarginLeft(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the left margin of the component.
             </summary>
-            <param name="size">The size of the margin.</param>
+            <param name="margin">The size of the margin.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.MarginX(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.MarginX(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the left and right margin of the component.
             </summary>
-            <param name="size">The size of the margin.</param>
+            <param name="margin">The size of the margin.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.MarginY(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.MarginY(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the top and bottom margin of the component.
             </summary>
-            <param name="size">The size of the margin.</param>
+            <param name="margin">The size of the margin.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.Padding(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.Padding(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the padding on all sides of the component.
             </summary>
-            <param name="size">The size of padding.</param>
+            <param name="padding">The size of padding.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.PaddingTop(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.PaddingTop(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the top padding of the component.
             </summary>
-            <param name="size">The size of padding.</param>
+            <param name="padding">The size of padding.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.PaddingRight(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.PaddingRight(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the right padding of the component.
             </summary>
-            <param name="size">The size of padding.</param>
+            <param name="padding">The size of padding.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.PaddingBottom(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.PaddingBottom(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the bottom padding of the component.
             </summary>
-            <param name="size">The size of padding.</param>
+            <param name="padding">The size of padding.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.PaddingLeft(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.PaddingLeft(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the left padding of the component.
             </summary>
-            <param name="size">The size of padding.</param>
+            <param name="padding">The size of padding.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.PaddingX(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.PaddingX(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the left and right padding of the component.
             </summary>
-            <param name="size">The size of padding.</param>
+            <param name="padding">The size of padding.</param>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.PaddingY(System.Int32)">
+        <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.PaddingY(Blazorade.Bootstrap.Components.Utilities.Spacing)">
             <summary>
             Sets the top and bottom padding of the component.
             </summary>
-            <param name="size">The size of padding.</param>
+            <param name="padding">The size of padding.</param>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Builder.BootstrapComponentBuilder.Text(Blazorade.Bootstrap.Components.NamedColor)">
             <summary>
@@ -3560,6 +3560,11 @@
         <member name="P:Blazorade.Bootstrap.Components.Utilities.Spacing.Value">
             <summary>
             The actual value.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Utilities.Spacing.ToString">
+            <summary>
+            Returns the string representation of the instance.
             </summary>
         </member>
     </members>

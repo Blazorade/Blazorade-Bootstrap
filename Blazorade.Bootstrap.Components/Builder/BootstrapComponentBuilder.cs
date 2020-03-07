@@ -1,4 +1,5 @@
-﻿using Blazorade.Core.Components.Builder;
+﻿using Blazorade.Bootstrap.Components.Utilities;
+using Blazorade.Core.Components.Builder;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -180,44 +181,44 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// <summary>
         /// Sets the margin on all sizes of the component.
         /// </summary>
-        /// <param name="size">The size of the margin.</param>
-        IComponentBreakpointModifiers Margin(int size);
+        /// <param name="margin">The size of the margin.</param>
+        IComponentBreakpointModifiers Margin(Spacing margin);
 
         /// <summary>
         /// Sets the top margin of the component.
         /// </summary>
-        /// <param name="size">The size of the margin.</param>
-        IComponentBreakpointModifiers MarginTop(int size);
+        /// <param name="margin">The size of the margin.</param>
+        IComponentBreakpointModifiers MarginTop(Spacing margin);
 
         /// <summary>
         /// Sets the right margin of the component.
         /// </summary>
-        /// <param name="size">The size of the margin.</param>
-        IComponentBreakpointModifiers MarginRight(int size);
+        /// <param name="margin">The size of the margin.</param>
+        IComponentBreakpointModifiers MarginRight(Spacing margin);
 
         /// <summary>
         /// Sets the bottom margin of the component.
         /// </summary>
-        /// <param name="size">The size of the margin.</param>
-        IComponentBreakpointModifiers MarginBottom(int size);
+        /// <param name="margin">The size of the margin.</param>
+        IComponentBreakpointModifiers MarginBottom(Spacing margin);
 
         /// <summary>
         /// Sets the left margin of the component.
         /// </summary>
-        /// <param name="size">The size of the margin.</param>
-        IComponentBreakpointModifiers MarginLeft(int size);
+        /// <param name="margin">The size of the margin.</param>
+        IComponentBreakpointModifiers MarginLeft(Spacing margin);
 
         /// <summary>
         /// Sets the left and right margin of the component.
         /// </summary>
-        /// <param name="size">The size of the margin.</param>
-        IComponentBreakpointModifiers MarginX(int size);
+        /// <param name="margin">The size of the margin.</param>
+        IComponentBreakpointModifiers MarginX(Spacing margin);
 
         /// <summary>
         /// Sets the top and bottom margin of the component.
         /// </summary>
-        /// <param name="size">The size of the margin.</param>
-        IComponentBreakpointModifiers MarginY(int size);
+        /// <param name="margin">The size of the margin.</param>
+        IComponentBreakpointModifiers MarginY(Spacing margin);
 
         #endregion
 
@@ -226,44 +227,44 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// <summary>
         /// Sets the padding on all sides of the component.
         /// </summary>
-        /// <param name="size">The size of padding.</param>
-        IComponentBreakpointModifiers Padding(int size);
+        /// <param name="padding">The size of padding.</param>
+        IComponentBreakpointModifiers Padding(Spacing padding);
 
         /// <summary>
         /// Sets the top padding of the component.
         /// </summary>
-        /// <param name="size">The size of padding.</param>
-        IComponentBreakpointModifiers PaddingTop(int size);
+        /// <param name="padding">The size of padding.</param>
+        IComponentBreakpointModifiers PaddingTop(Spacing padding);
 
         /// <summary>
         /// Sets the right padding of the component.
         /// </summary>
-        /// <param name="size">The size of padding.</param>
-        IComponentBreakpointModifiers PaddingRight(int size);
+        /// <param name="padding">The size of padding.</param>
+        IComponentBreakpointModifiers PaddingRight(Spacing padding);
 
         /// <summary>
         /// Sets the bottom padding of the component.
         /// </summary>
-        /// <param name="size">The size of padding.</param>
-        IComponentBreakpointModifiers PaddingBottom(int size);
+        /// <param name="padding">The size of padding.</param>
+        IComponentBreakpointModifiers PaddingBottom(Spacing padding);
 
         /// <summary>
         /// Sets the left padding of the component.
         /// </summary>
-        /// <param name="size">The size of padding.</param>
-        IComponentBreakpointModifiers PaddingLeft(int size);
+        /// <param name="padding">The size of padding.</param>
+        IComponentBreakpointModifiers PaddingLeft(Spacing padding);
 
         /// <summary>
         /// Sets the left and right padding of the component.
         /// </summary>
-        /// <param name="size">The size of padding.</param>
-        IComponentBreakpointModifiers PaddingX(int size);
+        /// <param name="padding">The size of padding.</param>
+        IComponentBreakpointModifiers PaddingX(Spacing padding);
 
         /// <summary>
         /// Sets the top and bottom padding of the component.
         /// </summary>
-        /// <param name="size">The size of padding.</param>
-        IComponentBreakpointModifiers PaddingY(int size);
+        /// <param name="padding">The size of padding.</param>
+        IComponentBreakpointModifiers PaddingY(Spacing padding);
 
         #endregion
 
@@ -627,70 +628,70 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// <summary>
         /// Sets the margin on all sizes of the component.
         /// </summary>
-        /// <param name="size">The size of the margin.</param>
-        public IComponentBreakpointModifiers Margin(int size)
+        /// <param name="margin">The size of the margin.</param>
+        public IComponentBreakpointModifiers Margin(Spacing margin)
         {
-            this.AddPendingClass($"m-{{0}}-{size}");
+            this.AddPendingClass($"m-{{0}}-{margin.Value}");
             return this;
         }
 
         /// <summary>
         /// Sets the top margin of the component.
         /// </summary>
-        /// <param name="size">The size of the margin.</param>
-        public IComponentBreakpointModifiers MarginTop(int size)
+        /// <param name="margin">The size of the margin.</param>
+        public IComponentBreakpointModifiers MarginTop(Spacing margin)
         {
-            this.AddPendingClass($"mt-{{0}}-{size}");
+            this.AddPendingClass($"mt-{{0}}-{margin.Value}");
             return this;
         }
 
         /// <summary>
         /// Sets the right margin of the component.
         /// </summary>
-        /// <param name="size">The size of the margin.</param>
-        public IComponentBreakpointModifiers MarginRight(int size)
+        /// <param name="margin">The size of the margin.</param>
+        public IComponentBreakpointModifiers MarginRight(Spacing margin)
         {
-            this.AddPendingClass($"mr-{{0}}-{size}");
+            this.AddPendingClass($"mr-{{0}}-{margin.Value}");
             return this;
         }
 
         /// <summary>
         /// Sets the bottom margin of the component.
         /// </summary>
-        /// <param name="size">The size of the margin.</param>
-        public IComponentBreakpointModifiers MarginBottom(int size)
+        /// <param name="margin">The size of the margin.</param>
+        public IComponentBreakpointModifiers MarginBottom(Spacing margin)
         {
-            this.AddPendingClass($"mb-{{0}}-{size}");
+            this.AddPendingClass($"mb-{{0}}-{margin.Value}");
             return this;
         }
 
         /// <summary>
         /// Sets the left margin of the component.
         /// </summary>
-        /// <param name="size">The size of the margin.</param>
-        public IComponentBreakpointModifiers MarginLeft(int size)
+        /// <param name="margin">The size of the margin.</param>
+        public IComponentBreakpointModifiers MarginLeft(Spacing margin)
         {
-            this.AddPendingClass($"ml-{{0}}-{size}");
+            this.AddPendingClass($"ml-{{0}}-{margin.Value}");
             return this;
         }
 
         /// <summary>
         /// Sets the left and right margin of the component.
         /// </summary>
-        /// <param name="size">The size of the margin.</param>
-        public IComponentBreakpointModifiers MarginX(int size)
+        /// <param name="margin">The size of the margin.</param>
+        public IComponentBreakpointModifiers MarginX(Spacing margin)
         {
-            this.AddPendingClass($"mx-{{0}}-{size}");
+            this.AddPendingClass($"mx-{{0}}-{margin.Value}");
             return this;
         }
 
         /// <summary>
         /// Sets the top and bottom margin of the component.
         /// </summary>
-        /// <param name="size">The size of the margin.</param>
-        public IComponentBreakpointModifiers MarginY(int size)
+        /// <param name="margin">The size of the margin.</param>
+        public IComponentBreakpointModifiers MarginY(Spacing margin)
         {
-            this.AddPendingClass($"my-{{0}}-{size}");
+            this.AddPendingClass($"my-{{0}}-{margin.Value}");
             return this;
         }
 
@@ -701,71 +702,90 @@ namespace Blazorade.Bootstrap.Components.Builder
         /// <summary>
         /// Sets the padding on all sides of the component.
         /// </summary>
-        /// <param name="size">The size of padding.</param>
-        public IComponentBreakpointModifiers Padding(int size)
+        /// <param name="padding">The size of padding.</param>
+        public IComponentBreakpointModifiers Padding(Spacing padding)
         {
-            this.AddPendingClass($"p-{{0}}-{size}");
+            this.AssertPaddingNotNegative(padding);
+            this.AddPendingClass($"p-{{0}}-{padding.Value}");
             return this;
         }
 
         /// <summary>
         /// Sets the top padding of the component.
         /// </summary>
-        /// <param name="size">The size of padding.</param>
-        public IComponentBreakpointModifiers PaddingTop(int size)
+        /// <param name="padding">The size of padding.</param>
+        public IComponentBreakpointModifiers PaddingTop(Spacing padding)
         {
-            this.AddPendingClass($"pp-{{0}}-{size}");
+            this.AssertPaddingNotNegative(padding);
+            this.AddPendingClass($"pp-{{0}}-{padding.Value}");
             return this;
         }
 
         /// <summary>
         /// Sets the right padding of the component.
         /// </summary>
-        /// <param name="size">The size of padding.</param>
-        public IComponentBreakpointModifiers PaddingRight(int size)
+        /// <param name="padding">The size of padding.</param>
+        public IComponentBreakpointModifiers PaddingRight(Spacing padding)
         {
-            this.AddPendingClass($"pr-{{0}}-{size}");
+            this.AssertPaddingNotNegative(padding);
+            this.AddPendingClass($"pr-{{0}}-{padding.Value}");
             return this;
         }
 
         /// <summary>
         /// Sets the bottom padding of the component.
         /// </summary>
-        /// <param name="size">The size of padding.</param>
-        public IComponentBreakpointModifiers PaddingBottom(int size)
+        /// <param name="padding">The size of padding.</param>
+        public IComponentBreakpointModifiers PaddingBottom(Spacing padding)
         {
-            this.AddPendingClass($"pb-{{0}}-{size}");
+            this.AssertPaddingNotNegative(padding);
+            this.AddPendingClass($"pb-{{0}}-{padding.Value}");
             return this;
         }
 
         /// <summary>
         /// Sets the left padding of the component.
         /// </summary>
-        /// <param name="size">The size of padding.</param>
-        public IComponentBreakpointModifiers PaddingLeft(int size)
+        /// <param name="padding">The size of padding.</param>
+        public IComponentBreakpointModifiers PaddingLeft(Spacing padding)
         {
-            this.AddPendingClass($"pl-{{0}}-{size}");
+            this.AssertPaddingNotNegative(padding);
+            this.AddPendingClass($"pl-{{0}}-{padding.Value}");
             return this;
         }
 
         /// <summary>
         /// Sets the left and right padding of the component.
         /// </summary>
-        /// <param name="size">The size of padding.</param>
-        public IComponentBreakpointModifiers PaddingX(int size)
+        /// <param name="padding">The size of padding.</param>
+        public IComponentBreakpointModifiers PaddingX(Spacing padding)
         {
-            this.AddPendingClass($"px-{{0}}-{size}");
+            this.AssertPaddingNotNegative(padding);
+            this.AddPendingClass($"px-{{0}}-{padding.Value}");
             return this;
         }
 
         /// <summary>
         /// Sets the top and bottom padding of the component.
         /// </summary>
-        /// <param name="size">The size of padding.</param>
-        public IComponentBreakpointModifiers PaddingY(int size)
+        /// <param name="padding">The size of padding.</param>
+        public IComponentBreakpointModifiers PaddingY(Spacing padding)
         {
-            this.AddPendingClass($"py-{{0}}-{size}");
+            this.AssertPaddingNotNegative(padding);
+            this.AddPendingClass($"py-{{0}}-{padding.Value}");
             return this;
+        }
+
+
+        private void AssertPaddingNotNegative(Spacing padding)
+        {
+            if(padding.IsNegative)
+            {
+                // Must not throw an exception, but instead, we should create the necessary
+                // wiring for a builder to be able to write messages also to the debug log
+                // on the browser console.
+
+            }
         }
 
         #endregion
