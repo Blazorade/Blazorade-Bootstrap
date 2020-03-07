@@ -1,4 +1,15 @@
-﻿
-<button type="button" class="close" aria-label="Close">
+﻿@inherits ColoredBootstrapComponentBase
+
+<button @attributes="this.Attributes">
     <span aria-hidden="true">&times;</span>
 </button>
+
+@code { 
+    override protected async Task OnParametersSetAsync()
+    {
+        this.AddClasses("close");
+        this.AddAttribute("type", "button");
+        this.AddAttribute("aria-label", "Close");
+        await base.OnParametersSetAsync();
+    }
+}

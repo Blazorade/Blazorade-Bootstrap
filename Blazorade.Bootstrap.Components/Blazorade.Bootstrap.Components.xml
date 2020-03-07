@@ -2556,19 +2556,34 @@
             <summary>
             </summary>
         </member>
-        <member name="P:Blazorade.Bootstrap.Components.Modal.Hidden">
+        <member name="P:Blazorade.Bootstrap.Components.Modal.OnHide">
+            <summary>
+            Fires when the modal is beginning to hide.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Modal.OnHidden">
             <summary>
             Fires when the modal has been hidden.
             </summary>
         </member>
-        <member name="P:Blazorade.Bootstrap.Components.Modal.Shown">
+        <member name="P:Blazorade.Bootstrap.Components.Modal.OnHidePrevented">
+            <summary>
+            Fires when hiding the modal has been prevented.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Modal.OnShow">
+            <summary>
+            Fires when the modal is beginning to show.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Modal.OnShown">
             <summary>
             Fires when the modal has been shown.
             </summary>
         </member>
-        <member name="P:Blazorade.Bootstrap.Components.Modal.Toggled">
+        <member name="P:Blazorade.Bootstrap.Components.Modal.Backdrop">
             <summary>
-            Fires when the modal has been toggled.
+            Defines how the backdrop for the modal is displayed.
             </summary>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.Modal.Body">
@@ -2627,45 +2642,55 @@
             Shows the modal dialog.
             </summary>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Modal.Toggle">
+        <member name="M:Blazorade.Bootstrap.Components.Modal.OnHideAsync">
             <summary>
-            Toggles the modal dialog.
+            Fires the <see cref="P:Blazorade.Bootstrap.Components.Modal.OnHide"/> event.
             </summary>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.Modal.ToggleAsync">
-            <summary>
-            Toggles the modal dialog.
-            </summary>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.Modal.Toggle(Blazorade.Bootstrap.Components.ToggleAction)">
-            <summary>
-            Performs the specified action on the modal.
-            </summary>
-            <param name="action">The action to perform on the modal.</param>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.Modal.ToggleAsync(Blazorade.Bootstrap.Components.ToggleAction)">
-            <summary>
-            Performs the specified action on the modal.
-            </summary>
-            <param name="action">The action to perform on the modal.</param>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Modal.OnHiddenAsync">
             <summary>
-            Fires the <see cref="P:Blazorade.Bootstrap.Components.Modal.Hidden"/> event.
+            Fires the <see cref="P:Blazorade.Bootstrap.Components.Modal.OnHidden"/> event.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Modal.OnHidePreventedAsync">
+            <summary>
+            Fires the <see cref="P:Blazorade.Bootstrap.Components.Modal.OnHidePrevented"/> event.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Modal.OnShowAsync">
+            <summary>
+            Fires the <see cref="P:Blazorade.Bootstrap.Components.Modal.OnShow"/> event.
             </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Modal.OnShownAsync">
             <summary>
-            Fires the <see cref="P:Blazorade.Bootstrap.Components.Modal.Shown"/> event.
-            </summary>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.Modal.OnToggledAsync">
-            <summary>
-            Fires the <see cref="P:Blazorade.Bootstrap.Components.Modal.Toggled"/> event.
+            Fires the <see cref="P:Blazorade.Bootstrap.Components.Modal.OnShown"/> event.
             </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Modal.OnParametersSet">
             <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.ModalBackdrop">
+            <summary>
+            Defines the backdrop for a <see cref="T:Blazorade.Bootstrap.Components.Modal"/> component.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.ModalBackdrop.op_Implicit(System.Boolean)~Blazorade.Bootstrap.Components.ModalBackdrop">
+            <summary>
+            Converts the boolean value to <see cref="T:Blazorade.Bootstrap.Components.ModalBackdrop"/>.
+            </summary>
+            <param name="b"></param>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.ModalBackdrop.op_Implicit(System.String)~Blazorade.Bootstrap.Components.ModalBackdrop">
+            <summary>
+            Converts the given string to <see cref="T:Blazorade.Bootstrap.Components.ModalBackdrop"/>.
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.ModalBackdrop.Value">
+            <summary>
+            The value of the backdrop.
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.ModalSize">
@@ -3458,6 +3483,15 @@
         <member name="F:Blazorade.Bootstrap.Components.ComponentSize.Auto">
             <summary>
             Automatic size.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Utilities.ModalCloseIcon">
+            <summary>
+            A close icon for <see cref="T:Blazorade.Bootstrap.Components.Modal"/> components.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Utilities.ModalCloseIcon.OnParametersSetAsync">
+            <summary>
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Utilities.Shadow">

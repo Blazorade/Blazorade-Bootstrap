@@ -32,6 +32,19 @@ namespace Blazorade.Bootstrap.Components
             public const string Shown = "shown.bs.collapse";
         }
 
+        public static class Modal
+        {
+            public const string Hide = "hide.bs.modal";
+
+            public const string Hidden = "hidden.bs.modal";
+
+            public const string HidePrevented = "hidePrevented.bs.modal";
+
+            public const string Show = "show.bs.modal";
+
+            public const string Shown = "shown.bs.modal";
+        }
+
         public static class Toast
         {
             public const string Show = "show.bs.toast";
