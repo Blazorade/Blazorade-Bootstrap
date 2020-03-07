@@ -3460,30 +3460,43 @@
             Automatic size.
             </summary>
         </member>
-        <member name="T:Blazorade.Bootstrap.Components.Utilities.ShadowSize">
+        <member name="T:Blazorade.Bootstrap.Components.Utilities.Shadow">
             <summary>
             Defines different shadow sizes for components.
             </summary>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.Utilities.ShadowSize.None">
+        <member name="P:Blazorade.Bootstrap.Components.Utilities.Shadow.None">
             <summary>
             No shadow. Default.
             </summary>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.Utilities.ShadowSize.Small">
+        <member name="P:Blazorade.Bootstrap.Components.Utilities.Shadow.Small">
             <summary>
             A small shadow.
             </summary>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.Utilities.ShadowSize.Regular">
+        <member name="P:Blazorade.Bootstrap.Components.Utilities.Shadow.Regular">
             <summary>
             Regular shadow.
             </summary>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.Utilities.ShadowSize.Large">
+        <member name="P:Blazorade.Bootstrap.Components.Utilities.Shadow.Large">
             <summary>
             Large shadow.
             </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Utilities.Shadow.op_Implicit(System.String)~Blazorade.Bootstrap.Components.Utilities.Shadow">
+            <summary>
+            Converts the given string to <see cref="T:Blazorade.Bootstrap.Components.Utilities.Shadow"/>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Utilities.Shadow.Value">
+            <summary>
+            The value.
+            </summary>
+            <remarks>
+            The value equals the class name to add to an element for different sizes of shadows.
+            </remarks>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Utilities.Spacing">
             <summary>
