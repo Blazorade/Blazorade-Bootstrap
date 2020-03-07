@@ -3493,39 +3493,73 @@
             The members of this enumeration correspond to one of the supported size values. <see cref="!:https://getbootstrap.com/docs/4.4/utilities/spacing/#notation"/>
             </remarks>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.Utilities.Spacing.Auto">
+        <member name="P:Blazorade.Bootstrap.Components.Utilities.Spacing.Auto">
             <summary>
             Automatic spacing.
             </summary>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.Utilities.Spacing.Zero">
+        <member name="P:Blazorade.Bootstrap.Components.Utilities.Spacing.S0">
             <summary>
             No spacing.
             </summary>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.Utilities.Spacing.One">
+        <member name="P:Blazorade.Bootstrap.Components.Utilities.Spacing.S1">
             <summary>
             $spacer * 0.25
             </summary>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.Utilities.Spacing.Two">
+        <member name="P:Blazorade.Bootstrap.Components.Utilities.Spacing.S2">
             <summary>
             $spacer * 0.5
             </summary>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.Utilities.Spacing.Three">
+        <member name="P:Blazorade.Bootstrap.Components.Utilities.Spacing.S3">
             <summary>
             $spacer
             </summary>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.Utilities.Spacing.Four">
+        <member name="P:Blazorade.Bootstrap.Components.Utilities.Spacing.S4">
             <summary>
             $spacer * 1.5
             </summary>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.Utilities.Spacing.Five">
+        <member name="P:Blazorade.Bootstrap.Components.Utilities.Spacing.S5">
             <summary>
             $spacer * 3
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Utilities.Spacing.op_Implicit(System.Int32)~Blazorade.Bootstrap.Components.Utilities.Spacing">
+            <summary>
+            Converts the given number to <see cref="T:Blazorade.Bootstrap.Components.Utilities.Spacing"/>.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Utilities.Spacing.op_Implicit(System.String)~Blazorade.Bootstrap.Components.Utilities.Spacing">
+            <summary>
+            Converts the given string to <see cref="T:Blazorade.Bootstrap.Components.Utilities.Spacing"/>.
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Utilities.Spacing.IsAuto">
+            <summary>
+            Returns <c>true</c> if the value has been set to auto.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Utilities.Spacing.IsNegative">
+            <summary>
+            Returns <c>true</c> if the spacing defines negative spacing.
+            </summary>
+            <remarks>
+            Negative spacing is only supported for margins, but not paddings.
+            </remarks>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Utilities.Spacing.NumericValue">
+            <summary>
+            The numeric value.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Utilities.Spacing.Value">
+            <summary>
+            The actual value.
             </summary>
         </member>
     </members>

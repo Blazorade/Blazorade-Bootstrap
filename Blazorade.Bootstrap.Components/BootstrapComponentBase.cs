@@ -255,14 +255,7 @@ namespace Blazorade.Bootstrap.Components
             {
                 if (size.HasValue)
                 {
-                    if (size != Spacing.Auto)
-                    {
-                        this.AddClasses($"{prefix}-{(int)size}");
-                    }
-                    else
-                    {
-                        this.AddClasses($"{prefix}-auto");
-                    }
+                    this.AddClasses($"{prefix}-{size.Value.Value}");
                 }
             };
 
