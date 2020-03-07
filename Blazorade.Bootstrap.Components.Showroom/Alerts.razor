@@ -43,7 +43,7 @@
 </Alert>
 
 @code { private Alert DismissibleAlert; }
-<Alert Color="NamedColor.Light" IsDismissible="true" FadeOnDismiss="true" @ref="this.DismissibleAlert" Shadow="ShadowSize.Small">
+<Alert Color="NamedColor.Light" IsDismissible="true" FadeOnDismiss="true" @ref="this.DismissibleAlert" Shadow="Shadow.Small">
     <HeadingTemplate>Custom Dismissal</HeadingTemplate>
     <ChildContent>
         This alert can be dismissed from outside of the component, by clicking on the button below.
@@ -78,7 +78,7 @@
     This is a simple alert that defines the heading text as a parameter on the Alert component, and not as a template parameter as the alert above does.
 </Alert>
 
-<Alert Color="NamedColor.White" Shadow="ShadowSize.Regular" Heading="Alert with Stretched Link">
+<Alert Color="NamedColor.White" Shadow="Shadow.Regular" Heading="Alert with Stretched Link">
     <Paragraph Margin="Spacing.S0" IsStretchedLinkContainer="true">
         This entire text will be clickable, because <AlertLink IsStretched="true" href="https://github.com/MikaBerglund/Blazor-Bootstrap" target="_blank">this link</AlertLink> is a stretched link. The heading will not be clickable, because this paragraph is set as container for the stretched link.
     </Paragraph>

@@ -155,7 +155,7 @@ namespace Blazorade.Bootstrap.Components
         /// Specifies a shadow for the component. Shadows are used to make certain elements stand out.
         /// </summary>
         [Parameter]
-        public ShadowSize? Shadow { get; set; }
+        public Shadow? Shadow { get; set; }
 
         /// <summary>
         /// Specifies whether the component is a container for streteched links. If the component contains
@@ -286,24 +286,7 @@ namespace Blazorade.Bootstrap.Components
 
             if (this.Shadow.HasValue)
             {
-                switch (this.Shadow.Value)
-                {
-                    case ShadowSize.None:
-                        this.AddClasses(ClassNames.Shadows.None);
-                        break;
-
-                    case ShadowSize.Small:
-                        this.AddClasses(ClassNames.Shadows.Small);
-                        break;
-
-                    case ShadowSize.Regular:
-                        this.AddClasses(ClassNames.Shadows.Regular);
-                        break;
-
-                    case ShadowSize.Large:
-                        this.AddClasses(ClassNames.Shadows.Large);
-                        break;
-                }
+                this.AddClasses(this.Shadow.Value.Value);
             }
 
             #endregion
