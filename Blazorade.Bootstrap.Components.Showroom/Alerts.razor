@@ -1,5 +1,5 @@
 ﻿@code {
-    Spacing headingMarginTop = Spacing.Five;
+    Spacing headingMarginTop = Spacing.S5;
 }
 <Heading Level="2">Alert Component</Heading>
 
@@ -52,7 +52,7 @@
 <Button Color="NamedColor.Primary" OnClicked="() => this.DismissibleAlert.Dismiss()">Dismiss</Button>
 
 
-<Div MarginTop="Spacing.Three" />
+<Div MarginTop="Spacing.S3" />
 @code {
     Toast dismissToast;
 }
@@ -79,7 +79,7 @@
 </Alert>
 
 <Alert Color="NamedColor.White" Shadow="ShadowSize.Regular" Heading="Alert with Stretched Link">
-    <Paragraph Margin="Spacing.Zero" IsStretchedLinkContainer="true">
+    <Paragraph Margin="Spacing.S0" IsStretchedLinkContainer="true">
         This entire text will be clickable, because <AlertLink IsStretched="true" href="https://github.com/MikaBerglund/Blazor-Bootstrap" target="_blank">this link</AlertLink> is a stretched link. The heading will not be clickable, because this paragraph is set as container for the stretched link.
     </Paragraph>
 </Alert>
