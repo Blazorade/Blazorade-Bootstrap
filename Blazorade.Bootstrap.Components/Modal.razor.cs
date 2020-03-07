@@ -24,24 +24,42 @@ namespace Blazorade.Bootstrap.Components
 
 
         /// <summary>
+        /// Fires when the modal is beginning to hide.
+        /// </summary>
+        [Parameter]
+        public EventCallback<Modal> OnHide { get; set; }
+
+        /// <summary>
         /// Fires when the modal has been hidden.
         /// </summary>
         [Parameter]
-        public EventCallback<Modal> Hidden { get; set; }
+        public EventCallback<Modal> OnHidden { get; set; }
+
+        /// <summary>
+        /// Fires when hiding the modal has been prevented.
+        /// </summary>
+        [Parameter]
+        public EventCallback<Modal> OnHidePrevented { get; set; }
+
+        /// <summary>
+        /// Fires when the modal is beginning to show.
+        /// </summary>
+        [Parameter]
+        public EventCallback<Modal> OnShow { get; set; }
 
         /// <summary>
         /// Fires when the modal has been shown.
         /// </summary>
         [Parameter]
-        public EventCallback<Modal> Shown { get; set; }
+        public EventCallback<Modal> OnShown { get; set; }
+
+
 
         /// <summary>
-        /// Fires when the modal has been toggled.
+        /// Defines how the backdrop for the modal is displayed.
         /// </summary>
         [Parameter]
-        public EventCallback<Modal> Toggled { get; set; }
-
-
+        public ModalBackdrop? Backdrop { get; set; }
 
         /// <summary>
         /// The body text to show in the body area of the dialog.
@@ -87,8 +105,7 @@ namespace Blazorade.Bootstrap.Components
         public ModalSize Size { get; set; }
 
 
-
-        private string DialogClasses { get; set; }
+        private Dictionary<string, object> DialogAttributes = new Dictionary<string, object>();
 
 
         /// <summary>
@@ -116,92 +133,76 @@ namespace Blazorade.Bootstrap.Components
             this.ShowAsync();
         }
 
+        private bool EventsRegistered = false;
         /// <summary>
         /// Shows the modal dialog.
         /// </summary>
         public async Task ShowAsync()
         {
-            await this.JsInterop.InvokeVoidAsync(JsFunctions.Modal.Show, $"#{this.Id}");
-            await this.OnShownAsync();
-        }
-
-        /// <summary>
-        /// Toggles the modal dialog.
-        /// </summary>
-        public void Toggle()
-        {
-            this.ToggleAsync();
-        }
-
-        /// <summary>
-        /// Toggles the modal dialog.
-        /// </summary>
-        public async Task ToggleAsync()
-        {
-            await this.JsInterop.InvokeVoidAsync(JsFunctions.Modal.Toggle, $"#{this.Id}");
-            await this.OnToggledAsync();
-        }
-
-        /// <summary>
-        /// Performs the specified action on the modal.
-        /// </summary>
-        /// <param name="action">The action to perform on the modal.</param>
-        public void Toggle(ToggleAction action)
-        {
-            this.ToggleAsync(action);
-        }
-
-        /// <summary>
-        /// Performs the specified action on the modal.
-        /// </summary>
-        /// <param name="action">The action to perform on the modal.</param>
-        public async Task ToggleAsync(ToggleAction action)
-        {
-            switch(action)
+            if (!this.EventsRegistered)
             {
-                case ToggleAction.Hide:
-                    await this.HideAsync();
-                    break;
-
-                case ToggleAction.Show:
-                    await this.ShowAsync();
-                    break;
-
-                case ToggleAction.Toggle:
-                    await this.ToggleAsync();
-                    break;
+                await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Modal.Show, this, nameof(this.OnShowAsync), false);
+                await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Modal.Shown, this, nameof(this.OnShownAsync), false);
+                await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Modal.Hide, this, nameof(this.OnHideAsync), false);
+                await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Modal.Hidden, this, nameof(this.OnHiddenAsync), false);
+                await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Modal.HidePrevented, this, nameof(this.OnHidePreventedAsync), false);
+                this.EventsRegistered = true;
             }
+
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Modal.Show, $"#{this.Id}");
         }
 
 
+
+
         /// <summary>
-        /// Fires the <see cref="Hidden"/> event.
+        /// Fires the <see cref="OnHide"/> event.
         /// </summary>
-        protected virtual async Task OnHiddenAsync()
+        [JSInvokable]
+        public virtual async Task OnHideAsync()
         {
-            await this.Hidden.InvokeAsync(this);
+            await this.OnHide.InvokeAsync(this);
         }
 
         /// <summary>
-        /// Fires the <see cref="Shown"/> event.
+        /// Fires the <see cref="OnHidden"/> event.
         /// </summary>
-        protected virtual async Task OnShownAsync()
+        [JSInvokable]
+        public virtual async Task OnHiddenAsync()
         {
-            await this.Shown.InvokeAsync(this);
+            await this.OnHidden.InvokeAsync(this);
         }
 
         /// <summary>
-        /// Fires the <see cref="Toggled"/> event.
+        /// Fires the <see cref="OnHidePrevented"/> event.
         /// </summary>
-        protected virtual async Task OnToggledAsync()
+        [JSInvokable]
+        public virtual async Task OnHidePreventedAsync()
         {
-            await this.Toggled.InvokeAsync(this);
+            await this.OnHidePrevented.InvokeAsync(this);
+        }
+
+        /// <summary>
+        /// Fires the <see cref="OnShow"/> event.
+        /// </summary>
+        [JSInvokable]
+        public virtual async Task OnShowAsync()
+        {
+            await this.OnShow.InvokeAsync(this);
+        }
+
+        /// <summary>
+        /// Fires the <see cref="OnShown"/> event.
+        /// </summary>
+        [JSInvokable]
+        public virtual async Task OnShownAsync()
+        {
+            await this.OnShown.InvokeAsync(this);
         }
 
 
         /// <summary>
         /// </summary>
-
         protected override void OnParametersSet()
         {
             this.SetIdIfEmpty();
@@ -224,10 +225,16 @@ namespace Blazorade.Bootstrap.Components
             {
                 dialogClasses.Add($"{ClassNames.Modals.Modal}-{this.Size.ToString().ToLower()}");
             }
-            this.DialogClasses = string.Join(" ", dialogClasses);
+            this.DialogAttributes["class"] = string.Join(" ", dialogClasses);
 
+
+            if(!string.IsNullOrEmpty(this.Backdrop?.Value))
+            {
+                this.AddAttribute("data-backdrop", this.Backdrop.Value.Value);
+            }
 
             base.OnParametersSet();
         }
+
     }
 }

@@ -16,6 +16,7 @@
     Modal modalSm;
     Modal modalLg;
     Modal modalXl;
+    Modal modalEvents;
 
     string imageUrl = "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=640";
     Spacing headingMarginTop = Spacing.S5;
@@ -42,7 +43,7 @@
     <HeaderTemplate>
         <ModalHeader BackgroundColor="NamedColor.Dark" TextColor="NamedColor.Light">
             <Heading Level="HeadingLevel.H1" Display="1">@context</Heading>
-            <CloseIcon data-dismiss="modal" />
+            <ModalCloseIcon />
         </ModalHeader>
     </HeaderTemplate>
 </Modal>
@@ -94,7 +95,7 @@
     <HeaderTemplate>
         <ModalHeader BackgroundColor="NamedColor.Dark" TextColor="NamedColor.Light">
             <Heading Level="HeadingLevel.H1" Display="1">@context</Heading>
-            <CloseIcon data-dismiss="modal" />
+            <ModalCloseIcon />
         </ModalHeader>
     </HeaderTemplate>
     <BodyTemplate>
@@ -125,4 +126,33 @@
 </Modal>
 
 
-<Paragraph></Paragraph>
+<Heading Id="events" IsAnchor="true" Level="3" MarginTop="@headingMarginTop">Modal Events</Heading>
+<Paragraph>
+    The <code>Modal</code> component exposes a set of events that are fired in various situations. Open the modal using the button below, and all
+    events that the modal fired will be listed below the button.
+</Paragraph>
+@code {
+
+    List<string> modalEventList = new List<string>();
+}
+
+<Modal
+       @ref="this.modalEvents" 
+       Id="modal-events" 
+       Header="Modal with Events" 
+       Body="This modal dialog will publish a set of events. Also click outside the modal dialog to try and close it. That will fire the hidePrevented event. The modal can only be closed from the close button."
+       Size="ModalSize.SM"
+       Backdrop="@("static")"
+       OnShow="@(() => this.modalEventList.Add("OnShow"))"
+       OnShown="@(() => this.modalEventList.Add("OnShown"))"
+       OnHide="@(() => this.modalEventList.Add("OnHide"))"
+       OnHidden="@(() => this.modalEventList.Add("OnHidden"))"
+       OnHidePrevented="@(() => this.modalEventList.Add("OnHidePrevented"))"
+/>
+
+<Button Color="NamedColor.Primary" OnClicked="() => { this.modalEventList.Clear(); this.modalEvents.Show();}" MarginBottom="3">Open modal</Button>
+
+@foreach(string e in this.modalEventList)
+{
+    <Toast AutoHide="false" ShowOnRender="true" Header="@e" />
+}
