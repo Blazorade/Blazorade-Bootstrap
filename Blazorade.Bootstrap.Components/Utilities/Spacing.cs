@@ -63,14 +63,22 @@ namespace Blazorade.Bootstrap.Components.Utilities
         public static Spacing S5 { get => new Spacing { Value = S5Value }; }
 
 
-        internal Spacing(int i)
-        {
-            this.Value = $"{i}";
-        }
+        internal Spacing(int i) : this($"{i}") { }
 
         internal Spacing(string s)
         {
-            this.Value = s;
+            if(int.TryParse(s, out int i))
+            {
+                this.Value = i < 0 ? $"n{i * -1}" : $"{i}";
+            }
+            else if((s?.ToLower()?.StartsWith('a')).GetValueOrDefault())
+            {
+                this.Value = SAutoValue;
+            }
+            else
+            {
+                this.Value = s;
+            }
         }
 
         /// <summary>
@@ -87,27 +95,7 @@ namespace Blazorade.Bootstrap.Components.Utilities
         /// <param name="s"></param>
         public static implicit operator Spacing(string s)
         {
-            if(!string.IsNullOrEmpty(s))
-            {
-                Match m = null;
-                m = Regex.Match(s, "\\d");
-                if (m.Success)
-                {
-                    return new Spacing(int.Parse(m.Value));
-                }
-
-                m = Regex.Match(s, "[Ss]\\d");
-                if (m.Success)
-                {
-                    return new Spacing(m.Value.Substring(1, 1));
-                }
-
-                if(s.ToLower().StartsWith("a"))
-                {
-                    return Spacing.Auto;
-                }
-            }
-            return 0;
+            return new Spacing(s);
         }
 
         /// <summary>
@@ -130,7 +118,7 @@ namespace Blazorade.Bootstrap.Components.Utilities
         {
             get
             {
-                if(int.TryParse(this.Value, out int i))
+                if(int.TryParse(this.Value.Replace('n', '-'), out int i))
                 {
                     return i;
                 }
@@ -143,6 +131,15 @@ namespace Blazorade.Bootstrap.Components.Utilities
         /// </summary>
         public string Value { get; private set; }
 
+
+
+        /// <summary>
+        /// Returns the string representation of the instance.
+        /// </summary>
+        public override string ToString()
+        {
+            return this.Value ?? base.ToString();
+        }
     }
 
 }

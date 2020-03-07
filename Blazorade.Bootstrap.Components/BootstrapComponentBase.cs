@@ -247,33 +247,38 @@ namespace Blazorade.Bootstrap.Components
 
         /// <summary>
         /// </summary>
-        protected override void OnParametersSet()
+        protected async override Task OnParametersSetAsync()
         {
             #region Handle margins and paddings
 
-            Action<Spacing?, string> spacingAdder = (size, prefix) =>
+            Func<Spacing?, string, bool, Task> spacingAdder = async (size, prefix, isPadding) =>
             {
                 if (size.HasValue)
                 {
+                    if (isPadding && size.Value.IsNegative)
+                    {
+                        this.SetIdIfEmpty();
+                        await this.LogWarningAsync($"Padding cannot be set to a negative value. Padding: '{size.Value}'. Element Id: {this.Id}");
+                    }
                     this.AddClasses($"{prefix}-{size.Value.Value}");
                 }
             };
 
-            spacingAdder(this.Margin, "m");
-            spacingAdder(this.MarginTop, "mt");
-            spacingAdder(this.MarginRight, "mr");
-            spacingAdder(this.MarginBottom, "mb");
-            spacingAdder(this.MarginLeft, "ml");
-            spacingAdder(this.MarginX, "mx");
-            spacingAdder(this.MarginY, "my");
+            await spacingAdder(this.Margin, "m", false);
+            await spacingAdder(this.MarginTop, "mt", false);
+            await spacingAdder(this.MarginRight, "mr", false);
+            await spacingAdder(this.MarginBottom, "mb", false);
+            await spacingAdder(this.MarginLeft, "ml", false);
+            await spacingAdder(this.MarginX, "mx", false);
+            await spacingAdder(this.MarginY, "my", false);
 
-            spacingAdder(this.Padding, "p");
-            spacingAdder(this.PaddingTop, "pt");
-            spacingAdder(this.PaddingRight, "pr");
-            spacingAdder(this.PaddingBottom, "pb");
-            spacingAdder(this.PaddingLeft, "pl");
-            spacingAdder(this.PaddingX, "px");
-            spacingAdder(this.PaddingY, "py");
+            await spacingAdder(this.Padding, "p", true);
+            await spacingAdder(this.PaddingTop, "pt", true);
+            await spacingAdder(this.PaddingRight, "pr", true);
+            await spacingAdder(this.PaddingBottom, "pb", true);
+            await spacingAdder(this.PaddingLeft, "pl", true);
+            await spacingAdder(this.PaddingX, "px", true);
+            await spacingAdder(this.PaddingY, "py", true);
 
             #endregion
 

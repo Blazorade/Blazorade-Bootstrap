@@ -25,7 +25,6 @@
 <DocsSection ComponentName="Grid"></DocsSection>
 
 
-
 <Heading Id="auto-layout" IsAnchor="true" Level="HeadingLevel.H3" Builder="this.marginTop">Automatic layout</Heading>
 <Paragraph>
     Here we use automatic column layout where the first row will break up into two rows on <code>XS</code> and <code>SM</code> breakpoints. When the row breaks,
@@ -179,3 +178,17 @@
         <Column Builder="this.colAuto">3 of 3</Column>
     </Row>
 </Container>
+
+
+<Heading Id="negative-margin" IsAnchor="true" Level="3" Builder="this.marginTop">Negative Margins</Heading>
+<Paragraph>
+    Margins can have negative valus too.
+</Paragraph>
+
+<Div BorderColor="NamedColor.Dark" MarginX="3">
+    <Paragraph Margin="3">Outer div</Paragraph>
+
+    <Div MarginX="-3" MarginTop="3" MarginBottom="2" BorderColor="NamedColor.Primary">
+        <Paragraph Margin="3">Inner div with negative x-margin.</Paragraph>
+    </Div>
+</Div>
