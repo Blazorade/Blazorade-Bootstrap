@@ -2097,19 +2097,40 @@
             Defines different alignments for component content.
             </summary>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.ContentAlignment.Left">
+        <member name="M:Blazorade.Bootstrap.Components.ContentAlignment.op_Implicit(System.String)~Blazorade.Bootstrap.Components.ContentAlignment">
+            <summary>
+            Converts the given string to <see cref="T:Blazorade.Bootstrap.Components.ContentAlignment"/>.
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.ContentAlignment.op_Equality(Blazorade.Bootstrap.Components.ContentAlignment,Blazorade.Bootstrap.Components.ContentAlignment)">
+            <summary>
+            Eqals operator.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.ContentAlignment.op_Inequality(Blazorade.Bootstrap.Components.ContentAlignment,Blazorade.Bootstrap.Components.ContentAlignment)">
+            <summary>
+            Not equals operator.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.ContentAlignment.Left">
             <summary>
             Content is aligned to the left.
             </summary>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.ContentAlignment.Center">
+        <member name="P:Blazorade.Bootstrap.Components.ContentAlignment.Center">
             <summary>
             Content is centered.
             </summary>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.ContentAlignment.Right">
+        <member name="P:Blazorade.Bootstrap.Components.ContentAlignment.Right">
             <summary>
             Content is aligned to the right.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.ContentAlignment.Value">
+            <summary>
+            The actual value.
             </summary>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.Content.Anchor.Clicked">
@@ -3295,26 +3316,6 @@
         <member name="F:Blazorade.Bootstrap.Components.SpinnerType.Grow">
             <summary>
             The spinner is a growing circle.
-            </summary>
-        </member>
-        <member name="T:Blazorade.Bootstrap.Components.TextAlignment">
-            <summary>
-            Defines text alignment variations.
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.TextAlignment.Left">
-            <summary>
-            Text is aligned left.
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.TextAlignment.Center">
-            <summary>
-            Text is centered.
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.TextAlignment.Right">
-            <summary>
-            Text is aligned right.
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Toast">

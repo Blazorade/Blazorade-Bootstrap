@@ -12,7 +12,7 @@ else
         @this.ChildContent
     }
     <Div @attributes="this.Attributes"></Div>
-    @if (null != this.ContentAlignment && this.ContentAlignment == Components.ContentAlignment.Right)
+    @if (this.ContentAlignment == Components.ContentAlignment.Right)
     {
         @this.ChildContent
     }

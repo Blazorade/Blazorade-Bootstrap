@@ -21,15 +21,13 @@ namespace Blazorade.Bootstrap.Components
         /// </summary>
         protected override void OnParametersSet()
         {
-            switch(this.ContentAlignment.GetValueOrDefault())
+            if(this.ContentAlignment == Components.ContentAlignment.Center)
             {
-                case Components.ContentAlignment.Center:
-                    this.AddClasses(ClassNames.Navs.AlignContentCenter);
-                    break;
-
-                case Components.ContentAlignment.Right:
-                    this.AddClasses(ClassNames.Navs.AlignContentRight);
-                    break;
+                this.AddClasses(ClassNames.Navs.AlignContentCenter);
+            }
+            else if(this.ContentAlignment == Components.ContentAlignment.Right)
+            {
+                this.AddClasses(ClassNames.Navs.AlignContentRight);
             }
 
             this.AddClasses(ClassNames.Navs.Nav);
