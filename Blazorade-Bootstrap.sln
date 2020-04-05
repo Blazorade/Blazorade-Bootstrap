@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientTestHost", "ClientTes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServerAppDev", "ServerAppDev\ServerAppDev.csproj", "{B65F4B60-D2B2-4DA5-9BD0-0820989DDBAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazorade.Bootstrap.Components.Tests", "Blazorade.Bootstrap.Components.Tests\Blazorade.Bootstrap.Components.Tests.csproj", "{DEAEC50A-547A-44EB-A5B7-F4B56F77D353}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazorade.Bootstrap.Components.Tests", "Blazorade.Bootstrap.Components.Tests\Blazorade.Bootstrap.Components.Tests.csproj", "{DEAEC50A-547A-44EB-A5B7-F4B56F77D353}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

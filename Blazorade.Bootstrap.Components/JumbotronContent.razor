@@ -1,0 +1,12 @@
+﻿@inherits BootstrapComponentBase
+
+@if (this.IsFluid)
+{
+    <Container Type="ContainerType.Fluid">
+        @this.ChildContent
+    </Container>
+}
+else
+{
+    @this.ChildContent
+}

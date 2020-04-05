@@ -2498,6 +2498,53 @@
             The image will be resized so that it completely fills the area specified for the image. Some cropping may occur.
             </summary>
         </member>
+        <member name="M:Blazorade.Bootstrap.Components.Jumbotron.#ctor">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Jumbotron.Heading">
+            <summary>
+            The text to show in the heading of the jumbotron.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Jumbotron.HeadingLevel">
+            <summary>
+            The heading level for the heading. Defaults to <see cref="P:Blazorade.Bootstrap.Components.Content.HeadingLevel.H1"/>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Jumbotron.HeadingDisplay">
+            <summary>
+            The display size for the heading. Defaults to 4.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Jumbotron.HeadingTemplate">
+            <summary>
+            Allows you to completely customize how the heading is rendered. The context parameter is the value specified in <see cref="P:Blazorade.Bootstrap.Components.Jumbotron.Heading"/>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Jumbotron.IsFluid">
+            <summary>
+            Specifies whether the jumbotron is a fluid jumbotron.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Jumbotron.FluidContainerType">
+            <summary>
+            The container type to use for jumbotrons where <see cref="P:Blazorade.Bootstrap.Components.Jumbotron.IsFluid"/> is set to <c>true</c>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Jumbotron.Lead">
+            <summary>
+            The lead text to show below the heading.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Jumbotron.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.JumbotronContent.#ctor">
+            <summary>
+            </summary>
+        </member>
         <member name="T:Blazorade.Bootstrap.Components.Layout.Container">
             <summary>
             The Container component is the foundation for many layout configurations in Bootstrap.
