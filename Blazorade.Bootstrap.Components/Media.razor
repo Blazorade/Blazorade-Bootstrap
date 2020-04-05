@@ -1,0 +1,15 @@
+﻿@inherits BootstrapComponentBase
+
+<Div @attributes="this.Attributes">
+    @if(this.ImageHorizontalAlignment == HorizontalAlignment.Left)
+    {
+        @if(null == this.ImageTemplate)
+        {
+            <img src="@this.ImageUrl" />
+        }
+        else
+        {
+            @ImageTemplate(this.ImageUrl)
+        }
+    }
+</Div>
