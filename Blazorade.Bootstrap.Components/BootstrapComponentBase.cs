@@ -131,7 +131,7 @@ namespace Blazorade.Bootstrap.Components
         /// Specifies how text should be aligned in the component.
         /// </summary>
         [Parameter]
-        public TextAlignment? TextAlignment { get; set; }
+        public HorizontalAlignment? TextAlignment { get; set; }
 
         /// <summary>
         /// Specifies the background colour.
