@@ -2092,47 +2092,6 @@
             <summary>
             </summary>
         </member>
-        <member name="T:Blazorade.Bootstrap.Components.ContentAlignment">
-            <summary>
-            Defines different alignments for component content.
-            </summary>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.ContentAlignment.op_Implicit(System.String)~Blazorade.Bootstrap.Components.ContentAlignment">
-            <summary>
-            Converts the given string to <see cref="T:Blazorade.Bootstrap.Components.ContentAlignment"/>.
-            </summary>
-            <param name="s"></param>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.ContentAlignment.op_Equality(Blazorade.Bootstrap.Components.ContentAlignment,Blazorade.Bootstrap.Components.ContentAlignment)">
-            <summary>
-            Eqals operator.
-            </summary>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.ContentAlignment.op_Inequality(Blazorade.Bootstrap.Components.ContentAlignment,Blazorade.Bootstrap.Components.ContentAlignment)">
-            <summary>
-            Not equals operator.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.ContentAlignment.Left">
-            <summary>
-            Content is aligned to the left.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.ContentAlignment.Center">
-            <summary>
-            Content is centered.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.ContentAlignment.Right">
-            <summary>
-            Content is aligned to the right.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.ContentAlignment.Value">
-            <summary>
-            The actual value.
-            </summary>
-        </member>
         <member name="P:Blazorade.Bootstrap.Components.Content.Anchor.Clicked">
             <summary>
             Callback for when the anchor is clicked.
@@ -2435,6 +2394,65 @@
             Returns the interop implementation for <see cref="T:Blazorade.Bootstrap.Components.Toast"/>.
             </summary>
             <param name="jsInterop"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.HorizontalAlignment">
+            <summary>
+            Defines different horizontal alignments values.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.HorizontalAlignment.op_Implicit(System.String)~Blazorade.Bootstrap.Components.HorizontalAlignment">
+            <summary>
+            Converts the given string to <see cref="T:Blazorade.Bootstrap.Components.HorizontalAlignment"/>.
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.HorizontalAlignment.op_Equality(Blazorade.Bootstrap.Components.HorizontalAlignment,Blazorade.Bootstrap.Components.HorizontalAlignment)">
+            <summary>
+            Eqals operator.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.HorizontalAlignment.op_Inequality(Blazorade.Bootstrap.Components.HorizontalAlignment,Blazorade.Bootstrap.Components.HorizontalAlignment)">
+            <summary>
+            Not equals operator.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.HorizontalAlignment.Left">
+            <summary>
+            Content is aligned to the left.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.HorizontalAlignment.Center">
+            <summary>
+            Content is centered.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.HorizontalAlignment.Right">
+            <summary>
+            Content is aligned to the right.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.HorizontalAlignment.Value">
+            <summary>
+            The actual value.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.HorizontalAlignment.Equals(System.Object)">
+            <summary>
+            Compares the given object to the current instance.
+            </summary>
+            <param name="obj">The object to compare to the current.</param>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.HorizontalAlignment.GetHashCode">
+            <summary>
+            Returns the hash code for the alignment value.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.HorizontalAlignment.ToString">
+            <summary>
+            Returns the string representation.
+            </summary>
             <returns></returns>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.ImageBase">

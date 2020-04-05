@@ -15,17 +15,17 @@ namespace Blazorade.Bootstrap.Components
         /// Allows you to specify how the content of the Nav is aligned. The default is <c>null</c>, which results in left alignment.
         /// </summary>
         [Parameter]
-        public ContentAlignment? ContentAlignment { get; set; }
+        public HorizontalAlignment? ContentAlignment { get; set; }
 
         /// <summary>
         /// </summary>
         protected override void OnParametersSet()
         {
-            if(this.ContentAlignment == Components.ContentAlignment.Center)
+            if(this.ContentAlignment == HorizontalAlignment.Center)
             {
                 this.AddClasses(ClassNames.Navs.AlignContentCenter);
             }
-            else if(this.ContentAlignment == Components.ContentAlignment.Right)
+            else if(this.ContentAlignment == HorizontalAlignment.Right)
             {
                 this.AddClasses(ClassNames.Navs.AlignContentRight);
             }

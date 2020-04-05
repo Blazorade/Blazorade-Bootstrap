@@ -12,8 +12,8 @@ namespace Blazorade.Bootstrap.Components.Tests
         [TestMethod]
         public void Equals01()
         {
-            var ca1 = ContentAlignment.Center;
-            var ca2 = ContentAlignment.Center;
+            var ca1 = HorizontalAlignment.Center;
+            var ca2 = HorizontalAlignment.Center;
             Assert.AreEqual(ca1, ca2);
             Assert.IsTrue(ca1 == ca2);
         }
@@ -21,8 +21,8 @@ namespace Blazorade.Bootstrap.Components.Tests
         [TestMethod]
         public void Equals02()
         {
-            ContentAlignment? ca1 = null;
-            ContentAlignment ca2 = ContentAlignment.Left;
+            HorizontalAlignment? ca1 = null;
+            HorizontalAlignment ca2 = HorizontalAlignment.Left;
 
             Assert.AreNotEqual(ca2, ca1);
         }
@@ -30,8 +30,8 @@ namespace Blazorade.Bootstrap.Components.Tests
         [TestMethod]
         public void Equals03()
         {
-            ContentAlignment? ca1 = ContentAlignment.Right;
-            ContentAlignment ca2 = ContentAlignment.Right;
+            HorizontalAlignment? ca1 = HorizontalAlignment.Right;
+            HorizontalAlignment ca2 = HorizontalAlignment.Right;
 
             Assert.AreEqual(ca1, ca2);
         }

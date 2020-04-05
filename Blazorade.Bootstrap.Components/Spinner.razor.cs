@@ -25,7 +25,7 @@ namespace Blazorade.Bootstrap.Components
         /// Specifies how to align child content in your spinner.
         /// </summary>
         [Parameter]
-        public ContentAlignment? ContentAlignment { get; set; }
+        public HorizontalAlignment? ContentAlignment { get; set; }
 
         /// <summary>
         /// The size of the spinner. Defaults to <see cref="SpinnerSize.Normal"/>.
@@ -60,11 +60,11 @@ namespace Blazorade.Bootstrap.Components
 
             if(null != this.ChildContent)
             {
-                if(null == this.ContentAlignment || this.ContentAlignment == Components.ContentAlignment.Left)
+                if(null == this.ContentAlignment || this.ContentAlignment == HorizontalAlignment.Left)
                 {
                     this.MarginLeft = Spacing.Auto;
                 }
-                else if(this.ContentAlignment == Components.ContentAlignment.Right)
+                else if(this.ContentAlignment == HorizontalAlignment.Right)
                 {
                     this.MarginRight = Spacing.Auto;
                 }

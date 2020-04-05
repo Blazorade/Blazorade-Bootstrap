@@ -7,12 +7,12 @@
 else
 {
 <Div class="d-flex align-items-center">
-    @if (null == this.ContentAlignment || this.ContentAlignment == Components.ContentAlignment.Left)
+    @if (null == this.ContentAlignment || this.ContentAlignment == HorizontalAlignment.Left)
     {
         @this.ChildContent
     }
     <Div @attributes="this.Attributes"></Div>
-    @if (this.ContentAlignment == Components.ContentAlignment.Right)
+    @if (this.ContentAlignment == HorizontalAlignment.Right)
     {
         @this.ChildContent
     }

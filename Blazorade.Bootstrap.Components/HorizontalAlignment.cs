@@ -5,9 +5,9 @@ using System.Text;
 namespace Blazorade.Bootstrap.Components
 {
     /// <summary>
-    /// Defines different alignments for component content.
+    /// Defines different horizontal alignments values.
     /// </summary>
-    public struct ContentAlignment
+    public struct HorizontalAlignment
     {
 
         internal const string LeftValue = "left";
@@ -16,28 +16,28 @@ namespace Blazorade.Bootstrap.Components
 
         private static ICollection<string> Values = new List<string> { LeftValue, CenterValue, RightValue };
 
-        internal ContentAlignment(string value)
+        internal HorizontalAlignment(string value)
         {
             this.Value = value;
         }
 
         /// <summary>
-        /// Converts the given string to <see cref="ContentAlignment"/>.
+        /// Converts the given string to <see cref="HorizontalAlignment"/>.
         /// </summary>
         /// <param name="s"></param>
-        public static implicit operator ContentAlignment(string s)
+        public static implicit operator HorizontalAlignment(string s)
         {
             if (Values.Contains(s?.ToLower()))
             {
-                return new ContentAlignment(s?.ToLower());
+                return new HorizontalAlignment(s?.ToLower());
             }
-            return new ContentAlignment(null);
+            return new HorizontalAlignment(null);
         }
 
         /// <summary>
         /// Eqals operator.
         /// </summary>
-        public static bool operator ==(ContentAlignment x, ContentAlignment y)
+        public static bool operator ==(HorizontalAlignment x, HorizontalAlignment y)
         {
             return x.Value == y.Value;
         }
@@ -45,7 +45,7 @@ namespace Blazorade.Bootstrap.Components
         /// <summary>
         /// Not equals operator.
         /// </summary>
-        public static bool operator !=(ContentAlignment x, ContentAlignment y)
+        public static bool operator !=(HorizontalAlignment x, HorizontalAlignment y)
         {
             return x.Value != y.Value;
         }
@@ -55,25 +55,25 @@ namespace Blazorade.Bootstrap.Components
         /// <summary>
         /// Content is aligned to the left.
         /// </summary>
-        public static ContentAlignment Left
+        public static HorizontalAlignment Left
         {
-            get { return new ContentAlignment(LeftValue); }
+            get { return new HorizontalAlignment(LeftValue); }
         }
 
         /// <summary>
         /// Content is centered.
         /// </summary>
-        public static ContentAlignment Center
+        public static HorizontalAlignment Center
         {
-            get { return new ContentAlignment(CenterValue); }
+            get { return new HorizontalAlignment(CenterValue); }
         }
 
         /// <summary>
         /// Content is aligned to the right.
         /// </summary>
-        public static ContentAlignment Right
+        public static HorizontalAlignment Right
         {
-            get { return new ContentAlignment(RightValue); }
+            get { return new HorizontalAlignment(RightValue); }
         }
 
 
@@ -83,21 +83,34 @@ namespace Blazorade.Bootstrap.Components
         public string Value { get; private set; }
 
 
+
+        /// <summary>
+        /// Compares the given object to the current instance.
+        /// </summary>
+        /// <param name="obj">The object to compare to the current.</param>
         public override bool Equals(object obj)
         {
-            if(obj is ContentAlignment)
+            if(obj is HorizontalAlignment)
             {
-                ContentAlignment ca = (ContentAlignment)obj;
+                HorizontalAlignment ca = (HorizontalAlignment)obj;
                 return this.Value == ca.Value;
             }
             return base.Equals(obj);
         }
 
+        /// <summary>
+        /// Returns the hash code for the alignment value.
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             return this.Value?.GetHashCode() ?? 0;
         }
 
+        /// <summary>
+        /// Returns the string representation.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return this.Value;
