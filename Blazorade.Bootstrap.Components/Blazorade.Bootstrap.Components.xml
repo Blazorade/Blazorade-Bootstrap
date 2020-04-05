@@ -2290,6 +2290,15 @@
             The actual value of the heading.
             </summary>
         </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.Paragraph.IsLead">
+            <summary>
+            Specifies whether the paragraph is a lead paragraph.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Content.Paragraph.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
         <member name="T:Blazorade.Bootstrap.Components.Embed">
             <summary>
             The Embed component is used to create responsive video or slideshow embeds.
