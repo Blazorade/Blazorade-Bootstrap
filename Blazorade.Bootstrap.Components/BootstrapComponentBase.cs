@@ -125,7 +125,7 @@ namespace Blazorade.Bootstrap.Components
         /// Specifies the height for the component.
         /// </summary>
         [Parameter]
-        public ComponentSize? Height { get; set; }
+        public Size? Height { get; set; }
 
         /// <summary>
         /// Specifies how text should be aligned in the component.
@@ -169,7 +169,7 @@ namespace Blazorade.Bootstrap.Components
         /// Specifies the width for the component.
         /// </summary>
         [Parameter]
-        public ComponentSize? Width { get; set; }
+        public Size? Width { get; set; }
 
 
 
@@ -293,11 +293,10 @@ namespace Blazorade.Bootstrap.Components
 
             #region Handle sizes
 
-            Action<ComponentSize?, string> sizeAdder = (size, prefix) => {
+            Action<Size?, string> sizeAdder = (size, prefix) => {
                 if (size.HasValue)
                 {
-                    string suffix = size.Value == ComponentSize.Auto ? "auto" : $"{(int)size.Value}";
-                    this.AddClasses($"{prefix}-{suffix}");
+                    this.AddClasses($"{prefix}-{size.Value}");
                 }
             };
 
