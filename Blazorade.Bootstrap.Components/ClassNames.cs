@@ -344,6 +344,7 @@ namespace Blazorade.Bootstrap.Components
         {
             public const string Jumbotron = "jumbotron";
             public const string Lead = "lead";
+            public const string Fluid = "jumbotron-fluid";
         }
 
         public static class Links
