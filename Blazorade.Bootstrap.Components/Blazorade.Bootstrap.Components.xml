@@ -2290,6 +2290,15 @@
             The actual value of the heading.
             </summary>
         </member>
+        <member name="P:Blazorade.Bootstrap.Components.Content.Paragraph.IsLead">
+            <summary>
+            Specifies whether the paragraph is a lead paragraph.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Content.Paragraph.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
         <member name="T:Blazorade.Bootstrap.Components.Embed">
             <summary>
             The Embed component is used to create responsive video or slideshow embeds.
@@ -3479,31 +3488,6 @@
             Toggle the visibility of the component.
             </summary>
         </member>
-        <member name="F:Blazorade.Bootstrap.Components.ComponentSize.p25">
-            <summary>
-            25%
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.ComponentSize.p50">
-            <summary>
-            50%
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.ComponentSize.p75">
-            <summary>
-            75%
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.ComponentSize.p100">
-            <summary>
-            100%
-            </summary>
-        </member>
-        <member name="F:Blazorade.Bootstrap.Components.ComponentSize.Auto">
-            <summary>
-            Automatic size.
-            </summary>
-        </member>
         <member name="T:Blazorade.Bootstrap.Components.Utilities.ModalCloseIcon">
             <summary>
             A close icon for <see cref="T:Blazorade.Bootstrap.Components.Modal"/> components.
@@ -3631,6 +3615,38 @@
         <member name="M:Blazorade.Bootstrap.Components.Utilities.Spacing.ToString">
             <summary>
             Returns the string representation of the instance.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Size.op_Implicit(System.String)~Blazorade.Bootstrap.Components.Size">
+            <summary>
+            Converts the given string to <see cref="T:Blazorade.Bootstrap.Components.Size"/>.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Size.op_Equality(Blazorade.Bootstrap.Components.Size,Blazorade.Bootstrap.Components.Size)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Size.op_Inequality(Blazorade.Bootstrap.Components.Size,Blazorade.Bootstrap.Components.Size)">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Size.Value">
+            <summary>
+            The value that specifies the size.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Size.Equals(System.Object)">
+            <summary>
+            Compares the given object to the current.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Size.GetHashCode">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Size.ToString">
+            <summary>
+            Returns the string representation.
             </summary>
         </member>
     </members>
