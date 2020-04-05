@@ -89,7 +89,7 @@ namespace Blazorade.Bootstrap.Components
         protected override void OnParametersSet()
         {
             this.CaptionAttributes = new Dictionary<string, object>();
-            this.Height = this.Height ?? ComponentSize.p100;
+            this.Height = this.Height ?? Size.P100;
             switch (this.ImageScaling)
             {
                 case ImageScaleMode.Fill:
