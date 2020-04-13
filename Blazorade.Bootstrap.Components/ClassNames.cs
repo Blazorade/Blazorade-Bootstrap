@@ -368,6 +368,12 @@ namespace Blazorade.Bootstrap.Components
         {
         }
 
+        public static class MediaObjects
+        {
+            public const string Media = "media";
+            public const string Body = "media-body";
+        }
+
         public static class Modals
         {
             public const string Body = "modal-body";
