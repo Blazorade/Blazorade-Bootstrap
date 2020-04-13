@@ -3347,6 +3347,65 @@
             The "small" size for a bootstrap Pagination element.
             </summary>
         </member>
+        <member name="P:Blazorade.Bootstrap.Components.Popover.OnHide">
+            <summary>
+            The callback that is triggered when the Popover is about to hide.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Popover.OnHidden">
+            <summary>
+            The callback that is triggered when the Popover has been completely hidden.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Popover.OnShow">
+            <summary>
+            The callback that is triggered when the Popover is about to be shown.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Popover.OnShown">
+            <summary>
+            The callback that is called when the Popover as been completely shown.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Popover.AutoHide">
+            <summary>
+            Specifies whether the Popover should automatically hide after the number of milliseconds specified in <see cref="P:Blazorade.Bootstrap.Components.Popover.Delay"/>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Popover.ShowHideButton">
+            <summary>
+            Specifies whether the hide button is shown in the header of the Popover.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Popover.ShowOnRender">
+            <summary>
+            Specifies whether to show the Popover immediately when rendered without having to separately invoke the <see cref="M:Blazorade.Bootstrap.Components.Popover.ShowAsync"/> method.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Popover.OnHideAsync">
+            <summary>
+            Triggers the <see cref="P:Blazorade.Bootstrap.Components.Popover.OnHide"/> callback.
+            </summary>
+            <remarks>Invoked by JS Interop. Not to be called directly.</remarks>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Popover.OnHiddenAsync">
+            <summary>
+            Triggers the <see cref="P:Blazorade.Bootstrap.Components.Popover.OnHidden"/> callback.
+            </summary>
+            <remarks>Invoked by JS Interop. Not to be called directly.</remarks>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Popover.OnShowAsync">
+            <summary>
+            Triggers the <see cref="P:Blazorade.Bootstrap.Components.Popover.OnShow"/> callback.
+            </summary>
+            <remarks>Invoked by JS Interop. Not to be called directly.</remarks>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Popover.OnShownAsync">
+            <summary>
+            Triggers the <see cref="P:Blazorade.Bootstrap.Components.Popover.OnShown"/> callback.
+            </summary>
+            <remarks>Invoked by JS Interop. Not to be called directly.</remarks>
+        </member>
         <member name="T:Blazorade.Bootstrap.Components.Progress">
             <summary>
             Wrapper component for ProgressBar components.
