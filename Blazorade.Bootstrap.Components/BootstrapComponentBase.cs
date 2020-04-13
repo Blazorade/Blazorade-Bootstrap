@@ -293,15 +293,29 @@ namespace Blazorade.Bootstrap.Components
 
             #region Handle sizes
 
-            Action<Size?, string> sizeAdder = (size, prefix) => {
+            Action<Size?, string, string> sizeAdder = (size, prefix, style) => {
                 if (size.HasValue)
                 {
-                    this.AddClasses($"{prefix}-{size.Value}");
+                    if(size.Value.NumericValue.HasValue)
+                    {
+                        if (size.Value.IsPercentage)
+                        {
+                            this.AddClasses($"{prefix}-{Math.Floor(size.Value.NumericValue.Value)}");
+                        }
+                        else if (size.Value.IsPixel)
+                        {
+                            this.AddStyle(style, size.Value.ToString());
+                        }
+                    }
+                    else
+                    {
+                        this.AddClasses($"{prefix}-{size.Value.Value}");
+                    }
                 }
             };
 
-            sizeAdder(this.Height, "h");
-            sizeAdder(this.Width, "w");
+            sizeAdder(this.Height, "h", "height");
+            sizeAdder(this.Width, "w", "width");
 
             #endregion
 
