@@ -4,6 +4,22 @@
     {
         new MenuItem
         {
+            Text = "Layout",
+            Children = new List<MenuItem>
+            {
+                new MenuItem { Text = "Grid", Url = "grid", Description = "Use the powerful grid system to build mobile-first layouts of all shapes and sizes." },
+            }
+        },
+        //new MenuItem
+        //{
+        //    Text = "Content",
+        //    Children = new List<MenuItem>
+        //    {
+
+        //    }
+        //},
+        new MenuItem
+        {
             Text = "Components",
             Children = new List<MenuItem>
             {
@@ -17,7 +33,6 @@
                 new MenuItem { Text = "Containers", Url = "containers", Description = "The Container component is the foundation for many layout configurations in Bootstrap." },
                 new MenuItem { Text = "Dropdowns", Url = "dropdowns", Description = "The Dropdown component is a contextual overlay that displays a list of links and other elements. The Dropdown can be toggled." },
                 new MenuItem { Text = "Embeds", Url = "embeds", Description = "The Embed component is used to create responsive video or slideshow embeds." },
-                new MenuItem { Text = "Grid", Url = "grid", Description = "Use the powerful grid system to build mobile-first layouts of all shapes and sizes." },
                 new MenuItem { Text = "List Groups", Url = "listgroups", Description = "The ListGroup component is used to display a series of content in a powerful and flexible way." },
                 new MenuItem { Text = "Jumbotrons", Url = "jumbotrons", Description = "The Jumbotron component is a lightweight and flexible component for showcasing content." },
                 new MenuItem { Text = "Media", Url = "media", Description = "The Media component is used to build complex and repetitive content where media is positioned alongside content." },
@@ -32,10 +47,19 @@
         },
         new MenuItem
         {
-            Text = "Work in Progress",
+            Text = "Utilities",
             Children = new List<MenuItem>
             {
-                new MenuItem { Text = "Sizing", Url = "sizing" }
+                new MenuItem { Text = "Sizing", Url = "sizing", Description = "The sizing utility makes it easy to make components equally wide or high." }
+            }
+        },
+        new MenuItem
+        {
+            Text = "Work in Progress",
+            IsDisabled = true,
+            Children = new List<MenuItem>
+            {
+                
             }
         }
     };

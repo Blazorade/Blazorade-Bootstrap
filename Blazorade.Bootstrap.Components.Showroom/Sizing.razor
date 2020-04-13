@@ -1,19 +1,39 @@
-﻿<Heading Level="HeadingLevel.H2">Sizing</Heading>
+﻿@code {
+    Spacing marginTop = Spacing.S5;
+}
 
-<Heading Level="HeadingLevel.H3">Width</Heading>
-<Div BackgroundColor="NamedColor.Dark">
-    <Div Width="Size.P25" BackgroundColor="NamedColor.Light" Padding="2" MarginBottom="1">25%</Div>
-    <Div Width="Size.P50" BackgroundColor="NamedColor.Light" Padding="2" MarginBottom="1">50%</Div>
-    <Div Width="Size.P75" BackgroundColor="NamedColor.Light" Padding="2" MarginBottom="1">75%</Div>
-    <Div Width="Size.P100" BackgroundColor="NamedColor.Light" Padding="2" MarginBottom="1">100%</Div>
-    <Div Width="Size.Auto" BackgroundColor="NamedColor.Light" Padding="2">Auto</Div>
+<Heading Level="HeadingLevel.H2">Sizing</Heading>
+
+<Paragraph>
+    The <Anchor Url="https://getbootstrap.com/docs/4.4/utilities/sizing/" OpenInNewTab="true">sizing utility</Anchor> makes it easy to
+    make components equally wide or high. The size specifies a percentual value.
+</Paragraph>
+
+<DocsSection ComponentName="Media" />
+
+
+<Heading Id="width" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@marginTop">Width</Heading>
+<Paragraph>
+    Defines the width for a component within its parent container.
+</Paragraph>
+<Div BorderColor="NamedColor.Dark">
+    <Div Width="Size.P25" BackgroundColor="NamedColor.Secondary" Padding="3" TextColor="NamedColor.White">Width: Size.P25 (25%)</Div>
+    <Div Width="Size.P50" BackgroundColor="NamedColor.Secondary" Padding="3" TextColor="NamedColor.White">Width: Size.P50 (50%)</Div>
+    <Div Width="Size.P75" BackgroundColor="NamedColor.Secondary" Padding="3" TextColor="NamedColor.White">Width: Size.P75 (75%)</Div>
+    <Div Width="Size.P100" BackgroundColor="NamedColor.Secondary" Padding="3" TextColor="NamedColor.White">Width: Size.P100 (100%)</Div>
+    <Div Width="Size.Auto" BackgroundColor="NamedColor.Secondary" Padding="3" TextColor="NamedColor.White">Width: Size.Auto</Div>
 </Div>
 
-<Heading Level="HeadingLevel.H3" MarginTop="Spacing.S5">Height</Heading>
-<Div BackgroundColor="NamedColor.Dark" style="height: 200px">
-    <Div Height="Size.P25" BackgroundColor="NamedColor.Light" Padding="2" class="d-inline-block">25%</Div>
-    <Div Height="Size.P50" BackgroundColor="NamedColor.Light" Padding="2" class="d-inline-block">50%</Div>
-    <Div Height="Size.P75" BackgroundColor="NamedColor.Light" Padding="2" class="d-inline-block">75%</Div>
-    <Div Height="Size.P100" BackgroundColor="NamedColor.Light" Padding="2" class="d-inline-block">100%</Div>
-    <Div Height="Size.Auto" BackgroundColor="NamedColor.Light" Padding="2" class="d-inline-block">Auto</Div>
+
+
+<Heading Id="height" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@marginTop">Height</Heading>
+<Paragraph>
+    Defines the height for a component within its parent container.
+</Paragraph>
+<Div BackgroundColor="NamedColor.Light" Height="280" BorderColor="NamedColor.Dark">
+    <Div Height="Size.P25" BackgroundColor="NamedColor.Secondary" Padding="3" TextColor="NamedColor.White" class="d-inline-block">Height: Size.P25 (25%)</Div>
+    <Div Height="Size.P50" BackgroundColor="NamedColor.Secondary" Padding="3" TextColor="NamedColor.White" class="d-inline-block">Height: Size.P50 (50%)</Div>
+    <Div Height="Size.P75" BackgroundColor="NamedColor.Secondary" Padding="3" TextColor="NamedColor.White" class="d-inline-block">Height: Size.P75 (75%)</Div>
+    <Div Height="Size.P100" BackgroundColor="NamedColor.Secondary" Padding="3" TextColor="NamedColor.White" class="d-inline-block">Height: Size.P100 (100%)</Div>
+    <Div Height="Size.Auto" BackgroundColor="NamedColor.Secondary" Padding="3" TextColor="NamedColor.White" class="d-inline-block">Height: Size.Auto</Div>
 </Div>
