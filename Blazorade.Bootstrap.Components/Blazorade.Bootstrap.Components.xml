@@ -3808,9 +3808,19 @@
             Returns the string representation of the instance.
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.Size">
+            <summary>
+            Represents various sizes that components use for both width and height.
+            </summary>
+        </member>
         <member name="M:Blazorade.Bootstrap.Components.Size.op_Implicit(System.String)~Blazorade.Bootstrap.Components.Size">
             <summary>
             Converts the given string to <see cref="T:Blazorade.Bootstrap.Components.Size"/>.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Size.op_Implicit(System.Double)~Blazorade.Bootstrap.Components.Size">
+            <summary>
+            Converts the given numeric value to a <see cref="T:Blazorade.Bootstrap.Components.Size"/>.
             </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Size.op_Equality(Blazorade.Bootstrap.Components.Size,Blazorade.Bootstrap.Components.Size)">
@@ -3819,6 +3829,31 @@
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Size.op_Inequality(Blazorade.Bootstrap.Components.Size,Blazorade.Bootstrap.Components.Size)">
             <summary>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Size.Auto">
+            <summary>
+            Auto size.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Size.P25">
+            <summary>
+            25%.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Size.P50">
+            <summary>
+            50%.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Size.P75">
+            <summary>
+            75%.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Size.P100">
+            <summary>
+            100%.
             </summary>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.Size.Value">
