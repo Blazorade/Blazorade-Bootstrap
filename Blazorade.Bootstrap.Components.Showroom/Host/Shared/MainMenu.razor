@@ -40,6 +40,7 @@
                 new MenuItem { Text = "Navbars", Url = "navbars", Description = "The Navbar component is used to produce a responsive navigation header with built-in support for collapsing." },
                 new MenuItem { Text = "Navs", Url = "navs", Description = "The Nav component provides a simple way to build navigation elements." },
                 new MenuItem { Text = "Paginations", Url = "paginations", Description = "The Pagination component is used to create pagination to indicate that a series of related content exists across multiple pages." },
+
                 new MenuItem { Text = "Progress Bars", Url = "progressbars", Description = "The Progress component is used to display progress bars, including stacked bars, animated backgrounds, and text labels." },
                 new MenuItem { Text = "Spinners", Url = "spinners", Description = "The Spinner component is used to indicate a loading state of a UI element or page." },
                 new MenuItem { Text = "Toasts", Url = "toasts", Description = "The Toast component is used to push notifications to your visitor as a lighweight and customizable alert message." },
@@ -56,10 +57,10 @@
         new MenuItem
         {
             Text = "Work in Progress",
-            IsDisabled = true,
+            IsDisabled = false,
             Children = new List<MenuItem>
             {
-
+                new MenuItem { Text = "Popovers", Url = "popovers" }
             }
         }
     };
