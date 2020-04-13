@@ -1,0 +1,42 @@
+﻿@inherits BootstrapComponentBase
+
+<Div @attributes="this.Attributes">
+    @if (this.ImageHorizontalAlignment == HorizontalAlignment.Left)
+    {
+        if (null != this.ImageTemplate)
+        {
+            @this.ImageTemplate(this.ImageUrl)
+        }
+        else
+        {
+            <MediaImage Url="@this.ImageUrl" CssStyle="@this.ImageCssStyle" HorizontalAlignment="@this.ImageHorizontalAlignment" VerticalAlignment="@this.ImageVerticalAlignment" />
+        }
+
+    }
+
+    <Div class="@ClassNames.MediaObjects.Body">
+        @if (null != this.HeadingTemplate)
+        {
+            @this.HeadingTemplate(this.Heading)
+        }
+        else
+        {
+            <Heading Level="@this.HeadingLevel" Display="@this.HeadingDisplay">@this.Heading</Heading>
+        }
+
+        @this.ChildContent
+    </Div>
+
+    @if (this.ImageHorizontalAlignment == HorizontalAlignment.Right)
+    {
+        if (null != this.ImageTemplate)
+        {
+            @this.ImageTemplate(this.ImageUrl)
+        }
+        else
+        {
+            <MediaImage Url="@this.ImageUrl" CssStyle="@this.ImageCssStyle" HorizontalAlignment="@this.ImageHorizontalAlignment" VerticalAlignment="@this.ImageVerticalAlignment" />
+        }
+
+    }
+</Div>

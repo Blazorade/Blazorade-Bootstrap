@@ -1,0 +1,103 @@
+﻿@code {
+    Spacing headingMarginTop = Spacing.S5;
+    string ImageUrl = "_content/Blazorade.Bootstrap.Components.Showroom/blazorade-logo-64.png";
+}
+<Heading Level="HeadingLevel.H2">Media Component</Heading>
+<Paragraph>
+    The <Anchor Url="https://getbootstrap.com/docs/4.4/components/media-object/" OpenInNewTab="true">Media component</Anchor> is used to build complex and repetitive content where media is positioned alongside content.
+</Paragraph>
+<Paragraph>
+    The media objects below have all a border to better visualize the layout. They also use a padding to add some distance between the border and the contents of the media object. Neither
+    border nor padding are by default added to the media object, but you can add them using the <code>BorderColor</code> and <code>Padding</code> parameters.
+</Paragraph>
+
+<DocsSection ComponentName="Media" />
+
+
+
+<Heading Id="basic" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Basic Media objects</Heading>
+<Paragraph>
+    An example of a single media object as it is rendered by default.
+</Paragraph>
+<Media Heading="Standard Media Object" ImageUrl="@this.ImageUrl" BorderColor="NamedColor.Black50" Padding="3">
+    <Paragraph>
+        This is a standard Bootstrap media object using the default settings and minimal markup.
+    </Paragraph>
+    <Paragraph>
+        The rest of this text is here to demonstrate how the vertical alignment of the image is set by default.
+        The image should be top-aligned on the left when this text wraps to multiple lines.
+    </Paragraph>
+</Media>
+
+
+
+<Heading Id="nesting" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Nesting Objects</Heading>
+<Paragraph>
+    The example below shows you how you can nest media objects inside oneanother.
+</Paragraph>
+<Media Heading="Standard Media Object" ImageUrl="@this.ImageUrl" BorderColor="NamedColor.Black50" Padding="3">
+    <Paragraph>
+        This is the root media object with nested objects inside of it.
+    </Paragraph>
+    <Media Heading="Child Media Object" ImageUrl="@this.ImageUrl" BorderColor="NamedColor.Black50" Padding="3">
+        <Paragraph>
+            This media object is nested inside of another media object.
+        </Paragraph>
+        <Media Heading="Grandchild Media Object" ImageUrl="@this.ImageUrl" BorderColor="NamedColor.Black50" Padding="3">
+            <Paragraph>
+                Yet another nested media object.
+            </Paragraph>
+        </Media>
+    </Media>
+</Media>
+
+
+
+<Heading Id="vertical-alignment" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Vertical Alignment</Heading>
+<Paragraph>
+    The samples below shown you how you can align the media vertically.
+</Paragraph>
+<Media Heading="Top Aligned Media" ImageUrl="@this.ImageUrl" ImageVerticalAlignment="VerticalAlignment.Top" BorderColor="NamedColor.Black50" Padding="3">
+    <Paragraph MarginBottom="5">
+        This media object has its media aligned to the top.
+    </Paragraph>
+    <Paragraph MarginTop="5">
+        The rest of this text is here just to fill up some space so that the alignment is visible.
+    </Paragraph>
+</Media>
+<Media Heading="Middle Aligned Media" ImageUrl="@this.ImageUrl" ImageVerticalAlignment="VerticalAlignment.Middle" BorderColor="NamedColor.Black50" Padding="3">
+    <Paragraph MarginBottom="5">
+        This media object has its media aligned to the middle.
+    </Paragraph>
+    <Paragraph MarginTop="5">
+        The rest of this text is here just to fill up some space so that the alignment is visible.
+    </Paragraph>
+</Media>
+<Media Heading="Bottom Aligned Media" ImageUrl="@this.ImageUrl" ImageVerticalAlignment="VerticalAlignment.Bottom" BorderColor="NamedColor.Black50" Padding="3">
+    <Paragraph MarginBottom="5">
+        This media object has its media aligned to the bottom.
+    </Paragraph>
+    <Paragraph MarginTop="5">
+        The rest of this text is here just to fill up some space so that the alignment is visible.
+    </Paragraph>
+</Media>
+
+
+
+<Heading Id="horizontal-alignment" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="@headingMarginTop">Horizontal Alignment</Heading>
+<Paragraph>
+    The examples below shows you how you can align the media either to the left (default) or to the right.
+</Paragraph>
+
+<Media Heading="Left-Aligned Media" ImageUrl="@this.ImageUrl" BorderColor="NamedColor.Black50" Padding="3">
+    <Paragraph>
+        The media is aligned to the left of this text. This is also the default behaviour, if you don't specify the horizontal alignment.
+    </Paragraph>
+</Media>
+
+<Media Heading="Right-Aligned Media" ImageUrl="@this.ImageUrl" ImageHorizontalAlignment="HorizontalAlignment.Right" BorderColor="NamedColor.Black50" Padding="3">
+    <Paragraph>
+        The media is aligned to the right of this text. This is done by specifying <code>HorizontalAlignment.Right</code>
+        on the <code>ImageHorizontalAlignment</code> parameter.
+    </Paragraph>
+</Media>
