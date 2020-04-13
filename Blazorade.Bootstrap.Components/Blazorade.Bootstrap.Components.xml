@@ -2641,6 +2641,91 @@
             <summary>
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.Media">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Media.#ctor">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Media.Heading">
+            <summary>
+            The heading to display in the component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Media.HeadingLevel">
+            <summary>
+            The heading level. Defaults to 5.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Media.HeadingDisplay">
+            <summary>
+            The heading display size. Defaults to <c>null</c>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Media.HeadingTemplate">
+            <summary>
+            Allows you to customize how the rendering is done. The context parameter is the value specified in <see cref="P:Blazorade.Bootstrap.Components.Media.Heading"/>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Media.ImageCssStyle">
+            <summary>
+            Defines the additional CSS styles to add to the image.
+            </summary>
+            <remarks>
+            This parameter is ignored if you define the rendering of the image using the <see cref="P:Blazorade.Bootstrap.Components.Media.ImageTemplate"/> parameter.
+            </remarks>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Media.ImageUrl">
+            <summary>
+            The URL to the image to show in the component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Media.ImageTemplate">
+            <summary>
+            Allows you to completely control the rendering of the image.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Media.ImageHorizontalAlignment">
+            <summary>
+            The horizontal alignment of the image.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Media.ImageVerticalAlignment">
+            <summary>
+            The vertical alignment of the image.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Media.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.MediaImage.Url">
+            <summary>
+            The URL to the image to show in the component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.MediaImage.HorizontalAlignment">
+            <summary>
+            The horizontal alignment of the image.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.MediaImage.VerticalAlignment">
+            <summary>
+            The vertical alignment of the image.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.MediaImage.CssStyle">
+            <summary>
+            Specifies the CSS styles to add to the image.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.MediaImage.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
         <member name="T:Blazorade.Bootstrap.Components.Modal">
             <summary>
             The Modal component enables you to add dialogs to your site or application for lightboxes, user notification, 
