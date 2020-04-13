@@ -10,14 +10,14 @@
                 new MenuItem { Text = "Grid", Url = "grid", Description = "Use the powerful grid system to build mobile-first layouts of all shapes and sizes." },
             }
         },
-        //new MenuItem
-        //{
-        //    Text = "Content",
-        //    Children = new List<MenuItem>
-        //    {
-
-        //    }
-        //},
+        new MenuItem
+        {
+            Text = "Content",
+            Children = new List<MenuItem>
+            {
+                new MenuItem { Text = "Typography", Url = "typography", Description = "Support for typography in Bootstrap."}
+            }
+        },
         new MenuItem
         {
             Text = "Components",
@@ -59,7 +59,7 @@
             IsDisabled = true,
             Children = new List<MenuItem>
             {
-                
+
             }
         }
     };
