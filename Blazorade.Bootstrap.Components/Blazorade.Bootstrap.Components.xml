@@ -2290,6 +2290,11 @@
             The actual value of the heading.
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.Content.Paragraph">
+            <summary>
+            The <see cref="T:Blazorade.Bootstrap.Components.Content.Paragraph"/> component produces a standard <c>&lt;p /&gt;</c> HTML element.
+            </summary>
+        </member>
         <member name="P:Blazorade.Bootstrap.Components.Content.Paragraph.IsLead">
             <summary>
             Specifies whether the paragraph is a lead paragraph.
@@ -2410,59 +2415,20 @@
             Defines different horizontal alignments values.
             </summary>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.HorizontalAlignment.op_Implicit(System.String)~Blazorade.Bootstrap.Components.HorizontalAlignment">
+        <member name="F:Blazorade.Bootstrap.Components.HorizontalAlignment.Left">
             <summary>
-            Converts the given string to <see cref="T:Blazorade.Bootstrap.Components.HorizontalAlignment"/>.
-            </summary>
-            <param name="s"></param>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.HorizontalAlignment.op_Equality(Blazorade.Bootstrap.Components.HorizontalAlignment,Blazorade.Bootstrap.Components.HorizontalAlignment)">
-            <summary>
-            Eqals operator.
+            Left alignment.
             </summary>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.HorizontalAlignment.op_Inequality(Blazorade.Bootstrap.Components.HorizontalAlignment,Blazorade.Bootstrap.Components.HorizontalAlignment)">
+        <member name="F:Blazorade.Bootstrap.Components.HorizontalAlignment.Center">
             <summary>
-            Not equals operator.
+            Center alignment.
             </summary>
         </member>
-        <member name="P:Blazorade.Bootstrap.Components.HorizontalAlignment.Left">
+        <member name="F:Blazorade.Bootstrap.Components.HorizontalAlignment.Right">
             <summary>
-            Content is aligned to the left.
+            Right alignment.
             </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.HorizontalAlignment.Center">
-            <summary>
-            Content is centered.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.HorizontalAlignment.Right">
-            <summary>
-            Content is aligned to the right.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.HorizontalAlignment.Value">
-            <summary>
-            The actual value.
-            </summary>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.HorizontalAlignment.Equals(System.Object)">
-            <summary>
-            Compares the given object to the current instance.
-            </summary>
-            <param name="obj">The object to compare to the current.</param>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.HorizontalAlignment.GetHashCode">
-            <summary>
-            Returns the hash code for the alignment value.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.HorizontalAlignment.ToString">
-            <summary>
-            Returns the string representation.
-            </summary>
-            <returns></returns>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.ImageBase">
             <summary>
@@ -2643,7 +2609,7 @@
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Media">
             <summary>
-            
+            The <see cref="T:Blazorade.Bootstrap.Components.Media"/> component is used to build complex and repetitive content where media is positioned alongside content.
             </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Media.#ctor">
