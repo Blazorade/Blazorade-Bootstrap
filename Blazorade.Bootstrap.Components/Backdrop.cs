@@ -4,25 +4,26 @@ using System.Text;
 
 namespace Blazorade.Bootstrap.Components
 {
+
     /// <summary>
-    /// Defines different horizontal alignments values.
+    /// Defines behaviour for modal backdrops.
     /// </summary>
-    public enum HorizontalAlignment
+    public enum Backdrop
     {
         /// <summary>
-        /// Left alignment.
+        /// Do not display a backdrop.
         /// </summary>
-        Left,
+        Hidden,
 
         /// <summary>
-        /// Center alignment.
+        /// Shows the default backdrop.
         /// </summary>
-        Center,
+        Default,
 
         /// <summary>
-        /// Right alignment.
+        /// A static backdrop. Clicking the backdrop will not close the modal.
         /// </summary>
-        Right
+        Static
     }
 
 }

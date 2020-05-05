@@ -50,6 +50,26 @@
             Triggers the <see cref="P:Blazorade.Bootstrap.Components.Alert.OnDismissed"/> callback.
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.Backdrop">
+            <summary>
+            Defines behaviour for modal backdrops.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Backdrop.Hidden">
+            <summary>
+            Do not display a backdrop.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Backdrop.Default">
+            <summary>
+            Shows the default backdrop.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Backdrop.Static">
+            <summary>
+            A static backdrop. Clicking the backdrop will not close the modal.
+            </summary>
+        </member>
         <member name="T:Blazorade.Bootstrap.Components.Badge">
             <summary>
             The base class for the <see cref="T:Blazorade.Bootstrap.Components.Badge"/> component.
@@ -2290,6 +2310,11 @@
             The actual value of the heading.
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.Content.Paragraph">
+            <summary>
+            The <see cref="T:Blazorade.Bootstrap.Components.Content.Paragraph"/> component produces a standard <c>&lt;p /&gt;</c> HTML element.
+            </summary>
+        </member>
         <member name="P:Blazorade.Bootstrap.Components.Content.Paragraph.IsLead">
             <summary>
             Specifies whether the paragraph is a lead paragraph.
@@ -2410,59 +2435,20 @@
             Defines different horizontal alignments values.
             </summary>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.HorizontalAlignment.op_Implicit(System.String)~Blazorade.Bootstrap.Components.HorizontalAlignment">
+        <member name="F:Blazorade.Bootstrap.Components.HorizontalAlignment.Left">
             <summary>
-            Converts the given string to <see cref="T:Blazorade.Bootstrap.Components.HorizontalAlignment"/>.
-            </summary>
-            <param name="s"></param>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.HorizontalAlignment.op_Equality(Blazorade.Bootstrap.Components.HorizontalAlignment,Blazorade.Bootstrap.Components.HorizontalAlignment)">
-            <summary>
-            Eqals operator.
+            Left alignment.
             </summary>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.HorizontalAlignment.op_Inequality(Blazorade.Bootstrap.Components.HorizontalAlignment,Blazorade.Bootstrap.Components.HorizontalAlignment)">
+        <member name="F:Blazorade.Bootstrap.Components.HorizontalAlignment.Center">
             <summary>
-            Not equals operator.
+            Center alignment.
             </summary>
         </member>
-        <member name="P:Blazorade.Bootstrap.Components.HorizontalAlignment.Left">
+        <member name="F:Blazorade.Bootstrap.Components.HorizontalAlignment.Right">
             <summary>
-            Content is aligned to the left.
+            Right alignment.
             </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.HorizontalAlignment.Center">
-            <summary>
-            Content is centered.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.HorizontalAlignment.Right">
-            <summary>
-            Content is aligned to the right.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.HorizontalAlignment.Value">
-            <summary>
-            The actual value.
-            </summary>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.HorizontalAlignment.Equals(System.Object)">
-            <summary>
-            Compares the given object to the current instance.
-            </summary>
-            <param name="obj">The object to compare to the current.</param>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.HorizontalAlignment.GetHashCode">
-            <summary>
-            Returns the hash code for the alignment value.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.HorizontalAlignment.ToString">
-            <summary>
-            Returns the string representation.
-            </summary>
-            <returns></returns>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.ImageBase">
             <summary>
@@ -2643,7 +2629,7 @@
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Media">
             <summary>
-            
+            The <see cref="T:Blazorade.Bootstrap.Components.Media"/> component is used to build complex and repetitive content where media is positioned alongside content.
             </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Media.#ctor">
@@ -2849,28 +2835,6 @@
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Modal.OnParametersSet">
             <summary>
-            </summary>
-        </member>
-        <member name="T:Blazorade.Bootstrap.Components.ModalBackdrop">
-            <summary>
-            Defines the backdrop for a <see cref="T:Blazorade.Bootstrap.Components.Modal"/> component.
-            </summary>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.ModalBackdrop.op_Implicit(System.Boolean)~Blazorade.Bootstrap.Components.ModalBackdrop">
-            <summary>
-            Converts the boolean value to <see cref="T:Blazorade.Bootstrap.Components.ModalBackdrop"/>.
-            </summary>
-            <param name="b"></param>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.ModalBackdrop.op_Implicit(System.String)~Blazorade.Bootstrap.Components.ModalBackdrop">
-            <summary>
-            Converts the given string to <see cref="T:Blazorade.Bootstrap.Components.ModalBackdrop"/>.
-            </summary>
-            <param name="s"></param>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.ModalBackdrop.Value">
-            <summary>
-            The value of the backdrop.
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.ModalSize">
@@ -3634,38 +3598,25 @@
             Defines different shadow sizes for components.
             </summary>
         </member>
-        <member name="P:Blazorade.Bootstrap.Components.Utilities.Shadow.None">
+        <member name="F:Blazorade.Bootstrap.Components.Utilities.Shadow.None">
             <summary>
             No shadow. Default.
             </summary>
         </member>
-        <member name="P:Blazorade.Bootstrap.Components.Utilities.Shadow.Small">
+        <member name="F:Blazorade.Bootstrap.Components.Utilities.Shadow.Small">
             <summary>
             A small shadow.
             </summary>
         </member>
-        <member name="P:Blazorade.Bootstrap.Components.Utilities.Shadow.Regular">
+        <member name="F:Blazorade.Bootstrap.Components.Utilities.Shadow.Regular">
             <summary>
             Regular shadow.
             </summary>
         </member>
-        <member name="P:Blazorade.Bootstrap.Components.Utilities.Shadow.Large">
+        <member name="F:Blazorade.Bootstrap.Components.Utilities.Shadow.Large">
             <summary>
             Large shadow.
             </summary>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.Utilities.Shadow.op_Implicit(System.String)~Blazorade.Bootstrap.Components.Utilities.Shadow">
-            <summary>
-            Converts the given string to <see cref="T:Blazorade.Bootstrap.Components.Utilities.Shadow"/>.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.Utilities.Shadow.Value">
-            <summary>
-            The value.
-            </summary>
-            <remarks>
-            The value equals the class name to add to an element for different sizes of shadows.
-            </remarks>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Utilities.Spacing">
             <summary>
@@ -3814,6 +3765,26 @@
         <member name="M:Blazorade.Bootstrap.Components.Size.ToString">
             <summary>
             Returns the string representation.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.VerticalAlignment">
+            <summary>
+            Different vertical alignment options.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.VerticalAlignment.Top">
+            <summary>
+            Top alignment.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.VerticalAlignment.Middle">
+            <summary>
+            Middle alignment.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.VerticalAlignment.Bottom">
+            <summary>
+            Bottom alignment.
             </summary>
         </member>
     </members>

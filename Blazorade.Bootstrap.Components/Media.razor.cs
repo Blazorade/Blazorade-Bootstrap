@@ -7,7 +7,7 @@ using System.Text;
 namespace Blazorade.Bootstrap.Components
 {
     /// <summary>
-    /// 
+    /// The <see cref="Media"/> component is used to build complex and repetitive content where media is positioned alongside content.
     /// </summary>
     partial class Media
     {

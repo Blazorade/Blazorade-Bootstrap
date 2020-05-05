@@ -286,7 +286,27 @@ namespace Blazorade.Bootstrap.Components
 
             if (this.Shadow.HasValue)
             {
-                this.AddClasses(this.Shadow.Value.Value);
+                string shadowCls;
+                switch (this.Shadow.Value)
+                {
+                    case Utilities.Shadow.Small:
+                        shadowCls = ClassNames.Shadows.Small;
+                        break;
+
+                    case Utilities.Shadow.Regular:
+                        shadowCls = ClassNames.Shadows.Regular;
+                        break;
+
+                    case Utilities.Shadow.Large:
+                        shadowCls = ClassNames.Shadows.Large;
+                        break;
+
+                    default:
+                        shadowCls = ClassNames.Shadows.None;
+                        break;
+                }
+
+                this.AddClasses(shadowCls);
             }
 
             #endregion
