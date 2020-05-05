@@ -126,6 +126,28 @@
 </Modal>
 
 
+<Heading Id="backdrop" IsAnchor="true" Level="3" MarginTop="@headingMarginTop">Modal Backdrops</Heading>
+<Paragraph>
+    The <code>Modal</code> component supports different kinds of backdrops. The different options are <code>Hidden</code>,
+    <code>Default</code> and <code>Static</code>. The difference between the default and static backdrop is that the static
+    backdrop does not close the modal when you click on the backdrop.
+</Paragraph>
+
+@code {
+    Modal defaultBackdrop;
+    Modal hiddenBackdrop;
+    Modal staticBackdrop;
+}
+
+<Button Color="NamedColor.Primary" OnClicked="() => this.defaultBackdrop.Show()">Default Backdrop</Button>
+<Button Color="NamedColor.Primary" OnClicked="() => this.hiddenBackdrop.Show()">Hidden Backdrop</Button>
+<Button Color="NamedColor.Primary" OnClicked="() => this.staticBackdrop.Show()">Static Backdrop</Button>
+
+<Modal @ref="this.defaultBackdrop" Backdrop="Backdrop.Default" Header="Default Backdrop" Body="This modal uses the default backdrop."></Modal>
+<Modal @ref="this.hiddenBackdrop" Backdrop="Backdrop.Hidden" Header="Hidden Backdrop" Body="This modal does not have a backdrop."></Modal>
+<Modal @ref="this.staticBackdrop" Backdrop="Backdrop.Static" Header="Static Backdrop" Body="This modal has a static backdrop."></Modal>
+
+
 <Heading Id="events" IsAnchor="true" Level="3" MarginTop="@headingMarginTop">Modal Events</Heading>
 <Paragraph>
     The <code>Modal</code> component exposes a set of events that are fired in various situations. Open the modal using the button below, and all
@@ -136,23 +158,21 @@
     List<string> modalEventList = new List<string>();
 }
 
-<Modal
-       @ref="this.modalEvents" 
-       Id="modal-events" 
-       Header="Modal with Events" 
+<Modal @ref="this.modalEvents"
+       Id="modal-events"
+       Header="Modal with Events"
        Body="This modal dialog will publish a set of events. Also click outside the modal dialog to try and close it. That will fire the hidePrevented event. The modal can only be closed from the close button."
        Size="ModalSize.SM"
-       Backdrop="@("static")"
+       Backdrop="Backdrop.Static"
        OnShow="@(() => this.modalEventList.Add("OnShow"))"
        OnShown="@(() => this.modalEventList.Add("OnShown"))"
        OnHide="@(() => this.modalEventList.Add("OnHide"))"
        OnHidden="@(() => this.modalEventList.Add("OnHidden"))"
-       OnHidePrevented="@(() => this.modalEventList.Add("OnHidePrevented"))"
-/>
+       OnHidePrevented="@(() => this.modalEventList.Add("OnHidePrevented"))" />
 
 <Button Color="NamedColor.Primary" OnClicked="() => { this.modalEventList.Clear(); this.modalEvents.Show();}" MarginBottom="3">Open modal</Button>
 
-@foreach(string e in this.modalEventList)
+@foreach (string e in this.modalEventList)
 {
     <Toast AutoHide="false" ShowOnRender="true" Header="@e" />
 }

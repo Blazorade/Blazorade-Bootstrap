@@ -50,6 +50,26 @@
             Triggers the <see cref="P:Blazorade.Bootstrap.Components.Alert.OnDismissed"/> callback.
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.Backdrop">
+            <summary>
+            Defines behaviour for modal backdrops.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Backdrop.Hidden">
+            <summary>
+            Do not display a backdrop.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Backdrop.Default">
+            <summary>
+            Shows the default backdrop.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.Backdrop.Static">
+            <summary>
+            A static backdrop. Clicking the backdrop will not close the modal.
+            </summary>
+        </member>
         <member name="T:Blazorade.Bootstrap.Components.Badge">
             <summary>
             The base class for the <see cref="T:Blazorade.Bootstrap.Components.Badge"/> component.
@@ -2817,28 +2837,6 @@
             <summary>
             </summary>
         </member>
-        <member name="T:Blazorade.Bootstrap.Components.ModalBackdrop">
-            <summary>
-            Defines the backdrop for a <see cref="T:Blazorade.Bootstrap.Components.Modal"/> component.
-            </summary>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.ModalBackdrop.op_Implicit(System.Boolean)~Blazorade.Bootstrap.Components.ModalBackdrop">
-            <summary>
-            Converts the boolean value to <see cref="T:Blazorade.Bootstrap.Components.ModalBackdrop"/>.
-            </summary>
-            <param name="b"></param>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.ModalBackdrop.op_Implicit(System.String)~Blazorade.Bootstrap.Components.ModalBackdrop">
-            <summary>
-            Converts the given string to <see cref="T:Blazorade.Bootstrap.Components.ModalBackdrop"/>.
-            </summary>
-            <param name="s"></param>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.ModalBackdrop.Value">
-            <summary>
-            The value of the backdrop.
-            </summary>
-        </member>
         <member name="T:Blazorade.Bootstrap.Components.ModalSize">
             <summary>
             Defines different sizes for <see cref="T:Blazorade.Bootstrap.Components.Modal"/> components.
@@ -3780,6 +3778,26 @@
         <member name="M:Blazorade.Bootstrap.Components.Size.ToString">
             <summary>
             Returns the string representation.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.VerticalAlignment">
+            <summary>
+            Different vertical alignment options.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.VerticalAlignment.Top">
+            <summary>
+            Top alignment.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.VerticalAlignment.Middle">
+            <summary>
+            Middle alignment.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.VerticalAlignment.Bottom">
+            <summary>
+            Bottom alignment.
             </summary>
         </member>
     </members>
