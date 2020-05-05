@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Blazorade.Bootstrap.Components.Content
 {
+    /// <summary>
+    /// The <see cref="Paragraph"/> component produces a standard <c>&lt;p /&gt;</c> HTML element.
+    /// </summary>
     partial class Paragraph
     {
 

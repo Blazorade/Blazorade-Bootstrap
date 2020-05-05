@@ -59,7 +59,7 @@ namespace Blazorade.Bootstrap.Components
         /// Defines how the backdrop for the modal is displayed.
         /// </summary>
         [Parameter]
-        public ModalBackdrop? Backdrop { get; set; }
+        public Backdrop? Backdrop { get; set; }
 
         /// <summary>
         /// The body text to show in the body area of the dialog.
@@ -228,9 +228,25 @@ namespace Blazorade.Bootstrap.Components
             this.DialogAttributes["class"] = string.Join(" ", dialogClasses);
 
 
-            if(!string.IsNullOrEmpty(this.Backdrop?.Value))
+            if(this.Backdrop.HasValue)
             {
-                this.AddAttribute("data-backdrop", this.Backdrop.Value.Value);
+                string bdValue = "";
+                switch (this.Backdrop.Value)
+                {
+                    case Components.Backdrop.Hidden:
+                        bdValue = "false";
+                        break;
+
+                    case Components.Backdrop.Static:
+                        bdValue = "static";
+                        break;
+
+                    default:
+                        bdValue = "true";
+                        break;
+                }
+
+                this.AddAttribute("data-backdrop", bdValue);
             }
 
             base.OnParametersSet();
