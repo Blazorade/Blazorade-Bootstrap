@@ -11,7 +11,7 @@ namespace Blazorade.Bootstrap.Components
     /// The base class for the <see cref="Badge"/> component.
     /// </summary>
     /// <remarks>
-    /// For details see <see cref="https://github.com/MikaBerglund/Blazor-Bootstrap/wiki/Badge"/>
+    /// For details see https://github.com/MikaBerglund/Blazor-Bootstrap/wiki/Badge
     /// </remarks>
     public partial class Badge
     {
