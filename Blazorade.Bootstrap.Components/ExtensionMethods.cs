@@ -1,5 +1,4 @@
-﻿using Blazorade.Bootstrap.Components.JSInterop;
-using Microsoft.JSInterop;
+﻿using Microsoft.JSInterop;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,24 +13,6 @@ namespace Blazorade.Bootstrap.Components
     /// </summary>
     public static class ExtensionMethods
     {
-
-        /// <summary>
-        /// Returns the interop implementation for <see cref="Components.Alert"/>.
-        /// </summary>
-        public static AlertInterop Alert(this IJSRuntime jsInterop)
-        {
-            return new AlertInterop(jsInterop);
-        }
-
-        /// <summary>
-        /// Returns the interop implementation for <see cref="Components.Collapse"/>.
-        /// </summary>
-        /// <param name="jsInterop"></param>
-        /// <returns></returns>
-        public static CollapseInterop Collapse(this IJSRuntime jsInterop)
-        {
-            return new CollapseInterop(jsInterop);
-        }
 
         /// <summary>
         /// Assumes the input is a string where each word starts with a capital letter. Breaks up the string into the separate words.
@@ -98,16 +79,6 @@ namespace Blazorade.Bootstrap.Components
         public static async Task RegisterEventCallbackAsync(this IJSRuntime jsInterop, string id, string eventName, BootstrapComponentBase callbackTarget, string callbackMethodName, bool singleEvent = true, string[] callbackParameters = null)
         {
             await jsInterop.InvokeVoidAsync(JsFunctions.RegisterEventCallback, $"#{id}", eventName, DotNetObjectReference.Create(callbackTarget), callbackMethodName, singleEvent, callbackParameters);
-        }
-
-        /// <summary>
-        /// Returns the interop implementation for <see cref="Components.Toast"/>.
-        /// </summary>
-        /// <param name="jsInterop"></param>
-        /// <returns></returns>
-        public static ToastInterop Toast(this IJSRuntime jsInterop)
-        {
-            return new ToastInterop(jsInterop);
         }
 
     }
