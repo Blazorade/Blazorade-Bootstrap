@@ -76,7 +76,7 @@ namespace Blazorade.Bootstrap.Components
                 throw new InvalidOperationException("Cannot dismiss an Alert if the IsDismissible property is false.");
             }
 
-            await this.JsInterop.Alert().DismissAsync(this.Id);
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Alert.Dismiss, $"#{this.Id}");
         }
 
 

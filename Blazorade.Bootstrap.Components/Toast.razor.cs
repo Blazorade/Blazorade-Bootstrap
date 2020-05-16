@@ -115,7 +115,7 @@ namespace Blazorade.Bootstrap.Components
         /// <returns></returns>
         public async Task HideAsync()
         {
-            await this.JsInterop.Toast().HideAsync(this.Id);
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Toast.Hide, $"#{this.Id}");
         }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace Blazorade.Bootstrap.Components
             await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Toast.Hide, this, nameof(this.OnHideAsync));
             await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Toast.Hidden, this, nameof(this.OnHiddenAsync));
 
-            await this.JsInterop.Toast().ShowAsync(this.Id);
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Toast.Show, $"#{this.Id}");
         }
 
 
@@ -163,10 +163,10 @@ namespace Blazorade.Bootstrap.Components
         {
             if (firstRender)
             {
-                await this.JsInterop.Toast().InitAsync(this.Id, this.AutoHide, this.Delay);
+                await this.JsInterop.InvokeVoidAsync(JsFunctions.Toast.Init, $"#{this.Id}", this.AutoHide, this.Delay);
                 if (this.ShowOnRender)
                 {
-                    await this.JsInterop.Toast().ShowAsync(this.Id);
+                    await this.JsInterop.InvokeVoidAsync(JsFunctions.Toast.Show, $"#{this.Id}");
                 }
             }
 

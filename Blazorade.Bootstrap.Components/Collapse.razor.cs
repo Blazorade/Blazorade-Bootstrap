@@ -50,7 +50,7 @@ namespace Blazorade.Bootstrap.Components
         /// </summary>
         public async Task HideAsync()
         {
-            await this.JsInterop.Collapse().HideAsync(this.Id);
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Collapse.Hide, $"#{this.Id}");
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Blazorade.Bootstrap.Components
         /// </summary>
         public async Task ShowAsync()
         {
-            await this.JsInterop.Collapse().ShowAsync(this.Id);
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Collapse.Show, $"#{this.Id}");
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Blazorade.Bootstrap.Components
         /// </summary>
         public async Task ToggleAsync()
         {
-            await this.JsInterop.Collapse().ToggleAsync(this.Id);
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Collapse.Toggle, $"#{this.Id}");
         }
 
 
