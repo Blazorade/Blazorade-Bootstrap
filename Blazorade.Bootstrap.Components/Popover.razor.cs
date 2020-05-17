@@ -114,7 +114,7 @@ namespace Blazorade.Bootstrap.Components
 
         public async Task HideAsync()
         {
-            await this.JsInterop.Popover().HideAsync(this.Id);
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Popover.Hide, $"#{this.Id}");
         }
 
         public void Show()
@@ -129,7 +129,7 @@ namespace Blazorade.Bootstrap.Components
             await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Popover.Hide, this, nameof(this.OnHideAsync));
             await this.JsInterop.RegisterEventCallbackAsync(this.Id, EventNames.Popover.Hidden, this, nameof(this.OnHiddenAsync));
 
-            await this.JsInterop.Popover().ShowAsync(this.Id);
+            await this.JsInterop.InvokeVoidAsync(JsFunctions.Popover.Show, $"#{this.Id}");
         }
 
 
@@ -154,10 +154,10 @@ namespace Blazorade.Bootstrap.Components
             {
                 if (this.TargetElementId == null) TargetElementId = this.Id;
 
-                await this.JsInterop.Popover().InitAsync(this.TargetElementId, this.Title, this.Content, this.Html, this.Delay, this.Placement, this.Trigger, this.Offset) ;
+                await this.JsInterop.InvokeVoidAsync(JsFunctions.Popover.Init, $"#{this.TargetElementId}", this.Title, this.Content, this.Html, this.Delay, this.Placement, this.Trigger, this.Offset);
                 if (this.ShowOnRender)
                 {
-                    await this.JsInterop.Popover().ShowAsync(this.Id);
+                    await this.ShowAsync();
                 }
             }
 
