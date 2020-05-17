@@ -7,7 +7,7 @@ namespace Blazorade.Bootstrap.Components.Utilities
     /// Defines different spacing values for components.
     /// </summary>
     /// <remarks>
-    /// The members of this enumeration correspond to one of the supported size values. <see cref="https://getbootstrap.com/docs/4.4/utilities/spacing/#notation"/>
+    /// The members of this enumeration correspond to one of the supported size values. See https://getbootstrap.com/docs/4.5/utilities/spacing/#notation for details.
     /// </remarks>
     public struct Spacing
     {

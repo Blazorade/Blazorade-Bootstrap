@@ -5,7 +5,7 @@
     /// Allows you to make a Heading stand out as a larger than normal heading.
     /// </summary>
     /// <remarks>
-    /// For details see <c>https://getbootstrap.com/docs/4.4/content/typography/#display-headings</c>.
+    /// For details see https://getbootstrap.com/docs/4.5/content/typography/#display-headings.
     /// </remarks>
     public struct HeadingDisplay
     {
