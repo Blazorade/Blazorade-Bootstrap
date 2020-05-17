@@ -4,6 +4,14 @@
         <name>Blazorade.Bootstrap.Components</name>
     </assembly>
     <members>
+        <member name="T:Blazorade.Bootstrap.Components.Alert">
+            <summary>
+            The Alert component is used to provide feedback messages, typically in response to user actions.
+            </summary>
+            <remarks>
+            For details see https://github.com/Blazorade/Blazorade-Bootstrap/wiki/Alert
+            </remarks>
+        </member>
         <member name="P:Blazorade.Bootstrap.Components.Alert.OnDismiss">
             <summary>
             The callback that is called when the alert is being dismissed, but not fully dismissed yet.
@@ -50,6 +58,14 @@
             Triggers the <see cref="P:Blazorade.Bootstrap.Components.Alert.OnDismissed"/> callback.
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.AlertLink">
+            <summary>
+            This component can be used inside of Alert components to provide link colors matching with the parent Alert component.
+            </summary>
+            <remarks>
+            For details see https://github.com/Blazorade/Blazorade-Bootstrap/wiki/AlertLink
+            </remarks>
+        </member>
         <member name="T:Blazorade.Bootstrap.Components.Backdrop">
             <summary>
             Defines behaviour for modal backdrops.
@@ -75,7 +91,7 @@
             The base class for the <see cref="T:Blazorade.Bootstrap.Components.Badge"/> component.
             </summary>
             <remarks>
-            For details see <see cref="!:https://github.com/MikaBerglund/Blazor-Bootstrap/wiki/Badge"/>
+            For details see https://github.com/MikaBerglund/Blazor-Bootstrap/wiki/Badge
             </remarks>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.Badge.IsPill">
@@ -97,6 +113,9 @@
             <summary>
             Base implementation for all Blazor Boostrap components.
             </summary>
+            <remarks>
+            For details see https://github.com/Blazorade/Blazorade-Bootstrap/wiki/BootstrapComponentBase
+            </remarks>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.BootstrapComponentBase.#ctor">
             <summary>
@@ -2226,7 +2245,7 @@
             Allows you to make a Heading stand out as a larger than normal heading.
             </summary>
             <remarks>
-            For details see <c>https://getbootstrap.com/docs/4.4/content/typography/#display-headings</c>.
+            For details see https://getbootstrap.com/docs/4.5/content/typography/#display-headings.
             </remarks>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Content.HeadingDisplay.op_Implicit(System.Int32)~Blazorade.Bootstrap.Components.Content.HeadingDisplay">
@@ -2377,18 +2396,6 @@
             Defines extension methods for components.
             </summary>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.ExtensionMethods.Alert(Microsoft.JSInterop.IJSRuntime)">
-            <summary>
-            Returns the interop implementation for <see cref="T:Blazorade.Bootstrap.Components.Alert"/>.
-            </summary>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.ExtensionMethods.Collapse(Microsoft.JSInterop.IJSRuntime)">
-            <summary>
-            Returns the interop implementation for <see cref="T:Blazorade.Bootstrap.Components.Collapse"/>.
-            </summary>
-            <param name="jsInterop"></param>
-            <returns></returns>
-        </member>
         <member name="M:Blazorade.Bootstrap.Components.ExtensionMethods.FindWords(System.String)">
             <summary>
             Assumes the input is a string where each word starts with a capital letter. Breaks up the string into the separate words.
@@ -2421,13 +2428,6 @@
             <param name="callbackMethodName">The name of the callback method on the <paramref name="callbackTarget"/>.</param>
             <param name="singleEvent">If set to <c>true</c> will automatically deregister after first event.</param>
             <param name="callbackParameters">Parameters to send to the callback method.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.ExtensionMethods.Toast(Microsoft.JSInterop.IJSRuntime)">
-            <summary>
-            Returns the interop implementation for <see cref="T:Blazorade.Bootstrap.Components.Toast"/>.
-            </summary>
-            <param name="jsInterop"></param>
             <returns></returns>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.HorizontalAlignment">
@@ -3682,7 +3682,7 @@
             Defines different spacing values for components.
             </summary>
             <remarks>
-            The members of this enumeration correspond to one of the supported size values. <see cref="!:https://getbootstrap.com/docs/4.4/utilities/spacing/#notation"/>
+            The members of this enumeration correspond to one of the supported size values. See https://getbootstrap.com/docs/4.5/utilities/spacing/#notation for details.
             </remarks>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.Utilities.Spacing.Auto">
