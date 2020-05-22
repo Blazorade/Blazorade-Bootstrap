@@ -51,6 +51,9 @@ namespace Blazorade.Bootstrap.Components
         public bool ShowPercentage { get; set; }
 
 
+        /// <summary>
+        /// Returns the calculated width as an integer percentage value.
+        /// </summary>
         protected string CalculatedWidth {
             get
             {
@@ -58,6 +61,8 @@ namespace Blazorade.Bootstrap.Components
             }
         }
 
+        /// <summary>
+        /// </summary>
         protected override void OnParametersSet()
         {
             this.AddClasses(ClassNames.ProgressBars.ProgressBar);

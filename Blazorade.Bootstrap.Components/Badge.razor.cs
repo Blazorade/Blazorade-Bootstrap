@@ -36,6 +36,8 @@ namespace Blazorade.Bootstrap.Components
 
 
 
+        /// <summary>
+        /// </summary>
         protected override void OnParametersSet()
         {
             this.AddClasses(ClassNames.Badges.Badge);

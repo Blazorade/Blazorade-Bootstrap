@@ -42,9 +42,15 @@ namespace Blazorade.Bootstrap.Components
         [Parameter]
         public string Heading { get; set; }
 
+        /// <summary>
+        /// Specifies whether the user can dismiss the alert.
+        /// </summary>
         [Parameter]
         public bool IsDismissible { get; set; }
 
+        /// <summary>
+        /// Specifies whether the alert should fade when dismissed.
+        /// </summary>
         [Parameter]
         public bool FadeOnDismiss { get; set; }
 
@@ -98,6 +104,8 @@ namespace Blazorade.Bootstrap.Components
             await this.OnDismissed.InvokeAsync(this);
         }
 
+        /// <summary>
+        /// </summary>
         protected override void OnParametersSet()
         {
             this.AddClasses(ClassNames.Alerts.Alert);
@@ -117,6 +125,8 @@ namespace Blazorade.Bootstrap.Components
             if(this.IsDismissible) this.SetIdIfEmpty();
         }
 
+        /// <summary>
+        /// </summary>
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             await base.OnAfterRenderAsync(firstRender);

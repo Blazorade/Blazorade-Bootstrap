@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Blazorade.Bootstrap.Components
 {
+    /// <summary>
+    /// Supports collapsing for <see cref="Navbar"/> components.
+    /// </summary>
     public class NavbarCollapse : Collapse
     {
 

@@ -10,6 +10,8 @@ namespace Blazorade.Bootstrap.Components
     /// </summary>
     public partial class Progress
     {
+        /// <summary>
+        /// </summary>
         protected override void OnParametersSet()
         {
             this.AddClasses(ClassNames.ProgressBars.Progress);

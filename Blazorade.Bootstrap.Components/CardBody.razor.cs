@@ -9,6 +9,10 @@ namespace Blazorade.Bootstrap.Components
     /// <summary>
     /// Represents the body of a <see cref="Card"/> component.
     /// </summary>
+    /// <remarks>
+    /// The <see cref="CardBody"/> encapsulates the <see cref="Title"/>, <see cref="Subtitle"/>, <see cref="Text"/> and <see cref="Links"/>
+    /// shown in a <see cref="Card"/> component.
+    /// </remarks>
     public partial class CardBody
     {
 
