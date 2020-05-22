@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace Blazorade.Bootstrap.Components
 {
+    /// <summary>
+    /// The <see cref="Collapse"/> component is used to toggle the visibility of content.
+    /// </summary>
     partial class Collapse
     {
-
 
         /// <summary>
         /// The callback that is triggered when the collapse is starting to show.
@@ -124,6 +126,8 @@ namespace Blazorade.Bootstrap.Components
         }
 
 
+        /// <summary>
+        /// </summary>
         protected override void OnParametersSet()
         {
             this.AddClasses(ClassNames.Collapses.Collapse);
@@ -132,6 +136,8 @@ namespace Blazorade.Bootstrap.Components
             this.SetIdIfEmpty();
         }
 
+        /// <summary>
+        /// </summary>
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             await base.OnAfterRenderAsync(firstRender);

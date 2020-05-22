@@ -5,6 +5,10 @@ using System.Text;
 
 namespace Blazorade.Bootstrap.Components
 {
+    /// <summary>
+    /// The <see cref="CardContent"/> represents all content in a <see cref="Card"/> component, except for
+    /// the <see cref="Card.Header"/> and <see cref="Card.Footer"/>.
+    /// </summary>
     partial class CardContent
     {
 

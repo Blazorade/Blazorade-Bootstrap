@@ -4,9 +4,14 @@ using System.Text;
 
 namespace Blazorade.Bootstrap.Components
 {
+    /// <summary>
+    /// A button that is used to toggle a <see cref="Dropdown"/> component.
+    /// </summary>
     public partial class DropdownToggleButton
     {
 
+        /// <summary>
+        /// </summary>
         protected override void OnParametersSet()
         {
             this.AddClasses(ClassNames.Dropdowns.Toggle);

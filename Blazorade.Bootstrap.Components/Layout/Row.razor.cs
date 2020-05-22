@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Blazorade.Bootstrap.Components.Layout
 {
+    /// <summary>
+    /// Represents a row in a grid.
+    /// </summary>
     partial class Row
     {
 
@@ -15,6 +18,8 @@ namespace Blazorade.Bootstrap.Components.Layout
         public bool NoGutters { get; set; }
 
 
+        /// <summary>
+        /// </summary>
         protected override void OnParametersSet()
         {
             base.OnParametersSet();

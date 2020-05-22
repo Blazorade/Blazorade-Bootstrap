@@ -13,6 +13,8 @@ namespace Blazorade.Bootstrap.Components
     /// </summary>
     public partial class Pagination
     {
+        /// <summary>
+        /// </summary>
         public Pagination()
         {
             this.HighlightCurrent = true;
@@ -22,6 +24,8 @@ namespace Blazorade.Bootstrap.Components
             this.NextPageLinkText = ">>";
             this.PreviousPageLinkText = "<<";
         }
+
+
 
         /// <summary>
         /// Fired when the <see cref="CurrentPage"/> parameter has changed.
@@ -169,6 +173,8 @@ namespace Blazorade.Bootstrap.Components
         }
 
 
+        /// <summary>
+        /// </summary>
         protected override void OnParametersSet()
         {
             this.AddClasses(ClassNames.Paginations.Pagination);

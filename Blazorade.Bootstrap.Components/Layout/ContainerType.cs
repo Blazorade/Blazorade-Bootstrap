@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Blazorade.Bootstrap.Components.Layout
 {
+    /// <summary>
+    /// Defines different container types.
+    /// </summary>
     public enum ContainerType
     {
         /// <summary>
