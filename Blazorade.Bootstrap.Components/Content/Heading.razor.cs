@@ -5,9 +5,14 @@ using System.Text;
 
 namespace Blazorade.Bootstrap.Components.Content
 {
+    /// <summary>
+    /// Represents the heading elements <c>H1</c>, <c>H2</c>, <c>H3</c>, <c>H4</c>, <c>H5</c> and <c>H6</c>.
+    /// </summary>
     public partial class Heading
     {
 
+        /// <summary>
+        /// </summary>
         public Heading()
         {
             this.Level = HeadingLevel.H1;
@@ -34,6 +39,8 @@ namespace Blazorade.Bootstrap.Components.Content
         public HeadingLevel Level { get; set; }
 
 
+        /// <summary>
+        /// </summary>
         protected override void OnParametersSet()
         {
             if (this.Display.HasValue)

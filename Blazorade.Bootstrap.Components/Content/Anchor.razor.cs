@@ -9,9 +9,14 @@ using Microsoft.JSInterop;
 
 namespace Blazorade.Bootstrap.Components.Content
 {
+    /// <summary>
+    /// The <see cref="Anchor"/> component is used to create a link.
+    /// </summary>
     public partial class Anchor : ILink
     {
 
+        /// <summary>
+        /// </summary>
         public Anchor()
         {
             this.IgnoreEmptyUrl = true;
@@ -106,6 +111,8 @@ namespace Blazorade.Bootstrap.Components.Content
             await this.Clicked.InvokeAsync(this);
         }
 
+        /// <summary>
+        /// </summary>
         protected override void OnParametersSet()
         {
             if(null != this.Link)
@@ -160,6 +167,8 @@ namespace Blazorade.Bootstrap.Components.Content
 
         }
 
+        /// <summary>
+        /// </summary>
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             await this.JsInterop.InvokeVoidAsync(JsFunctions.Anchor.Init, this.Id);

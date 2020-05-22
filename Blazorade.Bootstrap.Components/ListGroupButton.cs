@@ -4,8 +4,13 @@ using System.Text;
 
 namespace Blazorade.Bootstrap.Components
 {
+    /// <summary>
+    /// Represents a button in a <see cref="ListGroup"/> component.
+    /// </summary>
     public class ListGroupButton : Button
     {
+        /// <summary>
+        /// </summary>
         protected override void OnParametersSet()
         {
             base.OnParametersSet();

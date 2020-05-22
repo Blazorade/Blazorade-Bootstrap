@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Blazorade.Bootstrap.Components
 {
+    /// <summary>
+    /// Represents the image on a <see cref="Media"/> component.
+    /// </summary>
     partial class MediaImage
     {
 

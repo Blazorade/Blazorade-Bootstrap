@@ -35,6 +35,16 @@
             This parameter is ignored if <see cref="P:Blazorade.Bootstrap.Components.Alert.HeadingTemplate"/> is specified.
             </remarks>
         </member>
+        <member name="P:Blazorade.Bootstrap.Components.Alert.IsDismissible">
+            <summary>
+            Specifies whether the user can dismiss the alert.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Alert.FadeOnDismiss">
+            <summary>
+            Specifies whether the alert should fade when dismissed.
+            </summary>
+        </member>
         <member name="M:Blazorade.Bootstrap.Components.Alert.Dismiss">
             <summary>
             Dismisses the alert.
@@ -58,6 +68,14 @@
             Triggers the <see cref="P:Blazorade.Bootstrap.Components.Alert.OnDismissed"/> callback.
             </summary>
         </member>
+        <member name="M:Blazorade.Bootstrap.Components.Alert.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Alert.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            </summary>
+        </member>
         <member name="T:Blazorade.Bootstrap.Components.AlertLink">
             <summary>
             This component can be used inside of Alert components to provide link colors matching with the parent Alert component.
@@ -65,6 +83,10 @@
             <remarks>
             For details see https://github.com/Blazorade/Blazorade-Bootstrap/wiki/AlertLink
             </remarks>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.AlertLink.OnParametersSet">
+            <summary>
+            </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Backdrop">
             <summary>
@@ -107,6 +129,10 @@
         <member name="P:Blazorade.Bootstrap.Components.Badge.Url">
             <summary>
             The URL to use as link for the batch.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Badge.OnParametersSet">
+            <summary>
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.BootstrapComponentBase">
@@ -1292,6 +1318,15 @@
             <summary>
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.ButtonToolbar">
+            <summary>
+            The <see cref="T:Blazorade.Bootstrap.Components.ButtonToolbar"/> component combines sets of <see cref="T:Blazorade.Bootstrap.Components.ButtonGroup"/> components together into a toolbar.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.ButtonToolbar.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
         <member name="T:Blazorade.Bootstrap.Components.Card">
             <summary>
             A flexible container with different variants.
@@ -1407,6 +1442,10 @@
             <summary>
             Represents the body of a <see cref="T:Blazorade.Bootstrap.Components.Card"/> component.
             </summary>
+            <remarks>
+            The <see cref="T:Blazorade.Bootstrap.Components.CardBody"/> encapsulates the <see cref="P:Blazorade.Bootstrap.Components.CardBody.Title"/>, <see cref="P:Blazorade.Bootstrap.Components.CardBody.Subtitle"/>, <see cref="P:Blazorade.Bootstrap.Components.CardBody.Text"/> and <see cref="P:Blazorade.Bootstrap.Components.CardBody.Links"/>
+            shown in a <see cref="T:Blazorade.Bootstrap.Components.Card"/> component.
+            </remarks>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.CardBody.Links">
             <summary>
@@ -1472,6 +1511,12 @@
         <member name="M:Blazorade.Bootstrap.Components.CardBody.OnParametersSet">
             <summary>
             
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.CardContent">
+            <summary>
+            The <see cref="T:Blazorade.Bootstrap.Components.CardContent"/> represents all content in a <see cref="T:Blazorade.Bootstrap.Components.Card"/> component, except for
+            the <see cref="P:Blazorade.Bootstrap.Components.Card.Header"/> and <see cref="P:Blazorade.Bootstrap.Components.Card.Footer"/>.
             </summary>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.CardContent.BodyTemplate">
@@ -2155,6 +2200,15 @@
             <summary>
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.Content.Anchor">
+            <summary>
+            The <see cref="T:Blazorade.Bootstrap.Components.Content.Anchor"/> component is used to create a link.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Content.Anchor.#ctor">
+            <summary>
+            </summary>
+        </member>
         <member name="P:Blazorade.Bootstrap.Components.Content.Anchor.Clicked">
             <summary>
             Callback for when the anchor is clicked.
@@ -2216,6 +2270,32 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Blazorade.Bootstrap.Components.Content.Anchor.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Content.Anchor.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Content.Blockquote">
+            <summary>
+            The <see cref="T:Blazorade.Bootstrap.Components.Content.Blockquote"/> component represents a standard <c>HTML</c> <c>BLOCKQUOTE</c> element.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Content.Blockquote.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Content.Heading">
+            <summary>
+            Represents the heading elements <c>H1</c>, <c>H2</c>, <c>H3</c>, <c>H4</c>, <c>H5</c> and <c>H6</c>.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Content.Heading.#ctor">
+            <summary>
+            </summary>
+        </member>
         <member name="P:Blazorade.Bootstrap.Components.Content.Heading.Display">
             <summary>
             Use this property to specify a different display size for your heading to better visually fit into the overall look and feel.
@@ -2230,6 +2310,10 @@
         <member name="P:Blazorade.Bootstrap.Components.Content.Heading.Level">
             <summary>
             The heading level.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Content.Heading.OnParametersSet">
+            <summary>
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Content.HeadingContent">

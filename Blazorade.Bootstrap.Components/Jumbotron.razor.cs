@@ -7,6 +7,9 @@ using System.Text;
 
 namespace Blazorade.Bootstrap.Components
 {
+    /// <summary>
+    /// The <see cref="Jumbotron"/> component is a lightweight and flexible component for showcasing content.
+    /// </summary>
     partial class Jumbotron
     {
 

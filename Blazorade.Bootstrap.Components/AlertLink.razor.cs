@@ -12,6 +12,8 @@ namespace Blazorade.Bootstrap.Components
     /// </remarks>
     public partial class AlertLink
     {
+        /// <summary>
+        /// </summary>
         protected override void OnParametersSet()
         {
             this.AddClasses(ClassNames.Alerts.AlertLink);
