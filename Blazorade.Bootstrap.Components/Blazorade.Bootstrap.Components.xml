@@ -1254,6 +1254,30 @@
             Fires the <see cref="P:Blazorade.Bootstrap.Components.Button.OnClicked"/> event.
             </summary>
         </member>
+        <member name="M:Blazorade.Bootstrap.Components.Button.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.ButtonSize">
+            <summary>
+            Defines different sizes for a button.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ButtonSize.Normal">
+            <summary>
+            The default size.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ButtonSize.Large">
+            <summary>
+            Large button.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.ButtonSize.Small">
+            <summary>
+            Small button.
+            </summary>
+        </member>
         <member name="T:Blazorade.Bootstrap.Components.ButtonGroup">
             <summary>
             The ButtonGroup component is used to group buttons together. Buttons in the same group are joined together.
