@@ -25,6 +25,14 @@
     <DocumentationFile>Blazorade.Bootstrap.Components.xml</DocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Blazorade.Bootstrap.Components.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Blazorade.Bootstrap.Components.xml" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Blazorade.Core" Version="1.4.0" />
