@@ -47,6 +47,7 @@ namespace Blazorade.Bootstrap.Components
         /// <summary>
         /// Specifies whether the button is a submit button. The default type is <c>button</c>.
         /// </summary>
+        [Parameter]
         public bool IsSubmit { get; set; }
 
         /// <summary>
@@ -65,6 +66,8 @@ namespace Blazorade.Bootstrap.Components
             await this.OnClicked.InvokeAsync(this);
         }
 
+        /// <summary>
+        /// </summary>
         protected override void OnParametersSet()
         {
             this.AddClasses(ClassNames.Buttons.Button);
@@ -114,10 +117,24 @@ namespace Blazorade.Bootstrap.Components
 
     }
 
+    /// <summary>
+    /// Defines different sizes for a button.
+    /// </summary>
     public enum ButtonSize
     {
+        /// <summary>
+        /// The default size.
+        /// </summary>
         Normal = 0,
+
+        /// <summary>
+        /// Large button.
+        /// </summary>
         Large = 1,
+
+        /// <summary>
+        /// Small button.
+        /// </summary>
         Small = 2
     }
 }
