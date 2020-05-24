@@ -18,13 +18,13 @@
     };
 }
 
-<Heading Id="simple" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.S5">Simple</Heading>
+<Heading Id="simple" IsAnchor="true" Level="3" MarginTop="5">Simple</Heading>
 <Paragraph>
     A simple <code>Breadcrumb</code> component with no customization.
 </Paragraph>
 <Breadcrumb Items="this.items" />
 
-<Heading Id="custom-item-template" IsAnchor="true" Level="HeadingLevel.H3" MarginTop="Spacing.S5">Custom Item Template</Heading>
+<Heading Id="custom-item-template" IsAnchor="true" Level="3" MarginTop="5">Custom Item Template</Heading>
 <Paragraph>
     Shows how you can customize each item in the <code>Breadcrumb</code> component by using
     the <code>ItemTemplate</code> template property.
@@ -33,7 +33,7 @@
     <ItemTemplate>
         @if (!string.IsNullOrEmpty(context.Url))
         {
-            <Button Color="NamedColor.Light" Shadow="Shadow.Regular" Link="@context.Url" IsLink="true">@context.Text</Button>
+            <Button Color="NamedColor.Light" Shadow="Shadow.Regular">@context.Text</Button>
         }
         else
         {
@@ -41,3 +41,12 @@
         }
     </ItemTemplate>
 </Breadcrumb>
+
+<Heading Id="background-color" IsAnchor="true" Level="3" MarginTop="5">Background Colors</Heading>
+<Paragraph>
+    Use the <code>Breadcrumb.BackgroundColor</code> parameter to specify a background for the breadcrumb.
+</Paragraph>
+
+<Breadcrumb Items="this.items" BackgroundColor="NamedColor.Info" />
+<Breadcrumb Items="this.items" BackgroundColor="NamedColor.Warning" />
+<Breadcrumb Items="this.items" BackgroundColor="NamedColor.Transparent" />

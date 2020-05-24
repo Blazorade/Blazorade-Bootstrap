@@ -338,7 +338,7 @@
             <summary>
             </summary>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Breadcrumb.SetParametersAsync(Microsoft.AspNetCore.Components.ParameterView)">
+        <member name="M:Blazorade.Bootstrap.Components.Breadcrumb.OnParametersSet">
             <summary>
             </summary>
         </member>
@@ -1539,6 +1539,15 @@
             The URL, either absolute or relative, to the image to show in the card.
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.CardFooter">
+            <summary>
+            Represents the footer in a <see cref="T:Blazorade.Bootstrap.Components.Card"/> component.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.CardFooter.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
         <member name="T:Blazorade.Bootstrap.Components.CardGroup">
             <summary>
             Represents a group of <see cref="T:Blazorade.Bootstrap.Components.Card"/> components.
@@ -1576,6 +1585,15 @@
             <summary>
             Cards in a group of this type have equal width, but the height is whatever height each card has. Cards are arranged
             top to bottom, left to right.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.CardHeader">
+            <summary>
+            Represents the header on a <see cref="T:Blazorade.Bootstrap.Components.Card"/> component.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.CardHeader.OnParametersSet">
+            <summary>
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.CardImage">
@@ -1621,6 +1639,42 @@
         <member name="F:Blazorade.Bootstrap.Components.CardImagePosition.Overlay">
             <summary>
             The contents of the card are overlaid over the image.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.CardLink">
+            <summary>
+            Represents a link in a <see cref="T:Blazorade.Bootstrap.Components.Card"/> component.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.CardLink.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.CardSubtitle">
+            <summary>
+            Represents the subtitle on a <see cref="T:Blazorade.Bootstrap.Components.Card"/> component.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.CardSubtitle.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.CardText">
+            <summary>
+            Represents the text on a <see cref="T:Blazorade.Bootstrap.Components.Card"/> component.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.CardText.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.CardTitle">
+            <summary>
+            Represents the title on a <see cref="T:Blazorade.Bootstrap.Components.Card"/> component.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.CardTitle.OnParametersSet">
+            <summary>
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Carousel">
@@ -2112,6 +2166,11 @@
             Add this class to animate the stripes (don't forget to add the "Striped" class!) from right to left.
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.Collapse">
+            <summary>
+            The <see cref="T:Blazorade.Bootstrap.Components.Collapse"/> component is used to toggle the visibility of content.
+            </summary>
+        </member>
         <member name="P:Blazorade.Bootstrap.Components.Collapse.OnShow">
             <summary>
             The callback that is triggered when the collapse is starting to show.
@@ -2180,6 +2239,14 @@
         <member name="M:Blazorade.Bootstrap.Components.Collapse.OnShownAsync">
             <summary>
             Triggers the <see cref="P:Blazorade.Bootstrap.Components.Collapse.OnShown"/> callback.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Collapse.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Collapse.OnAfterRenderAsync(System.Boolean)">
+            <summary>
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.ColoredBootstrapComponentBase">
@@ -2451,6 +2518,74 @@
             <summary>
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.Dropdown">
+            <summary>
+            The <see cref="T:Blazorade.Bootstrap.Components.Dropdown"/> component is a contextual overlay that displays a list of links and other elements. The <see cref="T:Blazorade.Bootstrap.Components.Dropdown"/> can be toggled.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Dropdown.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.DropdownDivider">
+            <summary>
+            The <see cref="T:Blazorade.Bootstrap.Components.DropdownDivider"/> component is used to add a divider between items in a <see cref="T:Blazorade.Bootstrap.Components.Dropdown"/> menu.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.DropdownDivider.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.DropdownItem">
+            <summary>
+            The <see cref="T:Blazorade.Bootstrap.Components.DropdownItem"/> component is used inside a <see cref="T:Blazorade.Bootstrap.Components.DropdownMenu"/> component to display a link or other element.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.DropdownItem.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.DropdownMenu">
+            <summary>
+            The <see cref="T:Blazorade.Bootstrap.Components.DropdownMenu"/> component is uses as child component in a <see cref="T:Blazorade.Bootstrap.Components.Dropdown"/> component.
+            It is the parent to one or many <see cref="T:Blazorade.Bootstrap.Components.DropdownItem"/> components.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.DropdownMenu.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.DropdownNavItem">
+            <summary>
+            Represents an item in a <see cref="T:Blazorade.Bootstrap.Components.NavbarNav"/> component with child items.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.DropdownNavItem.#ctor">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.DropdownNavItem.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.DropdownToggleButton">
+            <summary>
+            A button that is used to toggle a <see cref="T:Blazorade.Bootstrap.Components.Dropdown"/> component.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.DropdownToggleButton.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.DropdownToggleLink">
+            <summary>
+            A link that is used to toggle a <see cref="T:Blazorade.Bootstrap.Components.Dropdown"/> component.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.DropdownToggleLink.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
         <member name="T:Blazorade.Bootstrap.Components.Embed">
             <summary>
             The Embed component is used to create responsive video or slideshow embeds.
@@ -2592,6 +2727,11 @@
             The image will be resized so that it completely fills the area specified for the image. Some cropping may occur.
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.Jumbotron">
+            <summary>
+            The <see cref="T:Blazorade.Bootstrap.Components.Jumbotron"/> component is a lightweight and flexible component for showcasing content.
+            </summary>
+        </member>
         <member name="M:Blazorade.Bootstrap.Components.Jumbotron.#ctor">
             <summary>
             </summary>
@@ -2635,8 +2775,28 @@
             <summary>
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.JumbotronContent">
+            <summary>
+            Represents the contents of a <see cref="T:Blazorade.Bootstrap.Components.Jumbotron"/> component.
+            </summary>
+        </member>
         <member name="M:Blazorade.Bootstrap.Components.JumbotronContent.#ctor">
             <summary>
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.JumbotronContent.ContainerType">
+            <summary>
+            The container type for <see cref="T:Blazorade.Bootstrap.Components.Jumbotron"/> components that have <see cref="P:Blazorade.Bootstrap.Components.Jumbotron.IsFluid"/> set to <c>true</c>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.JumbotronContent.IsFluid">
+            <summary>
+            Defines if the containing <see cref="T:Blazorade.Bootstrap.Components.Jumbotron"/> component is a fluid container.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Layout.Column">
+            <summary>
+            Represents a column in a grid.
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Layout.Container">
@@ -2655,6 +2815,11 @@
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Layout.Container.OnParametersSet">
             <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Layout.ContainerType">
+            <summary>
+            Defines different container types.
             </summary>
         </member>
         <member name="F:Blazorade.Bootstrap.Components.Layout.ContainerType.FixedWidth">
@@ -2687,9 +2852,18 @@
             100% wide on on XL screen sizes. Fixed width above this breakpoint.
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.Layout.Row">
+            <summary>
+            Represents a row in a grid.
+            </summary>
+        </member>
         <member name="P:Blazorade.Bootstrap.Components.Layout.Row.NoGutters">
             <summary>
             If set to <c>true</c>, all columns in the current row will be rendered without gutters (i.e. space between columns).
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Layout.Row.OnParametersSet">
+            <summary>
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.ListGroup">
@@ -2711,9 +2885,27 @@
             <summary>
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.ListGroupAnchor">
+            <summary>
+            Represents a link in a <see cref="T:Blazorade.Bootstrap.Components.ListGroup"/> component.
+            </summary>
+        </member>
         <member name="P:Blazorade.Bootstrap.Components.ListGroupAnchor.Color">
             <summary>
             Setting a color for a ListGroupAnchor will apply a contextual color to the list group item.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.ListGroupAnchor.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.ListGroupButton">
+            <summary>
+            Represents a button in a <see cref="T:Blazorade.Bootstrap.Components.ListGroup"/> component.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.ListGroupButton.OnParametersSet">
+            <summary>
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.ListGroupItem">
@@ -2794,6 +2986,11 @@
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Media.OnParametersSet">
             <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.MediaImage">
+            <summary>
+            Represents the image on a <see cref="T:Blazorade.Bootstrap.Components.Media"/> component.
             </summary>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.MediaImage.Url">
@@ -2945,6 +3142,33 @@
             <summary>
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.ModalBody">
+            <summary>
+            Represents the body of a <see cref="T:Blazorade.Bootstrap.Components.Modal"/> component.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.ModalBody.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.ModalFooter">
+            <summary>
+            Represents the footer on a <see cref="T:Blazorade.Bootstrap.Components.Modal"/> component.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.ModalFooter.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.ModalHeader">
+            <summary>
+            Represents the header on a <see cref="T:Blazorade.Bootstrap.Components.Modal"/> component.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.ModalHeader.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
         <member name="T:Blazorade.Bootstrap.Components.ModalSize">
             <summary>
             Defines different sizes for <see cref="T:Blazorade.Bootstrap.Components.Modal"/> components.
@@ -3080,6 +3304,11 @@
             50% black. Not supported by all components.
             </summary>
         </member>
+        <member name="F:Blazorade.Bootstrap.Components.NamedColor.Transparent">
+            <summary>
+            Transparent.
+            </summary>
+        </member>
         <member name="T:Blazorade.Bootstrap.Components.Nav">
             <summary>
             The Nav component provides a simple way to build navigation elements.
@@ -3210,6 +3439,11 @@
             <summary>
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.NavbarCollapse">
+            <summary>
+            Supports collapsing for <see cref="T:Blazorade.Bootstrap.Components.Navbar"/> components.
+            </summary>
+        </member>
         <member name="T:Blazorade.Bootstrap.Components.NavbarExpandBreakpoint">
             <summary>
             Defines different breakpoints at which a <see cref="T:Blazorade.Bootstrap.Components.Navbar"/> will expand.
@@ -3322,6 +3556,10 @@
             The Pagination component allows you to supply a set of links and display a bootstrap pagination bar on the screen.
             </summary>
         </member>
+        <member name="M:Blazorade.Bootstrap.Components.Pagination.#ctor">
+            <summary>
+            </summary>
+        </member>
         <member name="P:Blazorade.Bootstrap.Components.Pagination.OnCurrentPageChanged">
             <summary>
             Fired when the <see cref="P:Blazorade.Bootstrap.Components.Pagination.CurrentPage"/> parameter has changed.
@@ -3399,6 +3637,10 @@
             Fires the <see cref="P:Blazorade.Bootstrap.Components.Pagination.OnCurrentPageChanged"/> event.
             </summary>
         </member>
+        <member name="M:Blazorade.Bootstrap.Components.Pagination.OnParametersSet">
+            <summary>
+            </summary>
+        </member>
         <member name="T:Blazorade.Bootstrap.Components.PaginationSize">
             <summary>
             Bootstrap Pagination sizes
@@ -3423,6 +3665,10 @@
             <summary>
             Wrapper component for ProgressBar components.
             Use one or more ProgressBar components inside of a Progress component to create a bootstrap progress bar.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Progress.OnParametersSet">
+            <summary>
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.ProgressBar">
@@ -3459,6 +3705,15 @@
         <member name="P:Blazorade.Bootstrap.Components.ProgressBar.ShowPercentage">
             <summary>
             Set this to true if you want to show the percentage as text inside the bar.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.ProgressBar.CalculatedWidth">
+            <summary>
+            Returns the calculated width as an integer percentage value.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.ProgressBar.OnParametersSet">
+            <summary>
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.ResponsiveBreakpoint">
@@ -3671,6 +3926,30 @@
             Triggers the <see cref="P:Blazorade.Bootstrap.Components.Toast.OnShown"/> callback.
             </summary>
             <remarks>Invoked by JS Interop. Not to be called directly.</remarks>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.ToastHeader">
+            <summary>
+            Represents the header on a <see cref="T:Blazorade.Bootstrap.Components.Toast"/> component.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.ToastHeader.Header">
+            <summary>
+            The header text.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.ToastHeader.ShowHideButton">
+            <summary>
+            Specifies whether the containing <see cref="T:Blazorade.Bootstrap.Components.Toast"/> component should display a hide button that the toast can be hidden with.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.ToastHeader.Subheader">
+            <summary>
+            The text for the subheader.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.ToastHeader.OnParametersSet">
+            <summary>
+            </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.ToggleAction">
             <summary>

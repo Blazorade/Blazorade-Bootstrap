@@ -367,7 +367,7 @@ namespace Blazorade.Bootstrap.Components
                 this.AddAttribute("id", this.Id);
             }
 
-            base.OnParametersSet();
+            await base.OnParametersSetAsync();
         }
 
         /// <summary>

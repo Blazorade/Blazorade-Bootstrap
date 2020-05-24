@@ -34,13 +34,28 @@ namespace Blazorade.Bootstrap.Components
         }
 
 
+        private IDictionary<string, object> ListAttributes = new Dictionary<string, object>();
         /// <summary>
         /// </summary>
-        public override Task SetParametersAsync(ParameterView parameters)
+        protected override void OnParametersSet()
         {
+
             this.AddAttribute("aria-label", ClassNames.Breadcrumbs.Breadcrumb);
 
-            return base.SetParametersAsync(parameters);
+            base.OnParametersSet();
+
+
+            var classes = new List<string>
+            {
+                ClassNames.Breadcrumbs.Breadcrumb
+            };
+            var bgClass = this.GetColorClassName("bg", this.BackgroundColor);
+            if (!string.IsNullOrEmpty(bgClass)) classes.Add(bgClass);
+
+            var textClass = this.GetColorClassName("text", this.TextColor);
+            if (!string.IsNullOrEmpty(textClass)) classes.Add(textClass);
+
+            this.ListAttributes.Add("class", string.Join(" ", classes));
         }
     }
 }

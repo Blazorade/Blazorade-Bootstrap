@@ -62,6 +62,11 @@ namespace Blazorade.Bootstrap.Components
         /// <summary>
         /// 50% black. Not supported by all components.
         /// </summary>
-        Black50
+        Black50,
+
+        /// <summary>
+        /// Transparent.
+        /// </summary>
+        Transparent
     }
 }
