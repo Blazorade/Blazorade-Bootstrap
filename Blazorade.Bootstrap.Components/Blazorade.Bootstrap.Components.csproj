@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.0-rc4</Version>
+    <Version>1.0.0-rc6</Version>
     <Authors>Mika Berglund</Authors>
     <Company>Blazorade</Company>
     <Product>Blazorade Bootstrap</Product>
@@ -25,9 +25,17 @@
     <DocumentationFile>Blazorade.Bootstrap.Components.xml</DocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Blazorade.Bootstrap.Components.xml" />
+  </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Blazorade.Core" Version="1.4.0" />
+    <EmbeddedResource Include="Blazorade.Bootstrap.Components.xml" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Blazorade.Core" Version="1.4.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Analyzers" Version="3.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.0.0" />
