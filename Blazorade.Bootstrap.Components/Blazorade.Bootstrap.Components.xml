@@ -338,7 +338,7 @@
             <summary>
             </summary>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Breadcrumb.SetParametersAsync(Microsoft.AspNetCore.Components.ParameterView)">
+        <member name="M:Blazorade.Bootstrap.Components.Breadcrumb.OnParametersSet">
             <summary>
             </summary>
         </member>
@@ -3302,6 +3302,11 @@
         <member name="F:Blazorade.Bootstrap.Components.NamedColor.Black50">
             <summary>
             50% black. Not supported by all components.
+            </summary>
+        </member>
+        <member name="F:Blazorade.Bootstrap.Components.NamedColor.Transparent">
+            <summary>
+            Transparent.
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Nav">
