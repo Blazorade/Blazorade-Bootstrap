@@ -3,7 +3,7 @@
 @code { int ix = 0; }
 
 <nav aria-label="breadcrumb" @attributes="this.Attributes">
-    <ol class="@ClassNames.Breadcrumbs.Breadcrumb">
+    <ol @attributes="this.ListAttributes">
         @foreach(var item in this.Items)
         {
             item.Index = ix;
