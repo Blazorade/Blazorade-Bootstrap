@@ -2387,6 +2387,9 @@
             <summary>
             Represents the content in a <see cref="T:Blazorade.Bootstrap.Components.Content.Heading"/> component.
             </summary>
+            <remarks>
+            Not intended to be used directly from your code.
+            </remarks>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.Content.HeadingContent.AnchorId">
             <summary>

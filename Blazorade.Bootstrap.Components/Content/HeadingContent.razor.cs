@@ -11,6 +11,9 @@ namespace Blazorade.Bootstrap.Components.Content
     /// <summary>
     /// Represents the content in a <see cref="Heading"/> component.
     /// </summary>
+    /// <remarks>
+    /// Not intended to be used directly from your code.
+    /// </remarks>
     public partial class HeadingContent
     {
 
