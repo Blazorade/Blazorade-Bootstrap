@@ -10,7 +10,7 @@
 
 @code {
     List<ILink> items = new List<ILink>()
-{
+    {
         new Link(){ Url="javascript:", Text = "Home", Description="The front page of the site" },
         new Link(){ Url="javascript:", Text = "Section 1" },
         new Link(){ Url="javascript:", Text = "Section 1.1" },
@@ -50,3 +50,23 @@
 <Breadcrumb Items="this.items" BackgroundColor="NamedColor.Info" />
 <Breadcrumb Items="this.items" BackgroundColor="NamedColor.Warning" />
 <Breadcrumb Items="this.items" BackgroundColor="NamedColor.Transparent" />
+
+
+<Heading Id="dynamic-items" IsAnchor="true" Level="3" MarginTop="5">Dynamic Items</Heading>
+<Paragraph>
+    The items on the breadcrumb can be dynamically updated.
+</Paragraph>
+
+@code {
+    public static List<ILink> defaultDynItems = new List<ILink>
+    {
+        new Link{Text = "Home"}
+    };
+
+    List<ILink> dynItems = new List<ILink>(defaultDynItems);
+}
+
+<Breadcrumb Items="this.dynItems" />
+
+<Button Color="NamedColor.Primary" OnClicked="@(() => { this.dynItems.Add(new Link { Text = $"Item #{this.dynItems.Count + 1}" }); })">Add Item</Button>
+<Button Color="NamedColor.Warning" OnClicked="@(() => { this.dynItems = new List<ILink>(defaultDynItems); })">Clear</Button>
