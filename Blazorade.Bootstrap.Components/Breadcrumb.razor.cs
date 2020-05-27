@@ -55,7 +55,7 @@ namespace Blazorade.Bootstrap.Components
             var textClass = this.GetColorClassName("text", this.TextColor);
             if (!string.IsNullOrEmpty(textClass)) classes.Add(textClass);
 
-            this.ListAttributes.Add("class", string.Join(" ", classes));
+            this.ListAttributes["class"] = string.Join(" ", classes);
         }
     }
 }
