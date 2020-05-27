@@ -6,9 +6,15 @@ using System.Text;
 namespace Blazorade.Bootstrap.Components
 {
     /// <summary>
-    /// The <see cref="CardContent"/> represents all content in a <see cref="Card"/> component, except for
+    /// The <c>CardContent</c> represents all content in a <see cref="Card"/> component, except for
     /// the <see cref="Card.Header"/> and <see cref="Card.Footer"/>.
     /// </summary>
+    /// <remarks>
+    /// <para>
+    /// Normally, you should not need to use this component in your code. Instead, use the <see cref="Card"/> component.
+    /// </para>
+    /// </remarks>
+    /// <seealso cref="Card"/>
     partial class CardContent
     {
 

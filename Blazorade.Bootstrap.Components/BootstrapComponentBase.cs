@@ -12,9 +12,6 @@ namespace Blazorade.Bootstrap.Components
     /// <summary>
     /// Base implementation for all Blazor Boostrap components.
     /// </summary>
-    /// <remarks>
-    /// For details see https://github.com/Blazorade/Blazorade-Bootstrap/wiki/BootstrapComponentBase
-    /// </remarks>
     public abstract class BootstrapComponentBase : Blazorade.Core.Components.BlazoradeComponentBase
     {
 

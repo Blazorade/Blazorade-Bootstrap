@@ -8,11 +8,8 @@ using System.Threading.Tasks;
 namespace Blazorade.Bootstrap.Components
 {
     /// <summary>
-    /// The base class for the <see cref="Badge"/> component.
+    /// The <c>Badge</c> component is used to add counts and labels to other components.
     /// </summary>
-    /// <remarks>
-    /// For details see https://github.com/MikaBerglund/Blazor-Bootstrap/wiki/Badge
-    /// </remarks>
     public partial class Badge
     {
 

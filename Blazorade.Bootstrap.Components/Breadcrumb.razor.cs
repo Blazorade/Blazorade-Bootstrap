@@ -9,7 +9,7 @@ namespace Blazorade.Bootstrap.Components
 {
 
     /// <summary>
-    /// The Breadcrumb component visualizes the current page in a navigational hierarchy.
+    /// The <c>Breadcrumb</c> component visualizes the current page in a navigational hierarchy.
     /// </summary>
     public partial class Breadcrumb
     {
