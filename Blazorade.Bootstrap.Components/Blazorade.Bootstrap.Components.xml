@@ -78,6 +78,7 @@
             <summary>
             This component can be used inside of <see cref="T:Blazorade.Bootstrap.Components.Alert"/> components to provide link colors matching with the parent <see cref="T:Blazorade.Bootstrap.Components.Alert"/> component.
             </summary>
+            <seealso cref="T:Blazorade.Bootstrap.Components.Alert"/>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.AlertLink.OnParametersSet">
             <summary>
@@ -85,17 +86,18 @@
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Backdrop">
             <summary>
-            Defines behaviour for modal backdrops.
+            Defines behaviour for modal backdrops on <see cref="T:Blazorade.Bootstrap.Components.Modal"/> components.
             </summary>
+            <see cref="T:Blazorade.Bootstrap.Components.Modal"/>
         </member>
         <member name="F:Blazorade.Bootstrap.Components.Backdrop.Hidden">
             <summary>
-            Do not display a backdrop.
+            Do not display a backdrop. Clicking outside of the modal will not close the modal.
             </summary>
         </member>
         <member name="F:Blazorade.Bootstrap.Components.Backdrop.Default">
             <summary>
-            Shows the default backdrop.
+            Shows the default backdrop. Clicking the backdrop will close the modal.
             </summary>
         </member>
         <member name="F:Blazorade.Bootstrap.Components.Backdrop.Static">
@@ -3346,7 +3348,7 @@
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Navbar">
             <summary>
-            The Navbar component is used to produce a responsive navigation header with built-in support for collapsing.
+            The <c>Navbar</c> component is used to produce a responsive navigation header with built-in support for collapsing.
             </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Navbar.#ctor">
@@ -3812,7 +3814,7 @@
         </member>
         <member name="T:Blazorade.Bootstrap.Components.SpinnerType">
             <summary>
-            Defines different types to be used in <see cref="T:Blazorade.Bootstrap.Components.Spinner"/> components
+            Defines different types to be used in <see cref="T:Blazorade.Bootstrap.Components.Spinner"/> components.
             </summary>
         </member>
         <member name="F:Blazorade.Bootstrap.Components.SpinnerType.Border">
