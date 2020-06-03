@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Blazorade.Bootstrap.Components
 {
     /// <summary>
-    /// The <see cref="Collapse"/> component is used to toggle the visibility of content.
+    /// The <c>Collapse</c> component is used to toggle the visibility of content.
     /// </summary>
     partial class Collapse
     {

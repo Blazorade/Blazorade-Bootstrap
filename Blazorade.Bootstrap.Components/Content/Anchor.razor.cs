@@ -10,7 +10,7 @@ using Microsoft.JSInterop;
 namespace Blazorade.Bootstrap.Components.Content
 {
     /// <summary>
-    /// The <see cref="Anchor"/> component is used to create a link.
+    /// The <c>Anchor</c> component is used to create a link.
     /// </summary>
     public partial class Anchor : ILink
     {
