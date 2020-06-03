@@ -17,6 +17,7 @@ namespace Blazorade.Bootstrap.Components
         /// <summary>
         /// The callback that is called when the alert is being dismissed, but not fully dismissed yet.
         /// </summary>
+        [Parameter]
         public EventCallback<Alert> OnDismiss { get; set; }
 
         /// <summary>
