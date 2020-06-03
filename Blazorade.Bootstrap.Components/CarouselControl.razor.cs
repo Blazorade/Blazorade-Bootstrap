@@ -6,7 +6,7 @@ using System.Text;
 namespace Blazorade.Bootstrap.Components
 {
     /// <summary>
-    /// Supports the <see cref="Carousel"/> component and displays controls to move back and forward through slides.
+    /// Supports the <see cref="Components.Carousel"/> component and displays controls to move back and forward through slides.
     /// </summary>
     public partial class CarouselControl
     {

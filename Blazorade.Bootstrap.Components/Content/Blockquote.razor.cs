@@ -5,7 +5,7 @@ using System.Text;
 namespace Blazorade.Bootstrap.Components.Content
 {
     /// <summary>
-    /// The <see cref="Blockquote"/> component represents a standard <c>HTML</c> <c>BLOCKQUOTE</c> element.
+    /// The <c>Blockquote</c> component represents a standard <c>blockquote</c> element in <c>HTML</c>.
     /// </summary>
     public partial class Blockquote
     {

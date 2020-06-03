@@ -8,8 +8,11 @@ using System.Threading.Tasks;
 namespace Blazorade.Bootstrap.Components
 {
     /// <summary>
-    /// The Button component allows you to render various types of buttons.
+    /// The <c>Button</c> component allows you to render various types of buttons. It is probably one of the most
+    /// versatile components in Bootstrap, since it is used for so many things, from forms and dialogs to custom navigation etc.
     /// </summary>
+    /// <seealso cref="ButtonGroup"/>
+    /// <seealso cref="ButtonToolbar"/>
     public partial class Button
     {
 

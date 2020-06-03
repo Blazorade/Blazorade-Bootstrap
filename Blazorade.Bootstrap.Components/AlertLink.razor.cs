@@ -5,11 +5,9 @@ using System.Text;
 namespace Blazorade.Bootstrap.Components
 {
     /// <summary>
-    /// This component can be used inside of Alert components to provide link colors matching with the parent Alert component.
+    /// This component can be used inside of <see cref="Alert"/> components to provide link colors matching with the parent <see cref="Alert"/> component.
     /// </summary>
-    /// <remarks>
-    /// For details see https://github.com/Blazorade/Blazorade-Bootstrap/wiki/AlertLink
-    /// </remarks>
+    /// <seealso cref="Alert"/>
     public partial class AlertLink
     {
         /// <summary>
