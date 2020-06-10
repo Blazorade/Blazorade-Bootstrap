@@ -6,11 +6,9 @@
     <members>
         <member name="T:Blazorade.Bootstrap.Components.Alert">
             <summary>
-            The Alert component is used to provide feedback messages, typically in response to user actions.
+            The <c>Alert</c> component is used to provide feedback messages, typically in response to user actions.
             </summary>
-            <remarks>
-            For details see https://github.com/Blazorade/Blazorade-Bootstrap/wiki/Alert
-            </remarks>
+            <seealso cref="T:Blazorade.Bootstrap.Components.AlertLink"/>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.Alert.OnDismiss">
             <summary>
@@ -78,11 +76,9 @@
         </member>
         <member name="T:Blazorade.Bootstrap.Components.AlertLink">
             <summary>
-            This component can be used inside of Alert components to provide link colors matching with the parent Alert component.
+            This component can be used inside of <see cref="T:Blazorade.Bootstrap.Components.Alert"/> components to provide link colors matching with the parent <see cref="T:Blazorade.Bootstrap.Components.Alert"/> component.
             </summary>
-            <remarks>
-            For details see https://github.com/Blazorade/Blazorade-Bootstrap/wiki/AlertLink
-            </remarks>
+            <seealso cref="T:Blazorade.Bootstrap.Components.Alert"/>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.AlertLink.OnParametersSet">
             <summary>
@@ -90,17 +86,18 @@
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Backdrop">
             <summary>
-            Defines behaviour for modal backdrops.
+            Defines behaviour for modal backdrops on <see cref="T:Blazorade.Bootstrap.Components.Modal"/> components.
             </summary>
+            <see cref="T:Blazorade.Bootstrap.Components.Modal"/>
         </member>
         <member name="F:Blazorade.Bootstrap.Components.Backdrop.Hidden">
             <summary>
-            Do not display a backdrop.
+            Do not display a backdrop. Clicking outside of the modal will not close the modal.
             </summary>
         </member>
         <member name="F:Blazorade.Bootstrap.Components.Backdrop.Default">
             <summary>
-            Shows the default backdrop.
+            Shows the default backdrop. Clicking the backdrop will close the modal.
             </summary>
         </member>
         <member name="F:Blazorade.Bootstrap.Components.Backdrop.Static">
@@ -110,11 +107,8 @@
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Badge">
             <summary>
-            The base class for the <see cref="T:Blazorade.Bootstrap.Components.Badge"/> component.
+            The <c>Badge</c> component is used to add counts and labels to other components.
             </summary>
-            <remarks>
-            For details see https://github.com/MikaBerglund/Blazor-Bootstrap/wiki/Badge
-            </remarks>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.Badge.IsPill">
             <summary>
@@ -139,9 +133,6 @@
             <summary>
             Base implementation for all Blazor Boostrap components.
             </summary>
-            <remarks>
-            For details see https://github.com/Blazorade/Blazorade-Bootstrap/wiki/BootstrapComponentBase
-            </remarks>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.BootstrapComponentBase.#ctor">
             <summary>
@@ -321,7 +312,7 @@
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Breadcrumb">
             <summary>
-            The Breadcrumb component visualizes the current page in a navigational hierarchy.
+            The <c>Breadcrumb</c> component visualizes the current page in a navigational hierarchy.
             </summary>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.Breadcrumb.ItemTemplate">
@@ -1237,8 +1228,11 @@
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Button">
             <summary>
-            The Button component allows you to render various types of buttons.
+            The <c>Button</c> component allows you to render various types of buttons. It is probably one of the most
+            versatile components in Bootstrap, since it is used for so many things, from forms and dialogs to custom navigation etc.
             </summary>
+            <seealso cref="T:Blazorade.Bootstrap.Components.ButtonGroup"/>
+            <seealso cref="T:Blazorade.Bootstrap.Components.ButtonToolbar"/>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.Button.OnClicked">
             <summary>
@@ -1306,7 +1300,7 @@
         </member>
         <member name="T:Blazorade.Bootstrap.Components.ButtonGroup">
             <summary>
-            The ButtonGroup component is used to group buttons together. Buttons in the same group are joined together.
+            The <c>ButtonGroup</c> component is used to group <see cref="T:Blazorade.Bootstrap.Components.Button"/> components together. Buttons in the same group are joined together.
             </summary>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.ButtonGroup.Size">
@@ -1320,7 +1314,7 @@
         </member>
         <member name="T:Blazorade.Bootstrap.Components.ButtonToolbar">
             <summary>
-            The <see cref="T:Blazorade.Bootstrap.Components.ButtonToolbar"/> component combines sets of <see cref="T:Blazorade.Bootstrap.Components.ButtonGroup"/> components together into a toolbar.
+            The <c>ButtonToolbar</c> component combines sets of <see cref="T:Blazorade.Bootstrap.Components.ButtonGroup"/> components together into a toolbar.
             </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.ButtonToolbar.OnParametersSet">
@@ -1443,9 +1437,15 @@
             Represents the body of a <see cref="T:Blazorade.Bootstrap.Components.Card"/> component.
             </summary>
             <remarks>
-            The <see cref="T:Blazorade.Bootstrap.Components.CardBody"/> encapsulates the <see cref="P:Blazorade.Bootstrap.Components.CardBody.Title"/>, <see cref="P:Blazorade.Bootstrap.Components.CardBody.Subtitle"/>, <see cref="P:Blazorade.Bootstrap.Components.CardBody.Text"/> and <see cref="P:Blazorade.Bootstrap.Components.CardBody.Links"/>
+            <para>
+            The <c>CardBody</c> component encapsulates the <see cref="P:Blazorade.Bootstrap.Components.CardBody.Title"/>, <see cref="P:Blazorade.Bootstrap.Components.CardBody.Subtitle"/>, <see cref="P:Blazorade.Bootstrap.Components.CardBody.Text"/> and <see cref="P:Blazorade.Bootstrap.Components.CardBody.Links"/>
             shown in a <see cref="T:Blazorade.Bootstrap.Components.Card"/> component.
+            </para>
+            <para>
+            Normally, you should not need to use this component, but stick to using just the <see cref="T:Blazorade.Bootstrap.Components.Card"/> component.
+            </para>
             </remarks>
+            <seealso cref="T:Blazorade.Bootstrap.Components.Card"/>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.CardBody.Links">
             <summary>
@@ -1515,9 +1515,15 @@
         </member>
         <member name="T:Blazorade.Bootstrap.Components.CardContent">
             <summary>
-            The <see cref="T:Blazorade.Bootstrap.Components.CardContent"/> represents all content in a <see cref="T:Blazorade.Bootstrap.Components.Card"/> component, except for
+            The <c>CardContent</c> represents all content in a <see cref="T:Blazorade.Bootstrap.Components.Card"/> component, except for
             the <see cref="P:Blazorade.Bootstrap.Components.Card.Header"/> and <see cref="P:Blazorade.Bootstrap.Components.Card.Footer"/>.
             </summary>
+            <remarks>
+            <para>
+            Normally, you should not need to use this component in your code. Instead, use the <see cref="T:Blazorade.Bootstrap.Components.Card"/> component.
+            </para>
+            </remarks>
+            <seealso cref="T:Blazorade.Bootstrap.Components.Card"/>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.CardContent.BodyTemplate">
             <summary>
@@ -1782,7 +1788,7 @@
         </member>
         <member name="T:Blazorade.Bootstrap.Components.CarouselControl">
             <summary>
-            Supports the <see cref="P:Blazorade.Bootstrap.Components.CarouselControl.Carousel"/> component and displays controls to move back and forward through slides.
+            Supports the <see cref="T:Blazorade.Bootstrap.Components.Carousel"/> component and displays controls to move back and forward through slides.
             </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.CarouselControl.#ctor">
@@ -2168,7 +2174,7 @@
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Collapse">
             <summary>
-            The <see cref="T:Blazorade.Bootstrap.Components.Collapse"/> component is used to toggle the visibility of content.
+            The <c>Collapse</c> component is used to toggle the visibility of content.
             </summary>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.Collapse.OnShow">
@@ -2269,7 +2275,7 @@
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Content.Anchor">
             <summary>
-            The <see cref="T:Blazorade.Bootstrap.Components.Content.Anchor"/> component is used to create a link.
+            The <c>Anchor</c> component is used to create a link.
             </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Content.Anchor.#ctor">
@@ -2347,12 +2353,21 @@
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Content.Blockquote">
             <summary>
-            The <see cref="T:Blazorade.Bootstrap.Components.Content.Blockquote"/> component represents a standard <c>HTML</c> <c>BLOCKQUOTE</c> element.
+            The <c>Blockquote</c> component represents a standard <c>blockquote</c> element in <c>HTML</c>.
             </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Content.Blockquote.OnParametersSet">
             <summary>
             </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Content.Div">
+            <summary>
+            The <c>Div</c> component represents a standard <c>&lt;div /&gt;</c> element.
+            </summary>
+            <seealso cref="T:Blazorade.Bootstrap.Components.Content.Heading"/>
+            <seealso cref="T:Blazorade.Bootstrap.Components.Content.Blockquote"/>
+            <seealso cref="T:Blazorade.Bootstrap.Components.Content.Span"/>
+            <seealso cref="T:Blazorade.Bootstrap.Components.Content.Paragraph"/>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Content.Heading">
             <summary>
@@ -2387,6 +2402,9 @@
             <summary>
             Represents the content in a <see cref="T:Blazorade.Bootstrap.Components.Content.Heading"/> component.
             </summary>
+            <remarks>
+            Not intended to be used directly from your code.
+            </remarks>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.Content.HeadingContent.AnchorId">
             <summary>
@@ -2518,9 +2536,14 @@
             <summary>
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.Content.Span">
+            <summary>
+            The <c>Span</c> component represents a standard <c>&lt;span /&gt;</c> element.
+            </summary>
+        </member>
         <member name="T:Blazorade.Bootstrap.Components.Dropdown">
             <summary>
-            The <see cref="T:Blazorade.Bootstrap.Components.Dropdown"/> component is a contextual overlay that displays a list of links and other elements. The <see cref="T:Blazorade.Bootstrap.Components.Dropdown"/> can be toggled.
+            The <c>Dropdown</c> component is a contextual overlay that displays a list of links and other elements. The <c>Dropdown</c> component can be toggled.
             </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Dropdown.OnParametersSet">
@@ -3325,7 +3348,7 @@
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Navbar">
             <summary>
-            The Navbar component is used to produce a responsive navigation header with built-in support for collapsing.
+            The <c>Navbar</c> component is used to produce a responsive navigation header with built-in support for collapsing.
             </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Navbar.#ctor">
@@ -3850,7 +3873,7 @@
         </member>
         <member name="T:Blazorade.Bootstrap.Components.SpinnerType">
             <summary>
-            Defines different types to be used in <see cref="T:Blazorade.Bootstrap.Components.Spinner"/> components
+            Defines different types to be used in <see cref="T:Blazorade.Bootstrap.Components.Spinner"/> components.
             </summary>
         </member>
         <member name="F:Blazorade.Bootstrap.Components.SpinnerType.Border">

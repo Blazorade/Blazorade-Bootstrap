@@ -6,7 +6,7 @@ using System.Text;
 namespace Blazorade.Bootstrap.Components
 {
     /// <summary>
-    /// The ButtonGroup component is used to group buttons together. Buttons in the same group are joined together.
+    /// The <c>ButtonGroup</c> component is used to group <see cref="Button"/> components together. Buttons in the same group are joined together.
     /// </summary>
     public partial class ButtonGroup
     {

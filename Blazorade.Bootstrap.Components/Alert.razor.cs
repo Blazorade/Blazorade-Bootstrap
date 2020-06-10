@@ -8,17 +8,16 @@ using Microsoft.JSInterop;
 namespace Blazorade.Bootstrap.Components
 {
     /// <summary>
-    /// The Alert component is used to provide feedback messages, typically in response to user actions.
+    /// The <c>Alert</c> component is used to provide feedback messages, typically in response to user actions.
     /// </summary>
-    /// <remarks>
-    /// For details see https://github.com/Blazorade/Blazorade-Bootstrap/wiki/Alert
-    /// </remarks>
+    /// <seealso cref="AlertLink"/>
     public partial class Alert
     {
 
         /// <summary>
         /// The callback that is called when the alert is being dismissed, but not fully dismissed yet.
         /// </summary>
+        [Parameter]
         public EventCallback<Alert> OnDismiss { get; set; }
 
         /// <summary>

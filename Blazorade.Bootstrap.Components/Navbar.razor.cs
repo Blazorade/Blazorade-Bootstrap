@@ -7,7 +7,7 @@ using System.Text;
 namespace Blazorade.Bootstrap.Components
 {
     /// <summary>
-    /// The Navbar component is used to produce a responsive navigation header with built-in support for collapsing.
+    /// The <c>Navbar</c> component is used to produce a responsive navigation header with built-in support for collapsing.
     /// </summary>
     public partial class Navbar
     {

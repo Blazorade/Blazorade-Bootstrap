@@ -5,7 +5,7 @@ using System.Text;
 namespace Blazorade.Bootstrap.Components
 {
     /// <summary>
-    /// The <see cref="Dropdown"/> component is a contextual overlay that displays a list of links and other elements. The <see cref="Dropdown"/> can be toggled.
+    /// The <c>Dropdown</c> component is a contextual overlay that displays a list of links and other elements. The <c>Dropdown</c> component can be toggled.
     /// </summary>
     public partial class Dropdown
     {
