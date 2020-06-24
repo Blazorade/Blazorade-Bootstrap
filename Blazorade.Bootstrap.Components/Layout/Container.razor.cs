@@ -8,6 +8,11 @@ namespace Blazorade.Bootstrap.Components.Layout
     /// <summary>
     /// The Container component is the foundation for many layout configurations in Bootstrap.
     /// </summary>
+    /// <example>
+    /// 
+    /// </example>
+    /// <seealso cref="Row"/>
+    /// <seealso cref="Column"/>
     partial class Container
     {
         /// <summary>

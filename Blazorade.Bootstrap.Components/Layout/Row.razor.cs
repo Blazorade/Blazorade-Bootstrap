@@ -8,6 +8,11 @@ namespace Blazorade.Bootstrap.Components.Layout
     /// <summary>
     /// Represents a row in a grid.
     /// </summary>
+    /// <example>
+    /// For examples, see <see cref="Container"/>.
+    /// </example>
+    /// <seealso cref="Container"/>
+    /// <seealso cref="Column"/>
     partial class Row
     {
 

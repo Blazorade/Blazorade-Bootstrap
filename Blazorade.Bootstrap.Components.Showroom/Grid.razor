@@ -25,9 +25,26 @@
 <DocsSection ComponentName="Grid"></DocsSection>
 
 
-<Heading Id="auto-layout" IsAnchor="true" Level="HeadingLevel.H3" Builder="this.marginTop">Automatic layout</Heading>
+<Heading Id="auto-layout" IsAnchor="true" Level="3" Builder="this.marginTop">Auto layout</Heading>
 <Paragraph>
-    Here we use automatic column layout where the first row will break up into two rows on <code>XS</code> and <code>SM</code> breakpoints. When the row breaks,
+    This sample shows how columns apply auto-layout if you don't specify any other layout options.
+</Paragraph>
+<Container Type="ContainerType.Fluid">
+    <Row>
+        <Column Builder="colShared">Col 1.1</Column>
+        <Column Builder="colShared">Col 1.2</Column>
+        <Column Builder="colShared">Col 1.3</Column>
+    </Row>
+    <Row>
+        <Column Builder="colShared">Col 2.1</Column>
+        <Column Builder="colShared">Col 2.2</Column>
+    </Row>
+</Container>
+
+
+<Heading Id="multi-row" IsAnchor="true" Level="HeadingLevel.H3" Builder="this.marginTop">Multi-row layout</Heading>
+<Paragraph>
+    Here we use multi-row column layout where the first row will break up into two rows on <code>XS</code> and <code>SM</code> breakpoints. When the row breaks,
     it also adds a margin between the cells to match the spacing betwen the first and the second row. The second row stays as is on all screen sizes.
 </Paragraph>
 <Container Type="ContainerType.Fluid">
