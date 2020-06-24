@@ -1,0 +1,30 @@
+﻿@inherits BootstrapComponentBase
+
+<li @attributes="this.Attributes">
+    @if (!string.IsNullOrEmpty(this.Url))
+    {
+        <Anchor Link="@this">
+            @if(null != this.ChildContent)
+            {
+                @this.ChildContent
+            }
+            else
+            {
+                @this.Text
+            }
+        </Anchor>
+    }
+    else
+    {
+        <Span title="@this.Description">
+            @if(null != this.ChildContent)
+            {
+                @this.ChildContent
+            }
+            else
+            {
+                @this.Text
+            }
+        </Span>
+    }
+</li>

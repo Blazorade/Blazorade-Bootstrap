@@ -52,6 +52,17 @@
 <Breadcrumb Items="this.items" BackgroundColor="NamedColor.Transparent" />
 
 
+<Heading Id="child-content" IsAnchor="true" Level="3" MarginTop="5">Items as Child Content</Heading>
+<Paragraph>
+    You can also add items to the <code>Breadcrumb</code> by adding <code>BreadcrumbItem</code> components as child content.
+</Paragraph>
+<Breadcrumb>
+    <BreadcrumbItem Url="JavaScript:" Description="First-level item">Item 1</BreadcrumbItem>
+    <BreadcrumbItem Url="JavaScript:" Description="Second-level item">Item 1.1</BreadcrumbItem>
+    <BreadcrumbItem Description="Current item" IsActive="true">Item 1.1.1</BreadcrumbItem>
+</Breadcrumb>
+
+
 <Heading Id="dynamic-items" IsAnchor="true" Level="3" MarginTop="5">Dynamic Items</Heading>
 <Paragraph>
     The items on the breadcrumb can be dynamically updated.

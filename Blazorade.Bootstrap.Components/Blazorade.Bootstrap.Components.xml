@@ -314,22 +314,121 @@
             <summary>
             The <c>Breadcrumb</c> component visualizes the current page in a navigational hierarchy.
             </summary>
+            <example>
+            <para>
+            This example shows how you use the <c>Breadcrumb</c> component with a collection of links. You can build up
+            the collection in your component's logic, and then just attach it to the <c>Breadcrumb</c> component.
+            </para>
+            <code>
+            <![CDATA[
+            @code {
+                List<ILink> items = new List<ILink>()
+                {
+                    new Link() { Url = "/", Text = "Home", Description = "The front page of the site" },
+                    new Link() { Url = "/section1", Text = "Section 1" },
+                    new Link() { Url = "/section1/subsection1", Text = "Section 1.1" },
+                    new Link() { Text = "This page", IsActive = true, Description = "This is your current page. You are here now." }
+                };
+            }
+            
+            <Breadcrumb Items="@items" />
+            ]]>
+            </code>
+            <para>
+            <see cref="T:Blazorade.Bootstrap.Components.BreadcrumbItem"/> for samples on how to build a <c>Breadcrumb</c> component declaratively.
+            </para>
+            </example>
+            <seealso cref="T:Blazorade.Bootstrap.Components.BreadcrumbItem"/>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.Breadcrumb.ItemTemplate">
             <summary>
             The template to use to display each link with. If not specified, a default template is used.
             </summary>
+            <remarks>
+            This template is used only when the items in the <see cref="T:Blazorade.Bootstrap.Components.Breadcrumb"/> are added to the <see cref="P:Blazorade.Bootstrap.Components.Breadcrumb.Items"/> collection.
+            If you use <see cref="T:Blazorade.Bootstrap.Components.BreadcrumbItem"/> components as child content to the <see cref="T:Blazorade.Bootstrap.Components.Breadcrumb"/>, this template
+            is ignored.
+            </remarks>
+            <example>
+            <para>
+            The example below shows you how you can customize the rendering of items.
+            </para>
+            <code>
+            <![CDATA[
+            <Breadcrumb Items="@...">
+                <ItemTemplate>
+                    @if (!string.IsNullOrEmpty(context.Url))
+                    {
+                        <Button Color = "NamedColor.Light" Shadow="Shadow.Regular">@context.Text</Button>
+                    }
+                    else
+                    {
+                        <Span>@context.Text(@context.Description)</Span>
+                    }
+                </ItemTemplate>
+            </Breadcrumb>
+            ]]>
+            </code>
+            </example>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.Breadcrumb.Items">
             <summary>
             A collection of the items to show in the Breadcrumb component.
             </summary>
         </member>
-        <member name="P:Blazorade.Bootstrap.Components.Breadcrumb.ChildContent">
+        <member name="M:Blazorade.Bootstrap.Components.Breadcrumb.OnParametersSet">
             <summary>
             </summary>
         </member>
-        <member name="M:Blazorade.Bootstrap.Components.Breadcrumb.OnParametersSet">
+        <member name="T:Blazorade.Bootstrap.Components.BreadcrumbItem">
+            <summary>
+            Represents one item in a <see cref="T:Blazorade.Bootstrap.Components.Breadcrumb"/> component.
+            </summary>
+            <example>
+            <para>
+            The following example shows how you use the <c>BreadcrumbItem</c> component.
+            </para>
+            <code>
+            <![CDATA[
+            <Breadcrumb>
+                <BreadcrumbItem Url="/">Home</BreadcrumbItem>
+                <BreadcrumbItem Url="/page1">Page 1</BreadcrumbItem>
+                <BreadcrumbItem IsActive="true">Current Page</BreadcrumbItem>
+            </Breadcrumb>
+            ]]>
+            </code>
+            </example>
+            <seealso cref="T:Blazorade.Bootstrap.Components.Breadcrumb"/>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BreadcrumbItem.Description">
+            <inheritdoc/>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BreadcrumbItem.Index">
+            <inheritdoc/>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BreadcrumbItem.IsActive">
+            <inheritdoc/>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BreadcrumbItem.IsDisabled">
+            <inheritdoc/>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BreadcrumbItem.IsStretched">
+            <inheritdoc/>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BreadcrumbItem.OpenInNewTab">
+            <inheritdoc/>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BreadcrumbItem.Url">
+            <inheritdoc/>
+            <remarks>
+            If this property is empty or <c>null</c>, the <see cref="T:Blazorade.Bootstrap.Components.BreadcrumbItem"/> will be rendered
+            without a link using the <see cref="T:Blazorade.Bootstrap.Components.Content.Span"/> component.
+            </remarks>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BreadcrumbItem.Text">
+            <inheritdoc/>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.BreadcrumbItem.OnParametersSet">
             <summary>
             </summary>
         </member>
@@ -2821,11 +2920,25 @@
             <summary>
             Represents a column in a grid.
             </summary>
+            <example>
+            For examples, see <see cref="T:Blazorade.Bootstrap.Components.Layout.Container"/>.
+            </example>
+            <seealso cref="T:Blazorade.Bootstrap.Components.Layout.Container"/>
+            <seealso cref="T:Blazorade.Bootstrap.Components.Layout.Row"/>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Layout.Column.OnParametersSet">
+            <summary>
+            </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Layout.Container">
             <summary>
             The Container component is the foundation for many layout configurations in Bootstrap.
             </summary>
+            <example>
+            
+            </example>
+            <seealso cref="T:Blazorade.Bootstrap.Components.Layout.Row"/>
+            <seealso cref="T:Blazorade.Bootstrap.Components.Layout.Column"/>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.Layout.Container.#ctor">
             <summary>
@@ -2879,6 +2992,11 @@
             <summary>
             Represents a row in a grid.
             </summary>
+            <example>
+            For examples, see <see cref="T:Blazorade.Bootstrap.Components.Layout.Container"/>.
+            </example>
+            <seealso cref="T:Blazorade.Bootstrap.Components.Layout.Container"/>
+            <seealso cref="T:Blazorade.Bootstrap.Components.Layout.Column"/>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.Layout.Row.NoGutters">
             <summary>

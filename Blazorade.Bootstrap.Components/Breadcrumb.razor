@@ -4,26 +4,33 @@
 
 <nav aria-label="breadcrumb" @attributes="this.Attributes">
     <ol @attributes="this.ListAttributes">
-        @foreach(var item in this.Items)
+        @if (this.Items?.Count > 0)
         {
-            item.Index = ix;
+            @foreach (var item in this.Items)
+            {
+                item.Index = ix;
 
-            <li class="breadcrumb-item @( item.IsActive ? "active" : "")">
-                @if (null != this.ItemTemplate)
-                {
-                    @this.ItemTemplate(item)
-                }
-                else if (!string.IsNullOrEmpty(item.Url))
-                {
-                    <Anchor Link="@item"></Anchor>
-                }
-                else
-                {
-                    <Span title="@item.Description">@item.Text</Span>
-                }
-            </li>
+                <li class="breadcrumb-item @( item.IsActive ? "active" : "")">
+                    @if (null != this.ItemTemplate)
+                    {
+                        @this.ItemTemplate(item)
+                    }
+                    else if (!string.IsNullOrEmpty(item.Url))
+                    {
+                        <Anchor Link="@item"></Anchor>
+                    }
+                    else
+                    {
+                        <Span title="@item.Description">@item.Text</Span>
+                    }
+                </li>
 
-            ix++;
+                ix++;
+            }
+        }
+        else if(null != this.ChildContent)
+        {
+            @this.ChildContent
         }
     </ol>
 </nav>
