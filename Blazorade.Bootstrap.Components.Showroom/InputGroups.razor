@@ -1,2 +1,45 @@
-﻿<h3>Input Groups</h3>
+﻿<Heading Level="2">InputGroup Component</Heading>
+<Paragraph>
+    Easily extend form controls by adding text, buttons, or button groups on either side of textual inputs, custom selects, and custom file inputs.
+</Paragraph>
+<DocsSection ComponentName="InputGroup" />
 
+
+
+<Heading Id="basic" IsAnchor="true" Level="3" MarginTop="5">Basic Input Groups</Heading>
+<Paragraph>
+    A few examples of a very basic input group with one text addon, either to the left or to the right of on single
+    text input control.
+</Paragraph>
+<InputGroup AddonText="Text Addon"></InputGroup>
+<InputGroup AddonText="https://company.com/users/" MarginTop="1" InputPlaceholder="Enter your the name you want to use in your URL"></InputGroup>
+<InputGroup AddonText="@("@company.com")" AddonPlacement="AddonPlacement.Append" MarginTop="1" InputPlaceholder="firstname.lastname"></InputGroup>
+<InputGroup AddonText="Multiline" Multiline="true" MarginTop="1" InputPlaceholder="This is a multiline text control where you can enter multiple lines of text"></InputGroup>
+
+
+
+<Heading Id="change-event" IsAnchor="true" Level="3" MarginTop="5">Changed Event</Heading>
+<Paragraph>
+    Demonstrates how to handle change in the input control.
+</Paragraph>
+@code {
+    string text;
+}
+<InputGroup AddonText="Your text goes here" InputPlaceholder="Add your text here" OnChanged="(v) => { this.text = v; }"></InputGroup>
+@if (null != text)
+{
+    <Paragraph>
+        You entered: @text
+    </Paragraph>
+}
+
+
+
+<Heading Id="sizing" IsAnchor="true" Level="3" MarginTop="5">Sizing</Heading>
+<Paragraph>
+    Input groups can have 3 different sizes.
+</Paragraph>
+
+<InputGroup AddonText="Small" Size="ComponentSize.Small"></InputGroup>
+<InputGroup AddonText="Default" Size="ComponentSize.Normal" MarginTop="1"></InputGroup>
+<InputGroup AddonText="Large" Size="ComponentSize.Large" MarginTop="1"></InputGroup>

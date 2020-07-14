@@ -340,6 +340,43 @@ namespace Blazorade.Bootstrap.Components
             public const string TextMuted = "text-muted";
         }
 
+        /// <summary>
+        /// Class name constants for <see cref="InputGroup"/> component.
+        /// </summary>
+        public static class InputGroups
+        {
+            /// <summary>
+            /// The class name used on all input groups.
+            /// </summary>
+            public const string InputGroup = "input-group";
+
+            /// <summary>
+            /// The class name to add to small input groups.
+            /// </summary>
+            public const string Small = "input-group-sm";
+
+            /// <summary>
+            /// The class name to add to large input groups.
+            /// </summary>
+            public const string Large = "input-group-lg";
+
+            /// <summary>
+            /// The class name for appended addons.
+            /// </summary>
+            public const string Append = "input-group-append";
+
+            /// <summary>
+            /// The class name for prepended addons.
+            /// </summary>
+            public const string Prepend = "input-group-prepend";
+
+            /// <summary>
+            /// The class name for text addons.
+            /// </summary>
+            public const string Text = "input-group-text";
+
+        }
+
         public static class Jumbotrons
         {
             public const string Jumbotron = "jumbotron";
