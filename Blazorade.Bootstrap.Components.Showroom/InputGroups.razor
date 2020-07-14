@@ -1,2 +1,152 @@
-﻿<h3>Input Groups</h3>
+﻿<Heading Level="2">InputGroup Component</Heading>
+<Paragraph>
+    Easily extend form controls by adding text, buttons, or button groups on either side of textual inputs, custom selects, and custom file inputs.
+</Paragraph>
+<DocsSection ComponentName="InputGroup" />
 
+
+
+<Heading Id="basic" IsAnchor="true" Level="3" MarginTop="5">Basic Input Groups</Heading>
+<Paragraph>
+    A few examples of a very basic input group with one text addon, either to the left or to the right of on single
+    text input control.
+</Paragraph>
+<InputGroup AddonText="Text Addon"></InputGroup>
+<InputGroup AddonText="https://company.com/users/" MarginTop="1" InputPlaceholder="Enter your the name you want to use in your URL"></InputGroup>
+<InputGroup AddonText="@("@company.com")" AddonPlacement="AddonPlacement.Append" MarginTop="1" InputPlaceholder="firstname.lastname"></InputGroup>
+<InputGroup AddonText="Multiline" InputType="InputType.TextMultiline" MarginTop="1" InputPlaceholder="This is a multiline text control where you can enter multiple lines of text"></InputGroup>
+
+
+
+<Heading Id="change-event" IsAnchor="true" Level="3" MarginTop="5">Changed Event</Heading>
+<Paragraph>
+    Demonstrates how to handle change in the input control.
+</Paragraph>
+@code {
+    string text;
+}
+<InputGroup AddonText="Your text goes here" InputPlaceholder="Add your text here" OnChanged="(v) => { this.text = v; }"></InputGroup>
+@if (null != text)
+{
+    <Paragraph>
+        You entered: @text
+    </Paragraph>
+}
+
+
+
+<Heading Id="input-types" IsAnchor="true" Level="3" MarginTop="5">Different input types</Heading>
+<Paragraph>
+    You can specify various different types for the auto-generated input control in your <code>InputGroup</code>
+</Paragraph>
+@code {
+    Dictionary<InputType, string> typeValues = new Dictionary<InputType, string>()
+    {
+        { InputType.Colour, "" },
+        { InputType.Date, "" },
+        { InputType.DateTimeLocal, "" },
+        { InputType.Email, "" },
+        { InputType.Month, "" },
+        { InputType.Number, "" },
+        { InputType.Password, "" },
+        { InputType.Tel, "" },
+        { InputType.Text, "" },
+        { InputType.TextMultiline, "" },
+        { InputType.Time, "" },
+        { InputType.Url, "" },
+        { InputType.Week, "" }
+    };
+}
+
+@foreach(InputType it in typeValues.Keys)
+{
+    <InputGroup AddonText="@($"{it}: {typeValues[it]}")" InputType="@it" OnChanged="(e) => { typeValues[it] = e; }"></InputGroup>
+}
+
+
+
+<Heading Id="initial-value" IsAnchor="true" Level="3" MarginTop="5">Initial value</Heading>
+<Paragraph>
+    You can specify the initial value for the auto-generated input control.
+</Paragraph>
+
+@code {
+    string initialValue = "Initial value";
+}
+
+<input type="text" value="@initialValue" class="form-control" @onchange="(e) => { this.initialValue = e.Value?.ToString(); }" />
+<InputGroup AddonText="Text with initial value" InputValue="@initialValue"></InputGroup>
+
+
+
+<Heading Id="sizing" IsAnchor="true" Level="3" MarginTop="5">Sizing</Heading>
+<Paragraph>
+    Input groups can have 3 different sizes.
+</Paragraph>
+
+<InputGroup AddonText="Small" Size="ComponentSize.Small"></InputGroup>
+<InputGroup AddonText="Default" Size="ComponentSize.Normal" MarginTop="1"></InputGroup>
+<InputGroup AddonText="Large" Size="ComponentSize.Large" MarginTop="1"></InputGroup>
+
+
+
+<Heading Id="multi-inputs" IsAnchor="true" Level="3" MarginTop="5">Multiple inputs</Heading>
+<Paragraph>
+    Use the <code>InputGroup.InputsTemplate</code> to specify multiple Bootstrap form controls as inputs
+    for your input group.
+</Paragraph>
+
+<InputGroup AddonText="Multiple inputs #1">
+    <InputsTemplate>
+        <input type="text" class="form-control" placeholder="Input #1" />
+        <input type="text" class="form-control" placeholder="Input #2" />
+    </InputsTemplate>
+</InputGroup>
+<InputGroup AddonText="Multiple inputs #2" AddonPlacement="AddonPlacement.Append" MarginTop="1" InputPlaceholder="This won't show since we're adding our own input controls">
+    <InputsTemplate>
+        <input type="text" class="form-control" placeholder="Input #1" />
+        <input type="text" class="form-control" placeholder="Input #2" />
+    </InputsTemplate>
+</InputGroup>
+
+
+
+<Heading Id="multi-addons" IsAnchor="true" Level="3" MarginTop="5">Multiple addons</Heading>
+<Paragraph>
+    The <code>InputGroup</code> component exposes multiple template parameters you can use to add your
+    custom addons instead of a standard text addon.
+</Paragraph>
+
+<InputGroup AddonPlacement="AddonPlacement.Prepend">
+    <AddonsTemplate>
+        <InputGroupTextAddon>Text</InputGroupTextAddon>
+        <Button Color="NamedColor.Primary" IsOutline="true">Button</Button>
+        <Dropdown>
+            <DropdownToggleButton Color="NamedColor.Success">Select</DropdownToggleButton>
+            <DropdownMenu>
+                <DropdownItem>Item #1</DropdownItem>
+                <DropdownItem>Item #2</DropdownItem>
+            </DropdownMenu>
+        </Dropdown>
+    </AddonsTemplate>
+</InputGroup>
+
+
+
+<Heading Id="prepend-append-addons" IsAnchor="true" Level="3" MarginTop="5">Prepended and appended addons</Heading>
+<Paragraph>
+    This demonstrates how you can specify addons on both sides of your input controls.
+</Paragraph>
+
+<InputGroup>
+    <PrependAddonsTemplate>
+        <InputGroupTextAddon>Email:</InputGroupTextAddon>
+    </PrependAddonsTemplate>
+    <AppendAddonsTemplate>
+        <InputGroupTextAddon>@("@company.com")</InputGroupTextAddon>
+    </AppendAddonsTemplate>
+    <InputsTemplate>
+        <input type="text" class="form-control" placeholder="First name" />
+        <input type="text" class="form-control" placeholder="Last name" />
+    </InputsTemplate>
+</InputGroup>
