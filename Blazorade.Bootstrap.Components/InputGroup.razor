@@ -1,16 +1,22 @@
 ﻿@inherits BootstrapComponentBase
 
 <Div @attributes="this.Attributes">
-    @if (this.AddonPlacement == Components.AddonPlacement.Prepend || null == this.AddonPlacement || null != this.PrependAddonsTemplate)
+    @if(this.ShowPrependAddons())
     {
-        <InputGroupAddonsContainer Placement="this.AddonPlacement" AddonText="@this.AddonText">
-            @if (null != this.PrependAddonsTemplate)
-            {
-                @this.PrependAddonsTemplate
-            }
-        </InputGroupAddonsContainer>
-    }
+        <Div class="@ClassNames.InputGroups.Prepend">
+            @this.PrependAddonsTemplate
 
+            @if(this.GetAddonsPlacement() == Components.AddonPlacement.Prepend)
+            {
+                @this.AddonsTemplate
+
+                @if (!string.IsNullOrEmpty(this.AddonText))
+                {
+                    <InputGroupTextAddon>@this.AddonText</InputGroupTextAddon>
+                }
+            }
+        </Div>
+    }
 
     @if (null != this.InputsTemplate)
     {
@@ -18,24 +24,31 @@
     }
     else
     {
-        @if (!this.Multiline)
+        @if (this.InputType != InputType.TextMultiline)
         {
-            <input type="text" class="form-control" placeholder="@this.InputPlaceholder" @onchange="@this.HandleOnChangedAsync" />
+            <input type="@(this.GetInputTypeString())" class="form-control" placeholder="@this.InputPlaceholder" value="@this.InputValue" @onchange="@this.HandleOnChangedAsync" />
         }
         else
         {
-            <textarea class="form-control" placeholder="@this.InputPlaceholder" @onchange="@this.HandleOnChangedAsync" />
+            <textarea class="form-control" placeholder="@this.InputPlaceholder" @onchange="@this.HandleOnChangedAsync">@this.InputValue</textarea>
         }
     }
 
 
-    @if (this.AddonPlacement == Components.AddonPlacement.Append || null != this.AppendAddonsTemplate)
+    @if(this.ShowAppendAddons())
     {
-        <InputGroupAddonsContainer Placement="this.AddonPlacement" AddonText="@this.AddonText">
-            @if (null != this.AppendAddonsTemplate)
+        <Div class="@ClassNames.InputGroups.Append">
+            @if(this.GetAddonsPlacement() == Components.AddonPlacement.Append)
             {
-                @this.AppendAddonsTemplate
+                @if (!string.IsNullOrEmpty(this.AddonText))
+                {
+                    <InputGroupTextAddon>@this.AddonText</InputGroupTextAddon>
+                }
+
+                @this.AddonsTemplate
             }
-        </InputGroupAddonsContainer>
+
+            @this.AppendAddonsTemplate
+        </Div>
     }
 </Div>

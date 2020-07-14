@@ -2925,10 +2925,18 @@
             The <c>InputGroup</c> allows you to easily extend form controls by adding text, buttons, or button groups on either side of textual inputs, custom selects, and custom file inputs.
             </summary>
         </member>
+        <member name="M:Blazorade.Bootstrap.Components.InputGroup.#ctor">
+            <summary>
+            Creates a new instance of the component.
+            </summary>
+        </member>
         <member name="P:Blazorade.Bootstrap.Components.InputGroup.OnChanged">
             <summary>
             The event that is fired when the text in the auto-generated input control has changed.
             </summary>
+            <remarks>
+            This event callback is ignored and will not fire if you specify your custom inputs with the <see cref="P:Blazorade.Bootstrap.Components.InputGroup.InputsTemplate"/> template.
+            </remarks>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.InputGroup.AddonPlacement">
             <summary>
@@ -2952,12 +2960,20 @@
             This parameter is ignored if you specify your inputs using the <see cref="P:Blazorade.Bootstrap.Components.InputGroup.InputsTemplate"/> template parameter.
             </remarks>
         </member>
-        <member name="P:Blazorade.Bootstrap.Components.InputGroup.Multiline">
+        <member name="P:Blazorade.Bootstrap.Components.InputGroup.InputValue">
             <summary>
-            Specifies whether the input control is a multiline text field.
+            Sets or returns the value displayed in the input control.
             </summary>
             <remarks>
-            This parameter is ignored if you specify your input controls with the <see cref="P:Blazorade.Bootstrap.Components.InputGroup.InputsTemplate"/> template.
+            This parameter is ignored if you specify your own input controls with the <see cref="P:Blazorade.Bootstrap.Components.InputGroup.InputsTemplate"/> template parameter.
+            </remarks>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.InputGroup.InputType">
+            <summary>
+            Specifies the type of the auto-generated input control.
+            </summary>
+            <remarks>
+            This parameter is ignored if you specify your own input controls with the <see cref="P:Blazorade.Bootstrap.Components.InputGroup.InputsTemplate"/> template parameter.
             </remarks>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.InputGroup.Size">
@@ -2975,49 +2991,84 @@
             <remarks>
             The placement for the addons added to this template will be adjusted accoording to <see cref="P:Blazorade.Bootstrap.Components.InputGroup.AddonPlacement"/>.
             </remarks>
+            <example>
+            <para>This sample demonstrates how you can add one text addon and one button addon to your <c>InputGroup</c></para>
+            <code>
+            <![CDATA[
+            <InputGroup AddonPlacement="AddonPlacement.Append" InputPlaceholder="Enter the name you want to use">
+                <AddonsTemplate>
+                    <InputGroupTextAddon>Name</InputGroupTextAddon>
+                    <Button Color = "NamedColor.Primary" IsOutline="true">Submit</Button>
+                </AddonsTemplate>
+            </InputGroup>
+            ]]>
+            </code>
+            </example>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.InputGroup.PrependAddonsTemplate">
             <summary>
             Addons added to this template will be prepended, i.e. added before any input controls in <see cref="P:Blazorade.Bootstrap.Components.InputGroup.InputsTemplate"/>.
             </summary>
+            <remarks>
+            All addons added to this template will always be prepended to the inputs in the <c>InputGroup</c>. <see cref="P:Blazorade.Bootstrap.Components.InputGroup.AddonsTemplate"/>
+            for examples.
+            </remarks>
+            <seealso cref="P:Blazorade.Bootstrap.Components.InputGroup.AddonsTemplate"/>
+            <seealso cref="P:Blazorade.Bootstrap.Components.InputGroup.AddonText"/>
+            <seealso cref="P:Blazorade.Bootstrap.Components.InputGroup.AddonPlacement"/>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.InputGroup.AppendAddonsTemplate">
             <summary>
             Addons added to this template will be appended, i.e. added after any input controls in <see cref="P:Blazorade.Bootstrap.Components.InputGroup.InputsTemplate"/>.
             </summary>
+            <remarks>
+            All addons added to this template will always be appended to the inputs in the <c>InputGroup</c>. <see cref="P:Blazorade.Bootstrap.Components.InputGroup.AddonsTemplate"/>
+            for examples.
+            </remarks>
+            <seealso cref="P:Blazorade.Bootstrap.Components.InputGroup.AddonsTemplate"/>
+            <seealso cref="P:Blazorade.Bootstrap.Components.InputGroup.AddonText"/>
+            <seealso cref="P:Blazorade.Bootstrap.Components.InputGroup.AddonPlacement"/>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.InputGroup.InputsTemplate">
             <summary>
             Allows you to customize how input controls are added to the input group. Also allows you to add multiple input controls.
+            </summary>
+            <remarks>
+            Use standard &lt;input /&gt;, &lt;select /&gt; or &lt;textarea /&gt; elements with <c>class="form-control"</c> to style
+            your input controls properly.
+            </remarks>
+            <example>
+            <para>
+            This example shows how you can specify your own inputs. You can add multiple inputs in the same template.
+            </para>
+            <code>
+            <![CDATA[
+            <InputGroup AddonText="Your name">
+                <InputsTemplate>
+                    <input type="text" class="form-control" placeholder="First name" />
+                    <input type="text" class="form-control" placeholder="Last name" />
+                </InputsTemplate>
+            </InputGroup>
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.InputGroup.GetAddonsPlacement">
+            <summary>
+            Returns the specified placement for addons, or the default value if not specified explicitly.
             </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.InputGroup.OnParametersSet">
             <summary>
             </summary>
         </member>
-        <member name="T:Blazorade.Bootstrap.Components.InputGroupAddonsContainer">
+        <member name="T:Blazorade.Bootstrap.Components.InputGroupTextAddon">
             <summary>
-            A container for input group addons.
+            A simple text addon for <see cref="T:Blazorade.Bootstrap.Components.InputGroup"/> components.
             </summary>
-            <remarks>
-            This component is primarily for use internally by <see cref="T:Blazorade.Bootstrap.Components.InputGroup"/>.
-            </remarks>
             <seealso cref="T:Blazorade.Bootstrap.Components.InputGroup"/>
         </member>
-        <member name="P:Blazorade.Bootstrap.Components.InputGroupAddonsContainer.Placement">
-            <summary>
-            Defines the placement of the container.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.InputGroupAddonsContainer.AddonText">
-            <summary>
-            Specifies the text to show as a basic text addon.
-            </summary>
-            <remarks>
-            If not specified, only the addons you add to the child content of this container are shown.
-            </remarks>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.InputGroupAddonsContainer.OnParametersSet">
+        <member name="M:Blazorade.Bootstrap.Components.InputGroupTextAddon.OnParametersSet">
             <summary>
             </summary>
         </member>

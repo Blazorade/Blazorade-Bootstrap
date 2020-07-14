@@ -1,9 +1,0 @@
-﻿@inherits BootstrapComponentBase
-
-<Div @attributes="this.Attributes">
-    @if (!string.IsNullOrEmpty(this.AddonText))
-    {
-        <Span class="@ClassNames.InputGroups.Text">@this.AddonText</Span>
-    }
-    @this.ChildContent
-</Div>
