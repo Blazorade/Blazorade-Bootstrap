@@ -1,0 +1,54 @@
+﻿@inherits BootstrapComponentBase
+
+<Div @attributes="this.Attributes">
+    @if(this.ShowPrependAddons())
+    {
+        <Div class="@ClassNames.InputGroups.Prepend">
+            @this.PrependAddonsTemplate
+
+            @if(this.GetAddonsPlacement() == Components.AddonPlacement.Prepend)
+            {
+                @this.AddonsTemplate
+
+                @if (!string.IsNullOrEmpty(this.AddonText))
+                {
+                    <InputGroupTextAddon>@this.AddonText</InputGroupTextAddon>
+                }
+            }
+        </Div>
+    }
+
+    @if (null != this.InputsTemplate)
+    {
+        @this.InputsTemplate
+    }
+    else
+    {
+        @if (this.InputType != InputType.TextMultiline)
+        {
+            <input type="@(this.GetInputTypeString())" class="form-control" placeholder="@this.InputPlaceholder" value="@this.InputValue" @onchange="@this.HandleOnChangedAsync" />
+        }
+        else
+        {
+            <textarea class="form-control" placeholder="@this.InputPlaceholder" @onchange="@this.HandleOnChangedAsync">@this.InputValue</textarea>
+        }
+    }
+
+
+    @if(this.ShowAppendAddons())
+    {
+        <Div class="@ClassNames.InputGroups.Append">
+            @if(this.GetAddonsPlacement() == Components.AddonPlacement.Append)
+            {
+                @if (!string.IsNullOrEmpty(this.AddonText))
+                {
+                    <InputGroupTextAddon>@this.AddonText</InputGroupTextAddon>
+                }
+
+                @this.AddonsTemplate
+            }
+
+            @this.AppendAddonsTemplate
+        </Div>
+    }
+</Div>
