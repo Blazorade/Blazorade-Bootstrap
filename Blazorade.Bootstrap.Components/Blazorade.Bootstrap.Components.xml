@@ -2443,6 +2443,21 @@
             A large component.
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.Configuration.BlazoradeBootstrapOptions">
+            <summary>
+            The options class for basic Blazorade Bootstrap options.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Configuration.IBlazoradeBootstrapBuilder">
+            <summary>
+            The interface that defines the configuration builder used by Blazorade Bootstrap.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Configuration.IBlazoradeBootstrapBuilder.Services">
+            <summary>
+            Returns the service collection for the current application.
+            </summary>
+        </member>
         <member name="T:Blazorade.Bootstrap.Components.Content.Anchor">
             <summary>
             The <c>Anchor</c> component is used to create a link.
@@ -4595,6 +4610,11 @@
         <member name="F:Blazorade.Bootstrap.Components.VerticalAlignment.Bottom">
             <summary>
             Bottom alignment.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.StartupExtensions">
+            <summary>
+            Extension methods for configuring Blazorade Bootstrap at startup.
             </summary>
         </member>
     </members>
