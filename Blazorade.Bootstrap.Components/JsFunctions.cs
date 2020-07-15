@@ -88,5 +88,12 @@ namespace Blazorade.Bootstrap.Components
 
             public const string Hide = ToastRoot + "hide";
         }
+
+        public static class Tooltip
+        {
+            private const string TooltipRoot = Root + "tooltips.";
+
+            public const string Init = TooltipRoot + "init";
+        }
     }
 }

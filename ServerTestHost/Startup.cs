@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Blazorade.Bootstrap.Components.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
@@ -27,6 +28,12 @@ namespace ServerTestHost
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+
+            services.AddSingleton(new TooltipService
+            {
+                AllowHtml = true,
+                SanitizeHtml = false
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

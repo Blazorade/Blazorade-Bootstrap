@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.JSInterop;
 using Blazorade.Bootstrap.Components.Utilities;
+using Blazorade.Bootstrap.Components.Services;
 
 namespace Blazorade.Bootstrap.Components
 {
@@ -159,7 +160,7 @@ namespace Blazorade.Bootstrap.Components
 
         /// <summary>
         /// Specifies whether the component is a container for streteched links. If the component contains
-        /// an <see cref="Anchor"/> where <see cref="Anchor.IsStretched"/> is set to <c>true</c>, then the
+        /// an <see cref="Content.Anchor"/> where <see cref="Content.Anchor.IsStretched"/> is set to <c>true</c>, then the
         /// entire component will act as that link.
         /// </summary>
         [Parameter]
@@ -171,13 +172,30 @@ namespace Blazorade.Bootstrap.Components
         [Parameter]
         public Size? Width { get; set; }
 
+        /// <summary>
+        /// The tooltip to show for the component.
+        /// </summary>
+        /// <remarks>
+        /// To control how tooltips work in your application, you need an instance of the <see cref="TooltipService"/> injected into the
+        /// service collection of your application. Refer to <see cref="TooltipService"/> for details on how to use the service.
+        /// </remarks>
+        /// <seealso cref="TooltipService"/>
+        [Parameter]
+        public string Tooltip { get; set; }
+
 
 
         /// <summary>
+        /// The service that handles JS interop.
         /// </summary>
         [Inject]
         protected IJSRuntime JsInterop { get; set; }
 
+        /// <summary>
+        /// The service that is used to manage tooltips.
+        /// </summary>
+        [Inject]
+        protected TooltipService TooltipService { get; set; }
 
 
         /// <summary>
@@ -243,6 +261,21 @@ namespace Blazorade.Bootstrap.Components
         protected async Task LogWarningAsync(string message, params object[] args)
         {
             await this.JsInterop.InvokeVoidAsync(JsFunctions.Console.Warn, message, args);
+        }
+
+        /// <summary>
+        /// </summary>
+        protected async override Task OnAfterRenderAsync(bool firstRender)
+        {
+            await base.OnAfterRenderAsync(firstRender);
+
+            if(!string.IsNullOrEmpty(this.Tooltip))
+            {
+                var ttService = this.TooltipService ?? new TooltipService();
+                var options = new { html = ttService.AllowHtml, sanitize = ttService.SanitizeHtml };
+                await this.JsInterop.InvokeVoidAsync(JsFunctions.Tooltip.Init, $"#{this.Id}", options);
+            }
+
         }
 
         /// <summary>
@@ -358,11 +391,17 @@ namespace Blazorade.Bootstrap.Components
                 this.AddClasses(ClassNames.Position.Relative);
             }
 
+            if (!string.IsNullOrEmpty(this.Tooltip))
+            {
+                this.SetIdIfEmpty();
+                this.Attributes["title"] = this.Tooltip;
+            }
 
             if (!string.IsNullOrEmpty(this.Id))
             {
                 this.AddAttribute("id", this.Id);
             }
+
 
             await base.OnParametersSetAsync();
         }

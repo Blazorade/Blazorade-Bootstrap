@@ -263,7 +263,7 @@
         <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.IsStretchedLinkContainer">
             <summary>
             Specifies whether the component is a container for streteched links. If the component contains
-            an <see cref="!:Anchor"/> where <see cref="!:Anchor.IsStretched"/> is set to <c>true</c>, then the
+            an <see cref="T:Blazorade.Bootstrap.Components.Content.Anchor"/> where <see cref="P:Blazorade.Bootstrap.Components.Content.Anchor.IsStretched"/> is set to <c>true</c>, then the
             entire component will act as that link.
             </summary>
         </member>
@@ -272,8 +272,19 @@
             Specifies the width for the component.
             </summary>
         </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.Tooltip">
+            <summary>
+            The tooltip to show for the component.
+            </summary>
+        </member>
         <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.JsInterop">
             <summary>
+            The service that handles JS interop.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.TooltipService">
+            <summary>
+            The service that is used to manage tooltips.
             </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.BootstrapComponentBase.GenerateNewId">
@@ -315,6 +326,10 @@
             </summary>
             <param name="message">The message to log.</param>
             <param name="args">Arguments to log with the message.</param>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.BootstrapComponentBase.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.BootstrapComponentBase.OnParametersSetAsync">
             <summary>
@@ -4108,6 +4123,26 @@
         <member name="F:Blazorade.Bootstrap.Components.ResponsiveBreakpoint.XL">
             <summary>
             Extra large. &gt;= 1200 px.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Services.TooltipService">
+            <summary>
+            A service implementation that is used to manage tooltips.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Services.TooltipService.#ctor">
+            <summary>
+            Creates new instance of the service class.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Services.TooltipService.AllowHtml">
+            <summary>
+            Specifies whether to allow HTML markup in tooltips. Default is <c>false</c>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Services.TooltipService.SanitizeHtml">
+            <summary>
+            Determines whether HTML markup will be sanitized using the configured sanitization mechanism. Default is <c>true</c>.
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Spinner">
