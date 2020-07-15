@@ -179,7 +179,6 @@ namespace Blazorade.Bootstrap.Components
         protected IJSRuntime JsInterop { get; set; }
 
 
-
         /// <summary>
         /// Generates a new ID that can be used on elements.
         /// </summary>
