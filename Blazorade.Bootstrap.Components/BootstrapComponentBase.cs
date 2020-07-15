@@ -197,7 +197,6 @@ namespace Blazorade.Bootstrap.Components
         [Inject]
         protected TooltipService TooltipService { get; set; }
 
-
         /// <summary>
         /// Generates a new ID that can be used on elements.
         /// </summary>

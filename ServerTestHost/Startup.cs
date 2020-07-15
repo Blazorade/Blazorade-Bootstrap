@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.CodeAnalysis.Options;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -28,12 +29,12 @@ namespace ServerTestHost
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-
-            services.AddSingleton(new TooltipService
-            {
-                AllowHtml = true,
-                SanitizeHtml = false
-            });
+            services
+                .AddBlazoradeBootstrap(options =>
+                {
+                    
+                })
+                ;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
