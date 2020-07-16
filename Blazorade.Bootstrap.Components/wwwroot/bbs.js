@@ -140,5 +140,11 @@ window.blazoradeBootstrap = {
         }
     },
 
+    tooltips: {
+        init: function (selector, options) {
+            $(selector).tooltip(options);
+        }
+    },
+
     console: console
 };
