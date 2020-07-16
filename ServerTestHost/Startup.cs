@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Blazorade.Bootstrap.Components;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
@@ -26,12 +27,17 @@ namespace ServerTestHost
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
-            services.AddServerSideBlazor();
             services
-                .AddBlazoradeBootstrap(options =>
+                .AddRazorPages()
+                .Services.AddServerSideBlazor()
+
+                .Services.AddBlazoradeBootstrap()
+                .WithTooltip(options =>
                 {
-                    
+                    options.AllowHtml = true;
+                    options.SanitizeHtml = false;
+
+                    options.DefaultPlacement = TooltipPlacement.Auto;
                 })
                 ;
         }

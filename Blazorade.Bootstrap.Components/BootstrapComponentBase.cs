@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.JSInterop;
 using Blazorade.Bootstrap.Components.Utilities;
+using Blazorade.Bootstrap.Components.Configuration;
 
 namespace Blazorade.Bootstrap.Components
 {
@@ -159,7 +160,7 @@ namespace Blazorade.Bootstrap.Components
 
         /// <summary>
         /// Specifies whether the component is a container for streteched links. If the component contains
-        /// an <see cref="Anchor"/> where <see cref="Anchor.IsStretched"/> is set to <c>true</c>, then the
+        /// an <see cref="Content.Anchor"/> where <see cref="Content.Anchor.IsStretched"/> is set to <c>true</c>, then the
         /// entire component will act as that link.
         /// </summary>
         [Parameter]
@@ -171,12 +172,40 @@ namespace Blazorade.Bootstrap.Components
         [Parameter]
         public Size? Width { get; set; }
 
+        /// <summary>
+        /// The tooltip to show for the component.
+        /// </summary>
+        /// <remarks>
+        /// To control how tooltips work in your application, you can configure default settings on the <see cref="TooltipOptions"/> class.
+        /// Please refer to that class for more information on how to configure tooltip options.
+        /// </remarks>
+        /// <seealso cref="TooltipOptions"/>
+        [Parameter]
+        public string Tooltip { get; set; }
+
+        /// <summary>
+        /// Defines the placement for the tooltip.
+        /// </summary>
+        /// <remarks>
+        /// If not specified, the default placement configured on <see cref="TooltipOptions"/> is used.
+        /// </remarks>
+        /// <seealso cref="TooltipOptions"/>
+        [Parameter]
+        public TooltipPlacement? TooltipPlacement { get; set; }
+
 
 
         /// <summary>
+        /// The service that handles JS interop.
         /// </summary>
         [Inject]
         protected IJSRuntime JsInterop { get; set; }
+
+        /// <summary>
+        /// Options for tooltips.
+        /// </summary>
+        [Inject]
+        protected TooltipOptions TooltipOptions { get; set; }
 
 
         /// <summary>
@@ -242,6 +271,22 @@ namespace Blazorade.Bootstrap.Components
         protected async Task LogWarningAsync(string message, params object[] args)
         {
             await this.JsInterop.InvokeVoidAsync(JsFunctions.Console.Warn, message, args);
+        }
+
+        /// <summary>
+        /// </summary>
+        protected async override Task OnAfterRenderAsync(bool firstRender)
+        {
+            await base.OnAfterRenderAsync(firstRender);
+
+            if(!string.IsNullOrEmpty(this.Tooltip))
+            {
+                var ttOptions = this.TooltipOptions ?? new TooltipOptions();
+                string placement = this.TooltipPlacement?.ToString()?.ToLower() ?? ttOptions.DefaultPlacement.ToString().ToLower();
+                var options = new { html = ttOptions.AllowHtml, sanitize = ttOptions.SanitizeHtml, placement = placement };
+                await this.JsInterop.InvokeVoidAsync(JsFunctions.Tooltip.Init, $"#{this.Id}", options);
+            }
+
         }
 
         /// <summary>
@@ -357,11 +402,17 @@ namespace Blazorade.Bootstrap.Components
                 this.AddClasses(ClassNames.Position.Relative);
             }
 
+            if (!string.IsNullOrEmpty(this.Tooltip))
+            {
+                this.SetIdIfEmpty();
+                this.Attributes["title"] = this.Tooltip;
+            }
 
             if (!string.IsNullOrEmpty(this.Id))
             {
                 this.AddAttribute("id", this.Id);
             }
+
 
             await base.OnParametersSetAsync();
         }
