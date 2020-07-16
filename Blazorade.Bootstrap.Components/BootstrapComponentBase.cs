@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.JSInterop;
 using Blazorade.Bootstrap.Components.Utilities;
-using Blazorade.Bootstrap.Components.Services;
+using Blazorade.Bootstrap.Components.Configuration;
 
 namespace Blazorade.Bootstrap.Components
 {
@@ -176,12 +176,22 @@ namespace Blazorade.Bootstrap.Components
         /// The tooltip to show for the component.
         /// </summary>
         /// <remarks>
-        /// To control how tooltips work in your application, you need an instance of the <see cref="TooltipService"/> injected into the
-        /// service collection of your application. Refer to <see cref="TooltipService"/> for details on how to use the service.
+        /// To control how tooltips work in your application, you can configure default settings on the <see cref="TooltipOptions"/> class.
+        /// Please refer to that class for more information on how to configure tooltip options.
         /// </remarks>
-        /// <seealso cref="TooltipService"/>
+        /// <seealso cref="TooltipOptions"/>
         [Parameter]
         public string Tooltip { get; set; }
+
+        /// <summary>
+        /// Defines the placement for the tooltip.
+        /// </summary>
+        /// <remarks>
+        /// If not specified, the default placement configured on <see cref="TooltipOptions"/> is used.
+        /// </remarks>
+        /// <seealso cref="TooltipOptions"/>
+        [Parameter]
+        public TooltipPlacement? TooltipPlacement { get; set; }
 
 
 
@@ -192,10 +202,11 @@ namespace Blazorade.Bootstrap.Components
         protected IJSRuntime JsInterop { get; set; }
 
         /// <summary>
-        /// The service that is used to manage tooltips.
+        /// Options for tooltips.
         /// </summary>
         [Inject]
-        protected TooltipService TooltipService { get; set; }
+        protected TooltipOptions TooltipOptions { get; set; }
+
 
         /// <summary>
         /// Generates a new ID that can be used on elements.
@@ -270,8 +281,9 @@ namespace Blazorade.Bootstrap.Components
 
             if(!string.IsNullOrEmpty(this.Tooltip))
             {
-                var ttService = this.TooltipService ?? new TooltipService();
-                var options = new { html = ttService.AllowHtml, sanitize = ttService.SanitizeHtml };
+                var ttOptions = this.TooltipOptions ?? new TooltipOptions();
+                string placement = this.TooltipPlacement?.ToString()?.ToLower() ?? ttOptions.DefaultPlacement.ToString().ToLower();
+                var options = new { html = ttOptions.AllowHtml, sanitize = ttOptions.SanitizeHtml, placement = placement };
                 await this.JsInterop.InvokeVoidAsync(JsFunctions.Tooltip.Init, $"#{this.Id}", options);
             }
 

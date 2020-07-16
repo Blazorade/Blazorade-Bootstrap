@@ -276,15 +276,29 @@
             <summary>
             The tooltip to show for the component.
             </summary>
+            <remarks>
+            To control how tooltips work in your application, you can configure default settings on the <see cref="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.TooltipOptions"/> class.
+            Please refer to that class for more information on how to configure tooltip options.
+            </remarks>
+            <seealso cref="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.TooltipOptions"/>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.TooltipPlacement">
+            <summary>
+            Defines the placement for the tooltip.
+            </summary>
+            <remarks>
+            If not specified, the default placement configured on <see cref="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.TooltipOptions"/> is used.
+            </remarks>
+            <seealso cref="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.TooltipOptions"/>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.JsInterop">
             <summary>
             The service that handles JS interop.
             </summary>
         </member>
-        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.TooltipService">
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.TooltipOptions">
             <summary>
-            The service that is used to manage tooltips.
+            Options for tooltips.
             </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.BootstrapComponentBase.GenerateNewId">
@@ -2458,19 +2472,39 @@
             A large component.
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.Configuration.BlazoradeBootstrapBuilder">
+            <summary>
+            The builder that is used to build the configuration for Blazorade Bootstrap with.
+            </summary>
+        </member>
         <member name="T:Blazorade.Bootstrap.Components.Configuration.BlazoradeBootstrapOptions">
             <summary>
             The options class for basic Blazorade Bootstrap options.
             </summary>
         </member>
-        <member name="T:Blazorade.Bootstrap.Components.Configuration.IBlazoradeBootstrapBuilder">
+        <member name="T:Blazorade.Bootstrap.Components.Configuration.TooltipOptions">
             <summary>
-            The interface that defines the configuration builder used by Blazorade Bootstrap.
+            Defines options for tooltips.
             </summary>
         </member>
-        <member name="P:Blazorade.Bootstrap.Components.Configuration.IBlazoradeBootstrapBuilder.Services">
+        <member name="M:Blazorade.Bootstrap.Components.Configuration.TooltipOptions.#ctor">
             <summary>
-            Returns the service collection for the current application.
+            Creates a new instance.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Configuration.TooltipOptions.AllowHtml">
+            <summary>
+            Specifies whether to allow HTML markup in tooltips. Default is <c>false</c>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Configuration.TooltipOptions.DefaultPlacement">
+            <summary>
+            Specifies the default placement for your tooltips. The default is <see cref="F:Blazorade.Bootstrap.Components.TooltipPlacement.Top"/>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Configuration.TooltipOptions.SanitizeHtml">
+            <summary>
+            Determines whether HTML markup will be sanitized using the configured sanitization mechanism. Default is <c>true</c>.
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Content.Anchor">
@@ -4138,26 +4172,6 @@
         <member name="F:Blazorade.Bootstrap.Components.ResponsiveBreakpoint.XL">
             <summary>
             Extra large. &gt;= 1200 px.
-            </summary>
-        </member>
-        <member name="T:Blazorade.Bootstrap.Components.Services.TooltipService">
-            <summary>
-            A service implementation that is used to manage tooltips.
-            </summary>
-        </member>
-        <member name="M:Blazorade.Bootstrap.Components.Services.TooltipService.#ctor">
-            <summary>
-            Creates new instance of the service class.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.Services.TooltipService.AllowHtml">
-            <summary>
-            Specifies whether to allow HTML markup in tooltips. Default is <c>false</c>.
-            </summary>
-        </member>
-        <member name="P:Blazorade.Bootstrap.Components.Services.TooltipService.SanitizeHtml">
-            <summary>
-            Determines whether HTML markup will be sanitized using the configured sanitization mechanism. Default is <c>true</c>.
             </summary>
         </member>
         <member name="T:Blazorade.Bootstrap.Components.Spinner">

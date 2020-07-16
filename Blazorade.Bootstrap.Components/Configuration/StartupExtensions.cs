@@ -11,16 +11,29 @@ namespace Microsoft.Extensions.DependencyInjection
     public static class StartupExtensions
     {
 
-        public static IBlazoradeBootstrapBuilder AddBlazoradeBootstrap(this IServiceCollection services, Action<BlazoradeBootstrapOptions> configure = null)
+        public static BlazoradeBootstrapBuilder AddBlazoradeBootstrap(this IServiceCollection services, Action<BlazoradeBootstrapOptions> configure = null)
         {
-            var options = new BlazoradeBootstrapOptions();
+            var builder = new BlazoradeBootstrapBuilder(services);
+            services.AddSingleton(builder.BlazoradeBootstrapOptions);
+            services.AddSingleton(builder.TooltipOptions);
+
+
             if(null != configure)
             {
-                configure(options);
+                configure(builder.BlazoradeBootstrapOptions);
             }
 
-            services.AddSingleton(options);
-            return new BlazoradeBootstrapBuilder(services);
+            return builder;
+        }
+
+        public static BlazoradeBootstrapBuilder WithTooltip(this BlazoradeBootstrapBuilder builder, Action<TooltipOptions> configure = null)
+        {
+            if(null != configure)
+            {
+                configure(builder.TooltipOptions);
+            }
+
+            return builder;
         }
     }
 }
