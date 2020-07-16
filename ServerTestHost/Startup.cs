@@ -2,10 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Blazorade.Bootstrap.Components;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.CodeAnalysis.Options;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,8 +27,19 @@ namespace ServerTestHost
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
-            services.AddServerSideBlazor();
+            services
+                .AddRazorPages()
+                .Services.AddServerSideBlazor()
+
+                .Services.AddBlazoradeBootstrap()
+                .WithTooltip(options =>
+                {
+                    options.AllowHtml = true;
+                    options.SanitizeHtml = false;
+
+                    options.DefaultPlacement = TooltipPlacement.Auto;
+                })
+                ;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

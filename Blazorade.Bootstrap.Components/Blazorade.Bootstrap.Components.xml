@@ -263,7 +263,7 @@
         <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.IsStretchedLinkContainer">
             <summary>
             Specifies whether the component is a container for streteched links. If the component contains
-            an <see cref="!:Anchor"/> where <see cref="!:Anchor.IsStretched"/> is set to <c>true</c>, then the
+            an <see cref="T:Blazorade.Bootstrap.Components.Content.Anchor"/> where <see cref="P:Blazorade.Bootstrap.Components.Content.Anchor.IsStretched"/> is set to <c>true</c>, then the
             entire component will act as that link.
             </summary>
         </member>
@@ -272,8 +272,33 @@
             Specifies the width for the component.
             </summary>
         </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.Tooltip">
+            <summary>
+            The tooltip to show for the component.
+            </summary>
+            <remarks>
+            To control how tooltips work in your application, you can configure default settings on the <see cref="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.TooltipOptions"/> class.
+            Please refer to that class for more information on how to configure tooltip options.
+            </remarks>
+            <seealso cref="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.TooltipOptions"/>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.TooltipPlacement">
+            <summary>
+            Defines the placement for the tooltip.
+            </summary>
+            <remarks>
+            If not specified, the default placement configured on <see cref="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.TooltipOptions"/> is used.
+            </remarks>
+            <seealso cref="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.TooltipOptions"/>
+        </member>
         <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.JsInterop">
             <summary>
+            The service that handles JS interop.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.BootstrapComponentBase.TooltipOptions">
+            <summary>
+            Options for tooltips.
             </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.BootstrapComponentBase.GenerateNewId">
@@ -315,6 +340,10 @@
             </summary>
             <param name="message">The message to log.</param>
             <param name="args">Arguments to log with the message.</param>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.BootstrapComponentBase.OnAfterRenderAsync(System.Boolean)">
+            <summary>
+            </summary>
         </member>
         <member name="M:Blazorade.Bootstrap.Components.BootstrapComponentBase.OnParametersSetAsync">
             <summary>
@@ -2443,6 +2472,41 @@
             A large component.
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.Configuration.BlazoradeBootstrapBuilder">
+            <summary>
+            The builder that is used to build the configuration for Blazorade Bootstrap with.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Configuration.BlazoradeBootstrapOptions">
+            <summary>
+            The options class for basic Blazorade Bootstrap options.
+            </summary>
+        </member>
+        <member name="T:Blazorade.Bootstrap.Components.Configuration.TooltipOptions">
+            <summary>
+            Defines options for tooltips.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Configuration.TooltipOptions.#ctor">
+            <summary>
+            Creates a new instance.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Configuration.TooltipOptions.AllowHtml">
+            <summary>
+            Specifies whether to allow HTML markup in tooltips. Default is <c>false</c>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Configuration.TooltipOptions.DefaultPlacement">
+            <summary>
+            Specifies the default placement for your tooltips. The default is <see cref="F:Blazorade.Bootstrap.Components.TooltipPlacement.Top"/>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Configuration.TooltipOptions.SanitizeHtml">
+            <summary>
+            Determines whether HTML markup will be sanitized using the configured sanitization mechanism. Default is <c>true</c>.
+            </summary>
+        </member>
         <member name="T:Blazorade.Bootstrap.Components.Content.Anchor">
             <summary>
             The <c>Anchor</c> component is used to create a link.
@@ -4536,6 +4600,11 @@
         <member name="F:Blazorade.Bootstrap.Components.VerticalAlignment.Bottom">
             <summary>
             Bottom alignment.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.StartupExtensions">
+            <summary>
+            Extension methods for configuring Blazorade Bootstrap at startup.
             </summary>
         </member>
     </members>
