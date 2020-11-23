@@ -7,9 +7,15 @@ using System.Threading.Tasks;
 
 namespace Blazorade.Bootstrap.Components
 {
+    /// <summary>
+    /// The <c>Popover</c> component is used to create a popover on any element on your site.
+    /// </summary>
     partial class Popover
     {
 
+        /// <summary>
+        /// Creates a new instance of the class.
+        /// </summary>
         public Popover()
         {
             
@@ -56,6 +62,10 @@ namespace Blazorade.Bootstrap.Components
         /// </summary>
         [Parameter]
         public bool AutoHide { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [Parameter]
         public string TargetElementId { get; set; }
 

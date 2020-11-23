@@ -4089,6 +4089,16 @@
             The "small" size for a bootstrap Pagination element.
             </summary>
         </member>
+        <member name="T:Blazorade.Bootstrap.Components.Popover">
+            <summary>
+            The <c>Popover</c> component is used to create a popover on any element on your site.
+            </summary>
+        </member>
+        <member name="M:Blazorade.Bootstrap.Components.Popover.#ctor">
+            <summary>
+            Creates a new instance of the class.
+            </summary>
+        </member>
         <member name="P:Blazorade.Bootstrap.Components.Popover.OnHide">
             <summary>
             The callback that is triggered when the Popover is about to hide.
@@ -4112,6 +4122,11 @@
         <member name="P:Blazorade.Bootstrap.Components.Popover.AutoHide">
             <summary>
             Specifies whether the Popover should automatically hide after the number of milliseconds specified in <see cref="P:Blazorade.Bootstrap.Components.Popover.Delay"/>.
+            </summary>
+        </member>
+        <member name="P:Blazorade.Bootstrap.Components.Popover.TargetElementId">
+            <summary>
+            
             </summary>
         </member>
         <member name="P:Blazorade.Bootstrap.Components.Popover.ShowHideButton">

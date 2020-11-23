@@ -12,8 +12,6 @@
 
     Popover popover1;
     Popover popover2;
-    Popover popover3;
-
 
 
 }
@@ -24,11 +22,15 @@
 </Paragraph>
 
 
-<Popover @ref="this.popover1"  Placement="right" Content="contents<br>More Content" Title="testing the title" Html="true" Trigger="hover"><a href="#" id="@this.popover1.TargetElementId">Popover Link</a></Popover>
+<Popover @ref="this.popover1"  Placement="right" Content="contents<br>More Content" Title="testing the title" Html="true" Trigger="hover">
+    <a href="#" id="@this.popover1.TargetElementId">Popover Link</a>
+</Popover>
 
-<Popover @ref="this.popover2" Placement="top" Content="hello<br>world" Title="title goes here" Html="true" Trigger="hover"><Button Color="NamedColor.Primary" IsOutline="true" Id="@this.popover2.TargetElementId">Popover button</Button></Popover>
+<Popover @ref="this.popover2" Placement="top" Content="hello<br>world" Title="title goes here" Html="true" Trigger="hover">
+    <Button Color="NamedColor.Primary" IsOutline="true" Id="@this.popover2.TargetElementId">Popover button</Button>
+</Popover>
 
 
-<Popover @ref="this.popover3" TargetElementId="SomeTestId" Placement="top" Content="some great content to display" Title="external button" Html="true" Trigger="hover"></Popover>
+<Popover TargetElementId="SomeTestId" Placement="top" Content="some great content to display" Title="external button" Html="true" Trigger="hover"></Popover>
 
 <Button Color="NamedColor.Primary" IsOutline="true" Id="SomeTestId">External element</Button>
