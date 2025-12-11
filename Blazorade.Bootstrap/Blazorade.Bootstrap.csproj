@@ -8,6 +8,10 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Version>1.0.0-alpha.1</Version>
+    <RepositoryUrl>https://github.com/Blazorade/Blazorade-Bootstrap</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Blazorade/Blazorade-Bootstrap/wiki</PackageProjectUrl>
+    <Copyright>Copyright © 2025 Blazorade</Copyright>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
   </PropertyGroup>
 
 
@@ -24,6 +28,13 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
