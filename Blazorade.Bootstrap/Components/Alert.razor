@@ -1,7 +1,7 @@
 @inherits ColoredBootstrapComponentBase
 
 <div>
-    <div @attributes="this.Attributes" role="alert">
+    <div id="@this.Id" @attributes="this.Attributes" role="alert">
         @if (this.IsDismissible)
         {
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
