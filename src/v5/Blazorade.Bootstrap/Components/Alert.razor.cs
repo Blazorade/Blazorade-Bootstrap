@@ -10,6 +10,14 @@ namespace Blazorade.Bootstrap.Components
     /// </summary>
     public partial class Alert : ColoredBootstrapComponentBase
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Alert"/> component.
+        /// </summary>
+        public Alert()
+        {
+            this.Color = NamedColor.Primary;
+        }
+
         private const string AlertDismissFunction = "blazoradeBootstrap.alerts.dismiss";
         private const string RegisterEventCallbackFunction = "blazoradeBootstrap.registerEventCallback";
         private const string CloseEvent = "close.bs.alert";
@@ -118,6 +126,8 @@ namespace Blazorade.Bootstrap.Components
         /// <inheritdoc />
         protected override void OnParametersSet()
         {
+            this.AddClasses("alert");
+
             if (this.IsDismissible)
             {
                 this.AddClasses("alert-dismissible");

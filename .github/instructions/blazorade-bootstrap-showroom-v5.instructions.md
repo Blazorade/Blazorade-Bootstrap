@@ -1,0 +1,23 @@
+---
+applyTo: "src/v5/Blazorade.Bootstrap.Showroom/**"
+---
+# Blazorade Bootstrap v5 showroom
+
+The v5 showroom is both executable documentation and a reusable set of routable pages for applications that reference the showroom assembly.
+
+## Showcase structure
+
+- Every component showcase page must begin with the simplest useful parameter-free example whenever the component supports one. For example: `<Alert>This is the simplest possible alert.</Alert>`.
+- Follow the simplest example with focused examples of the component's important defaults, parameters, child content, templates, events, and advanced behavior.
+- Keep examples concrete and runnable. Do not add placeholder content or demonstrations that do not exercise a real component capability.
+- Use the showcase to make the default API obvious: users should be able to copy the first example and get a useful result without additional configuration.
+
+## Routing and navigation
+
+- Component showcase pages must be routable with an `@page` directive and must remain usable when the showroom assembly is added to an application's router and endpoint discovery.
+- Every routable showcase page must be linked from the plain HTML/Bootstrap `Components` dropdown in `ShowroomNavigation.razor`.
+- Keep showroom navigation independent of the Blazorade components being showcased. Navigation must use ordinary HTML and Bootstrap markup rather than showcase components.
+
+## Design principles
+
+Showroom pages demonstrate the Blazorade principles: write less markup, have less to remember, rely on IntelliSense and auto-complete, and write no JavaScript unless the application explicitly chooses to use it. Prefer component APIs and C# event handlers over handwritten Bootstrap JavaScript.

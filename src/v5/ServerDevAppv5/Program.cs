@@ -22,6 +22,7 @@ app.UseStaticFiles();
 app.UseAntiforgery();
 
 app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode();
+    .AddInteractiveServerRenderMode()
+    .AddAdditionalAssemblies(typeof(Blazorade.Bootstrap.Showroom.Alerts).Assembly);
 
 app.Run();

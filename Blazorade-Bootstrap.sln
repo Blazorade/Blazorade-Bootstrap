@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServerAppDev", "ServerAppDe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazorade.Bootstrap.Components.Tests", "Blazorade.Bootstrap.Components.Tests\Blazorade.Bootstrap.Components.Tests.csproj", "{DEAEC50A-547A-44EB-A5B7-F4B56F77D353}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazorade.Bootstrap", "Blazorade.Bootstrap\Blazorade.Bootstrap.csproj", "{E2D13BF2-DFB6-4C51-92AB-FFCEF60A0A15}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazorade.Bootstrap", "src\v5\Blazorade.Bootstrap\Blazorade.Bootstrap.csproj", "{E2D13BF2-DFB6-4C51-92AB-FFCEF60A0A15}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Showroom", "Showroom", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -29,9 +29,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v3", "v3", "{1E62A877-D289-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v5", "v5", "{4392F274-A687-4489-AFB2-A9E595DE7597}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazorade.Bootstrap.Showroom", "Blazorade.Bootstrap.Showroom\Blazorade.Bootstrap.Showroom.csproj", "{D4A8215B-794C-4C33-937F-ED7B7784376B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazorade.Bootstrap.Showroom", "src\v5\Blazorade.Bootstrap.Showroom\Blazorade.Bootstrap.Showroom.csproj", "{D4A8215B-794C-4C33-937F-ED7B7784376B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerDevAppv5", "ServerDevAppv5\ServerDevAppv5.csproj", "{D078A93A-8A90-4C1C-ABBC-1302BC0DDEAA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerDevAppv5", "src\v5\ServerDevAppv5\ServerDevAppv5.csproj", "{D078A93A-8A90-4C1C-ABBC-1302BC0DDEAA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Support Resources", "Support Resources", "{BB45E9AD-8DA9-4B1C-9544-4E7095678A04}"
 EndProject

@@ -1,0 +1,107 @@
+@using Blazorade.Bootstrap.Components
+@page "/alerts"
+
+<section aria-labelledby="alerts-heading">
+    <h1 id="alerts-heading">Alert Component</h1>
+    <p>
+        The <code>Alert</code> component provides contextual feedback messages for typical user actions.
+    </p>
+
+    <Alert>This is the simplest possible alert.</Alert>
+
+    <section aria-labelledby="alert-colours-heading" class="mt-5">
+        <h2 id="alert-colours-heading">Standard colours</h2>
+        <p>Use the <code>Color</code> parameter to apply Bootstrap's contextual alert colours.</p>
+
+        <Alert Color="NamedColor.Primary">Primary alert</Alert>
+        <Alert Color="NamedColor.Secondary">Secondary alert</Alert>
+        <Alert Color="NamedColor.Success">Success alert</Alert>
+        <Alert Color="NamedColor.Danger">Danger alert</Alert>
+        <Alert Color="NamedColor.Warning">Warning alert</Alert>
+        <Alert Color="NamedColor.Info">Info alert</Alert>
+        <Alert Color="NamedColor.Light">Light alert</Alert>
+        <Alert Color="NamedColor.Dark">Dark alert</Alert>
+    </section>
+
+    <section aria-labelledby="dismissible-alerts-heading" class="mt-5">
+        <h2 id="dismissible-alerts-heading">Dismissible alerts</h2>
+        <p>
+            Set <code>IsDismissible</code> to <code>true</code> to render a close button. Set
+            <code>FadeOnDismiss</code> to control whether Bootstrap fades the alert during dismissal.
+        </p>
+
+        <Alert Color="NamedColor.Success" IsDismissible="true" FadeOnDismiss="true">
+            This alert fades when it is dismissed.
+        </Alert>
+        <Alert Color="NamedColor.Danger" IsDismissible="true" FadeOnDismiss="false">
+            This alert is dismissed without a fade transition.
+        </Alert>
+
+        <Alert @ref="this.dismissibleAlert" Color="NamedColor.Warning" IsDismissible="true" FadeOnDismiss="true">
+            This alert can also be dismissed by calling <code>Dismiss</code> from the parent component.
+        </Alert>
+        <button type="button" class="btn btn-primary" @onclick="this.DismissAlert">
+            Dismiss from outside
+        </button>
+    </section>
+
+    <section aria-labelledby="alert-events-heading" class="mt-5">
+        <h2 id="alert-events-heading">Dismissal events</h2>
+        <p>
+            <code>OnDismiss</code> is raised when dismissal starts and <code>OnDismissed</code> is raised after
+            Bootstrap has finished dismissing the alert.
+        </p>
+
+        <Alert Color="NamedColor.Info" IsDismissible="true" FadeOnDismiss="true"
+               OnDismiss="this.HandleDismissStarting" OnDismissed="this.HandleDismissed">
+            Dismiss this alert to see the event callbacks update the status below.
+        </Alert>
+        <p class="text-body-secondary" role="status">@this.dismissStatus</p>
+    </section>
+
+    <section aria-labelledby="alert-content-heading" class="mt-5">
+        <h2 id="alert-content-heading">Headings, templates, and attributes</h2>
+
+        <Alert Color="NamedColor.Info" Heading="Heading parameter" data-example="heading-parameter">
+            The heading is supplied through the <code>Heading</code> parameter.
+        </Alert>
+
+        <Alert Color="NamedColor.Secondary" data-example="heading-template">
+            <HeadingTemplate>
+                <h4 class="alert-heading">Heading template</h4>
+            </HeadingTemplate>
+            <ChildContent>
+                The heading is supplied through <code>HeadingTemplate</code>, which accepts arbitrary markup.
+            </ChildContent>
+        </Alert>
+
+        <Alert Color="NamedColor.Light" data-example="additional-attributes">
+            Additional attributes such as <code>data-example</code> are passed to the rendered alert element.
+        </Alert>
+    </section>
+</section>
+
+@code {
+    private Alert? dismissibleAlert;
+    private string dismissStatus = "Dismissal has not been requested.";
+
+    private async Task DismissAlert()
+    {
+        if (this.dismissibleAlert is not null)
+        {
+            await this.dismissibleAlert.DismissAsync();
+        }
+    }
+
+    private Task HandleDismissStarting(Alert alert)
+    {
+        this.dismissStatus = "Dismissal has started.";
+        return Task.CompletedTask;
+    }
+
+    private Task HandleDismissed(Alert alert)
+    {
+        this.dismissStatus = "Dismissal has completed.";
+        return Task.CompletedTask;
+    }
+}

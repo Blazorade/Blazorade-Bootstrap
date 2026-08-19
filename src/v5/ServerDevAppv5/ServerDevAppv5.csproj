@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Blazorade.Bootstrap\Blazorade.Bootstrap.csproj" />
+    <ProjectReference Include="..\Blazorade.Bootstrap.Showroom\Blazorade.Bootstrap.Showroom.csproj" />
   </ItemGroup>
 
 </Project>
