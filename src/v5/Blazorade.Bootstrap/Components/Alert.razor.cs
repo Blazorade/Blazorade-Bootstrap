@@ -24,12 +24,6 @@ namespace Blazorade.Bootstrap.Components
         private const string ClosedEvent = "closed.bs.alert";
 
         /// <summary>
-        /// The JavaScript runtime used to invoke Bootstrap's alert plugin.
-        /// </summary>
-        [Inject]
-        protected IJSRuntime JsInterop { get; set; } = default!;
-
-        /// <summary>
         /// The ID of the alert element.
         /// </summary>
         [Parameter]

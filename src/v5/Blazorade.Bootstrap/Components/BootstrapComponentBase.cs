@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.JSInterop;
 
 namespace Blazorade.Bootstrap.Components
 {
@@ -11,6 +12,12 @@ namespace Blazorade.Bootstrap.Components
     /// </summary>
     public abstract class BootstrapComponentBase : Blazorade.Core.Components.BlazoradeComponentBase
     {
+        /// <summary>
+        /// The JavaScript runtime available to Bootstrap components.
+        /// </summary>
+        [Microsoft.AspNetCore.Components.Inject]
+        protected IJSRuntime JsInterop { get; set; } = default!;
+
         /// <summary>
         /// Generates the class name from the given prefix and colour. The method returns <c>{prefix}-{colour}</c>.
         /// </summary>

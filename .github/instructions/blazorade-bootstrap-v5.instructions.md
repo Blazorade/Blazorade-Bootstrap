@@ -42,3 +42,8 @@ For background and the original explanations, see the [Blazorade Bootstrap Desig
 - New documentation for this library belongs under `docs/`.
 - Treat `docs/` as source documentation, not as a restored copy of the removed legacy static site.
 - Do not add generated static-site output or framework deployment artifacts to `docs/` unless explicitly requested.
+
+## Showroom
+
+- Every component added to `Blazorade.Bootstrap` must also be added to the v5 component showroom under `src/v5/Blazorade.Bootstrap.Showroom/`.
+- Whenever an existing component is modified, the corresponding v5 showroom page must be updated to properly reflect those modifications.

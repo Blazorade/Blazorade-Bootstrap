@@ -1,0 +1,49 @@
+@page "/badges"
+
+<section aria-labelledby="badges-heading">
+    <h1 id="badges-heading">Badge Component</h1>
+    <p>
+        The <code>Badge</code> component adds counts and labels to other components.
+    </p>
+
+    <Badge>New</Badge>
+
+    <section aria-labelledby="badge-colours-heading" class="mt-5">
+        <h2 id="badge-colours-heading">Standard colours</h2>
+        <p>Use the <code>Color</code> parameter to apply Bootstrap's contextual badge colours.</p>
+
+        <div class="d-flex gap-2 flex-wrap">
+            <Badge Color="NamedColor.Primary">Primary</Badge>
+            <Badge Color="NamedColor.Secondary">Secondary</Badge>
+            <Badge Color="NamedColor.Success">Success</Badge>
+            <Badge Color="NamedColor.Danger">Danger</Badge>
+            <Badge Color="NamedColor.Warning">Warning</Badge>
+            <Badge Color="NamedColor.Info">Info</Badge>
+            <Badge Color="NamedColor.Light">Light</Badge>
+            <Badge Color="NamedColor.Dark">Dark</Badge>
+        </div>
+    </section>
+
+    <section aria-labelledby="pill-badges-heading" class="mt-5">
+        <h2 id="pill-badges-heading">Pill badges</h2>
+        <p>Set <code>IsPill</code> to <code>true</code> for rounded pill-shaped badges.</p>
+
+        <div class="d-flex gap-2 flex-wrap">
+            <Badge Color="NamedColor.Primary" IsPill="true">Primary pill</Badge>
+            <Badge Color="NamedColor.Success" IsPill="true">Success pill</Badge>
+            <Badge Color="NamedColor.Danger" IsPill="true">Danger pill</Badge>
+        </div>
+    </section>
+
+    <section aria-labelledby="badge-content-heading" class="mt-5">
+        <h2 id="badge-content-heading">Child content and attributes</h2>
+        <p>
+            Badges accept arbitrary child content, including other components, and pass additional
+            attributes to the rendered <code>span</code> element.
+        </p>
+
+        <Badge Color="NamedColor.Info" data-example="additional-attributes">
+            Messages <Badge Color="NamedColor.Danger" IsPill="true">3</Badge>
+        </Badge>
+    </section>
+</section>
