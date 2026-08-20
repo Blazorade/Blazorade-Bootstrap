@@ -1,0 +1,15 @@
+@inherits BootstrapComponentBase
+
+<CascadingValue Value="this" IsFixed="true">
+    <div @attributes="this.Attributes">
+        @if (this.Header is not null || this.Body is not null)
+        {
+            <AccordionHeader ChildContent="@this.Header" />
+            <AccordionBody ChildContent="@this.Body" />
+        }
+        else
+        {
+            @this.ChildContent
+        }
+    </div>
+</CascadingValue>

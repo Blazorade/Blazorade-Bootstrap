@@ -1,0 +1,7 @@
+@inherits BootstrapComponentBase
+
+<CascadingValue Value="this" IsFixed="true">
+    <div id="@this.Id" @attributes="this.Attributes">
+        @this.ChildContent
+    </div>
+</CascadingValue>

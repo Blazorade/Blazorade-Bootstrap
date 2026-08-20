@@ -25,3 +25,26 @@ window.blazoradeBootstrap.alerts.dismiss = function (selector) {
         bootstrap.Alert.getOrCreateInstance(element).close();
     }
 };
+
+window.blazoradeBootstrap.accordions = window.blazoradeBootstrap.accordions || {};
+
+window.blazoradeBootstrap.accordions.show = function (selector) {
+    const element = document.querySelector(selector);
+    if (element) {
+        bootstrap.Collapse.getOrCreateInstance(element).show();
+    }
+};
+
+window.blazoradeBootstrap.accordions.hide = function (selector) {
+    const element = document.querySelector(selector);
+    if (element) {
+        bootstrap.Collapse.getOrCreateInstance(element).hide();
+    }
+};
+
+window.blazoradeBootstrap.accordions.toggle = function (selector) {
+    const element = document.querySelector(selector);
+    if (element) {
+        bootstrap.Collapse.getOrCreateInstance(element).toggle();
+    }
+};

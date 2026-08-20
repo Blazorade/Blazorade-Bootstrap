@@ -16,6 +16,7 @@ The v5 showroom is both executable documentation and a reusable set of routable 
 
 - Component showcase pages must be routable with an `@page` directive and must remain usable when the showroom assembly is added to an application's router and endpoint discovery.
 - Every routable showcase page must be linked from the plain HTML/Bootstrap `Components` dropdown in `ShowroomNavigation.razor`.
+- List showroom components in alphabetical order in the `Components` dropdown and on any showroom home page component listing.
 - Keep showroom navigation independent of the Blazorade components being showcased. Navigation must use ordinary HTML and Bootstrap markup rather than showcase components.
 
 ## Design principles

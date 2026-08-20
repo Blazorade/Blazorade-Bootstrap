@@ -1,0 +1,190 @@
+@page "/accordions"
+
+<section aria-labelledby="accordions-heading">
+    <h1 id="accordions-heading">Accordion Component</h1>
+    <p>
+        The <code>Accordion</code> component groups collapsible content while keeping the Bootstrap behavior
+        and JavaScript interop inside the component library.
+    </p>
+
+    <Accordion>
+        <AccordionItem>
+            <AccordionHeader>Simple accordion item</AccordionHeader>
+            <AccordionBody>
+                This is the simplest useful accordion item.
+            </AccordionBody>
+        </AccordionItem>
+    </Accordion>
+
+    <section aria-labelledby="accordion-single-open-heading" class="mt-5">
+        <h2 id="accordion-single-open-heading">Single-open accordion</h2>
+        <p>
+            By default, <code>IsAlwaysOpen</code> is <code>false</code>, so opening an item closes the item that
+            was previously open. This example starts with the first item open.
+        </p>
+
+        <Accordion>
+            <AccordionItem IsOpen="true">
+                <AccordionHeader>Initially open item</AccordionHeader>
+                <AccordionBody>
+                    Opening another item closes this item.
+                </AccordionBody>
+            </AccordionItem>
+            <AccordionItem>
+                <AccordionHeader>Second item</AccordionHeader>
+                <AccordionBody>
+                    Open this item to close the initially open item.
+                </AccordionBody>
+            </AccordionItem>
+            <AccordionItem>
+                <AccordionHeader>Third item</AccordionHeader>
+                <AccordionBody>
+                    Only one item remains open at a time.
+                </AccordionBody>
+            </AccordionItem>
+        </Accordion>
+    </section>
+
+    <section aria-labelledby="accordion-templates-heading" class="mt-5">
+        <h2 id="accordion-templates-heading">Header and body templates</h2>
+        <p>
+            Use the named <code>Header</code> and <code>Body</code> templates when the item content is supplied
+            directly through the item component.
+        </p>
+
+        <Accordion>
+            <AccordionItem>
+                <Header>
+                    <strong>Named header template</strong>
+                </Header>
+                <Body>
+                    The body template accepts arbitrary Razor content.
+                </Body>
+            </AccordionItem>
+        </Accordion>
+    </section>
+
+    <section aria-labelledby="accordion-options-heading" class="mt-5">
+        <h2 id="accordion-options-heading">Initial state and options</h2>
+        <p>
+            <code>IsOpen</code> controls the initial state. <code>IsAlwaysOpen</code> allows multiple items to
+            remain open, and <code>IsFlush</code> applies Bootstrap's flush styling.
+        </p>
+
+        <Accordion IsFlush="true" IsAlwaysOpen="true">
+            <AccordionItem IsOpen="true">
+                <AccordionHeader>Initially open item</AccordionHeader>
+                <AccordionBody>This item starts open.</AccordionBody>
+            </AccordionItem>
+            <AccordionItem IsOpen="true">
+                <AccordionHeader>Another initially open item</AccordionHeader>
+                <AccordionBody>This item also remains open because <code>IsAlwaysOpen</code> is enabled.</AccordionBody>
+            </AccordionItem>
+        </Accordion>
+    </section>
+
+    <section aria-labelledby="accordion-dynamic-heading" class="mt-5">
+        <h2 id="accordion-dynamic-heading">Data-driven items</h2>
+        <p>
+            Use ordinary Razor <code>@@foreach</code> composition to render items from a data source. The
+            <code>@@key</code> directive preserves component identity when the collection changes.
+        </p>
+
+        <Accordion>
+            @foreach (var item in this.entries)
+            {
+                <AccordionItem @key="item.Id" Id="@($"entry-{item.Id}")" IsOpen="item.IsOpen">
+                    <AccordionHeader>@item.Title</AccordionHeader>
+                    <AccordionBody>@item.Description</AccordionBody>
+                </AccordionItem>
+            }
+        </Accordion>
+    </section>
+
+    <section aria-labelledby="accordion-methods-heading" class="mt-5">
+        <h2 id="accordion-methods-heading">Methods and events</h2>
+        <p>
+            Call <code>ShowAsync</code>, <code>HideAsync</code>, and <code>ToggleAsync</code> from Blazor code.
+            Accordion lifecycle events are raised on the parent and identify the affected item.
+        </p>
+
+        <Accordion OnShow="this.HandleShow" OnShown="this.HandleShown"
+                   OnHide="this.HandleHide" OnHidden="this.HandleHidden">
+            <AccordionItem @ref="this.methodItem" Id="method-item">
+                <AccordionHeader>Method-controlled item</AccordionHeader>
+                <AccordionBody>
+                    Use the buttons below to invoke Bootstrap's Collapse plugin through Blazorade.Bootstrap.
+                </AccordionBody>
+            </AccordionItem>
+        </Accordion>
+
+        <div class="d-flex gap-2 mt-3">
+            <button type="button" class="btn btn-primary" @onclick="this.ShowMethodItem">Show</button>
+            <button type="button" class="btn btn-secondary" @onclick="this.HideMethodItem">Hide</button>
+            <button type="button" class="btn btn-outline-primary" @onclick="this.ToggleMethodItem">Toggle</button>
+        </div>
+        <p class="text-body-secondary mt-3" role="status">@this.eventStatus</p>
+    </section>
+</section>
+
+@code {
+    private readonly List<AccordionEntry> entries =
+    [
+        new(1, "First data item", "This item was rendered from the entries collection.", true),
+        new(2, "Second data item", "This item was rendered from the same collection.", false),
+        new(3, "Third data item", "Adding or removing entries changes the rendered accordion items.", false)
+    ];
+
+    private AccordionItem? methodItem;
+    private string eventStatus = "No accordion lifecycle event has occurred.";
+
+    private async Task ShowMethodItem()
+    {
+        if (this.methodItem is not null)
+        {
+            await this.methodItem.ShowAsync();
+        }
+    }
+
+    private async Task HideMethodItem()
+    {
+        if (this.methodItem is not null)
+        {
+            await this.methodItem.HideAsync();
+        }
+    }
+
+    private async Task ToggleMethodItem()
+    {
+        if (this.methodItem is not null)
+        {
+            await this.methodItem.ToggleAsync();
+        }
+    }
+
+    private Task HandleShow(AccordionItem item)
+    {
+        this.eventStatus = $"Opening {item.Id}.";
+        return Task.CompletedTask;
+    }
+
+    private Task HandleShown(AccordionItem item)
+    {
+        this.eventStatus = $"Opened {item.Id}.";
+        return Task.CompletedTask;
+    }
+
+    private Task HandleHide(AccordionItem item)
+    {
+        this.eventStatus = $"Closing {item.Id}.";
+        return Task.CompletedTask;
+    }
+
+    private Task HandleHidden(AccordionItem item)
+    {
+        this.eventStatus = $"Closed {item.Id}.";
+        return Task.CompletedTask;
+    }
+
+    private sealed record AccordionEntry(int Id, string Title, string Description, bool IsOpen);
+}

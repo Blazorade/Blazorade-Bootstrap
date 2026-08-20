@@ -1,0 +1,12 @@
+@inherits BootstrapComponentBase
+
+<h2 id="@this.Item.HeaderId" @attributes="this.Attributes">
+    <button type="button"
+            class="accordion-button@(this.Item.IsExpanded ? string.Empty : " collapsed")"
+            data-bs-toggle="collapse"
+            data-bs-target="#@this.Item.BodyId"
+            aria-expanded="@this.Item.IsExpanded.ToString().ToLowerInvariant()"
+            aria-controls="@this.Item.BodyId">
+        @this.ChildContent
+    </button>
+</h2>

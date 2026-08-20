@@ -1,0 +1,11 @@
+@inherits BootstrapComponentBase
+
+<div id="@this.Item.BodyId"
+     class="accordion-collapse collapse@(this.Item.IsExpanded ? " show" : string.Empty)"
+     aria-labelledby="@this.Item.HeaderId"
+     data-bs-parent="@this.Item.ParentSelector"
+     @attributes="this.Attributes">
+    <div class="accordion-body">
+        @this.ChildContent
+    </div>
+</div>
