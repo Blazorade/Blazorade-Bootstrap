@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" role="img" aria-labelledby="title desc">
+  <title id="title">Accordion component illustration</title>
+  <desc id="desc">Three stacked accordion rows with the first row expanded.</desc>
+  <rect width="800" height="240" rx="24" fill="#f1f3f5"/>
+  <rect x="72" y="48" width="656" height="48" rx="8" fill="#0d6efd"/>
+  <rect x="72" y="104" width="656" height="48" rx="8" fill="#ffffff" stroke="#ced4da" stroke-width="3"/>
+  <rect x="72" y="160" width="656" height="48" rx="8" fill="#ffffff" stroke="#ced4da" stroke-width="3"/>
+  <path d="M112 72h180M112 128h220M112 184h160" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
+  <path d="m674 66 10 10 10-10M674 122l10 10 10-10M674 178l10 10 10-10" fill="none" stroke="#6c757d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M112 82h520" stroke="#b6d4fe" stroke-width="3" stroke-linecap="round"/>
+</svg>

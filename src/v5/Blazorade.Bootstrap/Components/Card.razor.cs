@@ -62,6 +62,12 @@ namespace Blazorade.Bootstrap.Components
         public string? ImageUrl { get; set; }
 
         /// <summary>
+        /// The alternative text for the default card image.
+        /// </summary>
+        [Parameter]
+        public string? ImageAlt { get; set; }
+
+        /// <summary>
         /// Specifies where the default card image is rendered.
         /// </summary>
         [Parameter]
