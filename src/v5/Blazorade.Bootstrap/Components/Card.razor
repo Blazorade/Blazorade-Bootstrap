@@ -1,0 +1,50 @@
+@inherits BootstrapComponentBase
+
+<div @attributes="this.Attributes">
+    @if (this.ImagePosition is CardImagePosition.Top or CardImagePosition.Overlay)
+    {
+        @if (this.Image is not null)
+        {
+            @this.Image
+        }
+        else if (this.ImageUrl is not null)
+        {
+            <CardImage Src="@this.ImageUrl" Position="@this.ImagePosition" />
+        }
+    }
+
+    @if (this.Header is not null)
+    {
+        <CardHeader ChildContent="@this.Header" />
+    }
+
+    @if (this.Body is not null || this.Title is not null || this.Subtitle is not null || this.Text is not null || this.Links is not null || this.ChildContent is not null)
+    {
+        <CardBody Title="@this.Title"
+                  Subtitle="@this.Subtitle"
+                  Text="@this.Text"
+                  Links="@this.Links"
+                  IsImageOverlay="@(this.ImagePosition == CardImagePosition.Overlay)">
+            @this.Body
+            @this.ChildContent
+        </CardBody>
+    }
+
+    @if (this.Footer is not null)
+    {
+        <CardFooter ChildContent="@this.Footer" />
+    }
+
+    @if (this.ImagePosition == CardImagePosition.Bottom)
+    {
+        @if (this.Image is not null)
+        {
+            @this.Image
+        }
+        else if (this.ImageUrl is not null)
+        {
+            <CardImage Src="@this.ImageUrl" Position="@this.ImagePosition" />
+        }
+    }
+
+</div>

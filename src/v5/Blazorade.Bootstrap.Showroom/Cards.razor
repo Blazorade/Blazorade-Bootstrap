@@ -1,0 +1,97 @@
+@page "/cards"
+
+<section aria-labelledby="cards-heading">
+    <h1 id="cards-heading">Card Component</h1>
+    <p>
+        Cards use named templates for their sections while still allowing arbitrary direct child content.
+    </p>
+
+    <Card>
+        A card can contain arbitrary direct child content.
+    </Card>
+
+    <section aria-labelledby="card-sections-heading" class="mt-5">
+        <h2 id="card-sections-heading">Named sections</h2>
+        <Card>
+            <Header>The header of the card</Header>
+            <Title>A card title</Title>
+            <Subtitle>A card subtitle</Subtitle>
+            <Text>This text is rendered using Bootstrap's card-text class.</Text>
+            <Links>
+                <a href="#card-links" class="card-link">First link</a>
+                <a href="#card-links" class="card-link">Second link</a>
+            </Links>
+            <Body>
+                Additional body content can follow the named card templates.
+            </Body>
+            <Footer>The footer of the card</Footer>
+        </Card>
+    </section>
+
+    <section aria-labelledby="card-actions-heading" class="mt-5">
+        <h2 id="card-actions-heading">Links and buttons</h2>
+        <div class="row g-3">
+            <div class="col-md-6">
+                <Card>
+                    <Title>Card links</Title>
+                    <Text>Use card links when the action navigates to another location.</Text>
+                    <Links>
+                        <a href="#card-actions" class="card-link">View details</a>
+                        <a href="#card-actions" class="card-link">View related</a>
+                    </Links>
+                </Card>
+            </div>
+            <div class="col-md-6">
+                <Card>
+                    <Title>Card buttons</Title>
+                    <Text>Use Bootstrap buttons for actions performed on the current page.</Text>
+                    <Body>
+                        <button type="button" class="btn btn-primary me-2">Primary action</button>
+                        <button type="button" class="btn btn-outline-secondary">Secondary action</button>
+                    </Body>
+                </Card>
+            </div>
+        </div>
+    </section>
+
+    <section aria-labelledby="card-image-heading" class="mt-5">
+        <h2 id="card-image-heading">Images</h2>
+        <div class="row g-3">
+            <div class="col-md-4">
+                <Card ImageUrl="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=800&q=80"
+                      ImagePosition="CardImagePosition.Top">
+                                        <Title>Top image</Title>
+                    <Text>The default image position is above the card content.</Text>
+                </Card>
+            </div>
+            <div class="col-md-4">
+                <Card ImageUrl="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=800&q=80"
+                      ImagePosition="CardImagePosition.Overlay">
+                                        <Title>Overlay image</Title>
+                    <Text>The body uses the card image overlay class.</Text>
+                </Card>
+            </div>
+            <div class="col-md-4">
+                <Card ImageUrl="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=800&q=80"
+                      ImagePosition="CardImagePosition.Bottom">
+                                        <Title>Bottom image</Title>
+                    <Text>The image can also be rendered below the content.</Text>
+                </Card>
+            </div>
+        </div>
+    </section>
+
+    <section aria-labelledby="card-group-heading" class="mt-5">
+        <h2 id="card-group-heading">Card group</h2>
+        <CardGroup>
+            <Card>
+                <Title>First card</Title>
+                <Text>Cards can be grouped using Bootstrap's card-group layout.</Text>
+            </Card>
+            <Card>
+                <Title>Second card</Title>
+                <Text>Each card retains its named section templates.</Text>
+            </Card>
+        </CardGroup>
+    </section>
+</section>

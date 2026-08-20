@@ -1,0 +1,25 @@
+@inherits BootstrapComponentBase
+
+<div @attributes="this.Attributes">
+    @if (this.Title is not null)
+    {
+        <CardTitle ChildContent="@this.Title" />
+    }
+
+    @if (this.Subtitle is not null)
+    {
+        <CardSubtitle ChildContent="@this.Subtitle" />
+    }
+
+    @if (this.Text is not null)
+    {
+        <CardText ChildContent="@this.Text" />
+    }
+
+    @if (this.Links is not null)
+    {
+        <CardLinks ChildContent="@this.Links" />
+    }
+
+    @this.ChildContent
+</div>
