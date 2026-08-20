@@ -4,8 +4,15 @@
     <div @attributes="this.Attributes">
         @if (this.Header is not null || this.Body is not null)
         {
-            <AccordionHeader ChildContent="@this.Header" />
-            <AccordionBody ChildContent="@this.Body" />
+            @if (this.Header is not null)
+            {
+                <AccordionHeader ChildContent="@this.Header" />
+            }
+
+            @if (this.Body is not null)
+            {
+                <AccordionBody ChildContent="@this.Body" />
+            }
         }
         else
         {

@@ -9,10 +9,10 @@
 
     <Accordion>
         <AccordionItem>
-            <AccordionHeader>Simple accordion item</AccordionHeader>
-            <AccordionBody>
+            <Header>Simple accordion item</Header>
+            <Body>
                 This is the simplest useful accordion item.
-            </AccordionBody>
+            </Body>
         </AccordionItem>
     </Accordion>
 
@@ -25,22 +25,22 @@
 
         <Accordion>
             <AccordionItem IsOpen="true">
-                <AccordionHeader>Initially open item</AccordionHeader>
-                <AccordionBody>
+                <Header>Initially open item</Header>
+                <Body>
                     Opening another item closes this item.
-                </AccordionBody>
+                </Body>
             </AccordionItem>
             <AccordionItem>
-                <AccordionHeader>Second item</AccordionHeader>
-                <AccordionBody>
+                <Header>Second item</Header>
+                <Body>
                     Open this item to close the initially open item.
-                </AccordionBody>
+                </Body>
             </AccordionItem>
             <AccordionItem>
-                <AccordionHeader>Third item</AccordionHeader>
-                <AccordionBody>
+                <Header>Third item</Header>
+                <Body>
                     Only one item remains open at a time.
-                </AccordionBody>
+                </Body>
             </AccordionItem>
         </Accordion>
     </section>
@@ -73,12 +73,12 @@
 
         <Accordion IsFlush="true" IsAlwaysOpen="true">
             <AccordionItem IsOpen="true">
-                <AccordionHeader>Initially open item</AccordionHeader>
-                <AccordionBody>This item starts open.</AccordionBody>
+                <Header>Initially open item</Header>
+                <Body>This item starts open.</Body>
             </AccordionItem>
             <AccordionItem IsOpen="true">
-                <AccordionHeader>Another initially open item</AccordionHeader>
-                <AccordionBody>This item also remains open because <code>IsAlwaysOpen</code> is enabled.</AccordionBody>
+                <Header>Another initially open item</Header>
+                <Body>This item also remains open because <code>IsAlwaysOpen</code> is enabled.</Body>
             </AccordionItem>
         </Accordion>
     </section>
@@ -94,8 +94,8 @@
             @foreach (var item in this.entries)
             {
                 <AccordionItem @key="item.Id" Id="@($"entry-{item.Id}")" IsOpen="item.IsOpen">
-                    <AccordionHeader>@item.Title</AccordionHeader>
-                    <AccordionBody>@item.Description</AccordionBody>
+                    <Header>@item.Title</Header>
+                    <Body>@item.Description</Body>
                 </AccordionItem>
             }
         </Accordion>
@@ -111,10 +111,10 @@
         <Accordion OnShow="this.HandleShow" OnShown="this.HandleShown"
                    OnHide="this.HandleHide" OnHidden="this.HandleHidden">
             <AccordionItem @ref="this.methodItem" Id="method-item">
-                <AccordionHeader>Method-controlled item</AccordionHeader>
-                <AccordionBody>
+                <Header>Method-controlled item</Header>
+                <Body>
                     Use the buttons below to invoke Bootstrap's Collapse plugin through Blazorade.Bootstrap.
-                </AccordionBody>
+                </Body>
             </AccordionItem>
         </Accordion>
 

@@ -32,14 +32,22 @@ namespace Blazorade.Bootstrap.Components
         public bool IsOpen { get; set; }
 
         /// <summary>
-        /// The header content when nested header and body components are not used.
+        /// The template for the accordion header.
         /// </summary>
+        /// <remarks>
+        /// When supplied, this template is rendered as the accordion header. Direct child content is used only
+        /// when neither <see cref="Header"/> nor <see cref="Body"/> is supplied.
+        /// </remarks>
         [Parameter]
         public RenderFragment? Header { get; set; }
 
         /// <summary>
-        /// The body content when nested header and body components are not used.
+        /// The template for the accordion body.
         /// </summary>
+        /// <remarks>
+        /// When supplied, this template is rendered as the collapsible accordion body. Direct child content is used
+        /// only when neither <see cref="Header"/> nor <see cref="Body"/> is supplied.
+        /// </remarks>
         [Parameter]
         public RenderFragment? Body { get; set; }
 
