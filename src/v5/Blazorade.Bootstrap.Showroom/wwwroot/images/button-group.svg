@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Bootstrap button group illustration</title>
+  <desc id="desc">Three joined primary Bootstrap buttons.</desc>
+  <rect width="640" height="360" rx="24" fill="#f8f9fa"/>
+  <rect x="80" y="125" width="160" height="72" rx="10 0 0 10" fill="#0d6efd"/>
+  <rect x="240" y="125" width="160" height="72" fill="#0d6efd" stroke="#fff" stroke-width="2"/>
+  <rect x="400" y="125" width="160" height="72" rx="0 10 10 0" fill="#0d6efd"/>
+  <text x="160" y="161" fill="#fff" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" dominant-baseline="middle">One</text>
+  <text x="320" y="161" fill="#fff" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" dominant-baseline="middle">Two</text>
+  <text x="480" y="161" fill="#fff" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" dominant-baseline="middle">Three</text>
+</svg>

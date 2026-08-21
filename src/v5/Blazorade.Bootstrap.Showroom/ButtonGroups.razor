@@ -1,0 +1,47 @@
+@page "/button-groups"
+
+<section aria-labelledby="button-groups-heading">
+    <h1 id="button-groups-heading">Button Group Component</h1>
+    <p>
+        The <code>ButtonGroup</code> component joins related Bootstrap buttons into a single control.
+    </p>
+
+    <ButtonGroup>
+        <Button>First</Button>
+        <Button>Second</Button>
+        <Button>Third</Button>
+    </ButtonGroup>
+
+    <section aria-labelledby="button-group-sizes-heading" class="mt-5">
+        <h2 id="button-group-sizes-heading">Sizes</h2>
+        <p>Set <code>Size</code> to apply the corresponding size to the buttons in the group.</p>
+
+        <div class="d-flex gap-3 align-items-center flex-wrap">
+            <ButtonGroup Size="ButtonSize.Large">
+                <Button>Large</Button>
+                <Button>Group</Button>
+            </ButtonGroup>
+
+            <ButtonGroup>
+                <Button>Normal</Button>
+                <Button>Group</Button>
+            </ButtonGroup>
+
+            <ButtonGroup Size="ButtonSize.Small">
+                <Button>Small</Button>
+                <Button>Group</Button>
+            </ButtonGroup>
+        </div>
+    </section>
+
+    <section aria-labelledby="button-group-colours-heading" class="mt-5">
+        <h2 id="button-group-colours-heading">Button content</h2>
+        <p>Buttons in a group retain their individual colours, states, and content.</p>
+
+        <ButtonGroup>
+            <Button Color="NamedColor.Primary">Primary</Button>
+            <Button Color="NamedColor.Success">Success</Button>
+            <Button Color="NamedColor.Danger" IsOutline="true">Outline danger</Button>
+        </ButtonGroup>
+    </section>
+</section>
