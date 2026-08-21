@@ -1,0 +1,86 @@
+@page "/buttons"
+
+<section aria-labelledby="buttons-heading">
+    <h1 id="buttons-heading">Button Component</h1>
+    <p>
+        The <code>Button</code> component renders Bootstrap buttons with sensible defaults and strongly typed options.
+    </p>
+
+    <Button>Button</Button>
+
+    <section aria-labelledby="button-colours-heading" class="mt-5">
+        <h2 id="button-colours-heading">Standard colours</h2>
+        <p>Use the <code>Color</code> parameter to apply Bootstrap's contextual button colours.</p>
+
+        <div class="d-flex gap-2 flex-wrap">
+            <Button Color="NamedColor.Primary">Primary</Button>
+            <Button Color="NamedColor.Secondary">Secondary</Button>
+            <Button Color="NamedColor.Success">Success</Button>
+            <Button Color="NamedColor.Danger">Danger</Button>
+            <Button Color="NamedColor.Warning">Warning</Button>
+            <Button Color="NamedColor.Info">Info</Button>
+            <Button Color="NamedColor.Light">Light</Button>
+            <Button Color="NamedColor.Dark">Dark</Button>
+        </div>
+    </section>
+
+    <section aria-labelledby="button-outlines-heading" class="mt-5">
+        <h2 id="button-outlines-heading">Outline buttons</h2>
+        <p>Set <code>IsOutline</code> to <code>true</code> for an outline button.</p>
+
+        <div class="d-flex gap-2 flex-wrap">
+            <Button Color="NamedColor.Primary" IsOutline="true">Primary</Button>
+            <Button Color="NamedColor.Secondary" IsOutline="true">Secondary</Button>
+            <Button Color="NamedColor.Success" IsOutline="true">Success</Button>
+            <Button Color="NamedColor.Danger" IsOutline="true">Danger</Button>
+        </div>
+    </section>
+
+    <section aria-labelledby="button-sizes-heading" class="mt-5">
+        <h2 id="button-sizes-heading">Sizes</h2>
+        <div class="d-flex gap-2 align-items-center flex-wrap">
+            <Button Size="ButtonSize.Large">Large</Button>
+            <Button>Normal</Button>
+            <Button Size="ButtonSize.Small">Small</Button>
+        </div>
+    </section>
+
+    <section aria-labelledby="button-states-heading" class="mt-5">
+        <h2 id="button-states-heading">States and events</h2>
+        <div class="d-flex gap-2 flex-wrap">
+            <Button IsActive="true">Active</Button>
+            <Button IsDisabled="true">Disabled</Button>
+            <Button OnClicked="IncrementClickCount">Clicked @clickCount times</Button>
+        </div>
+    </section>
+
+    <section aria-labelledby="button-types-heading" class="mt-5">
+        <h2 id="button-types-heading">Button types</h2>
+        <p>Use <code>Type</code> to choose the HTML button behaviour when placing a button inside a form.</p>
+
+        <form class="d-flex gap-2 flex-wrap" @onsubmit="HandleSubmit" @onsubmit:preventDefault="true">
+            <Button Type="ButtonType.Button">Button</Button>
+            <Button Type="ButtonType.Submit">Submit</Button>
+            <Button Type="ButtonType.Reset">Reset</Button>
+        </form>
+        @if (this.submitted)
+        {
+            <p class="mt-2 mb-0" role="status">The form was submitted.</p>
+        }
+    </section>
+</section>
+
+@code {
+    private int clickCount;
+    private bool submitted;
+
+    private void IncrementClickCount()
+    {
+        this.clickCount++;
+    }
+
+    private void HandleSubmit()
+    {
+        this.submitted = true;
+    }
+}
