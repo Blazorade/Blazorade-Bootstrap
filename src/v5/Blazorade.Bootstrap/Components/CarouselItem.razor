@@ -1,0 +1,31 @@
+@inherits BootstrapComponentBase
+
+<div @attributes="this.Attributes">
+    @if (!string.IsNullOrEmpty(this.ImageUrl))
+    {
+        <img src="@this.ImageUrl" class="d-block w-100" alt="@this.ImageAlt" />
+    }
+
+    @this.ChildContent
+
+    @if (this.CaptionTemplate is not null || !string.IsNullOrEmpty(this.CaptionHeading) || !string.IsNullOrEmpty(this.CaptionBody))
+    {
+        <div class="carousel-caption d-none d-md-block">
+            @if (this.CaptionTemplate is not null)
+            {
+                @this.CaptionTemplate
+            }
+            else
+            {
+                @if (!string.IsNullOrEmpty(this.CaptionHeading))
+                {
+                    <h5>@this.CaptionHeading</h5>
+                }
+                @if (!string.IsNullOrEmpty(this.CaptionBody))
+                {
+                    <p>@this.CaptionBody</p>
+                }
+            }
+        </div>
+    }
+</div>

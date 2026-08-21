@@ -1,0 +1,5 @@
+@inherits BootstrapComponentBase
+
+<button type="button" @attributes="this.Attributes" aria-label="@this.Label">
+    <span class="carousel-control-@(this.Direction == CarouselControlDirection.Next ? "next" : "prev")-icon" aria-hidden="true"></span>
+</button>

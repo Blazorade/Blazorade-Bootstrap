@@ -17,6 +17,21 @@ window.blazoradeBootstrap.registerEventCallback = function (selector, eventName,
     element.addEventListener(eventName, callback);
 };
 
+window.blazoradeBootstrap.registerCarouselEventCallback = function (selector, eventName, callbackTarget, callbackMethodName) {
+    const element = document.querySelector(selector);
+    if (!element) {
+        return;
+    }
+
+    element.addEventListener(eventName, (event) => {
+        callbackTarget.invokeMethodAsync(callbackMethodName, {
+            from: event.from,
+            to: event.to,
+            direction: event.direction
+        });
+    });
+};
+
 window.blazoradeBootstrap.alerts = window.blazoradeBootstrap.alerts || {};
 
 window.blazoradeBootstrap.alerts.dismiss = function (selector) {
@@ -47,4 +62,51 @@ window.blazoradeBootstrap.accordions.toggle = function (selector) {
     if (element) {
         bootstrap.Collapse.getOrCreateInstance(element).toggle();
     }
+};
+
+window.blazoradeBootstrap.carousels = window.blazoradeBootstrap.carousels || {};
+
+window.blazoradeBootstrap.carousels.getInstance = function (selector) {
+    const element = document.querySelector(selector);
+    return element ? bootstrap.Carousel.getOrCreateInstance(element) : null;
+};
+
+window.blazoradeBootstrap.carousels.cycle = function (selector) {
+    const instance = window.blazoradeBootstrap.carousels.getInstance(selector);
+    if (instance) {
+        instance.cycle();
+    }
+};
+
+window.blazoradeBootstrap.carousels.pause = function (selector) {
+    const instance = window.blazoradeBootstrap.carousels.getInstance(selector);
+    if (instance) {
+        instance.pause();
+    }
+};
+
+window.blazoradeBootstrap.carousels.to = function (selector, slideNumber) {
+    const instance = window.blazoradeBootstrap.carousels.getInstance(selector);
+    if (instance) {
+        instance.to(slideNumber);
+    }
+};
+
+window.blazoradeBootstrap.carousels.prev = function (selector) {
+    const instance = window.blazoradeBootstrap.carousels.getInstance(selector);
+    if (instance) {
+        instance.prev();
+    }
+};
+
+window.blazoradeBootstrap.carousels.next = function (selector) {
+    const instance = window.blazoradeBootstrap.carousels.getInstance(selector);
+    if (instance) {
+        instance.next();
+    }
+};
+
+window.blazoradeBootstrap.carousels.slideCount = function (selector) {
+    const element = document.querySelector(selector);
+    return element ? element.querySelectorAll('.carousel-item').length : 0;
 };

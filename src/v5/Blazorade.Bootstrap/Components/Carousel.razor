@@ -1,0 +1,28 @@
+@inherits BootstrapComponentBase
+
+<CascadingValue Value="this" IsFixed="true">
+    <div id="@this.Id" @attributes="this.Attributes">
+        @if (this.ShowIndicators && this.items.Count > 0)
+        {
+            <div class="carousel-indicators">
+                @for (var index = 0; index < this.items.Count; index++)
+                {
+                    <button type="button" data-bs-target="#@this.Id" data-bs-slide-to="@index"
+                            class="@(index == this.currentSlideIndex ? "active" : null)"
+                            aria-current="@(index == this.currentSlideIndex ? "true" : null)"
+                            aria-label="Slide @(index + 1)"></button>
+                }
+            </div>
+        }
+
+        <div class="carousel-inner">
+            @this.ChildContent
+        </div>
+
+        @if (this.ShowControls)
+        {
+            <CarouselControl Carousel="this" Direction="CarouselControlDirection.Previous" />
+            <CarouselControl Carousel="this" Direction="CarouselControlDirection.Next" />
+        }
+    </div>
+</CascadingValue>

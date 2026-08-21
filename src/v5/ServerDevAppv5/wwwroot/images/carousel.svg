@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Carousel component illustration</title>
+  <desc id="desc">A Bootstrap carousel with three slides and navigation controls.</desc>
+  <rect width="640" height="360" rx="24" fill="#e9ecef"/>
+  <rect x="52" y="48" width="536" height="264" rx="12" fill="#0d6efd"/>
+  <rect x="78" y="74" width="484" height="212" rx="8" fill="#6ea8fe"/>
+  <circle cx="320" cy="180" r="58" fill="#fff" opacity=".9"/>
+  <path d="m300 150 48 30-48 30z" fill="#0d6efd"/>
+  <path d="m102 180 22-18v36zm436 0-22-18v36z" fill="#fff"/>
+  <circle cx="294" cy="298" r="5" fill="#fff"/><circle cx="320" cy="298" r="5" fill="#fff" opacity=".55"/><circle cx="346" cy="298" r="5" fill="#fff" opacity=".55"/>
+</svg>
