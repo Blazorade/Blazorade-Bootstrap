@@ -1,0 +1,37 @@
+@page "/breadcrumbs"
+
+<section aria-labelledby="breadcrumbs-heading">
+    <h1 id="breadcrumbs-heading">Breadcrumb Component</h1>
+    <p>
+        The <code>Breadcrumb</code> component shows the current page's location in a navigational hierarchy.
+    </p>
+
+    <Breadcrumb>
+        <BreadcrumbItem Url="/">Home</BreadcrumbItem>
+        <BreadcrumbItem Url="/components">Components</BreadcrumbItem>
+        <BreadcrumbItem IsActive="true">Breadcrumbs</BreadcrumbItem>
+    </Breadcrumb>
+
+    <section aria-labelledby="breadcrumb-active-heading" class="mt-5">
+        <h2 id="breadcrumb-active-heading">Active item</h2>
+        <p>Set <code>IsActive</code> to mark the current page. The item is rendered as text with <code>aria-current="page"</code>.</p>
+
+        <Breadcrumb>
+            <BreadcrumbItem Url="/">Home</BreadcrumbItem>
+            <BreadcrumbItem IsActive="true">Current page</BreadcrumbItem>
+        </Breadcrumb>
+    </section>
+
+    <section aria-labelledby="breadcrumb-content-heading" class="mt-5">
+        <h2 id="breadcrumb-content-heading">Custom child content</h2>
+        <p>Breadcrumb items accept arbitrary child content and additional attributes.</p>
+
+        <Breadcrumb>
+            <BreadcrumbItem Url="/">Home</BreadcrumbItem>
+            <BreadcrumbItem Url="/products" data-example="additional-attributes">
+                <strong>Products</strong>
+            </BreadcrumbItem>
+            <BreadcrumbItem IsActive="true">Details</BreadcrumbItem>
+        </Breadcrumb>
+    </section>
+</section>

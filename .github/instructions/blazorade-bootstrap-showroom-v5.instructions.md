@@ -1,5 +1,5 @@
 ---
-applyTo: "src/v5/Blazorade.Bootstrap.Showroom/**"
+applyTo: "src/v5/{Blazorade.Bootstrap.Showroom,ServerDevAppv5}/**"
 ---
 # Blazorade Bootstrap v5 showroom
 
@@ -18,6 +18,13 @@ The v5 showroom is both executable documentation and a reusable set of routable 
 - Every routable showcase page must be linked from the plain HTML/Bootstrap `Components` dropdown in `ShowroomNavigation.razor`.
 - List showroom components in alphabetical order in the `Components` dropdown and on any showroom home page component listing.
 - Keep showroom navigation independent of the Blazorade components being showcased. Navigation must use ordinary HTML and Bootstrap markup rather than showcase components.
+
+## Showroom home page
+
+- Every component featured in the showroom must have a card on the hosting application's home page at `src/v5/ServerDevAppv5/Components/Pages/Home.razor`.
+- Add home page cards in alphabetical order and link each card to the component's showroom page.
+- Every home page card must use a dedicated generated image from `src/v5/ServerDevAppv5/wwwroot/images/` that visually represents the showcased component.
+- Use meaningful accessible alternative text for every generated component image.
 
 ## Design principles
 

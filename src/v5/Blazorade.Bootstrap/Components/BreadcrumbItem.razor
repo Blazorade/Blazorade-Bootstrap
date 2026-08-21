@@ -1,0 +1,30 @@
+@inherits BootstrapComponentBase
+
+<li @attributes="this.Attributes">
+    @if (this.IsActive || string.IsNullOrEmpty(this.Url))
+    {
+        <span title="@this.Description">
+            @if (this.ChildContent is not null)
+            {
+                @this.ChildContent
+            }
+            else
+            {
+                @this.Text
+            }
+        </span>
+    }
+    else
+    {
+        <a href="@this.Url" target="@(this.OpenInNewTab ? "_blank" : null)" rel="@(this.OpenInNewTab ? "noopener" : null)">
+            @if (this.ChildContent is not null)
+            {
+                @this.ChildContent
+            }
+            else
+            {
+                @this.Text
+            }
+        </a>
+    }
+</li>
