@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" role="img" aria-labelledby="title desc">
+  <title id="title">Badge component illustration</title>
+  <desc id="desc">Labels and numeric badges attached to interface elements.</desc>
+  <rect width="800" height="240" rx="24" fill="#f1f3f5"/>
+  <rect x="86" y="78" width="250" height="76" rx="14" fill="#ffffff" stroke="#ced4da" stroke-width="3"/>
+  <path d="M122 116h126" stroke="#495057" stroke-width="10" stroke-linecap="round"/>
+  <rect x="292" y="88" width="86" height="52" rx="26" fill="#0d6efd"/>
+  <path d="M316 114h38" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
+  <rect x="454" y="58" width="112" height="52" rx="26" fill="#198754"/>
+  <rect x="590" y="130" width="124" height="52" rx="26" fill="#dc3545"/>
+  <path d="M484 84h52M620 156h64" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
+</svg>

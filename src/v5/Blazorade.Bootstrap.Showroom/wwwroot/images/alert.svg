@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" role="img" aria-labelledby="title desc">
+  <title id="title">Alert component illustration</title>
+  <desc id="desc">Stacked contextual alert messages.</desc>
+  <rect width="800" height="240" rx="24" fill="#f1f3f5"/>
+  <rect x="72" y="42" width="656" height="48" rx="10" fill="#cfe2ff"/>
+  <rect x="72" y="104" width="656" height="48" rx="10" fill="#d1e7dd"/>
+  <rect x="72" y="166" width="656" height="32" rx="10" fill="#fff3cd"/>
+  <circle cx="108" cy="66" r="12" fill="#0d6efd"/>
+  <circle cx="108" cy="128" r="12" fill="#198754"/>
+  <circle cx="108" cy="182" r="9" fill="#ffc107"/>
+  <path d="M148 66h360M148 128h420M148 182h280" stroke="#495057" stroke-width="8" stroke-linecap="round" opacity=".75"/>
+  <path d="m684 58 14 14M698 58l-14 14" stroke="#495057" stroke-width="5" stroke-linecap="round"/>
+</svg>

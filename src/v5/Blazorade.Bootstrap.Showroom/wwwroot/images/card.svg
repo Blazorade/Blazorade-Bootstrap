@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" role="img" aria-labelledby="title desc">
+  <title id="title">Card component illustration</title>
+  <desc id="desc">A collection of cards with images, text, and actions.</desc>
+  <rect width="800" height="240" rx="24" fill="#f1f3f5"/>
+  <rect x="92" y="38" width="244" height="164" rx="12" fill="#ffffff" stroke="#ced4da" stroke-width="3"/>
+  <rect x="92" y="38" width="244" height="64" rx="12" fill="#6f42c1"/>
+  <rect x="120" y="126" width="150" height="10" rx="5" fill="#495057"/>
+  <rect x="120" y="148" width="178" height="8" rx="4" fill="#adb5bd"/>
+  <rect x="120" y="170" width="82" height="18" rx="9" fill="#0d6efd"/>
+  <rect x="380" y="38" width="328" height="164" rx="12" fill="#ffffff" stroke="#ced4da" stroke-width="3"/>
+  <rect x="380" y="38" width="328" height="70" rx="12" fill="#0d6efd"/>
+  <rect x="414" y="132" width="210" height="10" rx="5" fill="#495057"/>
+  <rect x="414" y="154" width="250" height="8" rx="4" fill="#adb5bd"/>
+  <rect x="414" y="176" width="104" height="18" rx="9" fill="#198754"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" role="img" aria-labelledby="title desc">
+  <title id="title">Breadcrumb component illustration</title>
+  <desc id="desc">A breadcrumb trail showing the location of the current page.</desc>
+  <rect width="800" height="240" rx="24" fill="#f1f3f5"/>
+  <rect x="72" y="76" width="656" height="88" rx="14" fill="#ffffff" stroke="#ced4da" stroke-width="3"/>
+  <path d="M120 120h126M294 120h126M468 120h122" stroke="#0d6efd" stroke-width="12" stroke-linecap="round"/>
+  <path d="M264 101l19 19-19 19M438 101l19 19-19 19" fill="none" stroke="#6c757d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="610" y="96" width="78" height="48" rx="10" fill="#212529"/>
+</svg>

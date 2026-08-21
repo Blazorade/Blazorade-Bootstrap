@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Bootstrap button illustration</title>
+  <desc id="desc">A row of primary and outlined Bootstrap buttons.</desc>
+  <rect width="640" height="360" rx="24" fill="#f8f9fa"/>
+  <rect x="80" y="125" width="210" height="72" rx="10" fill="#0d6efd"/>
+  <rect x="350" y="125" width="210" height="72" rx="10" fill="none" stroke="#6c757d" stroke-width="5"/>
+  <text x="185" y="171" fill="#fff" font-family="Arial, sans-serif" font-size="26" text-anchor="middle" dominant-baseline="middle">Primary</text>
+  <text x="455" y="171" fill="#6c757d" font-family="Arial, sans-serif" font-size="26" text-anchor="middle" dominant-baseline="middle">Outline</text>
+</svg>
